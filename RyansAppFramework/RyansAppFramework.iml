@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PropertiesManager" />
+    <orderEntry type="module" module-name="DesktopJavaFramework" />
   </component>
 </module>

@@ -23,13 +23,7 @@ public class RyansAppFramework extends Application {
     public void start(Stage primaryStage) {
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+        btn.setOnAction(event->System.out.println("Hello World!"));
         
         StackPane root = new StackPane();
         root.getChildren().add(btn);
