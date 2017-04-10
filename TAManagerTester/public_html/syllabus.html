@@ -1,0 +1,353 @@
+<html>
+
+    <head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>CSE 219</title>
+
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+
+	<link href="./css/course_homepage_layout.css" rel="stylesheet" type="text/css">
+
+	<link href="./css/sea_wolf.css" rel="stylesheet" type="text/css">
+
+        <!-- LINK TO OUR JavaScript FILE AND JQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="./js/OfficeHoursGridBuilder.js"></script>
+        <script src="./js/RecitationsBuilder.js"></script>
+
+        <!-- ONCE THE PAGE FULLY LOADS INITIALIZE THE SLIDESHOW -->
+        <script>
+            $(document).ready()
+            {
+                buildOfficeHoursGrid();
+                buildRecitations();
+            }
+            window.on
+        </script>
+	
+	<style>
+	    .rec_0 {
+		background-color:rgb(255,204,153);
+		border: 5px solid white;
+		border-radius: 25px;
+		box-shadow: 5px 5px 5px #888888;
+	    }
+	    .rec_1 {
+		background-color:rgb(229, 204, 255);
+		border: 5px solid white;
+		border-radius: 25px;
+		box-shadow: 5px 5px 5px #888888;
+	    }
+	    .rec_cell {
+		padding: 10px 5px 10px 5px;
+	    }
+	    .ta_cell {
+		padding: 5px 5px 10px 15px;
+	    }
+	    .ta_name {
+		font-size:14pt;
+		color: black;
+	    }
+	    .ta_email {
+		font-size:10pt;
+		color: rgb(0,0,80);
+	    }
+	</style>
+    </head>
+
+
+
+    <body>
+
+	<div id="content">
+
+	    <div id="navbar">
+
+		<a href="http://www.stonybrook.edu"><img alt="Stony Brook University" class="sbu_navbar" src="./images/SBUDarkRedShieldLogo.png"></a>
+                <!-- NAVIGATION LINKS GO HERE -->
+		<a class="nav" href="index.html" id="home_link">Home</a><a class="open_nav" href="syllabus.html" id="syllabus_link">Syllabus</a><a class="nav" href="schedule.html" id="schedule_link">Schedule</a><a class="nav" href="hws.html" id="hws_link">HWs</a>
+	    </div>
+
+
+	    <div id="banner">
+                <!-- BANNER NEEDS TO BE SET -->
+		CSE 219 - Spring 2017<br>Computer Science III - 02</div>
+
+	    <div id="desc">
+
+		<div id="custom_syllabus_content">
+
+	    <h3>COURSE DESCRIPTION</h3>
+
+	    <p>Development of the basic concepts and techniques from Computer Science I and II into practical programming skills that include a systematic approach to program design, coding, testing, and debugging. Application of these skills to the construction of robust programs of thousands of lines of source code. Use of programming environments and tools to aid in the software development process.</p>
+
+	    <p><br /></p>
+
+	    <h3>COURSE TOPICS</h3>
+
+	    <ul>
+		<li>Programming style and its impact on readability, reliability, maintainability, and portability.</li>
+		<li>Decomposing problems into modular designs with simple, narrow interfaces.</li>
+		<li>Determining the proper objects in an object-oriented design.</li>
+		<li>Selecting appropriate algorithms and data structures.</li>
+		<li>Reusing code, including external libraries designed and built by others.</li>
+		<li>Learning systematic testing and debugging techniques.</li>
+		<li>Maintaining a repository of code during incremental development of a software project.</li>
+		<li>Learning how to use threads to synchronize several tasks.</li>
+		<li>Improving program performance.</li>
+		<li>Making effective use of a programming environment, including:
+		    <ul>
+			<li>Syntax-directed editor</li>
+			<li>Build tools</li>
+			<li>Debugging tools</li>
+			<li>Testing tools</li>
+			<li>Source code management tools</li>
+			<li>Profiling tools</li>
+		    </ul>
+		</li>
+	    </ul>
+
+	    <p><br /></p>
+
+	    <h3>PREREQUISITES</h3>
+
+	    <p>You must have taken CSE 214 and received a grade of "C" or better in order to take this course.
+		In more detail, you are expected to have the following knowledge and skills at the beginning of the course:</p>
+	    <ul>
+		<li>Ability to write programs of a few hundred lines of code in the Java programming language.</li>
+		<li>Understanding of fundamental data structures, including lists, binary trees, hash tables, and graphs, and the ability to employ these data structures in the form provided by the standard Java API.</li>
+		<li>Ability to construct simple command-based user interfaces, and to use files for the input and output of data.</li>
+		<li>Mastery of basic mathematical and geometric reasoning using pre-calculus concepts.</li>
+	    </ul>
+
+
+	    <p><br /></p>
+
+	    <h3>COURSE GOALS</h3>
+
+	    <p>At the end of the course you should have the following knowledge and skills:</p>
+	    <ul>
+		<li>Ability to systematically design, code, debug, and test programs of about two thousand lines of code.</li>
+		<li>Sensitivity to the issues of programming style and modularity and their relationship to the construction and evolution of robust software.</li>
+		<li>Knowledge of basic ideas and techniques of object-oriented programming.</li>
+		<li>Familiarity with the capabilities and use of programming tools such as syntax-directed editors, debuggers, execution profilers, documentation generators, and revison-control systems.</li>
+	    </ul>
+
+	    <br /><br />
+
+	    <h3>INSTRUCTOR</h3>
+
+	    <table>
+		<tr>
+		    <td style="font-size:14pt"><a href="http://www.cs.stonybrook.edu/~richard">
+			    Richard McKenna</a><br />
+			<strong>richard@cs.stonybrook.edu</strong><br />
+			216 New Computer Science Building<br />
+			<strong>Office Hours:</strong><br />
+			<table>
+			    <tr>
+				<td><strong>--Tuesdays</td><td style="padding-left:20px">4:00pm - 5:30pm</td>
+			    </tr>
+			    <tr>
+				<td><strong>--Thursdays</td><td style="padding-left:20px">4:00pm - 5:30pm</td>
+			    </tr>
+			</table>
+		    </td>
+		    <td>
+			<img src="./images/RichardMcKenna.jpg" alt="Richard McKenna Profile" style="margin-left:30px;" />
+		    </td>
+	    </table>
+
+	    <br />
+	    <br />
+
+	    <h3 id="tas">TEACHING ASSISTANTS (Grading Appointments in the <em>New</em> Computer Science Building, Room 106)</h3>
+
+            <p>Go to the <a href="https://docs.google.com/spreadsheets/d/14hYgrFgK95_KmFxrhEUe6lXIn6tpCXBVXkF6QotZ3ZI">Grading Appointments Sheet</a> to reserve a time for each assignment. Note TA-student pairings
+                are done according to student last name so make sure you put your reservation on the correct sheet.</p>
+            <p>TBA</p>
+	    <br />
+	    <br />
+
+
+	    <h3 class="ta_office_hours">HOMEWORK GURUS (Office Hours in the <em>Old</em> Computer Science Building, Room 2217)</h3>
+            <br />
+            <table>
+                <tbody id="undergrad_tas">
+                    
+                </tbody>
+            </table>
+
+	    <br />
+	    <br />
+
+	    <h3 id="office_hours_grid">OFFICE HOURS GRID (in Old CS 2217)</h3>
+                <table class="office_hours_schedule" cellspacing="0" border="1">
+                    <tbody id="office_hours_table">
+                        <tr>
+                            <th class="sch" width="150px">Start Time</th>
+                            <th class="sch" width="150px">End Time</th>
+                            <th class="sch" width="200px">MONDAY</th>
+                            <th class="sch" width="200px">TUESDAY</th>
+                            <th class="sch" width="200px">WEDNESDAY</th>
+                            <th class="sch" width="200px">THURSDAY</th>
+                            <th class="sch" width="200px">FRIDAY</th>
+                        </tr>                        
+                    </tbody>
+                </table>
+	    <br /> 
+	    <br />
+
+	    <h3 id="ceas_tutoring">COLLEGE OF ENGINEERING TUTORING SERVICES (Engineering 236B)</h3>
+
+	    <p>
+                Stony Brook University and the College of Engineering and Applied Sciences offers FREE tutoring services for CSE 219 in Engineering, Room 236B during the following days/times:</p>
+
+            <ul>
+                <li><strong>Monday:</strong> TBA</li>
+                <li><strong>Tuesday:</strong> TBA</li>
+                <li><strong>Wednesday:</strong> TBA</li>
+                <li><strong>Thursday:</strong> TBA</li>
+                <li><strong>Friday:</strong> TBA</li>
+            </ul>
+	    <br />
+	    <br />
+
+	    <h3>LECTURE - Section 02</h3>
+	    <p>Tuesdays &amp; Thursdays<br />
+		1:00 pm - 2:20 pm<br />
+		Javits 103
+	    </p>
+	    <br />
+	    
+	    <h3 id="recitations">RECITATIONS</h3>
+	    
+            <table>
+                <tbody id="rec_table">
+                    <!-- THIS WILL BE GENERATED BY JavaScript-->
+                </tbody>
+            </table>
+	    <br /><br />
+
+	    <h3>PLATFORMS</h3>
+
+	    <p>This course will use the Java programming language, <strong><em>version 8</em></strong>. The programming environment for this semester will be the <a href="http://netbeans.org/">NetBeans</a> IDE, version 8.0, which includes a syntax-directed editor, run-time environment, debugger, unit tester, and additional software development tools. Go to the <a href="http://netbeans.org/downloads/index.html">NetBeans download page</a> to get your own free copy. All software will also be provided for you to use in the <a href="http://www.cs.sunysb.edu/facilities/windowslab/">Windows Lab</a>. Note that the following references will be helpful to students while completing the Java programming assignments:</p>
+
+	    <ul>
+		<li><a href="http://docs.oracle.com/javase/8/docs/api/">Java 8 API</a> - this reference provides a summary of all the Standard Edition classes, many of which we'll make use of.<br /><br /></li>
+		<li><a href="http://docs.oracle.com/javase/tutorial/">The Java Tutorial</a> - walks one through programming in Java, including the new features of Java 8.<br /><br /></li>
+		<li><a href="http://docs.oracle.com/javase/8/javase-clienttechnologies.htm">JavaFX Tutorial</a> - a good reference for learning how to make User Interfaces using JavaFX, which is new with Java 8. Note that JavaFX is replacing Swing as the Java framework for making user interfaces.<br /><br /></li>
+	    </ul>
+	    <br /><br />
+
+	    <h3>TEXTBOOKS (both are online via provided links below)</h3>
+
+	    <p><a href="http://proquestcombo.safaribooksonline.com.proxy.library.stonybrook.edu/0596008678"><img style="float:left; margin-right:3em" width="100" height="125" src="./images/HeadFirstOOAAD.jpg" alt="Head First Object Oriented Analysis and Design" /></a><a href="http://proquestcombo.safaribooksonline.com.proxy.library.stonybrook.edu/0596008678"><em>Head First Object Oriented Design and Analysis</em></a><br />
+		by <strong>Brett McLaughlin</strong>, <strong>Gary Pollice</strong>, <strong>David West</strong><br />
+		Published by O'Reilly Media, Inc. 2006<br />
+		Print ISBN-10: 0-596-00867-8<br />
+		Print ISBN-13: 978-0-596-00867-3<br /></p>
+
+	    <p><br clear="all" /><br /><strong>AND</strong></p>
+
+	    <p><a href="http://proquestcombo.safaribooksonline.com.proxy.library.stonybrook.edu/0596007124"><img style="float:left; margin-right:3em" width="100" height="125" src="./images/HeadFirstDesignPatterns.gif" alt="Head First Design Patterns" /></a><a href="http://proquestcombo.safaribooksonline.com.proxy.library.stonybrook.edu/0596007124"><em>Head First Design Patterns</em></a><br />
+		by <strong>Eric T Freeman</strong>, <strong>Elisabeth Robson</strong>, <strong>Bert Bates</strong>, <strong>Kathy Sierra
+		</strong><br />
+		Published by O'Reilly Media, Inc. 2004<br />
+		Print ISBN-10: 0-596-00712-4<br />
+		Print ISBN-13: 978-0-596-00712-6<br /></p>
+
+	    <br clear="all" />
+	    <br />
+	    <br />
+
+
+	    <h3>COURSE COMPONENTS</h3>
+	    <ul>
+		<li><strong>Recitations</strong> - Students will attend weekly recitations that will introduce use of essential development tools and will require completion of an exercise for submission.<br /><br /></li>
+		<li><strong>Homework Assignments</strong> - Submitted code that does not compile will receive no credit. Late submissions will NOT be accepted. Programming assignments will be handed in electronically, instructions for which will be provided early in the semester.
+		    <br /><br /></li>
+		<li><strong>Midterm &amp; Final Exams</strong> - Exams will cover all lecture and homework materials covered during the semester.
+		    <br /><br /></li>
+	    </ul>
+
+	    <p><br /></p>
+
+	    <h3>GRADING BREAKDOWN</h3>
+
+	    <table>
+		<tr>
+		    <td>Recitation Exercises</td>
+		    <td align="right">5%</td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>5 Homework Assignments</td>
+		    <td align="right">25 %</td>
+		    <td align="right">(5 % each)</td>
+		</tr>
+		<tr>
+		    <td>Final Project</td>
+		    <td align="right">20 %</td>
+		</tr>
+		<tr>
+		    <td>Midterm Exam</td>
+		    <td align="right">25 %</td>
+		</tr>
+		<tr>
+		    <td>Final Exam</td>
+		    <td align="right">25 %</td>
+		</tr>
+		<tr style="background-color:rgb(255,190,150)">
+		    <td></td>
+		    <td align="right"><strong>100 %</strong></td>
+		</tr>
+	    </table>
+
+	    <p><strong>Note CEAS Policy:</strong> The Pass/No Credit (P/NC) option is not available for this course.</p>
+
+	    <p><br /></p>
+
+	    <h3>ACADEMIC DISHONESTY</h3>
+
+	    <blockquote><b>Read This!</b> You may <em>discuss</em> the homework in this course with anyone you like, however each student's submission, including <em>written material</em> and <em>coding</em>, must be his or her own work, and only his or her own work. Any evidence that written homework submissions or source code have been copied, shared, or transmitted <em>in any way</em> between students (this includes using source code downloaded from the Internet or written by others in previous semesters!) will be regarded as evidence of academic dishonesty. Additionally, any evidence of sharing of information or using unauthorized information during an examination will also be regarded as evidence of academic dishonesty.
+		<br /><br />
+		The College of Engineering and Applied Sciences regards academic dishonesty as a very serious matter, and provides for substantial penalties in such cases, such as receiving an `F' grade, or expulsion from the University. For more information, obtain a copy of the CEAS guidelines on academic dishonesty from the CEAS office.
+		<br /><br />
+		<strong>Be advised that any evidence of academic dishonesty will be treated with utmost seriousness. Those involved will be prosecuted to the fullest extent permitted by the University and College laws. If you have a situation that may tempt you into doing something academically dishonest, resist the urge and speak with your instructor during office hours for help.</strong></blockquote>
+
+	    <p><br /></p>
+
+	    <h3>SPECIAL ASSISTANCE</h3>
+
+	    <p>If you have a physical, psychological, medical or learning disability that may impact on your ability to carry out assigned course work, I would urge that you contact the staff in the Disabled Student Services office (DSS) in the ECC building (where the Computer Store used to be), 632-6748v/tdD. DSS will review your concerns and determine with you what accommodations are necessary and appropriate. All information and documentation of disability are confidential.</p>
+
+	    <p>If you need general computer help, you can use the Computer Science Help Desk. Services offered include setting up an account on a department server, using Windows NT, using a browser, and connecting to the campus network. The Help Desk office is located in the SBCS Office - Room 2110.</p>
+
+	    <hr />
+		</div>
+
+		<br>
+
+
+		<a href="http://www.stonybrook.edu"><img alt="SBU" class="sunysb" src="./images/SBUWhiteShieldLogo.jpg" style="float:left"></a>
+                <a href="http://www.cs.stonybrook.edu"><img alt="CS" src="./images/CSLogo.png" style="float:right"></a>
+
+
+		<p style="font-size:9pt; text-align:center;">Web page created and maintained<br>
+                    by <span id="instructor_link"><a href="http://www.cs.stonybrook.edu/~richard">Richard McKenna</a></span>
+		    <br>
+		    <br>
+		    <br>
+		    <br>
+		</p>
+
+	    </div>
+
+	</div>
+
+
+    </body>
+
+</html>

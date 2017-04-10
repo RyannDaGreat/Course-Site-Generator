@@ -1,0 +1,82 @@
+
+{
+    "start_hour":"9",
+    "end_hour":"20",
+    "undergrad_tas":[
+        {
+            "name":"Jane Doe",
+            "email":"jane@gmail.com"
+        },
+        {
+            "name":"Joe Shmo",
+            "email":"joe@yahoo.com"
+        }
+    ],
+    "office_hours":[
+        {
+            "day":"TUESDAY",
+            "time":"12_00pm",
+            "name":"Jane Doe"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"12_30pm",
+            "name":"Jane Doe"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"12_30pm",
+            "name":"Jane Doe"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"12_30pm",
+            "name":"Joe Shmo"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"1_00pm",
+            "name":"Joe Shmo"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"1_30pm",
+            "name":"Jane Doe"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"1_30pm",
+            "name":"Joe Shmo"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"2_00pm",
+            "name":"Jane Doe"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"2_00pm",
+            "name":"Joe Shmo"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"2_30pm",
+            "name":"Jane Doe"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"2_30pm",
+            "name":"Joe Shmo"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"3_00pm",
+            "name":"Jane Doe"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"3_30pm",
+            "name":"Jane Doe"
+        }
+    ]
+}

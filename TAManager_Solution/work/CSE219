@@ -1,0 +1,21 @@
+
+{
+    "start_hour":9,
+    "end_hour":20,
+    "undergrad_tas":[
+        {
+            "name":"Jane Doe",
+            "email":"jane@gmail.com"
+        },
+        {
+            "name":"Joe Shmo",
+            "email":"joe.shmo@yahoo.com"
+        },
+        {
+            "name":"Richard McKenna",
+            "email":"richard@cs.stonybrook.edu"
+        }
+    ],
+    "office_hours":[
+    ]
+}

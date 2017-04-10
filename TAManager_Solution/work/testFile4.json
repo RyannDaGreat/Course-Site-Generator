@@ -1,0 +1,101 @@
+
+{
+    "startHour":"9",
+    "endHour":"20",
+    "undergrad_tas":[
+        {
+            "name":"Aarin Chase",
+            "email":"aarin.chase@stonybrook.edu"
+        },
+        {
+            "name":"Jacob Evans",
+            "email":"jacob.evans@stonybrook.edu"
+        },
+        {
+            "name":"Michael Mathew",
+            "email":"michael.mathew@stonybrook.edu"
+        }
+    ],
+    "officeHours":[
+        {
+            "day":"FRIDAY",
+            "time":"2_30pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"3_00pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"4_00pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"4_30pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"6_00pm",
+            "name":"Michael Mathew"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"6_00pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"6_00pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"6_30pm",
+            "name":"Michael Mathew"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"6_30pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"6_30pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"7_00pm",
+            "name":"Michael Mathew"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"7_00pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"7_00pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"7_30pm",
+            "name":"Michael Mathew"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"7_30pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"7_30pm",
+            "name":"Aarin Chase"
+        }
+    ]
+}

@@ -1,0 +1,273 @@
+
+{
+    "startHour":"0",
+    "endHour":"22",
+    "undergrad_tas":[
+        {
+            "name":"Aarin Chase",
+            "email":"aarin.chase@stonybrook.edu"
+        },
+        {
+            "name":"Abu Saeid",
+            "email":"asm.abdulkader@stonybrook.edu"
+        },
+        {
+            "name":"Ali Afzal",
+            "email":"ali.afzal@stonybrook.edu"
+        },
+        {
+            "name":"Anthony Roy",
+            "email":"anthony.roy@stonybrook.edu"
+        },
+        {
+            "name":"Bryan Robicheau",
+            "email":"bryan.robicheau@stonybrook.edu"
+        },
+        {
+            "name":"Calvin Cheng",
+            "email":"calvin.cheng@stonybrook.edu"
+        },
+        {
+            "name":"Chaeyoung Lee",
+            "email":"chaeyoung.lee@stonybrook.edu"
+        },
+        {
+            "name":"Hsiang-Ju Lai",
+            "email":"hsiang-ju.lai@stonybrook.edu"
+        },
+        {
+            "name":"Jacob Evans",
+            "email":"jacob.evans@stonybrook.edu"
+        },
+        {
+            "name":"James Hoffman",
+            "email":"james.a.hoffman@stonybrook.edu"
+        },
+        {
+            "name":"Jamie Kunzmann",
+            "email":"jamie.kunzmann@stonybrook.edu"
+        },
+        {
+            "name":"Jenny Li",
+            "email":"jenny.li@stonybrook.edu"
+        },
+        {
+            "name":"Jerrel Sogoni",
+            "email":"jerrel.sogoni@stonybrook.edu"
+        },
+        {
+            "name":"Michael Mathew",
+            "email":"michael.mathew@stonybrook.edu"
+        },
+        {
+            "name":"Milto Ndrenika",
+            "email":"milto.ndrenika@stonybrook.edu"
+        },
+        {
+            "name":"Muhammad R Islam",
+            "email":"muhammad.r.islam@stonybrook.edu"
+        },
+        {
+            "name":"Robert Trujillo",
+            "email":"robert.trujillo@stonybrook.edu"
+        },
+        {
+            "name":"Serge Crane",
+            "email":"serge.crane@stonybrook.edu"
+        },
+        {
+            "name":"Wonje Kang",
+            "email":"wonje.kang@stonybrook.edu"
+        },
+        {
+            "name":"Wonyong Jeong",
+            "email":"wonyon.jeong@stonybrook.edu"
+        },
+        {
+            "name":"Yu Zhao",
+            "email":"yu.zhao@stonybrook.edu"
+        }
+    ],
+    "officeHours":[
+        {
+            "day":"MONDAY",
+            "time":"3_00pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"MONDAY",
+            "time":"3_00pm",
+            "name":"James Hoffman"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"3_00pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"3_00pm",
+            "name":"Abu Saeid"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"3_00pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"3_00pm",
+            "name":"Yu Zhao"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"3_00pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"3_00pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"MONDAY",
+            "time":"3_30pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"MONDAY",
+            "time":"3_30pm",
+            "name":"James Hoffman"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"3_30pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"3_30pm",
+            "name":"Abu Saeid"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"3_30pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"3_30pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"3_30pm",
+            "name":"Milto Ndrenika"
+        },
+        {
+            "day":"MONDAY",
+            "time":"4_00pm",
+            "name":"James Hoffman"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"4_00pm",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"4_00pm",
+            "name":"Abu Saeid"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"4_00pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"4_00pm",
+            "name":"Muhammad R Islam"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"4_00pm",
+            "name":"Milto Ndrenika"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"4_30pm",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"4_30pm",
+            "name":"Abu Saeid"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"4_30pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"4_30pm",
+            "name":"Muhammad R Islam"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"4_30pm",
+            "name":"Milto Ndrenika"
+        },
+        {
+            "day":"MONDAY",
+            "time":"5_00pm",
+            "name":"Wonyong Jeong"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"5_00pm",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"5_00pm",
+            "name":"Abu Saeid"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"5_00pm",
+            "name":"Muhammad R Islam"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"5_00pm",
+            "name":"Chaeyoung Lee"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"5_00pm",
+            "name":"Milto Ndrenika"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"5_30pm",
+            "name":"Ali Afzal"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"5_30pm",
+            "name":"Abu Saeid"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"5_30pm",
+            "name":"Muhammad R Islam"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"5_30pm",
+            "name":"Chaeyoung Lee"
+        }
+    ]
+}

@@ -1,0 +1,649 @@
+
+{
+    "startHour":"9",
+    "endHour":"20",
+    "undergrad_tas":[
+        {
+            "name":"Aarin Chase",
+            "email":"aarin.chase@stonybrook.edu"
+        },
+        {
+            "name":"Ali Afzal",
+            "email":"ali.afzal@stonybrook.edu"
+        },
+        {
+            "name":"Anthony Roy",
+            "email":"anthony.roy@stonybrook.edu"
+        },
+        {
+            "name":"Bryan Robicheau",
+            "email":"bryan.robicheau@stonybrook.edu"
+        },
+        {
+            "name":"Calvin Cheng",
+            "email":"calvin.cheng@stonybrook.edu"
+        },
+        {
+            "name":"Chaeyoung Lee",
+            "email":"chaeyoung.lee@stonybrook.edu"
+        },
+        {
+            "name":"Hsiang-Ju Lai",
+            "email":"hsiang-ju.lai@stonybrook.edu"
+        },
+        {
+            "name":"Jacob Evans",
+            "email":"jacob.evans@stonybrook.edu"
+        },
+        {
+            "name":"James Hoffman",
+            "email":"james.a.hoffman@stonybrook.edu"
+        },
+        {
+            "name":"Jamie Kunzmann",
+            "email":"jamie.kunzmann@stonybrook.edu"
+        },
+        {
+            "name":"Jenny Li",
+            "email":"jenny.li@stonybrook.edu"
+        },
+        {
+            "name":"Jerrel Sogoni",
+            "email":"jerrel.sogoni@stonybrook.edu"
+        },
+        {
+            "name":"Michael Mathew",
+            "email":"michael.mathew@stonybrook.edu"
+        },
+        {
+            "name":"Milto Ndrenika",
+            "email":"milto.ndrenika@stonybrook.edu"
+        },
+        {
+            "name":"Muhammad R Islam",
+            "email":"muhammad.r.islam@stonybrook.edu"
+        },
+        {
+            "name":"Robert Trujillo",
+            "email":"robert.trujillo@stonybrook.edu"
+        },
+        {
+            "name":"Serge Crane",
+            "email":"serge.crane@stonybrook.edu"
+        },
+        {
+            "name":"Wonje Kang",
+            "email":"wonje.kang@stonybrook.edu"
+        },
+        {
+            "name":"Wonyong Jeong",
+            "email":"wonyon.jeong@stonybrook.edu"
+        },
+        {
+            "name":"Yu Zhao",
+            "email":"yu.zhao@stonybrook.edu"
+        }
+    ],
+    "officeHours":[
+        {
+            "day":"MONDAY",
+            "time":"10_00am",
+            "name":"Wonje Kang"
+        },
+        {
+            "day":"MONDAY",
+            "time":"10_00am",
+            "name":"Wonyong Jeong"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"10_00am",
+            "name":"Calvin Cheng"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"10_00am",
+            "name":"Jenny Li"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"10_00am",
+            "name":"Jamie Kunzmann"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"10_00am",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"MONDAY",
+            "time":"10_30am",
+            "name":"Wonje Kang"
+        },
+        {
+            "day":"MONDAY",
+            "time":"10_30am",
+            "name":"Wonyong Jeong"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"10_30am",
+            "name":"Jerrel Sogoni"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"10_30am",
+            "name":"Calvin Cheng"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"10_30am",
+            "name":"Jenny Li"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"10_30am",
+            "name":"Jamie Kunzmann"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"10_30am",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"MONDAY",
+            "time":"11_00am",
+            "name":"Wonje Kang"
+        },
+        {
+            "day":"MONDAY",
+            "time":"11_00am",
+            "name":"Wonyong Jeong"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"11_00am",
+            "name":"Jerrel Sogoni"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"11_00am",
+            "name":"Calvin Cheng"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"11_00am",
+            "name":"Jenny Li"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"11_00am",
+            "name":"Jamie Kunzmann"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"11_00am",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"MONDAY",
+            "time":"11_30am",
+            "name":"Wonje Kang"
+        },
+        {
+            "day":"MONDAY",
+            "time":"11_30am",
+            "name":"Wonyong Jeong"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"11_30am",
+            "name":"Robert Trujillo"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"11_30am",
+            "name":"Yu Zhao"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"11_30am",
+            "name":"Calvin Cheng"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"11_30am",
+            "name":"Yu Zhao"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"11_30am",
+            "name":"Jamie Kunzmann"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"11_30am",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"MONDAY",
+            "time":"12_00pm",
+            "name":"Calvin Cheng"
+        },
+        {
+            "day":"MONDAY",
+            "time":"12_00pm",
+            "name":"Jenny Li"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"12_00pm",
+            "name":"Robert Trujillo"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"12_00pm",
+            "name":"Jerrel Sogoni"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"12_00pm",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"MONDAY",
+            "time":"12_30pm",
+            "name":"Calvin Cheng"
+        },
+        {
+            "day":"MONDAY",
+            "time":"12_30pm",
+            "name":"Jenny Li"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"12_30pm",
+            "name":"Robert Trujillo"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"12_30pm",
+            "name":"Jerrel Sogoni"
+        },
+        {
+            "day":"MONDAY",
+            "time":"1_00pm",
+            "name":"Calvin Cheng"
+        },
+        {
+            "day":"MONDAY",
+            "time":"1_00pm",
+            "name":"Jenny Li"
+        },
+        {
+            "day":"MONDAY",
+            "time":"1_00pm",
+            "name":"Robert Trujillo"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"1_00pm",
+            "name":"Jamie Kunzmann"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"1_00pm",
+            "name":"Ali Afzal"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"1_00pm",
+            "name":"Hsiang-Ju Lai"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"1_00pm",
+            "name":"Jamie Kunzmann"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"1_00pm",
+            "name":"Hsiang-Ju Lai"
+        },
+        {
+            "day":"MONDAY",
+            "time":"1_30pm",
+            "name":"Calvin Cheng"
+        },
+        {
+            "day":"MONDAY",
+            "time":"1_30pm",
+            "name":"Jenny Li"
+        },
+        {
+            "day":"MONDAY",
+            "time":"1_30pm",
+            "name":"Robert Trujillo"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"1_30pm",
+            "name":"Jamie Kunzmann"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"1_30pm",
+            "name":"Ali Afzal"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"1_30pm",
+            "name":"Hsiang-Ju Lai"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"1_30pm",
+            "name":"Jamie Kunzmann"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"1_30pm",
+            "name":"Hsiang-Ju Lai"
+        },
+        {
+            "day":"MONDAY",
+            "time":"2_00pm",
+            "name":"Robert Trujillo"
+        },
+        {
+            "day":"MONDAY",
+            "time":"2_00pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"2_00pm",
+            "name":"Ali Afzal"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"2_00pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"2_00pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"MONDAY",
+            "time":"2_30pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"MONDAY",
+            "time":"2_30pm",
+            "name":"James Hoffman"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"2_30pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"2_30pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"2_30pm",
+            "name":"Yu Zhao"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"2_30pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"2_30pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"2_30pm",
+            "name":"Milto Ndrenika"
+        },
+        {
+            "day":"MONDAY",
+            "time":"3_00pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"MONDAY",
+            "time":"3_00pm",
+            "name":"James Hoffman"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"3_00pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"3_00pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"3_00pm",
+            "name":"Yu Zhao"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"3_00pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"3_00pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"3_00pm",
+            "name":"Milto Ndrenika"
+        },
+        {
+            "day":"MONDAY",
+            "time":"3_30pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"MONDAY",
+            "time":"3_30pm",
+            "name":"James Hoffman"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"3_30pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"3_30pm",
+            "name":"Bryan Robicheau"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"3_30pm",
+            "name":"Anthony Roy"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"3_30pm",
+            "name":"Milto Ndrenika"
+        },
+        {
+            "day":"MONDAY",
+            "time":"4_00pm",
+            "name":"James Hoffman"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"4_00pm",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"4_00pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"4_00pm",
+            "name":"Muhammad R Islam"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"4_00pm",
+            "name":"Milto Ndrenika"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"4_30pm",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"4_30pm",
+            "name":"Jacob Evans"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"4_30pm",
+            "name":"Muhammad R Islam"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"5_00pm",
+            "name":"Serge Crane"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"5_00pm",
+            "name":"Muhammad R Islam"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"5_00pm",
+            "name":"Chaeyoung Lee"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"5_30pm",
+            "name":"Ali Afzal"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"5_30pm",
+            "name":"Muhammad R Islam"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"5_30pm",
+            "name":"Chaeyoung Lee"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"6_00pm",
+            "name":"Michael Mathew"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"6_00pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"6_00pm",
+            "name":"Chaeyoung Lee"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"6_00pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"6_30pm",
+            "name":"Michael Mathew"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"6_30pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"THURSDAY",
+            "time":"6_30pm",
+            "name":"Chaeyoung Lee"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"6_30pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"MONDAY",
+            "time":"7_00pm",
+            "name":"Hsiang-Ju Lai"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"7_00pm",
+            "name":"Michael Mathew"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"7_00pm",
+            "name":"Hsiang-Ju Lai"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"7_00pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"7_00pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"MONDAY",
+            "time":"7_30pm",
+            "name":"Hsiang-Ju Lai"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"7_30pm",
+            "name":"Michael Mathew"
+        },
+        {
+            "day":"TUESDAY",
+            "time":"7_30pm",
+            "name":"Hsiang-Ju Lai"
+        },
+        {
+            "day":"WEDNESDAY",
+            "time":"7_30pm",
+            "name":"Aarin Chase"
+        },
+        {
+            "day":"FRIDAY",
+            "time":"7_30pm",
+            "name":"Aarin Chase"
+        }
+    ]
+}
