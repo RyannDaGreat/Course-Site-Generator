@@ -9,12 +9,12 @@ import _App_._GUI_._Modes_._RecitationData_.RecitationData;
 @SuppressWarnings("WeakerAccess")
 public class Modes
 {
-    TAData tadata;
-    ProjectData projectData;
-    ModeSelector modeSelector;
-    ScheduleData scheduleData;
-    CourseDetails courseDetails;
-    RecitationData recitationData;
+    public TAData tadata;
+    public ProjectData projectData;
+    public ModeSelector modeSelector;
+    public ScheduleData scheduleData;
+    public CourseDetails courseDetails;
+    public RecitationData recitationData;
     public Modes(App app)
     {
         tadata=new TAData(app);
