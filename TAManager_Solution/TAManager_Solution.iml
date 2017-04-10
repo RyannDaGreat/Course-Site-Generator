@@ -8,10 +8,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="PropertiesManager1" level="project" />
-    <orderEntry type="library" name="javax.json-1.0.4" level="project" />
-    <orderEntry type="library" name="DesktopJavaFramework" level="project" />
-    <orderEntry type="library" name="PropertiesManager" level="project" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="DesktopJavaFramework" level="project" />
+    <orderEntry type="library" name="javax.json-1.0.4" level="project" />
+    <orderEntry type="library" name="PropertiesManager" level="project" />
     <orderEntry type="module" module-name="DesktopJavaFramework" />
     <orderEntry type="module" module-name="jTPS" />
     <orderEntry type="module" module-name="PropertiesManager" />

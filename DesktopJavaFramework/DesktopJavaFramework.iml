@@ -8,9 +8,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="PropertiesManager1" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="commons-io-2.5" level="project" />
     <orderEntry type="library" name="PropertiesManager" level="project" />
-    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="module" module-name="PropertiesManager" />
   </component>
 </module>
