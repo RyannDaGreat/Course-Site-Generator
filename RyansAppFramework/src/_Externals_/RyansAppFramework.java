@@ -26,9 +26,13 @@ public class RyansAppFramework extends Application
 
         HBox Toolbar=new HBox(new Button("A"),new Button("B"),new Button("C"));
         GridPane Grid=new GridPane();
-        Grid.
+
+
+
 
         Button btn=new Button();
+
+
         btn.setText("Say 'Hello World'");
         btn.setOnAction(event->System.out.println("Hello World!"));
         StackPane root=new StackPane();
