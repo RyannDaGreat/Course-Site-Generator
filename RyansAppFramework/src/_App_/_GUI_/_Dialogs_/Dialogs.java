@@ -19,6 +19,7 @@ public class Dialogs
     }
     private dialogOptions intToDialogOption(int i)//Just here to prevent code-redundancy in this class
     {
+        /*@formatter:off*/
         if(i==0)
             return dialogOptions.YES;
         if(i==1)
@@ -27,12 +28,13 @@ public class Dialogs
             return dialogOptions.CANCEL;
         assert false;//This should not happen.
         return null;
+        /*@formatter:on*/
     }
     public dialogOptions yesNoCancel(String title,String message)//A dialog with the options Yes, No and Cancel
     {
         //Example: r.print(new App().gui.dialogs.yesNoCancel("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
         //Based on: http://www.java2s.com/Tutorial/Java/0240__Swing/Yesnocanceldialog.htm
-        return intToDialogOption(JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_CANCEL_OPTION))
+        return intToDialogOption(JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_CANCEL_OPTION));
     }
     public dialogOptions yesNo(String title,String message)//A dialog with the options Yes and No
     {
