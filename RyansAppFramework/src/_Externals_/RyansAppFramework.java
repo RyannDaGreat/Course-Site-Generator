@@ -20,6 +20,9 @@ public class RyansAppFramework extends Application
     @Override
     public void start(Stage primaryStage)
     {
+        App app=new App();
+
+
         Button btn=new Button();
         r.say("Hello");
         btn.setText("Say 'Hello World'");
@@ -36,11 +39,11 @@ public class RyansAppFramework extends Application
      */
     public static void main(String[] args)
     {
-        r.print(new App().gui.dialogs.openFile("Open","png"));
-        r.print(new App().gui.dialogs.saveFile("Open","png"));
-        r.print(new App().gui.dialogs.openDirectory("Open","png"));
-        r.print(new App().gui.dialogs.openFile("Open","png"));
-        r.print(new App().gui.dialogs.yesNoCancel("title","Message")==Dialogs.dialogOptions.CANCEL);
+        // r.print(new App().gui.dialogs.openFile("Open","png"));
+        // r.print(new App().gui.dialogs.saveFile("Open","png"));
+        // r.print(new App().gui.dialogs.openDirectory("Open","png"));
+        // r.print(new App().gui.dialogs.openFile("Open","png"));
+        // r.print(new App().gui.dialogs.yesNoCancel("title","Message")==Dialogs.dialogOptions.CANCEL);
         launch(args);
     }
 }
