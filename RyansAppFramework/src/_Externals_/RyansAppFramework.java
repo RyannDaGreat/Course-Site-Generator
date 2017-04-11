@@ -9,6 +9,8 @@ import _App_._GUI_._Dialogs_.Dialogs;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -22,9 +24,11 @@ public class RyansAppFramework extends Application
     {
         App app=new App();
 
+        HBox Toolbar=new HBox(new Button("A"),new Button("B"),new Button("C"));
+        GridPane Grid=new GridPane();
+        Grid.
 
         Button btn=new Button();
-        r.say("Hello");
         btn.setText("Say 'Hello World'");
         btn.setOnAction(event->System.out.println("Hello World!"));
         StackPane root=new StackPane();
@@ -39,7 +43,6 @@ public class RyansAppFramework extends Application
      */
     public static void main(String[] args)
     {
-        r.print(new App().gui.dialogs.openFile("Open","png","aoidj","aoijds"));
         // r.print(new App().gui.dialogs.saveFile("Open","png"));
         // r.print(new App().gui.dialogs.openDirectory("Open","png"));
         // r.print(new App().gui.dialogs.openFile("Open","png"));
