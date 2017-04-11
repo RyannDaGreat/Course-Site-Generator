@@ -1,4 +1,4 @@
-package _Externals_;
+package _Experiments_;
 
 import javafx.collections.FXCollections;
 import javafx.scene.text.*;

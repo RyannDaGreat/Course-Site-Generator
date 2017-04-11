@@ -1,10 +1,10 @@
-
+package _Experiments_;
 import javax.swing.JFileChooser;
 import java.io.File;
 public class Main {
     public static void main(String s[]) {
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new java.io.File("."));//Set pwd
+        chooser.setCurrentDirectory(new java.io.File(""));//Set pwd
         chooser.setDialogTitle("choosertitle");
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         chooser.setAcceptAllFileFilterUsed(false);

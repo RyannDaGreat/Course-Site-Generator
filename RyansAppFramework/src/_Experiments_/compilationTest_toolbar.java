@@ -1,4 +1,4 @@
-package _Externals_;
+package _Experiments_;
 
 import javafx.scene.paint.*;
 import javafx.scene.text.*;

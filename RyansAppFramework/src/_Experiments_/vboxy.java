@@ -1,67 +1,54 @@
-package _Externals_;
+package _Experiments_;
 
+import _Externals_.r;
 import javafx.scene.text.*;
-import javafx.geometry.*;
-import javafx.scene.effect.*;
-import javafx.scene.control.*;
 import java.lang.*;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
 
-public class boiler extends VBox {
+public class vboxy extends VBox {
 
-    //region List Of Components
-    public final TitledPane titledPane;
-    public final AnchorPane anchorPane;
-    public final GridPane gridPane;
-    public final ColumnConstraints columnConstraints;
-    public final ColumnConstraints columnConstraints0;
-    public final ColumnConstraints columnConstraints1;
-    public final ColumnConstraints columnConstraints2;
-    public final RowConstraints rowConstraints;
-    public final RowConstraints rowConstraints0;
-    public final RowConstraints rowConstraints1;
-    public final RowConstraints rowConstraints2;
-    public final RowConstraints rowConstraints3;
-    public final RowConstraints rowConstraints4;
-    public final Text text;
-    public final Text text0;
-    public final Text text1;
-    public final Text text2;
-    public final Text text3;
-    public final Text text4;
-    public final Text text5;
-    public final Text text6;
-    public final TextField textField;
-    public final TextField textField0;
-    public final TextField textField1;
-    public final ComboBox comboBox;
-    public final ComboBox comboBox0;
-    public final ComboBox comboBox1;
-    public final ComboBox comboBox2;
-    public final Text text7;
-    public final Button button;
-    public final TitledPane titledPane0;
-    public final AnchorPane anchorPane0;
-    public final TitledPane titledPane1;
-    public final AnchorPane anchorPane1;
-    public final FlowPane flowPane;
-    //endregion
-    public boiler() {
+    protected final TitledPane titledPane;
+    protected final AnchorPane anchorPane;
+    protected final GridPane gridPane;
+    protected final Text text;
+    protected final Text text0;
+    protected final Text text1;
+    protected final Text text2;
+    protected final Text text3;
+    protected final Text text4;
+    protected final Text text5;
+    protected final Text text6;
+    protected final TextField textField;
+    protected final TextField textField0;
+    protected final TextField textField1;
+    protected final ComboBox comboBox;
+    protected final ComboBox comboBox0;
+    protected final ComboBox comboBox1;
+    protected final ComboBox comboBox2;
+    protected final Text text7;
+    protected final Button button;
+    protected final ColumnConstraints columnConstraints;
+    protected final ColumnConstraints columnConstraints0;
+    protected final ColumnConstraints columnConstraints1;
+    protected final ColumnConstraints columnConstraints2;
+    protected final RowConstraints rowConstraints;
+    protected final RowConstraints rowConstraints0;
+    protected final RowConstraints rowConstraints1;
+    protected final RowConstraints rowConstraints2;
+    protected final RowConstraints rowConstraints3;
+    protected final RowConstraints rowConstraints4;
+    protected final TitledPane titledPane0;
+    protected final AnchorPane anchorPane0;
+    protected final FlowPane flowPane;
+    protected final TitledPane titledPane1;
+    protected final AnchorPane anchorPane1;
 
-        //region Creation of Componenents
+    public vboxy() {
+
         titledPane = new TitledPane();
         anchorPane = new AnchorPane();
         gridPane = new GridPane();
-        columnConstraints = new ColumnConstraints();
-        columnConstraints0 = new ColumnConstraints();
-        columnConstraints1 = new ColumnConstraints();
-        columnConstraints2 = new ColumnConstraints();
-        rowConstraints = new RowConstraints();
-        rowConstraints0 = new RowConstraints();
-        rowConstraints1 = new RowConstraints();
-        rowConstraints2 = new RowConstraints();
-        rowConstraints3 = new RowConstraints();
-        rowConstraints4 = new RowConstraints();
         text = new Text();
         text0 = new Text();
         text1 = new Text();
@@ -79,19 +66,26 @@ public class boiler extends VBox {
         comboBox2 = new ComboBox();
         text7 = new Text();
         button = new Button();
+        columnConstraints = new ColumnConstraints();
+        columnConstraints0 = new ColumnConstraints();
+        columnConstraints1 = new ColumnConstraints();
+        columnConstraints2 = new ColumnConstraints();
+        rowConstraints = new RowConstraints();
+        rowConstraints0 = new RowConstraints();
+        rowConstraints1 = new RowConstraints();
+        rowConstraints2 = new RowConstraints();
+        rowConstraints3 = new RowConstraints();
+        rowConstraints4 = new RowConstraints();
         titledPane0 = new TitledPane();
         anchorPane0 = new AnchorPane();
+        flowPane = new FlowPane();
         titledPane1 = new TitledPane();
         anchorPane1 = new AnchorPane();
-        flowPane = new FlowPane();
-        //endregion
 
-        setMaxHeight(USE_PREF_SIZE);
-        setMaxWidth(USE_PREF_SIZE);
-        setMinHeight(USE_PREF_SIZE);
-        setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(800.0);
-        setPrefWidth(1280.0);
+
+        // setPrefHeight(200.0);
+        // setPrefWidth(100.0);
+        setSpacing(3.0);
 
         titledPane.setAnimated(false);
         titledPane.setCollapsible(false);
@@ -110,53 +104,10 @@ public class boiler extends VBox {
         gridPane.setCacheShape(false);
         gridPane.setCenterShape(false);
         gridPane.setFocusTraversable(true);
+        gridPane.setGridLinesVisible(true);
         gridPane.setPrefHeight(416.0);
         gridPane.setPrefWidth(1918.0);
         gridPane.setScaleShape(false);
-
-        columnConstraints.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints.setMaxWidth(938.9019165039062);
-        columnConstraints.setMinWidth(10.0);
-        columnConstraints.setPrefWidth(411.0934753417969);
-
-        columnConstraints0.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints0.setMaxWidth(1777.0434799194336);
-        columnConstraints0.setMinWidth(0.0);
-        columnConstraints0.setPrefWidth(537.8076171875);
-
-        columnConstraints1.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints1.setMaxWidth(1777.0434799194336);
-        columnConstraints1.setMinWidth(10.0);
-        columnConstraints1.setPrefWidth(493.7978515625);
-
-        columnConstraints2.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints2.setMaxWidth(1777.0434799194336);
-        columnConstraints2.setMinWidth(10.0);
-        columnConstraints2.setPrefWidth(457.2021484375);
-
-        rowConstraints.setMinHeight(10.0);
-        rowConstraints.setPrefHeight(30.0);
-        rowConstraints.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
-
-        rowConstraints0.setMinHeight(10.0);
-        rowConstraints0.setPrefHeight(30.0);
-        rowConstraints0.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
-
-        rowConstraints1.setMinHeight(10.0);
-        rowConstraints1.setPrefHeight(30.0);
-        rowConstraints1.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
-
-        rowConstraints2.setMinHeight(10.0);
-        rowConstraints2.setPrefHeight(30.0);
-        rowConstraints2.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
-
-        rowConstraints3.setMinHeight(10.0);
-        rowConstraints3.setPrefHeight(30.0);
-        rowConstraints3.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
-
-        rowConstraints4.setMinHeight(10.0);
-        rowConstraints4.setPrefHeight(30.0);
-        rowConstraints4.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
 
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
@@ -233,6 +184,8 @@ public class boiler extends VBox {
         comboBox2.setPrefWidth(150.0);
         comboBox2.setPromptText("2017");
 
+        r.fitToParent(comboBox2);
+
         GridPane.setColumnIndex(text7, 1);
         GridPane.setColumnSpan(text7, 2);
         GridPane.setHalignment(text7, javafx.geometry.HPos.LEFT);
@@ -246,41 +199,75 @@ public class boiler extends VBox {
         GridPane.setRowIndex(button, 5);
         button.setMnemonicParsing(false);
         button.setText("Change");
+
+        columnConstraints.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        columnConstraints.setMaxWidth(938.9019165039062);
+        columnConstraints.setMinWidth(10.0);
+        columnConstraints.setPrefWidth(411.0934753417969);
+
+        columnConstraints0.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        columnConstraints0.setMaxWidth(1777.0434799194336);
+        columnConstraints0.setMinWidth(0.0);
+        columnConstraints0.setPrefWidth(537.8076171875);
+
+        columnConstraints1.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        columnConstraints1.setMaxWidth(1777.0434799194336);
+        columnConstraints1.setMinWidth(10.0);
+        columnConstraints1.setPrefWidth(493.7978515625);
+
+        columnConstraints2.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        columnConstraints2.setMaxWidth(1777.0434799194336);
+        columnConstraints2.setMinWidth(10.0);
+        columnConstraints2.setPrefWidth(457.2021484375);
+
+        rowConstraints.setMinHeight(10.0);
+        rowConstraints.setPrefHeight(30.0);
+        rowConstraints.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+
+        rowConstraints0.setMinHeight(10.0);
+        rowConstraints0.setPrefHeight(30.0);
+        rowConstraints0.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+
+        rowConstraints1.setMinHeight(10.0);
+        rowConstraints1.setPrefHeight(30.0);
+        rowConstraints1.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+
+        rowConstraints2.setMinHeight(10.0);
+        rowConstraints2.setPrefHeight(30.0);
+        rowConstraints2.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+
+        rowConstraints3.setMinHeight(10.0);
+        rowConstraints3.setPrefHeight(30.0);
+        rowConstraints3.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+
+        rowConstraints4.setMinHeight(10.0);
+        rowConstraints4.setPrefHeight(30.0);
+        rowConstraints4.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
         titledPane.setContent(anchorPane);
 
         titledPane0.setAnimated(false);
         titledPane0.setCollapsible(false);
-        titledPane0.setText("Page Style");
+        titledPane0.setText("Site Template");
 
         anchorPane0.setMinHeight(0.0);
         anchorPane0.setMinWidth(0.0);
         anchorPane0.setPrefHeight(180.0);
         anchorPane0.setPrefWidth(200.0);
+
+        flowPane.setPrefHeight(200.0);
+        flowPane.setPrefWidth(200.0);
         titledPane0.setContent(anchorPane0);
 
         titledPane1.setAnimated(false);
         titledPane1.setCollapsible(false);
-        titledPane1.setText("Site Template");
+        titledPane1.setText("Page Style");
 
         anchorPane1.setMinHeight(0.0);
         anchorPane1.setMinWidth(0.0);
         anchorPane1.setPrefHeight(180.0);
         anchorPane1.setPrefWidth(200.0);
-
-        flowPane.setPrefHeight(200.0);
-        flowPane.setPrefWidth(200.0);
         titledPane1.setContent(anchorPane1);
 
-        gridPane.getColumnConstraints().add(columnConstraints);
-        gridPane.getColumnConstraints().add(columnConstraints0);
-        gridPane.getColumnConstraints().add(columnConstraints1);
-        gridPane.getColumnConstraints().add(columnConstraints2);
-        gridPane.getRowConstraints().add(rowConstraints);
-        gridPane.getRowConstraints().add(rowConstraints0);
-        gridPane.getRowConstraints().add(rowConstraints1);
-        gridPane.getRowConstraints().add(rowConstraints2);
-        gridPane.getRowConstraints().add(rowConstraints3);
-        gridPane.getRowConstraints().add(rowConstraints4);
         gridPane.getChildren().add(text);
         gridPane.getChildren().add(text0);
         gridPane.getChildren().add(text1);
@@ -298,10 +285,20 @@ public class boiler extends VBox {
         gridPane.getChildren().add(comboBox2);
         gridPane.getChildren().add(text7);
         gridPane.getChildren().add(button);
+        gridPane.getColumnConstraints().add(columnConstraints);
+        gridPane.getColumnConstraints().add(columnConstraints0);
+        gridPane.getColumnConstraints().add(columnConstraints1);
+        gridPane.getColumnConstraints().add(columnConstraints2);
+        gridPane.getRowConstraints().add(rowConstraints);
+        gridPane.getRowConstraints().add(rowConstraints0);
+        gridPane.getRowConstraints().add(rowConstraints1);
+        gridPane.getRowConstraints().add(rowConstraints2);
+        gridPane.getRowConstraints().add(rowConstraints3);
+        gridPane.getRowConstraints().add(rowConstraints4);
         anchorPane.getChildren().add(gridPane);
         getChildren().add(titledPane);
+        anchorPane0.getChildren().add(flowPane);
         getChildren().add(titledPane0);
-        anchorPane1.getChildren().add(flowPane);
         getChildren().add(titledPane1);
 
     }
