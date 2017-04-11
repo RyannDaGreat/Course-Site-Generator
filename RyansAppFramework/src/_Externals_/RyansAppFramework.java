@@ -32,7 +32,7 @@ public class RyansAppFramework extends Application
 
         // Pane root=new Pane();
         // root.getChildren().add(btn);
-        Scene scene=new Scene(root,300,250);
+        Scene scene=new Scene(new sampleBase(),300,250);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();

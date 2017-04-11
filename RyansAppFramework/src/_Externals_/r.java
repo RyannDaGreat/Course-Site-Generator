@@ -1030,8 +1030,8 @@ public class r
     }
     public static void say(String message,voices voice)
     {
-        //I've only tested this method on my Mac. I don't think it will work on windows as it relies on the Mac's terminal-based text-to-speech.
-        //It will invoke a text-to-speech method on the Mac's bash (or terminal or shell idk what to call it).
+        //I've only tested this method on my Mac. I don't think it will work on windows as it relies on the Mac's terminal-based courseInfo_subjectText-to-speech.
+        //It will invoke a courseInfo_subjectText-to-speech method on the Mac's bash (or terminal or shell idk what to call it).
         attemptShellCommandIgnoreExceptions("say -v "+voice+" "+message);
     }
     public static void say(String message)
@@ -1040,7 +1040,7 @@ public class r
         say(message,defaultVoice);
     }
     //endregion
-    //region fansi (Colorful console text via ANSI stuff)
+    //region fansi (Colorful console courseInfo_subjectText via ANSI stuff)
     public enum fansi_colors
     {
         black(0),red(1),green(2),yellow(3),blue(4),magenta(5),cyan(6),gray(7);
