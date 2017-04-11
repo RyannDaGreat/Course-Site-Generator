@@ -54,11 +54,11 @@ public class Dialogs
     //endregion―――――――――――――――――――――――――――――――――――――――――
     //region File/Dir Open/Save Dialogs
     //DOCUMENTATION:
-    //'Saving' refers to a dialog where the user has to put in a string, as you would normally do when saving a file.
-    //'Opening' refers to selecting exclusively from files/directories that are already there.
-    //String[] extensions refers to the available types of files you normally choose from. Leave it blank to enable all filetypes.
-    //All methods here are derived from four combinations of true and false from fileDialog, which is private for that reason.
-    //These methods can be copy-pasted to and from the r class if necessary.
+        //'Saving' refers to a dialog where the user has to put in a string, as you would normally do when saving a file.
+        //'Opening' refers to selecting exclusively from files/directories that are already there.
+        //String[] extensions refers to the available types of files you normally choose from. Leave it blank to enable all filetypes.
+        //All methods here are derived from four combinations of true and false from fileDialog, which is private for that reason.
+        //These methods can be copy-pasted to and from the r class if necessary.
     private File fileDialog(String title,boolean openIfTrueElseSave,boolean fileIfTrueElseDir,String...extensions)//Leave extensions blank to accept all file types
     {
         /*@formatter:off*/

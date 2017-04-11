@@ -39,7 +39,7 @@ public class RyansAppFramework extends Application
      */
     public static void main(String[] args)
     {
-        // r.print(new App().gui.dialogs.openFile("Open","png"));
+        r.print(new App().gui.dialogs.openFile("Open","png","aoidj","aoijds"));
         // r.print(new App().gui.dialogs.saveFile("Open","png"));
         // r.print(new App().gui.dialogs.openDirectory("Open","png"));
         // r.print(new App().gui.dialogs.openFile("Open","png"));

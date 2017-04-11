@@ -1,3 +1,7 @@
 1. Make IO work. Must be able to load XML properties.
 2. GUI Buttons/Tab Switching Etc
 3. Loading/Saving Files
+
+
+
+1. CHECKPOINT: Got Yes/No/Cancel and File IO dialogs working
