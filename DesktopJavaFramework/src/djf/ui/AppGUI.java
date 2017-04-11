@@ -37,7 +37,7 @@ public class AppGUI
     // THIS IS THE APPLICATION WINDOW
     protected Stage primaryStage;
     // THIS IS THE STAGE'S SCENE GRAPH
-    protected Scene primaryScene;
+    public Scene primaryScene;
     // THIS PANE ORGANIZES THE BIG PICTURE CONTAINERS FOR THE
     // APPLICATION AppGUI. NOTE THAT THE WORKSPACE WILL GO
     // IN THE CENTER REGION OF THE appPane

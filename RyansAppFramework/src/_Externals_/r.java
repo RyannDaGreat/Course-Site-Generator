@@ -1,5 +1,10 @@
 package _Externals_;
 import _App_._GUI_._Dialogs_.Dialogs;
+import javafx.scene.Node;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -154,6 +159,20 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    //region ―――――――――――――――――――――――――――――PROJECT SPECIFIC THINGS―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+    public static void fitToParent(Node x)//Used for boilerplates
+    {
+        VBox.setVgrow(x,Priority.ALWAYS);
+        HBox.setHgrow(x,Priority.ALWAYS);
+        AnchorPane.setLeftAnchor(x,0d);
+        AnchorPane.setRightAnchor(x,0d);
+        AnchorPane.setTopAnchor(x,0d);
+        AnchorPane.setBottomAnchor(x,0d);
+    }
+    //endregion
+
+
+
     //region Console Outputs: print() and println() methods:
     public static void println()
     {
