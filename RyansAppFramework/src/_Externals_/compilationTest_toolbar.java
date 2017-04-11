@@ -25,8 +25,10 @@ public class compilationTest_toolbar extends ToolBar
         undoButton=new Button();
         redoButton=new Button();
         aboutButton=new Button();
+        //
         setPrefHeight(40.0);
         setPrefWidth(1000.0);
+        //
         newButton.setMnemonicParsing(false);
         newButton.setText("New");
         loadButton.setMnemonicParsing(false);
@@ -44,7 +46,7 @@ public class compilationTest_toolbar extends ToolBar
         redoButton.setText("Redo");
         aboutButton.setMnemonicParsing(false);
         aboutButton.setText("About");
-
+        //
         getItems().add(newButton);
         getItems().add(loadButton);
         getItems().add(saveButton);
