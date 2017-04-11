@@ -1,3 +1,9 @@
 1. Make IO work. Must be able to load XML properties.
 2. GUI Buttons/Tab Switching Etc
 3. Loading/Saving Files
+
+
+
+1. CHECKPOINT: Got Yes/No/Cancel and File IO dialogs working
+Everything is either public or private. No package-private or protected Bullcrud.
+You should only edit files in the _App_ package if that java file is the only file in its package

@@ -9,10 +9,7 @@ import _App_._GUI_._Dialogs_.Dialogs;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 /**
  * @author Ryan
@@ -26,17 +23,15 @@ public class RyansAppFramework extends Application
 
         HBox Toolbar=new HBox(new Button("A"),new Button("B"),new Button("C"));
         GridPane Grid=new GridPane();
-
-
-
-
         Button btn=new Button();
-
 
         btn.setText("Say 'Hello World'");
         btn.setOnAction(event->System.out.println("Hello World!"));
-        StackPane root=new StackPane();
-        root.getChildren().add(btn);
+
+        VBox root=new VBox(Toolbar,btn);
+
+        // Pane root=new Pane();
+        // root.getChildren().add(btn);
         Scene scene=new Scene(root,300,250);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
