@@ -3,6 +3,7 @@ import _App_.App;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
+import java.util.Arrays;
 @SuppressWarnings("WeakerAccess")
 public class Dialogs
 {
@@ -11,6 +12,7 @@ public class Dialogs
     {
         this.app=app;
     }
+    //region Yes/No/Cancel Dialogs
     public enum dialogOptions//Used for checking the values of various dialog results
     {
         YES,NO,CANCEL
@@ -49,14 +51,42 @@ public class Dialogs
     {
         JOptionPane.showConfirmDialog(null,message,title,JOptionPane.OK_OPTION);
     }
-    public File selectFile(String...allowedFileExtensions)//You can leave allowedFileExtensions as an empty String[] if you want to accept all files
+    //endregion―――――――――――――――――――――――――――――――――――――――――
+    //region File/Dir Open/Save Dialogs
+    //DOCUMENTATION:
+    //'Saving' refers to a dialog where the user has to put in a string, as you would normally do when saving a file.
+    //'Opening' refers to selecting exclusively from files/directories that are already there.
+    //String[] extensions refers to the available types of files you normally choose from. Leave it blank to enable all filetypes.
+    //All methods here are derived from four combinations of true and false from fileDialog, which is private for that reason.
+    //These methods can be copy-pasted to and from the r class if necessary.
+    private File fileDialog(String title,boolean openIfTrueElseSave,boolean fileIfTrueElseDir,String...extensions)//Leave extensions blank to accept all file types
     {
         /*@formatter:off*/
-        JFileChooser fileChooser=new JFileChooser();
-        if(allowedFileExtensions.length!=0)//The user has specified which filetypes they want to restrict the input to.
-            fileChooser.addChoosableFileFilter(new FileNameExtensionFilter(null,allowedFileExtensions));
-        fileChooser.showOpenDialog(null);
-        return fileChooser.getSelectedFile();//From here you can do things such as selectedFile.getPath() or selectedFile.getName() etc
+        JFileChooser chooser=new JFileChooser();
+        chooser.setDialogTitle(title);
+        if(extensions.length!=0)chooser.setFileFilter(new FileNameExtensionFilter(Arrays.toString(extensions),extensions));
+        chooser.setFileSelectionMode(fileIfTrueElseDir?JFileChooser.FILES_ONLY:JFileChooser.DIRECTORIES_ONLY);
+        chooser.setCurrentDirectory(new java.io.File("."));//Set pwd
+        if(openIfTrueElseSave)chooser.showOpenDialog(null);//Show the dialog
+        else chooser.showSaveDialog(null);//Show the dialog
+        return chooser.getSelectedFile();
         /*@formatter:on*/
     }
+    public File openFile(String title,String...extensions)
+    {
+        return fileDialog(title,true,true,extensions);
+    }
+    public File openDirectory(String title,String...extensions)
+    {
+        return fileDialog(title,true,false,extensions);
+    }
+    public File saveFile(String title,String...extensions)//Save is defined as a thing where you gotta type out a new file path or something in the dialog, as opposed to open where you only select whats there
+    {
+        return fileDialog(title,false,true,extensions);
+    }
+    public File saveDirectory(String title,String...extensions)
+    {
+        return fileDialog(title,false,false,extensions);
+    }
+    //endregion
 }
