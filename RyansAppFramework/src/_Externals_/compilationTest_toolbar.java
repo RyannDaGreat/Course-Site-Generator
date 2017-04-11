@@ -1,8 +1,9 @@
-package _App_._GUI_._Toolbar_._Boilerplate_;//Created by Ryan on 4/10/17.
-import _App_.App;
+package _Externals_;
 import javafx.scene.control.Button;
+import javafx.scene.control.ToolBar;
 import javafx.scene.layout.Pane;
-public class Boilerplate extends javafx.scene.control.ToolBar
+@SuppressWarnings("WeakerAccess")
+public class compilationTest_toolbar extends ToolBar
 {
     public final Button newButton;
     public final Button loadButton;
@@ -13,10 +14,8 @@ public class Boilerplate extends javafx.scene.control.ToolBar
     public final Button undoButton;
     public final Button redoButton;
     public final Button aboutButton;
-    public App app;
-    public Boilerplate(App app)
+    public compilationTest_toolbar()
     {
-        this.app=app;
         newButton=new Button();
         loadButton=new Button();
         saveButton=new Button();
@@ -45,6 +44,7 @@ public class Boilerplate extends javafx.scene.control.ToolBar
         redoButton.setText("Redo");
         aboutButton.setMnemonicParsing(false);
         aboutButton.setText("About");
+
         getItems().add(newButton);
         getItems().add(loadButton);
         getItems().add(saveButton);
@@ -56,5 +56,3 @@ public class Boilerplate extends javafx.scene.control.ToolBar
         getItems().add(aboutButton);
     }
 }
-
-

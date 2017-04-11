@@ -26,7 +26,6 @@ public  class sampleBase extends VBox {
 
     protected final TitledPane courseInfoTitledPane;
     protected final AnchorPane courseInfo_AnchorPane;
-
     protected final GridPane ciCd_ⵁ0;
     protected final ColumnConstraints ciCd_ⵁ1;
     protected final ColumnConstraints ciCd_ⵁ2;
@@ -38,7 +37,6 @@ public  class sampleBase extends VBox {
     protected final RowConstraints ciCd_ⵁ8;
     protected final RowConstraints ciCd_ⵁ9;
     protected final RowConstraints ciCd_ⵁ10;
-
     protected final Text courseInfo_subjectText;
     protected final Text courseInfo_semesterText;
     protected final Text courseInfo_numberText;
