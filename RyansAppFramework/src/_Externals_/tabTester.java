@@ -2,35 +2,31 @@ package _Externals_;
 import java.lang.*;
 
 import _App_.App;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 @SuppressWarnings("WeakerAccess")
 public class tabTester extends TabPane
 {
-    public final Tab tab;
-    public final AnchorPane anchorPane;
+    public final Tab courseDetailsTab;
+    // public final AnchorPane anchorPane;
     public final VBox vBox;
-    public final Tab tab0;
+    public final Tab fifthtab;
     // public final AnchorPane anchorPane0;
     public tabTester()
     {
         r.fitToParent(this);
-        tab=new Tab();
-        anchorPane=new AnchorPane();
+        courseDetailsTab=new Tab();
         vBox=new VBox();
-        tab0=new Tab();
+        fifthtab=new Tab();
         setTabClosingPolicy(javafx.scene.control.TabPane.TabClosingPolicy.UNAVAILABLE);
-        tab.setText("Course Details");
-        tab.setContent(new App().gui.toolbar.boilerplate);
-        tab0.setText("Fifth Tab");
-        tab.setContent(anchorPane);
+        courseDetailsTab.setText("Course Details");
+        courseDetailsTab.setContent(new AnchorPane(new App().gui.toolbar.boilerplate));
+        fifthtab.setText("Fifth Tab");
         vboxy v=new vboxy();
-        AnchorPane.setBottomAnchor(v,0.0);
+        courseDetailsTab.setContent(new AnchorPane(v));
         r.fitToParent(v);
-        anchorPane.getChildren().add(v);
         // anchorPane.getChildren().add(new TAManagerApp().gui.primaryScene.getFocusOwner());
-        getTabs().add(tab);
-        getTabs().add(tab0);
+        getTabs().add(courseDetailsTab);
+        getTabs().add(fifthtab);
     }
 }
