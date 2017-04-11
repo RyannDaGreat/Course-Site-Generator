@@ -1,5 +1,6 @@
 package _Externals_;
 
+import javafx.collections.FXCollections;
 import javafx.scene.text.*;
 import javafx.geometry.*;
 import javafx.scene.control.*;
@@ -25,18 +26,18 @@ public  class sampleBase extends VBox {
 
     protected final TitledPane courseInfoTitledPane;
     protected final AnchorPane courseInfo_AnchorPane;
-    protected final GridPane courseInfo_gridPane;
 
-    protected final ColumnConstraints columnConstraints;
-    protected final ColumnConstraints columnConstraints0;
-    protected final ColumnConstraints columnConstraints1;
-    protected final ColumnConstraints columnConstraints2;
-    protected final RowConstraints rowConstraints;
-    protected final RowConstraints rowConstraints0;
-    protected final RowConstraints rowConstraints1;
-    protected final RowConstraints rowConstraints2;
-    protected final RowConstraints rowConstraints3;
-    protected final RowConstraints rowConstraints4;
+    protected final GridPane ciCd_ⵁ0;
+    protected final ColumnConstraints ciCd_ⵁ1;
+    protected final ColumnConstraints ciCd_ⵁ2;
+    protected final ColumnConstraints ciCd_ⵁ3;
+    protected final ColumnConstraints ciCd_ⵁ4;
+    protected final RowConstraints ciCd_ⵁ5;
+    protected final RowConstraints ciCd_ⵁ6;
+    protected final RowConstraints ciCd_ⵁ7;
+    protected final RowConstraints ciCd_ⵁ8;
+    protected final RowConstraints ciCd_ⵁ9;
+    protected final RowConstraints ciCd_ⵁ10;
 
     protected final Text courseInfo_subjectText;
     protected final Text courseInfo_semesterText;
@@ -53,10 +54,11 @@ public  class sampleBase extends VBox {
     protected final ComboBox courseInfo_semesterComboBox;
     protected final ComboBox courseInfo_numberComboBox;
     protected final ComboBox courseInfo_yearComboBox;
-    protected final Text text7;
-    protected final Button button7;
-    protected final TitledPane titledPane0;
-    protected final AnchorPane anchorPane0;
+    protected final Text courseInfo_exportDirPathText;
+    protected final Button courseInfo_changeButton;
+
+    protected final TitledPane siteTemplateTitledPane;
+    protected final AnchorPane siteTemplateAnchorPane;
     protected final FlowPane flowPane;
     protected final TitledPane titledPane1;
     protected final AnchorPane anchorPane1;
@@ -86,17 +88,17 @@ public  class sampleBase extends VBox {
         courseDetails_mainVbox= new VBox();
         courseInfoTitledPane= new TitledPane();
         courseInfo_AnchorPane= new AnchorPane();
-        courseInfo_gridPane= new GridPane();
-        columnConstraints = new ColumnConstraints();
-        columnConstraints0 = new ColumnConstraints();
-        columnConstraints1 = new ColumnConstraints();
-        columnConstraints2 = new ColumnConstraints();
-        rowConstraints = new RowConstraints();
-        rowConstraints0 = new RowConstraints();
-        rowConstraints1 = new RowConstraints();
-        rowConstraints2 = new RowConstraints();
-        rowConstraints3 = new RowConstraints();
-        rowConstraints4 = new RowConstraints();
+        ciCd_ⵁ0= new GridPane();
+        ciCd_ⵁ1= new ColumnConstraints();
+        ciCd_ⵁ2= new ColumnConstraints();
+        ciCd_ⵁ3= new ColumnConstraints();
+        ciCd_ⵁ4= new ColumnConstraints();
+        ciCd_ⵁ5= new RowConstraints();
+        ciCd_ⵁ6= new RowConstraints();
+        ciCd_ⵁ7= new RowConstraints();
+        ciCd_ⵁ8= new RowConstraints();
+        ciCd_ⵁ9= new RowConstraints();
+        ciCd_ⵁ10= new RowConstraints();
         courseInfo_subjectText= new Text();
         courseInfo_semesterText= new Text();
         courseInfo_numberText= new Text();
@@ -112,10 +114,10 @@ public  class sampleBase extends VBox {
         courseInfo_semesterComboBox= new ComboBox();
         courseInfo_numberComboBox= new ComboBox();
         courseInfo_yearComboBox= new ComboBox();
-        text7 = new Text();
-        button7 = new Button();
-        titledPane0 = new TitledPane();
-        anchorPane0 = new AnchorPane();
+        courseInfo_exportDirPathText= new Text();
+        courseInfo_changeButton= new Button();
+        siteTemplateTitledPane= new TitledPane();
+        siteTemplateAnchorPane= new AnchorPane();
         flowPane = new FlowPane();
         titledPane1 = new TitledPane();
         anchorPane1 = new AnchorPane();
@@ -142,7 +144,7 @@ public  class sampleBase extends VBox {
         toolbar_newButton.setText("New");
 
         toolbar_loadButton.setMnemonicParsing(false);
-        toolbar_loadButton.setText("toolbar_loadButton");
+        toolbar_loadButton.setText("Load");
 
         toolbar_saveButton.setMnemonicParsing(false);
         toolbar_saveButton.setText("Save");
@@ -186,60 +188,60 @@ public  class sampleBase extends VBox {
         courseInfo_AnchorPane.setPrefHeight(180.0);
         courseInfo_AnchorPane.setPrefWidth(200.0);
 
-        AnchorPane.setBottomAnchor(courseInfo_gridPane,0.0);
-        AnchorPane.setLeftAnchor(courseInfo_gridPane,0.0);
-        AnchorPane.setRightAnchor(courseInfo_gridPane,0.0);
-        AnchorPane.setTopAnchor(courseInfo_gridPane,0.0);
-        courseInfo_gridPane.setCacheShape(false);
-        courseInfo_gridPane.setCenterShape(false);
-        courseInfo_gridPane.setFocusTraversable(true);
-        courseInfo_gridPane.setPrefHeight(416.0);
-        courseInfo_gridPane.setPrefWidth(1918.0);
-        courseInfo_gridPane.setScaleShape(false);
+        AnchorPane.setBottomAnchor(ciCd_ⵁ0,0.0);
+        AnchorPane.setLeftAnchor(ciCd_ⵁ0,0.0);
+        AnchorPane.setRightAnchor(ciCd_ⵁ0,0.0);
+        AnchorPane.setTopAnchor(ciCd_ⵁ0,0.0);
+        ciCd_ⵁ0.setCacheShape(false);
+        ciCd_ⵁ0.setCenterShape(false);
+        ciCd_ⵁ0.setFocusTraversable(true);
+        ciCd_ⵁ0.setPrefHeight(416.0);
+        ciCd_ⵁ0.setPrefWidth(1918.0);
+        ciCd_ⵁ0.setScaleShape(false);
 
-        columnConstraints.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints.setMaxWidth(938.9019165039062);
-        columnConstraints.setMinWidth(10.0);
-        columnConstraints.setPrefWidth(411.0934753417969);
+        ciCd_ⵁ1.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ1.setMaxWidth(938.9019165039062);
+        ciCd_ⵁ1.setMinWidth(10.0);
+        ciCd_ⵁ1.setPrefWidth(411.0934753417969);
 
-        columnConstraints0.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints0.setMaxWidth(1777.0434799194336);
-        columnConstraints0.setMinWidth(0.0);
-        columnConstraints0.setPrefWidth(537.8076171875);
+        ciCd_ⵁ2.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ2.setMaxWidth(1777.0434799194336);
+        ciCd_ⵁ2.setMinWidth(0.0);
+        ciCd_ⵁ2.setPrefWidth(537.8076171875);
 
-        columnConstraints1.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints1.setMaxWidth(1777.0434799194336);
-        columnConstraints1.setMinWidth(10.0);
-        columnConstraints1.setPrefWidth(493.7978515625);
+        ciCd_ⵁ3.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ3.setMaxWidth(1777.0434799194336);
+        ciCd_ⵁ3.setMinWidth(10.0);
+        ciCd_ⵁ3.setPrefWidth(493.7978515625);
 
-        columnConstraints2.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints2.setMaxWidth(1777.0434799194336);
-        columnConstraints2.setMinWidth(10.0);
-        columnConstraints2.setPrefWidth(457.2021484375);
+        ciCd_ⵁ4.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ4.setMaxWidth(1777.0434799194336);
+        ciCd_ⵁ4.setMinWidth(10.0);
+        ciCd_ⵁ4.setPrefWidth(457.2021484375);
 
-        rowConstraints.setMinHeight(10.0);
-        rowConstraints.setPrefHeight(30.0);
-        rowConstraints.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ5.setMinHeight(10.0);
+        ciCd_ⵁ5.setPrefHeight(30.0);
+        ciCd_ⵁ5.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
 
-        rowConstraints0.setMinHeight(10.0);
-        rowConstraints0.setPrefHeight(30.0);
-        rowConstraints0.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ6.setMinHeight(10.0);
+        ciCd_ⵁ6.setPrefHeight(30.0);
+        ciCd_ⵁ6.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
 
-        rowConstraints1.setMinHeight(10.0);
-        rowConstraints1.setPrefHeight(30.0);
-        rowConstraints1.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ7.setMinHeight(10.0);
+        ciCd_ⵁ7.setPrefHeight(30.0);
+        ciCd_ⵁ7.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
 
-        rowConstraints2.setMinHeight(10.0);
-        rowConstraints2.setPrefHeight(30.0);
-        rowConstraints2.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ8.setMinHeight(10.0);
+        ciCd_ⵁ8.setPrefHeight(30.0);
+        ciCd_ⵁ8.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
 
-        rowConstraints3.setMinHeight(10.0);
-        rowConstraints3.setPrefHeight(30.0);
-        rowConstraints3.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ9.setMinHeight(10.0);
+        ciCd_ⵁ9.setPrefHeight(30.0);
+        ciCd_ⵁ9.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
 
-        rowConstraints4.setMinHeight(10.0);
-        rowConstraints4.setPrefHeight(30.0);
-        rowConstraints4.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+        ciCd_ⵁ10.setMinHeight(10.0);
+        ciCd_ⵁ10.setPrefHeight(30.0);
+        ciCd_ⵁ10.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
 
         courseInfo_subjectText.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         courseInfo_subjectText.setStrokeWidth(0.0);
@@ -299,6 +301,7 @@ public  class sampleBase extends VBox {
         GridPane.setColumnIndex(courseInfo_subjectComboBox,1);
         courseInfo_subjectComboBox.setPrefWidth(150.0);
         courseInfo_subjectComboBox.setPromptText("CSE");
+        courseInfo_subjectComboBox.setItems(FXCollections.observableArrayList("1","2","3","4"));
 
         GridPane.setColumnIndex(courseInfo_semesterComboBox,1);
         GridPane.setRowIndex(courseInfo_semesterComboBox,1);
@@ -316,33 +319,33 @@ public  class sampleBase extends VBox {
         courseInfo_yearComboBox.setPrefWidth(150.0);
         courseInfo_yearComboBox.setPromptText("2017");
 
-        GridPane.setColumnIndex(text7, 1);
-        GridPane.setColumnSpan(text7, 2);
-        GridPane.setHalignment(text7, javafx.geometry.HPos.LEFT);
-        GridPane.setRowIndex(text7, 5);
-        text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text7.setStrokeWidth(0.0);
-        text7.setText("aodsjaosidjaoisjdoaisdjoiasjdoiasjdoaijsdoiasjdoiasjdoasjdoasidjaoijdoiajd");
+        GridPane.setColumnIndex(courseInfo_exportDirPathText,1);
+        GridPane.setColumnSpan(courseInfo_exportDirPathText,2);
+        GridPane.setHalignment(courseInfo_exportDirPathText,javafx.geometry.HPos.LEFT);
+        GridPane.setRowIndex(courseInfo_exportDirPathText,5);
+        courseInfo_exportDirPathText.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        courseInfo_exportDirPathText.setStrokeWidth(0.0);
+        courseInfo_exportDirPathText.setText("aodsjaosidjaoisjdoaisdjoiasjdoiasjdoaijsdoiasjdoiasjdoasjdoasidjaoijdoiajd");
 
-        GridPane.setColumnIndex(button7, 3);
-        GridPane.setHalignment(button7, javafx.geometry.HPos.RIGHT);
-        GridPane.setRowIndex(button7, 5);
-        button7.setMnemonicParsing(false);
-        button7.setText("Change");
+        GridPane.setColumnIndex(courseInfo_changeButton,3);
+        GridPane.setHalignment(courseInfo_changeButton,javafx.geometry.HPos.RIGHT);
+        GridPane.setRowIndex(courseInfo_changeButton,5);
+        courseInfo_changeButton.setMnemonicParsing(false);
+        courseInfo_changeButton.setText("Change");
         courseInfoTitledPane.setContent(courseInfo_AnchorPane);
 
-        titledPane0.setAnimated(false);
-        titledPane0.setCollapsible(false);
-        titledPane0.setText("Site Template");
+        siteTemplateTitledPane.setAnimated(false);
+        siteTemplateTitledPane.setCollapsible(false);
+        siteTemplateTitledPane.setText("Site Template");
 
-        anchorPane0.setMinHeight(0.0);
-        anchorPane0.setMinWidth(0.0);
-        anchorPane0.setPrefHeight(180.0);
-        anchorPane0.setPrefWidth(200.0);
+        siteTemplateAnchorPane.setMinHeight(0.0);
+        siteTemplateAnchorPane.setMinWidth(0.0);
+        siteTemplateAnchorPane.setPrefHeight(180.0);
+        siteTemplateAnchorPane.setPrefWidth(200.0);
 
         flowPane.setPrefHeight(200.0);
         flowPane.setPrefWidth(200.0);
-        titledPane0.setContent(anchorPane0);
+        siteTemplateTitledPane.setContent(siteTemplateAnchorPane);
 
         titledPane1.setAnimated(false);
         titledPane1.setCollapsible(false);
@@ -398,37 +401,37 @@ public  class sampleBase extends VBox {
         toolBar.getItems().add(toolbar_redoButton);
         toolBar.getItems().add(toolbar_aboutButton);
         getChildren().add(toolBar);
-        courseInfo_gridPane.getColumnConstraints().add(columnConstraints);
-        courseInfo_gridPane.getColumnConstraints().add(columnConstraints0);
-        courseInfo_gridPane.getColumnConstraints().add(columnConstraints1);
-        courseInfo_gridPane.getColumnConstraints().add(columnConstraints2);
-        courseInfo_gridPane.getRowConstraints().add(rowConstraints);
-        courseInfo_gridPane.getRowConstraints().add(rowConstraints0);
-        courseInfo_gridPane.getRowConstraints().add(rowConstraints1);
-        courseInfo_gridPane.getRowConstraints().add(rowConstraints2);
-        courseInfo_gridPane.getRowConstraints().add(rowConstraints3);
-        courseInfo_gridPane.getRowConstraints().add(rowConstraints4);
-        courseInfo_gridPane.getChildren().add(courseInfo_subjectText);
-        courseInfo_gridPane.getChildren().add(courseInfo_semesterText);
-        courseInfo_gridPane.getChildren().add(courseInfo_numberText);
-        courseInfo_gridPane.getChildren().add(courseInfo_yearText);
-        courseInfo_gridPane.getChildren().add(courseInfo_titleText);
-        courseInfo_gridPane.getChildren().add(courseInfo_instructorNameText);
-        courseInfo_gridPane.getChildren().add(courseInfo_instructorHomeText);
-        courseInfo_gridPane.getChildren().add(courseInfo_exportDirText);
-        courseInfo_gridPane.getChildren().add(courseInfo_titleTextField);
-        courseInfo_gridPane.getChildren().add(courseInfo_instructorNameTextField);
-        courseInfo_gridPane.getChildren().add(courseInfo_instructorHomeTextField);
-        courseInfo_gridPane.getChildren().add(courseInfo_subjectComboBox);
-        courseInfo_gridPane.getChildren().add(courseInfo_semesterComboBox);
-        courseInfo_gridPane.getChildren().add(courseInfo_numberComboBox);
-        courseInfo_gridPane.getChildren().add(courseInfo_yearComboBox);
-        courseInfo_gridPane.getChildren().add(text7);
-        courseInfo_gridPane.getChildren().add(button7);
-        courseInfo_AnchorPane.getChildren().add(courseInfo_gridPane);
+        ciCd_ⵁ0.getColumnConstraints().add(ciCd_ⵁ1);
+        ciCd_ⵁ0.getColumnConstraints().add(ciCd_ⵁ2);
+        ciCd_ⵁ0.getColumnConstraints().add(ciCd_ⵁ3);
+        ciCd_ⵁ0.getColumnConstraints().add(ciCd_ⵁ4);
+        ciCd_ⵁ0.getRowConstraints().add(ciCd_ⵁ5);
+        ciCd_ⵁ0.getRowConstraints().add(ciCd_ⵁ6);
+        ciCd_ⵁ0.getRowConstraints().add(ciCd_ⵁ7);
+        ciCd_ⵁ0.getRowConstraints().add(ciCd_ⵁ8);
+        ciCd_ⵁ0.getRowConstraints().add(ciCd_ⵁ9);
+        ciCd_ⵁ0.getRowConstraints().add(ciCd_ⵁ10);
+        ciCd_ⵁ0.getChildren().add(courseInfo_subjectText);
+        ciCd_ⵁ0.getChildren().add(courseInfo_semesterText);
+        ciCd_ⵁ0.getChildren().add(courseInfo_numberText);
+        ciCd_ⵁ0.getChildren().add(courseInfo_yearText);
+        ciCd_ⵁ0.getChildren().add(courseInfo_titleText);
+        ciCd_ⵁ0.getChildren().add(courseInfo_instructorNameText);
+        ciCd_ⵁ0.getChildren().add(courseInfo_instructorHomeText);
+        ciCd_ⵁ0.getChildren().add(courseInfo_exportDirText);
+        ciCd_ⵁ0.getChildren().add(courseInfo_titleTextField);
+        ciCd_ⵁ0.getChildren().add(courseInfo_instructorNameTextField);
+        ciCd_ⵁ0.getChildren().add(courseInfo_instructorHomeTextField);
+        ciCd_ⵁ0.getChildren().add(courseInfo_subjectComboBox);
+        ciCd_ⵁ0.getChildren().add(courseInfo_semesterComboBox);
+        ciCd_ⵁ0.getChildren().add(courseInfo_numberComboBox);
+        ciCd_ⵁ0.getChildren().add(courseInfo_yearComboBox);
+        ciCd_ⵁ0.getChildren().add(courseInfo_exportDirPathText);
+        ciCd_ⵁ0.getChildren().add(courseInfo_changeButton);
+        courseInfo_AnchorPane.getChildren().add(ciCd_ⵁ0);
         courseDetails_mainVbox.getChildren().add(courseInfoTitledPane);
-        anchorPane0.getChildren().add(flowPane);
-        courseDetails_mainVbox.getChildren().add(titledPane0);
+        siteTemplateAnchorPane.getChildren().add(flowPane);
+        courseDetails_mainVbox.getChildren().add(siteTemplateTitledPane);
         courseDetails_mainVbox.getChildren().add(titledPane1);
         modeSelector_mainTabPane.getTabs().add(modeSelector_courseDetailsTab);
         modeSelector_mainTabPane.getTabs().add(tab0);
