@@ -588,6 +588,10 @@ public class r
     {
         return java.lang.Math.max(x,y);
     }
+    public static int max(int x,int y)
+    {
+        return java.lang.Math.max(x,y);
+    }
     public static double min(double x,double y)
     {
         return java.lang.Math.min(x,y);

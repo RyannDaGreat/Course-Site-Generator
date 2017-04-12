@@ -7,3 +7,8 @@
 1. CHECKPOINT: Got Yes/No/Cancel and File IO dialogs working
 Everything is either public or private. No package-private or protected Bullcrud.
 You should only edit files in the _App_ package if that java file is the only file in its package
+
+TODO: Enable the custom CSS font once java is done etc
+
+ADVANTAGES OF MY WAY:
+My columns for the TA's cant be dragged off screen like McKenna's could.
