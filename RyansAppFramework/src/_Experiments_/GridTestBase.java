@@ -16,6 +16,7 @@ import static _Externals_.r.rowCol;
 @SuppressWarnings("WeakerAccess")
 public class GridTestBase extends GridPane
 {
+    //region Generalizable methods
     public ArrayList<Node> getChildren(String id)//Gets all children with that ID
     {
         ArrayList<Node> out=new ArrayList<>();
@@ -81,6 +82,10 @@ public class GridTestBase extends GridPane
         public void setTextStyle(String style)
         {
             text.setStyle(style);
+        }
+        public void appendStyle(String style)
+        {
+            setStyle(getStyle()+";"+style);
         }
     }
     private void addTextCell(String text,int... rowCol)
@@ -151,7 +156,12 @@ public class GridTestBase extends GridPane
             todo.run((TextCell)n);
         }
     }
-
+    //endregion
+    //――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――Specific to course site designer:
+    public String rowTitle(int row)
+    {
+        return
+    }
 
     //If I use gridpane I need to add scroll bar. This is horrible I dont want to do this.
     //Need a grid generator that takes size as input and creates empty text cells. That method goes in this class.
@@ -174,11 +184,11 @@ public class GridTestBase extends GridPane
                      {
                          if(r.contains(rowCol(x.getId()),0))
                          {
-                             x.setStyle("-fx-background-color: firebrick");
+                             x.appendStyle(x.getStyle()+";-fx-background-color: firebrick");
                          }
                          else
                          {
-                             x.setStyle("-fx-background-color: chartreuse");
+                             x.appendStyle("-fx-background-color: chartreuse");
                          }
                      });
         System.out.println(rows());
