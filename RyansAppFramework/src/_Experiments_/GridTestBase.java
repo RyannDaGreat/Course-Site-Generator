@@ -1,7 +1,8 @@
 package _Experiments_;
 import _Externals_.r;
-import _Externals_.rRunnable;
+import _Externals_.r.rRunnable;
 import javafx.collections.FXCollections;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.text.*;
 
@@ -12,6 +13,7 @@ import javafx.scene.layout.*;
 
 import static _Externals_.r.id;
 import static _Externals_.r.rowCol;
+@SuppressWarnings("WeakerAccess")
 public class GridTestBase extends GridPane
 {
     public ArrayList<Node> getChildren(String id)//Gets all children with that ID
@@ -164,8 +166,21 @@ public class GridTestBase extends GridPane
         addTextCell("01",0,1);
         addTextCell("10",1,0);
         addTextCell("20",2,0);
-        initialize(3,4);
-        forEachChild(x->x.setText("JIBBETY"));
+        initialize(20,20);
+        forEachChild(x->x.setPadding(new Insets(10,10,10,10)));
+        forEachChild(x->x.setStyle("-fx-border-width: 2"));
+        forEachChild(x->x.setStyle("-fx-border-color: black"));
+        forEachChild(x->
+                     {
+                         if(r.contains(rowCol(x.getId()),0))
+                         {
+                             x.setStyle("-fx-background-color: firebrick");
+                         }
+                         else
+                         {
+                             x.setStyle("-fx-background-color: chartreuse");
+                         }
+                     });
         System.out.println(rows());
         System.out.println(cols());
         System.out.println(getChild("4_0"));

@@ -160,6 +160,19 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static boolean contains(int[]a,int i)//Returns true if a contains i
+    {
+        /*@formatter:off*/
+        for(int x:a)
+            if(x==i)
+                return true;
+        return false;
+        /*@formatter:on*/
+    }
+    public interface rRunnable<T>//A runnable that accepts a single argument. rRunnable≣Ryan Runnable
+    {
+        void run(T x);
+    }
     //region ―――――――――――――――――――――――――――――COURSE SITE GENERATOR SPECIFIC THINGS―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
     public static void fitToParent(Node x)//Used for boilerplates
     {

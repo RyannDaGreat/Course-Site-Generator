@@ -8,6 +8,7 @@ import _App_.App;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 /**
@@ -31,7 +32,7 @@ public class RyansAppFramework extends Application
 
         // Pane root=new Pane();
         // root.getChildren().add(btn);
-        Scene scene=new Scene(new GridTestBase(),1000,250);
+        Scene scene=new Scene(new ScrollPane(new GridTestBase()),1000,250);
         // Scene scene=new Scene(new UntitledBase(),1000,250);
         // scene=new Screne(new Columns(),1000,250);
         primaryStage.setTitle("Hello World!");
