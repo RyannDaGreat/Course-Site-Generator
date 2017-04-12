@@ -8,6 +8,7 @@ import javafx.scene.text.*;
 
 import java.lang.*;
 import java.util.ArrayList;
+import java.util.function.Function;
 
 import javafx.scene.layout.*;
 
@@ -16,6 +17,7 @@ import static _Externals_.r.rowCol;
 @SuppressWarnings("WeakerAccess")
 public class rGridPane extends GridPane
 {
+    //TODO: isRowEmpty(row) ⟶ Makes it easy to verify if TAs will be deleted.
     //region Generalizable methods
     public ArrayList<Node> getChildren(String id)//Gets all children with that ID
     {
@@ -72,6 +74,10 @@ public class rGridPane extends GridPane
         public void setText(String text)
         {
             this.text.setText(text);
+        }
+        public void modifyText(Function<String,String> modifier)//So we can in-line code such as TextCell child=getChild(time,day);child.setText(r.toggleLine(child.getText(),name));
+        {
+            this.text.setText(modifier.apply(getText()));
         }
         public String getText()
         {
