@@ -1,5 +1,6 @@
 package _Experiments_;
 import _Externals_.r;
+import _Externals_.rRunnable;
 import javafx.collections.FXCollections;
 import javafx.scene.Node;
 import javafx.scene.text.*;
@@ -8,35 +9,26 @@ import java.lang.*;
 import java.util.ArrayList;
 
 import javafx.scene.layout.*;
+
+import static _Externals_.r.id;
+import static _Externals_.r.rowCol;
 public class GridTestBase extends GridPane
 {
-    public static String id(int...rowCol)
+    public ArrayList<Node> getChildren(String id)//Gets all children with that ID
     {
-        assert rowCol.length==2;//Should consist of a row and col
-        return rowCol[0]+"_"+rowCol[1];
-    }
-    public static int[]rowCol(String id)
-    {
-        /*@formatter:off*/
-        int[]out=new int[2];
-        assert id.split("_").length==2;//Should be in the form 12_4 or 2_6 or 452_234 etc
-        int i=0;
-        for(String s:id.split("_"))
-            out[i++]=Integer.parseInt(s);
-        return out;
-        /*@formatter:on*/
-    }
-    public ArrayList<Node>getChildren(String id)//Gets all children with that ID
-    {
-        ArrayList<Node>out=new ArrayList<>();
-        for(Node n:getChildren())
+        ArrayList<Node> out=new ArrayList<>();
+        for(Node n : getChildren())
+        {
             if(n.getId().equals(id))
+            {
                 out.add(n);
+            }
+        }
         return out;
     }
     public Node getChild(String id)//Gets all children with that ID
     {
-        ArrayList<Node>childen=getChildren(id);
+        ArrayList<Node> childen=getChildren(id);
         assert childen.size()!=0:"getChild(String id): There no children with this id: \""+id+"\"";
         assert childen.size()==1:"getChild(String id): There are not one, but multiple children with this id: \""+id+"\"";
         try
@@ -62,8 +54,10 @@ public class GridTestBase extends GridPane
     public static class TextCell extends GridPane//Extends gridpane so we can align text to center
     {
         private final Text text=new Text();//Feel free to make this public if you actually want it for some reason; mind you I've already provided methods to set/get the text
-        private final ColumnConstraints columnConstraints=new ColumnConstraints();;
-        private final RowConstraints rowConstraints=new RowConstraints();;
+        private final ColumnConstraints columnConstraints=new ColumnConstraints();
+        ;
+        private final RowConstraints rowConstraints=new RowConstraints();
+        ;
         TextCell()
         {
             getChildren().add(text);//This gridpane contains only one cell
@@ -87,8 +81,7 @@ public class GridTestBase extends GridPane
             text.setStyle(style);
         }
     }
-
-    private void addTextCell(String text,int...rowCol)
+    private void addTextCell(String text,int... rowCol)
     {
         assert rowCol.length==2;
         removeChildren(getChildren(id(rowCol)));//Prevent duplicates
@@ -100,11 +93,10 @@ public class GridTestBase extends GridPane
         ⵁ.setOnMouseClicked(e->ⵁ.setText(r.toggleLine(ⵁ.getText(),"TANAME")));//
         getChildren().add(ⵁ);//Returns success value. Will not throw an eror if rowCol is out of bounds.
     }
-
     private int[] rowsCols()//Gets [#rows,#cols]
     {
-        int[]out=new int[2];
-        for(Node n:getChildren())
+        int[] out=new int[2];
+        for(Node n : getChildren())
         {
             int[] rc=rowCol(n.getId());
             out[0]=Math.max(out[0],rc[0]+1);
@@ -123,12 +115,16 @@ public class GridTestBase extends GridPane
     public void removeRow(int row)
     {
         for(int col=0;col<cols();col++)
+        {
             removeChildren(getChildren(id(row,col)));
+        }
     }
     public void removeCol(int col)
     {
         for(int row=0;row<cols();row++)
+        {
             removeChildren(getChildren(id(row,col)));
+        }
     }
     public void clear()
     {
@@ -138,9 +134,22 @@ public class GridTestBase extends GridPane
     {
         // clear();
         for(int row=0;row<rows;row++)
-            for(int col=0;col<cols;row++)
-                addTextCell("[BLANK]",row,col);
+        {
+            for(int col=0;col<cols;col++)
+            {
+                addTextCell(id(row,col),row,col);//Initialize rows/columns with the text equal to their ID. You should use forEachChild(x->x.setText("")) to clear this afterwatds.
+            }
+        }
     }
+    public void forEachChild(rRunnable<TextCell> todo)//Do something to each child
+    {
+        for(Node n:getChildren())
+        {
+            assert n instanceof TextCell;
+            todo.run((TextCell)n);
+        }
+    }
+
 
     //If I use gridpane I need to add scroll bar. This is horrible I dont want to do this.
     //Need a grid generator that takes size as input and creates empty text cells. That method goes in this class.
@@ -155,7 +164,8 @@ public class GridTestBase extends GridPane
         addTextCell("01",0,1);
         addTextCell("10",1,0);
         addTextCell("20",2,0);
-        // initialize(3,4);
+        initialize(3,4);
+        forEachChild(x->x.setText("JIBBETY"));
         System.out.println(rows());
         System.out.println(cols());
         System.out.println(getChild("4_0"));

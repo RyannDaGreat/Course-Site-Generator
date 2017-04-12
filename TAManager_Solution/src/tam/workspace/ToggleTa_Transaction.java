@@ -35,7 +35,8 @@ public class ToggleTa_Transaction implements jTPS_Transaction {
     }
 
     @Override
-    public void doTransaction() {
+    public void doTransaction()
+    {
         TeachingAssistant ta = (TeachingAssistant) selectedItem;
         String taName = ta.getName();
         TAData data = (TAData) app.getDataComponent();

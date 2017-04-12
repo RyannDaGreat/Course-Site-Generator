@@ -170,6 +170,23 @@ public class r
         AnchorPane.setTopAnchor(x,0d);
         AnchorPane.setBottomAnchor(x,0d);
     }
+    public static String id(int...rowCol)
+    {
+        assert rowCol.length==2;//Should consist of a row and col
+        return rowCol[0]+"_"+rowCol[1];
+    }
+    public static int[]rowCol(String id)
+    {
+        /*@formatter:off*/
+        int[]out=new int[2];
+        assert id.split("_").length==2;//Should be in the form 12_4 or 2_6 or 452_234 etc
+        int i=0;
+        for(String s:id.split("_"))
+            out[i++]=Integer.parseInt(s);
+        return out;
+        /*@formatter:on*/
+    }
+
     //region Email checker ［isValidEmail］
     public static boolean isValidEmail(String s)
     {
