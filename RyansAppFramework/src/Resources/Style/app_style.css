@@ -1,0 +1,8 @@
+/*The only reason the fonts are in this folder is because it makes it easier for this CSS file to find them*/
+@font-face
+{
+    font-family: 'Lovelo';
+    src: url('Lovelo Black.otf') format('opentype'),
+    url('Lovelo Line Bold.otf') format('opentype'),
+    url('Lovelo Line Light.otf') format('opentype');
+}
