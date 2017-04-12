@@ -40,8 +40,8 @@ public class RyansAppFramework extends Application
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-    /**
-     * @param args the command line arguments
+    /**s
+     * @param args the command line argument
      */
     public static void main(String[] args)
     {
