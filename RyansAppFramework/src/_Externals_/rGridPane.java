@@ -1,4 +1,4 @@
-package _Experiments_;
+package _Externals_;
 import _Externals_.r;
 import _Externals_.r.rRunnable;
 import javafx.collections.FXCollections;
@@ -228,7 +228,7 @@ public class rGridPane extends GridPane
     //Need forEach( (node) -> runnable() )
     public rGridPane()
     {
-        initialize("A,B,C,D,E".split(","),"a,b,c,d,e,f,g,h,i".split(","));
+        initialize("1pm,2pm,3pm,4pm,5pm".split(","),"Mon,Tues,Wed,Thurs,Fri".split(","));
         forEachChild(x->x.setPadding(new Insets(10,10,10,10)));
         forEachChild(x->x.appendStyle("-fx-border-width: 1"));
         forEachChild(x->//Set The Background-Color Style
