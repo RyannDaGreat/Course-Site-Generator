@@ -160,7 +160,7 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
-    //region ―――――――――――――――――――――――――――――PROJECT SPECIFIC THINGS―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+    //region ―――――――――――――――――――――――――――――COURSE SITE GENERATOR SPECIFIC THINGS―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
     public static void fitToParent(Node x)//Used for boilerplates
     {
         VBox.setVgrow(x,Priority.ALWAYS);
@@ -266,6 +266,7 @@ public class r
     }
     //endregion
     //endregion
+    //
     //region Console Outputs: print() and println() methods:
     public static void println()
     {
@@ -1196,7 +1197,6 @@ public class r
     {
         return replaceAll(Original,Snippet,"");
     }
-
     public static Object eval(String javascriptCode)
     {
         try
