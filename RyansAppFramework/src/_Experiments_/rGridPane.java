@@ -229,35 +229,34 @@ public class rGridPane extends GridPane
     public rGridPane()
     {
         initialize("A,B,C,D,E".split(","),"a,b,c,d,e,f,g,h,i".split(","));
-
-
-        // getChild("A","a").setText("HUBBABUBBA!");
-
-        // addTextCell("00",0,0);
-        // addTextCell("11",1,1);
-        // addTextCell("01",0,1);
-        // addTextCell("10",1,0);
-        // addTextCell("20",2,0);
-        // initialize(5,5);
         forEachChild(x->x.setPadding(new Insets(10,10,10,10)));
         forEachChild(x->x.appendStyle("-fx-border-width: 1"));
+        forEachChild(x->//Set The Background-Color Style
+                     {
+                         if(isColTitle(x))
+                         {
+                             x.appendStyle("-fx-background-color: green");
+                         }
+                         else if(isRowTitle(x))
+                         {
+                             x.appendStyle("-fx-background-color: red");
+                         }
+                         else if(isCorner(x))
+                         {
+                             x.appendStyle("-fx-background-color: blue");
+                         }
+                         else
+                         {
+                             x.appendStyle("-fx-background-color: white");
+                         }
+                     });
         forEachChild(x->x.appendStyle("-fx-border-color: black"));
-        // forEachChild(x->
-        //              {
-        //                  if(r.contains(rowCol(x.getId()),0))
-        //                  {
-        //                      x.appendStyle(x.getStyle()+";-fx-background-color: firebrick");
-        //                  }
-        //                  else
-        //                  {
-        //                      x.appendStyle("-fx-background-color: chartreuse");
-        //                  }
-        //              });
-        forEachChild(x->x.setOnMouseClicked(e->x.setText(r.toggleLine(x.getText(),"TANAME"))));
-        // System.out.println(rows());
-        // System.out.println(cols());
-        // System.out.println(getChild("4_0"));
-        // getChild("1_0").setStyle("-fx-background-color: blue");
-        // removeChildren(getChild("1_0"));
+        forEachChild(x->x.setOnMouseClicked(e->
+                                            {
+                                                if(!isTitle(x))
+                                                {
+                                                    x.setText(r.toggleLine(x.getText(),"TANAME"));
+                                                }
+                                            }));
     }
 }
