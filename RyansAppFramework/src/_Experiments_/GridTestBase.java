@@ -97,7 +97,7 @@ public class GridTestBase extends GridPane
         GridPane.setRowIndex(ⵁ,rowCol[0]);
         GridPane.setColumnIndex(ⵁ,rowCol[1]);
         ⵁ.setId(id(rowCol));
-        ⵁ.setOnMouseClicked(e->ⵁ.setText(r.toggleLine(ⵁ.getText(),"TANAME")));
+        ⵁ.setOnMouseClicked(e->ⵁ.setText(r.toggleLine(ⵁ.getText(),"TANAME")));//
         getChildren().add(ⵁ);//Returns success value. Will not throw an eror if rowCol is out of bounds.
     }
 
@@ -134,10 +134,20 @@ public class GridTestBase extends GridPane
     {
         getChildren().clear();
     }
+    public void initialize(int rows,int cols)
+    {
+        // clear();
+        for(int row=0;row<rows;row++)
+            for(int col=0;col<cols;row++)
+                addTextCell("[BLANK]",row,col);
+    }
 
-
+    //If I use gridpane I need to add scroll bar. This is horrible I dont want to do this.
     //Need a grid generator that takes size as input and creates empty text cells. That method goes in this class.
     //The class that extends this has its own version of that function, which then applies styles and stuff to it.
+    //Later need toggleTA(Day,Time,TANAME)
+    //Need rowTitle(row n),colTitle(col n)
+    //Need forEach( (node) -> runnable() )
     public GridTestBase()
     {
         addTextCell("00",0,0);
@@ -145,6 +155,7 @@ public class GridTestBase extends GridPane
         addTextCell("01",0,1);
         addTextCell("10",1,0);
         addTextCell("20",2,0);
+        // initialize(3,4);
         System.out.println(rows());
         System.out.println(cols());
         System.out.println(getChild("4_0"));
