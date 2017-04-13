@@ -163,8 +163,8 @@ public class rGridPane extends GridPane
     {
         int[] rc=rowCol(x.getId());
         int row=rc[0], col=rc[1];
-        String rowTitle=((TextCell)getChild(id(0,col))).getText();
-        String colTitle=((TextCell)getChild(id(row,0))).getText();
+        String rowTitle=((TextCell)getChild(id(row,0))).getText();
+        String colTitle=((TextCell)getChild(id(0,col))).getText();
         return new String[]{rowTitle,colTitle};
     }
     public String rowTitle(Node x)//Gets the text of the node at left of the row that Node x belongs to
@@ -234,7 +234,7 @@ public class rGridPane extends GridPane
     //Need forEach( (node) -> runnable() )
     public rGridPane()
     {
-        initialize("1pm,2pm,3pm,4pm,5pm".split(","),"Mon,Tues,Wed,Thurs,Fri".split(","));
+        initialize("1pm,2pm,3pm,4pm,5pm,6,7,8".split(","),"Mon,Tues,Wed,Thurs,Fri".split(","));
         forEachChild(x->x.setPadding(new Insets(10,10,10,10)));
         forEachChild(x->x.appendStyle("-fx-border-width: 1"));
         forEachChild(x->//Set The Background-Color Style

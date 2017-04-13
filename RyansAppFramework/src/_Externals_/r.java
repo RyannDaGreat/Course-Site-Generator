@@ -215,6 +215,8 @@ public class r
     public static String[] splitLines(String body)//To decrease redundancy
     {
         //tested ⋀ verified ✔
+        if(body.equals(""))//Don't return [""], which would happen without this check for some reason
+            return new String[0];
         return body.split(lineSeparator);//⟵ Self explanatory
     }
     public static String joinLines(Object[]lines)//Objects are implicitly converted to strings

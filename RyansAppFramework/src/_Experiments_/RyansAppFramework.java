@@ -5,6 +5,7 @@
  */
 package _Experiments_;
 import _App_.App;
+import _Externals_.r;
 import _Externals_.rGridPane;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -17,6 +18,8 @@ import javafx.stage.Stage;
  */
 public class RyansAppFramework extends Application
 {
+    Scene scene;
+    OfficeHoursGrid officeHoursGrid=new OfficeHoursGrid();
     @Override
     public void start(Stage primaryStage)
     {
@@ -33,7 +36,8 @@ public class RyansAppFramework extends Application
 
         // Pane root=new Pane();
         // root.getChildren().add(btn);
-        Scene scene=new Scene(new ScrollPane(new rGridPane()),1000,250);
+        scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
+        scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
         // Scene scene=new Scene(new UntitledBase(),1000,250);
         // scene=new Screne(new Columns(),1000,250);
         primaryStage.setTitle("Hello World!");
@@ -41,11 +45,17 @@ public class RyansAppFramework extends Application
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    private void command(String s)
+    {
+        officeHoursGrid.toggleOfficeHours(s);
+        System.out.println(officeHoursGrid.getGridState());
+    }
     /**s
      * @param args the command line argument
      */
     public static void main(String[] args)
     {
+        System.out.println(r.splitLines("\n").length);
         // r.print(new App().gui.dialogs.saveFile("Open","png"));
         // r.print(new App().gui.dialogs.openDirectory("Open","png"));
         // r.print(new App().gui.dialogs.openFile("Open","png"));
