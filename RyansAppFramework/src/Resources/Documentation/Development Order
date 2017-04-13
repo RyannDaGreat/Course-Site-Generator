@@ -21,3 +21,6 @@ Just decided I'm going to try and minimize the amount of different types of Java
 
 Arbitrary elements: Combobox/Button widths
 Padding sizes
+
+Rightnow one of my biggest priorities is making sure the window 'scales' properly; in other words not having buttons intersect each other or go off the screen etc. I decided to make it as parametric as possible; almost always using 'USE_COMOUTED_WIDTH' if I can, and adding a scroll bar in case it can't handle it (computes width makes it as small as possible, which is good)
+No longer using toolbar ecause anchors are easier to use

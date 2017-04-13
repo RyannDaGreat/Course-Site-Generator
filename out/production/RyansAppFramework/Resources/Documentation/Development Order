@@ -15,3 +15,12 @@ My columns for the TA's cant be dragged off screen like McKenna's could.
 You can do the entire thing in Intellij without switching to netbeans just to run the code; and thus you can use the killall java command more liberally.
 Also learning tons about JavaFX, for example the uses of extending VBox etc
 I can use a graphic GUI designer and compile it to java code
+Discovering a lot of McKenna's rasons by seeing what doesn't work such as not using titled panes and instead just using anchor panes
+Just decided I'm going to try and minimize the amount of different types of JavaFX components that I'm using
+
+
+Arbitrary elements: Combobox/Button widths
+Padding sizes
+
+Rightnow one of my biggest priorities is making sure the window 'scales' properly; in other words not having buttons intersect each other or go off the screen etc. I decided to make it as parametric as possible; almost always using 'USE_COMOUTED_WIDTH' if I can, and adding a scroll bar in case it can't handle it (computes width makes it as small as possible, which is good)
+No longer using toolbar ecause anchors are easier to use

@@ -13,6 +13,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import properties_manager.PropertiesManager;
+
+import java.net.URL;
+
+import static djf.settings.AppPropertyType.APP_CSS;
+import static djf.settings.AppPropertyType.APP_PATH_CSS;
 /**
  * @author Ryan
  */
@@ -33,11 +39,23 @@ public class RyansAppFramework extends Application
         btn.setOnAction(event->System.out.println("Hello World!"));
 
         VBox root=new VBox(Toolbar,btn);
+        Stylizer.stylize(Toolbar,"jabber");
 
         // Pane root=new Pane();
         // root.getChildren().add(btn);
-        scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
+
+        scene=new Scene(root);
+        // PropertiesManager props=PropertiesManager.getPropertiesManager();
+        // URL stylesheetURL=this.getClass().getResource("tam_style.css"/*Stylizer.cssFileName*/);
+        // String stylesheetPath=stylesheetURL.toExternalForm();
+        // scene.getStylesheets().add(stylesheetPath);
+
+        // SELECT THE STYLESHEET
+
+        // scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
         scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
+
+
         // Scene scene=new Scene(new UntitledBase(),1000,250);
         // scene=new Screne(new Columns(),1000,250);
         primaryStage.setTitle("Hello World!");
