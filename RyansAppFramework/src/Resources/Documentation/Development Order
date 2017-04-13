@@ -15,4 +15,4 @@ My columns for the TA's cant be dragged off screen like McKenna's could.
 You can do the entire thing in Intellij without switching to netbeans just to run the code; and thus you can use the killall java command more liberally.
 Also learning tons about JavaFX, for example the uses of extending VBox etc
 I can use a graphic GUI designer and compile it to java code
-Discovering a lot of McKenna's rasons by seeing what doesn't work such as not using titled panes and instead just using regular panes
+Discovering a lot of McKenna's rasons by seeing what doesn't work such as not using titled panes and instead just using anchor panes
