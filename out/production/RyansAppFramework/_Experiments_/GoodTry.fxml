@@ -40,9 +40,9 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <TabPane nodeOrientation="LEFT_TO_RIGHT" opacity="0.93" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+      <TabPane nodeOrientation="LEFT_TO_RIGHT" opacity="0.93" prefHeight="200.0" prefWidth="200.0" stylesheets="@appstyle.css" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
         <tabs>
-          <Tab text="Course Details">
+          <Tab style="-fx-background-color: #99BBFF;" text="Course Details">
                <content>
                   <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="1020.0" prefViewportWidth="1000.0">
                      <content>

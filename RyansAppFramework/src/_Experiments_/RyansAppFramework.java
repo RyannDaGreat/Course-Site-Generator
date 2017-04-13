@@ -59,6 +59,7 @@ public class RyansAppFramework extends Application
         scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
         scene=new Scene(new tabTester());
 
+        scene=new Scene(new GoodTryBase());
         scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
 
 

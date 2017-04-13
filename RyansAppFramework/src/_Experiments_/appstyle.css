@@ -16,7 +16,7 @@
 */
 
 .tab-pane .tab-header-area .tab-header-background { /*get rid of gray area behind tab headers*/
-    -fx-background-color: blue;
+    -fx-background-color: #000066;
     /*http://stackoverflow.com/questions/10609103/remove-gray-bg-behind-the-tabs-in-jfx/10615258#10615258*/
     /*-fx-effect: null;*/
 }

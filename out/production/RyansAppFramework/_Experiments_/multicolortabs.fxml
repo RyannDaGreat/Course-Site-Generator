@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #552255; -fx-background-insets: #559833;" stylesheets="@appstyle.css" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <tabs>
+    <Tab style="-fx-background-color: #445599;" text="Untitled Tab 1" />
+    <Tab style="-fx-background-color: #BB5588;" text="Untitled Tab 2" />
+      <Tab style="-fx-background-color: #44FF99;" text="Untitled Tab 1" />
+  </tabs>
+</TabPane>
