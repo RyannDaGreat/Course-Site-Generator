@@ -7,7 +7,10 @@ public class OfficeHoursGrid extends rGridPane
 {
     public OfficeHoursGrid()//These two strings are broken into lists, separated by commas
     {
-        setGridState("A,B,C,D,E;a,b,c,d,e;A,a,bert;B,c,eernie;E,e,Eevie");
+        // setGridState("A,B,C,D,E;a,b,c,d,e;A,a,bert;B,c,eernie;E,e,Eevie");
+        // setGridState("A,B,D,E;a,b,c,d,e;A,a,Aa;A,b,Ab;B,a,Ba;B,b,Bb;C,a,Ca;C,b,Cb;D,a,Da;D,b,Db");
+        // System.out.println(getGridState());
+        //            A,B,C,D,E;a,b,c,d,e;A,a,bert;B,c,eernie;E,e,Eevie
         // setGridState("A,B,C,D,E;a,b,c,d,e;A,a,bert;A,b,;A,c,;A,d,;A,e,;B,a,3;B,b,;B,c,eernie;B,d,;B,e,;C,a,;C,b,;C,c,;C,d,;C,e,;D,a,;D,b,;D,c,;D,d,;D,e,;E,a,;E,b,;E,c,;E,d,;E,e,Eevie");
     }
     public boolean toggleOfficeHours(String time,String day,String name)
