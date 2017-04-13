@@ -15,10 +15,15 @@
     Version:	2.0
 */
 
-.jabber
-{
-    -fx-background-color: greenyellow;
+.tab-pane .tab-header-area .tab-header-background { /*get rid of gray area behind tab headers*/
+    -fx-background-color: blue;
+    /*http://stackoverflow.com/questions/10609103/remove-gray-bg-behind-the-tabs-in-jfx/10615258#10615258*/
+    /*-fx-effect: null;*/
 }
+/*.jabber*/
+/*{*/
+    /*-fx-background-color: greenyellow;*/
+/*}*/
 
 /*.tab-pane .tab-header-area .tab-header-background {*/
     /*-fx-opacity: 1;*/
@@ -33,14 +38,13 @@
 /*{*/
     /*-fx-background-color: green ;*/
 /*}*/
-.tab-pane .tab-header-area .tab-header-background {
-    -fx-background-color: #BDBDBD;
-}
+/*.tab-pane .tab-header-area .tab-header-background {*/
+    /*-fx-background-color: #BDBDBD;*/
+/*}*/
 /*.tab-pane*/
 /*{*/
     /*-fx-tab-min-width:90px;*/
 /*}*/
-
 /*.tab{*/
     /*-fx-background-insets: 0 1 0 1,0,0;*/
 /*}*/
