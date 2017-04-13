@@ -17,7 +17,7 @@
             <Button mnemonicParsing="false" text="Save" />
             <Button mnemonicParsing="false" text="Save As" />
             <Button mnemonicParsing="false" text="Export" />
-            <Pane prefWidth="50.0" />
+            <Pane minWidth="0.0" prefWidth="500.0" />
             <Button mnemonicParsing="false" text="Undo" />
             <Button mnemonicParsing="false" text="Redo" />
             <Button mnemonicParsing="false" text="About" />
