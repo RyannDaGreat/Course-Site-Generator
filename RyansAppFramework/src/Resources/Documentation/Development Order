@@ -17,3 +17,7 @@ Also learning tons about JavaFX, for example the uses of extending VBox etc
 I can use a graphic GUI designer and compile it to java code
 Discovering a lot of McKenna's rasons by seeing what doesn't work such as not using titled panes and instead just using anchor panes
 Just decided I'm going to try and minimize the amount of different types of JavaFX components that I'm using
+
+
+Arbitrary elements: Combobox/Button widths
+Padding sizes
