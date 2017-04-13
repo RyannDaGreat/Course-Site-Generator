@@ -10,6 +10,7 @@ import _Externals_.r;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -17,6 +18,7 @@ import properties_manager.PropertiesManager;
 
 import java.net.URL;
 
+import static _Experiments_.Stylizer.stylize;
 import static djf.settings.AppPropertyType.APP_CSS;
 import static djf.settings.AppPropertyType.APP_PATH_CSS;
 /**
@@ -39,20 +41,24 @@ public class RyansAppFramework extends Application
         btn.setOnAction(event->System.out.println("Hello World!"));
 
         VBox root=new VBox(Toolbar,btn);
-        Stylizer.stylize(Toolbar,"jabber");
+        stylize(Toolbar,"jabber");
 
         // Pane root=new Pane();
         // root.getChildren().add(btn);
+        tabTester tt=new tabTester();
+        tt.courseDetailsTab.setStyle("-fx-border-color:red; -fx-background-color: blue;");
+        tt.courseDetailsTab.setGraphic(new Label("Tab B"));
+        tt.courseDetailsTab.
+                               getGraphic().
+                               setStyle("-fx-background-color: chartreuse");
+
+
+
 
         scene=new Scene(root);
-        // PropertiesManager props=PropertiesManager.getPropertiesManager();
-        // URL stylesheetURL=this.getClass().getResource("tam_style.css"/*Stylizer.cssFileName*/);
-        // String stylesheetPath=stylesheetURL.toExternalForm();
-        // scene.getStylesheets().add(stylesheetPath);
+        scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
+        scene=new Scene(new tabTester());
 
-        // SELECT THE STYLESHEET
-
-        // scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
         scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
 
 

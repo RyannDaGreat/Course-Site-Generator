@@ -42,7 +42,7 @@
       </AnchorPane>
       <TabPane nodeOrientation="LEFT_TO_RIGHT" opacity="0.93" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
         <tabs>
-          <Tab style="-fx-background-color: #99BBFF;" text="Course Details">
+          <Tab text="Course Details">
                <content>
                   <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="1020.0" prefViewportWidth="1000.0">
                      <content>
@@ -50,7 +50,7 @@
                            <children>
                               <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #8888FF;">
                                  <children>
-                                    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox prefHeight="180.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                                           <GridPane cacheShape="false" centerShape="false" focusTraversable="true" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
