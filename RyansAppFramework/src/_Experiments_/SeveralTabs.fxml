@@ -13,7 +13,7 @@
    <children>
       <AnchorPane blendMode="HARD_LIGHT">
          <children>
-            <GridPane hgap="5.0" layoutY="15.0" style="-fx-background-color: #6334a8;" vgap="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <GridPane hgap="5.0" layoutY="15.0" style="-fx-background-color: #6334a8;" vgap="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" />
                   <ColumnConstraints hgrow="SOMETIMES" />
@@ -481,6 +481,9 @@
                                              <font>
                                                 <Font name="Arial" size="13.0" />
                                              </font>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
                                           </Text>
                                           <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="10.0" scaleShape="false" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
@@ -689,42 +692,56 @@
                            <children>
                               <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                  <children>
-                                    <VBox prefHeight="251.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Course Details">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Teams">
                                              <font>
                                                 <Font name="Arial" size="13.0" />
                                              </font>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@appstyle.css">
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <columns>
+                                                <TableColumn prefWidth="75.0" text="Use" />
+                                                <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Navbar Title" />
+                                                <TableColumn prefWidth="75.0" text="File Name" />
+                                                <TableColumn prefWidth="75.0" text="Script" />
+                                             </columns>
+                                          </TableView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Add/Edit">
+                                             <font>
+                                                <Font name="Arial" size="13.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="20.0" />
+                                             </VBox.margin>
                                           </Text>
                                           <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="10.0" scaleShape="false" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Subject:" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Semester:" GridPane.rowIndex="1" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number:" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year:" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" GridPane.rowIndex="2" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Instructor Name:" GridPane.rowIndex="3" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Instructor Home:" GridPane.rowIndex="4" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Export Dir:" GridPane.rowIndex="5" />
-                                                <TextField promptText="Computer Science III" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
-                                                <TextField promptText="Richard McKenna" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
-                                                <TextField promptText="http://www3.cs.stonybrook.edu/~cse219/Section02/index.html" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
-                                                <ComboBox prefWidth="150.0" promptText="CSE" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" />
-                                                <ComboBox prefWidth="150.0" promptText="Fall" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <ComboBox prefWidth="150.0" promptText="219" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
-                                                <ComboBox prefWidth="150.0" promptText="2017" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ioiioh" underline="true" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time:" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" GridPane.rowIndex="1" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                                                <TextField promptText="SNOW DAY" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                                                <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update" GridPane.rowIndex="5" />
+                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Topic:" GridPane.rowIndex="2" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Link:" GridPane.rowIndex="3" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Criteria:" GridPane.rowIndex="4" />
+                                                <TextField promptText="http://funnybizblog.com/funny-stuff/calvin-hobbes-snowman-cartoons" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                              </children>
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="938.9019165039062" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
-                                                <ColumnConstraints hgrow="ALWAYS" maxWidth="561.8994140625" minWidth="0.0" prefWidth="304.5467529296875" />
-                                                <ColumnConstraints hgrow="NEVER" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1777.0434799194336" minWidth="100.0" />
+                                                <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" />
                                              </columnConstraints>
                                              <rowConstraints>
-                                                <RowConstraints />
+                                                <RowConstraints vgrow="SOMETIMES" />
                                                 <RowConstraints vgrow="SOMETIMES" />
                                                 <RowConstraints vgrow="SOMETIMES" />
                                                 <RowConstraints vgrow="SOMETIMES" />
@@ -744,90 +761,64 @@
                               </AnchorPane>
                               <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                  <children>
-                                    <VBox prefHeight="180.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Site Template" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 11;" text="The selected directory should contain the full site template, including the HTML files " />
-                                          <GridPane hgap="10.0" vgap="10.0" VBox.vgrow="ALWAYS">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Students">
+                                             <font>
+                                                <Font name="Arial" size="13.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="6.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@appstyle.css">
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <columns>
+                                                <TableColumn prefWidth="75.0" text="First Name" />
+                                                <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Last Name" />
+                                                <TableColumn prefWidth="75.0" text="Team" />
+                                                <TableColumn prefWidth="75.0" text="Role" />
+                                             </columns>
+                                          </TableView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Add/Edit">
+                                             <font>
+                                                <Font name="Arial" size="13.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="20.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="10.0" scaleShape="false" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=".\templates\CSE219" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Template Dir:" />
-                                                <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@appstyle.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
-                                                   <columnResizePolicy>
-                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                                   </columnResizePolicy>
-                                                   <columns>
-                                                      <TableColumn prefWidth="75.0" text="Use" />
-                                                      <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Navbar Title" />
-                                                      <TableColumn prefWidth="75.0" text="File Name" />
-                                                      <TableColumn prefWidth="75.0" text="Script" />
-                                                   </columns>
-                                                </TableView>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Site Pages:" GridPane.rowIndex="1" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" GridPane.rowIndex="1" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                                                <TextField promptText="SNOW DAY" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                                                <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update" GridPane.rowIndex="4" />
+                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team:" GridPane.rowIndex="2" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Role:" GridPane.rowIndex="3" />
+                                                <TextField promptText="http://funnybizblog.com/funny-stuff/calvin-hobbes-snowman-cartoons" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                              </children>
                                              <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" />
-                                                <ColumnConstraints hgrow="ALWAYS" />
-                                                <ColumnConstraints hgrow="SOMETIMES" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints vgrow="ALWAYS" />
-                                                <RowConstraints vgrow="ALWAYS" />
-                                             </rowConstraints>
-                                          </GridPane>
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                       </padding>
-                                    </VBox>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
-                                 <children>
-                                    <VBox prefHeight="151.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Page Style" />
-                                          <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="10.0" prefWidth="998.0" scaleShape="false" vgap="10.0" VBox.vgrow="ALWAYS">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image:" />
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
-                                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-                                                   <image>
-                                                      <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image:" GridPane.rowIndex="1" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image:" GridPane.rowIndex="2" />
-                                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                                   <image>
-                                                      <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                                                   <image>
-                                                      <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stylesheet:" GridPane.rowIndex="3" />
-                                                <ComboBox prefWidth="150.0" promptText="Fall" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                             </children>
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" />
-                                                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
-                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="938.9019165039062" />
+                                                <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints vgrow="SOMETIMES" />
                                                 <RowConstraints vgrow="SOMETIMES" />
                                                 <RowConstraints vgrow="SOMETIMES" />
                                                 <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
                                              </rowConstraints>
                                           </GridPane>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 11;" text="NOTE: New stylesheets may be placed in work/css to be selectable" />
                                        </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
                                        <padding>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                        </padding>
