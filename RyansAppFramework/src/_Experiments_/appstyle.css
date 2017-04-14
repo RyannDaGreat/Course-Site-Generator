@@ -21,6 +21,10 @@
     /*http://stackoverflow.com/questions/10609103/remove-gray-bg-behind-the-tabs-in-jfx/10615258#10615258*/
     /*-fx-effect: null;*/
 }
+.tab:selected
+{
+    -fx-background-color: aqua;
+}
 /*.jabber*/
 /*{*/
     /*-fx-background-color: greenyellow;*/
