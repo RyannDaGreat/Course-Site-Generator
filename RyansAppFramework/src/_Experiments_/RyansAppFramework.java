@@ -16,7 +16,9 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import properties_manager.PropertiesManager;
 
+import javax.swing.*;
 import java.net.URL;
+import java.util.ResourceBundle;
 
 import static _Experiments_.Stylizer.stylize;
 import static djf.settings.AppPropertyType.APP_CSS;
@@ -65,11 +67,15 @@ public class RyansAppFramework extends Application
         officeHoursGrid.toggleOfficeHours(s);
         System.out.println(officeHoursGrid.getGridState());
     }
-    /**
-     * s
-     *
-     * @param args the command line argument
-     */
+
+    static
+    {
+        if(r.yesNo("Do you speak italian?","Do you speak italian?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messagesItalian"; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+    }
     public static void main(String[] args)
     {
         System.out.println(r.splitLines("\n").length);

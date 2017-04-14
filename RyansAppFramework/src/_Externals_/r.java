@@ -5,7 +5,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -1242,83 +1245,80 @@ public class r
         }
     }
 
-    //The following is only commented out because it makes more sense, in the CourseSiteGenerator project, to keep them in the Dialogs class. Once I'm done with this project these should be made static then uncommented.
-    // //region Yes/No/Cancel Dialogs
-    // public enum dialogOptions//Used for checking the values of various dialog results
-    // {
-    //     YES,NO,CANCEL
-    // }
-    // public Dialogs.dialogOptions yesNoCancel(String title,String message)
-    // {
-    //     /*@formatter:off*/
-    //     //Example: r.print(new App().gui.dialogs.yesNoCancel("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
-    //     //Based on: http://www.java2s.com/Tutorial/Java/0240__Swing/Yesnocanceldialog.htm
-    //     int out=JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_CANCEL_OPTION);
-    //     if(out==0)
-    //         return Dialogs.dialogOptions.YES;
-    //     if(out==1)
-    //         return Dialogs.dialogOptions.NO;
-    //     if(out==2)
-    //         return Dialogs.dialogOptions.CANCEL;
-    //     assert false;//This should never happen.
-    //     return null;
-    //     /*@formatter:on*/
-    // }
-    // public Dialogs.dialogOptions yesNo(String title,String message)
-    // {
-    //     /*@formatter:off*/
-    //     //Example: r.print(new App().gui.dialogs.yesNo("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
-    //     //Based on: http://www.java2s.com/Tutorial/Java/0240__Swing/Yesnocanceldialog.htm
-    //     int out=JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_OPTION);
-    //     if(out==0)
-    //         return Dialogs.dialogOptions.YES;
-    //     if(out==1)
-    //         return Dialogs.dialogOptions.NO;
-    //     assert false;//This should never happen.
-    //     return null;
-    //     /*@formatter:on*/
-    // }
-    // public void ok(String title,String message)
-    // {
-    //     JOptionPane.showConfirmDialog(null,message,title,JOptionPane.OK_OPTION);
-    // }
-    // //endregion―――――――――――――――――――――――――――――――――――――――――
-    // //region File/Dir Open/Save Dialogs
-    // //DOCUMENTATION:
-    // //'Saving' refers to a dialog where the user has to put in a string, as you would normally do when saving a file.
-    // //'Opening' refers to selecting exclusively from files/directories that are already there.
-    // //String[] extensions refers to the available types of files you normally choose from. Leave it blank to enable all filetypes.
-    // //All methods here are derived from four combinations of true and false from fileDialog, which is private for that reason.
-    // //These methods can be copy-pasted to and from the r class if necessary.
-    // private File fileDialog(String title,boolean openIfTrueElseSave,boolean fileIfTrueElseDir,String...extensions)//Leave extensions blank to accept all file types
-    // {
-    //     /*@formatter:off*/
-    //     JFileChooser chooser=new JFileChooser();
-    //     chooser.setDialogTitle(title);
-    //     if(extensions.length!=0)chooser.setFileFilter(new FileNameExtensionFilter(Arrays.toString(extensions),extensions));
-    //     chooser.setFileSelectionMode(fileIfTrueElseDir?JFileChooser.FILES_ONLY:JFileChooser.DIRECTORIES_ONLY);
-    //     chooser.setCurrentDirectory(new java.io.File("."));//Set pwd
-    //     if(openIfTrueElseSave)chooser.showOpenDialog(null);//Show the dialog
-    //     else chooser.showSaveDialog(null);//Show the dialog
-    //     return chooser.getSelectedFile();
-    //     /*@formatter:on*/
-    // }
-    // public File openFile(String title,String...extensions)
-    // {
-    //     return fileDialog(title,true,true,extensions);
-    // }
-    // public File openDirectory(String title,String...extensions)
-    // {
-    //     return fileDialog(title,true,false,extensions);
-    // }
-    // public File saveFile(String title,String...extensions)//Save is defined as a thing where you gotta type out a new file path or something in the dialog, as opposed to open where you only select whats there
-    // {
-    //     return fileDialog(title,false,true,extensions);
-    // }
-    // public File saveDirectory(String title,String...extensions)
-    // {
-    //     return fileDialog(title,false,false,extensions);
-    // }
-    // //endregion
+    // The following is only commented out because it makes more sense, in the CourseSiteGenerator project, to keep them in the Dialogs class. Once I'm done with this project these should be made static then uncommented.
+    //region Yes/No/Cancel Dialogs
+    static public enum dialogOptions//Used for checking the values of various dialog results
+    {
+        YES,NO,CANCEL
+    }
+    static public dialogOptions yesNoCancel(String title,String message)
+    {
+        /*@formatter:off*/
+        //Example: r.print(new App().gui.dialogs.yesNoCancel("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
+        //Based on: http://www.java2s.com/Tutorial/Java/0240__Swing/Yesnocanceldialog.htm
+        int out=JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_CANCEL_OPTION);
+        if(out==0)
+            return dialogOptions.YES;
+        if(out==1)
+            return dialogOptions.NO;
+        if(out==2)
+            return dialogOptions.CANCEL;
+        assert false;//This should never happen.
+        return null;
+        /*@formatter:on*/
+    }
+    static public boolean yesNo(String title,String message)
+    {
+        //Example: r.print(new App().gui.dialogs.yesNo("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
+        //Based on: http://www.java2s.com/Tutorial/Java/0240__Swing/Yesnocanceldialog.htm
+        return JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_OPTION)==0;//0⟺YES，1⟺NO
+    }
+    static public void ok(String title,String message)
+    {
+        JOptionPane.showConfirmDialog(null,message,title,JOptionPane.OK_OPTION);
+    }
+    //endregion―――――――――――――――――――――――――――――――――――――――――
+    //region File/Dir Open/Save Dialogs
+    //DOCUMENTATION:
+    //'Saving' refers to a dialog where the user has to put in a string, as you would normally do when saving a file.
+    //'Opening' refers to selecting exclusively from files/directories that are already there.
+    //String[] extensions refers to the available types of files you normally choose from. Leave it blank to enable all filetypes.
+    //All methods here are derived from four combinations of true and false from fileDialog, which is private for that reason.
+    //These methods can be copy-pasted to and from the r class if necessary.
+    static private File fileDialog(String title,boolean openIfTrueElseSave,boolean fileIfTrueElseDir,String...extensions)//Leave extensions blank to accept all file types
+    {
+        /*@formatter:off*/
+        JFileChooser chooser=new JFileChooser();
+        chooser.setDialogTitle(title);
+        if(extensions.length!=0)chooser.setFileFilter(new FileNameExtensionFilter(Arrays.toString(extensions),extensions));
+        chooser.setFileSelectionMode(fileIfTrueElseDir?JFileChooser.FILES_ONLY:JFileChooser.DIRECTORIES_ONLY);
+        chooser.setCurrentDirectory(new java.io.File("."));//Set pwd
+        if(openIfTrueElseSave)chooser.showOpenDialog(null);//Show the dialog
+        else chooser.showSaveDialog(null);//Show the dialog
+        return chooser.getSelectedFile();
+        /*@formatter:on*/
+    }
+    static public File openFile(String title,String...extensions)
+    {
+        return fileDialog(title,true,true,extensions);
+    }
+    static public File openDirectory(String title,String...extensions)
+    {
+        return fileDialog(title,true,false,extensions);
+    }
+    static public File saveFile(String title,String...extensions)//Save is defined as a thing where you gotta type out a new file path or something in the dialog, as opposed to open where you only select whats there
+    {
+        return fileDialog(title,false,true,extensions);
+    }
+    static public File saveDirectory(String title,String...extensions)
+    {
+        return fileDialog(title,false,false,extensions);
+    }
+    //endregion
+
+    public static void main(String[] atgs)
+    {
+        yesNo("Helo","heo");
+    }
 
 }
