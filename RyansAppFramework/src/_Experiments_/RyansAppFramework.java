@@ -60,6 +60,7 @@ public class RyansAppFramework extends Application
         scene=new Scene(new tabTester());
 
         scene=new Scene(new GoodTryBase());
+        scene=new Scene(new SeveralTabsBase());
         scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
 
 

@@ -24,3 +24,17 @@ Padding sizes
 
 Rightnow one of my biggest priorities is making sure the window 'scales' properly; in other words not having buttons intersect each other or go off the screen etc. I decided to make it as parametric as possible; almost always using 'USE_COMOUTED_WIDTH' if I can, and adding a scroll bar in case it can't handle it (computes width makes it as small as possible, which is good)
 No longer using toolbar ecause anchors are easier to use
+
+
+
+AGENDA:
+
+Implement Checkboxes and stuff
+Make physical GUI
+Make XML Loader and language choice
+Wrap it all up (last hour)
+
+*My app has better icons. Took high resolution snapshots of the glyphicons, put them in photoshop, and made them have transparency for easier styling.
+Mine has tons of scroll panes and a split pane for TA data, which I think makes it a much much better GUI especially because it scales properly
+You can't drag my TAData tablview splitters off screen, like you can with McKennas
+By using the netbeans plugin I was able to explore more possibilities for the GUI, though it did distract me a lot...it looks wonderful though

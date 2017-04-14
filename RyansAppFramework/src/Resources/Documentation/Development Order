@@ -35,3 +35,6 @@ Make XML Loader and language choice
 Wrap it all up (last hour)
 
 *My app has better icons. Took high resolution snapshots of the glyphicons, put them in photoshop, and made them have transparency for easier styling.
+Mine has tons of scroll panes and a split pane for TA data, which I think makes it a much much better GUI especially because it scales properly
+You can't drag my TAData tablview splitters off screen, like you can with McKennas
+By using the netbeans plugin I was able to explore more possibilities for the GUI, though it did distract me a lot...it looks wonderful though
