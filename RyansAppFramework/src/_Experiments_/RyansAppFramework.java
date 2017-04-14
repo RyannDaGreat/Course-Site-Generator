@@ -70,9 +70,75 @@ public class RyansAppFramework extends Application
 
     static
     {
-        if(r.yesNo("Do you speak italian?","Do you speak italian?"))
+        String l;
+        if(r.yesNo("Do you speak "+(l="Italian")+"?","Do you speak "+l+"?"))
         {
-            Messages.BUNDLE_NAME="_Experiments_.messagesItalian"; //$NON-NLS-1$
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="Chinese")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="French")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="German")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="Greek")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="Japanese")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="Korean")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="Latin")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="Russian")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="Spanish")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="DeathOfTheMind")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="DeathOfTheMind2")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="DeathOfTheMind3")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
+            Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
+        }
+        else if(r.yesNo("Do you speak "+(l="DeathOfTheMind4")+"?","Do you speak "+l+"?"))
+        {
+            Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
             Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
         }
     }
