@@ -36,9 +36,9 @@ public class Dialogs
         //Based on: http://www.java2s.com/Tutorial/Java/0240__Swing/Yesnocanceldialog.htm
         return intToDialogOption(JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_CANCEL_OPTION));
     }
-    public dialogOptions yesNo(String title,String message)//A dialog with the options Yes and No
+    public boolean yesNo(String title,String message)//A dialog with the options Yes and No
     {
-        return intToDialogOption(JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_OPTION));
+        return intToDialogOption(JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_OPTION))==dialogOptions.YES;
     }
     public void ok(String title,String message)//A simple notification dialog with the option "ok"
     {

@@ -43,3 +43,4 @@ By using the netbeans plugin I was able to explore more possibilities for the GU
 EXTRACTION:
 
 Using eclipse to 'Externalize Strings' of output of netbeans compiler of javafx code to java .properties file
+Discovered that java properties files are just like xml files except like 123 times simpler. (123 is a VERY simple number :P)
