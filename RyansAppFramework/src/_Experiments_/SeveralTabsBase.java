@@ -1587,13 +1587,13 @@ public class SeveralTabsBase extends VBox {
         GridPane.setColumnIndex(comboBox6, 1);
         GridPane.setRowIndex(comboBox6, 4);
         comboBox6.setPrefWidth(150.0);
-        comboBox6.setPromptText("Joe Schmo");
+        comboBox6.setPromptText("");
         comboBox6.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
 
         GridPane.setColumnIndex(comboBox7, 1);
         GridPane.setRowIndex(comboBox7, 5);
         comboBox7.setPrefWidth(150.0);
-        comboBox7.setPromptText("Jane Doe");
+        comboBox7.setPromptText("");
         comboBox7.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
 
         GridPane.setRowIndex(text1114, 4);
@@ -1851,12 +1851,12 @@ public class SeveralTabsBase extends VBox {
         GridPane.setColumnIndex(comboBox8, 1);
         GridPane.setRowIndex(comboBox8, 1);
         comboBox8.setPrefWidth(150.0);
-        comboBox8.setPromptText("Holiday");
+        comboBox8.setPromptText("");
         comboBox8.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
 
         GridPane.setColumnIndex(textField12, 1);
         GridPane.setRowIndex(textField12, 5);
-        textField12.setPromptText("http://funnybizblog.com/funny-stuff/calvin-hobbes-snowman-cartoons");
+        textField12.setPromptText("");
         textField12.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
 
         columnConstraints1116.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
@@ -2124,7 +2124,7 @@ public class SeveralTabsBase extends VBox {
         GridPane.setColumnIndex(textField17, 1);
         GridPane.setColumnSpan(textField17, 2147483647);
         GridPane.setRowIndex(textField17, 1);
-        textField17.setPromptText("SNOW DAY");
+        textField17.setPromptText("");
         textField17.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
 
         GridPane.setRowIndex(button110, 4);
