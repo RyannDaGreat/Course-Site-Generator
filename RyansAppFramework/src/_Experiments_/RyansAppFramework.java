@@ -32,17 +32,13 @@ public class RyansAppFramework extends Application
     public void start(Stage primaryStage)
     {
         App app=new App();
-
         HBox Toolbar=new HBox(new Button("A"),new Button("B"),new Button("C"));
         GridPane Grid=new GridPane();
         Button btn=new Button();
-
         btn.setText("Say 'Hello World'");
         btn.setOnAction(event->System.out.println("Hello World!"));
-
         VBox root=new VBox(Toolbar,btn);
         stylize(Toolbar,"jabber");
-
         // Pane root=new Pane();
         // root.getChildren().add(btn);
         tabTester tt=new tabTester();
@@ -51,19 +47,12 @@ public class RyansAppFramework extends Application
         tt.courseDetailsTab.
                                getGraphic().
                                setStyle("-fx-background-color: chartreuse");
-
-
-
-
         scene=new Scene(root);
         scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
         scene=new Scene(new tabTester());
-
         scene=new Scene(new GoodTryBase());
         scene=new Scene(new SeveralTabsBase());
         scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
-
-
         // Scene scene=new Scene(new UntitledBase(),1000,250);
         // scene=new Screne(new Columns(),1000,250);
         primaryStage.setTitle("Hello World!");
@@ -76,7 +65,9 @@ public class RyansAppFramework extends Application
         officeHoursGrid.toggleOfficeHours(s);
         System.out.println(officeHoursGrid.getGridState());
     }
-    /**s
+    /**
+     * s
+     *
      * @param args the command line argument
      */
     public static void main(String[] args)
