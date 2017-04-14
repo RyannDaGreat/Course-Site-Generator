@@ -54,7 +54,7 @@ public class RyansAppFramework extends Application
         scene=new Scene(new tabTester());
         scene=new Scene(new GoodTryBase());
         scene=new Scene(new SeveralTabsBase());
-        scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
+        // scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
         // Scene scene=new Scene(new UntitledBase(),1000,250);
         // scene=new Screne(new Columns(),1000,250);
         primaryStage.setTitle("Hello World!");
