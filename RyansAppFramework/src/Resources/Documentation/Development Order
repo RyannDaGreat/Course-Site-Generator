@@ -44,3 +44,4 @@ EXTRACTION:
 
 Using eclipse to 'Externalize Strings' of output of netbeans compiler of javafx code to java .properties file
 Discovered that java properties files are just like xml files except like 123 times simpler. (123 is a VERY simple number :P)
+I made my own code to translate the entire properties file to italian: courseSiteGeneratorTranslationTerminalLog (in the python standards folder; it's a copypasta of what was in the terminal when I did this (yes, I did it in the terminal using rpy))
