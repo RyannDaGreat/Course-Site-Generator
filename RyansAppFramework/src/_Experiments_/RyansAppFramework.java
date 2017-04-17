@@ -71,7 +71,7 @@ public class RyansAppFramework extends Application
     static
     {
         String l;
-        if(r.yesNo("Do you speak "+(l="Italian")+"?","Do you speak "+l+"?"))
+        if(r.yesNo("Do you speak "+(l="rItalian")+"?","Do you speak "+l+"?"))
         {
             Messages.BUNDLE_NAME="_Experiments_.messages"+l; //$NON-NLS-1$
             Messages.RESOURCE_BUNDLE=ResourceBundle.getBundle(Messages.BUNDLE_NAME);
