@@ -1,11 +1,9 @@
 package _Experiments_;
 
 import javafx.scene.shape.*;
-import javafx.scene.paint.*;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
 import javafx.geometry.*;
-import javafx.scene.effect.*;
 import javafx.scene.control.*;
 import java.lang.*;
 import javafx.scene.layout.*;
@@ -675,7 +673,7 @@ public class SeveralTabsBase extends VBox {
         setMinWidth(USE_PREF_SIZE);
         setPrefHeight(1080.0);
         setPrefWidth(1000.0);
-        setStyle(Messages.getString("key0")); //$NON-NLS-1$
+        setStyle(Messages.getString("Bhbh")); //$NON-NLS-1$
         getStylesheets().add(Messages.getString("key1")); //$NON-NLS-1$
 
         anchorPane.setBlendMode(javafx.scene.effect.BlendMode.HARD_LIGHT);
@@ -1060,7 +1058,7 @@ public class SeveralTabsBase extends VBox {
         tableColumn.setText(Messages.getString("key67")); //$NON-NLS-1$
 
         tableColumn0.setPrefWidth(75.0);
-        // tableColumn0.setStyle("-fx-background-color: #553366;");
+        // cdStNavbarTitle_tableColumn0.setStyle("-fx-background-color: #553366;");
         tableColumn0.setText(Messages.getString("key68")); //$NON-NLS-1$
 
         tableColumn1.setPrefWidth(75.0);
@@ -1263,7 +1261,7 @@ public class SeveralTabsBase extends VBox {
         tableColumn3.setText(Messages.getString("key102")); //$NON-NLS-1$
 
         tableColumn4.setPrefWidth(75.0);
-        // tableColumn4.setStyle("-fx-background-color: #553366;");
+        // tdTaName_tableColumn4.setStyle("-fx-background-color: #553366;");
         tableColumn4.setText(Messages.getString("key103")); //$NON-NLS-1$
 
         tableColumn5.setPrefWidth(75.0);
@@ -1395,7 +1393,7 @@ public class SeveralTabsBase extends VBox {
         tableColumn6.setText(Messages.getString("key126")); //$NON-NLS-1$
 
         tableColumn7.setPrefWidth(75.0);
-        // tableColumn7.setStyle("-fx-background-color: #553366;");
+        // rdInstructor_tableColumn7.setStyle("-fx-background-color: #553366;");
         tableColumn7.setText(Messages.getString("key127")); //$NON-NLS-1$
 
         tableColumn8.setPrefWidth(75.0);
@@ -1490,7 +1488,7 @@ public class SeveralTabsBase extends VBox {
         tableColumn9.setText(Messages.getString("key145")); //$NON-NLS-1$
 
         tableColumn10.setPrefWidth(75.0);
-        // tableColumn10.setStyle("-fx-background-color: #553366;");
+        // rdTA2tableColumn10.setStyle("-fx-background-color: #553366;");
         tableColumn10.setText(Messages.getString("key146")); //$NON-NLS-1$
 
         tableColumn11.setPrefWidth(75.0);
@@ -1549,25 +1547,25 @@ public class SeveralTabsBase extends VBox {
 
         GridPane.setColumnIndex(textField4, 1);
         GridPane.setColumnSpan(textField4, 2147483647);
-        textField4.setPromptText(Messages.getString("key158")); //$NON-NLS-1$
+        textField4.setPromptText(Messages.getString("A")); //$NON-NLS-1$
         textField4.setStyle(Messages.getString("key159")); //$NON-NLS-1$
 
         GridPane.setColumnIndex(textField5, 1);
         GridPane.setColumnSpan(textField5, 2147483647);
         GridPane.setRowIndex(textField5, 1);
-        textField5.setPromptText(Messages.getString("key160")); //$NON-NLS-1$
+        textField5.setPromptText(Messages.getString("A")); //$NON-NLS-1$
         textField5.setStyle(Messages.getString("key161")); //$NON-NLS-1$
 
         GridPane.setColumnIndex(textField6, 1);
         GridPane.setColumnSpan(textField6, 2147483647);
         GridPane.setRowIndex(textField6, 2);
-        textField6.setPromptText(Messages.getString("key162")); //$NON-NLS-1$
+        textField6.setPromptText(Messages.getString("A")); //$NON-NLS-1$
         textField6.setStyle(Messages.getString("key163")); //$NON-NLS-1$
 
         GridPane.setColumnIndex(textField7, 1);
         GridPane.setColumnSpan(textField7, 2147483647);
         GridPane.setRowIndex(textField7, 3);
-        textField7.setPromptText(Messages.getString("key164")); //$NON-NLS-1$
+        textField7.setPromptText(Messages.getString("A")); //$NON-NLS-1$
         textField7.setStyle(Messages.getString("key165")); //$NON-NLS-1$
 
         GridPane.setRowIndex(button14, 6);
@@ -1587,7 +1585,7 @@ public class SeveralTabsBase extends VBox {
         GridPane.setColumnIndex(comboBox6, 1);
         GridPane.setRowIndex(comboBox6, 4);
         comboBox6.setPrefWidth(150.0);
-        comboBox6.setPromptText(Messages.getString("key170")); //$NON-NLS-1$
+        comboBox6.setPromptText(Messages.getString("A")); //$NON-NLS-1$
         comboBox6.setStyle(Messages.getString("key171")); //$NON-NLS-1$
 
         GridPane.setColumnIndex(comboBox7, 1);
@@ -1741,7 +1739,7 @@ public class SeveralTabsBase extends VBox {
         tableColumn14.setText(Messages.getString("key197")); //$NON-NLS-1$
 
         tableColumn15.setPrefWidth(75.0);
-        // tableColumn15.setStyle("-fx-background-color: #553366;");
+        // pdTUse_tableColumn15.setStyle("-fx-background-color: #553366;");
         tableColumn15.setText(Messages.getString("key198")); //$NON-NLS-1$
 
         tableColumn16.setPrefWidth(75.0);
@@ -1936,7 +1934,7 @@ public class SeveralTabsBase extends VBox {
         tableColumn18.setText(Messages.getString("key239")); //$NON-NLS-1$
 
         tableColumn19.setPrefWidth(75.0);
-        // tableColumn19.setStyle("-fx-background-color: #553366;");
+        // pdSFirstName_tableColumn19.setStyle("-fx-background-color: #553366;");
         tableColumn19.setText(Messages.getString("key240")); //$NON-NLS-1$
 
         tableColumn110.setPrefWidth(75.0);

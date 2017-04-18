@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1000.0" style="-fx-background-color: #555555;" stylesheets="@appstyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1000.0" style="-fx-background-color: #555555;" stylesheets="@../appstyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane blendMode="HARD_LIGHT">
          <children>
@@ -30,7 +30,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Newcopy.png" />
+                                    <Image url="@Newcopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -39,7 +39,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Foldercopy.png" />
+                                    <Image url="@Foldercopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -48,7 +48,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Floppycopy.png" />
+                                    <Image url="@Floppycopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -57,7 +57,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/FloppyDowncopy.png" />
+                                    <Image url="@FloppyDowncopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -66,7 +66,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Exportcopy.png" />
+                                    <Image url="@Exportcopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -75,7 +75,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Powercopy.png" />
+                                    <Image url="@Powercopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -88,7 +88,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Undocopy.png" />
+                                    <Image url="@Undocopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -97,7 +97,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Redocopy.png" />
+                                    <Image url="@Redocopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -106,7 +106,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Bookcopy.png" />
+                                    <Image url="@Bookcopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -120,9 +120,9 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <TabPane nodeOrientation="LEFT_TO_RIGHT" opacity="0.93" prefHeight="200.0" prefWidth="200.0" stylesheets="@appstyle.css" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+      <TabPane nodeOrientation="LEFT_TO_RIGHT" opacity="0.93" prefHeight="200.0" prefWidth="200.0" stylesheets="@../appstyle.css" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
         <tabs>
-          <Tab style="-fx-background-color: #99BBFF; -fx-font-size: 15;" text=" Course Details">
+          <Tab style="-fx-background-color: #99BBFF; -fx-font-size: 15;" text=" Course Details ">
                <content>
                   <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="1020.0" prefViewportWidth="1000.0">
                      <content>
@@ -130,7 +130,7 @@
                            <children>
                               <GridPane alignment="CENTER">
                                  <children>
-                                    <Text fill="#d9f4ff" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 36;" text="Course Details0" GridPane.halignment="CENTER">
+                                    <Text fill="#d9f4ff" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 36;" text="Course Details" GridPane.halignment="CENTER">
                                        <font>
                                           <Font name="Arial" size="50.0" />
                                        </font>
@@ -148,7 +148,7 @@
                               </GridPane>
                               <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                  <children>
-                                    <VBox prefHeight="251.0" prefWidth="990.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox prefHeight="251.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Course Info">
                                              <font>
@@ -172,14 +172,14 @@
                                                 <ComboBox prefWidth="150.0" promptText="219" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
                                                 <ComboBox prefWidth="150.0" promptText="2017" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ioiioh" underline="true" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change0" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
                                              </children>
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="938.9019165039062" />
-                                                <ColumnConstraints hgrow="SOMETIMES" />
-                                                <ColumnConstraints hgrow="ALWAYS" minWidth="0.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
+                                                <ColumnConstraints hgrow="ALWAYS" maxWidth="561.8994140625" minWidth="0.0" prefWidth="304.5467529296875" />
                                                 <ColumnConstraints hgrow="NEVER" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1777.0434799194336" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1777.0434799194336" minWidth="100.0" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints />
@@ -202,7 +202,7 @@
                               </AnchorPane>
                             <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                  <children>
-                                    <VBox prefHeight="180.0" prefWidth="990.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox prefHeight="180.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Site Template" />
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 11;" text="The selected directory should contain the full site template, including the HTML files " />
@@ -217,15 +217,15 @@
                                                 <RowConstraints vgrow="ALWAYS" />
                                             </rowConstraints>
                                              <children>
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change1" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text=".\templates\CSE219" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Template Dir:" />
-                                                <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@appstyle.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                                <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@../appstyle.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
                                                   <columns>
-                                                    <TableColumn prefWidth="75.0" text="Use28654" />
-                                                    <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Navbar Title8365" />
-                                                      <TableColumn prefWidth="75.0" text="File Name350" />
-                                                      <TableColumn prefWidth="75.0" text="Script775" />
+                                                    <TableColumn prefWidth="75.0" text="Use" />
+                                                    <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Navbar Title" />
+                                                      <TableColumn prefWidth="75.0" text="File Name" />
+                                                      <TableColumn prefWidth="75.0" text="Script" />
                                                   </columns>
                                                    <columnResizePolicy>
                                                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -248,29 +248,29 @@
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Page Style" />
                                           <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="10.0" prefWidth="998.0" scaleShape="false" vgap="10.0" VBox.vgrow="ALWAYS">
                                              <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image0:" />
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change2" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image:" />
+                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                                    <image>
-                                                      <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                      <Image url="@../../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image1:" GridPane.rowIndex="1" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image2:" GridPane.rowIndex="2" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image:" GridPane.rowIndex="1" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image:" GridPane.rowIndex="2" />
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                                    <image>
-                                                      <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                      <Image url="@../../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
                                                    </image>
                                                 </ImageView>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                                                    <image>
-                                                      <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                      <Image url="@../../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change3" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change4" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                                <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stylesheet:" GridPane.rowIndex="3" />
-                                                <ComboBox prefWidth="150.0" promptText="Fall0" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <ComboBox prefWidth="150.0" promptText="Fall" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                              </children>
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" />
@@ -336,16 +336,16 @@
                                                 </GridPane>
                                                 <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                                    <children>
-                                                      <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                          <children>
-                                                            <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@appstyle.css">
+                                                            <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@../appstyle.css">
                                                                <columnResizePolicy>
                                                                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                                                </columnResizePolicy>
                                                                <columns>
-                                                                  <TableColumn prefWidth="75.0" text="Undergrad993355" />
-                                                                  <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Name9254" />
-                                                                  <TableColumn prefWidth="75.0" text="Email1775" />
+                                                                  <TableColumn prefWidth="75.0" text="Undergrad" />
+                                                                  <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Name" />
+                                                                  <TableColumn prefWidth="75.0" text="Email" />
                                                                </columns>
                                                             </TableView>
                                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Add/Edit">
@@ -361,8 +361,8 @@
                                                                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
                                                                   <TextField promptText="Email" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
                                                                   <TextField promptText="Name" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
-                                                                  <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update989" GridPane.rowIndex="2" />
-                                                                  <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear5286" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                  <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update" GridPane.rowIndex="2" />
+                                                                  <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                                                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" GridPane.rowIndex="1" />
                                                                </children>
                                                                <columnConstraints>
@@ -422,19 +422,18 @@
                                                 </GridPane>
                                                 <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                                    <children>
-                                                      <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                          <children>
-                                                            <GridPane>
-                                                              <columnConstraints>
-                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                              </columnConstraints>
-                                                              <rowConstraints>
-                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                              </rowConstraints>
-                                                            </GridPane>
+                                                            <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@../appstyle.css">
+                                                               <columnResizePolicy>
+                                                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                               </columnResizePolicy>
+                                                               <columns>
+                                                                  <TableColumn prefWidth="75.0" text="Undergrad" />
+                                                                  <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Name" />
+                                                                  <TableColumn prefWidth="75.0" text="Email" />
+                                                               </columns>
+                                                            </TableView>
                                                             <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="10.0" scaleShape="false" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                <children>
                                                                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Set Start Time:" />
@@ -505,7 +504,7 @@
                               </GridPane>
                               <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                  <children>
-                                    <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@appstyle.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                    <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@../appstyle.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
@@ -513,8 +512,8 @@
                                           <TableColumn prefWidth="75.0" text="Section" />
                                           <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Instructor" />
                                           <TableColumn prefWidth="75.0" text="Recitation Data" />
-                                          <TableColumn prefWidth="75.0" text="TA567" />
-                                          <TableColumn prefWidth="75.0" text="TA756" />
+                                          <TableColumn prefWidth="75.0" text="TA" />
+                                          <TableColumn prefWidth="75.0" text="TA" />
                                        </columns>
                                     </TableView>
                                  </children>
@@ -523,7 +522,7 @@
                                  <children>
                                     <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Add/Edit67">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Add/Edit">
                                              <font>
                                                 <Font name="Arial" size="13.0" />
                                              </font>
@@ -541,11 +540,11 @@
                                                 <TextField promptText="Richard McKenna" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
                                                 <TextField promptText="Mondays, 3:30pm-4:23pm" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
                                                 <TextField promptText="Old Computer Science 2114" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
-                                                <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update564" GridPane.rowIndex="6" />
-                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear56" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update" GridPane.rowIndex="6" />
+                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                                 <ComboBox prefWidth="150.0" promptText="Joe Schmo" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                 <ComboBox prefWidth="150.0" promptText="Jane Doe" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supervising TA:87" GridPane.rowIndex="4" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supervising TA:" GridPane.rowIndex="4" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supervising TA:" GridPane.rowIndex="5" />
                                              </children>
                                              <columnConstraints>
@@ -607,7 +606,7 @@
                               </GridPane>
                               <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                  <children>
-                                    <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Calendar Boundaries">
                                              <font>
@@ -618,8 +617,8 @@
                                              <children>
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Starting Monday:" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ending Friday:" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
-                                                <DatePicker promptText="fridayshmiday" style="-fx-background-color: bddaed; fx-background-radius: 30,30;" GridPane.columnIndex="3" />
-                                                <DatePicker promptText="mondaywunday" style="-fx-background-color: bddaed; fx-background-radius: 30,30;" GridPane.columnIndex="1" />
+                                                <DatePicker style="-fx-background-color: bddaed; fx-background-radius: 30,30;" GridPane.columnIndex="3" />
+                                                <DatePicker style="-fx-background-color: bddaed; fx-background-radius: 30,30;" GridPane.columnIndex="1" />
                                              </children>
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="938.9019165039062" />
@@ -643,22 +642,22 @@
                               </AnchorPane>
                               <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                  <children>
-                                    <VBox layoutX="10.0" layoutY="10.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Schedule Items:">
                                              <font>
                                                 <Font name="Arial" size="13.0" />
                                              </font>
                                           </Text>
-                                          <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@appstyle.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                          <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@../appstyle.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                                              <columnResizePolicy>
                                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                              </columnResizePolicy>
                                              <columns>
-                                                <TableColumn prefWidth="75.0" text="Type789" />
-                                                <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Date354" />
-                                                <TableColumn prefWidth="75.0" text="Title009" />
-                                                <TableColumn prefWidth="75.0" text="Topic1234567" />
+                                                <TableColumn prefWidth="75.0" text="Type" />
+                                                <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Date" />
+                                                <TableColumn prefWidth="75.0" text="Title" />
+                                                <TableColumn prefWidth="75.0" text="Topic" />
                                              </columns>
                                           </TableView>
                                        </children>
@@ -670,7 +669,7 @@
                               </AnchorPane>
                               <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                  <children>
-                                    <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Add/Edit">
                                              <font>
@@ -683,16 +682,16 @@
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" GridPane.rowIndex="1" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time:" GridPane.rowIndex="2" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" GridPane.rowIndex="3" />
-                                                <TextField promptText="criteriashmiteria" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
-                                                <TextField promptText="topicshmopic" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
-                                                <TextField promptText="timeywimey" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
                                                 <TextField promptText="SNOW DAY" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
-                                                <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update0987" GridPane.rowIndex="7" />
-                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear0909" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update" GridPane.rowIndex="7" />
+                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Topic:" GridPane.rowIndex="4" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Link:" GridPane.rowIndex="5" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Criteria:" GridPane.rowIndex="6" />
-                                                <DatePicker promptText="dateshmate" style="-fx-background-color: bddaed; fx-background-radius: 30,30;" GridPane.columnIndex="1" />
+                                                <DatePicker style="-fx-background-color: bddaed; fx-background-radius: 30,30;" GridPane.columnIndex="1" />
                                                 <ComboBox prefWidth="150.0" promptText="Holiday" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                 <TextField promptText="http://funnybizblog.com/funny-stuff/calvin-hobbes-snowman-cartoons" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                              </children>
@@ -763,18 +762,18 @@
                                                 <Font name="Arial" size="13.0" />
                                              </font>
                                              <VBox.margin>
-                                                <Insets bottom="5.0" />
+                                                <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Text>
-                                          <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@appstyle.css">
+                                          <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@../appstyle.css">
                                              <columnResizePolicy>
                                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                              </columnResizePolicy>
                                              <columns>
-                                                <TableColumn prefWidth="75.0" text="Use000999" />
+                                                <TableColumn prefWidth="75.0" text="Use" />
                                                 <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Navbar Title" />
-                                                <TableColumn prefWidth="75.0" text="File Name767" />
-                                                <TableColumn prefWidth="75.0" text="Script12345" />
+                                                <TableColumn prefWidth="75.0" text="File Name" />
+                                                <TableColumn prefWidth="75.0" text="Script" />
                                              </columns>
                                           </TableView>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Add/Edit">
@@ -788,10 +787,10 @@
                                           <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="10.0" scaleShape="false" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
-                                                <TextField promptText="lllllll" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
-                                                <TextField promptText="nnnnnn" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
-                                                <Button maxWidth="1.7976931348623157E308" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update0" GridPane.rowIndex="3" />
-                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear879" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                                                <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update" GridPane.rowIndex="3" />
+                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Color:" GridPane.rowIndex="1" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Link:" GridPane.rowIndex="2" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TextColor:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
@@ -801,7 +800,7 @@
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="        #ffffff" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                              </children>
                                              <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="938.9019165039062" />
                                                 <ColumnConstraints prefWidth="200.0" />
                                                 <ColumnConstraints prefWidth="120.0" />
                                                 <ColumnConstraints hgrow="ALWAYS" />
@@ -825,25 +824,25 @@
                               </AnchorPane>
                               <AnchorPane nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #8888FF; -fx-background-radius: 20,20;">
                                  <children>
-                                    <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Students">
                                              <font>
                                                 <Font name="Arial" size="13.0" />
                                              </font>
                                              <VBox.margin>
-                                                <Insets />
+                                                <Insets bottom="6.0" />
                                              </VBox.margin>
                                           </Text>
-                                          <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@appstyle.css">
+                                          <TableView style="-fx-background-color: #AABBCC; -fx-background-radius: 10,10;" stylesheets="@../appstyle.css">
                                              <columnResizePolicy>
                                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                              </columnResizePolicy>
                                              <columns>
-                                                <TableColumn prefWidth="75.0" text="First Name0909" />
-                                                <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Last Name65" />
-                                                <TableColumn prefWidth="75.0" text="Team44" />
-                                                <TableColumn prefWidth="75.0" text="Role99" />
+                                                <TableColumn prefWidth="75.0" text="First Name" />
+                                                <TableColumn prefWidth="75.0" style="-fx-background-color: #553366;" text="Last Name" />
+                                                <TableColumn prefWidth="75.0" text="Team" />
+                                                <TableColumn prefWidth="75.0" text="Role" />
                                              </columns>
                                           </TableView>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Add/Edit">
@@ -858,11 +857,11 @@
                                              <children>
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" GridPane.rowIndex="1" />
-                                                <TextField promptText="teme" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
-                                                <TextField promptText="fname" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                                                <TextField style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
                                                 <TextField promptText="SNOW DAY" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
-                                                <Button maxWidth="1.7976931348623157E308" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update23" GridPane.rowIndex="4" />
-                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear2345" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Add/Update" GridPane.rowIndex="4" />
+                                                <Button maxWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team:" GridPane.rowIndex="2" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Role:" GridPane.rowIndex="3" />
                                                 <TextField promptText="http://funnybizblog.com/funny-stuff/calvin-hobbes-snowman-cartoons" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" GridPane.columnIndex="1" GridPane.rowIndex="3" />

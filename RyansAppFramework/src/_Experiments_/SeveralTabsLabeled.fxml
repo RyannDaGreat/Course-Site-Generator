@@ -308,7 +308,7 @@
                <content>
                   <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="1020.0" prefViewportWidth="1000.0">
                      <content>
-                        <SplitPane dividerPositions="0.5100200400801603" prefHeight="160.0" prefWidth="200.0">
+                        <SplitPane dividerPositions="0.3196392785571142" prefHeight="160.0" prefWidth="200.0">
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
@@ -368,7 +368,6 @@
                                                                <columnConstraints>
                                                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="938.9019165039062" />
                                                                   <ColumnConstraints prefWidth="200.0" />
-                                                                  <ColumnConstraints prefWidth="120.0" />
                                                                   <ColumnConstraints hgrow="ALWAYS" />
                                                                </columnConstraints>
                                                                <rowConstraints>

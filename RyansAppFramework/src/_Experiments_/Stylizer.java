@@ -15,6 +15,6 @@ public class Stylizer
     }
     public static Image getImage(String name)
     {
-        return new Image(topakcoa(name));
+        return new Image(topakcoa("Images/"+name));
     }
 }

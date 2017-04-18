@@ -50,10 +50,11 @@ public class RyansAppFramework extends Application
                                getGraphic().
                                setStyle("-fx-background-color: chartreuse");
         scene=new Scene(root);
-        scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
-        scene=new Scene(new tabTester());
-        scene=new Scene(new GoodTryBase());
-        scene=new Scene(new SeveralTabsBase());
+        // scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
+        // scene=new Scene(new tabTester());
+        // scene=new Scene(new GoodTryBase());
+        // scene=new Scene(new SeveralTabsBase());
+        scene=new Scene(new MainAppBoilerplate());
         // scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
         // Scene scene=new Scene(new UntitledBase(),1000,250);
         // scene=new Screne(new Columns(),1000,250);
