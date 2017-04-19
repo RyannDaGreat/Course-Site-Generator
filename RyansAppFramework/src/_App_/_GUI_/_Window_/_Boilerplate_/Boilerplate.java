@@ -1,4 +1,4 @@
-package _App_._GUI_._Window_._Boilerplate_;//Created by Ryan on 4/10/17.
+package _App_._GUI_._Window_._Boilerplate_;
 import _Externals_._Resources_.ResourceGetter;
 import _App_.App;
 import javafx.geometry.Insets;
@@ -346,101 +346,101 @@ public class Boilerplate extends VBox
         setMinWidth(USE_PREF_SIZE);
         setPrefHeight(1080.0);
         setPrefWidth(1000.0);
-        setStyle("-fx-background-color: #555555;");
-        getStylesheets().add("/_Experiments_/appstyle.css");
+        setStyle(app.io.propertyGetter.getProperty("prop0")); //$NON-NLS-1$
+        getStylesheets().add(app.io.propertyGetter.getProperty("prop1")); //$NON-NLS-1$
         anchorPane.setBlendMode(javafx.scene.effect.BlendMode.HARD_LIGHT);
         AnchorPane.setLeftAnchor(gridPane,0.0);
         AnchorPane.setRightAnchor(gridPane,0.0);
         AnchorPane.setTopAnchor(gridPane,0.0);
         gridPane.setLayoutY(15.0);
-        gridPane.setStyle("-fx-background-color: #6334a8;");
+        gridPane.setStyle(app.io.propertyGetter.getProperty("prop2")); //$NON-NLS-1$
         columnConstraints.setHgrow(javafx.scene.layout.Priority.NEVER);
         columnConstraints0.setHgrow(javafx.scene.layout.Priority.ALWAYS);
         columnConstraints1.setHgrow(javafx.scene.layout.Priority.NEVER);
         rowConstraints.setVgrow(javafx.scene.layout.Priority.ALWAYS);
         GridPane.setHgrow(toolBar,javafx.scene.layout.Priority.NEVER);
         GridPane.setVgrow(toolBar,javafx.scene.layout.Priority.ALWAYS);
-        toolBar.setStyle("-fx-background-color: rgba(0,0,0,0);");
+        toolBar.setStyle(app.io.propertyGetter.getProperty("prop3")); //$NON-NLS-1$
         new_button.setMnemonicParsing(false);
-        new_button.setStyle("-fx-background-color: #e5d3ff;");
+        new_button.setStyle(app.io.propertyGetter.getProperty("prop4")); //$NON-NLS-1$
         imageView.setFitHeight(40.0);
         imageView.setFitWidth(100.0);
         imageView.setPickOnBounds(true);//Stylizer
         imageView.setPreserveRatio(true);
         // imageView.setImage(new Image(getClass().getResource("Icons/Newcopy.png").toExternalForm()));
-        imageView.setImage(ResourceGetter.getImage("Newcopy.png"));
+        imageView.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop5"))); //$NON-NLS-1$
         new_button.setGraphic(imageView);
         open_button0.setMnemonicParsing(false);
-        open_button0.setStyle("-fx-background-color: #e5d3ff;");
+        open_button0.setStyle(app.io.propertyGetter.getProperty("prop6")); //$NON-NLS-1$
         imageView0.setFitHeight(40.0);
         imageView0.setFitWidth(200.0);
         imageView0.setPickOnBounds(true);
         imageView0.setPreserveRatio(true);
         // imageView0.setImage(new Image(getClass().getResource("Icons/Foldercopy.png").toExternalForm()));
-        imageView0.setImage(ResourceGetter.getImage("Foldercopy.png"));
+        imageView0.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop7"))); //$NON-NLS-1$
         open_button0.setGraphic(imageView0);
         save_button1.setMnemonicParsing(false);
-        save_button1.setStyle("-fx-background-color: #e5d3ff;");
+        save_button1.setStyle(app.io.propertyGetter.getProperty("prop8")); //$NON-NLS-1$
         imageView1.setFitHeight(40.0);
         imageView1.setFitWidth(200.0);
         imageView1.setPickOnBounds(true);
         imageView1.setPreserveRatio(true);
         // imageView1.setImage(new Image(getClass().getResource("Icons/Floppycopy.png").toExternalForm()));
-        imageView1.setImage(ResourceGetter.getImage("Floppycopy.png"));
+        imageView1.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop9"))); //$NON-NLS-1$
         save_button1.setGraphic(imageView1);
         saveas_button2.setMnemonicParsing(false);
-        saveas_button2.setStyle("-fx-background-color: #e5d3ff;");
+        saveas_button2.setStyle(app.io.propertyGetter.getProperty("prop10")); //$NON-NLS-1$
         imageView2.setFitHeight(40.0);
         imageView2.setFitWidth(55.0);
         imageView2.setPickOnBounds(true);
         imageView2.setPreserveRatio(true);
-        imageView2.setImage(ResourceGetter.getImage("Floppydowncopy.png"));
+        imageView2.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop11"))); //$NON-NLS-1$
         saveas_button2.setGraphic(imageView2);
         export_button3.setMnemonicParsing(false);
-        export_button3.setStyle("-fx-background-color: #e5d3ff;");
+        export_button3.setStyle(app.io.propertyGetter.getProperty("prop12")); //$NON-NLS-1$
         imageView3.setFitHeight(40.0);
         imageView3.setFitWidth(100.0);
         imageView3.setPickOnBounds(true);
         imageView3.setPreserveRatio(true);
         // imageView3.setImage(new Image(getClass().getResource("Icons/Exportcopy.png").toExternalForm()));
-        imageView3.setImage(ResourceGetter.getImage("Exportcopy.png"));
+        imageView3.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop13"))); //$NON-NLS-1$
         export_button3.setGraphic(imageView3);
         power_button4.setMnemonicParsing(false);
-        power_button4.setStyle("-fx-background-color: #e5d3ff;");
+        power_button4.setStyle(app.io.propertyGetter.getProperty("prop14")); //$NON-NLS-1$
         imageView4.setFitHeight(40.0);
         imageView4.setFitWidth(100.0);
         imageView4.setPickOnBounds(true);
         imageView4.setPreserveRatio(true);
-        imageView4.setImage(ResourceGetter.getImage("Powercopy.png"));
+        imageView4.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop15"))); //$NON-NLS-1$
         power_button4.setGraphic(imageView4);
         GridPane.setColumnIndex(toolBar0,2);
         GridPane.setHgrow(toolBar0,javafx.scene.layout.Priority.NEVER);
         GridPane.setVgrow(toolBar0,javafx.scene.layout.Priority.ALWAYS);
-        toolBar0.setStyle("-fx-background-color: rgba(0,0,0,0);");
+        toolBar0.setStyle(app.io.propertyGetter.getProperty("prop16")); //$NON-NLS-1$
         undo_button5.setMnemonicParsing(false);
-        undo_button5.setStyle("-fx-background-color: #e5d3ff;");
+        undo_button5.setStyle(app.io.propertyGetter.getProperty("prop17")); //$NON-NLS-1$
         imageView5.setFitHeight(40.0);
         imageView5.setFitWidth(200.0);
         imageView5.setPickOnBounds(true);
         imageView5.setPreserveRatio(true);
         // imageView5.setImage(new Image(getClass().getResource("Icons/Undocopy.png").toExternalForm()));
-        imageView5.setImage(ResourceGetter.getImage("Undocopy.png"));
+        imageView5.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop18"))); //$NON-NLS-1$
         undo_button5.setGraphic(imageView5);
         redo_button6.setMnemonicParsing(false);
-        redo_button6.setStyle("-fx-background-color: #e5d3ff;");
+        redo_button6.setStyle(app.io.propertyGetter.getProperty("prop19")); //$NON-NLS-1$
         imageView6.setFitHeight(40.0);
         imageView6.setFitWidth(200.0);
         imageView6.setPickOnBounds(true);
         imageView6.setPreserveRatio(true);
-        imageView6.setImage(ResourceGetter.getImage("Redocopy.png"));
+        imageView6.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop20"))); //$NON-NLS-1$
         redo_button6.setGraphic(imageView6);
         book_button7.setMnemonicParsing(false);
-        book_button7.setStyle("-fx-background-color: #e5d3ff;");
+        book_button7.setStyle(app.io.propertyGetter.getProperty("prop21")); //$NON-NLS-1$
         imageView7.setFitHeight(40.0);
         imageView7.setFitWidth(200.0);
         imageView7.setPickOnBounds(true);
         imageView7.setPreserveRatio(true);
-        imageView7.setImage(ResourceGetter.getImage("Bookcopy.png"));
+        imageView7.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop22"))); //$NON-NLS-1$
         book_button7.setGraphic(imageView7);
         gridPane.setPadding(new Insets(5.0));
         VBox.setVgrow(tabPane,javafx.scene.layout.Priority.ALWAYS);
@@ -448,30 +448,30 @@ public class Boilerplate extends VBox
         tabPane.setOpacity(0.93);
         tabPane.setPrefHeight(200.0);
         tabPane.setPrefWidth(200.0);
-        tabPane.getStylesheets().add("/_Experiments_/appstyle.css");
+        tabPane.getStylesheets().add(app.io.propertyGetter.getProperty("prop23")); //$NON-NLS-1$
         tabPane.setTabClosingPolicy(javafx.scene.control.TabPane.TabClosingPolicy.UNAVAILABLE);
-        tab.setStyle("-fx-background-color: #99BBFF; -fx-font-size: 15;");
-        tab.setText(" Course Details");
+        tab.setStyle(app.io.propertyGetter.getProperty("prop24")); //$NON-NLS-1$
+        tab.setText(app.io.propertyGetter.getProperty("prop25")); //$NON-NLS-1$
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
         scrollPane.setPrefViewportHeight(1020.0);
         scrollPane.setPrefViewportWidth(1000.0);
         vBox.setSpacing(5.0);
-        vBox.setStyle("-fx-background-color: #336688; -fx-background-radius: 0;");
+        vBox.setStyle(app.io.propertyGetter.getProperty("prop26")); //$NON-NLS-1$
         gridPane0.setAlignment(javafx.geometry.Pos.CENTER);
         GridPane.setHalignment(text,javafx.geometry.HPos.CENTER);
-        text.setFill(javafx.scene.paint.Color.valueOf("#d9f4ff"));
+        text.setFill(javafx.scene.paint.Color.valueOf(app.io.propertyGetter.getProperty("prop27"))); //$NON-NLS-1$
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setStyle("-fx-font-size: 36;");
-        text.setText("Course Details0");
-        text.setFont(new Font("Arial",50.0));
+        text.setStyle(app.io.propertyGetter.getProperty("prop28")); //$NON-NLS-1$
+        text.setText(app.io.propertyGetter.getProperty("prop29")); //$NON-NLS-1$
+        text.setFont(new Font(app.io.propertyGetter.getProperty("prop30"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints2.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints2.setMinWidth(0.0);
         rowConstraints0.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
         anchorPane0.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane0.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane0.setStyle(app.io.propertyGetter.getProperty("prop31")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox0,0.0);
         AnchorPane.setLeftAnchor(vBox0,0.0);
         AnchorPane.setRightAnchor(vBox0,0.0);
@@ -481,9 +481,9 @@ public class Boilerplate extends VBox
         vBox0.setSpacing(5.0);
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
-        text0.setStyle("-fx-font-size: 16;");
-        text0.setText("Course Info");
-        text0.setFont(new Font("Arial",13.0));
+        text0.setStyle(app.io.propertyGetter.getProperty("prop32")); //$NON-NLS-1$
+        text0.setText(app.io.propertyGetter.getProperty("prop33")); //$NON-NLS-1$
+        text0.setFont(new Font(app.io.propertyGetter.getProperty("prop34"),13.0)); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(gridPane1,0.0);
         AnchorPane.setLeftAnchor(gridPane1,0.0);
         AnchorPane.setRightAnchor(gridPane1,0.0);
@@ -496,87 +496,87 @@ public class Boilerplate extends VBox
         gridPane1.setVgap(10.0);
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText("Subject:");
+        text1.setText(app.io.propertyGetter.getProperty("prop35")); //$NON-NLS-1$
         GridPane.setRowIndex(text2,1);
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
-        text2.setText("Semester:");
+        text2.setText(app.io.propertyGetter.getProperty("prop36")); //$NON-NLS-1$
         GridPane.setColumnIndex(text3,3);
         GridPane.setHalignment(text3,javafx.geometry.HPos.LEFT);
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText("Number:");
+        text3.setText(app.io.propertyGetter.getProperty("prop37")); //$NON-NLS-1$
         GridPane.setColumnIndex(text4,3);
         GridPane.setHalignment(text4,javafx.geometry.HPos.LEFT);
         GridPane.setRowIndex(text4,1);
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
-        text4.setText("Year:");
+        text4.setText(app.io.propertyGetter.getProperty("prop38")); //$NON-NLS-1$
         GridPane.setRowIndex(text5,2);
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText("Title:");
+        text5.setText(app.io.propertyGetter.getProperty("prop39")); //$NON-NLS-1$
         GridPane.setRowIndex(text6,3);
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text6.setStrokeWidth(0.0);
-        text6.setText("Instructor Name:");
+        text6.setText(app.io.propertyGetter.getProperty("prop40")); //$NON-NLS-1$
         GridPane.setRowIndex(text7,4);
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText("Instructor Home:");
+        text7.setText(app.io.propertyGetter.getProperty("prop41")); //$NON-NLS-1$
         GridPane.setRowIndex(text8,5);
         text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text8.setStrokeWidth(0.0);
-        text8.setText("Export Dir:");
+        text8.setText(app.io.propertyGetter.getProperty("prop42")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdCiTitle_textField,1);
         GridPane.setColumnSpan(cdCiTitle_textField,2147483647);
         GridPane.setRowIndex(cdCiTitle_textField,2);
-        cdCiTitle_textField.setPromptText("Computer Science III");
-        cdCiTitle_textField.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        cdCiTitle_textField.setPromptText(app.io.propertyGetter.getProperty("prop43")); //$NON-NLS-1$
+        cdCiTitle_textField.setStyle(app.io.propertyGetter.getProperty("prop44")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdCiInstructorName_textField0,1);
         GridPane.setColumnSpan(cdCiInstructorName_textField0,2147483647);
         GridPane.setRowIndex(cdCiInstructorName_textField0,3);
-        cdCiInstructorName_textField0.setPromptText("Richard McKenna");
-        cdCiInstructorName_textField0.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        cdCiInstructorName_textField0.setPromptText(app.io.propertyGetter.getProperty("prop45")); //$NON-NLS-1$
+        cdCiInstructorName_textField0.setStyle(app.io.propertyGetter.getProperty("prop46")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdCiInstructorHome_textField1,1);
         GridPane.setColumnSpan(cdCiInstructorHome_textField1,2147483647);
         GridPane.setRowIndex(cdCiInstructorHome_textField1,4);
-        cdCiInstructorHome_textField1.setPromptText("http://www3.cs.stonybrook.edu/~cse219/Section02/index.html");
-        cdCiInstructorHome_textField1.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        cdCiInstructorHome_textField1.setPromptText(app.io.propertyGetter.getProperty("prop47")); //$NON-NLS-1$
+        cdCiInstructorHome_textField1.setStyle(app.io.propertyGetter.getProperty("prop48")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdCiSubject_comboBox,1);
         cdCiSubject_comboBox.setPrefWidth(150.0);
-        cdCiSubject_comboBox.setPromptText("CSE");
-        cdCiSubject_comboBox.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        cdCiSubject_comboBox.setPromptText(app.io.propertyGetter.getProperty("prop49")); //$NON-NLS-1$
+        cdCiSubject_comboBox.setStyle(app.io.propertyGetter.getProperty("prop50")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdCiSemester_comboBox0,1);
         GridPane.setRowIndex(cdCiSemester_comboBox0,1);
         cdCiSemester_comboBox0.setPrefWidth(150.0);
-        cdCiSemester_comboBox0.setPromptText("Fall");
-        cdCiSemester_comboBox0.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        cdCiSemester_comboBox0.setPromptText(app.io.propertyGetter.getProperty("prop51")); //$NON-NLS-1$
+        cdCiSemester_comboBox0.setStyle(app.io.propertyGetter.getProperty("prop52")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdCiNumber_comboBox1,4);
         GridPane.setHalignment(cdCiNumber_comboBox1,javafx.geometry.HPos.RIGHT);
         cdCiNumber_comboBox1.setPrefWidth(150.0);
-        cdCiNumber_comboBox1.setPromptText("219");
-        cdCiNumber_comboBox1.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        cdCiNumber_comboBox1.setPromptText(app.io.propertyGetter.getProperty("prop53")); //$NON-NLS-1$
+        cdCiNumber_comboBox1.setStyle(app.io.propertyGetter.getProperty("prop54")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdCiYear_comboBox2,4);
         GridPane.setHalignment(cdCiYear_comboBox2,javafx.geometry.HPos.RIGHT);
         GridPane.setRowIndex(cdCiYear_comboBox2,1);
         cdCiYear_comboBox2.setPrefWidth(150.0);
-        cdCiYear_comboBox2.setPromptText("2017");
-        cdCiYear_comboBox2.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        cdCiYear_comboBox2.setPromptText(app.io.propertyGetter.getProperty("prop55")); //$NON-NLS-1$
+        cdCiYear_comboBox2.setStyle(app.io.propertyGetter.getProperty("prop56")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdCiExportDir_text9,1);
         GridPane.setColumnSpan(cdCiExportDir_text9,3);
         GridPane.setHalignment(cdCiExportDir_text9,javafx.geometry.HPos.CENTER);
         GridPane.setRowIndex(cdCiExportDir_text9,5);
         cdCiExportDir_text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         cdCiExportDir_text9.setStrokeWidth(0.0);
-        cdCiExportDir_text9.setText("ioiioh");
+        cdCiExportDir_text9.setText(app.io.propertyGetter.getProperty("prop57")); //$NON-NLS-1$
         cdCiExportDir_text9.setUnderline(true);
         GridPane.setColumnIndex(cdCiChange_button8,4);
         GridPane.setHalignment(cdCiChange_button8,javafx.geometry.HPos.RIGHT);
         GridPane.setRowIndex(cdCiChange_button8,5);
         cdCiChange_button8.setMnemonicParsing(false);
-        cdCiChange_button8.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        cdCiChange_button8.setText("Change0");
+        cdCiChange_button8.setStyle(app.io.propertyGetter.getProperty("prop58")); //$NON-NLS-1$
+        cdCiChange_button8.setText(app.io.propertyGetter.getProperty("prop59")); //$NON-NLS-1$
         columnConstraints3.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints3.setMaxWidth(938.9019165039062);
         columnConstraints4.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
@@ -593,7 +593,7 @@ public class Boilerplate extends VBox
         vBox0.setOpaqueInsets(new Insets(0.0));
         vBox0.setPadding(new Insets(10.0));
         anchorPane1.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane1.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane1.setStyle(app.io.propertyGetter.getProperty("prop60")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox1,0.0);
         AnchorPane.setLeftAnchor(vBox1,0.0);
         AnchorPane.setRightAnchor(vBox1,0.0);
@@ -603,12 +603,12 @@ public class Boilerplate extends VBox
         vBox1.setSpacing(5.0);
         text10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text10.setStrokeWidth(0.0);
-        text10.setStyle("-fx-font-size: 16;");
-        text10.setText("Site Template");
+        text10.setStyle(app.io.propertyGetter.getProperty("prop61")); //$NON-NLS-1$
+        text10.setText(app.io.propertyGetter.getProperty("prop62")); //$NON-NLS-1$
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setStyle("-fx-font-size: 11;");
-        text11.setText("The selected directory should contain the full site template, including the HTML files ");
+        text11.setStyle(app.io.propertyGetter.getProperty("prop63")); //$NON-NLS-1$
+        text11.setText(app.io.propertyGetter.getProperty("prop64")); //$NON-NLS-1$
         VBox.setVgrow(gridPane2,javafx.scene.layout.Priority.ALWAYS);
         gridPane2.setHgap(10.0);
         gridPane2.setVgap(10.0);
@@ -620,42 +620,42 @@ public class Boilerplate extends VBox
         GridPane.setColumnIndex(cdStChange_button9,2);
         GridPane.setHalignment(cdStChange_button9,javafx.geometry.HPos.RIGHT);
         cdStChange_button9.setMnemonicParsing(false);
-        cdStChange_button9.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        cdStChange_button9.setText("Change1");
+        cdStChange_button9.setStyle(app.io.propertyGetter.getProperty("prop65")); //$NON-NLS-1$
+        cdStChange_button9.setText(app.io.propertyGetter.getProperty("prop66")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdStTemplateDir_text12,1);
         GridPane.setHalignment(cdStTemplateDir_text12,javafx.geometry.HPos.CENTER);
         cdStTemplateDir_text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         cdStTemplateDir_text12.setStrokeWidth(0.0);
-        cdStTemplateDir_text12.setText(".\\templates\\CSE219");
+        cdStTemplateDir_text12.setText(app.io.propertyGetter.getProperty("prop67")); //$NON-NLS-1$
         cdStTemplateDir_text12.setUnderline(true);
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
-        text13.setText("Template Dir:");
+        text13.setText(app.io.propertyGetter.getProperty("prop68")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdStSitePages_tableView,1);
         GridPane.setColumnSpan(cdStSitePages_tableView,2);
         GridPane.setRowIndex(cdStSitePages_tableView,1);
-        cdStSitePages_tableView.setStyle("-fx-background-color: #AABBCC; -fx-background-radius: 10,10;");
-        cdStSitePages_tableView.getStylesheets().add("/_Experiments_/appstyle.css");
+        cdStSitePages_tableView.setStyle(app.io.propertyGetter.getProperty("prop69")); //$NON-NLS-1$
+        cdStSitePages_tableView.getStylesheets().add(app.io.propertyGetter.getProperty("prop70")); //$NON-NLS-1$
         cdStUse_tableColumn.setPrefWidth(75.0);
-        cdStUse_tableColumn.setText("Use28654");
+        cdStUse_tableColumn.setText(app.io.propertyGetter.getProperty("prop71")); //$NON-NLS-1$
         cdStNavbarTitle_tableColumn0.setPrefWidth(75.0);
         // cdStNavbarTitle_tableColumn0.setStyle("-fx-background-color: #CBDFF2;");
-        cdStNavbarTitle_tableColumn0.setText("Navbar Title8365");
+        cdStNavbarTitle_tableColumn0.setText(app.io.propertyGetter.getProperty("prop72")); //$NON-NLS-1$
         // cdStNavbarTitle_tableColumn0.setStyle("-fx-background-color: #CBDFF2;");
         cdStFileName_tableColumn1.setPrefWidth(75.0);
         // cdStFileName_tableColumn1.setStyle("-fx-background-color: #CBDFF2;");
-        cdStFileName_tableColumn1.setText("File Name350");
+        cdStFileName_tableColumn1.setText(app.io.propertyGetter.getProperty("prop73")); //$NON-NLS-1$
         cdStScript_tableColumn2.setPrefWidth(75.0);
         // cdStScript_tableColumn2.setStyle("-fx-background-color: #CBDFF2;");
-        cdStScript_tableColumn2.setText("Script775");
+        cdStScript_tableColumn2.setText(app.io.propertyGetter.getProperty("prop74")); //$NON-NLS-1$
         cdStSitePages_tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         GridPane.setRowIndex(text14,1);
         text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text14.setStrokeWidth(0.0);
-        text14.setText("Site Pages:");
+        text14.setText(app.io.propertyGetter.getProperty("prop75")); //$NON-NLS-1$
         vBox1.setPadding(new Insets(10.0));
         anchorPane2.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane2.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane2.setStyle(app.io.propertyGetter.getProperty("prop76")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox2,0.0);
         AnchorPane.setLeftAnchor(vBox2,0.0);
         AnchorPane.setRightAnchor(vBox2,0.0);
@@ -664,8 +664,8 @@ public class Boilerplate extends VBox
         vBox2.setPrefWidth(990.0);
         text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text15.setStrokeWidth(0.0);
-        text15.setStyle("-fx-font-size: 16;");
-        text15.setText("Page Style");
+        text15.setStyle(app.io.propertyGetter.getProperty("prop77")); //$NON-NLS-1$
+        text15.setText(app.io.propertyGetter.getProperty("prop78")); //$NON-NLS-1$
         VBox.setVgrow(gridPane3,javafx.scene.layout.Priority.ALWAYS);
         gridPane3.setCacheShape(false);
         gridPane3.setCenterShape(false);
@@ -676,27 +676,27 @@ public class Boilerplate extends VBox
         gridPane3.setVgap(10.0);
         text16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text16.setStrokeWidth(0.0);
-        text16.setText("Banner School Image:");
+        text16.setText(app.io.propertyGetter.getProperty("prop79")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdPsChangeBanner_button10,2);
         GridPane.setHalignment(cdPsChangeBanner_button10,javafx.geometry.HPos.RIGHT);
         cdPsChangeBanner_button10.setMnemonicParsing(false);
-        cdPsChangeBanner_button10.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        cdPsChangeBanner_button10.setText("Change2");
+        cdPsChangeBanner_button10.setStyle(app.io.propertyGetter.getProperty("prop80")); //$NON-NLS-1$
+        cdPsChangeBanner_button10.setText(app.io.propertyGetter.getProperty("prop81")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdPsBanner_imageView8,1);
         GridPane.setHalignment(cdPsBanner_imageView8,javafx.geometry.HPos.CENTER);
         cdPsBanner_imageView8.setFitHeight(150.0);
         cdPsBanner_imageView8.setFitWidth(200.0);
         cdPsBanner_imageView8.setPickOnBounds(true);
         cdPsBanner_imageView8.setPreserveRatio(true);
-        cdPsBanner_imageView8.setImage(ResourceGetter.getImage("bannerimmage.png"));
+        cdPsBanner_imageView8.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop82"))); //$NON-NLS-1$
         GridPane.setRowIndex(text17,1);
         text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text17.setStrokeWidth(0.0);
-        text17.setText("Left Footer Image:");
+        text17.setText(app.io.propertyGetter.getProperty("prop83")); //$NON-NLS-1$
         GridPane.setRowIndex(text18,2);
         text18.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text18.setStrokeWidth(0.0);
-        text18.setText("Right Footer Image:");
+        text18.setText(app.io.propertyGetter.getProperty("prop84")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdPsLeft_imageView9,1);
         GridPane.setHalignment(cdPsLeft_imageView9,javafx.geometry.HPos.CENTER);
         GridPane.setRowIndex(cdPsLeft_imageView9,1);
@@ -704,7 +704,7 @@ public class Boilerplate extends VBox
         cdPsLeft_imageView9.setFitWidth(200.0);
         cdPsLeft_imageView9.setPickOnBounds(true);
         cdPsLeft_imageView9.setPreserveRatio(true);
-        cdPsLeft_imageView9.setImage(ResourceGetter.getImage("bannerimmage.png"));
+        cdPsLeft_imageView9.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop85"))); //$NON-NLS-1$
         GridPane.setColumnIndex(cdPsRight_imageView10,1);
         GridPane.setHalignment(cdPsRight_imageView10,javafx.geometry.HPos.CENTER);
         GridPane.setRowIndex(cdPsRight_imageView10,2);
@@ -712,28 +712,28 @@ public class Boilerplate extends VBox
         cdPsRight_imageView10.setFitWidth(200.0);
         cdPsRight_imageView10.setPickOnBounds(true);
         cdPsRight_imageView10.setPreserveRatio(true);
-        cdPsRight_imageView10.setImage(ResourceGetter.getImage("bannerimmage.png"));
+        cdPsRight_imageView10.setImage(ResourceGetter.getImage(app.io.propertyGetter.getProperty("prop86"))); //$NON-NLS-1$
         GridPane.setColumnIndex(cdPsChangeLeft_button11,2);
         GridPane.setHalignment(cdPsChangeLeft_button11,javafx.geometry.HPos.RIGHT);
         GridPane.setRowIndex(cdPsChangeLeft_button11,1);
         cdPsChangeLeft_button11.setMnemonicParsing(false);
-        cdPsChangeLeft_button11.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        cdPsChangeLeft_button11.setText("Change3");
+        cdPsChangeLeft_button11.setStyle(app.io.propertyGetter.getProperty("prop87")); //$NON-NLS-1$
+        cdPsChangeLeft_button11.setText(app.io.propertyGetter.getProperty("prop88")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdPsChangeRight_button12,2);
         GridPane.setHalignment(cdPsChangeRight_button12,javafx.geometry.HPos.RIGHT);
         GridPane.setRowIndex(cdPsChangeRight_button12,2);
         cdPsChangeRight_button12.setMnemonicParsing(false);
-        cdPsChangeRight_button12.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        cdPsChangeRight_button12.setText("Change4");
+        cdPsChangeRight_button12.setStyle(app.io.propertyGetter.getProperty("prop89")); //$NON-NLS-1$
+        cdPsChangeRight_button12.setText(app.io.propertyGetter.getProperty("prop90")); //$NON-NLS-1$
         GridPane.setRowIndex(text19,3);
         text19.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text19.setStrokeWidth(0.0);
-        text19.setText("Stylesheet:");
+        text19.setText(app.io.propertyGetter.getProperty("prop91")); //$NON-NLS-1$
         GridPane.setColumnIndex(cdPsStylesheet_comboBox3,1);
         GridPane.setRowIndex(cdPsStylesheet_comboBox3,3);
         cdPsStylesheet_comboBox3.setPrefWidth(150.0);
-        cdPsStylesheet_comboBox3.setPromptText("Fall0");
-        cdPsStylesheet_comboBox3.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        cdPsStylesheet_comboBox3.setPromptText(app.io.propertyGetter.getProperty("prop92")); //$NON-NLS-1$
+        cdPsStylesheet_comboBox3.setStyle(app.io.propertyGetter.getProperty("prop93")); //$NON-NLS-1$
         columnConstraints11.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints12.setHgrow(javafx.scene.layout.Priority.ALWAYS);
         columnConstraints12.setMaxWidth(Double.MAX_VALUE);
@@ -744,15 +744,15 @@ public class Boilerplate extends VBox
         rowConstraints12.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
         text110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text110.setStrokeWidth(0.0);
-        text110.setStyle("-fx-font-size: 11;");
-        text110.setText("NOTE: New stylesheets may be placed in work/css to be selectable");
+        text110.setStyle(app.io.propertyGetter.getProperty("prop94")); //$NON-NLS-1$
+        text110.setText(app.io.propertyGetter.getProperty("prop95")); //$NON-NLS-1$
         VBox.setMargin(text110,new Insets(10.0,0.0,7.0,0.0));
         vBox2.setPadding(new Insets(10.0));
         vBox.setPadding(new Insets(5.0));
         scrollPane.setContent(vBox);
         tab.setContent(scrollPane);
-        tab0.setStyle("-fx-background-color: #99BBFF; -fx-font-size: 15;");
-        tab0.setText(" TA Data ");
+        tab0.setStyle(app.io.propertyGetter.getProperty("prop96")); //$NON-NLS-1$
+        tab0.setText(app.io.propertyGetter.getProperty("prop97")); //$NON-NLS-1$
         scrollPane0.setFitToHeight(true);
         scrollPane0.setFitToWidth(true);
         scrollPane0.setPrefViewportHeight(1020.0);
@@ -779,41 +779,41 @@ public class Boilerplate extends VBox
         vBox3.setPrefHeight(984.0);
         vBox3.setPrefWidth(518.0);
         vBox3.setSpacing(5.0);
-        vBox3.setStyle("-fx-background-color: #336688; -fx-background-radius: 0;");
+        vBox3.setStyle(app.io.propertyGetter.getProperty("prop98")); //$NON-NLS-1$
         gridPane4.setAlignment(javafx.geometry.Pos.CENTER);
         GridPane.setHalignment(text111,javafx.geometry.HPos.CENTER);
-        text111.setFill(javafx.scene.paint.Color.valueOf("#d9f4ff"));
+        text111.setFill(javafx.scene.paint.Color.valueOf(app.io.propertyGetter.getProperty("prop99"))); //$NON-NLS-1$
         text111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111.setStrokeWidth(0.0);
-        text111.setStyle("-fx-font-size: 36;");
-        text111.setText("Teaching Assistants");
-        text111.setFont(new Font("Arial",50.0));
+        text111.setStyle(app.io.propertyGetter.getProperty("prop100")); //$NON-NLS-1$
+        text111.setText(app.io.propertyGetter.getProperty("prop101")); //$NON-NLS-1$
+        text111.setFont(new Font(app.io.propertyGetter.getProperty("prop102"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text111,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints14.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints14.setMinWidth(0.0);
         rowConstraints13.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
         anchorPane4.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane4.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane4.setStyle(app.io.propertyGetter.getProperty("prop103")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox4,0.0);
         AnchorPane.setLeftAnchor(vBox4,0.0);
         AnchorPane.setRightAnchor(vBox4,0.0);
         AnchorPane.setTopAnchor(vBox4,0.0);
         vBox4.setSpacing(5.0);
-        tdTa_tableView0.setStyle("-fx-background-color: #AABBCC; -fx-background-radius: 10,10;");
-        tdTa_tableView0.getStylesheets().add("/_Experiments_/appstyle.css");
+        tdTa_tableView0.setStyle(app.io.propertyGetter.getProperty("prop104")); //$NON-NLS-1$
+        tdTa_tableView0.getStylesheets().add(app.io.propertyGetter.getProperty("prop105")); //$NON-NLS-1$
         tdTa_tableView0.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         tdTaUndergrad_tableColumn3.setPrefWidth(75.0);
-        tdTaUndergrad_tableColumn3.setText("Undergrad993355");
+        tdTaUndergrad_tableColumn3.setText(app.io.propertyGetter.getProperty("prop106")); //$NON-NLS-1$
         tdTaName_tableColumn4.setPrefWidth(75.0);
         // tdTaName_tableColumn4.setStyle("-fx-background-color: #553366;");
-        tdTaName_tableColumn4.setText("Name9254");
+        tdTaName_tableColumn4.setText(app.io.propertyGetter.getProperty("prop107")); //$NON-NLS-1$
         tdTaEmail_tableColumn5.setPrefWidth(75.0);
-        tdTaEmail_tableColumn5.setText("Email1775");
+        tdTaEmail_tableColumn5.setText(app.io.propertyGetter.getProperty("prop108")); //$NON-NLS-1$
         text112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text112.setStrokeWidth(0.0);
-        text112.setStyle("-fx-font-size: 16;");
-        text112.setText("Add/Edit");
-        text112.setFont(new Font("Arial",13.0));
+        text112.setStyle(app.io.propertyGetter.getProperty("prop109")); //$NON-NLS-1$
+        text112.setText(app.io.propertyGetter.getProperty("prop110")); //$NON-NLS-1$
+        text112.setFont(new Font(app.io.propertyGetter.getProperty("prop111"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text112,new Insets(10.0,0.0,10.0,0.0));
         AnchorPane.setBottomAnchor(gridPane5,0.0);
         AnchorPane.setLeftAnchor(gridPane5,0.0);
@@ -827,32 +827,32 @@ public class Boilerplate extends VBox
         gridPane5.setVgap(10.0);
         text113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text113.setStrokeWidth(0.0);
-        text113.setText("Name:");
+        text113.setText(app.io.propertyGetter.getProperty("prop112")); //$NON-NLS-1$
         GridPane.setColumnIndex(tdTaEmail_textField2,1);
         GridPane.setColumnSpan(tdTaEmail_textField2,2147483647);
         GridPane.setRowIndex(tdTaEmail_textField2,1);
-        tdTaEmail_textField2.setPromptText("Email");
-        tdTaEmail_textField2.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        tdTaEmail_textField2.setPromptText(app.io.propertyGetter.getProperty("prop113")); //$NON-NLS-1$
+        tdTaEmail_textField2.setStyle(app.io.propertyGetter.getProperty("prop114")); //$NON-NLS-1$
         GridPane.setColumnIndex(tdTaName_textField3,1);
         GridPane.setColumnSpan(tdTaName_textField3,2147483647);
-        tdTaName_textField3.setPromptText("Name");
-        tdTaName_textField3.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        tdTaName_textField3.setPromptText(app.io.propertyGetter.getProperty("prop115")); //$NON-NLS-1$
+        tdTaName_textField3.setStyle(app.io.propertyGetter.getProperty("prop116")); //$NON-NLS-1$
         GridPane.setRowIndex(tdTaAddUpdate_button13,2);
         tdTaAddUpdate_button13.setMaxWidth(100.0);
         tdTaAddUpdate_button13.setMinWidth(100.0);
         tdTaAddUpdate_button13.setMnemonicParsing(false);
-        tdTaAddUpdate_button13.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        tdTaAddUpdate_button13.setText("Add/Update989");
+        tdTaAddUpdate_button13.setStyle(app.io.propertyGetter.getProperty("prop117")); //$NON-NLS-1$
+        tdTaAddUpdate_button13.setText(app.io.propertyGetter.getProperty("prop118")); //$NON-NLS-1$
         GridPane.setColumnIndex(tdTaClear_button14,1);
         GridPane.setRowIndex(tdTaClear_button14,2);
         tdTaClear_button14.setMaxWidth(100.0);
         tdTaClear_button14.setMnemonicParsing(false);
-        tdTaClear_button14.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        tdTaClear_button14.setText("Clear5286");
+        tdTaClear_button14.setStyle(app.io.propertyGetter.getProperty("prop119")); //$NON-NLS-1$
+        tdTaClear_button14.setText(app.io.propertyGetter.getProperty("prop120")); //$NON-NLS-1$
         GridPane.setRowIndex(text114,1);
         text114.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text114.setStrokeWidth(0.0);
-        text114.setText("Email:");
+        text114.setText(app.io.propertyGetter.getProperty("prop121")); //$NON-NLS-1$
         columnConstraints15.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints15.setMaxWidth(938.9019165039062);
         columnConstraints16.setPrefWidth(200.0);
@@ -883,21 +883,21 @@ public class Boilerplate extends VBox
         vBox5.setPrefHeight(984.0);
         vBox5.setPrefWidth(518.0);
         vBox5.setSpacing(5.0);
-        vBox5.setStyle("-fx-background-color: #336688; -fx-background-radius: 0;");
+        vBox5.setStyle(app.io.propertyGetter.getProperty("prop122")); //$NON-NLS-1$
         tdOh_gridPane6.setAlignment(javafx.geometry.Pos.CENTER);
         GridPane.setHalignment(text115,javafx.geometry.HPos.CENTER);
-        text115.setFill(javafx.scene.paint.Color.valueOf("#d9f4ff"));
+        text115.setFill(javafx.scene.paint.Color.valueOf(app.io.propertyGetter.getProperty("prop123"))); //$NON-NLS-1$
         text115.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text115.setStrokeWidth(0.0);
-        text115.setStyle("-fx-font-size: 36;");
-        text115.setText("Office Hours");
-        text115.setFont(new Font("Arial",50.0));
+        text115.setStyle(app.io.propertyGetter.getProperty("prop124")); //$NON-NLS-1$
+        text115.setText(app.io.propertyGetter.getProperty("prop125")); //$NON-NLS-1$
+        text115.setFont(new Font(app.io.propertyGetter.getProperty("prop126"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text115,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints18.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints18.setMinWidth(0.0);
         rowConstraints17.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
         anchorPane6.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane6.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane6.setStyle(app.io.propertyGetter.getProperty("prop127")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox6,0.0);
         AnchorPane.setLeftAnchor(vBox6,0.0);
         AnchorPane.setRightAnchor(vBox6,0.0);
@@ -930,20 +930,20 @@ public class Boilerplate extends VBox
         gridPane8.setVgap(10.0);
         text116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text116.setStrokeWidth(0.0);
-        text116.setText("Set Start Time:");
+        text116.setText(app.io.propertyGetter.getProperty("prop128")); //$NON-NLS-1$
         GridPane.setRowIndex(text117,1);
         text117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text117.setStrokeWidth(0.0);
-        text117.setText("Set End Time:");
+        text117.setText(app.io.propertyGetter.getProperty("prop129")); //$NON-NLS-1$
         GridPane.setColumnIndex(tdOhStartTime_comboBox4,1);
         tdOhStartTime_comboBox4.setPrefWidth(150.0);
-        tdOhStartTime_comboBox4.setPromptText("Start Time");
-        tdOhStartTime_comboBox4.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        tdOhStartTime_comboBox4.setPromptText(app.io.propertyGetter.getProperty("prop130")); //$NON-NLS-1$
+        tdOhStartTime_comboBox4.setStyle(app.io.propertyGetter.getProperty("prop131")); //$NON-NLS-1$
         GridPane.setColumnIndex(tdOhEndTime_comboBox5,1);
         GridPane.setRowIndex(tdOhEndTime_comboBox5,1);
         tdOhEndTime_comboBox5.setPrefWidth(150.0);
-        tdOhEndTime_comboBox5.setPromptText("End Time");
-        tdOhEndTime_comboBox5.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        tdOhEndTime_comboBox5.setPromptText(app.io.propertyGetter.getProperty("prop132")); //$NON-NLS-1$
+        tdOhEndTime_comboBox5.setStyle(app.io.propertyGetter.getProperty("prop133")); //$NON-NLS-1$
         columnConstraints111.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints111.setMaxWidth(938.9019165039062);
         columnConstraints112.setPrefWidth(1000.0);
@@ -956,57 +956,57 @@ public class Boilerplate extends VBox
         scrollPane2.setContent(vBox5);
         scrollPane0.setContent(splitPane);
         tab0.setContent(scrollPane0);
-        tab1.setStyle("-fx-background-color: #99BBFF; -fx-font-size: 15;");
-        tab1.setText(" Recitation Data ");
+        tab1.setStyle(app.io.propertyGetter.getProperty("prop134")); //$NON-NLS-1$
+        tab1.setText(app.io.propertyGetter.getProperty("prop135")); //$NON-NLS-1$
         scrollPane3.setFitToHeight(true);
         scrollPane3.setFitToWidth(true);
         scrollPane3.setPrefViewportHeight(1020.0);
         scrollPane3.setPrefViewportWidth(1000.0);
         vBox7.setSpacing(5.0);
-        vBox7.setStyle("-fx-background-color: #336688; -fx-background-radius: 0;");
+        vBox7.setStyle(app.io.propertyGetter.getProperty("prop136")); //$NON-NLS-1$
         gridPane9.setAlignment(javafx.geometry.Pos.CENTER);
         columnConstraints113.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints113.setMinWidth(10.0);
         rowConstraints113.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
         GridPane.setHalignment(text118,javafx.geometry.HPos.CENTER);
-        text118.setFill(javafx.scene.paint.Color.valueOf("#d9f4ff"));
+        text118.setFill(javafx.scene.paint.Color.valueOf(app.io.propertyGetter.getProperty("prop137"))); //$NON-NLS-1$
         text118.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text118.setStrokeWidth(0.0);
-        text118.setStyle("-fx-font-size: 36;");
-        text118.setText("Recitations");
-        text118.setFont(new Font("Arial",50.0));
+        text118.setStyle(app.io.propertyGetter.getProperty("prop138")); //$NON-NLS-1$
+        text118.setText(app.io.propertyGetter.getProperty("prop139")); //$NON-NLS-1$
+        text118.setFont(new Font(app.io.propertyGetter.getProperty("prop140"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text118,new Insets(5.0,0.0,5.0,0.0));
         anchorPane7.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane7.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane7.setStyle(app.io.propertyGetter.getProperty("prop141")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(rd_tableView1,10.0);
         AnchorPane.setLeftAnchor(rd_tableView1,10.0);
         AnchorPane.setRightAnchor(rd_tableView1,10.0);
         AnchorPane.setTopAnchor(rd_tableView1,10.0);
-        rd_tableView1.setStyle("-fx-background-color: #AABBCC; -fx-background-radius: 10,10;");
-        rd_tableView1.getStylesheets().add("/_Experiments_/appstyle.css");
+        rd_tableView1.setStyle(app.io.propertyGetter.getProperty("prop142")); //$NON-NLS-1$
+        rd_tableView1.getStylesheets().add(app.io.propertyGetter.getProperty("prop143")); //$NON-NLS-1$
         rd_tableView1.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         rdSection_tableColumn6.setPrefWidth(75.0);
-        rdSection_tableColumn6.setText("Section");
+        rdSection_tableColumn6.setText(app.io.propertyGetter.getProperty("prop144")); //$NON-NLS-1$
         rdInstructor_tableColumn7.setPrefWidth(75.0);
         // rdInstructor_tableColumn7.setStyle("-fx-background-color: #553366;");
-        rdInstructor_tableColumn7.setText("Instructor");
+        rdInstructor_tableColumn7.setText(app.io.propertyGetter.getProperty("prop145")); //$NON-NLS-1$
         rdRecitationData_tableColumn8.setPrefWidth(75.0);
-        rdRecitationData_tableColumn8.setText("Recitation Data");
+        rdRecitationData_tableColumn8.setText(app.io.propertyGetter.getProperty("prop146")); //$NON-NLS-1$
         rdTA1_tableColumn9.setPrefWidth(75.0);
-        rdTA1_tableColumn9.setText("TA567");
+        rdTA1_tableColumn9.setText(app.io.propertyGetter.getProperty("prop147")); //$NON-NLS-1$
         rdTA2tableColumn10.setPrefWidth(75.0);
-        rdTA2tableColumn10.setText("TA756");
+        rdTA2tableColumn10.setText(app.io.propertyGetter.getProperty("prop148")); //$NON-NLS-1$
         anchorPane8.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane8.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane8.setStyle(app.io.propertyGetter.getProperty("prop149")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox8,0.0);
         AnchorPane.setLeftAnchor(vBox8,0.0);
         AnchorPane.setRightAnchor(vBox8,0.0);
         AnchorPane.setTopAnchor(vBox8,0.0);
         text119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text119.setStrokeWidth(0.0);
-        text119.setStyle("-fx-font-size: 16;");
-        text119.setText("Add/Edit67");
-        text119.setFont(new Font("Arial",13.0));
+        text119.setStyle(app.io.propertyGetter.getProperty("prop150")); //$NON-NLS-1$
+        text119.setText(app.io.propertyGetter.getProperty("prop151")); //$NON-NLS-1$
+        text119.setFont(new Font(app.io.propertyGetter.getProperty("prop152"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text119,new Insets(0.0,0.0,10.0,0.0));
         AnchorPane.setBottomAnchor(gridPane10,0.0);
         AnchorPane.setLeftAnchor(gridPane10,0.0);
@@ -1020,68 +1020,68 @@ public class Boilerplate extends VBox
         gridPane10.setVgap(10.0);
         text1110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1110.setStrokeWidth(0.0);
-        text1110.setText("Section:");
+        text1110.setText(app.io.propertyGetter.getProperty("prop153")); //$NON-NLS-1$
         GridPane.setRowIndex(text1111,1);
         text1111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1111.setStrokeWidth(0.0);
-        text1111.setText("Instructor:");
+        text1111.setText(app.io.propertyGetter.getProperty("prop154")); //$NON-NLS-1$
         GridPane.setRowIndex(text1112,2);
         text1112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1112.setStrokeWidth(0.0);
-        text1112.setText("Day/Time:");
+        text1112.setText(app.io.propertyGetter.getProperty("prop155")); //$NON-NLS-1$
         GridPane.setRowIndex(text1113,3);
         text1113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1113.setStrokeWidth(0.0);
-        text1113.setText("Location:");
+        text1113.setText(app.io.propertyGetter.getProperty("prop156")); //$NON-NLS-1$
         GridPane.setColumnIndex(rdSection_textField4,1);
         GridPane.setColumnSpan(rdSection_textField4,2147483647);
-        rdSection_textField4.setPromptText("R01");
-        rdSection_textField4.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        rdSection_textField4.setPromptText(app.io.propertyGetter.getProperty("prop157")); //$NON-NLS-1$
+        rdSection_textField4.setStyle(app.io.propertyGetter.getProperty("prop158")); //$NON-NLS-1$
         GridPane.setColumnIndex(rdInstructor_textField5,1);
         GridPane.setColumnSpan(rdInstructor_textField5,2147483647);
         GridPane.setRowIndex(rdInstructor_textField5,1);
-        rdInstructor_textField5.setPromptText("Richard McKenna");
-        rdInstructor_textField5.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        rdInstructor_textField5.setPromptText(app.io.propertyGetter.getProperty("prop159")); //$NON-NLS-1$
+        rdInstructor_textField5.setStyle(app.io.propertyGetter.getProperty("prop160")); //$NON-NLS-1$
         GridPane.setColumnIndex(rdDayTime_textField6,1);
         GridPane.setColumnSpan(rdDayTime_textField6,2147483647);
         GridPane.setRowIndex(rdDayTime_textField6,2);
-        rdDayTime_textField6.setPromptText("Mondays, 3:30pm-4:23pm");
-        rdDayTime_textField6.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        rdDayTime_textField6.setPromptText(app.io.propertyGetter.getProperty("prop161")); //$NON-NLS-1$
+        rdDayTime_textField6.setStyle(app.io.propertyGetter.getProperty("prop162")); //$NON-NLS-1$
         GridPane.setColumnIndex(rdLocation_textField7,1);
         GridPane.setColumnSpan(rdLocation_textField7,2147483647);
         GridPane.setRowIndex(rdLocation_textField7,3);
-        rdLocation_textField7.setPromptText("Old Computer Science 2114");
-        rdLocation_textField7.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        rdLocation_textField7.setPromptText(app.io.propertyGetter.getProperty("prop163")); //$NON-NLS-1$
+        rdLocation_textField7.setStyle(app.io.propertyGetter.getProperty("prop164")); //$NON-NLS-1$
         GridPane.setRowIndex(rdAddUpdate_button15,6);
         rdAddUpdate_button15.setMaxWidth(100.0);
         rdAddUpdate_button15.setMinWidth(100.0);
         rdAddUpdate_button15.setMnemonicParsing(false);
-        rdAddUpdate_button15.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        rdAddUpdate_button15.setText("Add/Update564");
+        rdAddUpdate_button15.setStyle(app.io.propertyGetter.getProperty("prop165")); //$NON-NLS-1$
+        rdAddUpdate_button15.setText(app.io.propertyGetter.getProperty("prop166")); //$NON-NLS-1$
         GridPane.setColumnIndex(rdClear_button16,1);
         GridPane.setRowIndex(rdClear_button16,6);
         rdClear_button16.setMaxWidth(100.0);
         rdClear_button16.setMnemonicParsing(false);
-        rdClear_button16.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        rdClear_button16.setText("Clear56");
+        rdClear_button16.setStyle(app.io.propertyGetter.getProperty("prop167")); //$NON-NLS-1$
+        rdClear_button16.setText(app.io.propertyGetter.getProperty("prop168")); //$NON-NLS-1$
         GridPane.setColumnIndex(rdTA1_comboBox6,1);
         GridPane.setRowIndex(rdTA1_comboBox6,4);
         rdTA1_comboBox6.setPrefWidth(150.0);
-        rdTA1_comboBox6.setPromptText("Joe Schmo");
-        rdTA1_comboBox6.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        rdTA1_comboBox6.setPromptText(app.io.propertyGetter.getProperty("prop169")); //$NON-NLS-1$
+        rdTA1_comboBox6.setStyle(app.io.propertyGetter.getProperty("prop170")); //$NON-NLS-1$
         GridPane.setColumnIndex(rdTA2_comboBox7,1);
         GridPane.setRowIndex(rdTA2_comboBox7,5);
         rdTA2_comboBox7.setPrefWidth(150.0);
-        rdTA2_comboBox7.setPromptText("Jane Doe");
-        rdTA2_comboBox7.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        rdTA2_comboBox7.setPromptText(app.io.propertyGetter.getProperty("prop171")); //$NON-NLS-1$
+        rdTA2_comboBox7.setStyle(app.io.propertyGetter.getProperty("prop172")); //$NON-NLS-1$
         GridPane.setRowIndex(text1114,4);
         text1114.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1114.setStrokeWidth(0.0);
-        text1114.setText("Supervising TA:87");
+        text1114.setText(app.io.propertyGetter.getProperty("prop173")); //$NON-NLS-1$
         GridPane.setRowIndex(text1115,5);
         text1115.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1115.setStrokeWidth(0.0);
-        text1115.setText("Supervising TA:");
+        text1115.setText(app.io.propertyGetter.getProperty("prop174")); //$NON-NLS-1$
         columnConstraints114.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints114.setMaxWidth(938.9019165039062);
         columnConstraints115.setHgrow(javafx.scene.layout.Priority.ALWAYS);
@@ -1098,28 +1098,28 @@ public class Boilerplate extends VBox
         vBox7.setPadding(new Insets(5.0));
         scrollPane3.setContent(vBox7);
         tab1.setContent(scrollPane3);
-        tab2.setStyle("-fx-background-color: #99BBFF; -fx-font-size: 15;");
-        tab2.setText(" Schedule Data ");
+        tab2.setStyle(app.io.propertyGetter.getProperty("prop175")); //$NON-NLS-1$
+        tab2.setText(app.io.propertyGetter.getProperty("prop176")); //$NON-NLS-1$
         scrollPane4.setFitToHeight(true);
         scrollPane4.setFitToWidth(true);
         scrollPane4.setPrefViewportHeight(1020.0);
         scrollPane4.setPrefViewportWidth(1000.0);
         vBox9.setSpacing(5.0);
-        vBox9.setStyle("-fx-background-color: #336688; -fx-background-radius: 0;");
+        vBox9.setStyle(app.io.propertyGetter.getProperty("prop177")); //$NON-NLS-1$
         gridPane11.setAlignment(javafx.geometry.Pos.CENTER);
         GridPane.setHalignment(text1116,javafx.geometry.HPos.CENTER);
-        text1116.setFill(javafx.scene.paint.Color.valueOf("#d9f4ff"));
+        text1116.setFill(javafx.scene.paint.Color.valueOf(app.io.propertyGetter.getProperty("prop178"))); //$NON-NLS-1$
         text1116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1116.setStrokeWidth(0.0);
-        text1116.setStyle("-fx-font-size: 36;");
-        text1116.setText("Schedule");
-        text1116.setFont(new Font("Arial",50.0));
+        text1116.setStyle(app.io.propertyGetter.getProperty("prop179")); //$NON-NLS-1$
+        text1116.setText(app.io.propertyGetter.getProperty("prop180")); //$NON-NLS-1$
+        text1116.setFont(new Font(app.io.propertyGetter.getProperty("prop181"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text1116,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints116.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints116.setMinWidth(10.0);
         rowConstraints1111.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
         anchorPane9.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane9.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane9.setStyle(app.io.propertyGetter.getProperty("prop182")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox10,0.0);
         AnchorPane.setLeftAnchor(vBox10,0.0);
         AnchorPane.setRightAnchor(vBox10,0.0);
@@ -1127,9 +1127,9 @@ public class Boilerplate extends VBox
         vBox10.setSpacing(5.0);
         text1117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1117.setStrokeWidth(0.0);
-        text1117.setStyle("-fx-font-size: 16;");
-        text1117.setText("Calendar Boundaries");
-        text1117.setFont(new Font("Arial",13.0));
+        text1117.setStyle(app.io.propertyGetter.getProperty("prop183")); //$NON-NLS-1$
+        text1117.setText(app.io.propertyGetter.getProperty("prop184")); //$NON-NLS-1$
+        text1117.setFont(new Font(app.io.propertyGetter.getProperty("prop185"),13.0)); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(gridPane12,0.0);
         AnchorPane.setLeftAnchor(gridPane12,0.0);
         AnchorPane.setRightAnchor(gridPane12,0.0);
@@ -1142,18 +1142,18 @@ public class Boilerplate extends VBox
         gridPane12.setVgap(10.0);
         text1118.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1118.setStrokeWidth(0.0);
-        text1118.setText("Starting Monday:");
+        text1118.setText(app.io.propertyGetter.getProperty("prop186")); //$NON-NLS-1$
         GridPane.setColumnIndex(text1119,2);
         GridPane.setHalignment(text1119,javafx.geometry.HPos.LEFT);
         text1119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1119.setStrokeWidth(0.0);
-        text1119.setText("Ending Friday:");
+        text1119.setText(app.io.propertyGetter.getProperty("prop187")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdEndingFriday_datePicker,3);
-        sdEndingFriday_datePicker.setPromptText("fridayshmiday");
-        sdEndingFriday_datePicker.setStyle("-fx-background-color: bddaed; fx-background-radius: 30,30;");
+        sdEndingFriday_datePicker.setPromptText(app.io.propertyGetter.getProperty("prop188")); //$NON-NLS-1$
+        sdEndingFriday_datePicker.setStyle(app.io.propertyGetter.getProperty("prop189")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdStartingMonday_datePicker0,1);
-        sdStartingMonday_datePicker0.setPromptText("mondaywunday");
-        sdStartingMonday_datePicker0.setStyle("-fx-background-color: bddaed; fx-background-radius: 30,30;");
+        sdStartingMonday_datePicker0.setPromptText(app.io.propertyGetter.getProperty("prop190")); //$NON-NLS-1$
+        sdStartingMonday_datePicker0.setStyle(app.io.propertyGetter.getProperty("prop191")); //$NON-NLS-1$
         columnConstraints117.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints117.setMaxWidth(938.9019165039062);
         columnConstraints118.setHgrow(javafx.scene.layout.Priority.ALWAYS);
@@ -1164,7 +1164,7 @@ public class Boilerplate extends VBox
         vBox10.setOpaqueInsets(new Insets(0.0));
         vBox10.setPadding(new Insets(10.0));
         anchorPane10.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane10.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane10.setStyle(app.io.propertyGetter.getProperty("prop192")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox11,0.0);
         AnchorPane.setLeftAnchor(vBox11,0.0);
         AnchorPane.setRightAnchor(vBox11,0.0);
@@ -1174,28 +1174,28 @@ public class Boilerplate extends VBox
         vBox11.setSpacing(5.0);
         text11110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11110.setStrokeWidth(0.0);
-        text11110.setStyle("-fx-font-size: 16;");
-        text11110.setText("Schedule Items:");
-        text11110.setFont(new Font("Arial",13.0));
+        text11110.setStyle(app.io.propertyGetter.getProperty("prop193")); //$NON-NLS-1$
+        text11110.setText(app.io.propertyGetter.getProperty("prop194")); //$NON-NLS-1$
+        text11110.setFont(new Font(app.io.propertyGetter.getProperty("prop195"),13.0)); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(sdScheduledItems_tableView2,10.0);
         AnchorPane.setLeftAnchor(sdScheduledItems_tableView2,10.0);
         AnchorPane.setRightAnchor(sdScheduledItems_tableView2,10.0);
         AnchorPane.setTopAnchor(sdScheduledItems_tableView2,10.0);
-        sdScheduledItems_tableView2.setStyle("-fx-background-color: #AABBCC; -fx-background-radius: 10,10;");
-        sdScheduledItems_tableView2.getStylesheets().add("/_Experiments_/appstyle.css");
+        sdScheduledItems_tableView2.setStyle(app.io.propertyGetter.getProperty("prop196")); //$NON-NLS-1$
+        sdScheduledItems_tableView2.getStylesheets().add(app.io.propertyGetter.getProperty("prop197")); //$NON-NLS-1$
         sdScheduledItems_tableView2.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         sdType_tableColumn11.setPrefWidth(75.0);
-        sdType_tableColumn11.setText("Type789");
+        sdType_tableColumn11.setText(app.io.propertyGetter.getProperty("prop198")); //$NON-NLS-1$
         sdDate_tableColumn12.setPrefWidth(75.0);
         // sdDate_tableColumn12.setStyle("-fx-background-color: #553366;");
-        sdDate_tableColumn12.setText("Date354");
+        sdDate_tableColumn12.setText(app.io.propertyGetter.getProperty("prop199")); //$NON-NLS-1$
         sdTitle_tableColumn13.setPrefWidth(75.0);
-        sdTitle_tableColumn13.setText("Title009");
+        sdTitle_tableColumn13.setText(app.io.propertyGetter.getProperty("prop200")); //$NON-NLS-1$
         sdTopic_tableColumn14.setPrefWidth(75.0);
-        sdTopic_tableColumn14.setText("Topic1234567");
+        sdTopic_tableColumn14.setText(app.io.propertyGetter.getProperty("prop201")); //$NON-NLS-1$
         vBox11.setPadding(new Insets(10.0));
         anchorPane11.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane11.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane11.setStyle(app.io.propertyGetter.getProperty("prop202")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox12,0.0);
         AnchorPane.setLeftAnchor(vBox12,0.0);
         AnchorPane.setRightAnchor(vBox12,0.0);
@@ -1203,9 +1203,9 @@ public class Boilerplate extends VBox
         vBox12.setSpacing(5.0);
         text11111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11111.setStrokeWidth(0.0);
-        text11111.setStyle("-fx-font-size: 16;");
-        text11111.setText("Add/Edit");
-        text11111.setFont(new Font("Arial",13.0));
+        text11111.setStyle(app.io.propertyGetter.getProperty("prop203")); //$NON-NLS-1$
+        text11111.setText(app.io.propertyGetter.getProperty("prop204")); //$NON-NLS-1$
+        text11111.setFont(new Font(app.io.propertyGetter.getProperty("prop205"),13.0)); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(gridPane13,0.0);
         AnchorPane.setLeftAnchor(gridPane13,0.0);
         AnchorPane.setRightAnchor(gridPane13,0.0);
@@ -1218,75 +1218,75 @@ public class Boilerplate extends VBox
         gridPane13.setVgap(10.0);
         text11112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11112.setStrokeWidth(0.0);
-        text11112.setText("Date:");
+        text11112.setText(app.io.propertyGetter.getProperty("prop206")); //$NON-NLS-1$
         GridPane.setRowIndex(text11113,1);
         text11113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11113.setStrokeWidth(0.0);
-        text11113.setText("Type:");
+        text11113.setText(app.io.propertyGetter.getProperty("prop207")); //$NON-NLS-1$
         GridPane.setRowIndex(text11114,2);
         text11114.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11114.setStrokeWidth(0.0);
-        text11114.setText("Time:");
+        text11114.setText(app.io.propertyGetter.getProperty("prop208")); //$NON-NLS-1$
         GridPane.setRowIndex(text11115,3);
         text11115.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11115.setStrokeWidth(0.0);
-        text11115.setText("Title:");
+        text11115.setText(app.io.propertyGetter.getProperty("prop209")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdCriteria_textField8,1);
         GridPane.setColumnSpan(sdCriteria_textField8,2147483647);
         GridPane.setRowIndex(sdCriteria_textField8,6);
-        sdCriteria_textField8.setPromptText("criteriashmiteria");
-        sdCriteria_textField8.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        sdCriteria_textField8.setPromptText(app.io.propertyGetter.getProperty("prop210")); //$NON-NLS-1$
+        sdCriteria_textField8.setStyle(app.io.propertyGetter.getProperty("prop211")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdTopic_textField9,1);
         GridPane.setColumnSpan(sdTopic_textField9,2147483647);
         GridPane.setRowIndex(sdTopic_textField9,4);
-        sdTopic_textField9.setPromptText("topicshmopic");
-        sdTopic_textField9.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        sdTopic_textField9.setPromptText(app.io.propertyGetter.getProperty("prop212")); //$NON-NLS-1$
+        sdTopic_textField9.setStyle(app.io.propertyGetter.getProperty("prop213")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdTime_textField10,1);
         GridPane.setColumnSpan(sdTime_textField10,2147483647);
         GridPane.setRowIndex(sdTime_textField10,2);
-        sdTime_textField10.setPromptText("timeywimey");
-        sdTime_textField10.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        sdTime_textField10.setPromptText(app.io.propertyGetter.getProperty("prop214")); //$NON-NLS-1$
+        sdTime_textField10.setStyle(app.io.propertyGetter.getProperty("prop215")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdTitle_textField11,1);
         GridPane.setColumnSpan(sdTitle_textField11,2147483647);
         GridPane.setRowIndex(sdTitle_textField11,3);
-        sdTitle_textField11.setPromptText("SNOW DAY");
-        sdTitle_textField11.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        sdTitle_textField11.setPromptText(app.io.propertyGetter.getProperty("prop216")); //$NON-NLS-1$
+        sdTitle_textField11.setStyle(app.io.propertyGetter.getProperty("prop217")); //$NON-NLS-1$
         GridPane.setRowIndex(sdAddUpdate_button17,7);
         sdAddUpdate_button17.setMaxWidth(100.0);
         sdAddUpdate_button17.setMinWidth(100.0);
         sdAddUpdate_button17.setMnemonicParsing(false);
-        sdAddUpdate_button17.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        sdAddUpdate_button17.setText("Add/Update0987");
+        sdAddUpdate_button17.setStyle(app.io.propertyGetter.getProperty("prop218")); //$NON-NLS-1$
+        sdAddUpdate_button17.setText(app.io.propertyGetter.getProperty("prop219")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdClear_button18,1);
         GridPane.setRowIndex(sdClear_button18,7);
         sdClear_button18.setMaxWidth(100.0);
         sdClear_button18.setMnemonicParsing(false);
-        sdClear_button18.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        sdClear_button18.setText("Clear0909");
+        sdClear_button18.setStyle(app.io.propertyGetter.getProperty("prop220")); //$NON-NLS-1$
+        sdClear_button18.setText(app.io.propertyGetter.getProperty("prop221")); //$NON-NLS-1$
         GridPane.setRowIndex(text11116,4);
         text11116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11116.setStrokeWidth(0.0);
-        text11116.setText("Topic:");
+        text11116.setText(app.io.propertyGetter.getProperty("prop222")); //$NON-NLS-1$
         GridPane.setRowIndex(text11117,5);
         text11117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11117.setStrokeWidth(0.0);
-        text11117.setText("Link:");
+        text11117.setText(app.io.propertyGetter.getProperty("prop223")); //$NON-NLS-1$
         GridPane.setRowIndex(text11118,6);
         text11118.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11118.setStrokeWidth(0.0);
-        text11118.setText("Criteria:");
+        text11118.setText(app.io.propertyGetter.getProperty("prop224")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdDate_datePicker1,1);
-        sdDate_datePicker1.setPromptText("dateshmate");
-        sdDate_datePicker1.setStyle("-fx-background-color: bddaed; fx-background-radius: 30,30;");
+        sdDate_datePicker1.setPromptText(app.io.propertyGetter.getProperty("prop225")); //$NON-NLS-1$
+        sdDate_datePicker1.setStyle(app.io.propertyGetter.getProperty("prop226")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdType_comboBox8,1);
         GridPane.setRowIndex(sdType_comboBox8,1);
         sdType_comboBox8.setPrefWidth(150.0);
-        sdType_comboBox8.setPromptText("Holiday");
-        sdType_comboBox8.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        sdType_comboBox8.setPromptText(app.io.propertyGetter.getProperty("prop227")); //$NON-NLS-1$
+        sdType_comboBox8.setStyle(app.io.propertyGetter.getProperty("prop228")); //$NON-NLS-1$
         GridPane.setColumnIndex(sdLink_textField12,1);
         GridPane.setRowIndex(sdLink_textField12,5);
-        sdLink_textField12.setPromptText("http://funnybizblog.com/funny-stuff/calvin-hobbes-snowman-cartoons");
-        sdLink_textField12.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        sdLink_textField12.setPromptText(app.io.propertyGetter.getProperty("prop229")); //$NON-NLS-1$
+        sdLink_textField12.setStyle(app.io.propertyGetter.getProperty("prop230")); //$NON-NLS-1$
         columnConstraints1111.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints1111.setMaxWidth(938.9019165039062);
         columnConstraints1112.setHgrow(javafx.scene.layout.Priority.ALWAYS);
@@ -1304,55 +1304,55 @@ public class Boilerplate extends VBox
         vBox9.setPadding(new Insets(5.0));
         scrollPane4.setContent(vBox9);
         tab2.setContent(scrollPane4);
-        tab3.setStyle("-fx-background-color: #99BBFF; -fx-font-size: 15;");
-        tab3.setText(" Project Data ");
+        tab3.setStyle(app.io.propertyGetter.getProperty("prop231")); //$NON-NLS-1$
+        tab3.setText(app.io.propertyGetter.getProperty("prop232")); //$NON-NLS-1$
         scrollPane5.setFitToHeight(true);
         scrollPane5.setFitToWidth(true);
         scrollPane5.setPrefViewportHeight(1020.0);
         scrollPane5.setPrefViewportWidth(1000.0);
         vBox13.setSpacing(5.0);
-        vBox13.setStyle("-fx-background-color: #336688; -fx-background-radius: 0;");
+        vBox13.setStyle(app.io.propertyGetter.getProperty("prop233")); //$NON-NLS-1$
         gridPane14.setAlignment(javafx.geometry.Pos.CENTER);
         GridPane.setHalignment(text11119,javafx.geometry.HPos.CENTER);
-        text11119.setFill(javafx.scene.paint.Color.valueOf("#d9f4ff"));
+        text11119.setFill(javafx.scene.paint.Color.valueOf(app.io.propertyGetter.getProperty("prop234"))); //$NON-NLS-1$
         text11119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11119.setStrokeWidth(0.0);
-        text11119.setStyle("-fx-font-size: 36;");
-        text11119.setText("Projects");
-        text11119.setFont(new Font("Arial",50.0));
+        text11119.setStyle(app.io.propertyGetter.getProperty("prop235")); //$NON-NLS-1$
+        text11119.setText(app.io.propertyGetter.getProperty("prop236")); //$NON-NLS-1$
+        text11119.setFont(new Font(app.io.propertyGetter.getProperty("prop237"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text11119,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints1113.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints1113.setMinWidth(10.0);
         rowConstraints11111.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
         anchorPane12.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane12.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane12.setStyle(app.io.propertyGetter.getProperty("prop238")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox14,0.0);
         AnchorPane.setLeftAnchor(vBox14,0.0);
         AnchorPane.setRightAnchor(vBox14,0.0);
         AnchorPane.setTopAnchor(vBox14,0.0);
         text111110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111110.setStrokeWidth(0.0);
-        text111110.setStyle("-fx-font-size: 16;");
-        text111110.setText("Teams");
-        text111110.setFont(new Font("Arial",13.0));
+        text111110.setStyle(app.io.propertyGetter.getProperty("prop239")); //$NON-NLS-1$
+        text111110.setText(app.io.propertyGetter.getProperty("prop240")); //$NON-NLS-1$
+        text111110.setFont(new Font(app.io.propertyGetter.getProperty("prop241"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text111110,new Insets(0.0,0.0,5.0,0.0));
-        pdT_tableView3.setStyle("-fx-background-color: #AABBCC; -fx-background-radius: 10,10;");
-        pdT_tableView3.getStylesheets().add("/_Experiments_/appstyle.css");
+        pdT_tableView3.setStyle(app.io.propertyGetter.getProperty("prop242")); //$NON-NLS-1$
+        pdT_tableView3.getStylesheets().add(app.io.propertyGetter.getProperty("prop243")); //$NON-NLS-1$
         pdT_tableView3.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         pdTUse_tableColumn15.setPrefWidth(75.0);
-        pdTUse_tableColumn15.setText("Use000999");
+        pdTUse_tableColumn15.setText(app.io.propertyGetter.getProperty("prop244")); //$NON-NLS-1$
         pdTNavbarTitle_tableColumn16.setPrefWidth(75.0);
         // pdTNavbarTitle_tableColumn16.setStyle("-fx-background-color: #553366;");
-        pdTNavbarTitle_tableColumn16.setText("Navbar Title");
+        pdTNavbarTitle_tableColumn16.setText(app.io.propertyGetter.getProperty("prop245")); //$NON-NLS-1$
         pdTFileName_tableColumn17.setPrefWidth(75.0);
-        pdTFileName_tableColumn17.setText("File Name767");
+        pdTFileName_tableColumn17.setText(app.io.propertyGetter.getProperty("prop246")); //$NON-NLS-1$
         pdTScript_tableColumn18.setPrefWidth(75.0);
-        pdTScript_tableColumn18.setText("Script12345");
+        pdTScript_tableColumn18.setText(app.io.propertyGetter.getProperty("prop247")); //$NON-NLS-1$
         text111111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111111.setStrokeWidth(0.0);
-        text111111.setStyle("-fx-font-size: 16;");
-        text111111.setText("Add/Edit");
-        text111111.setFont(new Font("Arial",13.0));
+        text111111.setStyle(app.io.propertyGetter.getProperty("prop248")); //$NON-NLS-1$
+        text111111.setText(app.io.propertyGetter.getProperty("prop249")); //$NON-NLS-1$
+        text111111.setFont(new Font(app.io.propertyGetter.getProperty("prop250"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text111111,new Insets(20.0,0.0,10.0,0.0));
         AnchorPane.setBottomAnchor(gridPane15,0.0);
         AnchorPane.setLeftAnchor(gridPane15,0.0);
@@ -1366,44 +1366,44 @@ public class Boilerplate extends VBox
         gridPane15.setVgap(10.0);
         text111112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111112.setStrokeWidth(0.0);
-        text111112.setText("Name:");
+        text111112.setText(app.io.propertyGetter.getProperty("prop251")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdTLink_textField13,1);
         GridPane.setColumnSpan(pdTLink_textField13,2147483647);
         GridPane.setRowIndex(pdTLink_textField13,2);
-        pdTLink_textField13.setPromptText("lllllll");
-        pdTLink_textField13.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        pdTLink_textField13.setPromptText(app.io.propertyGetter.getProperty("prop252")); //$NON-NLS-1$
+        pdTLink_textField13.setStyle(app.io.propertyGetter.getProperty("prop253")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdTName_textField14,1);
         GridPane.setColumnSpan(pdTName_textField14,2147483647);
-        pdTName_textField14.setPromptText("nnnnnn");
-        pdTName_textField14.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        pdTName_textField14.setPromptText(app.io.propertyGetter.getProperty("prop254")); //$NON-NLS-1$
+        pdTName_textField14.setStyle(app.io.propertyGetter.getProperty("prop255")); //$NON-NLS-1$
         GridPane.setRowIndex(pdTAddUpdate_button19,3);
         pdTAddUpdate_button19.setMaxWidth(Double.MAX_VALUE);
         pdTAddUpdate_button19.setMinWidth(100.0);
         pdTAddUpdate_button19.setMnemonicParsing(false);
-        pdTAddUpdate_button19.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        pdTAddUpdate_button19.setText("Add/Update0");
+        pdTAddUpdate_button19.setStyle(app.io.propertyGetter.getProperty("prop256")); //$NON-NLS-1$
+        pdTAddUpdate_button19.setText(app.io.propertyGetter.getProperty("prop257")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdTClear_button110,1);
         GridPane.setRowIndex(pdTClear_button110,3);
         pdTClear_button110.setMaxWidth(100.0);
         pdTClear_button110.setMnemonicParsing(false);
-        pdTClear_button110.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        pdTClear_button110.setText("Clear879");
+        pdTClear_button110.setStyle(app.io.propertyGetter.getProperty("prop258")); //$NON-NLS-1$
+        pdTClear_button110.setText(app.io.propertyGetter.getProperty("prop259")); //$NON-NLS-1$
         GridPane.setRowIndex(text111113,1);
         text111113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111113.setStrokeWidth(0.0);
-        text111113.setText("Color:");
+        text111113.setText(app.io.propertyGetter.getProperty("prop260")); //$NON-NLS-1$
         GridPane.setRowIndex(text111114,2);
         text111114.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111114.setStrokeWidth(0.0);
-        text111114.setText("Link:");
+        text111114.setText(app.io.propertyGetter.getProperty("prop261")); //$NON-NLS-1$
         GridPane.setColumnIndex(text111115,2);
         GridPane.setRowIndex(text111115,1);
         text111115.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111115.setStrokeWidth(0.0);
-        text111115.setText("TextColor:");
+        text111115.setText(app.io.propertyGetter.getProperty("prop262")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdTColor_circle,1);
         GridPane.setRowIndex(pdTColor_circle,1);
-        pdTColor_circle.setFill(javafx.scene.paint.Color.valueOf("#235399"));
+        pdTColor_circle.setFill(javafx.scene.paint.Color.valueOf(app.io.propertyGetter.getProperty("prop263"))); //$NON-NLS-1$
         pdTColor_circle.setRadius(50.0);
         pdTColor_circle.setStroke(javafx.scene.paint.Color.BLACK);
         pdTColor_circle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
@@ -1419,12 +1419,12 @@ public class Boilerplate extends VBox
         GridPane.setRowIndex(pdTColor_text111116,1);
         pdTColor_text111116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         pdTColor_text111116.setStrokeWidth(0.0);
-        pdTColor_text111116.setText("      #235399");
+        pdTColor_text111116.setText(app.io.propertyGetter.getProperty("prop264")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdTTextColor_text111117,3);
         GridPane.setRowIndex(pdTTextColor_text111117,1);
         pdTTextColor_text111117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         pdTTextColor_text111117.setStrokeWidth(0.0);
-        pdTTextColor_text111117.setText("        #ffffff");
+        pdTTextColor_text111117.setText(app.io.propertyGetter.getProperty("prop265")); //$NON-NLS-1$
         columnConstraints1114.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints1115.setPrefWidth(200.0);
         columnConstraints1116.setPrefWidth(120.0);
@@ -1436,7 +1436,7 @@ public class Boilerplate extends VBox
         vBox14.setOpaqueInsets(new Insets(0.0));
         vBox14.setPadding(new Insets(10.0));
         anchorPane13.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
-        anchorPane13.setStyle("-fx-background-color: #8888FF; -fx-background-radius: 20,20;");
+        anchorPane13.setStyle(app.io.propertyGetter.getProperty("prop266")); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(vBox15,0.0);
         AnchorPane.setLeftAnchor(vBox15,0.0);
         AnchorPane.setRightAnchor(vBox15,0.0);
@@ -1444,27 +1444,27 @@ public class Boilerplate extends VBox
         vBox15.setSpacing(5.0);
         text111118.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111118.setStrokeWidth(0.0);
-        text111118.setStyle("-fx-font-size: 16;");
-        text111118.setText("Students");
-        text111118.setFont(new Font("Arial",13.0));
+        text111118.setStyle(app.io.propertyGetter.getProperty("prop267")); //$NON-NLS-1$
+        text111118.setText(app.io.propertyGetter.getProperty("prop268")); //$NON-NLS-1$
+        text111118.setFont(new Font(app.io.propertyGetter.getProperty("prop269"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text111118,new Insets(0.0));
-        pdS_tableView4.setStyle("-fx-background-color: #AABBCC; -fx-background-radius: 10,10;");
-        pdS_tableView4.getStylesheets().add("/_Experiments_/appstyle.css");
+        pdS_tableView4.setStyle(app.io.propertyGetter.getProperty("prop270")); //$NON-NLS-1$
+        pdS_tableView4.getStylesheets().add(app.io.propertyGetter.getProperty("prop271")); //$NON-NLS-1$
         pdS_tableView4.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         pdSFirstName_tableColumn19.setPrefWidth(75.0);
-        pdSFirstName_tableColumn19.setText("First Name0909");
+        pdSFirstName_tableColumn19.setText(app.io.propertyGetter.getProperty("prop272")); //$NON-NLS-1$
         pdSLastName_tableColumn110.setPrefWidth(75.0);
         // pdSLastName_tableColumn110.setStyle("-fx-background-color: #553366;");
-        pdSLastName_tableColumn110.setText("Last Name65");
+        pdSLastName_tableColumn110.setText(app.io.propertyGetter.getProperty("prop273")); //$NON-NLS-1$
         pdSTeam_tableColumn111.setPrefWidth(75.0);
-        pdSTeam_tableColumn111.setText("Team44");
+        pdSTeam_tableColumn111.setText(app.io.propertyGetter.getProperty("prop274")); //$NON-NLS-1$
         pdSRole_tableColumn112.setPrefWidth(75.0);
-        pdSRole_tableColumn112.setText("Role99");
+        pdSRole_tableColumn112.setText(app.io.propertyGetter.getProperty("prop275")); //$NON-NLS-1$
         text111119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111119.setStrokeWidth(0.0);
-        text111119.setStyle("-fx-font-size: 16;");
-        text111119.setText("Add/Edit");
-        text111119.setFont(new Font("Arial",13.0));
+        text111119.setStyle(app.io.propertyGetter.getProperty("prop276")); //$NON-NLS-1$
+        text111119.setText(app.io.propertyGetter.getProperty("prop277")); //$NON-NLS-1$
+        text111119.setFont(new Font(app.io.propertyGetter.getProperty("prop278"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text111119,new Insets(20.0,0.0,10.0,0.0));
         AnchorPane.setBottomAnchor(gridPane16,0.0);
         AnchorPane.setLeftAnchor(gridPane16,0.0);
@@ -1478,49 +1478,49 @@ public class Boilerplate extends VBox
         gridPane16.setVgap(10.0);
         text1111110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1111110.setStrokeWidth(0.0);
-        text1111110.setText("First Name:");
+        text1111110.setText(app.io.propertyGetter.getProperty("prop279")); //$NON-NLS-1$
         GridPane.setRowIndex(text1111111,1);
         text1111111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1111111.setStrokeWidth(0.0);
-        text1111111.setText("Last Name:");
+        text1111111.setText(app.io.propertyGetter.getProperty("prop280")); //$NON-NLS-1$
         GridPane.setColumnIndex(psSTeam_textField15,1);
         GridPane.setColumnSpan(psSTeam_textField15,2147483647);
         GridPane.setRowIndex(psSTeam_textField15,2);
-        psSTeam_textField15.setPromptText("teme");
-        psSTeam_textField15.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        psSTeam_textField15.setPromptText(app.io.propertyGetter.getProperty("prop281")); //$NON-NLS-1$
+        psSTeam_textField15.setStyle(app.io.propertyGetter.getProperty("prop282")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdSFirstName_textField16,1);
         GridPane.setColumnSpan(pdSFirstName_textField16,2147483647);
-        pdSFirstName_textField16.setPromptText("fname");
-        pdSFirstName_textField16.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        pdSFirstName_textField16.setPromptText(app.io.propertyGetter.getProperty("prop283")); //$NON-NLS-1$
+        pdSFirstName_textField16.setStyle(app.io.propertyGetter.getProperty("prop284")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdSLastName_textField17,1);
         GridPane.setColumnSpan(pdSLastName_textField17,2147483647);
         GridPane.setRowIndex(pdSLastName_textField17,1);
-        pdSLastName_textField17.setPromptText("SNOW DAY");
-        pdSLastName_textField17.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        pdSLastName_textField17.setPromptText(app.io.propertyGetter.getProperty("prop285")); //$NON-NLS-1$
+        pdSLastName_textField17.setStyle(app.io.propertyGetter.getProperty("prop286")); //$NON-NLS-1$
         GridPane.setRowIndex(pdSAddUpdate_button111,4);
         pdSAddUpdate_button111.setMaxWidth(Double.MAX_VALUE);
         pdSAddUpdate_button111.setMinWidth(100.0);
         pdSAddUpdate_button111.setMnemonicParsing(false);
-        pdSAddUpdate_button111.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        pdSAddUpdate_button111.setText("Add/Update23");
+        pdSAddUpdate_button111.setStyle(app.io.propertyGetter.getProperty("prop287")); //$NON-NLS-1$
+        pdSAddUpdate_button111.setText(app.io.propertyGetter.getProperty("prop288")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdSClear_button112,1);
         GridPane.setRowIndex(pdSClear_button112,4);
         pdSClear_button112.setMaxWidth(100.0);
         pdSClear_button112.setMnemonicParsing(false);
-        pdSClear_button112.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
-        pdSClear_button112.setText("Clear2345");
+        pdSClear_button112.setStyle(app.io.propertyGetter.getProperty("prop289")); //$NON-NLS-1$
+        pdSClear_button112.setText(app.io.propertyGetter.getProperty("prop290")); //$NON-NLS-1$
         GridPane.setRowIndex(text1111112,2);
         text1111112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1111112.setStrokeWidth(0.0);
-        text1111112.setText("Team:");
+        text1111112.setText(app.io.propertyGetter.getProperty("prop291")); //$NON-NLS-1$
         GridPane.setRowIndex(text1111113,3);
         text1111113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1111113.setStrokeWidth(0.0);
-        text1111113.setText("Role:");
+        text1111113.setText(app.io.propertyGetter.getProperty("prop292")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdSRole_textField18,1);
         GridPane.setRowIndex(pdSRole_textField18,3);
-        pdSRole_textField18.setPromptText("http://funnybizblog.com/funny-stuff/calvin-hobbes-snowman-cartoons");
-        pdSRole_textField18.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        pdSRole_textField18.setPromptText(app.io.propertyGetter.getProperty("prop293")); //$NON-NLS-1$
+        pdSRole_textField18.setStyle(app.io.propertyGetter.getProperty("prop294")); //$NON-NLS-1$
         columnConstraints1118.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints1118.setMaxWidth(938.9019165039062);
         columnConstraints1119.setHgrow(javafx.scene.layout.Priority.ALWAYS);

@@ -126,7 +126,7 @@
                                           <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
                                           <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                              <image>
-                                                <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                <Image url="@../_Externals_/_Resources_/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -145,7 +145,7 @@
                                           <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
                                           <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                              <image>
-                                                <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                <Image url="@../_Externals_/_Resources_/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -164,7 +164,7 @@
                                           <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
                                           <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                              <image>
-                                                <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                <Image url="@../_Externals_/_Resources_/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
                                              </image>
                                           </ImageView>
                                        </children>

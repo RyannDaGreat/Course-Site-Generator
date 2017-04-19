@@ -32,7 +32,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Resources/Icons/New%20copy.png" />
+                              <Image url="@../_Externals_/_Resources_/Icons/New%20copy.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -41,7 +41,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Resources/Icons/Folder%20copy.png" />
+                              <Image url="@../_Externals_/_Resources_/Icons/Folder%20copy.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -50,7 +50,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Resources/Icons/Floppy%20copy.png" />
+                              <Image url="@../_Externals_/_Resources_/Icons/Floppy%20copy.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -59,7 +59,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Resources/Icons/FloppyDown%20copy.png" />
+                              <Image url="@../_Externals_/_Resources_/Icons/FloppyDown%20copy.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -68,7 +68,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Resources/Icons/Export%20copy.png" />
+                              <Image url="@../_Externals_/_Resources_/Icons/Export%20copy.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -77,7 +77,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Resources/Icons/Undo%20copy.png" />
+                              <Image url="@../_Externals_/_Resources_/Icons/Undo%20copy.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -86,7 +86,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Resources/Icons/Redo%20copy.png" />
+                              <Image url="@../_Externals_/_Resources_/Icons/Redo%20copy.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -95,7 +95,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Resources/Icons/Book%20copy.png" />
+                              <Image url="@../_Externals_/_Resources_/Icons/Book%20copy.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -221,19 +221,19 @@
                                                 <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                                    <image>
-                                                      <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                      <Image url="@../_Externals_/_Resources_/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
                                                    </image>
                                                 </ImageView>
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image:" GridPane.rowIndex="1" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image:" GridPane.rowIndex="2" />
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                                    <image>
-                                                      <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                      <Image url="@../_Externals_/_Resources_/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
                                                    </image>
                                                 </ImageView>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                                                    <image>
-                                                      <Image url="@../Resources/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                      <Image url="@../_Externals_/_Resources_/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
                                                    </image>
                                                 </ImageView>
                                                 <Button mnemonicParsing="false" style="-fx-background-color: #bddaed; -fx-background-radius: 30,30;" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />

@@ -30,7 +30,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../_Externals_/_Resources_/Images/Newcopy.png" />
+                                    <Image url="@../_Externals_/_Resources_/_Images_/Newcopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -39,7 +39,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../_Externals_/_Resources_/Images/Foldercopy.png" />
+                                    <Image url="@../_Externals_/_Resources_/_Images_/Foldercopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -48,7 +48,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../_Externals_/_Resources_/Images/Floppycopy.png" />
+                                    <Image url="@../_Externals_/_Resources_/_Images_/Floppycopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -57,7 +57,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../_Externals_/_Resources_/Images/FloppyDowncopy.png" />
+                                    <Image url="@../_Externals_/_Resources_/_Images_/FloppyDowncopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -66,7 +66,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../_Externals_/_Resources_/Images/Exportcopy.png" />
+                                    <Image url="@../_Externals_/_Resources_/_Images_/Exportcopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -75,7 +75,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../_Externals_/_Resources_/Images/Powercopy.png" />
+                                    <Image url="@../_Externals_/_Resources_/_Images_/Powercopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -88,7 +88,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../_Externals_/_Resources_/Images/Undocopy.png" />
+                                    <Image url="@../_Externals_/_Resources_/_Images_/Undocopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -97,7 +97,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../_Externals_/_Resources_/Images/Redocopy.png" />
+                                    <Image url="@../_Externals_/_Resources_/_Images_/Redocopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -106,7 +106,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../_Externals_/_Resources_/Images/Bookcopy.png" />
+                                    <Image url="@../_Externals_/_Resources_/_Images_/Bookcopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>

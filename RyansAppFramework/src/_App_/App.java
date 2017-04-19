@@ -10,7 +10,7 @@ public class App extends Application//This is the head of the tree. It's special
 {
     public IO io;
     public GUI gui;
-    public rTPS rtps;
+    public rTPS rtps;gi
     public App()
     {
         io=new IO(this);
