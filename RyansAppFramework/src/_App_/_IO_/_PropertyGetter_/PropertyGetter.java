@@ -1,8 +1,6 @@
 package _App_._IO_._PropertyGetter_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _Externals_._Resources_.ResourceGetter;
-import properties_manager.InvalidXMLFileFormatException;
-import properties_manager.PropertiesManager;
 @SuppressWarnings({"WeakerAccess","FieldCanBeLocal"})
 public class PropertyGetter
 {
@@ -10,8 +8,23 @@ public class PropertyGetter
     public PropertyGetter(App app)
     {
         this.app=app;
-        // initialize();
     }
+    public String getProperty(String key)//The reason this is private is because every key is accessed via a method.
+    {
+        return ResourceGetter.getProperty(key);//Actual mechanics of loading file must be outsourced to externals to preserve the logical integrity of my blackbox.
+    }
+    //region Specific properties (by method)
+    public String getAppTitle()
+    {
+        return getProperty("app_title");
+    }
+    public String getAppIconName()
+    {
+        return getProperty("app_icon_name");
+    }
+
+    //endregion
+    //region If I ever want to use XML for some reason
     // private final String XMLDataPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/app_properties.xml";
     // private final String XMLSchemaPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/properties_schema.xsd";
     // //region getProperty(String key)―――――――――――――――――――――――――――――――――――――――――
@@ -27,19 +40,5 @@ public class PropertyGetter
     //         e.printStackTrace();
     //     }
     // }
-    public String getProperty(String key)//The reason this is private is because every key is accessed via a method.
-    {
-        return ResourceGetter.getProperty(key);//Actual mechanics of loading file must be outsourced to externals to preserve the logical integrity of my blackbox.
-    }
-    //endregion―――――――――――――――――――――――――――――――――――――――――
-    
-
-    public static void main(String...args)//To test stuff
-    {
-        // System.out.println(new App().gui.dialogs.yesNoCancel("H","H"));
-        // System.out.println(new App().io.propertyGetter.getProperty("TAS_HEADER_TEXT"));
-    }
-
-
-
+    //endregion
 }

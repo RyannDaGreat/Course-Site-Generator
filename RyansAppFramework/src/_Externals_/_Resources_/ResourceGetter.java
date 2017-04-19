@@ -5,22 +5,23 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 public class ResourceGetter
 {
-    private static String topakcoa(String nudgy)
+    //region getImage
+    private static String getResource(String localPathToRyanAppFramework)
     {
-        return ResourceGetter.class.getResource(nudgy).toString();//.toExternalForm() ≣ .toString() SOURCE: https://teamtreehouse.com/community/resources-and-toexternalform
+        return ResourceGetter.class.getResource(localPathToRyanAppFramework).toString();//.toExternalForm() ≣ .toString() SOURCE: https://teamtreehouse.com/community/resources-and-toexternalform
         //NOTE: stylesheetPath looks something like "file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Experiments_/appstyle.css" **Notice that its in the /out/ folder AND that it has "file:" at the beginning**
     }
     public static Image getImage(String name)
     {
-        return new Image(topakcoa("_Images_/"+name));
+        return new Image(getResource("_Images_/"+name));
     }
-    //
+    //endregion
     //region Eclipse-Generated String Loader
     private static final ResourceBundle RESOURCE_BUNDLE;
     static
     {
         //This is where the language selector would come from.
-        RESOURCE_BUNDLE=ResourceBundle.getBundle("_Externals_._Resources_.english");
+        RESOURCE_BUNDLE=ResourceBundle.getBundle("_Externals_._Resources_._Properties_.english");
     }
     public static void main(String[]isATest)
     {
@@ -38,5 +39,4 @@ public class ResourceGetter
         }
     }
     //endregion
-
 }

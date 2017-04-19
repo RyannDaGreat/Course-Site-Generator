@@ -20,6 +20,8 @@ public class App extends Application//This is the head of the tree. It's special
     public void start(Stage primaryStage)
     {
         primaryStage.setScene(new Scene(gui.window.boilerplate));
+        primaryStage.setTitle(io.propertyGetter.getAppTitle());
+        primaryStage.getIcons().add(io.misc.getAppIcon());
         primaryStage.show();
     }
     public static void main(String[]ⵁ)
