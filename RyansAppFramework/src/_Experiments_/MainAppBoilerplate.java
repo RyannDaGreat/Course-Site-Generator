@@ -1,4 +1,4 @@
-package _Externals_;
+package _Experiments_;
 import _Externals_._Resources_.ResourceGetter;
 import javafx.scene.shape.*;
 import javafx.scene.image.*;

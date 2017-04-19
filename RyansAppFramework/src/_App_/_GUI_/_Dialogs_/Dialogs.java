@@ -1,9 +1,13 @@
 package _App_._GUI_._Dialogs_;//Created by Ryan on 4/10/17.
 import _App_.App;
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextInputDialog;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+
 import java.io.File;
-import java.util.Arrays;
+import java.util.Optional;
 @SuppressWarnings("WeakerAccess")
 public class Dialogs
 {
@@ -14,76 +18,96 @@ public class Dialogs
     }
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
+    }
+    //region Alerts:error and info
+    //Unfortunately the ones in the r class can't work on a javaFx thread. So, I'm going to implement some here:
+    //All came from http://code.makery.ch/blog/javafx-dialogs-official/
+    private static void showAlert(String title,String header,String content,Alert.AlertType type)
+    {
+        Alert alert=new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+    public static void showErrorAlert(String title,String header,String content)
+    {
+        showAlert(title,header,content,Alert.AlertType.ERROR);
+    }
+    public static void showErrorAlert(String message)
+    {
+        showErrorAlert("Error",message,"");
+    }
+    public static void showInfoAlert(String title,String header,String content)
+    {
+        showAlert(title,header,content,Alert.AlertType.INFORMATION);
+    }
+    public static void showInfoAlert(String message)
+    {
+        showErrorAlert("Info",message,"");
+    }
+    //endregion
+    //region StringDialog
+    public static String stringDialog(String title,String header,String message)//Returns null if user cancels
+    {
+        TextInputDialog dialog=new TextInputDialog();
+        dialog.setTitle(title);
+        dialog.setHeaderText(header);
+        dialog.setContentText(message);
+        Optional<String> result=dialog.showAndWait();
+        if(result.isPresent())
+        {
+            return result.get();
+        }
+        return null;//User decided to cancel.
+    }
+    //endregion
+    //region yesno
 
-    }
-    //region Yes/No/Cancel Dialogs
-    public enum dialogOptions//Used for checking the values of various dialog results
+    public static boolean yesNo(String title,String header,String message)
     {
-        YES,NO,CANCEL
+        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
+        ButtonType yes=new ButtonType("Yes");
+        ButtonType no=new ButtonType("No");
+        // ButtonType buttonTypeThree = new ButtonType("Three");
+        // ButtonType buttonTypeCancel = new ButtonType("Cancel",ButtonBar.ButtonData.CANCEL_CLOSE);
+        alert.getButtonTypes().setAll(yes,no);//, buttonTypeThree, buttonTypeCancel);
+        Optional<ButtonType> result=alert.showAndWait();
+        if(!result.isPresent())
+            return yesNo(title,header,message);//Keep asking the user until they click yes or no. Clicking the 'x' is not an option.
+        if(result.get()==no)
+            return false;
+        assert result.get()==yes;
+        return false;
     }
-    private dialogOptions intToDialogOption(int i)//Just here to prevent code-redundancy in this class
+    public static boolean yesNo(String message)
     {
-        /*@formatter:off*/
-        if(i==0)
-            return dialogOptions.YES;
-        if(i==1)
-            return dialogOptions.NO;
-        if(i==2)
-            return dialogOptions.CANCEL;
-        assert false;//This should not happen.
-        return null;
-        /*@formatter:on*/
+        return yesNo("",message,"");
     }
-    public dialogOptions yesNoCancel(String title,String message)//A dialog with the options Yes, No and Cancel
+    //endregion
+    //region open/save file/directory
+    private FileChooser getFileChooser()
     {
-        //Example: r.print(new App().gui.dialogs.yesNoCancel("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
-        //Based on: http://www.java2s.com/Tutorial/Java/0240__Swing/Yesnocanceldialog.htm
-        return intToDialogOption(JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_CANCEL_OPTION));
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(app.io.misc.getCurrentDirectory());
+        return fileChooser;
     }
-    public boolean yesNo(String title,String message)//A dialog with the options Yes and No
+    public File openFile()//Returns null if cancelled
     {
-        return intToDialogOption(JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_OPTION))==dialogOptions.YES;
+        return getFileChooser().showOpenDialog(app.stage);
     }
-    public void ok(String title,String message)//A simple notification dialog with the option "ok"
+    public File saveFile()
     {
-        JOptionPane.showConfirmDialog(null,message,title,JOptionPane.OK_OPTION);
+        return getFileChooser().showSaveDialog(app.stage);
     }
-    //endregion―――――――――――――――――――――――――――――――――――――――――
-    //region File/Dir Open/Save Dialogs
-    //DOCUMENTATION:
-        //'Saving' refers to a dialog where the user has to put in a string, as you would normally do when saving a file.
-        //'Opening' refers to selecting exclusively from files/directories that are already there.
-        //String[] extensions refers to the available types of files you normally choose from. Leave it blank to enable all filetypes.
-        //All methods here are derived from four combinations of true and false from fileDialog, which is private for that reason.
-        //These methods can be copy-pasted to and from the r class if necessary.
-    private File fileDialog(String title,boolean openIfTrueElseSave,boolean fileIfTrueElseDir,String...extensions)//Leave extensions blank to accept all file types
+    public File openDirectory()//Returns null if cancelled
     {
-        /*@formatter:off*/
-        JFileChooser chooser=new JFileChooser();
-        chooser.setDialogTitle(title);
-        if(extensions.length!=0)chooser.setFileFilter(new FileNameExtensionFilter(Arrays.toString(extensions),extensions));
-        chooser.setFileSelectionMode(fileIfTrueElseDir?JFileChooser.FILES_ONLY:JFileChooser.DIRECTORIES_ONLY);
-        chooser.setCurrentDirectory(new java.io.File("."));//Set pwd
-        if(openIfTrueElseSave)chooser.showOpenDialog(null);//Show the dialog
-        else chooser.showSaveDialog(null);//Show the dialog
-        return chooser.getSelectedFile();
-        /*@formatter:on*/
-    }
-    public File openFile(String title,String...extensions)
-    {
-        return fileDialog(title,true,true,extensions);
-    }
-    public File openDirectory(String title,String...extensions)
-    {
-        return fileDialog(title,true,false,extensions);
-    }
-    public File saveFile(String title,String...extensions)//Save is defined as a thing where you gotta type out a new file path or something in the dialog, as opposed to open where you only select whats there
-    {
-        return fileDialog(title,false,true,extensions);
-    }
-    public File saveDirectory(String title,String...extensions)
-    {
-        return fileDialog(title,false,false,extensions);
+        DirectoryChooser directoryChooser=new DirectoryChooser();
+        directoryChooser.setInitialDirectory(app.io.misc.getCurrentDirectory());
+        return new DirectoryChooser().showDialog(app.stage);
     }
     //endregion
 }

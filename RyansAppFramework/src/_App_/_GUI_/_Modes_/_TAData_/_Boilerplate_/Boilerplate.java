@@ -7,8 +7,9 @@ public class Boilerplate
     {
         this.app=app;
     }
+    private _App_._GUI_._Window_._Boilerplate_.Boilerplate megaplate;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
-
+        megaplate=app.gui.window.boilerplate;
     }
 }

@@ -2,6 +2,7 @@ package _App_;//Created by Ryan on 4/10/17.
 import _App_._GUI_.GUI;
 import _App_._IO_.IO;
 import _App_._rTPS_.rTPS;
+import _Externals_.r;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -27,11 +28,13 @@ public class App extends Application//This is the head of the tree. It's special
     public void start(Stage primaryStage)
     {
         initialize();
+        gui.dialogs.yesNo("Question");
+        System.out.println(gui.dialogs.openFile());
         this.stage=primaryStage;
         stage.setTitle(io.propertyGetter.getAppTitle());
         stage.getIcons().add(io.styleGetter.getAppIcon());
         stage.setScene(new Scene(gui.window.boilerplate));
-        stage.setOnCloseRequest(e->System.out.println("Exiting"));
+        stage.setOnCloseRequest(e->gui.toolbar.actions.handleExit());
         stage.setMinHeight(150);//Unlike McKenna's demo
         stage.show();
     }

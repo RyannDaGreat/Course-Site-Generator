@@ -1,5 +1,6 @@
 package _Externals_;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -1315,10 +1316,4 @@ public class r
         return fileDialog(title,false,false,extensions);
     }
     //endregion
-
-    public static void main(String[] atgs)
-    {
-        yesNo("Helo","heo");
-    }
-
 }
