@@ -30,7 +30,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Newcopy.png" />
+                                    <Image url="@../Resources/Images/Newcopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -39,7 +39,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Foldercopy.png" />
+                                    <Image url="@../Resources/Images/Foldercopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -48,7 +48,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Floppycopy.png" />
+                                    <Image url="@../Resources/Images/Floppycopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -57,7 +57,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/FloppyDowncopy.png" />
+                                    <Image url="@../Resources/Images/FloppyDowncopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -66,7 +66,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Exportcopy.png" />
+                                    <Image url="@../Resources/Images/Exportcopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -75,7 +75,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Powercopy.png" />
+                                    <Image url="@../Resources/Images/Powercopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -88,7 +88,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Undocopy.png" />
+                                    <Image url="@../Resources/Images/Undocopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -97,7 +97,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Redocopy.png" />
+                                    <Image url="@../Resources/Images/Redocopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -106,7 +106,7 @@
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@Images/Bookcopy.png" />
+                                    <Image url="@../Resources/Images/Bookcopy.png" />
                                  </image>
                               </ImageView>
                            </graphic>

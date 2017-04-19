@@ -1,9 +1,9 @@
 package _Experiments_;
 
+import _Externals_._Resources_.ResourceGetter;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
 import javafx.geometry.*;
-import javafx.scene.effect.*;
 import javafx.scene.control.*;
 import java.lang.*;
 import javafx.scene.layout.*;
@@ -511,7 +511,7 @@ public class GoodTryBase extends VBox {
         imageView.setFitWidth(200.0);
         imageView.setPickOnBounds(true);
         imageView.setPreserveRatio(true);
-        imageView.setImage(Stylizer.getImage("bannerimmage.png"));
+        imageView.setImage(ResourceGetter.getImage("bannerimmage.png"));
 
         columnConstraints16.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints16.setMaxWidth(200.0);
@@ -551,7 +551,7 @@ public class GoodTryBase extends VBox {
         imageView0.setFitWidth(200.0);
         imageView0.setPickOnBounds(true);
         imageView0.setPreserveRatio(true);
-        imageView0.setImage(Stylizer.getImage("bannerimmage.png"));
+        imageView0.setImage(ResourceGetter.getImage("bannerimmage.png"));
 
         columnConstraints19.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints19.setMaxWidth(200.0);
@@ -591,7 +591,7 @@ public class GoodTryBase extends VBox {
         imageView1.setFitWidth(200.0);
         imageView1.setPickOnBounds(true);
         imageView1.setPreserveRatio(true);
-        imageView1.setImage(Stylizer.getImage("bannerimmage.png"));
+        imageView1.setImage(ResourceGetter.getImage("bannerimmage.png"));
 
         columnConstraints112.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints112.setMaxWidth(200.0);

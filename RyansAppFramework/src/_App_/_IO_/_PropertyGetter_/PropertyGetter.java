@@ -1,12 +1,12 @@
-package _App_._IO_._XMLPropertyGetter_;//Created by Ryan on 4/10/17.
+package _App_._IO_._PropertyGetter_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import properties_manager.InvalidXMLFileFormatException;
 import properties_manager.PropertiesManager;
 @SuppressWarnings({"WeakerAccess","FieldCanBeLocal"})
-public class XMLPropertyGetter
+public class PropertyGetter
 {
     public App app;
-    public XMLPropertyGetter(App app)
+    public PropertyGetter(App app)
     {
         this.app=app;
         initialize();
@@ -36,7 +36,7 @@ public class XMLPropertyGetter
     public static void main(String...args)//To test stuff
     {
         // System.out.println(new App().gui.dialogs.yesNoCancel("H","H"));
-        System.out.println(new App().io.xmlPropertyGetter.getProperty("TAS_HEADER_TEXT"));
+        System.out.println(new App().io.propertyGetter.getProperty("TAS_HEADER_TEXT"));
     }
 
 

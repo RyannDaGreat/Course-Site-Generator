@@ -1,4 +1,5 @@
-package _Experiments_;
+package _Externals_;
+import _Externals_._Resources_.ResourceGetter;
 import javafx.scene.shape.*;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
@@ -336,7 +337,6 @@ public class MainAppBoilerplate extends VBox
     public final Text text1111111;
     public final Text text1111112;
     public final Text text1111113;
-    public final TextField textField18;
     public final ColumnConstraints columnConstraints1118;
     public final ColumnConstraints columnConstraints1119;
     public final RowConstraints rowConstraints11116;
@@ -350,9 +350,10 @@ public class MainAppBoilerplate extends VBox
     public final TableColumn pdSLastName_tableColumn110;
     public final TableColumn pdSTeam_tableColumn111;
     public final TableColumn pdSRole_tableColumn112;
-    public final TextField psSTeam_textField15;
     public final TextField pdSFirstName_textField16;
     public final TextField pdSLastName_textField17;
+    public final TextField psSTeam_textField15;
+    public final TextField pdSRole_textField18;
     public final Button pdSAddUpdate_button111;
     public final Button pdSClear_button112;
     //
@@ -675,7 +676,7 @@ public class MainAppBoilerplate extends VBox
         pdSClear_button112=new Button();
         text1111112=new Text();
         text1111113=new Text();
-        textField18=new TextField();
+        pdSRole_textField18=new TextField();
         columnConstraints1118=new ColumnConstraints();
         columnConstraints1119=new ColumnConstraints();
         rowConstraints11116=new RowConstraints();
@@ -711,7 +712,7 @@ public class MainAppBoilerplate extends VBox
         imageView.setPickOnBounds(true);//Stylizer
         imageView.setPreserveRatio(true);
         // imageView.setImage(new Image(getClass().getResource("Icons/Newcopy.png").toExternalForm()));
-        imageView.setImage(Stylizer.getImage("Newcopy.png"));
+        imageView.setImage(ResourceGetter.getImage("Newcopy.png"));
         new_button.setGraphic(imageView);
         open_button0.setMnemonicParsing(false);
         open_button0.setStyle("-fx-background-color: #e5d3ff;");
@@ -720,7 +721,7 @@ public class MainAppBoilerplate extends VBox
         imageView0.setPickOnBounds(true);
         imageView0.setPreserveRatio(true);
         // imageView0.setImage(new Image(getClass().getResource("Icons/Foldercopy.png").toExternalForm()));
-        imageView0.setImage(Stylizer.getImage("Foldercopy.png"));
+        imageView0.setImage(ResourceGetter.getImage("Foldercopy.png"));
         open_button0.setGraphic(imageView0);
         save_button1.setMnemonicParsing(false);
         save_button1.setStyle("-fx-background-color: #e5d3ff;");
@@ -729,7 +730,7 @@ public class MainAppBoilerplate extends VBox
         imageView1.setPickOnBounds(true);
         imageView1.setPreserveRatio(true);
         // imageView1.setImage(new Image(getClass().getResource("Icons/Floppycopy.png").toExternalForm()));
-        imageView1.setImage(Stylizer.getImage("Floppycopy.png"));
+        imageView1.setImage(ResourceGetter.getImage("Floppycopy.png"));
         save_button1.setGraphic(imageView1);
         saveas_button2.setMnemonicParsing(false);
         saveas_button2.setStyle("-fx-background-color: #e5d3ff;");
@@ -737,7 +738,7 @@ public class MainAppBoilerplate extends VBox
         imageView2.setFitWidth(55.0);
         imageView2.setPickOnBounds(true);
         imageView2.setPreserveRatio(true);
-        imageView2.setImage(Stylizer.getImage("Floppydowncopy.png"));
+        imageView2.setImage(ResourceGetter.getImage("Floppydowncopy.png"));
         saveas_button2.setGraphic(imageView2);
         export_button3.setMnemonicParsing(false);
         export_button3.setStyle("-fx-background-color: #e5d3ff;");
@@ -746,7 +747,7 @@ public class MainAppBoilerplate extends VBox
         imageView3.setPickOnBounds(true);
         imageView3.setPreserveRatio(true);
         // imageView3.setImage(new Image(getClass().getResource("Icons/Exportcopy.png").toExternalForm()));
-        imageView3.setImage(Stylizer.getImage("Exportcopy.png"));
+        imageView3.setImage(ResourceGetter.getImage("Exportcopy.png"));
         export_button3.setGraphic(imageView3);
         power_button4.setMnemonicParsing(false);
         power_button4.setStyle("-fx-background-color: #e5d3ff;");
@@ -754,7 +755,7 @@ public class MainAppBoilerplate extends VBox
         imageView4.setFitWidth(100.0);
         imageView4.setPickOnBounds(true);
         imageView4.setPreserveRatio(true);
-        imageView4.setImage(Stylizer.getImage("Powercopy.png"));
+        imageView4.setImage(ResourceGetter.getImage("Powercopy.png"));
         power_button4.setGraphic(imageView4);
         GridPane.setColumnIndex(toolBar0,2);
         GridPane.setHgrow(toolBar0,javafx.scene.layout.Priority.NEVER);
@@ -767,7 +768,7 @@ public class MainAppBoilerplate extends VBox
         imageView5.setPickOnBounds(true);
         imageView5.setPreserveRatio(true);
         // imageView5.setImage(new Image(getClass().getResource("Icons/Undocopy.png").toExternalForm()));
-        imageView5.setImage(Stylizer.getImage("Undocopy.png"));
+        imageView5.setImage(ResourceGetter.getImage("Undocopy.png"));
         undo_button5.setGraphic(imageView5);
         redo_button6.setMnemonicParsing(false);
         redo_button6.setStyle("-fx-background-color: #e5d3ff;");
@@ -775,7 +776,7 @@ public class MainAppBoilerplate extends VBox
         imageView6.setFitWidth(200.0);
         imageView6.setPickOnBounds(true);
         imageView6.setPreserveRatio(true);
-        imageView6.setImage(Stylizer.getImage("Redocopy.png"));
+        imageView6.setImage(ResourceGetter.getImage("Redocopy.png"));
         redo_button6.setGraphic(imageView6);
         book_button7.setMnemonicParsing(false);
         book_button7.setStyle("-fx-background-color: #e5d3ff;");
@@ -783,7 +784,7 @@ public class MainAppBoilerplate extends VBox
         imageView7.setFitWidth(200.0);
         imageView7.setPickOnBounds(true);
         imageView7.setPreserveRatio(true);
-        imageView7.setImage(Stylizer.getImage("Bookcopy.png"));
+        imageView7.setImage(ResourceGetter.getImage("Bookcopy.png"));
         book_button7.setGraphic(imageView7);
         gridPane.setPadding(new Insets(5.0));
         VBox.setVgrow(tabPane,javafx.scene.layout.Priority.ALWAYS);
@@ -1031,7 +1032,7 @@ public class MainAppBoilerplate extends VBox
         cdPsBanner_imageView8.setFitWidth(200.0);
         cdPsBanner_imageView8.setPickOnBounds(true);
         cdPsBanner_imageView8.setPreserveRatio(true);
-        cdPsBanner_imageView8.setImage(Stylizer.getImage("bannerimmage.png"));
+        cdPsBanner_imageView8.setImage(ResourceGetter.getImage("bannerimmage.png"));
         GridPane.setRowIndex(text17,1);
         text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text17.setStrokeWidth(0.0);
@@ -1047,7 +1048,7 @@ public class MainAppBoilerplate extends VBox
         cdPsLeft_imageView9.setFitWidth(200.0);
         cdPsLeft_imageView9.setPickOnBounds(true);
         cdPsLeft_imageView9.setPreserveRatio(true);
-        cdPsLeft_imageView9.setImage(Stylizer.getImage("bannerimmage.png"));
+        cdPsLeft_imageView9.setImage(ResourceGetter.getImage("bannerimmage.png"));
         GridPane.setColumnIndex(cdPsRight_imageView10,1);
         GridPane.setHalignment(cdPsRight_imageView10,javafx.geometry.HPos.CENTER);
         GridPane.setRowIndex(cdPsRight_imageView10,2);
@@ -1055,7 +1056,7 @@ public class MainAppBoilerplate extends VBox
         cdPsRight_imageView10.setFitWidth(200.0);
         cdPsRight_imageView10.setPickOnBounds(true);
         cdPsRight_imageView10.setPreserveRatio(true);
-        cdPsRight_imageView10.setImage(Stylizer.getImage("bannerimmage.png"));
+        cdPsRight_imageView10.setImage(ResourceGetter.getImage("bannerimmage.png"));
         GridPane.setColumnIndex(cdPsChangeLeft_button11,2);
         GridPane.setHalignment(cdPsChangeLeft_button11,javafx.geometry.HPos.RIGHT);
         GridPane.setRowIndex(cdPsChangeLeft_button11,1);
@@ -1860,10 +1861,10 @@ public class MainAppBoilerplate extends VBox
         text1111113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1111113.setStrokeWidth(0.0);
         text1111113.setText("Role:");
-        GridPane.setColumnIndex(textField18,1);
-        GridPane.setRowIndex(textField18,3);
-        textField18.setPromptText("http://funnybizblog.com/funny-stuff/calvin-hobbes-snowman-cartoons");
-        textField18.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
+        GridPane.setColumnIndex(pdSRole_textField18,1);
+        GridPane.setRowIndex(pdSRole_textField18,3);
+        pdSRole_textField18.setPromptText("http://funnybizblog.com/funny-stuff/calvin-hobbes-snowman-cartoons");
+        pdSRole_textField18.setStyle("-fx-background-color: #bddaed; -fx-background-radius: 30,30;");
         columnConstraints1118.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints1118.setMaxWidth(938.9019165039062);
         columnConstraints1119.setHgrow(javafx.scene.layout.Priority.ALWAYS);
@@ -2169,7 +2170,7 @@ public class MainAppBoilerplate extends VBox
         gridPane16.getChildren().add(pdSClear_button112);
         gridPane16.getChildren().add(text1111112);
         gridPane16.getChildren().add(text1111113);
-        gridPane16.getChildren().add(textField18);
+        gridPane16.getChildren().add(pdSRole_textField18);
         gridPane16.getColumnConstraints().add(columnConstraints1118);
         gridPane16.getColumnConstraints().add(columnConstraints1119);
         gridPane16.getRowConstraints().add(rowConstraints11116);

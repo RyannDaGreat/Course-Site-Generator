@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 import java.lang.*;
 import javafx.scene.layout.*;
 
-import static _Experiments_.Stylizer.*;
+import static _Externals_._Resources_.ResourceGetter.*;
 public class SeveralTabsBase extends VBox {
 
     protected final AnchorPane anchorPane;

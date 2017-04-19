@@ -5,7 +5,7 @@ import _App_._IO_._JsonLoader_.JsonLoader;
 import _App_._IO_._JsonSaver_.JsonSaver;
 import _App_._IO_._Misc_.Misc;
 import _App_._IO_._StyleGetter_.StyleGetter;
-import _App_._IO_._XMLPropertyGetter_.XMLPropertyGetter;
+import _App_._IO_._PropertyGetter_.PropertyGetter;
 @SuppressWarnings("WeakerAccess")
 public class IO//Doesn't actually do anything. Should not contain any methods or variables other than it's children.
 {
@@ -15,7 +15,7 @@ public class IO//Doesn't actually do anything. Should not contain any methods or
     public JsonSaver jsonSaver;
     public Misc misc;
     public StyleGetter styleGetter;
-    public XMLPropertyGetter xmlPropertyGetter;
+    public PropertyGetter propertyGetter;
     public IO(App app)
     {
         exporter=new Exporter(app);
@@ -23,6 +23,6 @@ public class IO//Doesn't actually do anything. Should not contain any methods or
         jsonSaver=new JsonSaver(app);
         misc=new Misc(app);
         styleGetter=new StyleGetter(app);
-        xmlPropertyGetter=new XMLPropertyGetter(app);
+        propertyGetter=new PropertyGetter(app);
     }
 }

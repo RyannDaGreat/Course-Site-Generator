@@ -9,20 +9,9 @@ import _Externals_.OfficeHoursGrid;
 import _Externals_.r;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import properties_manager.PropertiesManager;
 
-import javax.swing.*;
-import java.net.URL;
 import java.util.ResourceBundle;
-
-import static _Experiments_.Stylizer.stylize;
-import static djf.settings.AppPropertyType.APP_CSS;
-import static djf.settings.AppPropertyType.APP_PATH_CSS;
 /**
  * @author Ryan
  */
@@ -33,28 +22,29 @@ public class RyansAppFramework extends Application
     @Override
     public void start(Stage primaryStage)
     {
-        App app=new App();
-        HBox Toolbar=new HBox(new Button("A"),new Button("B"),new Button("C"));
-        GridPane Grid=new GridPane();
-        Button btn=new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(event->System.out.println("Hello World!"));
-        VBox root=new VBox(Toolbar,btn);
-        stylize(Toolbar,"jabber");
+        // App app=new App();
+        // HBox Toolbar=new HBox(new Button("A"),new Button("B"),new Button("C"));
+        // GridPane Grid=new GridPane();
+        // Button btn=new Button();
+        // btn.setText("Say 'Hello World'");
+        // btn.setOnAction(event->System.out.println("Hello World!"));
+        // VBox root=new VBox(Toolbar,btn);
+        // stylize(Toolbar,"jabber");
         // Pane root=new Pane();
         // root.getChildren().add(btn);
-        tabTester tt=new tabTester();
-        tt.courseDetailsTab.setStyle("-fx-border-color:red; -fx-background-color: blue;");
-        tt.courseDetailsTab.setGraphic(new Label("Tab B"));
-        tt.courseDetailsTab.
-                               getGraphic().
-                               setStyle("-fx-background-color: chartreuse");
-        scene=new Scene(root);
+        // tabTester tt=new tabTester();
+        // tt.courseDetailsTab.setStyle("-fx-border-color:red; -fx-background-color: blue;");
+        // tt.courseDetailsTab.setGraphic(new Label("Tab B"));
+        // tt.courseDetailsTab.
+        //                        getGraphic().
+        //                        setStyle("-fx-background-color: chartreuse");
+        // scene=new Scene(root);
         // scene=new Scene(new ScrollPane(officeHoursGrid),1000,250);
         // scene=new Scene(new tabTester());
         // scene=new Scene(new GoodTryBase());
         // scene=new Scene(new SeveralTabsBase());
-        scene=new Scene(new MainAppBoilerplate());
+        // scene=new Scene(new MainAppBoilerplate());
+        scene=new Scene(new App().gui.window.boilerplate);
         // scene.setOnKeyPressed(ⵁ->command(r.scan("ENTER INPUT:")));
         // Scene scene=new Scene(new UntitledBase(),1000,250);
         // scene=new Screne(new Columns(),1000,250);

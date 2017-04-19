@@ -53,3 +53,5 @@ Ryan External Classes for GUI:
 Main GUI = vbox
 ModeSelector =TabPane (with style of course) (needn't nessecarily exist)
 Tab: Contains a vBox,
+
+DEFINTION OF _Externals_: Things that don't need an App reference to function properly.
