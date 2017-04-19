@@ -1,4 +1,6 @@
 package _App_._GUI_._Window_._Boilerplate_;
+import _Externals_.OfficeHoursGrid;
+import _Externals_.TATableView;
 import _Externals_._Resources_.ResourceGetter;
 import _App_.App;
 import javafx.geometry.Insets;
@@ -11,7 +13,7 @@ import javafx.scene.text.Text;
 public class Boilerplate extends VBox
 {
     public App app;
-    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    public void initialize()
     {
 
     }
@@ -139,7 +141,7 @@ public class Boilerplate extends VBox
         rowConstraints13=new RowConstraints();
         anchorPane4=new AnchorPane();
         vBox4=new VBox();
-        tdTa_tableView0=new TableView();
+        tdTa_tableView0=new TATableView(app.io.propertyGetter.getProperty("prop106"),app.io.propertyGetter.getProperty("prop107"),app.io.propertyGetter.getProperty("prop108"));
         tdTaUndergrad_tableColumn3=new TableColumn();
         tdTaName_tableColumn4=new TableColumn();
         tdTaEmail_tableColumn5=new TableColumn();
@@ -160,13 +162,13 @@ public class Boilerplate extends VBox
         anchorPane5=new AnchorPane();
         scrollPane2=new ScrollPane();
         vBox5=new VBox();
-        tdOh_gridPane6=new GridPane();
+        gridPane6=new GridPane();
         text115=new Text();
         columnConstraints18=new ColumnConstraints();
         rowConstraints17=new RowConstraints();
         anchorPane6=new AnchorPane();
         vBox6=new VBox();
-        gridPane7=new GridPane();
+        taOh_gridPane7=new OfficeHoursGrid();
         columnConstraints19=new ColumnConstraints();
         columnConstraints110=new ColumnConstraints();
         rowConstraints18=new RowConstraints();
@@ -888,7 +890,7 @@ public class Boilerplate extends VBox
         vBox5.setPrefWidth(518.0);
         vBox5.setSpacing(5.0);
         vBox5.setStyle(app.io.propertyGetter.getProperty("prop122")); //$NON-NLS-1$
-        tdOh_gridPane6.setAlignment(javafx.geometry.Pos.CENTER);
+        gridPane6.setAlignment(javafx.geometry.Pos.CENTER);
         GridPane.setHalignment(text115,javafx.geometry.HPos.CENTER);
         text115.setFill(javafx.scene.paint.Color.valueOf(app.io.propertyGetter.getProperty("prop123"))); //$NON-NLS-1$
         text115.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
@@ -1639,9 +1641,9 @@ public class Boilerplate extends VBox
         gridPane4.getColumnConstraints().add(columnConstraints14);
         gridPane4.getRowConstraints().add(rowConstraints13);
         vBox3.getChildren().add(gridPane4);
-        tdTa_tableView0.getColumns().add(tdTaUndergrad_tableColumn3);
-        tdTa_tableView0.getColumns().add(tdTaName_tableColumn4);
-        tdTa_tableView0.getColumns().add(tdTaEmail_tableColumn5);
+        // tdTa_tableView0.getColumns().add(tdTaUndergrad_tableColumn3);
+        // tdTa_tableView0.getColumns().add(tdTaName_tableColumn4);
+        // tdTa_tableView0.getColumns().add(tdTaEmail_tableColumn5);
         vBox4.getChildren().add(tdTa_tableView0);
         vBox4.getChildren().add(text112);
         gridPane5.getChildren().add(text113);
@@ -1661,16 +1663,16 @@ public class Boilerplate extends VBox
         vBox3.getChildren().add(anchorPane4);
         anchorPane3.getChildren().add(scrollPane1);
         splitPane.getItems().add(anchorPane3);
-        tdOh_gridPane6.getChildren().add(text115);
-        tdOh_gridPane6.getColumnConstraints().add(columnConstraints18);
-        tdOh_gridPane6.getRowConstraints().add(rowConstraints17);
-        vBox5.getChildren().add(tdOh_gridPane6);
-        gridPane7.getColumnConstraints().add(columnConstraints19);
-        gridPane7.getColumnConstraints().add(columnConstraints110);
-        gridPane7.getRowConstraints().add(rowConstraints18);
-        gridPane7.getRowConstraints().add(rowConstraints19);
-        gridPane7.getRowConstraints().add(rowConstraints110);
-        vBox6.getChildren().add(gridPane7);
+        gridPane6.getChildren().add(text115);
+        gridPane6.getColumnConstraints().add(columnConstraints18);
+        gridPane6.getRowConstraints().add(rowConstraints17);
+        vBox5.getChildren().add(gridPane6);
+        taOh_gridPane7.getColumnConstraints().add(columnConstraints19);
+        taOh_gridPane7.getColumnConstraints().add(columnConstraints110);
+        taOh_gridPane7.getRowConstraints().add(rowConstraints18);
+        taOh_gridPane7.getRowConstraints().add(rowConstraints19);
+        taOh_gridPane7.getRowConstraints().add(rowConstraints110);
+        vBox6.getChildren().add(taOh_gridPane7);
         gridPane8.getChildren().add(text116);
         gridPane8.getChildren().add(text117);
         gridPane8.getChildren().add(tdOhStartTime_comboBox4);
@@ -1975,7 +1977,7 @@ public class Boilerplate extends VBox
     public final AnchorPane anchorPane4;
     public final VBox vBox4;
     //endregion
-    public final TableView tdTa_tableView0;
+    public final TATableView tdTa_tableView0;
     public final TableColumn tdTaUndergrad_tableColumn3;
     public final TableColumn tdTaName_tableColumn4;
     public final TableColumn tdTaEmail_tableColumn5;
@@ -1998,7 +2000,7 @@ public class Boilerplate extends VBox
     public final ScrollPane scrollPane2;
     public final VBox vBox5;
     //endregion
-    public final GridPane tdOh_gridPane6;
+    public final GridPane gridPane6;
     public final ComboBox tdOhStartTime_comboBox4;
     public final ComboBox tdOhEndTime_comboBox5;
     //region ⵁ
@@ -2007,7 +2009,7 @@ public class Boilerplate extends VBox
     public final RowConstraints rowConstraints17;
     public final AnchorPane anchorPane6;
     public final VBox vBox6;
-    public final GridPane gridPane7;
+    public final OfficeHoursGrid taOh_gridPane7;
     public final ColumnConstraints columnConstraints19;
     public final ColumnConstraints columnConstraints110;
     public final RowConstraints rowConstraints18;

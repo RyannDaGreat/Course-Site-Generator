@@ -1,6 +1,4 @@
 package _Externals_;
-import _Externals_.r;
-
 import java.util.ArrayList;
 
 import static _Externals_.r.say;
