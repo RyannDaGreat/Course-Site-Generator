@@ -65,8 +65,8 @@ public class rGridPane extends GridPane
         {
             getChildren().add(text);//This gridpane contains only one cell
             //region Center the text
-            columnConstraints.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-            rowConstraints.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+            columnConstraints.setHgrow(Priority.ALWAYS);
+            rowConstraints.setVgrow(Priority.ALWAYS);
             getColumnConstraints().add(columnConstraints);
             getRowConstraints().add(rowConstraints);
             //endregion
@@ -100,6 +100,12 @@ public class rGridPane extends GridPane
         ⵁ.setText(text);
         GridPane.setRowIndex(ⵁ,rowCol[0]);
         GridPane.setColumnIndex(ⵁ,rowCol[1]);
+        ColumnConstraints columnConstraints=new ColumnConstraints();
+        RowConstraints rowConstraints=new RowConstraints();
+        columnConstraints.setHgrow(Priority.ALWAYS);
+        rowConstraints.setVgrow(Priority.ALWAYS);
+        getColumnConstraints().add(columnConstraints);
+        getRowConstraints().add(rowConstraints);
         ⵁ.setId(id(rowCol));
         getChildren().add(ⵁ);//Returns success value. Will not throw an eror if rowCol is out of bounds.
     }
