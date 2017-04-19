@@ -11,6 +11,7 @@ public class App extends Application//This is the head of the tree. It's special
     public IO io;
     public GUI gui;
     public rTPS rtps;
+    public Stage stage;
     public App()
     {
         io=new IO(this);
@@ -19,10 +20,13 @@ public class App extends Application//This is the head of the tree. It's special
     }
     public void start(Stage primaryStage)
     {
-        primaryStage.setScene(new Scene(gui.window.boilerplate));
-        primaryStage.setTitle(io.propertyGetter.getAppTitle());
-        primaryStage.getIcons().add(io.misc.getAppIcon());
-        primaryStage.show();
+        this.stage=primaryStage;
+        stage.setTitle(io.propertyGetter.getAppTitle());
+        stage.getIcons().add(io.styleGetter.getAppIcon());
+        stage.setScene(new Scene(gui.window.boilerplate));
+        stage.setOnCloseRequest(e->System.out.println("Exiting"));
+        stage.setMinHeight(150);//Unlike McKenna's demo
+        stage.show();
     }
     public static void main(String[]ⵁ)
     {
