@@ -26,6 +26,7 @@ public class App extends Application//This is the head of the tree. It's special
     }
     public void start(Stage primaryStage)
     {
+        initialize();
         this.stage=primaryStage;
         stage.setTitle(io.propertyGetter.getAppTitle());
         stage.getIcons().add(io.styleGetter.getAppIcon());

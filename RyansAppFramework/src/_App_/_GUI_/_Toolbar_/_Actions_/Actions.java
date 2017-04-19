@@ -11,4 +11,40 @@ public class Actions
     {
 
     }
+    public void handleNew()
+    {
+
+    }
+    public void handleOpen()
+    {
+
+    }
+    public void handleSave()
+    {
+
+    }
+    public void handleSaveAs()
+    {
+
+    }
+    public void handleExport()
+    {
+
+    }
+    public void handleExit()
+    {
+
+    }
+    public void handleUndo()
+    {
+
+    }
+    public void handleRedo()
+    {
+
+    }
+    public void handleInfo()
+    {
+
+    }
 }
