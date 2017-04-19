@@ -14,6 +14,7 @@ public class Boilerplate
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         megaplate=app.gui.window.boilerplate;
+        getCdCiChange_button().setOnAction(ⵁ->app.gui.modes.courseDetails.actions.handleChangeExportDir());
     }
     public ComboBox getCdCiSubject_comboBox()
     {
