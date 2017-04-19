@@ -18,4 +18,11 @@ public class CourseDetails
         boilerplate=new Boilerplate(app);
         reader=new Reader(app);
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+        boilerplate.initialize();
+        actions.initialize();
+        transactions.initialize();
+        reader.initialize();
+    }
 }

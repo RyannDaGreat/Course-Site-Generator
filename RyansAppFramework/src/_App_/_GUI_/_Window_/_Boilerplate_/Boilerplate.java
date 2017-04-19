@@ -11,6 +11,10 @@ import javafx.scene.text.Text;
 public class Boilerplate extends VBox
 {
     public App app;
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+
+    }
     public Boilerplate(App app)
     {
         this.app=app;

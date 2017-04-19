@@ -25,4 +25,13 @@ public class IO//Doesn't actually do anything. Should not contain any methods or
         styleGetter=new StyleGetter(app);
         propertyGetter=new PropertyGetter(app);
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+        exporter.initialize();
+        jsonLoader.initialize();
+        jsonSaver.initialize();
+        misc.initialize();
+        styleGetter.initialize();
+        propertyGetter.initialize();
+    }
 }

@@ -19,4 +19,11 @@ public class GUI
         modes=new Modes(app);
         dialogs=new Dialogs(app);
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+        window.initialize();
+        toolbar.initialize();
+        modes.initialize();
+        dialogs.initialize();
+    }
 }

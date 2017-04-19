@@ -7,4 +7,8 @@ public class Transactions
     {
         this.app=app;
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+
+    }
 }

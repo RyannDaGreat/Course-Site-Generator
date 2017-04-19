@@ -18,6 +18,12 @@ public class App extends Application//This is the head of the tree. It's special
         gui=new GUI(this);
         rtps=new rTPS(this);
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+        io.initialize();
+        gui.initialize();
+        rtps.initialize();
+    }
     public void start(Stage primaryStage)
     {
         this.stage=primaryStage;
@@ -32,4 +38,5 @@ public class App extends Application//This is the head of the tree. It's special
     {
         launch();
     }
+
 }

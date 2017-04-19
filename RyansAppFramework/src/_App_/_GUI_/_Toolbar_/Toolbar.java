@@ -15,4 +15,10 @@ public class Toolbar
         actions=new Actions(app);
         boilerplate=new Boilerplate(app);
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+        reader.initialize();
+        actions.initialize();
+        boilerplate.initialize();
+    }
 }

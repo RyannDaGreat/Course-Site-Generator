@@ -12,6 +12,10 @@ public class Dialogs
     {
         this.app=app;
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+
+    }
     //region Yes/No/Cancel Dialogs
     public enum dialogOptions//Used for checking the values of various dialog results
     {

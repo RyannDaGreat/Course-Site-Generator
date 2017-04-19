@@ -13,6 +13,10 @@ public class PropertyGetter
     {
         return ResourceGetter.getProperty(key);//Actual mechanics of loading file must be outsourced to externals to preserve the logical integrity of my blackbox.
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+
+    }
     //region Specific properties (by method)
     public String getAppTitle()
     {

@@ -11,4 +11,9 @@ public class Window
         actions=new Actions(app);
         boilerplate=new Boilerplate(app);
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+        actions.initialize();
+        boilerplate.initialize();
+    }
 }

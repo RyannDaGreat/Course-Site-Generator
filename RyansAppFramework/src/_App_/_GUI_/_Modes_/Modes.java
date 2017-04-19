@@ -21,4 +21,12 @@ public class Modes
         courseDetails=new CourseDetails(app);
         recitationData=new RecitationData(app);
     }
+    public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
+    {
+        tadata.initialize();
+        projectData.initialize();
+        scheduleData.initialize();
+        courseDetails.initialize();
+        recitationData.initialize();
+    }
 }
