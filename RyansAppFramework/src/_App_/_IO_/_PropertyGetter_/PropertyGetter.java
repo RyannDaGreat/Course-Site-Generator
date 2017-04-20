@@ -36,7 +36,8 @@ public class PropertyGetter
     }
     public String getInitialOfficeHourGridState()
     {
-        return getProperty("initial_office_hour_grid_state");
+        // return getProperty("initial_office_hour_grid_state");
+        return String.join(",",(CharSequence[])getOfficeHourTimeslots())+";"+String.join(",",(CharSequence[])getOfficeHourDays())+";";
     }
     public String getAddButtonLabel()
     {
@@ -46,7 +47,15 @@ public class PropertyGetter
     {
         return getProperty("update_button_label");
     }
-    //endregion
+    public String[] getOfficeHourDays()
+    {
+        return getProperty("office_hour_days").split(",");
+    }
+    public String[] getOfficeHourTimeslots()
+    {
+        return getProperty("office_hour_timeslots").split(",");
+    }
+     //endregion
     //region If I ever want to use XML for some reason
     // private final String XMLDataPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/app_properties.xml";
     // private final String XMLSchemaPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/properties_schema.xsd";
