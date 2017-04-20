@@ -65,6 +65,7 @@ public class Actions
     }
     public void handleUpdateTa()
     {
+        boilerplate.getOh_gridPane().updateName(reader.getSelectedTaName(),reader.getTextfieldInputName());
         boilerplate.getTa_tableView().updateSelectedTANameEmail(reader.getTextfieldInputName(),reader.getTextfieldInputEmail());
     }
     public void addTa(boolean undergrad,String name,String email)

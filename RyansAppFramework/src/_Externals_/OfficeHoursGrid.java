@@ -27,7 +27,11 @@ public class OfficeHoursGrid extends rGridPane
         try
         {
             for(Node child:getChildren(time,day))
-                ((TextCell)child).modifyText(x->r.toggleLine(x,name));
+            {
+                TextCell tx=(TextCell)child;
+                if(!isTitle(tx))
+                    tx.modifyText(x->r.toggleLine(x,name));
+            }
             return true;
         }
         catch(Exception ignored)
