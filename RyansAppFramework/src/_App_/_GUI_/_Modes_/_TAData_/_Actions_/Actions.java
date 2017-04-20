@@ -47,8 +47,8 @@ public class Actions
     }
     public void deleteSelectedTa()
     {
-        boilerplate.getTa_tableView().remove(reader.getSelectedTa());
-        boilerplate.getOh_gridPane().removeName(reader.getSelectedTaName());
+        boilerplate.getOh_gridPane().removeName(reader.getSelectedTaName());//MUST COME FIRST, ORDER MATTERS! Once deleted they are no longer selected, and name changes.
+        boilerplate.getTa_tableView().remove(reader.getSelectedTa());//MUST COME SECOND, ORDER MATTERS! Once deleted they are no longer selected, and name changes.
     }
     public void handleAddUpdateButton()
     {
