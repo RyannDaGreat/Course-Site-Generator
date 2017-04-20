@@ -1,6 +1,7 @@
 package _App_._GUI_._Modes_._TAData_._Reader_;
 import _App_.App;
 import _App_._GUI_._Modes_._TAData_._Boilerplate_.Boilerplate;
+import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.TATableView;
 public class Reader//It is not a coincidence that none of these methods have void or arguments
 {
@@ -10,9 +11,11 @@ public class Reader//It is not a coincidence that none of these methods have voi
         this.app=app;
     }
     private Boilerplate boilerplate;
+    private PropertyGetter propertyGetter;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         boilerplate=app.gui.modes.tadata.boilerplate;
+        propertyGetter=app.io.propertyGetter;
     }
     public TATableView.TA getSelectedTa()
     {
@@ -41,5 +44,18 @@ public class Reader//It is not a coincidence that none of these methods have voi
     public String getTextfieldInputEmail()
     {
         return boilerplate.getTaEmail_textField().getText();
+    }
+    public boolean getIsTaSelected()
+    {
+        return boilerplate.getTa_tableView().getSelected()!=null;
+    }
+    public boolean getIsAddUpdateButtonAdd()
+    {
+        return boilerplate.getTaAddUpdate_button().getText().equals(propertyGetter.getAddButtonLabel());
+    }
+    public boolean getIsAddUpdateButtonUpdate()
+    {
+        return boilerplate.getTaAddUpdate_button().getText().equals(propertyGetter.getUpdateButtonLabel());
+        // return !getIsAddUpdateButtonAdd();
     }
 }

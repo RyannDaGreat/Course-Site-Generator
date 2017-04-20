@@ -214,7 +214,7 @@ public class r
     }
     //endregion
     //region String line manipulators ［splitLines，joinLines，addLine，toggleLine，removeMatchingLines，replaceMatchingLines，hasMatchingLine，numberOfMatchingLines，sortedLines］
-    //These were all originally created to update a TA name in TAManager office hours grid in the CSE219 Course Site Generator project
+    //These were all originally created to updateTANameEmail a TA name in TAManager office hours grid in the CSE219 Course Site Generator project
     public static String lineSeparator="\n";//Just in case I want to change this for whatever reason
     public static String[] splitLines(String body)//To decrease redundancy
     {

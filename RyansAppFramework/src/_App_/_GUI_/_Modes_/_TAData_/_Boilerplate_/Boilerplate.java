@@ -28,10 +28,19 @@ public class Boilerplate
                                           {
                                               if(ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE)
                                               {
-                                                  transactions.handleDelete();
+                                                  actions.deleteSelectedTa();
                                               }
                                           });
+        getOh_gridPane().setOnClick((time,day)->
+                                    {
+                                        actions.handleToggleOfficeHour(time,day);
+                                        System.out.println(time+day);
+                                    });
+        getOh_gridPane().setGridState(app.io.propertyGetter.getInitialOfficeHourGridState());//Must come after getOh_gridPane().setOnClick
         getTaClear_button().setOnAction(ⵁ->actions.handleClearButton());
+        getTaAddUpdate_button().setOnAction(ⵁ->actions.handleAddUpdateButton());
+        getTaName_textField().textProperty().addListener((ⵁ,oldText,newText)->actions.refreshClearAndAddUpdateButtonStates());
+        getTaEmail_textField().textProperty().addListener((ⵁ,oldText,newText)->actions.refreshClearAndAddUpdateButtonStates());
     }
     public OfficeHoursGrid getOh_gridPane()
     {

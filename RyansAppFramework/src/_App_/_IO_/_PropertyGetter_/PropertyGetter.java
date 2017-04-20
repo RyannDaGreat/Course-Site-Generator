@@ -34,6 +34,18 @@ public class PropertyGetter
     {
         return Double.parseDouble(getProperty("app_min_width"));
     }
+    public String getInitialOfficeHourGridState()
+    {
+        return getProperty("initial_office_hour_grid_state");
+    }
+    public String getAddButtonLabel()
+    {
+        return getProperty("add_button_label");
+    }
+    public String getUpdateButtonLabel()
+    {
+        return getProperty("update_button_label");
+    }
     //endregion
     //region If I ever want to use XML for some reason
     // private final String XMLDataPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/app_properties.xml";

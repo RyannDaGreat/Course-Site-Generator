@@ -40,6 +40,48 @@ public class TATableView extends TableView
     {
         getItems().remove(ta);
     }
+    public void updateSelectedTANameEmail(String name,String email)
+    {
+        getSelected().nameProperty().setValue(name);
+        getSelected().emailProperty().setValue(email);
+    }
+    public boolean isValidToAdd(String name,String email)
+    {
+        if(!mightBeValid(name,email))
+            return false;
+        for(Object x:getItems())//Must not contain duplicate email or name
+        {
+            TA y=(TA)x;
+            if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
+                return false;//Is not unique
+        }
+        return true;
+    }
+    public boolean isValidToUpdate(String name,String email)
+    {
+        if(!mightBeValid(name,email))
+            return false;
+        for(Object x:getItems())//Must not contain duplicate email or name
+        {
+            if(x!=getSelected())
+            {
+                TA y=(TA)x;
+                if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
+                    return false;//Is not unique
+            }
+        }
+        return true;
+    }
+    private boolean mightBeValid(String name,String email)
+    {
+        if(name.equals("")||email.equals(""))//Name and email cannot be empty
+            return false;
+        if((name+email).contains(",")||(name+email).contains(";")||(name+email).contains("\n"))//Cannot contain illegal characters used to save the grid states
+            return false;
+        if(!r.isValidEmail(email))//Must be valid email
+            return false;
+        return true;
+    }
     public TATableView(String undergradHeader,String nameHeader,String emailHeader)
     {
         addPerson(true,"A","B");

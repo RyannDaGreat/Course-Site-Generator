@@ -1,21 +1,33 @@
 package _Externals_;//Created by Ryan on 4/12/17.
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 
 import java.util.ArrayList;
 public class OfficeHoursGrid extends rGridPane
 {
     public OfficeHoursGrid()//These two strings are broken into lists, separated by commas
     {
-        setGridState("A,B,C,D,2,4,6,2,4,2,1,4,4,1,7,2,E,E,E,E,E,5,5,6,2,3,4,45,5,2,3,4,5,2,3,4,52,3,4,5,2,34,5,2,3,E;a,e,e,b,c,d,e;A,a,bert;B,c,eernie;E,e,Eevie");
+        // setGridState("A,B,C,D,2,4,6,2,4,2,1,4,4,1,7,2,E,E,E,E,E,5,5,6,2,3,4,45,5,2,3,4,5,2,3,4,52,3,4,5,2,34,5,2,3,E;a,e,e,b,c,d,e;A,a,bert;B,c,eernie;E,e,Eevie");
         // setGridState("A,B,D,E;a,b,c,d,e;A,a,Aa;A,b,Ab;B,a,Ba;B,b,Bb;C,a,Ca;C,b,Cb;D,a,Da;D,b,Db");
         // System.out.println(getGridState());
         //            A,B,C,D,E;a,b,c,d,e;A,a,bert;B,c,eernie;E,e,Eevie
+    }
+    public interface timeDayMethod
+    {
+        void f(String time,String day);
+    }
+    private timeDayMethod onClick=null;
+    public void setOnClick(timeDayMethod f)//Must be called before using setGridState
+    {
+        assert f!=null;
+        onClick=f;
     }
     public boolean toggleOfficeHours(String time,String day,String name)
     {
         try
         {
-            getChild(time,day).modifyText(x->r.toggleLine(x,name));
+            for(Node child:getChildren(time,day))
+                ((TextCell)child).modifyText(x->r.toggleLine(x,name));
             return true;
         }
         catch(Exception ignored)
@@ -116,6 +128,11 @@ public class OfficeHoursGrid extends rGridPane
                          else
                          {
                              x.appendStyle("-fx-background-color: white");
+                             x.setOnMouseClicked(ⵁ->
+                                                 {
+                                                     assert onClick!=null;//This should have been taken care of...
+                                                     onClick.f(rowTitle(x),colTitle(x));
+                                                 });
                          }
                      });
         forEachChild(x->x.appendStyle("-fx-border-color: black"));
