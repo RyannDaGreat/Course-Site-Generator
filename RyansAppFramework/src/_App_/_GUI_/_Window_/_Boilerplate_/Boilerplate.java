@@ -2000,16 +2000,16 @@ public class Boilerplate extends VBox
     public final ScrollPane scrollPane2;
     public final VBox vBox5;
     //endregion
-    public final GridPane gridPane6;
+    public final OfficeHoursGrid taOh_gridPane7;
     public final ComboBox tdOhStartTime_comboBox4;
     public final ComboBox tdOhEndTime_comboBox5;
     //region ⵁ
+    public final GridPane gridPane6;
     public final Text text115;
     public final ColumnConstraints columnConstraints18;
     public final RowConstraints rowConstraints17;
     public final AnchorPane anchorPane6;
     public final VBox vBox6;
-    public final OfficeHoursGrid taOh_gridPane7;
     public final ColumnConstraints columnConstraints19;
     public final ColumnConstraints columnConstraints110;
     public final RowConstraints rowConstraints18;

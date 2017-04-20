@@ -20,8 +20,6 @@ public class UndoRedoCoordinator
         //Deletes all undos and redos
         cursor=-1;
         history.clear();
-        if(history.size()!=0)
-            say("What the hell this is impossible size should definately be 0");
     }
     public void Do(Runnable Do,Runnable Undo)
     {

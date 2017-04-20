@@ -26,7 +26,14 @@ public class PropertyGetter
     {
         return getProperty("app_icon_name");
     }
-
+    public double getMinAppHeight()
+    {
+        return Double.parseDouble(getProperty("app_min_height"));
+    }
+    public double getMinAppWidth()
+    {
+        return Double.parseDouble(getProperty("app_min_width"));
+    }
     //endregion
     //region If I ever want to use XML for some reason
     // private final String XMLDataPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/app_properties.xml";
