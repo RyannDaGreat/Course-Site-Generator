@@ -9,6 +9,14 @@ public class Transactions
     }
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
+        app.gui.modes.tadata.actions;
+    }
+    public void handleDelete()
+    {
+
+    }
+    public void handleAdd()
+    {
 
     }
 }

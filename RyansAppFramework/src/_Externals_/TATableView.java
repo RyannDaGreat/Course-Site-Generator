@@ -17,7 +17,7 @@ public class TATableView extends TableView
 {
     public void addPerson(boolean undergrad,String name,String email)
     {
-        getItems().add(new Person(undergrad,email,name));
+        getItems().add(new TA(undergrad,email,name));
     }
     public String getState()
     {
@@ -29,8 +29,16 @@ public class TATableView extends TableView
         for(String x:state.split(";"))
         {
             String[]y=x.split(",");
-            getItems().add(new Person(Boolean.parseBoolean(y[0]),y[1],y[2]));
+            getItems().add(new TA(Boolean.parseBoolean(y[0]),y[1],y[2]));
         }
+    }
+    public TA getSelected()
+    {
+        return (TA)getSelectionModel().getSelectedItem();
+    }
+    public void remove(TA ta)
+    {
+        getItems().remove(ta);
     }
     public TATableView(String undergradHeader,String nameHeader,String emailHeader)
     {
@@ -38,9 +46,9 @@ public class TATableView extends TableView
         addPerson(false,"C","D");
         addPerson(true,"E","F");
         addPerson(false,"G","H");
-        final TableColumn<Person,Boolean> undergradCol=new TableColumn<>(undergradHeader);
-        final TableColumn<Person,String> nameCol=new TableColumn<>(nameHeader);
-        final TableColumn<Person,String> emailCol=new TableColumn<>(emailHeader);
+        final TableColumn<TA,Boolean> undergradCol=new TableColumn<>(undergradHeader);
+        final TableColumn<TA,String> nameCol=new TableColumn<>(nameHeader);
+        final TableColumn<TA,String> emailCol=new TableColumn<>(emailHeader);
         //
         getColumns().addAll(undergradCol,nameCol,emailCol);
         //
@@ -53,19 +61,20 @@ public class TATableView extends TableView
         //
         setEditable(true);
     }
+
     //region Person Class (with getters and setters)
-    public static class Person
+    public class TA
     {
         private BooleanProperty undergrad;
         private StringProperty name;
         private StringProperty email;
-        public Person(boolean undergrad,String email,String name)
+        public TA(boolean undergrad,String email,String name)
         {
             this.undergrad=new SimpleBooleanProperty(undergrad);
             this.name=new SimpleStringProperty(name);
             this.email=new SimpleStringProperty(email);
         }
-        public BooleanProperty undergradProperty()
+        public BooleanProperty undergradProperty()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
         {
             return undergrad;
         }
