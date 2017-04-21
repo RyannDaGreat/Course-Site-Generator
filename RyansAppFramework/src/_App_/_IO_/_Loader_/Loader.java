@@ -17,8 +17,9 @@ public class Loader
     }
     public void handleNew()
     {
-        setCurrentFilePath(app.io.propertyGetter.getAppTitle());
+        loadState(new File(app.io.propertyGetter.getNewFilePath()));
         app.gui.toolbar.actions.disableSaveButton();
+        setCurrentFilePath(app.io.propertyGetter.getAppTitle());
     }
     public String getCurrentFilePath()
     {

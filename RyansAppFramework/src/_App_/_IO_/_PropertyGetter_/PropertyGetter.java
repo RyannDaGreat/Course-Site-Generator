@@ -76,6 +76,14 @@ public class PropertyGetter
     {
         return getProperty("mode_state_separator");
     }
+    public String getNewFilePath()//The location of the New File. Is local to CourseSiteGenerator folder
+    {
+        return getProperty("new_file_path");
+    }
+    public String getConfirmSaveMessage()//The location of the New File. Is local to CourseSiteGenerator folder
+    {
+        return getProperty("confirm_save_message");
+    }
      //endregion
     //region If I ever want to use XML for some reason
     // private final String XMLDataPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/app_properties.xml";

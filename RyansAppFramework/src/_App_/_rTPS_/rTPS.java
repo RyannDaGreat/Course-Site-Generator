@@ -18,6 +18,10 @@ public class rTPS extends UndoRedoCoordinator
         super.Do(Do,Undo);
         refreshToolbarButtons();
     }
+    public boolean hasBeenModified()
+    {
+        return history.size()>0;
+    }
     public void clearHistory()
     {
         super.clearHistory();

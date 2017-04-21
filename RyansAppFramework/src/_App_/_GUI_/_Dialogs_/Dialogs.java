@@ -114,5 +114,14 @@ public class Dialogs
     {
         return yesNo(app.io.propertyGetter.getConfirmChangeTATimesDeleteOfficehoursMessage());
     }
+    public boolean confirmSave()//Return true if they don't want to save OR they do want to save and select a valid path to save to (without clicking 'cancel'
+    {
+        if(app.gui.toolbar.reader.saveButtonIsDisabled())
+            return true;//Don't bother to confirm saving; out file has clearly been saved already.
+        if(!yesNo(app.io.propertyGetter.getConfirmSaveMessage()))//If they don't want to save
+            return true;
+        app.gui.toolbar.actions.handleSave();
+        return app.gui.toolbar.reader.saveButtonIsDisabled();//That means they saved the file. If its enabled it means they must have clicked cancel.
+    }
     //endregion
 }

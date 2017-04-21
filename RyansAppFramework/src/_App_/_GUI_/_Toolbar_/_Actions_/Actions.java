@@ -44,16 +44,29 @@ public class Actions
     //region Button Handlers
     public void handleNew()
     {
-        app.io.loader.handleNew();
+        if(app.gui.dialogs.confirmSave())
+        {
+            app.io.loader.handleNew();
+            r.say("Sucessfully loaded new file");
+        }
     }
     public void handleOpen()
     {
-        app.io.loader.loadState(app.gui.dialogs.openFile());
+        if(app.gui.dialogs.confirmSave())
+        {
+            app.io.loader.loadState(app.gui.dialogs.openFile());
+            r.say("Successfully opened file");
+        }
     }
     public void handleSave()
     {
-        assert !
-        disableSaveButton();
+        /*@formatter:off*/
+        if(app.io.saver.isCurrentlyNewFile())
+            handleSaveAs();
+        else
+           app.io.saver.saveState(app.io.saver.getCurrentFilePath());
+        r.say("successfully Saved current file");
+        /*@formatter:on*/
     }
     public void handleSaveAs()
     {
@@ -61,12 +74,14 @@ public class Actions
     }
     public void handleExport()
     {
-
     }
     public void handleExit()
     {
-        r.say("Exiting App");
-        app.stage.close();
+        if(app.gui.dialogs.confirmSave())
+        {
+            r.say("Exiting App");
+            app.stage.close();
+        }
     }
     public void handleUndo()
     {
@@ -78,7 +93,6 @@ public class Actions
     }
     public void handleInfo()
     {
-
     }
     //endregion
 }

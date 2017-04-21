@@ -8,6 +8,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
+
+import java.io.File;
 @SuppressWarnings("WeakerAccess")
 public class App extends Application//This is the head of the tree. It's special. You can launch it.
 {
@@ -31,6 +33,7 @@ public class App extends Application//This is the head of the tree. It's special
     {
         initialize();
         stage=primaryStage;
+        io.saver.saveState(new File(io.propertyGetter.getNewFilePath()).getPath());
         stage.setTitle(io.propertyGetter.getAppTitle());
         stage.getIcons().add(io.styleGetter.getAppIcon());
         stage.setScene(new Scene(gui.window.boilerplate));

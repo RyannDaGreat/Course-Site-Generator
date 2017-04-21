@@ -1228,7 +1228,11 @@ public class r
         {
             WriteFile(FilePathName,Contents);
         }
-        catch(Exception ignored){}
+        catch(Exception ignored)//I want it to crash my code but i dont want to catch the exception.
+        {
+            r.say("Write file failed");
+            int g=1/0;
+        }
     }
     //endregion
     //region Screen Width/Height (In Pixels) (AKA The resolution):
