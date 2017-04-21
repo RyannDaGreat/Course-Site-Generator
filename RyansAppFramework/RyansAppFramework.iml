@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="PropertiesManager" />
     <orderEntry type="module" module-name="DesktopJavaFramework" />
     <orderEntry type="module" module-name="TAManager_Solution" />
+    <orderEntry type="library" name="org.json:json:20070829" level="project" />
   </component>
 </module>

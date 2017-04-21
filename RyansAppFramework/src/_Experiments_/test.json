@@ -1,0 +1,38 @@
+{
+  "Course Details":{
+    "Course Info":{
+      "Subject":"CSE",
+      "Number":"219",
+      "Semester":"Fall",
+      "Year":"2017",
+      "Title":"Computer Science III",
+      "Instructor Name":"Richard McKenna",
+      "Instructor Home":"www.websiteurl.com",
+      "Export Dir":"users/whatever/exportdir"
+    },
+    "Site Template":{
+      "Template Dir":"users/templates/whatever",
+      "Site Pages":[
+        {
+          "Use":"true",
+          "Navbar Title":"Home",
+          "File Name":"index.html",
+          "Script":"HomeBuilder.js"
+        },
+        {
+          "Use":"true",
+          "Navbar Title":"Syllabus",
+          "File Name":"syllabus.html",
+          "Script":"SyllabusBuilder.js"
+        }
+      ]
+    },
+    "Page Style":
+    {
+      "Banner School Image":"Yale University",
+      "Left Footer Image":"Yale University",
+      "Right Footer Image":"Yale CS",
+      "Stylesheet":"sea_wolf.css"
+    }
+  }
+}
