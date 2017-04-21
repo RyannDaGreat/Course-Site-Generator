@@ -181,12 +181,12 @@ public class r
     public static String[]allBeforeInclusive(String last,String[]list)
     {
         assert contains(last,list);
-        return subArray(list,0,Math.max(0,indexOf(last,list))+1);
+        return subArray(list,0,indexOf(last,list)+1);
     }
     public static String[]allAfterInclusive(String first,String[]list)
     {
         assert contains(first,list);
-        return subArray(list,Math.max(0,indexOf(first,list)),list.length);
+        return subArray(list,indexOf(first,list),list.length);
     }
     public static String[] subArray(String[]array,int firstIndex,int lastIndexPlusOne)
     {

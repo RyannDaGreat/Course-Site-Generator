@@ -35,6 +35,12 @@ public class App extends Application//This is the head of the tree. It's special
         stage.setOnCloseRequest(e->gui.toolbar.actions.handleExit());
         stage.setMinHeight(io.propertyGetter.getMinAppHeight());//Unlike McKenna's demo
         stage.setMinWidth(io.propertyGetter.getMinAppWidth());//Unlike McKenna's demo
+
+        //region Get rid of me im just for a small debugging session
+
+        //endregion
+
+
         stage.show();
     }
     public static void main(String[]ⵁ)
