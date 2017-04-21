@@ -176,10 +176,7 @@ public class r
     {
         assert contains(first,list);
         assert contains(last,list);
-        int i=indexOf(first,list);
-        int i1=indexOf(last,list)+1;
-        // return subArray(list,Math.min(i,i1),Math.max(i,i1));
-        return subArray(list,i,i1);
+        return subArray(list,indexOf(first,list),indexOf(last,list)+1);
     }
     public static String[]allBeforeInclusive(String last,String[]list)
     {

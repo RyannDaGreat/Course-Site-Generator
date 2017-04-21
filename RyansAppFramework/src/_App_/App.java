@@ -42,4 +42,3 @@ public class App extends Application//This is the head of the tree. It's special
         launch();
     }
 }
-
