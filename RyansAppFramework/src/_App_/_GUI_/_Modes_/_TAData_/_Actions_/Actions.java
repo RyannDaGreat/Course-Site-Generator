@@ -167,8 +167,16 @@ public class Actions
         String[] officeHourTimeslots=propertyGetter.getOfficeHourTimeslots();
         r.setComboboxOptions(boilerplate.getOhEndTime_comboBox(),r.allAfterInclusive(firstOfficeHourTimslot,officeHourTimeslots));
         r.setComboboxOptions(boilerplate.getOhStartTime_comboBox(),r.allBeforeInclusive(lastOfficeHourTimslot,officeHourTimeslots));
-        setFirstOfficeHourTimeslot(firstOfficeHourTimslot);
-        setLastOfficeHourTimeslot(lastOfficeHourTimslot);
+        try
+        {
+            setFirstOfficeHourTimeslot(firstOfficeHourTimslot);
+            setLastOfficeHourTimeslot(lastOfficeHourTimslot);
+        }
+        catch(Exception ignored)
+        {
+            setLastOfficeHourTimeslot(lastOfficeHourTimslot);
+            setFirstOfficeHourTimeslot(firstOfficeHourTimslot);
+        }
         boilerplate.getOh_gridPane().setTimeslots(r.allInRangeInclusive(firstOfficeHourTimslot,lastOfficeHourTimslot,officeHourTimeslots));
     }
     public void setOhState(String state)
