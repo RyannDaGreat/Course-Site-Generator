@@ -115,6 +115,17 @@ public class OfficeHoursGrid extends rGridPane
         //All the others after that are just the TA things we have to toggle.
         return getRowTitles()+";"+getColTitles()+";"+getTimesDaysNames();
     }
+    public String getFirstTimeSlot()
+    {
+        System.out.println(getRowTitles().split(",")[0]);
+        // r.say("Helco");
+        return getRowTitles().split(",")[0];
+    }
+    public String getLastTimeSlot()
+    {
+
+        return getRowTitles().split(",")[getRowTitles().split(",").length-1];
+    }
     public void stylize()
     {
         forEachChild(x->x.setPadding(new Insets(10,10,10,10)));

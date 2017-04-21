@@ -2,9 +2,11 @@ package _App_;//Created by Ryan on 4/10/17.
 import _App_._GUI_.GUI;
 import _App_._IO_.IO;
 import _App_._rTPS_.rTPS;
+import _Externals_.r;
 import javafx.application.Application;
 
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 @SuppressWarnings("WeakerAccess")
 public class App extends Application//This is the head of the tree. It's special. You can launch it.
@@ -37,7 +39,19 @@ public class App extends Application//This is the head of the tree. It's special
         stage.setMinWidth(io.propertyGetter.getMinAppWidth());//Unlike McKenna's demo
 
         //region Get rid of me im just for a small debugging session
-
+        gui.window.boilerplate.setOnKeyPressed(ⵁ->
+                                               {
+                                                   if(ⵁ.getCode()==KeyCode.C)
+                                                   {
+                                                       System.out.println(gui.modes.tadata.reader.getState());
+                                                       r.StringToClipboard(gui.modes.tadata.reader.getState());
+                                                   }
+                                                   if(ⵁ.getCode()==KeyCode.V)
+                                                   {
+                                                       System.out.println("SETTING STATE");
+                                                       gui.modes.tadata.actions.setState(r.StringFromClipboard());
+                                                   }
+                                               });
         //endregion
 
 

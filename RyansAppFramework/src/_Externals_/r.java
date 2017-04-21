@@ -167,16 +167,15 @@ public class r
             //noinspection unchecked
             c.getItems().add(s);
     }
-    public static void setComboboxOption(ComboBox c,Object option)
-    {
-        // assert c.getItems().contains(option);
-        c.setValue(option);
-    }
     public static String[]allInRangeInclusive(String first,String last,String[]list)
     {
-        assert contains(first,list);
-        assert contains(last,list);
-        return subArray(list,indexOf(first,list),indexOf(last,list)+1);
+        try
+        {
+            assert contains(first,list);
+            assert contains(last,list);
+            return subArray(list,Math.min(indexOf(first,list),indexOf(last,list)+1),Math.max(indexOf(first,list),indexOf(last,list)+1));
+        }
+        catch(Exception ignored){r.say("Helo me im scared help m e");return null;}
     }
     public static String[]allBeforeInclusive(String last,String[]list)
     {
@@ -191,7 +190,7 @@ public class r
     public static String[] subArray(String[]array,int firstIndex,int lastIndexPlusOne)
     {
         String[]out=new String[lastIndexPlusOne-firstIndex];
-        System.arraycopy(array,firstIndex,out,firstIndex-firstIndex,lastIndexPlusOne-firstIndex);
+        System.arraycopy(array,firstIndex,out,0,out.length);
         return out;
     }
     public static int indexOf(String element,String[]list)
@@ -203,7 +202,7 @@ public class r
                 return i;
             }
         }
-        return -1;
+        return 1/0;
     }
     public static boolean contains(String element,String[] list)
     {
@@ -509,7 +508,7 @@ public class r
     }
     public static double toc()
     {
-        return toc_start-seconds();
+        return seconds()-toc_start;
     }
     public static double ptoc()
     {
@@ -1235,7 +1234,11 @@ public class r
     {
         //I've only tested this method on my Mac. I don't think it will work on windows as it relies on the Mac's terminal-based courseInfo_subjectText-to-speech.
         //It will invoke a courseInfo_subjectText-to-speech method on the Mac's bash (or terminal or shell idk what to call it).
-        attemptShellCommandIgnoreExceptions("say -v "+voice+" "+message);
+        if(toc()>.25)
+        {
+            attemptShellCommandIgnoreExceptions("say -v "+voice+" "+message);
+            tic();
+        }
     }
     public static void say(String message)
     {

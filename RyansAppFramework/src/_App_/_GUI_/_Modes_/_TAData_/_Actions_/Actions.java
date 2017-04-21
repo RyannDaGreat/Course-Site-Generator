@@ -19,7 +19,7 @@ public class Actions
         boilerplate=app.gui.modes.tadata.boilerplate;
         reader=app.gui.modes.tadata.reader;
         propertyGetter=app.io.propertyGetter;
-        updateTimeslots();
+        updateTimeslotOptions();
     }
     public void handleTaSelected()
     {
@@ -151,24 +151,24 @@ public class Actions
         refreshAddUpdateButtonState();
         refreshClearButtonState();
     }
-    public void setFirstOfficeHourTimeslot(String first)
-    {
-
-        r.setComboboxOption(boilerplate.getOhStartTime_comboBox(),first);
-    }
-    public void setLastOfficeHourTimeslot(String last)
-    {
-        r.setComboboxOption(boilerplate.getOhEndTime_comboBox(),last);
-    }
-    public void updateTimeslots()
+    public void updateTimeslotOptions()
     {
         String firstOfficeHourTimslot=reader.getFirstOfficeHourTimeslot();
         String lastOfficeHourTimslot=reader.getLastOfficeHourTimeslot();
         String[] officeHourTimeslots=propertyGetter.getOfficeHourTimeslots();
         r.setComboboxOptions(boilerplate.getOhEndTime_comboBox(),r.allAfterInclusive(firstOfficeHourTimslot,officeHourTimeslots));
         r.setComboboxOptions(boilerplate.getOhStartTime_comboBox(),r.allBeforeInclusive(lastOfficeHourTimslot,officeHourTimeslots));
-        setFirstOfficeHourTimeslot(firstOfficeHourTimslot);
-        setLastOfficeHourTimeslot(lastOfficeHourTimslot);
+    }
+    public void setFirstTimeslot(String firstOfficeHourTimslot)
+    {
+        String lastOfficeHourTimslot=reader.getLastOfficeHourTimeslot();
+        String[] officeHourTimeslots=propertyGetter.getOfficeHourTimeslots();
+        boilerplate.getOh_gridPane().setTimeslots(r.allInRangeInclusive(firstOfficeHourTimslot,lastOfficeHourTimslot,officeHourTimeslots));
+    }
+    public void setLastTimeslot(String lastOfficeHourTimslot)
+    {
+        String firstOfficeHourTimslot=reader.getFirstOfficeHourTimeslot();
+        String[] officeHourTimeslots=propertyGetter.getOfficeHourTimeslots();
         boilerplate.getOh_gridPane().setTimeslots(r.allInRangeInclusive(firstOfficeHourTimslot,lastOfficeHourTimslot,officeHourTimeslots));
     }
     public void setOhState(String state)
@@ -177,11 +177,9 @@ public class Actions
     }
     public void setState(String state)
     {
-        //getState: r.joinLines(getTaState(),getFirstOfficeHourTimeslot(),getLastOfficeHourTimeslot(),getOhState());
         String[]x=r.splitLines(state);
         setTaState(x[0]);
-        setFirstOfficeHourTimeslot(x[1]);
-        setLastOfficeHourTimeslot(x[2]);
-        setOhState(x[3]);
+        setOhState(x[1]);
+        updateTimeslotOptions();
     }
 }

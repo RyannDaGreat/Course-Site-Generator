@@ -41,10 +41,17 @@ public class Transactions
     {
         handleTADataChange(actions::handleAddUpdateButton);
     }
-    public void updateTimeslots()
+    public void setFirstTimeslot(String slot)
     {
         String initState=app.gui.modes.tadata.boilerplate.getOh_gridPane().getTimesDaysNames();
-        handleTADataChange(actions::updateTimeslots);
+        handleTADataChange(()->actions.setFirstTimeslot(slot));
+        if(!app.gui.modes.tadata.boilerplate.getOh_gridPane().getTimesDaysNames().equals(initState)&&!app.gui.dialogs.confirmChangeTATimesDeleteOfficehours())//Prompt the user if we're about to delete office hours
+            rtps.Undo();
+    }
+    public void setLastTimeslot(String slot)
+    {
+        String initState=app.gui.modes.tadata.boilerplate.getOh_gridPane().getTimesDaysNames();
+        handleTADataChange(()->actions.setLastTimeslot(slot));
         if(!app.gui.modes.tadata.boilerplate.getOh_gridPane().getTimesDaysNames().equals(initState)&&!app.gui.dialogs.confirmChangeTATimesDeleteOfficehours())//Prompt the user if we're about to delete office hours
             rtps.Undo();
     }

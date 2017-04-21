@@ -40,24 +40,13 @@ public class Boilerplate
         getTaAddUpdate_button().setOnAction(ⵁ->transactions.handleAddUpdateButton());
         getTaName_textField().textProperty().addListener((ⵁ,oldText,newText)->actions.refreshClearAndAddUpdateButtonStates());
         getTaEmail_textField().textProperty().addListener((ⵁ,oldText,newText)->actions.refreshClearAndAddUpdateButtonStates());
-        r.setComboboxOption(getOhEndTime_comboBox(),propertyGetter.getDefaultLastOfficeHourTimeslot());
-        r.setComboboxOption(getOhStartTime_comboBox(),propertyGetter.getDefaultFirstOfficeHourTimeslot());
+        getOhStartTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->transactions.setFirstTimeslot((String)newTime));
         getOhEndTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->
                                                                                        {
-                                                                                           if(!oldTime.equals(newTime))
-                                                                                           {
-                                                                                               r.setComboboxOption(getOhEndTime_comboBox(),newTime);
-                                                                                               transactions.updateTimeslots();
-                                                                                           }
+                                                                                           transactions.setLastTimeslot((String)newTime);
                                                                                        });
-        getOhStartTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->
-                                                                                       {
-                                                                                           if(!oldTime.equals(newTime))
-                                                                                           {
-                                                                                               r.setComboboxOption(getOhStartTime_comboBox(),newTime);
-                                                                                               transactions.updateTimeslots();
-                                                                                           }
-                                                                                       });
+        r.setComboboxOptions(getOhEndTime_comboBox(),propertyGetter.getOfficeHourTimeslots());
+        r.setComboboxOptions(getOhStartTime_comboBox(),propertyGetter.getOfficeHourTimeslots());
     }
     public OfficeHoursGrid getOh_gridPane()
     {

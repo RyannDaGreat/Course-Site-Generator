@@ -61,11 +61,11 @@ public class Reader//It is not a coincidence that none of these methods have voi
     }
     public String getFirstOfficeHourTimeslot()
     {
-        return (String)boilerplate.getOhStartTime_comboBox().getValue();
+        return boilerplate.getOh_gridPane().getFirstTimeSlot();
     }
     public String getLastOfficeHourTimeslot()
     {
-        return (String)boilerplate.getOhEndTime_comboBox().getValue();
+        return boilerplate.getOh_gridPane().getLastTimeSlot();
     }
     public String getOhState()
     {
@@ -73,6 +73,6 @@ public class Reader//It is not a coincidence that none of these methods have voi
     }
     public String getState()//Official format for TAData state
     {
-        return r.joinLines(getTaState(),getFirstOfficeHourTimeslot(),getLastOfficeHourTimeslot(),getOhState());
+        return r.joinLines(getTaState(),getOhState());
     }
 }
