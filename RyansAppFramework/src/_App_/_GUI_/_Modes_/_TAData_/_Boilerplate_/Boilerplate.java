@@ -44,13 +44,27 @@ public class Boilerplate
         r.setComboboxOption(getOhStartTime_comboBox(),propertyGetter.getDefaultFirstOfficeHourTimeslot());
         getOhEndTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->
                                                                                        {
-                                                                                           if(!oldTime.equals(newTime))
-                                                                                           {
-                                                                                               r.setComboboxOption(getOhEndTime_comboBox(),newTime);
-                                                                                               transactions.updateTimeslots();
-                                                                                           }
+                                                                                           // try
+                                                                                           // {
+                                                                                               if(!oldTime.equals(newTime))
+                                                                                               {
+                                                                                                   r.setComboboxOption(getOhEndTime_comboBox(),newTime);
+                                                                                                   transactions.updateTimeslots();
+                                                                                               }
+                                                                                           // }catch(Exception ignored){}
                                                                                        });
-        getOhStartTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->transactions.updateTimeslots());
+        getOhStartTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->
+                                                                                       {
+                                                                                           // try
+                                                                                           // {
+                                                                                               if(!oldTime.equals(newTime))
+                                                                                               {
+                                                                                                   r.setComboboxOption(getOhStartTime_comboBox(),newTime);
+                                                                                                   transactions.updateTimeslots();
+                                                                                               }
+                                                                                           // }
+                                                                                           // catch(Exception ignored){}
+                                                                                       });
     }
     public OfficeHoursGrid getOh_gridPane()
     {

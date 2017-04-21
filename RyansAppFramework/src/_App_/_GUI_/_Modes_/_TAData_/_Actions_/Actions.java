@@ -29,7 +29,9 @@ public class Actions
             setNameTextfield(reader.getSelectedTaName());
             setEmailTextfield(reader.getSelectedTaEmail());
         }
-        catch(Exception ignored){}
+        catch(Exception ignored)
+        {
+        }
     }
     public void handleClearButton()
     {
@@ -59,9 +61,13 @@ public class Actions
     public void handleAddUpdateButton()
     {
         if(reader.getIsAddUpdateButtonAdd())
+        {
             handleAddTa();
+        }
         else if(reader.getIsAddUpdateButtonUpdate())
+        {
             handleUpdateTa();
+        }
         else
         {
             System.out.println("INTERNAL LOGIC ERROR: THIS SHOULD NEVER HAPPEN!");
@@ -142,9 +148,13 @@ public class Actions
     public void refreshClearButtonState()
     {
         if(reader.getTextfieldInputEmail().equals("")&&reader.getTextfieldInputName().equals("")&&!reader.getIsTaSelected())//If textfields are empty and no TA is selected
+        {
             disableClearButton();
+        }
         else
+        {
             enableClearButton();
+        }
     }
     public void refreshClearAndAddUpdateButtonStates()
     {
@@ -153,12 +163,10 @@ public class Actions
     }
     public void setFirstOfficeHourTimeslot(String first)
     {
-
         r.setComboboxOption(boilerplate.getOhStartTime_comboBox(),first);
     }
     public void setLastOfficeHourTimeslot(String last)
     {
-
         r.setComboboxOption(boilerplate.getOhEndTime_comboBox(),last);
     }
     public void updateTimeslots()
@@ -168,8 +176,10 @@ public class Actions
         String[] officeHourTimeslots=propertyGetter.getOfficeHourTimeslots();
         r.setComboboxOptions(boilerplate.getOhEndTime_comboBox(),r.allAfterInclusive(firstOfficeHourTimslot,officeHourTimeslots));
         r.setComboboxOptions(boilerplate.getOhStartTime_comboBox(),r.allBeforeInclusive(lastOfficeHourTimslot,officeHourTimeslots));
-        setFirstOfficeHourTimeslot(firstOfficeHourTimslot);
-        setLastOfficeHourTimeslot(lastOfficeHourTimslot);
+        if(!reader.getFirstOfficeHourTimeslot().equals(firstOfficeHourTimslot))
+            setFirstOfficeHourTimeslot(firstOfficeHourTimslot);
+        if(!reader.getLastOfficeHourTimeslot().equals(lastOfficeHourTimslot))
+            setLastOfficeHourTimeslot(lastOfficeHourTimslot);
         boilerplate.getOh_gridPane().setTimeslots(r.allInRangeInclusive(firstOfficeHourTimslot,lastOfficeHourTimslot,officeHourTimeslots));
     }
     public void setOhState(String state)
@@ -179,7 +189,7 @@ public class Actions
     public void setState(String state)
     {
         //getState: r.joinLines(getTaState(),getFirstOfficeHourTimeslot(),getLastOfficeHourTimeslot(),getOhState());
-        String[]x=r.splitLines(state);
+        String[] x=r.splitLines(state);
         setTaState(x[0]);
         setFirstOfficeHourTimeslot(x[1]);
         setLastOfficeHourTimeslot(x[2]);
