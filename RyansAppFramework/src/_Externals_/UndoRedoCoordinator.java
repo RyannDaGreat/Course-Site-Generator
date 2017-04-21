@@ -8,8 +8,8 @@ import static _Externals_.r.say;
 @SuppressWarnings({"unchecked","Duplicates"})
 public class UndoRedoCoordinator
 {
-    private ArrayList<Undoable> history=new ArrayList();
-    private int cursor=-1;
+    public ArrayList<Undoable> history=new ArrayList();
+    public int cursor=-1;
     private class Undoable
     {
         Runnable Do;
@@ -46,9 +46,13 @@ public class UndoRedoCoordinator
         }
         Redo();
     }
+    public boolean canRedo()
+    {
+        return cursor<(history.size()-1);
+    }
     public boolean Redo()//true if success false if fail
     {
-        if(cursor<(history.size()-1))
+        if(canRedo())
         {
             say("reDo succeeded");
             history.get(++cursor).Do.run();
@@ -60,9 +64,13 @@ public class UndoRedoCoordinator
             return false;
         }
     }
+    public boolean canUndo()
+    {
+        return cursor>=0;
+    }
     public boolean Undo()//true if success false if fail
     {
-        if(cursor>=0)
+        if(canUndo())
         {
             say("Undo succeeded");
             history.get(cursor--).Undo.run();

@@ -23,6 +23,22 @@ public class Actions
     {
         boilerplate.getSaveButton().setDisable(true);
     }
+    public void enableUndoButton()
+    {
+        boilerplate.getUndoButton().setDisable(false);
+    }
+    public void disableUndoButton()
+    {
+        boilerplate.getUndoButton().setDisable(true);
+    }
+    public void enableRedoButton()
+    {
+        boilerplate.getRedoButton().setDisable(false);
+    }
+    public void disableRedoButton()
+    {
+        boilerplate.getRedoButton().setDisable(true);
+    }
     //endregion
     //region Button Handlers
     public void handleNew()
@@ -52,11 +68,11 @@ public class Actions
     }
     public void handleUndo()
     {
-        app.gui.toolbar.actions.enableSaveButton();
+        app.rtps.Undo();
     }
     public void handleRedo()
     {
-        app.gui.toolbar.actions.disableSaveButton();
+        app.rtps.Redo();
     }
     public void handleInfo()
     {

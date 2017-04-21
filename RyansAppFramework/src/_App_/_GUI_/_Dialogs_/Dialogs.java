@@ -63,7 +63,6 @@ public class Dialogs
     }
     //endregion
     //region yesno
-
     public static boolean yesNo(String title,String header,String message)
     {
         Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
@@ -81,7 +80,7 @@ public class Dialogs
         if(result.get()==no)
             return false;
         assert result.get()==yes;
-        return false;
+        return true;
     }
     public static boolean yesNo(String message)
     {
@@ -108,6 +107,12 @@ public class Dialogs
         DirectoryChooser directoryChooser=new DirectoryChooser();
         directoryChooser.setInitialDirectory(app.io.misc.getCurrentDirectory());
         return new DirectoryChooser().showDialog(app.stage);
+    }
+    //endregion
+    //region Context-specific methods
+    public boolean confirmChangeTATimesDeleteOfficehours()
+    {
+        return yesNo(app.io.propertyGetter.getConfirmChangeTATimesDeleteOfficehoursMessage());
     }
     //endregion
 }

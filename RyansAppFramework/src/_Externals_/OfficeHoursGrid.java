@@ -102,6 +102,10 @@ public class OfficeHoursGrid extends rGridPane
                      });
         return String.join(",",colTitles);
     }
+    public void setTimeslots(String[]timeslots)
+    {
+        setGridState(String.join(",",(CharSequence[])timeslots)+";"+getColTitles()+";"+getTimesDaysNames());
+    }
     public String getGridState()
     {
         //TODO Complete me

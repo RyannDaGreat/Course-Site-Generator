@@ -19,12 +19,17 @@ public class Actions
         boilerplate=app.gui.modes.tadata.boilerplate;
         reader=app.gui.modes.tadata.reader;
         propertyGetter=app.io.propertyGetter;
+        updateTimeslots();
     }
     public void handleTaSelected()
     {
-        r.say(reader.getSelectedTaName());
-        setNameTextfield(reader.getSelectedTaName());
-        setEmailTextfield(reader.getSelectedTaEmail());
+        try
+        {
+            r.say(reader.getSelectedTaName());
+            setNameTextfield(reader.getSelectedTaName());
+            setEmailTextfield(reader.getSelectedTaEmail());
+        }
+        catch(Exception ignored){}
     }
     public void handleClearButton()
     {
@@ -49,6 +54,7 @@ public class Actions
     {
         boilerplate.getOh_gridPane().removeName(reader.getSelectedTaName());//MUST COME FIRST, ORDER MATTERS! Once deleted they are no longer selected, and name changes.
         boilerplate.getTa_tableView().remove(reader.getSelectedTa());//MUST COME SECOND, ORDER MATTERS! Once deleted they are no longer selected, and name changes.
+        refreshClearAndAddUpdateButtonStates();//When the last TA is deleted, the OnSelect event won't trigger anything so nothing will happen unless we have this here. Otehrwise the button will be stuck on 'update' after the last TA is deleted.
     }
     public void handleAddUpdateButton()
     {
@@ -56,6 +62,11 @@ public class Actions
             handleAddTa();
         else if(reader.getIsAddUpdateButtonUpdate())
             handleUpdateTa();
+        else
+        {
+            System.out.println("INTERNAL LOGIC ERROR: THIS SHOULD NEVER HAPPEN!");
+            r.say("handle add update button internal logic error fix me right now");
+        }
     }
     public void handleAddTa()
     {
@@ -67,6 +78,7 @@ public class Actions
     {
         boilerplate.getOh_gridPane().updateName(reader.getSelectedTaName(),reader.getTextfieldInputName());
         boilerplate.getTa_tableView().updateSelectedTANameEmail(reader.getTextfieldInputName(),reader.getTextfieldInputEmail());
+        refreshClearAndAddUpdateButtonStates();
     }
     public void addTa(boolean undergrad,String name,String email)
     {
@@ -75,6 +87,7 @@ public class Actions
     public void setTaState(String state)
     {
         boilerplate.getTa_tableView().setState(state);
+        refreshClearAndAddUpdateButtonStates();
     }
     public void handleToggleOfficeHour(String time,String day)
     {
@@ -137,5 +150,39 @@ public class Actions
     {
         refreshAddUpdateButtonState();
         refreshClearButtonState();
+    }
+    public void setFirstOfficeHourTimeslot(String first)
+    {
+
+        r.setComboboxOption(boilerplate.getOhStartTime_comboBox(),first);
+    }
+    public void setLastOfficeHourTimeslot(String last)
+    {
+
+        r.setComboboxOption(boilerplate.getOhEndTime_comboBox(),last);
+    }
+    public void updateTimeslots()
+    {
+        String firstOfficeHourTimslot=reader.getFirstOfficeHourTimeslot();
+        String lastOfficeHourTimslot=reader.getLastOfficeHourTimeslot();
+        String[] officeHourTimeslots=propertyGetter.getOfficeHourTimeslots();
+        r.setComboboxOptions(boilerplate.getOhEndTime_comboBox(),r.allAfterInclusive(firstOfficeHourTimslot,officeHourTimeslots));
+        r.setComboboxOptions(boilerplate.getOhStartTime_comboBox(),r.allBeforeInclusive(lastOfficeHourTimslot,officeHourTimeslots));
+        setFirstOfficeHourTimeslot(firstOfficeHourTimslot);
+        setLastOfficeHourTimeslot(lastOfficeHourTimslot);
+        boilerplate.getOh_gridPane().setTimeslots(r.allInRangeInclusive(firstOfficeHourTimslot,lastOfficeHourTimslot,officeHourTimeslots));
+    }
+    public void setOhState(String state)
+    {
+        boilerplate.getOh_gridPane().setGridState(state);
+    }
+    public void setState(String state)
+    {
+        //getState: r.joinLines(getTaState(),getFirstOfficeHourTimeslot(),getLastOfficeHourTimeslot(),getOhState());
+        String[]x=r.splitLines(state);
+        setTaState(x[0]);
+        setFirstOfficeHourTimeslot(x[1]);
+        setLastOfficeHourTimeslot(x[2]);
+        setOhState(x[3]);
     }
 }

@@ -3,6 +3,7 @@ import _App_.App;
 import _App_._GUI_._Modes_._TAData_._Boilerplate_.Boilerplate;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.TATableView;
+import _Externals_.r;
 public class Reader//It is not a coincidence that none of these methods have void or arguments
 {
     public App app;
@@ -57,5 +58,21 @@ public class Reader//It is not a coincidence that none of these methods have voi
     {
         return boilerplate.getTaAddUpdate_button().getText().equals(propertyGetter.getUpdateButtonLabel());
         // return !getIsAddUpdateButtonAdd();
+    }
+    public String getFirstOfficeHourTimeslot()
+    {
+        return (String)boilerplate.getOhStartTime_comboBox().getValue();
+    }
+    public String getLastOfficeHourTimeslot()
+    {
+        return (String)boilerplate.getOhEndTime_comboBox().getValue();
+    }
+    public String getOhState()
+    {
+        return boilerplate.getOh_gridPane().getGridState();
+    }
+    public String getState()//Official format for TAData state
+    {
+        return r.joinLines(getTaState(),getFirstOfficeHourTimeslot(),getLastOfficeHourTimeslot(),getOhState());
     }
 }

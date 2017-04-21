@@ -1,6 +1,6 @@
 package _Externals_;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -160,7 +160,57 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
-    public static boolean contains(int[]a,int i)//Returns true if a contains i
+    public static void setComboboxOptions(ComboBox c,String...options)
+    {
+        c.getItems().clear();
+        for(String s:options)
+            //noinspection unchecked
+            c.getItems().add(s);
+    }
+    public static void setComboboxOption(ComboBox c,Object option)
+    {
+        // assert c.getItems().contains(option);
+        c.setValue(option);
+    }
+    public static String[]allInRangeInclusive(String first,String last,String[]list)
+    {
+        assert contains(first,list);
+        assert contains(last,list);
+        return subArray(list,indexOf(first,list),indexOf(last,list)+1);
+    }
+    public static String[]allBeforeInclusive(String last,String[]list)
+    {
+        assert contains(last,list);
+        return subArray(list,0,indexOf(last,list)+1);
+    }
+    public static String[]allAfterInclusive(String first,String[]list)
+    {
+        assert contains(first,list);
+        return subArray(list,indexOf(first,list),list.length);
+    }
+    public static String[] subArray(String[]array,int firstIndex,int lastIndexPlusOne)
+    {
+        String[]out=new String[lastIndexPlusOne-firstIndex];
+        System.arraycopy(array,firstIndex,out,firstIndex-firstIndex,lastIndexPlusOne-firstIndex);
+        return out;
+    }
+    public static int indexOf(String element,String[]list)
+    {
+        for(int i=0;i<list.length;i++)
+        {
+            if(list[i].equals(element))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static boolean contains(String element,String[] list)
+    {
+        return indexOf(element,list)!=-1;
+    }
+    //-------------------------------------------------------------------
+    public static boolean contains(int i,int[] a)//Returns true if a contains i
     {
         /*@formatter:off*/
         for(int x:a)
@@ -222,6 +272,10 @@ public class r
         if(body.equals(""))//Don't return [""], which would happen without this check for some reason
             return new String[0];
         return body.split(lineSeparator);//⟵ Self explanatory
+    }
+    public static String joinLines(String...lines)
+    {
+        return joinLines((Object[])lines);
     }
     public static String joinLines(Object[]lines)//Objects are implicitly converted to strings
     {

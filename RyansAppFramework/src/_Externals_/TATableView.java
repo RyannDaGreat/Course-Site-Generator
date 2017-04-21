@@ -17,7 +17,7 @@ public class TATableView extends TableView
 {
     public void addPerson(boolean undergrad,String name,String email)
     {
-        getItems().add(new TA(undergrad,email,name));
+        getItems().add(new TA(undergrad,name,email));
     }
     public String getState()
     {
@@ -59,7 +59,11 @@ public class TATableView extends TableView
     }
     public boolean isValidToUpdate(String name,String email)
     {
+        if(getSelected()==null)//Can't update anybody if nobody is selected
+            return false;
         if(!mightBeValid(name,email))
+            return false;
+        if(getSelected().nameProperty().getValue().equals(name)&&getSelected().emailProperty().getValue().equals(email))//Name nor email havent been changed
             return false;
         for(Object x:getItems())//Must not contain duplicate email or name
         {
@@ -110,7 +114,7 @@ public class TATableView extends TableView
         private BooleanProperty undergrad;
         private StringProperty name;
         private StringProperty email;
-        public TA(boolean undergrad,String email,String name)
+        public TA(boolean undergrad,String name,String email)
         {
             this.undergrad=new SimpleBooleanProperty(undergrad);
             this.name=new SimpleStringProperty(name);

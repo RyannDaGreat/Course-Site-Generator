@@ -2,8 +2,10 @@ package _App_._GUI_._Modes_._TAData_._Boilerplate_;
 import _App_.App;
 import _App_._GUI_._Modes_._TAData_._Actions_.Actions;
 import _App_._GUI_._Modes_._TAData_._Transactions_.Transactions;
+import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.OfficeHoursGrid;
 import _Externals_.TATableView;
+import _Externals_.r;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -23,24 +25,32 @@ public class Boilerplate
         Actions actions=app.gui.modes.tadata.actions;
         Transactions transactions=app.gui.modes.tadata.transactions;
         megaplate=app.gui.window.boilerplate;
+        PropertyGetter propertyGetter=app.io.propertyGetter;
         getTa_tableView().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->actions.handleTaSelected());
         getTa_tableView().setOnKeyPressed(ⵁ->
                                           {
                                               if(ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE)
                                               {
-                                                  actions.deleteSelectedTa();
+                                                  transactions.deleteSelectedTa();
                                               }
                                           });
-        getOh_gridPane().setOnClick((time,day)->
-                                    {
-                                        actions.handleToggleOfficeHour(time,day);
-                                        System.out.println(time+day);
-                                    });
-        getOh_gridPane().setGridState(app.io.propertyGetter.getInitialOfficeHourGridState());//Must come after getOh_gridPane().setOnClick
+        getOh_gridPane().setOnClick(transactions::handleToggleOfficeHour);
+        getOh_gridPane().setGridState(propertyGetter.getInitialOfficeHourGridState());//Must come after getOh_gridPane().setOnClick
         getTaClear_button().setOnAction(ⵁ->actions.handleClearButton());
-        getTaAddUpdate_button().setOnAction(ⵁ->actions.handleAddUpdateButton());
+        getTaAddUpdate_button().setOnAction(ⵁ->transactions.handleAddUpdateButton());
         getTaName_textField().textProperty().addListener((ⵁ,oldText,newText)->actions.refreshClearAndAddUpdateButtonStates());
         getTaEmail_textField().textProperty().addListener((ⵁ,oldText,newText)->actions.refreshClearAndAddUpdateButtonStates());
+        r.setComboboxOption(getOhEndTime_comboBox(),propertyGetter.getDefaultLastOfficeHourTimeslot());
+        r.setComboboxOption(getOhStartTime_comboBox(),propertyGetter.getDefaultFirstOfficeHourTimeslot());
+        getOhEndTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->
+                                                                                       {
+                                                                                           if(!oldTime.equals(newTime))
+                                                                                           {
+                                                                                               r.setComboboxOption(getOhEndTime_comboBox(),newTime);
+                                                                                               transactions.updateTimeslots();
+                                                                                           }
+                                                                                       });
+        getOhStartTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->transactions.updateTimeslots());
     }
     public OfficeHoursGrid getOh_gridPane()
     {

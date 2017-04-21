@@ -21,8 +21,8 @@ public class TAData
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         boilerplate.initialize();
+        reader.initialize();
         actions.initialize();
         transactions.initialize();
-        reader.initialize();
     }
 }

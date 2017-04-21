@@ -1,6 +1,7 @@
 package _App_._IO_._PropertyGetter_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _Externals_._Resources_.ResourceGetter;
+import _Externals_.r;
 @SuppressWarnings({"WeakerAccess","FieldCanBeLocal"})
 public class PropertyGetter
 {
@@ -54,6 +55,22 @@ public class PropertyGetter
     public String[] getOfficeHourTimeslots()
     {
         return getProperty("office_hour_timeslots").split(",");
+    }
+    public String getDefaultFirstOfficeHourTimeslot()
+    {
+        String x=getProperty("default_first_timeslot");
+        assert r.contains(x,getOfficeHourTimeslots());
+        return x;
+    }
+    public String getDefaultLastOfficeHourTimeslot()
+    {
+        String x=getProperty("default_last_timeslot");
+        assert r.contains(x,getOfficeHourTimeslots());
+        return x;
+    }
+    public String getConfirmChangeTATimesDeleteOfficehoursMessage()
+    {
+        return getProperty("changing_times_confirmation");
     }
      //endregion
     //region If I ever want to use XML for some reason

@@ -950,7 +950,7 @@ public class Boilerplate extends VBox
         tdOhEndTime_comboBox5.setPrefWidth(150.0);
         tdOhEndTime_comboBox5.setPromptText(app.io.propertyGetter.getProperty("prop132")); //$NON-NLS-1$
         tdOhEndTime_comboBox5.setStyle(app.io.propertyGetter.getProperty("prop133")); //$NON-NLS-1$
-        columnConstraints111.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        columnConstraints111.setHgrow(javafx.scene.layout.Priority.ALWAYS);
         columnConstraints111.setMaxWidth(938.9019165039062);
         columnConstraints112.setPrefWidth(1000.0);
         rowConstraints111.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
@@ -1672,7 +1672,6 @@ public class Boilerplate extends VBox
         taOh_gridPane7.getRowConstraints().add(rowConstraints18);
         taOh_gridPane7.getRowConstraints().add(rowConstraints19);
         taOh_gridPane7.getRowConstraints().add(rowConstraints110);
-        vBox6.getChildren().add(taOh_gridPane7);
         gridPane8.getChildren().add(text116);
         gridPane8.getChildren().add(text117);
         gridPane8.getChildren().add(tdOhStartTime_comboBox4);
@@ -1682,6 +1681,7 @@ public class Boilerplate extends VBox
         gridPane8.getRowConstraints().add(rowConstraints111);
         gridPane8.getRowConstraints().add(rowConstraints112);
         vBox6.getChildren().add(gridPane8);
+        vBox6.getChildren().add(taOh_gridPane7);
         anchorPane6.getChildren().add(vBox6);
         vBox5.getChildren().add(anchorPane6);
         anchorPane5.getChildren().add(scrollPane2);
