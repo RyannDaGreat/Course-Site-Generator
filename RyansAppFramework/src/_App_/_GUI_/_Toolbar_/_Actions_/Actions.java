@@ -13,6 +13,7 @@ public class Actions
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         boilerplate=app.gui.toolbar.boilerplate;
+        disableSaveButton();
     }
     //region enable/disable save button
     public void enableSaveButton()
@@ -43,19 +44,20 @@ public class Actions
     //region Button Handlers
     public void handleNew()
     {
-
+        app.io.loader.handleNew();
     }
     public void handleOpen()
     {
-
+        app.io.loader.loadState(app.gui.dialogs.openFile());
     }
     public void handleSave()
     {
-
+        assert !
+        disableSaveButton();
     }
     public void handleSaveAs()
     {
-
+        app.io.saver.saveState(app.gui.dialogs.saveFile().getAbsolutePath());
     }
     public void handleExport()
     {

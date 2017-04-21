@@ -72,6 +72,10 @@ public class PropertyGetter
     {
         return getProperty("changing_times_confirmation");
     }
+    public String getModeStateSeparator()
+    {
+        return getProperty("mode_state_separator");
+    }
      //endregion
     //region If I ever want to use XML for some reason
     // private final String XMLDataPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/app_properties.xml";

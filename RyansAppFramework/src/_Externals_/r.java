@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -1171,6 +1172,29 @@ public class r
     public static String ReadFile(String FilePathName) throws java.io.FileNotFoundException
     {
         java.util.Scanner Input=new java.util.Scanner(new java.io.File(FilePathName));
+        if(!Input.hasNextLine())
+        {
+            return "";
+        }
+        String Output=Input.nextLine();
+        while(Input.hasNextLine())
+        {
+            Output+="\n"+Input.nextLine();
+        }
+        Input.close();
+        return Output;
+    }
+    public static String ReadFile(File f)
+    {
+        Scanner Input=null;
+        try
+        {
+            Input=new Scanner(f);
+        }
+        catch(FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
         if(!Input.hasNextLine())
         {
             return "";

@@ -39,19 +39,19 @@ public class App extends Application//This is the head of the tree. It's special
         stage.setMinWidth(io.propertyGetter.getMinAppWidth());//Unlike McKenna's demo
 
         //region Get rid of me im just for a small debugging session
-        gui.window.boilerplate.setOnKeyPressed(ⵁ->
-                                               {
-                                                   if(ⵁ.getCode()==KeyCode.C)
-                                                   {
-                                                       System.out.println(gui.modes.tadata.reader.getState());
-                                                       r.StringToClipboard(gui.modes.tadata.reader.getState());
-                                                   }
-                                                   if(ⵁ.getCode()==KeyCode.V)
-                                                   {
-                                                       System.out.println("SETTING STATE");
-                                                       gui.modes.tadata.actions.setState(r.StringFromClipboard());
-                                                   }
-                                               });
+        // gui.window.boilerplate.setOnKeyPressed(ⵁ->
+        //                                        {
+        //                                            if(ⵁ.getCode()==KeyCode.C)
+        //                                            {
+        //                                                System.out.println(gui.modes.tadata.reader.getState());
+        //                                                r.StringToClipboard(gui.modes.tadata.reader.getState());
+        //                                            }
+        //                                            if(ⵁ.getCode()==KeyCode.V)
+        //                                            {
+        //                                                System.out.println("SETTING STATE");
+        //                                                gui.modes.tadata.actions.setState(r.StringFromClipboard());
+        //                                            }
+        //                                        });
         //endregion
 
 

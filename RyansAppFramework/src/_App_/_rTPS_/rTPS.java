@@ -1,7 +1,6 @@
 package _App_._rTPS_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _Externals_.UndoRedoCoordinator;
-import _Externals_.r;
 public class rTPS extends UndoRedoCoordinator
 {
     public App app;
@@ -17,10 +16,14 @@ public class rTPS extends UndoRedoCoordinator
     public void Do(Runnable Do,Runnable Undo)
     {
         super.Do(Do,Undo);
-        app.gui.toolbar.actions.disableRedoButton();
-        app.gui.toolbar.actions.enableUndoButton();
+        refreshToolbarButtons();
     }
-    public void refreshUndoRedoButtons()
+    public void clearHistory()
+    {
+        super.clearHistory();
+        refreshToolbarButtons();
+    }
+    public void refreshToolbarButtons()
     {
         if(canUndo())
             app.gui.toolbar.actions.enableUndoButton();
@@ -30,6 +33,7 @@ public class rTPS extends UndoRedoCoordinator
             app.gui.toolbar.actions.enableRedoButton();
         else
             app.gui.toolbar.actions.disableRedoButton();
+        app.gui.toolbar.actions.enableSaveButton();//All changes allow this to be enabled
     }
     public boolean Undo()
     {
@@ -39,7 +43,7 @@ public class rTPS extends UndoRedoCoordinator
         }
         finally
         {
-            refreshUndoRedoButtons();
+            refreshToolbarButtons();
         }
     }
     public boolean Redo()
@@ -50,7 +54,7 @@ public class rTPS extends UndoRedoCoordinator
         }
         finally
         {
-            refreshUndoRedoButtons();
+            refreshToolbarButtons();
         }
     }
 }
