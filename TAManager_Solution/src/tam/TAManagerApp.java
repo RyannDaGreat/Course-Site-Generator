@@ -1,27 +1,11 @@
 package tam;
-import java.util.Locale;
+import djf.AppTemplate;
 import tam.data.TAData;
 import tam.file.TAFiles;
-import tam.workspace.TAWorkspace;
-import djf.AppTemplate;
 import tam.style.TAStyle;
-import org.json.
+import tam.workspace.TAWorkspace;
 
-// org.json.CookieList.class
-// org.json.HTTP.class
-// org.json.HTTPTokener.class
-// org.json.JSONArray.class
-// org.json.JSONException.class
-// org.json.JSONML.class
-// org.json.JSONObject.class
-// org.json.JSONString.class
-// org.json.JSONStringer.class
-// org.json.JSONTokener.class
-// org.json.JSONWriter.class
-// org.json.Test.class
-// org.json.XML.class
-// org.json.XMLTokener.class
-import static javafx.application.Application.launch;
+import java.util.Locale;
 
 /**
  * This class serves as the application class for our TA Manager App program. 
