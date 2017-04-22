@@ -11,5 +11,6 @@
     <orderEntry type="module" module-name="DesktopJavaFramework" />
     <orderEntry type="module" module-name="TAManager_Solution" />
     <orderEntry type="library" name="org.json:json:20070829" level="project" />
+    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
   </component>
 </module>

@@ -7,10 +7,10 @@ public class OfficeHoursGrid extends rGridPane
 {
     public OfficeHoursGrid()//These two strings are broken into lists, separated by commas
     {
-        // setGridState("A,B,C,D,2,4,6,2,4,2,1,4,4,1,7,2,E,E,E,E,E,5,5,6,2,3,4,45,5,2,3,4,5,2,3,4,52,3,4,5,2,34,5,2,3,E;a,e,e,b,c,d,e;A,a,bert;B,c,eernie;E,e,Eevie");
-        // setGridState("A,B,D,E;a,b,c,d,e;A,a,Aa;A,b,Ab;B,a,Ba;B,b,Bb;C,a,Ca;C,b,Cb;D,a,Da;D,b,Db");
+        // setGridState("A,B,C,D,2,4,6,2,4,2,1,4,4,1,7,2,E,E,E,E,E,5,5,6,2,3,4,45,5,2,3,4,5,2,3,4,52,3,4,5,2,34,5,2,3,E;a,e,e,b,_Experiments_.c,d,e;A,a,bert;B,_Experiments_.c,eernie;E,e,Eevie");
+        // setGridState("A,B,D,E;a,b,_Experiments_.c,d,e;A,a,Aa;A,b,Ab;B,a,Ba;B,b,Bb;C,a,Ca;C,b,Cb;D,a,Da;D,b,Db");
         // System.out.println(getGridState());
-        //            A,B,C,D,E;a,b,c,d,e;A,a,bert;B,c,eernie;E,e,Eevie
+        //            A,B,C,D,E;a,b,_Experiments_.c,d,e;A,a,bert;B,_Experiments_.c,eernie;E,e,Eevie
     }
     public interface timeDayMethod
     {

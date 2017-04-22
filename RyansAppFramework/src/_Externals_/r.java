@@ -5,6 +5,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -161,6 +163,23 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static void setComboboxOption(ComboBox c,Object option)
+    {
+        c.setValue(option);
+    }
+    public static JSONObject readJson(String path)
+    {
+        try
+        {
+            return new JSONObject(ReadFileIgnoreExceptions(path));
+        }
+        catch(JSONException e)
+        {
+            say("Could not find json file see stack trace");
+            e.printStackTrace();
+            return null;
+        }
+    }
     public static void setComboboxOptions(ComboBox c,String...options)
     {
         c.getItems().clear();

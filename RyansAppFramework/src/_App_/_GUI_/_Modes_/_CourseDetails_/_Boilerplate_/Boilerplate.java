@@ -14,97 +14,97 @@ public class Boilerplate
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         megaplate=app.gui.window.boilerplate;
-        getCdCiChange_button().setOnAction(ⵁ->app.gui.modes.courseDetails.actions.handleChangeExportDir());
+        getCiChange_button().setOnAction(ⵁ->app.gui.modes.courseDetails.actions.handleChangeExportDir());
     }
-    public ComboBox getCdCiSubject_comboBox()
+    public ComboBox getCiSubject_comboBox()
     {
         return megaplate.cdCiSubject_comboBox;
     }
-    public TextField getCdCiTitle_textField()
+    public TextField getCiTitle_textField()
     {
         return megaplate.cdCiTitle_textField;
     }
-    public TextField getCdCiInstructorName_textField()
+    public TextField getCiInstructorName_textField()
     {
         return megaplate.cdCiInstructorName_textField0;
     }
-    public TextField getCdCiInstructorHome_textField()
+    public TextField getCiInstructorHome_textField()
     {
         return megaplate.cdCiInstructorHome_textField1;
     }
-    public ComboBox getCdCiSemester_comboBox()
+    public ComboBox getCiSemester_comboBox()
     {
         return megaplate.cdCiSemester_comboBox0;
     }
-    public ComboBox getCdCiNumber_comboBox()
+    public ComboBox getCiNumber_comboBox()
     {
         return megaplate.cdCiNumber_comboBox1;
     }
-    public ComboBox getCdCiYear_comboBox()
+    public ComboBox getCiYear_comboBox()
     {
         return megaplate.cdCiYear_comboBox2;
     }
-    public Text getCdCiExportDir_text()
+    public Text getCiExportDir_text()
     {
         return megaplate.cdCiExportDir_text9;
     }
-    public Button getCdCiChange_button()
+    public Button getCiChange_button()
     {
         return megaplate.cdCiChange_button8;
     }
-    public Text getCdStTemplateDir_text()
+    public Text getStTemplateDir_text()
     {
         return megaplate.cdStTemplateDir_text12;
     }
-    public Button getCdStChange_button()
+    public Button getStChange_button()
     {
         return megaplate.cdStChange_button9;
     }
-    public TableView getCdStSitePages_tableView()
+    public TableView getStSitePages_tableView()
     {
         return megaplate.cdStSitePages_tableView;
     }
-    public TableColumn getCdStUse_tableColumn()
+    public TableColumn getStUse_tableColumn()
     {
         return megaplate.cdStUse_tableColumn;
     }
-    public TableColumn getCdStNavbarTitle_tableColumn()
+    public TableColumn getStNavbarTitle_tableColumn()
     {
         return megaplate.cdStNavbarTitle_tableColumn0;
     }
-    public TableColumn getCdStFileName_tableColumn()
+    public TableColumn getStFileName_tableColumn()
     {
         return megaplate.cdStFileName_tableColumn1;
     }
-    public TableColumn getCdStScript_tableColumn()
+    public TableColumn getStScript_tableColumn()
     {
         return megaplate.cdStScript_tableColumn2;
     }
-    public ImageView getCdPsBanner_imageView()
+    public ImageView getPsBanner_imageView()
     {
         return megaplate.cdPsBanner_imageView8;
     }
-    public ImageView getCdPsLeft_imageView()
+    public ImageView getPsLeft_imageView()
     {
         return megaplate.cdPsLeft_imageView9;
     }
-    public ImageView getCdPsRight_imageView()
+    public ImageView getPsRight_imageView()
     {
         return megaplate.cdPsRight_imageView10;
     }
-    public Button getCdPsChangeBanner_button()
+    public Button getPsChangeBanner_button()
     {
         return megaplate.cdPsChangeBanner_button10;
     }
-    public Button getCdPsChangeLeft_button()
+    public Button getPsChangeLeft_button()
     {
         return megaplate.cdPsChangeLeft_button11;
     }
-    public Button getCdPsChangeRight_button()
+    public Button getPsChangeRight_button()
     {
         return megaplate.cdPsChangeRight_button12;
     }
-    public ComboBox getCdPsStylesheet_comboBox()
+    public ComboBox getPsStylesheet_comboBox()
     {
         return megaplate.cdPsStylesheet_comboBox3;
     }

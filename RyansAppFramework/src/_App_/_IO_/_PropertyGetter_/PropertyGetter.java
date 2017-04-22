@@ -85,6 +85,22 @@ public class PropertyGetter
         return getProperty("confirm_save_message");
     }
      //endregion
+    //region State Keys: Course Details
+    /*@formatter:off*/
+    public String getStateKeyCdSubject(){return getProperty("state_key_cd_Subject");}
+    public String getStateKeyCdTitle(){return getProperty("state_key_cd_Title");}
+    public String getStateKeyCdInstructorName(){return getProperty("state_key_cd_InstructorName");}
+    public String getStateKeyCdInstructorHome(){return getProperty("state_key_cd_InstructorHome");}
+    public String getStateKeyCdSemester(){return getProperty("state_key_cd_Semester");}
+    public String getStateKeyCdNumber(){return getProperty("state_key_cd_Number");}
+    public String getStateKeyCdYear(){return getProperty("state_key_cd_Year");}
+    public String getStateKeyCdExportDir(){return getProperty("state_key_cd_ExportDir");}
+    public String getStateKeyCdTemplateDir(){return getProperty("state_key_cd_TemplateDir");}
+    public String getStateKeyCdBannerImage(){return getProperty("state_key_cd_BannerImage");}
+    public String getStateKeyCdLeftFooterImage(){return getProperty("state_key_cd_LeftFooterImage");}
+    public String getStateKeyCdRightFooterImage(){return getProperty("state_key_cd_RightFooterImage");}
+    /*@formatter:on*/
+    //endregion
     //region If I ever want to use XML for some reason
     // private final String XMLDataPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/app_properties.xml";
     // private final String XMLSchemaPath="/Users/Ryan/Desktop/RyanCourseSiteGenerator/TAManager_Solution/data/properties_schema.xsd";

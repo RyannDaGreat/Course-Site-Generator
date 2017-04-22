@@ -1,5 +1,5 @@
 package _Externals_._Resources_;//Created by Ryan on 4/13/17.
-import javafx.scene.image.Image;
+import _Externals_.LocatedImage;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
@@ -11,9 +11,9 @@ public class ResourceGetter
         return ResourceGetter.class.getResource(localPathToRyanAppFramework).toString();//.toExternalForm() ≣ .toString() SOURCE: https://teamtreehouse.com/community/resources-and-toexternalform
         //NOTE: stylesheetPath looks something like "file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Experiments_/appstyle.css" **Notice that its in the /out/ folder AND that it has "file:" at the beginning**
     }
-    public static Image getImage(String name)
+    public static LocatedImage getImage(String name)
     {
-        return new Image(getResource("_Images_/"+name));
+        return new LocatedImage(getResource("_Images_/"+name));
     }
     //endregion
     //region Eclipse-Generated String Loader

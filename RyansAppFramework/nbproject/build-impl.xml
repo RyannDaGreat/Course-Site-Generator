@@ -65,9 +65,9 @@ is divided into following sections:
                 <available file="${application.splash}"/>
             </and>
         </condition>
-        <condition property="main.class.available">
+        <condition property="_Experiments_.main.class.available">
             <and>
-                <isset property="main.class"/>
+                <isset property="_Experiments_.main.class"/>
                 <not>
                     <equals arg1="${main.class}" arg2="" trim="true"/>
                 </not>
@@ -103,9 +103,9 @@ is divided into following sections:
                 <istrue value="${do.archive}"/>
             </and>
         </condition>
-        <condition property="do.archive+main.class.available">
+        <condition property="do.archive+_Experiments_.main.class.available">
             <and>
-                <isset property="main.class.available"/>
+                <isset property="_Experiments_.main.class.available"/>
                 <istrue value="${do.archive}"/>
             </and>
         </condition>
@@ -1012,10 +1012,10 @@ is divided into following sections:
             <map from="${build.classes.dir.resolved}" to="${dist.jar.resolved}"/>
         </pathconvert>
         <condition else="" property="jar.usage.message" value="To run this application from the command line without Ant, try:${line.separator}${platform.java} -cp ${run.classpath.with.dist.jar} ${main.class}">
-            <isset property="main.class.available"/>
+            <isset property="_Experiments_.main.class.available"/>
         </condition>
         <condition else="debug" property="jar.usage.level" value="info">
-            <isset property="main.class.available"/>
+            <isset property="_Experiments_.main.class.available"/>
         </condition>
         <echo level="${jar.usage.level}" message="${jar.usage.message}"/>
     </target>
@@ -1037,7 +1037,7 @@ is divided into following sections:
                 EXECUTION SECTION
                 =================
             -->
-    <target depends="init,compile,jar" description="Run a main class." name="run">
+    <target depends="init,compile,jar" description="Run a _Experiments_.main class." name="run">
         <j2seproject1:java>
             <customize>
                 <arg line="${application.args}"/>
@@ -1051,7 +1051,7 @@ is divided into following sections:
         <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
         <j2seproject1:java classname="${run.class}"/>
     </target>
-    <target depends="init,compile-test-single" name="run-test-with-main">
+    <target depends="init,compile-test-single" name="run-test-with-_Experiments_.main">
         <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
         <j2seproject1:java classname="${run.class}" classpath="${run.test.classpath}"/>
     </target>
@@ -1063,7 +1063,7 @@ is divided into following sections:
     <target depends="init" if="netbeans.home" name="-debug-start-debugger">
         <j2seproject1:nbjpdastart name="${debug.class}"/>
     </target>
-    <target depends="init" if="netbeans.home" name="-debug-start-debugger-main-test">
+    <target depends="init" if="netbeans.home" name="-debug-start-debugger-_Experiments_.main-test">
         <j2seproject1:nbjpdastart classpath="${debug.test.classpath}" name="${debug.class}"/>
     </target>
     <target depends="init,compile" name="-debug-start-debuggee">
@@ -1083,11 +1083,11 @@ is divided into following sections:
         <j2seproject3:debug classname="${debug.class}"/>
     </target>
     <target depends="init,compile-single,-debug-start-debugger,-debug-start-debuggee-single" if="netbeans.home" name="debug-single"/>
-    <target depends="init,compile-test-single" if="netbeans.home" name="-debug-start-debuggee-main-test">
+    <target depends="init,compile-test-single" if="netbeans.home" name="-debug-start-debuggee-_Experiments_.main-test">
         <fail unless="debug.class">Must select one file in the IDE or set debug.class</fail>
         <j2seproject3:debug classname="${debug.class}" classpath="${debug.test.classpath}"/>
     </target>
-    <target depends="init,compile-test-single,-debug-start-debugger-main-test,-debug-start-debuggee-main-test" if="netbeans.home" name="debug-test-with-main"/>
+    <target depends="init,compile-test-single,-debug-start-debugger-main-test,-debug-start-debuggee-main-test" if="netbeans.home" name="debug-test-with-_Experiments_.main"/>
     <target depends="init" name="-pre-debug-fix">
         <fail unless="fix.includes">Must set fix.includes</fail>
         <property name="javac.includes" value="${fix.includes}.java"/>
@@ -1185,7 +1185,7 @@ is divided into following sections:
         <startprofiler/>
         <antcall target="test-single"/>
     </target>
-    <target depends="-profile-check" description="Profile a selected class in the IDE." if="profiler.configured" name="profile-test-with-main">
+    <target depends="-profile-check" description="Profile a selected class in the IDE." if="profiler.configured" name="profile-test-with-_Experiments_.main">
         <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
         <startprofiler/>
         <antcall target="run-test-with-main"/>

@@ -20,7 +20,7 @@ public class Columns extends Application
     private final ObservableList<Person> data=FXCollections.observableArrayList(
             new Person("A","Z","a@example.com"),
             new Person("B","X","b@example.com"),
-            new Person("C","W","c@example.com"),
+            new Person("C","W","_Experiments_.c@example.com"),
             new Person("D","Y","d@example.com"),
             new Person("E","V","e@example.com")
                                          );
