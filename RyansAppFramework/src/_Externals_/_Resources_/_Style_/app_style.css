@@ -9,5 +9,5 @@
 .big_text
 {
     -fx-font-family: "Courier New";
-    -fx-font-family: url(RyansAppFramework/_Externals_/_Style_/Lovelo Black.otf);
+    /*-fx-font-family: url(RyansAppFramework/_Externals_/_Style_/Lovelo Black.otf);*/
 }

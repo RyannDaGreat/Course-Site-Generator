@@ -16,8 +16,10 @@ public class Actions
         this.app=app;
     }
     private Boilerplate boilerplate;
+    private PropertyGetter propertyGetter;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
+        propertyGetter=app.io.propertyGetter;
         boilerplate=app.gui.modes.courseDetails.boilerplate;
     }
     public void handleChangeExportDir()
@@ -47,7 +49,6 @@ public class Actions
     //endregion
     public void setState(JSONObject state) throws JSONException
     {
-        PropertyGetter propertyGetter=app.io.propertyGetter;
         setSubject(state.get(propertyGetter.getStateKeyCdSubject()).toString());
         setTitle(state.get(propertyGetter.getStateKeyCdTitle()).toString());
         setInstructorName(state.get(propertyGetter.getStateKeyCdInstructorName()).toString());
@@ -61,5 +62,4 @@ public class Actions
         setLeftFooterImagePath(state.get(propertyGetter.getStateKeyCdLeftFooterImage()).toString());
         setRightFooterImagePath(state.get(propertyGetter.getStateKeyCdRightFooterImage()).toString());
     }
-
 }
