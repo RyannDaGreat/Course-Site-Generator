@@ -47,19 +47,26 @@ public class Actions
     public void setRightFooterImagePath(String x){boilerplate.getPsRight_imageView().setImage(new LocatedImage(x));}
     /*@formatter:on*/
     //endregion
-    public void setState(JSONObject state) throws JSONException
+    public void setState(JSONObject state)
     {
-        setSubject(state.get(propertyGetter.getStateKeyCdSubject()).toString());
-        setTitle(state.get(propertyGetter.getStateKeyCdTitle()).toString());
-        setInstructorName(state.get(propertyGetter.getStateKeyCdInstructorName()).toString());
-        setInstructorHome(state.get(propertyGetter.getStateKeyCdInstructorHome()).toString());
-        setSemester(state.get(propertyGetter.getStateKeyCdSemester()).toString());
-        setNumber(state.get(propertyGetter.getStateKeyCdNumber()).toString());
-        setYear(state.get(propertyGetter.getStateKeyCdYear()).toString());
-        setExportDir(state.get(propertyGetter.getStateKeyCdExportDir()).toString());
-        setTemplateDir(state.get(propertyGetter.getStateKeyCdTemplateDir()).toString());
-        setBannerImagePath(state.get(propertyGetter.getStateKeyCdBannerImage()).toString());
-        setLeftFooterImagePath(state.get(propertyGetter.getStateKeyCdLeftFooterImage()).toString());
-        setRightFooterImagePath(state.get(propertyGetter.getStateKeyCdRightFooterImage()).toString());
+        try
+        {
+            setSubject(state.get(propertyGetter.getStateKeyCdSubject()).toString());
+            setTitle(state.get(propertyGetter.getStateKeyCdTitle()).toString());
+            setInstructorName(state.get(propertyGetter.getStateKeyCdInstructorName()).toString());
+            setInstructorHome(state.get(propertyGetter.getStateKeyCdInstructorHome()).toString());
+            setSemester(state.get(propertyGetter.getStateKeyCdSemester()).toString());
+            setNumber(state.get(propertyGetter.getStateKeyCdNumber()).toString());
+            setYear(state.get(propertyGetter.getStateKeyCdYear()).toString());
+            setExportDir(state.get(propertyGetter.getStateKeyCdExportDir()).toString());
+            setTemplateDir(state.get(propertyGetter.getStateKeyCdTemplateDir()).toString());
+            setBannerImagePath(state.get(propertyGetter.getStateKeyCdBannerImage()).toString());
+            setLeftFooterImagePath(state.get(propertyGetter.getStateKeyCdLeftFooterImage()).toString());
+            setRightFooterImagePath(state.get(propertyGetter.getStateKeyCdRightFooterImage()).toString());
+        }
+        catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
