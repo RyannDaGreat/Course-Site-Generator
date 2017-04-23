@@ -16,7 +16,6 @@ public class PropertyGetter
     }
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
-
     }
     //region Specific properties (by method)
     public String getAppTitle()
@@ -72,10 +71,6 @@ public class PropertyGetter
     {
         return getProperty("changing_times_confirmation");
     }
-    public String getModeStateSeparator()
-    {
-        return getProperty("mode_state_separator");
-    }
     public String getNewFilePath()//The location of the New File. Is local to CourseSiteGenerator folder
     {
         return getProperty("new_file_path");
@@ -90,7 +85,16 @@ public class PropertyGetter
         assert x.length==4;
         return x;
     }
-     //endregion
+    //endregion
+    //region State Keys: Mode Title Keys
+    /*@formatter:off*/
+    public String getStateKeyCourseDetails(){return getProperty("state_key_CourseDetails");}
+    public String getStateKeyTAData(){return getProperty("state_key_TAData");}
+    public String getStateKeyRecitationData(){return getProperty("state_key_RecitationData");}
+    public String getStateKeyScheduleData(){return getProperty("state_key_ScheduleData");}
+    public String getStateKeyProjectData(){return getProperty("state_key_ProjectData");}
+    /*@formatter:on*/
+    //endregion
     //region State Keys: Course Details
     /*@formatter:off*/
     public String getStateKeyCdSubject(){return getProperty("state_key_cd_Subject");}

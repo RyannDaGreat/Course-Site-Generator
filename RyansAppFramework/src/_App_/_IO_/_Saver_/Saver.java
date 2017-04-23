@@ -30,7 +30,6 @@ public class Saver
     public String getAppState()
     {
         String out="";
-        String modeStateSeparator=app.io.propertyGetter.getModeStateSeparator();
         out+=app.gui.modes.tadata.reader.getState();
         return out;
     }

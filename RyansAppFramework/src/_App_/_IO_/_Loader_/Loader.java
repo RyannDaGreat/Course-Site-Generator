@@ -1,5 +1,6 @@
 package _App_._IO_._Loader_;//Created by Ryan on 4/10/17.
 import _App_.App;
+import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -15,30 +16,16 @@ public class Loader
     }
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
-
+        propertyGetter=app.io.propertyGetter;
     }
-    public void handleNew()
-    {
-        loadAppStateFromFile(new File(app.io.propertyGetter.getNewFilePath()));
-        app.gui.toolbar.actions.disableSaveButton();
-        setCurrentFilePath(app.io.propertyGetter.getAppTitle());
-    }
-    public String getCurrentFilePath()
-    {
-        return app.io.saver.getCurrentFilePath();
-    }
-    public void setCurrentFilePath(String path)
-    {
-        app.io.saver.setCurrentFilePath(path);
-    }
+    private PropertyGetter propertyGetter;
     public void setAppState(String state)
     {
         try
         {
-            JSONObject x=new JSONObject(state);
-            String modeStateSeparator=app.io.propertyGetter.getModeStateSeparator();
-            String[] modeStates=state.split(modeStateSeparator);
-            app.gui.modes.tadata.actions.setState(modeStates[0]);
+            JSONObject x=new JSONObject(state);//'States' are ALWAYS strings. Strings are universal among programming languages, while JSON is not.
+            app.gui.modes.tadata.actions.setState(x.getString(propertyGetter.getStateKeyTAData()));
+            app.gui.modes.courseDetails.actions.setState(x.getJSONObject(propertyGetter.getStateKeyCourseDetails()).toString());
         }
         catch(JSONException e)
         {
@@ -51,5 +38,19 @@ public class Loader
         app.rtps.clearHistory();
         app.gui.toolbar.actions.disableSaveButton();
         setCurrentFilePath(f.getPath());
+    }
+    public void handleNew()
+    {
+        loadAppStateFromFile(new File(propertyGetter.getNewFilePath()));
+        app.gui.toolbar.actions.disableSaveButton();
+        setCurrentFilePath(propertyGetter.getAppTitle());
+    }
+    public String getCurrentFilePath()
+    {
+        return app.io.saver.getCurrentFilePath();
+    }
+    public void setCurrentFilePath(String path)
+    {
+        app.io.saver.setCurrentFilePath(path);
     }
 }
