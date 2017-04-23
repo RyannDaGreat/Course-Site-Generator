@@ -1,21 +1,55 @@
 package _App_._GUI_._Window_._Boilerplate_;
+import _Externals_.CD_SitePagesTableView;
 import _Externals_.OfficeHoursGrid;
-import _Externals_.TATableView;
+import _Externals_.TD_TATableView;
 import _Externals_._Resources_.ResourceGetter;
 import _App_.App;
+import _Externals_.r;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import org.json.JSONException;
+import org.json.JSONObject;
 public class Boilerplate extends VBox
 {
     public App app;
     public void initialize()
     {
-
+        setOnKeyPressed(ⵁ->
+                        {
+                            if(ⵁ.isControlDown()||ⵁ.isMetaDown())
+                            {
+                                if(ⵁ.getCode()==KeyCode.Z)
+                                {
+                                    app.gui.toolbar.actions.handleUndo();//Identical to as if button were pressed (taking into consideration whether it's disabled)
+                                }
+                                if(ⵁ.getCode()==KeyCode.Y)
+                                {
+                                    app.gui.toolbar.actions.handleRedo();//Identical to as if button were pressed (taking into consideration whether it's disabled)
+                                }
+                                if(ⵁ.getCode()==KeyCode.S)
+                                {
+                                    app.gui.toolbar.actions.handleSave();//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
+                                }
+                                if(ⵁ.getCode()==KeyCode.O)
+                                {
+                                    app.gui.toolbar.actions.handleOpen();//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
+                                }
+                                if(ⵁ.getCode()==KeyCode.N)
+                                {
+                                    app.gui.toolbar.actions.handleNew();//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
+                                }
+                                if(ⵁ.getCode()==KeyCode.Q)//Q is for 'Quit'
+                                {
+                                    app.gui.toolbar.actions.handleExit();//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
+                                }
+                            }
+                        });
     }
     public Boilerplate(App app)
     {
@@ -100,7 +134,7 @@ public class Boilerplate extends VBox
         cdStChange_button9=new Button();
         cdStTemplateDir_text12=new Text();
         text13=new Text();
-        cdStSitePages_tableView=new TableView();
+        cdStSitePages_tableView=new CD_SitePagesTableView(app.io.propertyGetter.getCdSitePagesHeaders());
         cdStUse_tableColumn=new TableColumn();
         cdStNavbarTitle_tableColumn0=new TableColumn();
         cdStFileName_tableColumn1=new TableColumn();
@@ -141,7 +175,7 @@ public class Boilerplate extends VBox
         rowConstraints13=new RowConstraints();
         anchorPane4=new AnchorPane();
         vBox4=new VBox();
-        tdTa_tableView0=new TATableView(app.io.propertyGetter.getProperty("prop106"),app.io.propertyGetter.getProperty("prop107"),app.io.propertyGetter.getProperty("prop108"));
+        tdTa_tableView0=new TD_TATableView(app.io.propertyGetter.getProperty("prop106"),app.io.propertyGetter.getProperty("prop107"),app.io.propertyGetter.getProperty("prop108"));
         tdTaUndergrad_tableColumn3=new TableColumn();
         tdTaName_tableColumn4=new TableColumn();
         tdTaEmail_tableColumn5=new TableColumn();
@@ -623,6 +657,7 @@ public class Boilerplate extends VBox
         columnConstraints10.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         rowConstraints7.setVgrow(javafx.scene.layout.Priority.ALWAYS);
         rowConstraints8.setVgrow(javafx.scene.layout.Priority.ALWAYS);
+        rowConstraints8.setMinHeight(Double.parseDouble(app.io.propertyGetter.getProperty("propMinSitePagesTableviewHeight")));
         GridPane.setColumnIndex(cdStChange_button9,2);
         GridPane.setHalignment(cdStChange_button9,javafx.geometry.HPos.RIGHT);
         cdStChange_button9.setMnemonicParsing(false);
@@ -1604,10 +1639,10 @@ public class Boilerplate extends VBox
         gridPane2.getChildren().add(cdStChange_button9);
         gridPane2.getChildren().add(cdStTemplateDir_text12);
         gridPane2.getChildren().add(text13);
-        cdStSitePages_tableView.getColumns().add(cdStUse_tableColumn);
-        cdStSitePages_tableView.getColumns().add(cdStNavbarTitle_tableColumn0);
-        cdStSitePages_tableView.getColumns().add(cdStFileName_tableColumn1);
-        cdStSitePages_tableView.getColumns().add(cdStScript_tableColumn2);
+        // cdStSitePages_tableView.getColumns().add(cdStUse_tableColumn);
+        // cdStSitePages_tableView.getColumns().add(cdStNavbarTitle_tableColumn0);
+        // cdStSitePages_tableView.getColumns().add(cdStFileName_tableColumn1);
+        // cdStSitePages_tableView.getColumns().add(cdStScript_tableColumn2);
         gridPane2.getChildren().add(cdStSitePages_tableView);
         gridPane2.getChildren().add(text14);
         vBox1.getChildren().add(gridPane2);
@@ -1932,7 +1967,7 @@ public class Boilerplate extends VBox
     //endregion
     public final Text cdStTemplateDir_text12;
     public final Button cdStChange_button9;
-    public final TableView cdStSitePages_tableView;
+    public final CD_SitePagesTableView cdStSitePages_tableView;
     public final TableColumn cdStUse_tableColumn;
     public final TableColumn cdStNavbarTitle_tableColumn0;
     public final TableColumn cdStFileName_tableColumn1;
@@ -1977,7 +2012,7 @@ public class Boilerplate extends VBox
     public final AnchorPane anchorPane4;
     public final VBox vBox4;
     //endregion
-    public final TATableView tdTa_tableView0;
+    public final TD_TATableView tdTa_tableView0;
     public final TableColumn tdTaUndergrad_tableColumn3;
     public final TableColumn tdTaName_tableColumn4;
     public final TableColumn tdTaEmail_tableColumn5;

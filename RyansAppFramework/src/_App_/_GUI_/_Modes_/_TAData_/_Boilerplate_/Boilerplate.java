@@ -4,7 +4,7 @@ import _App_._GUI_._Modes_._TAData_._Actions_.Actions;
 import _App_._GUI_._Modes_._TAData_._Transactions_.Transactions;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.OfficeHoursGrid;
-import _Externals_.TATableView;
+import _Externals_.TD_TATableView;
 import _Externals_.r;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -60,7 +60,7 @@ public class Boilerplate
     {
         return megaplate.tdOhEndTime_comboBox5;
     }
-    public TATableView getTa_tableView()
+    public TD_TATableView getTa_tableView()
     {
         return megaplate.tdTa_tableView0;
     }

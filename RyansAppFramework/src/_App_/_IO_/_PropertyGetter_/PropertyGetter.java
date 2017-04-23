@@ -84,6 +84,12 @@ public class PropertyGetter
     {
         return getProperty("confirm_save_message");
     }
+    public String[] getCdSitePagesHeaders()//The location of the New File. Is local to CourseSiteGenerator folder
+    {
+        String[] x=getProperty("prop_gui_cd_site_pages_headers").split(",");//Looks like this: "Use,Navbar Title,File Name,Script"
+        assert x.length==4;
+        return x;
+    }
      //endregion
     //region State Keys: Course Details
     /*@formatter:off*/

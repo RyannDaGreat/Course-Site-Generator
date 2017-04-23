@@ -2,7 +2,7 @@ package _App_._GUI_._Modes_._TAData_._Reader_;
 import _App_.App;
 import _App_._GUI_._Modes_._TAData_._Boilerplate_.Boilerplate;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
-import _Externals_.TATableView;
+import _Externals_.TD_TATableView;
 import _Externals_.r;
 public class Reader//It is not a coincidence that none of these methods have void or arguments
 {
@@ -18,7 +18,7 @@ public class Reader//It is not a coincidence that none of these methods have voi
         boilerplate=app.gui.modes.tadata.boilerplate;
         propertyGetter=app.io.propertyGetter;
     }
-    public TATableView.TA getSelectedTa()
+    public TD_TATableView.TA getSelectedTa()
     {
         return boilerplate.getTa_tableView().getSelected();
     }

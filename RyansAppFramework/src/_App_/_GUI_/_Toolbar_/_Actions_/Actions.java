@@ -1,6 +1,7 @@
 package _App_._GUI_._Toolbar_._Actions_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _App_._GUI_._Toolbar_._Boilerplate_.Boilerplate;
+import _App_._GUI_._Toolbar_._Reader_.Reader;
 import _Externals_.r;
 public class Actions
 {
@@ -10,8 +11,10 @@ public class Actions
         this.app=app;
     }
     private Boilerplate boilerplate;
+    private Reader reader;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
+        reader=app.gui.toolbar.reader;
         boilerplate=app.gui.toolbar.boilerplate;
         disableSaveButton();
     }
@@ -85,11 +88,17 @@ public class Actions
     }
     public void handleUndo()
     {
-        app.rtps.Undo();
+        if(reader.undoButtonIsEnabled())//This check is here because we might also call this method via keyboard shortcur
+        {
+            app.rtps.Undo();
+        }
     }
     public void handleRedo()
     {
-        app.rtps.Redo();
+        if(reader.redoButtonIsEnabled())//This check is here because we might also call this method via keyboard shortcur
+        {
+            app.rtps.Redo();
+        }
     }
     public void handleInfo()
     {

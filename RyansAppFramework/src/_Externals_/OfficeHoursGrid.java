@@ -118,7 +118,6 @@ public class OfficeHoursGrid extends rGridPane
     public String getFirstTimeSlot()
     {
         System.out.println(getRowTitles().split(",")[0]);
-        // r.say("Helco");
         return getRowTitles().split(",")[0];
     }
     public String getLastTimeSlot()

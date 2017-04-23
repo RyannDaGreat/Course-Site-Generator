@@ -13,6 +13,22 @@ public class Reader
     {
         boilerplate=app.gui.toolbar.boilerplate;
     }
+    public boolean undoButtonIsDisabled()
+    {
+        return boilerplate.getUndoButton().isDisabled();
+    }
+    public boolean undoButtonIsEnabled()
+    {
+        return !undoButtonIsDisabled();
+    }
+    public boolean redoButtonIsDisabled()
+    {
+        return boilerplate.getRedoButton().isDisabled();
+    }
+    public boolean redoButtonIsEnabled()
+    {
+        return !redoButtonIsDisabled();
+    }
     public boolean saveButtonIsDisabled()
     {
         return boilerplate.getSaveButton().isDisabled();
