@@ -2,14 +2,10 @@ package _App_;//Created by Ryan on 4/10/17.
 import _App_._GUI_.GUI;
 import _App_._IO_.IO;
 import _App_._rTPS_.rTPS;
-import _Externals_.r;
 import javafx.application.Application;
 
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.File;
 @SuppressWarnings("WeakerAccess")
@@ -35,7 +31,7 @@ public class App extends Application//This is the head of the tree. It's special
     {
         initialize();
         stage=primaryStage;
-        io.saver.saveState(new File(io.propertyGetter.getNewFilePath()).getPath());
+        io.saver.saveAppStateToFile(new File(io.propertyGetter.getNewFilePath()).getPath());
         stage.setTitle(io.propertyGetter.getAppTitle());
         stage.getIcons().add(io.styleGetter.getAppIcon());
         stage.setScene(new Scene(gui.window.boilerplate));

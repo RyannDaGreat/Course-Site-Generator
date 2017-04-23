@@ -67,13 +67,13 @@ public class Actions
         if(app.io.saver.isCurrentlyNewFile())
             handleSaveAs();
         else
-           app.io.saver.saveState(app.io.saver.getCurrentFilePath());
+           app.io.saver.saveAppStateToFile(app.io.saver.getCurrentFilePath());
         r.say("successfully Saved current file");
         /*@formatter:on*/
     }
     public void handleSaveAs()
     {
-        app.io.saver.saveState(app.gui.dialogs.saveFile().getAbsolutePath());
+        app.io.saver.saveAppStateToFile(app.gui.dialogs.saveFile().getAbsolutePath());
     }
     public void handleExport()
     {

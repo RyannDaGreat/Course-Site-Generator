@@ -22,7 +22,7 @@ public class Reader
     }
     public String getSubject()
     {
-        return ""+boilerplate.getCiSubject_comboBox().getValue();
+        return ""+boilerplate.getCiSubject_comboBox().getValue();//Using ""+ⵁ instead of ⵁ.toString() to avoid null-pointer errors when ⵁ is null. There's no reason this should crash the code; returning "null" is perfectly acceptable.
     }
     public String getTitle()
     {

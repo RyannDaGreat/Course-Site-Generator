@@ -23,9 +23,9 @@ public class Loader
     {
         try
         {
-            JSONObject x=new JSONObject(state);//'States' are ALWAYS strings. Strings are universal among programming languages, while JSON is not.
+            JSONObject x=new JSONObject(state);
+            app.gui.modes.courseDetails.actions.setState(x.getJSONObject(propertyGetter.getStateKeyCourseDetails()));
             app.gui.modes.tadata.actions.setState(x.getString(propertyGetter.getStateKeyTAData()));
-            app.gui.modes.courseDetails.actions.setState(x.getJSONObject(propertyGetter.getStateKeyCourseDetails()).toString());
         }
         catch(JSONException e)
         {
@@ -43,7 +43,7 @@ public class Loader
     {
         loadAppStateFromFile(new File(propertyGetter.getNewFilePath()));
         app.gui.toolbar.actions.disableSaveButton();
-        setCurrentFilePath(propertyGetter.getAppTitle());
+        app.io.saver.setCurrentFileToNewFile();
     }
     public String getCurrentFilePath()
     {

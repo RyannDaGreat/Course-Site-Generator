@@ -30,7 +30,7 @@ public class OfficeHoursGrid extends rGridPane
             {
                 TextCell tx=(TextCell)child;
                 if(!isTitle(tx))
-                    tx.modifyText(x->r.toggleLine(x,name));
+                    tx.modifyText(x->r.sortedLines(r.toggleLine(x,name)));
             }
             return true;
         }

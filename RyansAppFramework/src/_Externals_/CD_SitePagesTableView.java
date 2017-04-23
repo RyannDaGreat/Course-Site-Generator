@@ -96,7 +96,7 @@ public class CD_SitePagesTableView extends TableView
         //endregion
         public String toString()
         {
-            return use.getValue()+","+navbarTitle.getValue()+","+fileName.getValue()+script.getValue();
+            return use.getValue()+","+navbarTitle.getValue()+","+fileName.getValue()+","+script.getValue();
         }
     }
 }
