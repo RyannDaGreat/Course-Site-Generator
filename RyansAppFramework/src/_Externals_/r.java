@@ -177,12 +177,16 @@ public class r
         catch(JSONException e)
         {
             e.printStackTrace();
+            //noinspection NumericOverflow
             return ""+1/0;//I know this will cause some sort of error in the future, and I don't really want to catch
         }
     }
     public static void setComboboxOption(ComboBox c,Object option)
     {
-        c.setValue(option);
+        if(option==null||option.toString().equals("null"))
+            c.getSelectionModel().clearSelection();
+        //noinspection unchecked
+        c.getSelectionModel().select(option);
     }
     public static JSONObject readJson(String path)
     {
