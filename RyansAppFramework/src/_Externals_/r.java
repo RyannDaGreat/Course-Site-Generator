@@ -163,6 +163,19 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static String jsonToPrettyString(JSONObject x)//Has \n's in it, instead of jamming the whole thing into a single line (which is good for my parenthesis automator, but not good for anybody else)
+    {
+        try
+        {
+            //Source: https://stackoverflow.com/questions/4105795/pretty-print-json-in-java/7310424
+            return x.toString(4);
+        }
+        catch(JSONException e)
+        {
+            e.printStackTrace();
+            return ""+1/0;//I know this will cause some sort of error in the future, and I don't really want to catch
+        }
+    }
     public static void setComboboxOption(ComboBox c,Object option)
     {
         c.setValue(option);

@@ -22,7 +22,7 @@ public class Reader
     }
     public String getSubject()
     {
-        return boilerplate.getCiSubject_comboBox().getValue().toString();
+        return ""+boilerplate.getCiSubject_comboBox().getValue();
     }
     public String getTitle()
     {
@@ -38,15 +38,15 @@ public class Reader
     }
     public String getSemester()
     {
-        return boilerplate.getCiSemester_comboBox().getValue().toString();
+        return ""+boilerplate.getCiSemester_comboBox().getValue();
     }
     public String getNumber()
     {
-        return boilerplate.getCiNumber_comboBox().getValue().toString();
+        return ""+boilerplate.getCiNumber_comboBox().getValue();
     }
     public String getYear()
     {
-        return boilerplate.getCiYear_comboBox().getValue().toString();
+        return ""+boilerplate.getCiYear_comboBox().getValue();
     }
     public String getExportDir()
     {

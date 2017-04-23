@@ -64,8 +64,9 @@ public class App extends Application//This is the head of the tree. It's special
                                                    if(ⵁ.getCode()==KeyCode.C)
                                                    {
                                                        r.say("state copied");
-                                                       // System.out.println(gui.modes.tadata.reader.getState());
-                                                       r.StringToClipboard(gui.modes.courseDetails.reader.getState().toString());
+                                                       String myStringToCopy=r.jsonToPrettyString(gui.modes.courseDetails.reader.getState());
+                                                       r.println(myStringToCopy);
+                                                       r.StringToClipboard(myStringToCopy);
                                                    }
                                                    if(ⵁ.getCode()==KeyCode.V)
                                                    {
@@ -82,8 +83,6 @@ public class App extends Application//This is the head of the tree. It's special
                                                    }
                                                });
         // endregion
-
-
         stage.show();
     }
     public static void main(String[]ⵁ)
