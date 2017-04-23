@@ -8,11 +8,11 @@
 // import javafx.scene.control.cell.PropertyValueFactory;
 // import javafx.scene.input.KeyCode;
 // @SuppressWarnings("unchecked")
-// public class SD_ScheduleItemsTableView2 extends TableView
+// public class RD_RecitationDataTableView extends TableView
 // {
-//     public void addItem(String type,String date,String title,String topic,String time,String link,String criteria)
+//     public void addRecitation(String type,String date,String title,String topic,String time,String link,String criteria)
 //     {
-//         getItems().add(new Item(type,date,title,topic,time,link,criteria));
+//         getItems().add(new Recitation(type,date,title,topic,time,link,criteria));
 //     }
 //     public String getState()
 //     {
@@ -25,14 +25,14 @@
 //         for(String x:state.split(";"))
 //         {
 //             String[]y=x.split(",");
-//             getItems().add(new Item(y[0],y[1],y[2],y[3],y[4],y[5],y[6]));
+//             getItems().add(new Recitation(y[0],y[1],y[2],y[3],y[4],y[5],y[6]));
 //         }
 //     }
-//     public Item getSelected()
+//     public Recitation getSelected()
 //     {
-//         return (Item)getSelectionModel().getSelectedItem();
+//         return (Recitation)getSelectionModel().getSelectedItem();
 //     }
-//     public void remove(Item x)
+//     public void remove(Recitation x)
 //     {
 //         getItems().remove(x);
 //     }
@@ -40,72 +40,25 @@
 //     {
 //         remove(getSelected());
 //     }
-//     public void updateItem(String type,String date,String title,String topic)
+//     public void updateRecitation(String type,String date,String title,String topic)
 //     {
 //         getSelected().typeProperty().setValue(type);
 //         getSelected().dateProperty().setValue(date);
 //         getSelected().titleProperty().setValue(title);
 //         getSelected().topicProperty().setValue(topic);
 //     }
-//
-//     //region IsValid CHeckers
-//     // public boolean isValidToAdd(String type,String date,String title,String topic)
-//     // {
-//         // if(!mightBeValid(name,email))
-//         //     return false;
-//         // for(Object x:getItems())//Must not contain duplicate email or name
-//         // {
-//         //     Item y=(Item)x;
-//         //     if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
-//         //         return false;//Is not unique
-//         // }
-//         // return true;
-//     // }
-//     // public boolean isValidToUpdate(String type,String date,String title,String topic)
-//     // {
-//         // if(getSelected()==null)//Can't update anybody if nobody is selected
-//         //     return false;
-//         // if(!mightBeValid(name,email))
-//         //     return false;
-//         // if(getSelected().nameProperty().getValue().equals(name)&&getSelected().emailProperty().getValue().equals(email))//Name nor email havent been changed
-//         //     return false;
-//         // for(Object x:getItems())//Must not contain duplicate email or name
-//         // {
-//         //     if(x!=getSelected())
-//         //     {
-//         //         Item y=(Item)x;
-//         //         if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
-//         //             return false;//Is not unique
-//         //     }
-//         // }
-//         // return true;
-//     // }
-//     // private boolean mightBeValid(String type,String date,String title,String topic)
-//     // {
-//         // if(name.equals("")||email.equals(""))//Name and email cannot be empty
-//         //     return false;
-//         // if((name+email).contains(",")||(name+email).contains(";")||(name+email).contains("\n"))//Cannot contain illegal characters used to save the grid states
-//         //     return false;
-//         // if(!r.isValidEmail(email))//Must be valid email
-//         //     return false;
-//         // return true;
-//     // }
-//     //endregion
-//     public void setOnItemSelected(Runnable r)
+//     public void setOnRecitationSelected(Runnable r)
 //     {
 //         getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->r.run());
 //     }
-//     public SD_ScheduleItemsTableView2(String typeHeader,String dateHeader,String titleHeader,String topicHeader)
+//     public RD_RecitationDataTableView(String typeHeader,String dateHeader,String titleHeader,String topicHeader)
 //     {
 //         setOnKeyPressed(ⵁ->r.branch(this::removeSelected,ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE));//Only keeping this because I have the auto-transactor!
 //         //
-//         addItem("a","b","c","d");
-//         addItem("e","f","g","h");
-//         addItem("i","j","k","l");
-//         final TableColumn<Item,String> typeCol=new TableColumn<>(typeHeader);
-//         final TableColumn<Item,String> dateCol=new TableColumn<>(dateHeader);
-//         final TableColumn<Item,String> titleCol=new TableColumn<>(titleHeader);
-//         final TableColumn<Item,String> topicCol=new TableColumn<>(topicHeader);
+//         final TableColumn< Recitation,String> typeCol=new TableColumn<>(typeHeader);
+//         final TableColumn<Recitation,String> dateCol=new TableColumn<>(dateHeader);
+//         final TableColumn<Recitation,String> titleCol=new TableColumn<>(titleHeader);
+//         final TableColumn<Recitation,String> topicCol=new TableColumn<>(topicHeader);
 //         //
 //         getColumns().addAll(typeCol,dateCol,titleCol,topicCol);
 //         //
@@ -117,8 +70,8 @@
 //         // setEditable(true);
 //     }
 //
-//     //region Item Class (with getters and setters)
-//     public class Item
+//     //region Recitation Class (with getters and setters)
+//     public class Recitation
 //     {
 //         private StringProperty type;
 //         private StringProperty date;
@@ -127,7 +80,7 @@
 //         public String time;
 //         public String link;
 //         public String criteria;
-//         public Item(String type,String date,String title,String topic,String time,String link,String criteria)
+//         public Recitation(String type,String date,String title,String topic,String time,String link,String criteria)
 //         {
 //             this.type=new SimpleStringProperty(type);
 //             this.date=new SimpleStringProperty(date);
