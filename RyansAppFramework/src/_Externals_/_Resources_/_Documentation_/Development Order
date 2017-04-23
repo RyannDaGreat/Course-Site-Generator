@@ -63,3 +63,6 @@ My app has more keyboard shortcuts.
 My app has a guarenteed-to-work without glitches TPS.
 My app sorts the TA's in the office hour grid, so that
 My app needs only ONE column for the TA times, instead of TWO. This is much more intuitive.
+My app responds to both the backspace AND delete buttons for deleting TA's, making it better for macs.
+My app doesn't need to spit error dialogs at the user as often as the original: changing office hour range and adding/updating TA is easy because it relies on the buttons being disabled/enabled.
+My app is so much prettier than the original, and it scales MUCH MUCH MUCH better too.

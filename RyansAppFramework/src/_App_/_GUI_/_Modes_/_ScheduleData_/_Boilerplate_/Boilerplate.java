@@ -13,7 +13,7 @@ public class Boilerplate
     {
         megaplate=app.gui.window.boilerplate;
     }
-    public DatePicker getSdStartingMonday_datePicker0()
+    public DatePicker getSdStartingMonday_datePicker()
     {
         return megaplate.sdStartingMonday_datePicker0;
     }
@@ -21,59 +21,59 @@ public class Boilerplate
     {
         return megaplate.sdEndingFriday_datePicker;
     }
-    public TableView getSdScheduledItems_tableView2()
+    public TableView getSdScheduledItems_tableView()
     {
         return megaplate.sdScheduledItems_tableView2;
     }
-    public TableColumn getSdType_tableColumn11()
+    public TableColumn getSdType_tableColumn()
     {
         return megaplate.sdType_tableColumn11;
     }
-    public TableColumn getSdDate_tableColumn12()
+    public TableColumn getSdDate_tableColumn()
     {
         return megaplate.sdDate_tableColumn12;
     }
-    public TableColumn getSdTitle_tableColumn13()
+    public TableColumn getSdTitle_tableColumn()
     {
         return megaplate.sdTitle_tableColumn13;
     }
-    public TableColumn getSdTopic_tableColumn14()
+    public TableColumn getSdTopic_tableColumn()
     {
         return megaplate.sdTopic_tableColumn14;
     }
-    public DatePicker getSdDate_datePicker1()
+    public DatePicker getSdDate_datePicker()
     {
         return megaplate.sdDate_datePicker1;
     }
-    public ComboBox getSdType_comboBox8()
+    public ComboBox getSdType_comboBox()
     {
         return megaplate.sdType_comboBox8;
     }
-    public TextField getSdTime_textField10()
+    public TextField getSdTime_textField()
     {
         return megaplate.sdTime_textField10;
     }
-    public TextField getSdTitle_textField11()
+    public TextField getSdTitle_textField()
     {
         return megaplate.sdTitle_textField11;
     }
-    public TextField getSdTopic_textField9()
+    public TextField getSdTopic_textField()
     {
         return megaplate.sdTopic_textField9;
     }
-    public TextField getSdLink_textField12()
+    public TextField getSdLink_textField()
     {
         return megaplate.sdLink_textField12;
     }
-    public TextField getSdCriteria_textField8()
+    public TextField getSdCriteria_textField()
     {
         return megaplate.sdCriteria_textField8;
     }
-    public Button getSdAddUpdate_button17()
+    public Button getSdAddUpdate_button()
     {
         return megaplate.sdAddUpdate_button17;
     }
-    public Button getSdClear_button18()
+    public Button getSdClear_button()
     {
         return megaplate.sdClear_button18;
     }

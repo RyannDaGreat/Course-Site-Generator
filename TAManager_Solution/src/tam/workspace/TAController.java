@@ -1,15 +1,7 @@
 package tam.workspace;
 import djf.ui.AppGUI;
 import djf.ui.AppMessageDialogSingleton;
-import djf.ui.AppYesNoCancelDialogSingleton;
-
-import static tam.TAManagerProp.*;
-
 import djf.ui.AppYesNoDialogSingleton;
-
-import java.util.Collections;
-import java.util.HashMap;
-
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
@@ -22,13 +14,12 @@ import properties_manager.PropertiesManager;
 import tam.TAManagerApp;
 import tam.data.TAData;
 import tam.data.TeachingAssistant;
-import tam.style.TAStyle;
 
-import static tam.style.TAStyle.CLASS_HIGHLIGHTED_GRID_CELL;
-import static tam.style.TAStyle.CLASS_HIGHLIGHTED_GRID_ROW_OR_COLUMN;
-import static tam.style.TAStyle.CLASS_OFFICE_HOURS_GRID_TA_CELL_PANE;
+import java.util.Collections;
+import java.util.HashMap;
 
-import tam.workspace.TAWorkspace;
+import static tam.TAManagerProp.*;
+import static tam.style.TAStyle.*;
 /**
  * This class provides responses to all workspace interactions, meaning
  * interactions with the application controls not including the file toolbar.

@@ -1,6 +1,10 @@
 package _App_._rTPS_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _Externals_.UndoRedoCoordinator;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
 public class rTPS extends UndoRedoCoordinator
 {
     public App app;
@@ -10,33 +14,73 @@ public class rTPS extends UndoRedoCoordinator
     }
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
-
+        lastState=app.io.saver.getAppState();
+//⁠⁠⁠⁠⁠                                    ⎧                                                                                                                ⎫
+//⁠⁠⁠⁠⁠                                    ⎪            ⎧                                                                                                  ⎫⎪
+//⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎧                                                          ⎫                       ⎪⎪
+//⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎪                                                        ⎧⎫⎪                     ⎧⎫⎪⎪
+        Timeline timeline=new Timeline(new KeyFrame(Duration.millis(app.io.propertyGetter.getAutotransactionIntervalInMillis()),x->tryToAutotransact()));
+//⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎪                                                        ⎩⎭⎪                     ⎩⎭⎪⎪
+//⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎩                                                          ⎭                       ⎪⎪
+//⁠⁠⁠⁠⁠                                    ⎪            ⎩                                                                                                  ⎭⎪
+//⁠⁠⁠⁠⁠                                    ⎩                                                                                                                ⎭
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
+    //region Auto-Transactor
+    //Is a thread that runs on a timer and automatically saves any changes as a transaction, detected by a change in App state.
+    private String lastState;
+    private void refreshLastAppState()
+    {
+        lastState=app.io.saver.getAppState();
+    }
+    public void tryToAutotransact()//Only does something if there are changes to App State
+    {
+        final String New=app.io.saver.getAppState();//Just in case this takes a while I don't want the thread to cause glitchy problems
+        if(lastState.equals(New))
+        {
+            return;//By definition; NOT just to avoid null errors! Being null is information here: it means we might have changed the state by redoing or undoing something.
+        }
+        final String Old=lastState+"";//Want a new ID
+        DoWithoutRedo(()->app.io.loader.setAppState(New),()->app.io.loader.setAppState(Old));
+        refreshLastAppState();
+    }
+    //endregion
     // public void dо(Runnable redo) //TODO Finish this method once IO is complete
     public void Do(Runnable Do,Runnable Undo)
     {
         super.Do(Do,Undo);
         refreshToolbarButtons();
     }
-    public boolean hasBeenModified()
+    public void DoWithoutRedo(Runnable Do,Runnable Undo)
     {
-        return history.size()>0;
+        super.DoWithoutRedo(Do,Undo);
+        refreshToolbarButtons();
     }
     public void clearHistory()
     {
         super.clearHistory();
         refreshToolbarButtons();
+        refreshLastAppState();
     }
     public void refreshToolbarButtons()
     {
         if(canUndo())
+        {
             app.gui.toolbar.actions.enableUndoButton();
+        }
         else
+        {
             app.gui.toolbar.actions.disableUndoButton();
+        }
         if(canRedo())
+        {
             app.gui.toolbar.actions.enableRedoButton();
+        }
         else
+        {
             app.gui.toolbar.actions.disableRedoButton();
+        }
         app.gui.toolbar.actions.enableSaveButton();//All changes allow this to be enabled
     }
     public boolean Undo()
@@ -48,10 +92,12 @@ public class rTPS extends UndoRedoCoordinator
         finally
         {
             refreshToolbarButtons();
+            refreshLastAppState();
         }
     }
     public boolean Redo()
     {
+        lastState=null;
         try
         {
             return super.Redo();
@@ -59,6 +105,7 @@ public class rTPS extends UndoRedoCoordinator
         finally
         {
             refreshToolbarButtons();
+            refreshLastAppState();
         }
     }
 }

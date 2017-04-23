@@ -163,6 +163,10 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static void branch(Runnable r,boolean b)//Adopted from Unreal Engine Blueprints
+    {
+        if(b)r.run();
+    }
     public static String jsonToPrettyString(JSONObject x)//Has \n's in it, instead of jamming the whole thing into a single line (which is good for my parenthesis automator, but not good for anybody else)
     {
         try
@@ -516,6 +520,7 @@ public class r
         }
         catch(Exception ignored)
         {
+            ignored.printStackTrace();
         }
     }
     public static void delay(double delayDurationInSeconds)
@@ -531,6 +536,7 @@ public class r
         }
         catch(Exception ignored)
         {
+            ignored.printStackTrace();
         }
     }
     //region Tic and Toc

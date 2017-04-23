@@ -35,7 +35,7 @@ public class Loader
     public void loadAppStateFromFile(File f)
     {
         setAppState(r.ReadFile(f));
-        app.rtps.clearHistory();
+        app.rtps.clearHistory();//ORDER MATTERS HERE! MUST COME AFTER READ-FILE BECAUSE OF AUTO-TPS
         app.gui.toolbar.actions.disableSaveButton();
         setCurrentFilePath(f.getPath());
     }

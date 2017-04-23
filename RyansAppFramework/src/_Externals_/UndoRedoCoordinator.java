@@ -15,15 +15,24 @@ public class UndoRedoCoordinator
         Runnable Do;
         Runnable Undo;
     }
-    public void clearHistory()
+    public void clearHistory()//Deletes all undos and redos
     {
-        //Deletes all undos and redos
         cursor=-1;
         history.clear();
     }
     public void Do(Runnable Do,Runnable Undo)
     {
-        // say("hi");
+        redoHelper(Do,Undo);
+        Redo();
+    }
+    public void DoWithoutRedo(Runnable Do,Runnable Undo)
+    {
+        redoHelper(Do,Undo);
+        ++cursor;
+        r.say("auto");//Used for autotransactions
+    }
+    private void redoHelper(Runnable Do,Runnable Undo)
+    {
         Undoable transaction=new Undoable();
         transaction.Do=Do;
         transaction.Undo=Undo;
@@ -44,7 +53,6 @@ public class UndoRedoCoordinator
         {
             history.add(transaction);// IS IT JUST A TRANSACTION TO APPEND TO THE END?
         }
-        Redo();
     }
     public boolean canRedo()
     {

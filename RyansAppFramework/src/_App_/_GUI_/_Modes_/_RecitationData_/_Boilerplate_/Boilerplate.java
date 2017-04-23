@@ -13,59 +13,59 @@ public class Boilerplate
     {
         megaplate=app.gui.window.boilerplate;
     }
-    public TableView getRd_tableView()
+    public TableView getTableView()
     {
         return megaplate.rd_tableView1;
     }
-    public TableColumn getRdSection_tableColumn()
+    public TableColumn getSection_tableColumn()
     {
         return megaplate.rdSection_tableColumn6;
     }
-    public TableColumn getRdInstructor_tableColumn()
+    public TableColumn getInstructor_tableColumn()
     {
         return megaplate.rdInstructor_tableColumn7;
     }
-    public TableColumn getRdRecitationData_tableColumn()
+    public TableColumn getRecitationData_tableColumn()
     {
         return megaplate.rdRecitationData_tableColumn8;
     }
-    public TableColumn getRdTA1_tableColumn()
+    public TableColumn getTA1_tableColumn()
     {
         return megaplate.rdTA1_tableColumn9;
     }
-    public TableColumn getRdTA2tableColumn()
+    public TableColumn getTA2tableColumn()
     {
         return megaplate.rdTA2tableColumn10;
     }
-    public TextField getRdSection_textField()
+    public TextField getSection_textField()
     {
         return megaplate.rdSection_textField4;
     }
-    public TextField getRdInstructor_textField()
+    public TextField getInstructor_textField()
     {
         return megaplate.rdInstructor_textField5;
     }
-    public TextField getRdDayTime_textField()
+    public TextField getDayTime_textField()
     {
         return megaplate.rdDayTime_textField6;
     }
-    public TextField getRdLocation_textField()
+    public TextField getLocation_textField()
     {
         return megaplate.rdLocation_textField7;
     }
-    public ComboBox getRdTA1_comboBox()
+    public ComboBox getTA1_comboBox()
     {
         return megaplate.rdTA1_comboBox6;
     }
-    public ComboBox getRdTA2_comboBox()
+    public ComboBox getTA2_comboBox()
     {
         return megaplate.rdTA2_comboBox7;
     }
-    public Button getRdAddUpdate_button()
+    public Button getAddUpdate_button()
     {
         return megaplate.rdAddUpdate_button15;
     }
-    public Button getRdClear_button()
+    public Button getClear_button()
     {
         return megaplate.rdClear_button16;
     }

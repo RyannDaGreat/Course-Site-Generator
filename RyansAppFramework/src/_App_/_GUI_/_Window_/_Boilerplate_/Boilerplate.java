@@ -4,7 +4,6 @@ import _Externals_.OfficeHoursGrid;
 import _Externals_.TD_TATableView;
 import _Externals_._Resources_.ResourceGetter;
 import _App_.App;
-import _Externals_.r;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -13,8 +12,6 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import org.json.JSONException;
-import org.json.JSONObject;
 public class Boilerplate extends VBox
 {
     public App app;
@@ -365,7 +362,7 @@ public class Boilerplate extends VBox
         gridPane16=new GridPane();
         text1111110=new Text();
         text1111111=new Text();
-        psSTeam_textField15=new TextField();
+        pdSTeam_textField15=new TextField();
         pdSFirstName_textField16=new TextField();
         pdSLastName_textField17=new TextField();
         pdSAddUpdate_button111=new Button();
@@ -1524,11 +1521,11 @@ public class Boilerplate extends VBox
         text1111111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1111111.setStrokeWidth(0.0);
         text1111111.setText(app.io.propertyGetter.getProperty("prop280")); //$NON-NLS-1$
-        GridPane.setColumnIndex(psSTeam_textField15,1);
-        GridPane.setColumnSpan(psSTeam_textField15,2147483647);
-        GridPane.setRowIndex(psSTeam_textField15,2);
-        psSTeam_textField15.setPromptText(app.io.propertyGetter.getProperty("prop281")); //$NON-NLS-1$
-        psSTeam_textField15.setStyle(app.io.propertyGetter.getProperty("prop282")); //$NON-NLS-1$
+        GridPane.setColumnIndex(pdSTeam_textField15,1);
+        GridPane.setColumnSpan(pdSTeam_textField15,2147483647);
+        GridPane.setRowIndex(pdSTeam_textField15,2);
+        pdSTeam_textField15.setPromptText(app.io.propertyGetter.getProperty("prop281")); //$NON-NLS-1$
+        pdSTeam_textField15.setStyle(app.io.propertyGetter.getProperty("prop282")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdSFirstName_textField16,1);
         GridPane.setColumnSpan(pdSFirstName_textField16,2147483647);
         pdSFirstName_textField16.setPromptText(app.io.propertyGetter.getProperty("prop283")); //$NON-NLS-1$
@@ -1860,7 +1857,7 @@ public class Boilerplate extends VBox
         vBox15.getChildren().add(text111119);
         gridPane16.getChildren().add(text1111110);
         gridPane16.getChildren().add(text1111111);
-        gridPane16.getChildren().add(psSTeam_textField15);
+        gridPane16.getChildren().add(pdSTeam_textField15);
         gridPane16.getChildren().add(pdSFirstName_textField16);
         gridPane16.getChildren().add(pdSLastName_textField17);
         gridPane16.getChildren().add(pdSAddUpdate_button111);
@@ -2223,7 +2220,7 @@ public class Boilerplate extends VBox
     public final TableColumn pdSRole_tableColumn112;
     public final TextField pdSFirstName_textField16;
     public final TextField pdSLastName_textField17;
-    public final TextField psSTeam_textField15;
+    public final TextField pdSTeam_textField15;
     public final TextField pdSRole_textField18;
     public final Button pdSAddUpdate_button111;
     public final Button pdSClear_button112;

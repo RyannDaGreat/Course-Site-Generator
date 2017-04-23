@@ -85,6 +85,10 @@ public class PropertyGetter
         assert x.length==4;
         return x;
     }
+    public long getAutotransactionIntervalInMillis()
+    {
+        return Long.parseLong(getProperty("autotransaction_interval_in_millis"));
+    }
     //endregion
     //region State Keys: Mode Title Keys
     /*@formatter:off*/

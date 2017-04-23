@@ -27,13 +27,7 @@ public class Boilerplate
         megaplate=app.gui.window.boilerplate;
         PropertyGetter propertyGetter=app.io.propertyGetter;
         getTa_tableView().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->actions.handleTaSelected());
-        getTa_tableView().setOnKeyPressed(ⵁ->
-                                          {
-                                              if(ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE)
-                                              {
-                                                  transactions.deleteSelectedTa();
-                                              }
-                                          });
+        getTa_tableView().setOnKeyPressed(ⵁ->r.branch(transactions::deleteSelectedTa,ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE));
         getOh_gridPane().setOnClick(transactions::handleToggleOfficeHour);
         getOh_gridPane().setGridState(propertyGetter.getInitialOfficeHourGridState());//Must come after getOh_gridPane().setOnClick
         getTaClear_button().setOnAction(ⵁ->actions.handleClearButton());
@@ -41,10 +35,7 @@ public class Boilerplate
         getTaName_textField().textProperty().addListener((ⵁ,oldText,newText)->actions.refreshClearAndAddUpdateButtonStates());
         getTaEmail_textField().textProperty().addListener((ⵁ,oldText,newText)->actions.refreshClearAndAddUpdateButtonStates());
         getOhStartTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->transactions.setFirstTimeslot((String)newTime));
-        getOhEndTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->
-                                                                                       {
-                                                                                           transactions.setLastTimeslot((String)newTime);
-                                                                                       });
+        getOhEndTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->transactions.setLastTimeslot((String)newTime));
         r.setComboboxOptions(getOhEndTime_comboBox(),propertyGetter.getOfficeHourTimeslots());
         r.setComboboxOptions(getOhStartTime_comboBox(),propertyGetter.getOfficeHourTimeslots());
     }
