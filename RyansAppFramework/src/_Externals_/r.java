@@ -1,6 +1,7 @@
 package _Externals_;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -14,6 +15,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -159,13 +161,15 @@ import java.util.regex.Pattern;
 //    ┃ + WriteFile(FilePathName:String, Contentsthrows:String) : void        ┃
 //    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //endregion
-
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
     public static void branch(Runnable r,boolean b)//Adopted from Unreal Engine Blueprints
     {
-        if(b)r.run();
+        if(b)
+        {
+            r.run();
+        }
     }
     public static String jsonToPrettyString(JSONObject x)//Has \n's in it, instead of jamming the whole thing into a single line (which is good for my parenthesis automator, but not good for anybody else)
     {
@@ -191,6 +195,17 @@ public class r
             c.getSelectionModel().select(option);
         /*@formatter:on*/
     }
+    public static void setDatePickerValue(DatePicker d,String s)
+    {
+        try
+        {
+            d.setValue(LocalDate.parse(s));
+        }
+        catch(Exception ignored)
+        {
+            d.setValue(null);
+        }
+    }
     public static JSONObject readJson(String path)
     {
         try
@@ -204,14 +219,16 @@ public class r
             return null;
         }
     }
-    public static void setComboboxOptions(ComboBox c,String...options)
+    public static void setComboboxOptions(ComboBox c,String... options)
     {
         c.getItems().clear();
-        for(String s:options)
-            //noinspection unchecked
+        for(String s : options)
+        //noinspection unchecked
+        {
             c.getItems().add(s);
+        }
     }
-    public static String[]allInRangeInclusive(String first,String last,String[]list)
+    public static String[] allInRangeInclusive(String first,String last,String[] list)
     {
         try
         {
@@ -219,25 +236,29 @@ public class r
             assert contains(last,list);
             return subArray(list,Math.min(indexOf(first,list),indexOf(last,list)+1),Math.max(indexOf(first,list),indexOf(last,list)+1));
         }
-        catch(Exception ignored){r.say("Helo me im scared help m e");return null;}
+        catch(Exception ignored)
+        {
+            r.say("Helo me im scared help m e");
+            return null;
+        }
     }
-    public static String[]allBeforeInclusive(String last,String[]list)
+    public static String[] allBeforeInclusive(String last,String[] list)
     {
         assert contains(last,list);
         return subArray(list,0,indexOf(last,list)+1);
     }
-    public static String[]allAfterInclusive(String first,String[]list)
+    public static String[] allAfterInclusive(String first,String[] list)
     {
         assert contains(first,list);
         return subArray(list,indexOf(first,list),list.length);
     }
-    public static String[] subArray(String[]array,int firstIndex,int lastIndexPlusOne)
+    public static String[] subArray(String[] array,int firstIndex,int lastIndexPlusOne)
     {
-        String[]out=new String[lastIndexPlusOne-firstIndex];
+        String[] out=new String[lastIndexPlusOne-firstIndex];
         System.arraycopy(array,firstIndex,out,0,out.length);
         return out;
     }
-    public static int indexOf(String element,String[]list)
+    public static int indexOf(String element,String[] list)
     {
         for(int i=0;i<list.length;i++)
         {
@@ -276,12 +297,12 @@ public class r
         AnchorPane.setTopAnchor(x,0d);
         AnchorPane.setBottomAnchor(x,0d);
     }
-    public static String id(int...rowCol)
+    public static String id(int... rowCol)
     {
         assert rowCol.length==2;//Should consist of a row and col
         return rowCol[0]+"_"+rowCol[1];
     }
-    public static int[]rowCol(String id)
+    public static int[] rowCol(String id)
     {
         /*@formatter:off*/
         int[]out=new int[2];
@@ -292,7 +313,6 @@ public class r
         return out;
         /*@formatter:on*/
     }
-
     //region Email checker ［isValidEmail］
     public static boolean isValidEmail(String s)
     {
@@ -313,14 +333,16 @@ public class r
     {
         //tested ⋀ verified ✔
         if(body.equals(""))//Don't return [""], which would happen without this check for some reason
+        {
             return new String[0];
+        }
         return body.split(lineSeparator);//⟵ Self explanatory
     }
-    public static String joinLines(String...lines)
+    public static String joinLines(String... lines)
     {
         return joinLines((Object[])lines);
     }
-    public static String joinLines(Object[]lines)//Objects are implicitly converted to strings
+    public static String joinLines(Object[] lines)//Objects are implicitly converted to strings
     {
         //tested ⋀ verified ✔ (tested edge cases: where lines.length ∈ {0,1,2,3})
         /*@formatter:off*/
@@ -340,7 +362,9 @@ public class r
     public static String addLine(String body,String line)
     {
         if(body.equals(""))
+        {
             return line;
+        }
         return body+lineSeparator+line;
     }
     public static String removeMatchingLines(String body,String line)
@@ -348,28 +372,37 @@ public class r
         String[] lines=splitLines(body);
         String[] out=new String[lines.length-numberOfMatchingLines(body,line)];
         int i=0;
-        for(String l:lines)
+        for(String l : lines)
+        {
             if(!l.equals(line))
+            {
                 out[i++]=l;
+            }
+        }
         return joinLines(out);
     }
     public static String toggleLine(String body,String line)
     {
         //Toggles the existence of 'line' in 'body'. If line is not in body,
         if(body.equals(""))
+        {
             return line;
+        }
         if(!hasMatchingLine(body,line))
+        {
             return body+lineSeparator+line;
+        }
         return removeMatchingLines(body,line);
     }
     public static String replaceMatchingLines(String body,String oldLine,String newLine)
     {
         //Replaces all splitLines in 'body' that are equal to 'oldLine' to 'newLine'.
         ArrayList<CharSequence> newLines=new ArrayList<>();
-        for(String line: splitLines(body))
+        for(String line : splitLines(body))
+        {
             newLines.add(line.equals(oldLine)?newLine:line);
+        }
         return joinLines(newLines.toArray());//StringUtils.join(newLines,lineSeparator);
-
     }
     public static boolean hasMatchingLine(String body,String line)//If body has has a line that matches 'line', it returns true. Else, false.
     {
@@ -379,9 +412,13 @@ public class r
     {
         //Returns the number of splitLines in 'body' that are equal to 'line'
         int i=0;
-        for(String x: splitLines(body))
+        for(String x : splitLines(body))
+        {
             if(x.equals(line))
+            {
                 i++;
+            }
+        }
         return i;
         /*@formatter:on*/
     }
@@ -389,7 +426,7 @@ public class r
     {
         //tested ⋀ verified ✔
         //Sorts the splitLines of 'body' in alphabetical order.
-        String[]x=splitLines(body);
+        String[] x=splitLines(body);
         Arrays.sort(x);
         return joinLines(x);//String.join(lineSeparator,(CharSequence[])x);
     }
@@ -441,7 +478,6 @@ public class r
     {
         System.out.print(""+message);
     }
-
     //Special: Can be expanded as I learn new classes
     public static void println(BigDecimal message)
     {
@@ -639,7 +675,7 @@ public class r
         return out;
     }
     @SafeVarargs
-    public static <T>T randomElement(T...array)
+    public static <T> T randomElement(T... array)
     {
         return array[randomIndex(array.length)];
     }
@@ -788,7 +824,6 @@ public class r
         double Magnitude=sqrt(x*x+y*y);
         x/=Magnitude;
         y/=Magnitude;
-
         if(y>0)
         {
             return acos(x);
@@ -1264,7 +1299,9 @@ public class r
         {
             ReadFile(FilePathName);
         }
-        catch(Exception ignored){}
+        catch(Exception ignored)
+        {
+        }
         return null;
     }
     public static void WriteFileIgnoreExceptions(String FilePathName,String Contents)
@@ -1283,7 +1320,6 @@ public class r
     //region Screen Width/Height (In Pixels) (AKA The resolution):
     public static final int screenWidth=(int)Toolkit.getDefaultToolkit().getScreenSize().getWidth();
     public static final int screenHeight=(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-
     public static int ScreenWidth()
     {
         //NOTE: In order to get the maximum pixel in a dimension, you must subtract 1 from this!
@@ -1324,15 +1360,27 @@ public class r
     {
         black(0),red(1),green(2),yellow(3),blue(4),magenta(5),cyan(6),gray(7);
         private final int id;
-        fansi_colors(int id) { this.id = id; }
-        public int getValue() { return id; }
+        fansi_colors(int id)
+        {
+            this.id=id;
+        }
+        public int getValue()
+        {
+            return id;
+        }
     }
     public enum fansi_styles
     {
         bold(1),faded(2),underlined(4),blinking(5),outlined(7);
         private final int id;
-        fansi_styles(int id) { this.id = id; }
-        public int getValue() { return id; }
+        fansi_styles(int id)
+        {
+            this.id=id;
+        }
+        public int getValue()
+        {
+            return id;
+        }
     }
     public static String fansi(String s,r.fansi_colors textColor,r.fansi_styles textStyle,r.fansi_colors background_color)
     {
@@ -1353,7 +1401,9 @@ public class r
         {
             Runtime.getRuntime().exec(command);
         }
-        catch(Exception ignored){}
+        catch(Exception ignored)
+        {
+        }
     }
     public static String replaceAll(String Original,String OldSnippet,String NewSnippet)
     {
@@ -1375,7 +1425,6 @@ public class r
             return null;
         }
     }
-
     // The following is only commented out because it makes more sense, in the CourseSiteGenerator project, to keep them in the Dialogs class. Once I'm done with this project these should be made static then uncommented.
     //region Yes/No/Cancel Dialogs
     static public enum dialogOptions//Used for checking the values of various dialog results
@@ -1416,7 +1465,7 @@ public class r
     //String[] extensions refers to the available types of files you normally choose from. Leave it blank to enable all filetypes.
     //All methods here are derived from four combinations of true and false from fileDialog, which is private for that reason.
     //These methods can be copy-pasted to and from the r class if necessary.
-    static private File fileDialog(String title,boolean openIfTrueElseSave,boolean fileIfTrueElseDir,String...extensions)//Leave extensions blank to accept all file types
+    static private File fileDialog(String title,boolean openIfTrueElseSave,boolean fileIfTrueElseDir,String... extensions)//Leave extensions blank to accept all file types
     {
         /*@formatter:off*/
         JFileChooser chooser=new JFileChooser();
@@ -1429,19 +1478,19 @@ public class r
         return chooser.getSelectedFile();
         /*@formatter:on*/
     }
-    static public File openFile(String title,String...extensions)
+    static public File openFile(String title,String... extensions)
     {
         return fileDialog(title,true,true,extensions);
     }
-    static public File openDirectory(String title,String...extensions)
+    static public File openDirectory(String title,String... extensions)
     {
         return fileDialog(title,true,false,extensions);
     }
-    static public File saveFile(String title,String...extensions)//Save is defined as a thing where you gotta type out a new file path or something in the dialog, as opposed to open where you only select whats there
+    static public File saveFile(String title,String... extensions)//Save is defined as a thing where you gotta type out a new file path or something in the dialog, as opposed to open where you only select whats there
     {
         return fileDialog(title,false,true,extensions);
     }
-    static public File saveDirectory(String title,String...extensions)
+    static public File saveDirectory(String title,String... extensions)
     {
         return fileDialog(title,false,false,extensions);
     }

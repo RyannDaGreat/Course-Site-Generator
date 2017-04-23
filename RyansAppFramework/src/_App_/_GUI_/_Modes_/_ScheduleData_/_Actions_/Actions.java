@@ -3,10 +3,9 @@ import _App_.App;
 import _App_._GUI_._Modes_._ScheduleData_._Boilerplate_.Boilerplate;
 import _App_._GUI_._Modes_._ScheduleData_._Reader_.Reader;
 import _Externals_.SD_ScheduleItemsTableView;
+import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.time.LocalDate;
 public class Actions
 {
     public App app;
@@ -39,40 +38,19 @@ public class Actions
     //Setters
     public void setStartingMonday(String x)
     {
-        try
-        {
-            boilerplate.getSdStartingMonday_datePicker().setValue(LocalDate.parse(x));
-        }
-        catch(Exception ignored)
-        {
-            // ignored.printStackTrace();
-        }
+        r.setDatePickerValue(boilerplate.getSdStartingMonday_datePicker(),x);
     }
     public void setEndingFriday(String x)
     {
-        try
-        {
-            boilerplate.getSdEndingFriday_datePicker().setValue(LocalDate.parse(x));
-        }
-        catch(Exception ignored)
-        {
-            // ignored.printStackTrace();
-        }
+        r.setDatePickerValue(boilerplate.getSdEndingFriday_datePicker(),x);
     }
     public void setDate(String x)
     {
-        try
-        {
-            boilerplate.getSdDate_datePicker().setValue(LocalDate.parse(x));
-        }
-        catch(Exception ignored)
-        {
-            // ignored.printStackTrace();
-        }
+        r.setDatePickerValue(boilerplate.getSdDate_datePicker(),x);
     }
     public void setType(String x)
     {
-        boilerplate.getSdType_comboBox().setValue(x);
+        r.setComboboxOption(boilerplate.getSdType_comboBox(),x);
     }
     public void setTime(String x)
     {
