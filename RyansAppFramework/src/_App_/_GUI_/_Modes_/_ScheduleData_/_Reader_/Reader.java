@@ -77,7 +77,6 @@ public class Reader
         {
             e.printStackTrace();
         }
-        r.println(o);
         return o;
     }
 }
