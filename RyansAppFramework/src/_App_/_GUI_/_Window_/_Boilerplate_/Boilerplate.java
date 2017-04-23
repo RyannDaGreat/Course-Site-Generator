@@ -1,6 +1,7 @@
 package _App_._GUI_._Window_._Boilerplate_;
 import _Externals_.CD_SitePagesTableView;
 import _Externals_.OfficeHoursGrid;
+import _Externals_.SD_ScheduleItemsTableView;
 import _Externals_.TD_TATableView;
 import _Externals_._Resources_.ResourceGetter;
 import _App_.App;
@@ -278,7 +279,10 @@ public class Boilerplate extends VBox
         anchorPane10=new AnchorPane();
         vBox11=new VBox();
         text11110=new Text();
-        sdScheduledItems_tableView2=new TableView();
+        sdScheduledItems_tableView2=new SD_ScheduleItemsTableView(app.io.propertyGetter.getProperty("prop198"),
+                                                                  app.io.propertyGetter.getProperty("prop199"),
+                                                                  app.io.propertyGetter.getProperty("prop200"),
+                                                                  app.io.propertyGetter.getProperty("prop201"));
         sdType_tableColumn11=new TableColumn();
         sdDate_tableColumn12=new TableColumn();
         sdTitle_tableColumn13=new TableColumn();
@@ -1776,10 +1780,10 @@ public class Boilerplate extends VBox
         anchorPane9.getChildren().add(vBox10);
         vBox9.getChildren().add(anchorPane9);
         vBox11.getChildren().add(text11110);
-        sdScheduledItems_tableView2.getColumns().add(sdType_tableColumn11);
-        sdScheduledItems_tableView2.getColumns().add(sdDate_tableColumn12);
-        sdScheduledItems_tableView2.getColumns().add(sdTitle_tableColumn13);
-        sdScheduledItems_tableView2.getColumns().add(sdTopic_tableColumn14);
+        // sdScheduledItems_tableView2.getColumns().add(sdType_tableColumn11);
+        // sdScheduledItems_tableView2.getColumns().add(sdDate_tableColumn12);
+        // sdScheduledItems_tableView2.getColumns().add(sdTitle_tableColumn13);
+        // sdScheduledItems_tableView2.getColumns().add(sdTopic_tableColumn14);
         vBox11.getChildren().add(sdScheduledItems_tableView2);
         anchorPane10.getChildren().add(vBox11);
         vBox9.getChildren().add(anchorPane10);
@@ -2129,7 +2133,7 @@ public class Boilerplate extends VBox
     //endregion
     public final DatePicker sdStartingMonday_datePicker0;
     public final DatePicker sdEndingFriday_datePicker;
-    public final TableView sdScheduledItems_tableView2;
+    public final SD_ScheduleItemsTableView sdScheduledItems_tableView2;
     public final TableColumn sdType_tableColumn11;
     public final TableColumn sdDate_tableColumn12;
     public final TableColumn sdTitle_tableColumn13;

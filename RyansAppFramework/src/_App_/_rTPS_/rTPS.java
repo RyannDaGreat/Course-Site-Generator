@@ -15,6 +15,7 @@ public class rTPS extends UndoRedoCoordinator
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         lastState=app.io.saver.getAppState();
+        //region AUTOTRANSACTOR: Set A timer to keep running refreshlastappstate on a new thread
 //⁠⁠⁠⁠⁠                                    ⎧                                                                                                                ⎫
 //⁠⁠⁠⁠⁠                                    ⎪            ⎧                                                                                                  ⎫⎪
 //⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎧                                                          ⎫                       ⎪⎪
@@ -26,6 +27,7 @@ public class rTPS extends UndoRedoCoordinator
 //⁠⁠⁠⁠⁠                                    ⎩                                                                                                                ⎭
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+        //endregion
     }
     //region Auto-Transactor
     //Is a thread that runs on a timer and automatically saves any changes as a transaction, detected by a change in App state.

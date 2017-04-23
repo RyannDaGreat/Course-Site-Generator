@@ -183,10 +183,13 @@ public class r
     }
     public static void setComboboxOption(ComboBox c,Object option)
     {
+        /*@formatter:off*/
         if(option==null||option.toString().equals("null"))
             c.getSelectionModel().clearSelection();
+        else
         //noinspection unchecked
-        c.getSelectionModel().select(option);
+            c.getSelectionModel().select(option);
+        /*@formatter:on*/
     }
     public static JSONObject readJson(String path)
     {

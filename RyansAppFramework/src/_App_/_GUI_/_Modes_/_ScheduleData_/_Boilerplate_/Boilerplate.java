@@ -1,5 +1,6 @@
 package _App_._GUI_._Modes_._ScheduleData_._Boilerplate_;
 import _App_.App;
+import _Externals_.SD_ScheduleItemsTableView;
 import javafx.scene.control.*;
 public class Boilerplate
 {
@@ -21,7 +22,7 @@ public class Boilerplate
     {
         return megaplate.sdEndingFriday_datePicker;
     }
-    public TableView getSdScheduledItems_tableView()
+    public SD_ScheduleItemsTableView getSdScheduledItems_tableView()
     {
         return megaplate.sdScheduledItems_tableView2;
     }

@@ -26,6 +26,7 @@ public class Loader
             JSONObject x=new JSONObject(state);
             app.gui.modes.courseDetails.actions.setState(x.getJSONObject(propertyGetter.getStateKeyCourseDetails()));
             app.gui.modes.tadata.actions.setState(x.getString(propertyGetter.getStateKeyTAData()));
+            app.gui.modes.scheduleData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyScheduleData()));
         }
         catch(JSONException e)
         {
