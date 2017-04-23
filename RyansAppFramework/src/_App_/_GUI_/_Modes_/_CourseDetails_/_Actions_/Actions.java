@@ -45,6 +45,7 @@ public class Actions
     public void setBannerImagePath(String x){boilerplate.getPsBanner_imageView().setImage(new LocatedImage(x));}
     public void setLeftFooterImagePath(String x){boilerplate.getPsLeft_imageView().setImage(new LocatedImage(x));}
     public void setRightFooterImagePath(String x){boilerplate.getPsRight_imageView().setImage(new LocatedImage(x));}
+    public void setSitePagesState(String x){boilerplate.getStSitePages_tableView().setState(x);}
     /*@formatter:on*/
     //endregion
     public void setState(JSONObject state)
@@ -63,6 +64,7 @@ public class Actions
             setBannerImagePath(state.get(propertyGetter.getStateKeyCdBannerImage()).toString());
             setLeftFooterImagePath(state.get(propertyGetter.getStateKeyCdLeftFooterImage()).toString());
             setRightFooterImagePath(state.get(propertyGetter.getStateKeyCdRightFooterImage()).toString());
+            setSitePagesState(state.get(propertyGetter.getStateKeyCdSitePagesState()).toString());
         }
         catch(JSONException e)
         {

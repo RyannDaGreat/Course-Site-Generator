@@ -1,6 +1,8 @@
 package _App_._IO_._Loader_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _Externals_.r;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 @SuppressWarnings("WeakerAccess")
@@ -17,7 +19,7 @@ public class Loader
     }
     public void handleNew()
     {
-        loadState(new File(app.io.propertyGetter.getNewFilePath()));
+        loadAppStateFromFile(new File(app.io.propertyGetter.getNewFilePath()));
         app.gui.toolbar.actions.disableSaveButton();
         setCurrentFilePath(app.io.propertyGetter.getAppTitle());
     }
@@ -29,15 +31,23 @@ public class Loader
     {
         app.io.saver.setCurrentFilePath(path);
     }
-    public void setState(String state)
+    public void setAppState(String state)
     {
-        String modeStateSeparator=app.io.propertyGetter.getModeStateSeparator();
-        String[] modeStates=state.split(modeStateSeparator);
-        app.gui.modes.tadata.actions.setState(modeStates[0]);
+        try
+        {
+            JSONObject x=new JSONObject(state);
+            String modeStateSeparator=app.io.propertyGetter.getModeStateSeparator();
+            String[] modeStates=state.split(modeStateSeparator);
+            app.gui.modes.tadata.actions.setState(modeStates[0]);
+        }
+        catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
     }
-    public void loadState(File f)
+    public void loadAppStateFromFile(File f)
     {
-        setState(r.ReadFile(f));
+        setAppState(r.ReadFile(f));
         app.rtps.clearHistory();
         app.gui.toolbar.actions.disableSaveButton();
         setCurrentFilePath(f.getPath());

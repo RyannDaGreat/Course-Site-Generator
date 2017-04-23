@@ -68,6 +68,10 @@ public class Reader
     {
         return ((LocatedImage)boilerplate.getPsRight_imageView().getImage()).getURL();
     }
+    public String getSitePagesState()
+    {
+        return boilerplate.getStSitePages_tableView().getState();
+    }
     public JSONObject getState()
     {
         JSONObject o=new JSONObject();
@@ -85,6 +89,7 @@ public class Reader
             o.accumulate(propertyGetter.getStateKeyCdBannerImage(),getBannerImagePath());
             o.accumulate(propertyGetter.getStateKeyCdLeftFooterImage(),getLeftFooterImagePath());
             o.accumulate(propertyGetter.getStateKeyCdRightFooterImage(),getRightFooterImagePath());
+            o.accumulate(propertyGetter.getStateKeyCdSitePagesState(),getSitePagesState());
         }
         catch(JSONException e)
         {

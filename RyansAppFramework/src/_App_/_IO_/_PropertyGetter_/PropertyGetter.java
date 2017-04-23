@@ -105,6 +105,7 @@ public class PropertyGetter
     public String getStateKeyCdBannerImage(){return getProperty("state_key_cd_BannerImage");}
     public String getStateKeyCdLeftFooterImage(){return getProperty("state_key_cd_LeftFooterImage");}
     public String getStateKeyCdRightFooterImage(){return getProperty("state_key_cd_RightFooterImage");}
+    public String getStateKeyCdSitePagesState(){return getProperty("state_key_cd_SitePagesState");}
     /*@formatter:on*/
     //endregion
     //region If I ever want to use XML for some reason

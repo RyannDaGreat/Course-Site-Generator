@@ -1,5 +1,6 @@
 package _App_._GUI_._Modes_._CourseDetails_._Boilerplate_;
 import _App_.App;
+import _Externals_.CD_SitePagesTableView;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -60,7 +61,7 @@ public class Boilerplate
     {
         return megaplate.cdStChange_button9;
     }
-    public TableView getStSitePages_tableView()
+    public CD_SitePagesTableView getStSitePages_tableView()
     {
         return megaplate.cdStSitePages_tableView;
     }

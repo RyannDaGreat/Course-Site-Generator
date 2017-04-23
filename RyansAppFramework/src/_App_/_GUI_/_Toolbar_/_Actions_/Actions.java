@@ -57,7 +57,7 @@ public class Actions
     {
         if(app.gui.dialogs.confirmSave())
         {
-            app.io.loader.loadState(app.gui.dialogs.openFile());
+            app.io.loader.loadAppStateFromFile(app.gui.dialogs.openFile());
             r.say("Successfully opened file");
         }
     }

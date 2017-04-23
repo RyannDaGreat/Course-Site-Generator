@@ -48,40 +48,40 @@ public class App extends Application//This is the head of the tree. It's special
         //                                        {
         //                                            if(ⵁ.getCode()==KeyCode.C)
         //                                            {
-        //                                                System.out.println(gui.modes.tadata.reader.getState());
-        //                                                r.StringToClipboard(gui.modes.tadata.reader.getState());
+        //                                                System.out.println(gui.modes.tadata.reader.getAppState());
+        //                                                r.StringToClipboard(gui.modes.tadata.reader.getAppState());
         //                                            }
         //                                            if(ⵁ.getCode()==KeyCode.V)
         //                                            {
         //                                                System.out.println("SETTING STATE");
-        //                                                gui.modes.tadata.actions.setState(r.StringFromClipboard());
+        //                                                gui.modes.tadata.actions.setAppState(r.StringFromClipboard());
         //                                            }
         //                                        });
         //endregion
         // region Get rid of me im just for a small debugging session
-        gui.window.boilerplate.setOnKeyPressed(ⵁ->
-                                               {
-                                                   if(ⵁ.getCode()==KeyCode.C)
-                                                   {
-                                                       r.say("state copied");
-                                                       String myStringToCopy=r.jsonToPrettyString(gui.modes.courseDetails.reader.getState());
-                                                       r.println(myStringToCopy);
-                                                       r.StringToClipboard(myStringToCopy);
-                                                   }
-                                                   if(ⵁ.getCode()==KeyCode.V)
-                                                   {
-                                                       r.say("state pasted");
-                                                       System.out.println("SETTING STATE");
-                                                       try
-                                                       {
-                                                           gui.modes.courseDetails.actions.setState(new JSONObject(r.StringFromClipboard()));
-                                                       }
-                                                       catch(JSONException e)
-                                                       {
-                                                           e.printStackTrace();
-                                                       }
-                                                   }
-                                               });
+        // gui.window.boilerplate.setOnKeyPressed(ⵁ->
+        //                                        {
+        //                                            if(ⵁ.getCode()==KeyCode.C)
+        //                                            {
+        //                                                r.say("state copied");
+        //                                                String myStringToCopy=r.jsonToPrettyString(gui.modes.courseDetails.reader.getAppState());
+        //                                                r.println(myStringToCopy);
+        //                                                r.StringToClipboard(myStringToCopy);
+        //                                            }
+        //                                            if(ⵁ.getCode()==KeyCode.V)
+        //                                            {
+        //                                                r.say("state pasted");
+        //                                                System.out.println("SETTING STATE");
+        //                                                try
+        //                                                {
+        //                                                    gui.modes.courseDetails.actions.setAppState(new JSONObject(r.StringFromClipboard()));
+        //                                                }
+        //                                                catch(JSONException e)
+        //                                                {
+        //                                                    e.printStackTrace();
+        //                                                }
+        //                                            }
+        //                                        });
         // endregion
         stage.show();
     }

@@ -1,8 +1,6 @@
 package _App_._IO_._Saver_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _Externals_.r;
-
-import java.io.File;
 @SuppressWarnings("WeakerAccess")
 public class Saver
 {
@@ -29,7 +27,7 @@ public class Saver
     {
         app.stage.setTitle(path);
     }
-    public String getState()
+    public String getAppState()
     {
         String out="";
         String modeStateSeparator=app.io.propertyGetter.getModeStateSeparator();
@@ -38,7 +36,7 @@ public class Saver
     }
     public void saveState(String path)//DON'T CREATE A SECOND FILE WRITING METHOD! JUST REPLACE THIS ONE IF YOU NEED TO. JSON IS CONSIDERED AN EXPORT.
     {
-        r.WriteFileIgnoreExceptions(path,getState());
+        r.WriteFileIgnoreExceptions(path,getAppState());
         app.gui.toolbar.actions.disableSaveButton();
         setCurrentFilePath(path);
     }
