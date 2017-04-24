@@ -10,9 +10,9 @@ import javafx.scene.input.KeyCode;
 @SuppressWarnings("unchecked")
 public class RD_RecitationDataTableView extends TableView
 {
-    public void addRecitation(String type,String date,String title,String topic,String time,String link,String criteria)
+    public void addRecitation(String section,String instructor,String dayⳆtime,String location,String ta1,String ta2)
     {
-        getItems().add(new Recitation(type,date,title,topic,time,link,criteria));
+        getItems().add(new Recitation(section,instructor,dayⳆtime,location,ta1,ta2));
     }
     public String getState()
     {
@@ -25,7 +25,7 @@ public class RD_RecitationDataTableView extends TableView
         for(String x:state.split(";"))
         {
             String[]y=x.split(",");
-            getItems().add(new Recitation(y[0],y[1],y[2],y[3],y[4],y[5],y[6]));
+            getItems().add(new Recitation(y[0],y[1],y[2],y[3],y[4],y[5]));
         }
     }
     public Recitation getSelected()
@@ -40,76 +40,88 @@ public class RD_RecitationDataTableView extends TableView
     {
         remove(getSelected());
     }
-    public void updateRecitation(String type,String date,String title,String topic)
+    public void updateRecitation(String section,String instructor,String dayⳆtime,String location,String ta1,String ta2)
     {
-        getSelected().typeProperty().setValue(type);
-        getSelected().dateProperty().setValue(date);
-        getSelected().titleProperty().setValue(title);
-        getSelected().topicProperty().setValue(topic);
+        getSelected().sectionProperty().setValue(section);
+        getSelected().instructorProperty().setValue(instructor);
+        getSelected().dayⳆtimeProperty().setValue(dayⳆtime);
+        getSelected().locationProperty().setValue(location);
+        getSelected().ta1Property().setValue(ta1);
+        getSelected().ta2Property().setValue(ta2);
     }
     public void setOnRecitationSelected(Runnable r)
     {
         getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->r.run());
     }
-    public RD_RecitationDataTableView(String typeHeader,String dateHeader,String titleHeader,String topicHeader)
+    public RD_RecitationDataTableView(String sectionHeader,String instructorHeader,String dayⳆtimeHeader,String locationHeader,String ta1Header,String ta2Header)
     {
+        addRecitation("A","B","C","D","E","F");
+        addRecitation("A6","B5","C4","D3","E2","F1");
         setOnKeyPressed(ⵁ->r.branch(this::removeSelected,ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE));//Only keeping this because I have the auto-transactor!
         //
-        final TableColumn< Recitation,String> typeCol=new TableColumn<>(typeHeader);
-        final TableColumn<Recitation,String> dateCol=new TableColumn<>(dateHeader);
-        final TableColumn<Recitation,String> titleCol=new TableColumn<>(titleHeader);
-        final TableColumn<Recitation,String> topicCol=new TableColumn<>(topicHeader);
+        final TableColumn< Recitation,String> sectionCol=new TableColumn<>(sectionHeader);
+        final TableColumn<Recitation,String> instructorCol=new TableColumn<>(instructorHeader);
+        final TableColumn<Recitation,String> dayⳆtimeCol=new TableColumn<>(dayⳆtimeHeader);
+        final TableColumn<Recitation,String> locationCol=new TableColumn<>(locationHeader);
+        final TableColumn<Recitation,String> ta1Col=new TableColumn<>(ta1Header);
+        final TableColumn<Recitation,String> ta2Col=new TableColumn<>(ta2Header);
         //
-        getColumns().addAll(typeCol,dateCol,titleCol,topicCol);
+        getColumns().addAll(sectionCol,instructorCol,dayⳆtimeCol,locationCol,ta1Col,ta2Col);
         //
-        typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
-        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
-        titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
-        topicCol.setCellValueFactory(new PropertyValueFactory<>("topic"));
-        //
-        // setEditable(true);
+        sectionCol.setCellValueFactory(new PropertyValueFactory<>("section"));
+        instructorCol.setCellValueFactory(new PropertyValueFactory<>("instructor"));
+        dayⳆtimeCol.setCellValueFactory(new PropertyValueFactory<>("dayⳆtime"));
+        locationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
+        ta1Col.setCellValueFactory(new PropertyValueFactory<>("ta1"));
+        ta2Col.setCellValueFactory(new PropertyValueFactory<>("ta2"));
     }
 
     //region Recitation Class (with getters and setters)
     public class Recitation
     {
-        private StringProperty type;
-        private StringProperty date;
-        private StringProperty title;
-        private StringProperty topic;
-        public String time;
-        public String link;
-        public String criteria;
-        public Recitation(String type,String date,String title,String topic,String time,String link,String criteria)
+        private StringProperty section;
+        private StringProperty instructor;
+        private StringProperty dayⳆtime;
+        private StringProperty location;
+        private StringProperty ta1;
+        private StringProperty ta2;
+        public Recitation(String section,String instructor,String dayⳆtime,String location,String ta1,String ta2)
         {
-            this.type=new SimpleStringProperty(type);
-            this.date=new SimpleStringProperty(date);
-            this.title=new SimpleStringProperty(title);
-            this.topic=new SimpleStringProperty(topic);
-            this.time=time;
-            this.link=link;
-            this.criteria=criteria;
+            this.section=new SimpleStringProperty(section);
+            this.instructor=new SimpleStringProperty(instructor);
+            this.dayⳆtime=new SimpleStringProperty(dayⳆtime);
+            this.location=new SimpleStringProperty(location);
+            this.ta1=new SimpleStringProperty(ta1);
+            this.ta2=new SimpleStringProperty(ta2);
         }
-        public StringProperty typeProperty()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
+        public StringProperty sectionProperty()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
         {
-            return type;
+            return section;
         }
-        public StringProperty dateProperty()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
+        public StringProperty instructorProperty()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
         {
-            return date;
+            return instructor;
         }
-        public StringProperty titleProperty()
+        public StringProperty dayⳆtimeProperty()
         {
-            return title;
+            return dayⳆtime;
         }
-        public StringProperty topicProperty()
+        public StringProperty locationProperty()
         {
-            return topic;
+            return location;
+        }
+        public StringProperty ta1Property()
+        {
+            return ta1;
+        }
+        public StringProperty ta2Property()
+        {
+            return ta2;
         }
         //endregion
         public String toString()
         {
-            return type.getValue()+","+date.getValue()+","+title.getValue()+","+topic.getValue()+","+time+","+link+","+criteria;
+            return section.getValue()+","+instructor.getValue()+","+dayⳆtime.getValue()+","+location.getValue()+","+ta1.getValue()+","+ta2.getValue();
         }
     }
 }

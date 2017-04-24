@@ -1,8 +1,5 @@
 package _App_._GUI_._Window_._Boilerplate_;
-import _Externals_.CD_SitePagesTableView;
-import _Externals_.OfficeHoursGrid;
-import _Externals_.SD_ScheduleItemsTableView;
-import _Externals_.TD_TATableView;
+import _Externals_.*;
 import _Externals_._Resources_.ResourceGetter;
 import _App_.App;
 import javafx.geometry.Insets;
@@ -223,7 +220,12 @@ public class Boilerplate extends VBox
         rowConstraints113=new RowConstraints();
         text118=new Text();
         anchorPane7=new AnchorPane();
-        rd_tableView1=new TableView();
+        rd_tableView1=new RD_RecitationDataTableView(app.io.propertyGetter.getProperty("prop144"),
+                                                     app.io.propertyGetter.getProperty("prop145"),
+                                                     app.io.propertyGetter.getProperty("prop146"),
+                                                     app.io.propertyGetter.getProperty("prop147"),
+                                                     app.io.propertyGetter.getProperty("prop148"),
+                                                     app.io.propertyGetter.getProperty("prop149"));
         rdSection_tableColumn6=new TableColumn();
         rdInstructor_tableColumn7=new TableColumn();
         rdRecitationData_tableColumn8=new TableColumn();
@@ -1727,11 +1729,11 @@ public class Boilerplate extends VBox
         gridPane9.getRowConstraints().add(rowConstraints113);
         gridPane9.getChildren().add(text118);
         vBox7.getChildren().add(gridPane9);
-        rd_tableView1.getColumns().add(rdSection_tableColumn6);
-        rd_tableView1.getColumns().add(rdInstructor_tableColumn7);
-        rd_tableView1.getColumns().add(rdRecitationData_tableColumn8);
-        rd_tableView1.getColumns().add(rdTA1_tableColumn9);
-        rd_tableView1.getColumns().add(rdTA2tableColumn10);
+        // rd_tableView1.getColumns().add(rdSection_tableColumn6);
+        // rd_tableView1.getColumns().add(rdInstructor_tableColumn7);
+        // rd_tableView1.getColumns().add(rdRecitationData_tableColumn8);
+        // rd_tableView1.getColumns().add(rdTA1_tableColumn9);
+        // rd_tableView1.getColumns().add(rdTA2tableColumn10);
         anchorPane7.getChildren().add(rd_tableView1);
         vBox7.getChildren().add(anchorPane7);
         vBox8.getChildren().add(text119);
@@ -2067,7 +2069,7 @@ public class Boilerplate extends VBox
     public final Text text118;
     public final AnchorPane anchorPane7;
     //endregion
-    public final TableView rd_tableView1;
+    public final RD_RecitationDataTableView rd_tableView1;
     public final TableColumn rdSection_tableColumn6;
     public final TableColumn rdInstructor_tableColumn7;
     public final TableColumn rdRecitationData_tableColumn8;

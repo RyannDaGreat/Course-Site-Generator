@@ -1,5 +1,6 @@
 package _App_._GUI_._Modes_._RecitationData_._Boilerplate_;
 import _App_.App;
+import _Externals_.RD_RecitationDataTableView;
 import javafx.scene.control.*;
 public class Boilerplate
 {
@@ -13,7 +14,7 @@ public class Boilerplate
     {
         megaplate=app.gui.window.boilerplate;
     }
-    public TableView getTableView()
+    public RD_RecitationDataTableView getTableView()
     {
         return megaplate.rd_tableView1;
     }
