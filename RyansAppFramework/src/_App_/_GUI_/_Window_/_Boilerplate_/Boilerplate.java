@@ -227,7 +227,7 @@ public class Boilerplate extends VBox
                                                      app.io.propertyGetter.getProperty("prop146"),
                                                      app.io.propertyGetter.getProperty("prop147"),
                                                      app.io.propertyGetter.getProperty("prop148"),
-                                                     app.io.propertyGetter.getProperty("prop149"));
+                                                     app.io.propertyGetter.getProperty("prop666"));
         rdSection_tableColumn6=new TableColumn();
         rdInstructor_tableColumn7=new TableColumn();
         rdRecitationData_tableColumn8=new TableColumn();

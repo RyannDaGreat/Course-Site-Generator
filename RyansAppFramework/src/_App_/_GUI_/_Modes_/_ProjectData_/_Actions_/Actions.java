@@ -17,25 +17,22 @@ public class Actions
     }
     public void setTeamsTableState(String state)
     {
-        return boilerplate.getT__tableView().getState();
+        boilerplate.getT__tableView().setState(state);
     }
     public void setStudentsTableState(String state)
     {
-        return boilerplate.getS__tableView().getState();
+        boilerplate.getS__tableView().setState(state);
     }
-    public JSONObject getState()
+    public void setState(JSONObject state)
     {
-        JSONObject o=new JSONObject();
         try
         {
-            o.accumulate("TeamsTable",getTeamsTableState());
-            o.accumulate("StudentsTable",getStudentsTableState());
+            setTeamsTableState(state.getString("TeamsTable"));
+            setStudentsTableState(state.getString("StudentsTable"));
         }
         catch(JSONException e)
         {
             e.printStackTrace();
         }
-        return o;
     }
-
 }

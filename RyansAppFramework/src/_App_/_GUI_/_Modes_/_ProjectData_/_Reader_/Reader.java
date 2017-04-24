@@ -51,4 +51,3 @@ public class Reader
     // {
     //     return boilerplate.getT_TextColor_text().getText().trim();
     // }
-}

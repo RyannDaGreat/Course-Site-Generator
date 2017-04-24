@@ -28,6 +28,7 @@ public class Loader
             app.gui.modes.tadata.actions.setState(x.getString(propertyGetter.getStateKeyTAData()));
             app.gui.modes.scheduleData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyScheduleData()));
             app.gui.modes.recitationData.actions.setState(x.getString(propertyGetter.getStateKeyRecitationData()));
+            app.gui.modes.projectData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyProjectData()));
         }
         catch(JSONException e)
         {

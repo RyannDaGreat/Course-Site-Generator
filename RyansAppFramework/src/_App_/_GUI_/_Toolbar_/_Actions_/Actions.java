@@ -17,6 +17,8 @@ public class Actions
         reader=app.gui.toolbar.reader;
         boilerplate=app.gui.toolbar.boilerplate;
         disableSaveButton();
+        disableRedoButton();
+        disableUndoButton();
     }
     //region enable/disable save button
     public void enableSaveButton()
