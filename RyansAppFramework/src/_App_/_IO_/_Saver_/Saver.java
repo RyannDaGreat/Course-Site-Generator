@@ -5,6 +5,8 @@ import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
 @SuppressWarnings("WeakerAccess")
 public class Saver
 {
@@ -51,6 +53,8 @@ public class Saver
         }
         catch(JSONException e)
         {
+            //noinspection AccessStaticViaInstance
+            app.gui.dialogs.showErrorAlert("Failed to save file");
             e.printStackTrace();
         }
         return r.jsonToPrettyString(o);

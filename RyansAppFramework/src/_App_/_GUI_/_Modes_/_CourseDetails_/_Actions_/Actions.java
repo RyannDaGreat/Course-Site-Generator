@@ -49,28 +49,21 @@ public class Actions
     public void setStylesheet(String x){r.setComboboxOption(boilerplate.getPsStylesheet_comboBox(),x);}
     /*@formatter:on*/
     //endregion
-    public void setState(JSONObject state)
+    public void setState(JSONObject state) throws JSONException
     {
-        try
-        {
-            setSubject(state.getString(propertyGetter.getStateKeyCdSubject()));
-            setTitle(state.getString(propertyGetter.getStateKeyCdTitle()));
-            setInstructorName(state.getString(propertyGetter.getStateKeyCdInstructorName()));
-            setInstructorHome(state.getString(propertyGetter.getStateKeyCdInstructorHome()));
-            setSemester(state.getString(propertyGetter.getStateKeyCdSemester()));
-            setNumber(state.getString(propertyGetter.getStateKeyCdNumber()));
-            setYear(state.getString(propertyGetter.getStateKeyCdYear()));
-            setExportDir(state.getString(propertyGetter.getStateKeyCdExportDir()));
-            setTemplateDir(state.getString(propertyGetter.getStateKeyCdTemplateDir()));
-            setBannerImagePath(state.getString(propertyGetter.getStateKeyCdBannerImage()));
-            setLeftFooterImagePath(state.getString(propertyGetter.getStateKeyCdLeftFooterImage()));
-            setRightFooterImagePath(state.getString(propertyGetter.getStateKeyCdRightFooterImage()));
-            setSitePagesState(state.getString(propertyGetter.getStateKeyCdSitePagesState()));
-            setStylesheet(state.getString("Stylesheet"));
-        }
-        catch(JSONException e)
-        {
-            e.printStackTrace();
-        }
+        setSubject(state.getString(propertyGetter.getStateKeyCdSubject()));
+        setTitle(state.getString(propertyGetter.getStateKeyCdTitle()));
+        setInstructorName(state.getString(propertyGetter.getStateKeyCdInstructorName()));
+        setInstructorHome(state.getString(propertyGetter.getStateKeyCdInstructorHome()));
+        setSemester(state.getString(propertyGetter.getStateKeyCdSemester()));
+        setNumber(state.getString(propertyGetter.getStateKeyCdNumber()));
+        setYear(state.getString(propertyGetter.getStateKeyCdYear()));
+        setExportDir(state.getString(propertyGetter.getStateKeyCdExportDir()));
+        setTemplateDir(state.getString(propertyGetter.getStateKeyCdTemplateDir()));
+        setBannerImagePath(state.getString(propertyGetter.getStateKeyCdBannerImage()));
+        setLeftFooterImagePath(state.getString(propertyGetter.getStateKeyCdLeftFooterImage()));
+        setRightFooterImagePath(state.getString(propertyGetter.getStateKeyCdRightFooterImage()));
+        setSitePagesState(state.getString(propertyGetter.getStateKeyCdSitePagesState()));
+        setStylesheet(state.getString("Stylesheet"));
     }
 }

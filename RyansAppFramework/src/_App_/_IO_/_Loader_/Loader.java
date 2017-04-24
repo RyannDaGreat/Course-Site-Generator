@@ -32,6 +32,8 @@ public class Loader
         }
         catch(JSONException e)
         {
+            //noinspection AccessStaticViaInstance
+            app.gui.dialogs.showErrorAlert("Failed to load file");
             e.printStackTrace();
         }
     }

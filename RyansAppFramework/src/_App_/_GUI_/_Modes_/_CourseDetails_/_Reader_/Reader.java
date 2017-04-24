@@ -76,31 +76,23 @@ public class Reader
     {
         return ""+boilerplate.getPsStylesheet_comboBox().getValue();
     }
-    public JSONObject getState()
+    public JSONObject getState() throws JSONException
     {
         JSONObject o=new JSONObject();
-        try
-        {
-            o.accumulate(propertyGetter.getStateKeyCdSubject(),getSubject());
-            o.accumulate(propertyGetter.getStateKeyCdTitle(),getTitle());
-            o.accumulate(propertyGetter.getStateKeyCdInstructorName(),getInstructorName());
-            o.accumulate(propertyGetter.getStateKeyCdInstructorHome(),getInstructorHome());
-            o.accumulate(propertyGetter.getStateKeyCdSemester(),getSemester());
-            o.accumulate(propertyGetter.getStateKeyCdNumber(),getNumber());
-            o.accumulate(propertyGetter.getStateKeyCdYear(),getYear());
-            o.accumulate(propertyGetter.getStateKeyCdExportDir(),getExportDir());
-            o.accumulate(propertyGetter.getStateKeyCdTemplateDir(),getTemplateDir());
-            o.accumulate(propertyGetter.getStateKeyCdBannerImage(),getBannerImagePath());
-            o.accumulate(propertyGetter.getStateKeyCdLeftFooterImage(),getLeftFooterImagePath());
-            o.accumulate(propertyGetter.getStateKeyCdRightFooterImage(),getRightFooterImagePath());
-            o.accumulate(propertyGetter.getStateKeyCdSitePagesState(),getSitePagesState());
-            o.accumulate("Stylesheet",getStylesheet());
-        }
-        catch(JSONException e)
-        {
-            r.say("Failed to get state of course details see stack trace");
-            e.printStackTrace();
-        }
+        o.accumulate(propertyGetter.getStateKeyCdSubject(),getSubject());
+        o.accumulate(propertyGetter.getStateKeyCdTitle(),getTitle());
+        o.accumulate(propertyGetter.getStateKeyCdInstructorName(),getInstructorName());
+        o.accumulate(propertyGetter.getStateKeyCdInstructorHome(),getInstructorHome());
+        o.accumulate(propertyGetter.getStateKeyCdSemester(),getSemester());
+        o.accumulate(propertyGetter.getStateKeyCdNumber(),getNumber());
+        o.accumulate(propertyGetter.getStateKeyCdYear(),getYear());
+        o.accumulate(propertyGetter.getStateKeyCdExportDir(),getExportDir());
+        o.accumulate(propertyGetter.getStateKeyCdTemplateDir(),getTemplateDir());
+        o.accumulate(propertyGetter.getStateKeyCdBannerImage(),getBannerImagePath());
+        o.accumulate(propertyGetter.getStateKeyCdLeftFooterImage(),getLeftFooterImagePath());
+        o.accumulate(propertyGetter.getStateKeyCdRightFooterImage(),getRightFooterImagePath());
+        o.accumulate(propertyGetter.getStateKeyCdSitePagesState(),getSitePagesState());
+        o.accumulate("Stylesheet",getStylesheet());
         return o;
     }
 }

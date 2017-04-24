@@ -23,31 +23,23 @@ public class Reader
     {
         return boilerplate.getS__tableView().getState();
     }
-    public JSONObject getState()
+    public JSONObject getState() throws JSONException
     {
         JSONObject o=new JSONObject();
-        try
-        {
-            o.accumulate("TeamsTable",getTeamsTableState());
-            o.accumulate("StudentsTable",getStudentsTableState());
-        }
-        catch(JSONException e)
-        {
-            e.printStackTrace();
-        }
+        o.accumulate("TeamsTable",getTeamsTableState());
+        o.accumulate("StudentsTable",getStudentsTableState());
         return o;
     }
-
 }
-    // public String getColor()
-    // {
-    //     return boilerplate.getT_Color_text().getText().trim();
-    // }
-    // public String getTextColor()
-    // {
-    //     return boilerplate.getT_TextColor_text().getText().trim();
-    // }
-    // public String getTextColor()
-    // {
-    //     return boilerplate.getT_TextColor_text().getText().trim();
-    // }
+// public String getColor()
+// {
+//     return boilerplate.getT_Color_text().getText().trim();
+// }
+// public String getTextColor()
+// {
+//     return boilerplate.getT_TextColor_text().getText().trim();
+// }
+// public String getTextColor()
+// {
+//     return boilerplate.getT_TextColor_text().getText().trim();
+// }

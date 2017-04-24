@@ -498,7 +498,7 @@
     </target>
     
     
-    <!-- Check availability of main JavaFX runtime jar (jfxrt.jar) -->
+    <!-- Check availability of _Experiments_.main JavaFX runtime jar (jfxrt.jar) -->
 
     <target name="-check-property-javafx.runtime">
         <echo message="javafx.runtime = ${javafx.runtime}" level="verbose"/>
@@ -915,7 +915,7 @@
     </target>
     
     <target name="-check-project">
-        <condition property="main-class-available">
+        <condition property="_Experiments_.main-class-available">
             <isset property="javafx.main.class"/>
         </condition>
         <condition property="vmargs-available">
@@ -1039,7 +1039,7 @@
                 <equals arg1="${javafx.signing.blob}" arg2="true" trim="true"/>
             </and>
         </condition>
-        <echo message="main-class-available = ${main-class-available}" level="verbose"/>
+        <echo message="_Experiments_.main-class-available = ${main-class-available}" level="verbose"/>
         <echo message="vmargs-available = ${vmargs-available}" level="verbose"/>
         <echo message="preloader-available = ${preloader-available}" level="verbose"/>
         <echo message="app-with-preloader = ${app-with-preloader}" level="verbose"/>
@@ -1735,7 +1735,7 @@
                     var title = new String(project.getProperty("application.title"));
                     var mainclass;
                     if(isTrue(fx_in_swing_app) && isTrue(fx_ant_api_1_2)) {
-                        mainclass = new String(project.getProperty("main.class"));
+                        mainclass = new String(project.getProperty("_Experiments_.main.class"));
                         app.setToolkit("swing");
                     } else {
                         mainclass = new String(project.getProperty("javafx.main.class"));
@@ -1911,16 +1911,16 @@
                             var propn = new String(project.getProperty(pn));
                             if(defined(propn) && !contains(manifestHides, propn)) {
                                 var propnr = propn.replace(/\s/g, "-");
-                                var entry = new org.apache.tools.ant.taskdefs.Manifest.Attribute();
-                                entry.setName(propnr);
+                                var _Experiments_.entry = new org.apache.tools.ant.taskdefs.Manifest.Attribute();
+                                _Experiments_.entry.setName(propnr);
                                 var pv = replaceSuffix(pn, JFXPARN, JFXPARV);
                                 var propv = new String(project.getProperty(pv));
                                 if(defined(propv)) {
-                                    entry.setValue(propv);
+                                    _Experiments_.entry.setValue(propv);
                                 } else {
-                                    entry.setValue("");
+                                    _Experiments_.entry.setValue("");
                                 }
-                                man.addConfiguredAttribute(entry);
+                                man.addConfiguredAttribute(_Experiments_.entry);
                             }
                         }
                     }
@@ -2238,7 +2238,7 @@
                     var title = new String(project.getProperty("application.title"));
                     var mainclass;
                     if(isTrue(fx_in_swing_app) && isTrue(fx_ant_api_1_2)) {
-                        mainclass = new String(project.getProperty("main.class"));
+                        mainclass = new String(project.getProperty("_Experiments_.main.class"));
                         app.setToolkit("swing");
                     } else {
                         mainclass = new String(project.getProperty("javafx.main.class"));
@@ -2749,7 +2749,7 @@
             <echo message="Warning: Parameters (if any) not passed to &lt;fx:application&gt; in fallback build mode due to JDK missing JavaScript support."/>
             <fx:application id="fxApp"
                 name="${application.title}"
-                mainClass="${main.class}"
+                mainClass="${_Experiments_.main.class}"
                 fallbackClass="${javafx.fallback.class}"
                 toolkit="swing">
                 <!-- PARAMETERS NOT PASSED IN FALLBACK -->

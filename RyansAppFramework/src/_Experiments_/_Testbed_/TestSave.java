@@ -5,36 +5,36 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 public class TestSave extends App
 {
     final String desiredAppState="{\n"+
-                                 "    \"RecitationData\": \"A5,22342B,234C,D234,E,234F;32A62,B5652,34C4,D3453431,E12325,6F341\",\n"+
+                                 "    \"RecitationData\": \"A,B,C,D,E,F;A6,B5,C4,D3,E2,F1\",\n"+
                                  "    \"CourseDetails\": {\n"+
-                                 "        \"SitePagesState\": \"true,A,B,AOIJ;true,C,D,AOIJS;false,E,F,aoisf;true,G,H,aiohf\",\n"+
-                                 "        \"Semester\": \"Super-Senior Only\",\n"+
-                                 "        \"ExportDir\": \"Hell\",\n"+
+                                 "        \"SitePagesState\": \"true,A,B,AOIJ;true,C,D,AOIJS;false,E,F,aoisf;false,G,H,aiohf\",\n"+
+                                 "        \"Semester\": \"null\",\n"+
+                                 "        \"ExportDir\": \"ioiioh\",\n"+
                                  "        \"BannerImage\": \"file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png\",\n"+
-                                 "        \"Title\": \"Marry Poppins Pie\",\n"+
-                                 "        \"Subject\": \"Astrology\",\n"+
+                                 "        \"Title\": \"CSE 219\",\n"+
+                                 "        \"Subject\": \"null\",\n"+
                                  "        \"Stylesheet\": \"null\",\n"+
                                  "        \"TemplateDir\": \".\\\\templates\\\\CSE219\",\n"+
-                                 "        \"InstructorHome\": \"The Kinky Sex Club\",\n"+
-                                 "        \"Number\": \"3.14159\",\n"+
-                                 "        \"Year\": \"Year Of the Donkeycorn\",\n"+
-                                 "        \"InstructorName\": \"Severous Snape\",\n"+
+                                 "        \"InstructorHome\": \"http://www3.cs.stonybrook.edu/~cse219/Section02/hw/HW5.html\",\n"+
+                                 "        \"Number\": \"null\",\n"+
+                                 "        \"Year\": \"null\",\n"+
+                                 "        \"InstructorName\": \"McKenna\",\n"+
                                  "        \"LeftFooterImage\": \"file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png\",\n"+
-                                 "        \"RightFooterImage\": \"file:/Users/Ryan/Desktop/Screen Shot 2017-04-23 at 1.26.44 AM.png\"\n"+
-                                 "        \"Stylesheet\": \"yeah this is a stylesheet wowza\"\n"+
+                                 "        \"RightFooterImage\": \"file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png\"\n"+
                                  "    },\n"+
                                  "    \"ScheduleData\": {\n"+
-                                 "        \"EndingFriday\": \"2017-04-18\",\n"+
-                                 "        \"StartingMonday\": \"2017-04-05\",\n"+
-                                 "        \"TableState\": \"aAF,bDF,Vc,dRY,bQ,cX,Ud;Ye,fX,Gg,Wh,bR,cV,dX;EiQ,jC,Tk,WlE,bY,EcY,EdT\"\n"+
+                                 "        \"EndingFriday\": \"2017-04-14\",\n"+
+                                 "        \"StartingMonday\": \"2017-04-04\",\n"+
+                                 "        \"TableState\": \"a,b,c,d,b,c,d;e,f,g,h,b,c,d;i,j,k,l,b,c,d\"\n"+
                                  "    },\n"+
-                                 "    \"TAData\": \"true,A,B;false,C,D;true,E,F;false,G,H;false,Ryan Burgert,aoihfaoihoihef@sdpofuih.iuwhe\\n3:30am\\t to\\t4:00am,4:00am\\t to\\t4:30am,4:30am\\t to\\t5:00am,5:00am\\t to\\t5:30am,5:30am\\t to\\t6:00am,6:00am\\t to\\t6:30am,6:30am\\t to\\t7:00am,7:00am\\t to\\t7:30am;Monday,Tuesday,Wednesday,Thursday,Friday;3:30am\\t to\\t4:00am,Monday,Ryan Burgert;3:30am\\t to\\t4:00am,Tuesday,C;3:30am\\t to\\t4:00am,Wednesday,C;3:30am\\t to\\t4:00am,Friday,Ryan Burgert;4:00am\\t to\\t4:30am,Monday,Ryan Burgert;4:00am\\t to\\t4:30am,Wednesday,Ryan Burgert;4:00am\\t to\\t4:30am,Thursday,Ryan Burgert;4:30am\\t to\\t5:00am,Monday,G;4:30am\\t to\\t5:00am,Tuesday,Ryan Burgert;4:30am\\t to\\t5:00am,Wednesday,Ryan Burgert;5:00am\\t to\\t5:30am,Tuesday,G;5:00am\\t to\\t5:30am,Wednesday,G;5:00am\\t to\\t5:30am,Thursday,Ryan Burgert;5:00am\\t to\\t5:30am,Friday,Ryan Burgert;5:30am\\t to\\t6:00am,Monday,Ryan Burgert;5:30am\\t to\\t6:00am,Wednesday,Ryan Burgert;5:30am\\t to\\t6:00am,Friday,Ryan Burgert;6:00am\\t to\\t6:30am,Monday,Ryan Burgert;6:00am\\t to\\t6:30am,Wednesday,Ryan Burgert;6:00am\\t to\\t6:30am,Thursday,Ryan Burgert;6:30am\\t to\\t7:00am,Tuesday,Ryan Burgert;7:00am\\t to\\t7:30am,Thursday,Ryan Burgert\",\n"+
+                                 "    \"TAData\": \"false,Ryan Burgert,ryanburgert@sbu.com;true,Teacher Assistant,TA@sbuTA.com\\n10:30am\\t to\\t11:00am,11:00am\\t to\\t11:30am,11:30am\\t to\\tNoon,Noon\\t to\\t12:30pm,12:30pm\\t to\\t1:00pm,1:00pm\\t to\\t1:30pm,1:30pm\\t to\\t2:00pm,2:00pm\\t to\\t2:30pm,2:30pm\\t to\\t3:00pm,3:00pm\\t to\\t3:30pm,3:30pm\\t to\\t4:00pm,4:00pm\\t to\\t4:30pm,4:30pm\\t to\\t5:00pm,5:00pm\\t to\\t5:30pm,5:30pm\\t to\\t6:00pm,6:00pm\\t to\\t6:30pm,6:30pm\\t to\\t7:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;11:00am\\t to\\t11:30am,Monday,Teacher Assistant;11:30am\\t to\\tNoon,Monday,Teacher Assistant;11:30am\\t to\\tNoon,Thursday,Teacher Assistant;Noon\\t to\\t12:30pm,Monday,Teacher Assistant;Noon\\t to\\t12:30pm,Tuesday,Ryan Burgert;Noon\\t to\\t12:30pm,Thursday,Teacher Assistant;12:30pm\\t to\\t1:00pm,Tuesday,Ryan Burgert;12:30pm\\t to\\t1:00pm,Thursday,Teacher Assistant;1:00pm\\t to\\t1:30pm,Tuesday,Ryan Burgert;1:00pm\\t to\\t1:30pm,Thursday,Teacher Assistant;1:30pm\\t to\\t2:00pm,Tuesday,Ryan Burgert;1:30pm\\t to\\t2:00pm,Tuesday,Teacher Assistant;1:30pm\\t to\\t2:00pm,Friday,Ryan Burgert;2:00pm\\t to\\t2:30pm,Tuesday,Ryan Burgert;2:00pm\\t to\\t2:30pm,Tuesday,Teacher Assistant;2:00pm\\t to\\t2:30pm,Thursday,Teacher Assistant;2:00pm\\t to\\t2:30pm,Friday,Ryan Burgert;2:30pm\\t to\\t3:00pm,Monday,Teacher Assistant;2:30pm\\t to\\t3:00pm,Tuesday,Ryan Burgert;2:30pm\\t to\\t3:00pm,Tuesday,Teacher Assistant;2:30pm\\t to\\t3:00pm,Thursday,Teacher Assistant;2:30pm\\t to\\t3:00pm,Friday,Ryan Burgert;3:00pm\\t to\\t3:30pm,Monday,Ryan Burgert;3:00pm\\t to\\t3:30pm,Monday,Teacher Assistant;3:00pm\\t to\\t3:30pm,Tuesday,Teacher Assistant;3:00pm\\t to\\t3:30pm,Thursday,Teacher Assistant;3:00pm\\t to\\t3:30pm,Friday,Ryan Burgert;3:00pm\\t to\\t3:30pm,Friday,Teacher Assistant;3:30pm\\t to\\t4:00pm,Monday,Ryan Burgert;3:30pm\\t to\\t4:00pm,Monday,Teacher Assistant;3:30pm\\t to\\t4:00pm,Wednesday,Ryan Burgert;3:30pm\\t to\\t4:00pm,Thursday,Teacher Assistant;3:30pm\\t to\\t4:00pm,Friday,Ryan Burgert;4:00pm\\t to\\t4:30pm,Monday,Ryan Burgert;4:00pm\\t to\\t4:30pm,Monday,Teacher Assistant;4:00pm\\t to\\t4:30pm,Wednesday,Ryan Burgert;4:30pm\\t to\\t5:00pm,Monday,Ryan Burgert;4:30pm\\t to\\t5:00pm,Monday,Teacher Assistant;4:30pm\\t to\\t5:00pm,Wednesday,Ryan Burgert;4:30pm\\t to\\t5:00pm,Friday,Teacher Assistant;5:00pm\\t to\\t5:30pm,Monday,Ryan Burgert;5:00pm\\t to\\t5:30pm,Wednesday,Ryan Burgert;5:00pm\\t to\\t5:30pm,Friday,Teacher Assistant;5:30pm\\t to\\t6:00pm,Monday,Teacher Assistant;5:30pm\\t to\\t6:00pm,Wednesday,Ryan Burgert;6:00pm\\t to\\t6:30pm,Monday,Teacher Assistant;6:30pm\\t to\\t7:00pm,Monday,Teacher Assistant\",\n"+
                                  "    \"ProjectData\": {\n"+
-                                 "        \"TeamsTable\": \"awero,bA234,c234,d657;e275,f15,g458,h245;i57,j26,k586,24l\",\n"+
-                                 "        \"StudentsTable\": \"asdofoih,basdof,casdoijfo,dasdfoij;esoidfj,fweroij,gewir,hweorij;werkji,jwerj,kwerkj,lwerj\"\n"+
+                                 "        \"TeamsTable\": \"a,b,c,d;e,f,g,h;i,j,k,l\",\n"+
+                                 "        \"StudentsTable\": \"a,b,c,d;e,f,g,h;i,j,k,l\"\n"+
                                  "    }\n"+
                                  "}";
     public void initialize()
@@ -47,8 +47,8 @@ public class TestSave extends App
     @SuppressWarnings("Duplicates")
     public void start(Stage primaryStage)
     {
-        initialize();
         stage=primaryStage;
+        initialize();
         io.saver.saveAppStateToFile(new File(io.propertyGetter.getNewFilePath()).getPath());
         stage.setTitle(io.propertyGetter.getAppTitle());
         stage.getIcons().add(io.styleGetter.getAppIcon());

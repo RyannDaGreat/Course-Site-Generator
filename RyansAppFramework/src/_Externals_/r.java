@@ -1321,6 +1321,7 @@ public class r
         catch(Exception ignored)//I want it to crash my code but i dont want to catch the exception.
         {
             r.say("Write file failed");
+            ignored.printStackTrace();
             int g=1/0;
         }
     }

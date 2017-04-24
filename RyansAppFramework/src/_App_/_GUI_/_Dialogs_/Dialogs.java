@@ -44,7 +44,7 @@ public class Dialogs
     }
     public static void showInfoAlert(String message)
     {
-        showErrorAlert("Info",message,"");
+        showInfoAlert("Info",message,"");
     }
     //endregion
     //region StringDialog

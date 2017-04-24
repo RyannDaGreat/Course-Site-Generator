@@ -64,19 +64,12 @@ public class Reader
         return boilerplate.getSdCriteria_textField().getText();
     }
     //endregion
-    public JSONObject getState()
+    public JSONObject getState() throws JSONException
     {
         JSONObject o=new JSONObject();
-        try
-        {
-            o.accumulate("StartingMonday",getStartingMonday());
-            o.accumulate("EndingFriday",getEndingFriday());
-            o.accumulate("TableState",getTableState());
-        }
-        catch(JSONException e)
-        {
-            e.printStackTrace();
-        }
+        o.accumulate("StartingMonday",getStartingMonday());
+        o.accumulate("EndingFriday",getEndingFriday());
+        o.accumulate("TableState",getTableState());
         return o;
     }
 }

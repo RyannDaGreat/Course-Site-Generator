@@ -1,4 +1,4 @@
-package _Experiments_._Testbed_.junitTests;//Created by Ryan on 4/24/17.
+package _Experiments_.junitTests;//Created by Ryan on 4/24/17.
 import _Externals_.r;
 import org.junit.Test;
 public class junittest

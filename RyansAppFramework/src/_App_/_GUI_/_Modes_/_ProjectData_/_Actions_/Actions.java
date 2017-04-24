@@ -23,16 +23,9 @@ public class Actions
     {
         boilerplate.getS__tableView().setState(state);
     }
-    public void setState(JSONObject state)
+    public void setState(JSONObject state) throws JSONException
     {
-        try
-        {
-            setTeamsTableState(state.getString("TeamsTable"));
-            setStudentsTableState(state.getString("StudentsTable"));
-        }
-        catch(JSONException e)
-        {
-            e.printStackTrace();
-        }
+        setTeamsTableState(state.getString("TeamsTable"));
+        setStudentsTableState(state.getString("StudentsTable"));
     }
 }

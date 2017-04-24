@@ -71,7 +71,7 @@ public class Reader//It is not a coincidence that none of these methods have voi
     {
         return boilerplate.getOh_gridPane().getGridState();
     }
-    public String getState()//Official format for TAData state
+    public String getState()
     {
         return r.joinLines(getTaState(),getOhState());
     }
