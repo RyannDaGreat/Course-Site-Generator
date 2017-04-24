@@ -72,6 +72,10 @@ public class Reader
     {
         return boilerplate.getStSitePages_tableView().getState();
     }
+    public String getStylesheet()
+    {
+        return ""+boilerplate.getPsStylesheet_comboBox().getValue();
+    }
     public JSONObject getState()
     {
         JSONObject o=new JSONObject();
@@ -90,6 +94,7 @@ public class Reader
             o.accumulate(propertyGetter.getStateKeyCdLeftFooterImage(),getLeftFooterImagePath());
             o.accumulate(propertyGetter.getStateKeyCdRightFooterImage(),getRightFooterImagePath());
             o.accumulate(propertyGetter.getStateKeyCdSitePagesState(),getSitePagesState());
+            o.accumulate("Stylesheet",getStylesheet());
         }
         catch(JSONException e)
         {

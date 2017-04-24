@@ -46,25 +46,27 @@ public class Actions
     public void setLeftFooterImagePath(String x){boilerplate.getPsLeft_imageView().setImage(new LocatedImage(x));}
     public void setRightFooterImagePath(String x){boilerplate.getPsRight_imageView().setImage(new LocatedImage(x));}
     public void setSitePagesState(String x){boilerplate.getStSitePages_tableView().setState(x);}
+    public void setStylesheet(String x){r.setComboboxOption(boilerplate.getPsStylesheet_comboBox(),x);}
     /*@formatter:on*/
     //endregion
     public void setState(JSONObject state)
     {
         try
         {
-            setSubject(state.get(propertyGetter.getStateKeyCdSubject()).toString());
-            setTitle(state.get(propertyGetter.getStateKeyCdTitle()).toString());
-            setInstructorName(state.get(propertyGetter.getStateKeyCdInstructorName()).toString());
-            setInstructorHome(state.get(propertyGetter.getStateKeyCdInstructorHome()).toString());
-            setSemester(state.get(propertyGetter.getStateKeyCdSemester()).toString());
-            setNumber(state.get(propertyGetter.getStateKeyCdNumber()).toString());
-            setYear(state.get(propertyGetter.getStateKeyCdYear()).toString());
-            setExportDir(state.get(propertyGetter.getStateKeyCdExportDir()).toString());
-            setTemplateDir(state.get(propertyGetter.getStateKeyCdTemplateDir()).toString());
-            setBannerImagePath(state.get(propertyGetter.getStateKeyCdBannerImage()).toString());
-            setLeftFooterImagePath(state.get(propertyGetter.getStateKeyCdLeftFooterImage()).toString());
-            setRightFooterImagePath(state.get(propertyGetter.getStateKeyCdRightFooterImage()).toString());
-            setSitePagesState(state.get(propertyGetter.getStateKeyCdSitePagesState()).toString());
+            setSubject(state.getString(propertyGetter.getStateKeyCdSubject()));
+            setTitle(state.getString(propertyGetter.getStateKeyCdTitle()));
+            setInstructorName(state.getString(propertyGetter.getStateKeyCdInstructorName()));
+            setInstructorHome(state.getString(propertyGetter.getStateKeyCdInstructorHome()));
+            setSemester(state.getString(propertyGetter.getStateKeyCdSemester()));
+            setNumber(state.getString(propertyGetter.getStateKeyCdNumber()));
+            setYear(state.getString(propertyGetter.getStateKeyCdYear()));
+            setExportDir(state.getString(propertyGetter.getStateKeyCdExportDir()));
+            setTemplateDir(state.getString(propertyGetter.getStateKeyCdTemplateDir()));
+            setBannerImagePath(state.getString(propertyGetter.getStateKeyCdBannerImage()));
+            setLeftFooterImagePath(state.getString(propertyGetter.getStateKeyCdLeftFooterImage()));
+            setRightFooterImagePath(state.getString(propertyGetter.getStateKeyCdRightFooterImage()));
+            setSitePagesState(state.getString(propertyGetter.getStateKeyCdSitePagesState()));
+            setStylesheet(state.getString("Stylesheet"));
         }
         catch(JSONException e)
         {
