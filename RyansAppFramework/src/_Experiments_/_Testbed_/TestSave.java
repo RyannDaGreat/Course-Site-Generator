@@ -7,10 +7,6 @@ import javafx.stage.Stage;
 import java.io.File;
 public class TestSave extends App
 {
-    static
-    {
-        r.enableTheGoodOldAssertionKeyword();
-    }
     final String desiredAppState="{\n"+
                                  "    \"RecitationData\": \"A5,22342B,234C,D234,E,234F;32A62,B5652,34C4,D3453431,E12325,6F341\",\n"+
                                  "    \"CourseDetails\": {\n"+
@@ -43,10 +39,11 @@ public class TestSave extends App
                                  "}";
     public void initialize()
     {
-        System.out.println("Cheese");
         super.initialize();
-        io.loader.setAppState();
+        io.loader.setAppState(desiredAppState);//This is simply a faster way of hard-coding the controls. It's identically equivalent to spamming all the setter methods in here.
+        io.saver.saveAppStateToFile("SiteSaveTest.json");
     }
+    //region App Wrapper: Ignore this code. It's duplicated, and is only for a nichy test for my homework.
     @SuppressWarnings("Duplicates")
     public void start(Stage primaryStage)
     {
@@ -65,4 +62,5 @@ public class TestSave extends App
     {
         launch();
     }
+    //endregion
 }
