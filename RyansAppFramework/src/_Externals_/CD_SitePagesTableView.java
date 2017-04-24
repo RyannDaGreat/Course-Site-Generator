@@ -99,4 +99,27 @@ public class CD_SitePagesTableView extends TableView
             return use.getValue()+","+navbarTitle.getValue()+","+fileName.getValue()+","+script.getValue();
         }
     }
+    // public interface F
+    // {
+    //     void f(page x);
+    // }
+    // public void forAll(F f)
+    // {
+    //     for(Object o : getItems())
+    //     {
+    //         f.f((page)o);
+    //     }
+    // }
+    // public JSONArray getJsonState()//Uses the String version of state
+    // {
+    //     JSONArray a=new JSONArray();
+    //     forAll(x->
+    //            {
+    //                JSONObject o=new JSONObject();
+    //                o.accumulate("Use",x.use.getValue())
+    //                o.accumulate("NavbarTitle",x.navbarTitle.getValue())
+    //                o.accumulate("NavbarTitle",x.navbarTitle.getValue())
+    //            });
+    //     return o;
+    // }
 }

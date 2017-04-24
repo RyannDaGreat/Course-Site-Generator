@@ -164,6 +164,14 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static void enableTheGoodOldAssertionKeyword()
+    {
+        ClassLoader.getSystemClassLoader().setDefaultAssertionStatus(true);//Netbeans is stupid and has assertions turned off by default. This turns them on.
+    }
+    public static void disableTheGoodOldAssertionKeyword()
+    {
+        ClassLoader.getSystemClassLoader().setDefaultAssertionStatus(false);
+    }
     public static void branch(Runnable r,boolean b)//Adopted from Unreal Engine Blueprints
     {
         if(b)
