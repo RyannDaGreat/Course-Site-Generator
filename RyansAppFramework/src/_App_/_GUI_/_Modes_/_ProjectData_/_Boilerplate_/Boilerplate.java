@@ -1,5 +1,7 @@
 package _App_._GUI_._Modes_._ProjectData_._Boilerplate_;
 import _App_.App;
+import _Externals_.PD_StudentsTableView;
+import _Externals_.PD_TeamsTableView;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,7 +20,7 @@ public class Boilerplate
     {
         megaplate=app.gui.window.boilerplate;
     }
-    public TableView getS__tableView()
+    public PD_StudentsTableView getS__tableView()
     {
         return megaplate.pdS_tableView4;
     }
@@ -62,7 +64,7 @@ public class Boilerplate
     {
         return megaplate.pdSClear_button112;
     }
-    public TableView getT__tableView()
+    public PD_TeamsTableView getT__tableView()
     {
         return megaplate.pdT_tableView3;
     }

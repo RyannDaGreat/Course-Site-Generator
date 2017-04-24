@@ -8,11 +8,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 @SuppressWarnings("unchecked")
-public class SD_ScheduleItemsTableView extends TableView
+public class PD_TeamsTableView extends TableView
 {
-    public void addItem(String type,String date,String title,String topic,String time,String link,String criteria)
+    public void addItem(String field1,String field2,String field3,String field4)
     {
-        getItems().add(new Item(type,date,title,topic,time,link,criteria));
+        getItems().add(new Item(field1,field2,field3,field4));
     }
     public String getState()
     {
@@ -24,7 +24,7 @@ public class SD_ScheduleItemsTableView extends TableView
         for(String x : state.split(";"))
         {
             String[] y=x.split(",");
-            getItems().add(new Item(y[0],y[1],y[2],y[3],y[4],y[5],y[6]));
+            getItems().add(new Item(y[0],y[1],y[2],y[3]));
         }
     }
     public Item getSelected()
@@ -50,18 +50,15 @@ public class SD_ScheduleItemsTableView extends TableView
     {
         remove(getSelected());
     }
-    public void updateItem(String type,String date,String title,String topic,String time,String link,String criteria)
+    public void upfield2Item(String field1,String field2,String field3,String field4)
     {
-        getSelected().typeProperty().setValue(type);
-        getSelected().dateProperty().setValue(date);
-        getSelected().titleProperty().setValue(title);
-        getSelected().topicProperty().setValue(topic);
-        getSelected().time=time;
-        getSelected().link=link;
-        getSelected().criteria=criteria;
+        getSelected().field1Property().setValue(field1);
+        getSelected().field2Property().setValue(field2);
+        getSelected().field3Property().setValue(field3);
+        getSelected().field4Property().setValue(field4);
     }
     //region IsValid CHeckers
-    // public boolean isValidToAdd(String type,String date,String title,String topic)
+    // public boolean isValidToAdd(String field1,String field2,String field3,String field4)
     // {
     // if(!mightBeValid(name,email))
     //     return false;
@@ -73,9 +70,9 @@ public class SD_ScheduleItemsTableView extends TableView
     // }
     // return true;
     // }
-    // public boolean isValidToUpdate(String type,String date,String title,String topic)
+    // public boolean isValidToUpfield2(String field1,String field2,String field3,String field4)
     // {
-    // if(getSelected()==null)//Can't update anybody if nobody is selected
+    // if(getSelected()==null)//Can't upfield2 anybody if nobody is selected
     //     return false;
     // if(!mightBeValid(name,email))
     //     return false;
@@ -92,7 +89,7 @@ public class SD_ScheduleItemsTableView extends TableView
     // }
     // return true;
     // }
-    // private boolean mightBeValid(String type,String date,String title,String topic)
+    // private boolean mightBeValid(String field1,String field2,String field3,String field4)
     // {
     // if(name.equals("")||email.equals(""))//Name and email cannot be empty
     //     return false;
@@ -107,68 +104,60 @@ public class SD_ScheduleItemsTableView extends TableView
     {
         getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->r.run());
     }
-    public SD_ScheduleItemsTableView(String typeHeader,String dateHeader,String titleHeader,String topicHeader)
+    public PD_TeamsTableView(String field1Header,String field2Header,String field3Header,String field4Header)
     {
         this.setMinHeight(150);
         setOnKeyPressed(ⵁ->r.branch(this::removeSelected,ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE));//Only keeping this because I have the auto-transactor!
         //
-        addItem("a","b","c","d","b","c","d");
-        addItem("e","f","g","h","b","c","d");
-        addItem("i","j","k","l","b","c","d");
-        final TableColumn<Item,String> typeCol=new TableColumn<>(typeHeader);
-        final TableColumn<Item,String> dateCol=new TableColumn<>(dateHeader);
-        final TableColumn<Item,String> titleCol=new TableColumn<>(titleHeader);
-        final TableColumn<Item,String> topicCol=new TableColumn<>(topicHeader);
+        addItem("a","b","c","d");
+        addItem("e","f","g","h");
+        addItem("i","j","k","l");
+        final TableColumn<Item,String> field1Col=new TableColumn<>(field1Header);
+        final TableColumn<Item,String> field2Col=new TableColumn<>(field2Header);
+        final TableColumn<Item,String> field3Col=new TableColumn<>(field3Header);
+        final TableColumn<Item,String> field4Col=new TableColumn<>(field4Header);
         //
-        getColumns().addAll(typeCol,dateCol,titleCol,topicCol);
+        getColumns().addAll(field1Col,field2Col,field3Col,field4Col);
         //
-        typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
-        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
-        titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
-        topicCol.setCellValueFactory(new PropertyValueFactory<>("topic"));
-        //
-        // setEditable(true);
+        field1Col.setCellValueFactory(new PropertyValueFactory<>("field1"));
+        field2Col.setCellValueFactory(new PropertyValueFactory<>("field2"));
+        field3Col.setCellValueFactory(new PropertyValueFactory<>("field3"));
+        field4Col.setCellValueFactory(new PropertyValueFactory<>("field4"));
     }
     //region Item Class (with getters and setters)
     public class Item
     {
-        private StringProperty type;
-        private StringProperty date;
-        private StringProperty title;
-        private StringProperty topic;
-        public String time;
-        public String link;
-        public String criteria;
-        public Item(String type,String date,String title,String topic,String time,String link,String criteria)
+        private StringProperty field1;
+        private StringProperty field2;
+        private StringProperty field3;
+        private StringProperty field4;
+        public Item(String field1,String field2,String field3,String field4)
         {
-            this.type=new SimpleStringProperty(type);
-            this.date=new SimpleStringProperty(date);
-            this.title=new SimpleStringProperty(title);
-            this.topic=new SimpleStringProperty(topic);
-            this.time=time;
-            this.link=link;
-            this.criteria=criteria;
+            this.field1=new SimpleStringProperty(field1);
+            this.field2=new SimpleStringProperty(field2);
+            this.field3=new SimpleStringProperty(field3);
+            this.field4=new SimpleStringProperty(field4);
         }
-        public StringProperty typeProperty()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
+        public StringProperty field1Property()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
         {
-            return type;
+            return field1;
         }
-        public StringProperty dateProperty()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
+        public StringProperty field2Property()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
         {
-            return date;
+            return field2;
         }
-        public StringProperty titleProperty()
+        public StringProperty field3Property()
         {
-            return title;
+            return field3;
         }
-        public StringProperty topicProperty()
+        public StringProperty field4Property()
         {
-            return topic;
+            return field4;
         }
         //endregion
         public String toString()
         {
-            return type.getValue()+","+date.getValue()+","+title.getValue()+","+topic.getValue()+","+time+","+link+","+criteria;
+            return field1.getValue()+","+field2.getValue()+","+field3.getValue()+","+field4.getValue();
         }
     }
 }

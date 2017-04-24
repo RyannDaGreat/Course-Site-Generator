@@ -170,7 +170,9 @@ public class Boilerplate extends VBox
         rowConstraints13=new RowConstraints();
         anchorPane4=new AnchorPane();
         vBox4=new VBox();
-        tdTa_tableView0=new TD_TATableView(app.io.propertyGetter.getProperty("prop106"),app.io.propertyGetter.getProperty("prop107"),app.io.propertyGetter.getProperty("prop108"));
+        tdTa_tableView0=new TD_TATableView(app.io.propertyGetter.getProperty("prop106"),
+                                           app.io.propertyGetter.getProperty("prop107"),
+                                           app.io.propertyGetter.getProperty("prop108"));
         tdTaUndergrad_tableColumn3=new TableColumn();
         tdTaName_tableColumn4=new TableColumn();
         tdTaEmail_tableColumn5=new TableColumn();
@@ -329,7 +331,10 @@ public class Boilerplate extends VBox
         anchorPane12=new AnchorPane();
         vBox14=new VBox();
         text111110=new Text();
-        pdT_tableView3=new TableView();
+        pdT_tableView3=new PD_TeamsTableView(app.io.propertyGetter.getProperty("prop244"),
+                                             app.io.propertyGetter.getProperty("prop245"),
+                                             app.io.propertyGetter.getProperty("prop246"),
+                                             app.io.propertyGetter.getProperty("prop247"));
         pdTUse_tableColumn15=new TableColumn();
         pdTNavbarTitle_tableColumn16=new TableColumn();
         pdTFileName_tableColumn17=new TableColumn();
@@ -359,7 +364,10 @@ public class Boilerplate extends VBox
         anchorPane13=new AnchorPane();
         vBox15=new VBox();
         text111118=new Text();
-        pdS_tableView4=new TableView();
+        pdS_tableView4=new PD_StudentsTableView(app.io.propertyGetter.getProperty("prop272"),
+                                                app.io.propertyGetter.getProperty("prop273"),
+                                                app.io.propertyGetter.getProperty("prop274"),
+                                                app.io.propertyGetter.getProperty("prop275"));
         pdSFirstName_tableColumn19=new TableColumn();
         pdSLastName_tableColumn110=new TableColumn();
         pdSTeam_tableColumn111=new TableColumn();
@@ -1825,10 +1833,10 @@ public class Boilerplate extends VBox
         gridPane14.getRowConstraints().add(rowConstraints11111);
         vBox13.getChildren().add(gridPane14);
         vBox14.getChildren().add(text111110);
-        pdT_tableView3.getColumns().add(pdTUse_tableColumn15);
-        pdT_tableView3.getColumns().add(pdTNavbarTitle_tableColumn16);
-        pdT_tableView3.getColumns().add(pdTFileName_tableColumn17);
-        pdT_tableView3.getColumns().add(pdTScript_tableColumn18);
+        // pdT_tableView3.getColumns().add(pdTUse_tableColumn15);
+        // pdT_tableView3.getColumns().add(pdTNavbarTitle_tableColumn16);
+        // pdT_tableView3.getColumns().add(pdTFileName_tableColumn17);
+        // pdT_tableView3.getColumns().add(pdTScript_tableColumn18);
         vBox14.getChildren().add(pdT_tableView3);
         vBox14.getChildren().add(text111111);
         gridPane15.getChildren().add(text111112);
@@ -1855,10 +1863,10 @@ public class Boilerplate extends VBox
         anchorPane12.getChildren().add(vBox14);
         vBox13.getChildren().add(anchorPane12);
         vBox15.getChildren().add(text111118);
-        pdS_tableView4.getColumns().add(pdSFirstName_tableColumn19);
-        pdS_tableView4.getColumns().add(pdSLastName_tableColumn110);
-        pdS_tableView4.getColumns().add(pdSTeam_tableColumn111);
-        pdS_tableView4.getColumns().add(pdSRole_tableColumn112);
+        // pdS_tableView4.getColumns().add(pdSFirstName_tableColumn19);
+        // pdS_tableView4.getColumns().add(pdSLastName_tableColumn110);
+        // pdS_tableView4.getColumns().add(pdSTeam_tableColumn111);
+        // pdS_tableView4.getColumns().add(pdSRole_tableColumn112);
         vBox15.getChildren().add(pdS_tableView4);
         vBox15.getChildren().add(text111119);
         gridPane16.getChildren().add(text1111110);
@@ -2174,7 +2182,7 @@ public class Boilerplate extends VBox
     public final VBox vBox14;
     public final Text text111110;
     //endregion
-    public final TableView pdT_tableView3;
+    public final PD_TeamsTableView pdT_tableView3;
     public final TableColumn pdTUse_tableColumn15;
     public final TableColumn pdTNavbarTitle_tableColumn16;
     public final TableColumn pdTFileName_tableColumn17;
@@ -2219,7 +2227,7 @@ public class Boilerplate extends VBox
     public final RowConstraints rowConstraints11119;
     public final RowConstraints rowConstraints111110;
     //endregion
-    public final TableView pdS_tableView4;
+    public final PD_StudentsTableView pdS_tableView4;
     public final TableColumn pdSFirstName_tableColumn19;
     public final TableColumn pdSLastName_tableColumn110;
     public final TableColumn pdSTeam_tableColumn111;

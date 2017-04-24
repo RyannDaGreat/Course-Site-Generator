@@ -20,7 +20,6 @@ public class RD_RecitationDataTableView extends TableView
     }
     public void setState(String state)
     {
-        this.setMinHeight(300);
         getItems().clear();
         for(String x:state.split(";"))
         {
@@ -55,6 +54,7 @@ public class RD_RecitationDataTableView extends TableView
     }
     public RD_RecitationDataTableView(String sectionHeader,String instructorHeader,String dayⳆtimeHeader,String locationHeader,String ta1Header,String ta2Header)
     {
+        this.setMinHeight(300);
         addRecitation("A","B","C","D","E","F");
         addRecitation("A6","B5","C4","D3","E2","F1");
         setOnKeyPressed(ⵁ->r.branch(this::removeSelected,ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE));//Only keeping this because I have the auto-transactor!

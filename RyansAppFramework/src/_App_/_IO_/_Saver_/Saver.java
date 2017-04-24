@@ -47,6 +47,7 @@ public class Saver
             o.accumulate(propertyGetter.getStateKeyTAData(),modes.tadata.reader.getState());
             o.accumulate(propertyGetter.getStateKeyScheduleData(),modes.scheduleData.reader.getState());
             o.accumulate(propertyGetter.getStateKeyRecitationData(),modes.recitationData.reader.getState());
+            o.accumulate(propertyGetter.getStateKeyProjectData(),modes.projectData.reader.getState());
         }
         catch(JSONException e)
         {
