@@ -21,8 +21,9 @@
 
     -fx-border-radius:0;
     /*-fx-background-radius: 342;*/
-}
+    -fx-text-effect: -fx-text-effect;
 
+}
 .root .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected  .focus-indicator{-fx-border-color: #050048;-fx-border-style: dotted;-fx-border-radius: 110;-fx-effect:dropshadow(gaussian, #050048, 6, 0, 0, 0);}
 /*.root .modal-dialog-glass {*/
     /*!*-fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);*!*/
