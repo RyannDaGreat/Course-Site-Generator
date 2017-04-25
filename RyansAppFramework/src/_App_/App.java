@@ -40,7 +40,7 @@ public class App extends Application//This is the head of the tree. It's special
         stage.setMinWidth(io.propertyGetter.getMinAppWidth());//Unlike McKenna's demo
         stage.show();
     }
-    public static void main(String[]ⵁ)
+    public static void main(String...ⵁ)
     {
         launch();
     }

@@ -5,8 +5,6 @@ import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
 @SuppressWarnings("WeakerAccess")
 public class Saver
 {
@@ -24,7 +22,7 @@ public class Saver
     }
     public boolean isCurrentlyNewFile()
     {
-        return app.stage.getTitle().equals(app.io.propertyGetter.getAppTitle());//We must have not opened nor saved any files because doing so always changes the title of the app to that file's path
+        return getCurrentFilePath().equals(app.io.propertyGetter.getAppTitle());//We must have not opened nor saved any files because doing so always changes the title of the app to that file's path
     }
     public String getCurrentFilePath()
     {
@@ -38,7 +36,7 @@ public class Saver
     }
     public void setCurrentFileToNewFile()
     {
-        app.stage.setTitle(app.io.propertyGetter.getAppTitle());
+        setCurrentFilePath(app.io.propertyGetter.getAppTitle());//Is not an actual path
     }
     public String getAppState()//In JSON format
     {

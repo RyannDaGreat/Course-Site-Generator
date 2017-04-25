@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>CSE 219</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<link href="./css/course_homepage_layout.css" rel="stylesheet" type="text/css">
+	<link href="./css/sea_wolf.css" rel="stylesheet" type="text/css">
+
+        <!-- LINK TO OUR JavaScript FILE AND JQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="./js/HWsBuilder.js"></script>
+
+	<!-- ONCE THE PAGE FULLY LOADS INITIALIZE THE SLIDESHOW -->
+        <script>
+	    $(document).ready()
+	    {
+		initHWs();
+	    }
+        </script>
+    </head>
+
+    <body>
+	<div id="content">
+	    <div id="navbar">
+		<a href="http://www.stonybrook.edu"><img alt="Stony Brook University" class="sbu_navbar" src="./images/SBUDarkRedShieldLogo.png"></a>
+                <!-- NAVIGATION LINKS GO HERE -->
+		<a class="nav" href="index.html" id="home_link">Home</a><a class="nav" href="syllabus.html" id="syllabus_link">Syllabus</a><a class="nav" href="schedule.html" id="schedule_link">Schedule</a><a class="open_nav" href="hws.html" id="hws_link">HWs</a>
+	    </div>
+
+	    <div id="banner">
+                <!-- BANNER NEEDS TO BE SET -->
+		CSE 219 - Spring 2017 - 02<br />Computer Science III
+            </div>
+
+	    <div id="desc">
+		<h3>Homework Assignments</h3>
+
+		<p>Note that the grading criteria for all homework assignments will be posted here along with links to homework instructions.</p>
+
+		<table class="hws">
+                    <tbody id="hws">
+                        <tr class="hws" style="background-color:rgb(235,215,215)">
+                            <th class="hws">Homework</th>
+                            <th class="hws">Due Date</th>
+                            <th class="hws">Grading Criteria</th>
+                        </tr>
+                        
+                        <!-- THIS WILL BE FILLED IN BY JAVASCRIPT -->
+                    </tbody>
+                </table>
+		<br />
+		<hr />
+
+		<a href="http://www.stonybrook.edu"><img alt="SBU" class="sunysb" src="./images/SBUWhiteShieldLogo.jpg" style="float:left"></a>
+                <a href="http://www.cs.stonybrook.edu"><img alt="CS" src="./images/CSLogo.png" style="float:right"></a>
+
+		<p style="font-size:9pt; text-align:center;">Web page created and maintained<br />
+                    by <span id="instructor_link"><a href="http://www.cs.stonybrook.edu/~richard">Richard McKenna</a></span>
+		    <br />
+		    <br />
+		    <br />
+		    <br />
+		</p>
+	    </div>
+	</div>
+    </body>
+</html>
