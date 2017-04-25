@@ -1,0 +1,121 @@
+@font-face
+{
+    font-family: Lovelo;
+    src: url('LoveloLineLight.otf');
+}
+
+@font-face
+{
+    font-family: Quicksand;
+    src: url('Quicksand-Regular.otf');
+}
+
+.root
+{
+    /*-fx-font-size: 16pt;*/
+    -fx-font-family: "Quicksand";
+    -fx-base: rgb(168, 168, 255);
+    -fx-background: rgb(225, 228, 203);
+    /*-fx-border-color: rgb(228, 201, 7);*/
+    -fx-border-width:0;
+
+    -fx-border-radius:0;
+    /*-fx-background-radius: 342;*/
+}
+
+.root .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected  .focus-indicator{-fx-border-color: #050048;-fx-border-style: dotted;-fx-border-radius: 110;-fx-effect:dropshadow(gaussian, #050048, 6, 0, 0, 0);}
+/*.root .modal-dialog-glass {*/
+    /*!*-fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4);*!*/
+    /*-fx-background-color: derive(cadetblue, -20%);*/
+    /*-fx-background-insets: 12;*/
+    /*-fx-background-radius: 6;*/
+/*}*/
+
+/*.root .modal-dialog-content {*/
+    /*-fx-padding: 20;*/
+    /*-fx-spacing: 10;*/
+    /*-fx-alignment: center;*/
+    /*-fx-font-size: 20;*/
+    /*!*-fx-background-color: linear-gradient(to bottom, derive(cadetblue, 20%), cadetblue);*!*/
+    /*-fx-border-color: derive(cadetblue, -20%);*/
+    /*-fx-border-width: 5;*/
+    /*-fx-background-insets: 12;*/
+    /*-fx-border-insets: 10;*/
+    /*-fx-border-radius: 6;*/
+    /*-fx-background-radius: 6;*/
+/*}*/
+
+
+
+
+/*!** CSS **!*/
+/*.root*/
+/*{*/
+    /*-fx-border-color: derive(black, 80%);*/
+/*}*/
+
+/*!* The main scrollbar CSS class of ListView *!*/
+/*.root .scroll-bar:horizontal,*/
+/*.root .scroll-bar:vertical*/
+/*{*/
+    /*-fx-background-color: transparent;*/
+
+/*}*/
+/*!* The increment and decrement button CSS class of scrollbar *!*/
+/*.root .increment-button ,.mylistview .decrement-button {*/
+    /*-fx-background-color:transparent;*/
+    /*-fx-border-color:derive(gray,80%);*/
+    /*-fx-padding:10px;*/
+/*}*/
+
+
+/*!* The main scrollbar **track** CSS class  *!*/
+/*.root .scroll-bar:horizontal .track,*/
+/*.root .scroll-bar:vertical .track*/
+/*{*/
+    /*-fx-background-color: transparent;*/
+    /*-fx-border-color: derive(gray, 80%);*/
+    /*-fx-background-radius: 0em;*/
+/*}*/
+
+/*!* The main scrollbar **thumb** CSS class which we drag every time (movable) *!*/
+/*.root .scroll-bar:horizontal .thumb,*/
+/*.root .scroll-bar:vertical .thumb*/
+/*{*/
+    /*-fx-background-color: derive(black, 90%);*/
+    /*-fx-background-insets: 0, 0, 0;*/
+    /*-fx-background-radius: 0em;*/
+
+/*}*/
+
+/*!* ------------------------------------------------------------------------------------- *!*/
+/*!** EVENT CSS **!*/
+/*!* ------------------------------------------------------------------------------------- *!*/
+
+/*!* The main scrollbar **track** CSS class on event of "hover" and "pressed" *!*/
+
+/*.root .scroll-bar:horizontal:hover .track,*/
+/*.root .scroll-bar:horizontal:pressed .track,*/
+/*.root .scroll-bar:vertical:hover .track,*/
+/*.root .scroll-bar:vertical:pressed .track*/
+/*{*/
+    /*-fx-background-color: derive(#434343, 20%);*/
+
+    /*-fx-opacity: 0.2;*/
+    /*-fx-background-radius: 111em;*/
+
+/*}*/
+
+/*!* The main scrollbar **thumb** CSS class on event of "hover" and "pressed" *!*/
+/*.root .scroll-bar .thumb:hover,*/
+/*.root .scroll-bar .thumb:pressed*/
+/*{*/
+    /*-fx-background-color: derive(black, 50%);*/
+/*}*/
+
+/*.root .increment-button:hover, .root .decrement-button:hover*/
+/*{*/
+    /*-fx-background-color: derive(gray, 100%);*/
+    /*-fx-border-color: derive(gray, 80%);*/
+    /*-fx-padding: 10px;*/
+/*}*/

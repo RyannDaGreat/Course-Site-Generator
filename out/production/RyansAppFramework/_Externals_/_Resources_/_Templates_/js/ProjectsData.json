@@ -1,0 +1,26 @@
+{
+    "work": [
+        {
+            "semester": "Spring 2016",
+            "projects": [
+                { "name": "Atomic Comics",      "students": ["Neal Beeken", "Anthony Musco", "Yuanyuan Peng", "Gustavo Poscidonio"],        "link": "http://atomicomic.com"},
+                { "name": "C4 Comics",          "students": ["Alan Thomas", "Yuzhe Hu", "Marc Rejndrup", "Douglas Bell"],                   "link": "https://c4-comics.appspot.com"},
+                { "name": "Comx Central",       "students": ["Ted Saint-Vil", "Christopher Vaneron", "Mike Sayan", "Travis Pierre"],        "link": "https://comxcentral.appspot.com"},
+                { "name": "Comic Granny",       "students": ["Jensen Zhang", "Minghui Lin", "Yiou Chen", "Chengzhen Wu"],                   "link": "http://comic-granny.appspot.com/"},
+                { "name": "Comic Lovers And Creators",       "students": ["Billy Gibson", "Danny Gibson", "Nic Sosa", "Justin Rippert"],                 "link": "http://clac-final.appspot.com/"},
+                { "name": "Comic Sans",         "students": ["John Guastavino", "Chaerin Kim", "Maggie Lei", "Junnie Sim"],                 "link": "http://www.comic-sans.appspot.com/"},
+                { "name": "ComInspire",         "students": ["Michael Witkovsky", "Anthony Consoli", "Alec Day", "Sean Dwyer"],             "link": "http://cominspire-comics.appspot.com/"},
+                { "name": "dot Comics",         "students": ["Jessica Zeng", "Matthew Neary", "Randall Huang", "John Dilag"],               "link": "http://6.dotcomics-v2.appspot.com/"},
+                { "name": "Digital Conceptions",     "students": ["Steven Liao", "Nathan Wong", "Zexun Yu", "Justin Maldonado"],                 "link": "http://digital-conceptions-6.appspot.com/"},
+                { "name": "DS Comics",          "students": ["James Tinsman", "Jennifer Alexander", "Pouria Hamidi", "Antonio Thelemann"],  "link": "http://desertsandcomics.appspot.com/"},
+                { "name": "Hero Comics",        "students": ["Terrell Mack", "Miu ki Yip", "Ben Strumeyer", "Shakeeb Saleh"],               "link": "http://hero-headquarters.appspot.com/"},
+                { "name": "Instant Doodles",      "students": ["Chris Joseph", "Andreas Konstantinou", "Michael Chen", "Michael Ho"],         "link": "http://instant-doodles.appspot.com/"},
+                { "name": "Jub Jub Comics",     "students": ["Gleb Nikonorov", "Joon Lim", "Thomas DuPlessis", "Geoffrey Churchill"],       "link": "http://jubjubcomic.appspot.com/"},
+                { "name": "Mixxy",              "students": ["Jesse Talavera-Greenberg", "Cristiano Jesus", "Katie Cleary", "Brian Sabzjadid"],                 "link": "http://mixxy-1249.appspot.com/"},
+                { "name": "Razzle Dazzle Comics",          "students": ["Jason Fontaine", "Danny Rodrigues", "Tara Liang", "James Huang"],             "link": "http://final-dot-razzledazzlecomics.appspot.com/"},
+                { "name": "Sharpeez Comics",    "students": ["Dasom Park", "Kathryn Blecher", "Ryan Kelly", "Yeseul Lee"],                  "link": "http://sharpeezcomics.appspot.com/"},
+                { "name": "Sp Comic",           "students": ["Yao Rao", "Joan Bae", "Zhuoyi Qin", "Chungjung Lee"],                         "link": "http://6.cse308-spcomics.appspot.com/"}
+            ]
+        }
+    ]
+}

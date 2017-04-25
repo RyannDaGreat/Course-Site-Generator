@@ -15,6 +15,7 @@ public class Boilerplate extends VBox
     public App app;
     public void initialize()
     {
+        getStylesheets().add(ResourceGetter.getGlobalFontStylesheet());
         setOnKeyPressed(ⵁ->
                         {
                             if(ⵁ.isControlDown()||ⵁ.isMetaDown())
@@ -516,7 +517,7 @@ public class Boilerplate extends VBox
         text.setStrokeWidth(0.0);
         text.setStyle(app.io.propertyGetter.getProperty("prop28")); //$NON-NLS-1$
         text.setText(app.io.propertyGetter.getProperty("prop29")); //$NON-NLS-1$
-        text.setFont(new Font(app.io.propertyGetter.getProperty("prop30"),50.0)); //$NON-NLS-1$
+        // text.setFont(new Font(app.io.propertyGetter.getProperty("prop30"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints2.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints2.setMinWidth(0.0);
@@ -534,7 +535,7 @@ public class Boilerplate extends VBox
         text0.setStrokeWidth(0.0);
         text0.setStyle(app.io.propertyGetter.getProperty("prop32")); //$NON-NLS-1$
         text0.setText(app.io.propertyGetter.getProperty("prop33")); //$NON-NLS-1$
-        text0.setFont(new Font(app.io.propertyGetter.getProperty("prop34"),13.0)); //$NON-NLS-1$
+        // text0.setFont(new Font(app.io.propertyGetter.getProperty("prop34"),13.0)); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(gridPane1,0.0);
         AnchorPane.setLeftAnchor(gridPane1,0.0);
         AnchorPane.setRightAnchor(gridPane1,0.0);
@@ -839,7 +840,7 @@ public class Boilerplate extends VBox
         text111.setStrokeWidth(0.0);
         text111.setStyle(app.io.propertyGetter.getProperty("prop100")); //$NON-NLS-1$
         text111.setText(app.io.propertyGetter.getProperty("prop101")); //$NON-NLS-1$
-        text111.setFont(new Font(app.io.propertyGetter.getProperty("prop102"),50.0)); //$NON-NLS-1$
+        // text111.setFont(new Font(app.io.propertyGetter.getProperty("prop102"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text111,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints14.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints14.setMinWidth(0.0);
@@ -865,7 +866,7 @@ public class Boilerplate extends VBox
         text112.setStrokeWidth(0.0);
         text112.setStyle(app.io.propertyGetter.getProperty("prop109")); //$NON-NLS-1$
         text112.setText(app.io.propertyGetter.getProperty("prop110")); //$NON-NLS-1$
-        text112.setFont(new Font(app.io.propertyGetter.getProperty("prop111"),13.0)); //$NON-NLS-1$
+        // text112.setFont(new Font(app.io.propertyGetter.getProperty("prop111"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text112,new Insets(10.0,0.0,10.0,0.0));
         AnchorPane.setBottomAnchor(gridPane5,0.0);
         AnchorPane.setLeftAnchor(gridPane5,0.0);
@@ -943,7 +944,7 @@ public class Boilerplate extends VBox
         text115.setStrokeWidth(0.0);
         text115.setStyle(app.io.propertyGetter.getProperty("prop124")); //$NON-NLS-1$
         text115.setText(app.io.propertyGetter.getProperty("prop125")); //$NON-NLS-1$
-        text115.setFont(new Font(app.io.propertyGetter.getProperty("prop126"),50.0)); //$NON-NLS-1$
+        // text115.setFont(new Font(app.io.propertyGetter.getProperty("prop126"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text115,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints18.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints18.setMinWidth(0.0);
@@ -1026,7 +1027,7 @@ public class Boilerplate extends VBox
         text118.setStrokeWidth(0.0);
         text118.setStyle(app.io.propertyGetter.getProperty("prop138")); //$NON-NLS-1$
         text118.setText(app.io.propertyGetter.getProperty("prop139")); //$NON-NLS-1$
-        text118.setFont(new Font(app.io.propertyGetter.getProperty("prop140"),50.0)); //$NON-NLS-1$
+        // text118.setFont(new Font(app.io.propertyGetter.getProperty("prop140"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text118,new Insets(5.0,0.0,5.0,0.0));
         anchorPane7.setNodeOrientation(javafx.geometry.NodeOrientation.LEFT_TO_RIGHT);
         anchorPane7.setStyle(app.io.propertyGetter.getProperty("prop141")); //$NON-NLS-1$
@@ -1058,7 +1059,7 @@ public class Boilerplate extends VBox
         text119.setStrokeWidth(0.0);
         text119.setStyle(app.io.propertyGetter.getProperty("prop150")); //$NON-NLS-1$
         text119.setText(app.io.propertyGetter.getProperty("prop151")); //$NON-NLS-1$
-        text119.setFont(new Font(app.io.propertyGetter.getProperty("prop152"),13.0)); //$NON-NLS-1$
+        // text119.setFont(new Font(app.io.propertyGetter.getProperty("prop152"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text119,new Insets(0.0,0.0,10.0,0.0));
         AnchorPane.setBottomAnchor(gridPane10,0.0);
         AnchorPane.setLeftAnchor(gridPane10,0.0);
@@ -1165,7 +1166,7 @@ public class Boilerplate extends VBox
         text1116.setStrokeWidth(0.0);
         text1116.setStyle(app.io.propertyGetter.getProperty("prop179")); //$NON-NLS-1$
         text1116.setText(app.io.propertyGetter.getProperty("prop180")); //$NON-NLS-1$
-        text1116.setFont(new Font(app.io.propertyGetter.getProperty("prop181"),50.0)); //$NON-NLS-1$
+        // text1116.setFont(new Font(app.io.propertyGetter.getProperty("prop181"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text1116,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints116.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints116.setMinWidth(10.0);
@@ -1181,7 +1182,7 @@ public class Boilerplate extends VBox
         text1117.setStrokeWidth(0.0);
         text1117.setStyle(app.io.propertyGetter.getProperty("prop183")); //$NON-NLS-1$
         text1117.setText(app.io.propertyGetter.getProperty("prop184")); //$NON-NLS-1$
-        text1117.setFont(new Font(app.io.propertyGetter.getProperty("prop185"),13.0)); //$NON-NLS-1$
+        // text1117.setFont(new Font(app.io.propertyGetter.getProperty("prop185"),13.0)); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(gridPane12,0.0);
         AnchorPane.setLeftAnchor(gridPane12,0.0);
         AnchorPane.setRightAnchor(gridPane12,0.0);
@@ -1228,7 +1229,7 @@ public class Boilerplate extends VBox
         text11110.setStrokeWidth(0.0);
         text11110.setStyle(app.io.propertyGetter.getProperty("prop193")); //$NON-NLS-1$
         text11110.setText(app.io.propertyGetter.getProperty("prop194")); //$NON-NLS-1$
-        text11110.setFont(new Font(app.io.propertyGetter.getProperty("prop195"),13.0)); //$NON-NLS-1$
+        // text11110.setFont(new Font(app.io.propertyGetter.getProperty("prop195"),13.0)); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(sdScheduledItems_tableView2,10.0);
         AnchorPane.setLeftAnchor(sdScheduledItems_tableView2,10.0);
         AnchorPane.setRightAnchor(sdScheduledItems_tableView2,10.0);
@@ -1257,7 +1258,7 @@ public class Boilerplate extends VBox
         text11111.setStrokeWidth(0.0);
         text11111.setStyle(app.io.propertyGetter.getProperty("prop203")); //$NON-NLS-1$
         text11111.setText(app.io.propertyGetter.getProperty("prop204")); //$NON-NLS-1$
-        text11111.setFont(new Font(app.io.propertyGetter.getProperty("prop205"),13.0)); //$NON-NLS-1$
+        // text11111.setFont(new Font(app.io.propertyGetter.getProperty("prop205"),13.0)); //$NON-NLS-1$
         AnchorPane.setBottomAnchor(gridPane13,0.0);
         AnchorPane.setLeftAnchor(gridPane13,0.0);
         AnchorPane.setRightAnchor(gridPane13,0.0);
@@ -1371,7 +1372,7 @@ public class Boilerplate extends VBox
         text11119.setStrokeWidth(0.0);
         text11119.setStyle(app.io.propertyGetter.getProperty("prop235")); //$NON-NLS-1$
         text11119.setText(app.io.propertyGetter.getProperty("prop236")); //$NON-NLS-1$
-        text11119.setFont(new Font(app.io.propertyGetter.getProperty("prop237"),50.0)); //$NON-NLS-1$
+        // text11119.setFont(new Font(app.io.propertyGetter.getProperty("prop237"),50.0)); //$NON-NLS-1$
         GridPane.setMargin(text11119,new Insets(5.0,0.0,5.0,0.0));
         columnConstraints1113.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints1113.setMinWidth(10.0);
@@ -1386,7 +1387,7 @@ public class Boilerplate extends VBox
         text111110.setStrokeWidth(0.0);
         text111110.setStyle(app.io.propertyGetter.getProperty("prop239")); //$NON-NLS-1$
         text111110.setText(app.io.propertyGetter.getProperty("prop240")); //$NON-NLS-1$
-        text111110.setFont(new Font(app.io.propertyGetter.getProperty("prop241"),13.0)); //$NON-NLS-1$
+        // text111110.setFont(new Font(app.io.propertyGetter.getProperty("prop241"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text111110,new Insets(0.0,0.0,5.0,0.0));
         pdT_tableView3.setStyle(app.io.propertyGetter.getProperty("prop242")); //$NON-NLS-1$
         pdT_tableView3.getStylesheets().add(app.io.propertyGetter.getProperty("prop243")); //$NON-NLS-1$
@@ -1404,7 +1405,7 @@ public class Boilerplate extends VBox
         text111111.setStrokeWidth(0.0);
         text111111.setStyle(app.io.propertyGetter.getProperty("prop248")); //$NON-NLS-1$
         text111111.setText(app.io.propertyGetter.getProperty("prop249")); //$NON-NLS-1$
-        text111111.setFont(new Font(app.io.propertyGetter.getProperty("prop250"),13.0)); //$NON-NLS-1$
+        // text111111.setFont(new Font(app.io.propertyGetter.getProperty("prop250"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text111111,new Insets(20.0,0.0,10.0,0.0));
         AnchorPane.setBottomAnchor(gridPane15,0.0);
         AnchorPane.setLeftAnchor(gridPane15,0.0);
@@ -1498,7 +1499,7 @@ public class Boilerplate extends VBox
         text111118.setStrokeWidth(0.0);
         text111118.setStyle(app.io.propertyGetter.getProperty("prop267")); //$NON-NLS-1$
         text111118.setText(app.io.propertyGetter.getProperty("prop268")); //$NON-NLS-1$
-        text111118.setFont(new Font(app.io.propertyGetter.getProperty("prop269"),13.0)); //$NON-NLS-1$
+        // text111118.setFont(new Font(app.io.propertyGetter.getProperty("prop269"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text111118,new Insets(0.0));
         pdS_tableView4.setStyle(app.io.propertyGetter.getProperty("prop270")); //$NON-NLS-1$
         pdS_tableView4.getStylesheets().add(app.io.propertyGetter.getProperty("prop271")); //$NON-NLS-1$
@@ -1516,7 +1517,7 @@ public class Boilerplate extends VBox
         text111119.setStrokeWidth(0.0);
         text111119.setStyle(app.io.propertyGetter.getProperty("prop276")); //$NON-NLS-1$
         text111119.setText(app.io.propertyGetter.getProperty("prop277")); //$NON-NLS-1$
-        text111119.setFont(new Font(app.io.propertyGetter.getProperty("prop278"),13.0)); //$NON-NLS-1$
+        // text111119.setFont(new Font(app.io.propertyGetter.getProperty("prop278"),13.0)); //$NON-NLS-1$
         VBox.setMargin(text111119,new Insets(20.0,0.0,10.0,0.0));
         AnchorPane.setBottomAnchor(gridPane16,0.0);
         AnchorPane.setLeftAnchor(gridPane16,0.0);

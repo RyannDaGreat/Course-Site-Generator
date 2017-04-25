@@ -39,4 +39,10 @@ public class ResourceGetter
         }
     }
     //endregion
+    //region Specific File Getters
+    public static String getGlobalFontStylesheet()
+    {
+        return getResource("_Style_/app_global_font.css");
+    }
+    //endregion
 }
