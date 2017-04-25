@@ -214,6 +214,11 @@ public class r
             d.setValue(null);
         }
     }
+    public static String reverse(String forward) {
+        StringBuilder builder = new StringBuilder(forward);
+        String reverse = builder.reverse().toString();
+        return reverse;
+    }
     public static JSONObject readJson(String path)
     {
         try

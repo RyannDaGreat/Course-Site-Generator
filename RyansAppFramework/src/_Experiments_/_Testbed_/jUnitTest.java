@@ -5,10 +5,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
 import java.io.File;
 public class jUnitTest extends App
 {
+    static
+    {
+        r.enableTheGoodOldAssertionKeyword();
+    }
+    @BeforeClass
+    public static void main()
+    {
+        launch();
+    }
     @Test
     public void verifySubject()
     {
@@ -129,12 +137,21 @@ public class jUnitTest extends App
     public static String StartingMonday;
     public static String EndingFriday;
     public static String TableState;
+
+
+    public static String getParentDir(String dir)
+    {
+        dir=r.reverse(dir);
+        dir=dir.substring(dir.indexOf('/'));
+        dir=r.reverse(dir);
+        return dir;
+    }
     public void start(Stage primaryStage)
     {
         r.say("Hello world");
         stage=primaryStage;
         super.initialize();
-        io.loader.loadAppStateFromFile(new File("/Users/Ryan/Desktop/RyanCourseSiteGenerator/SiteSaveTest.json"));
+        io.loader.loadAppStateFromFile(new File(getParentDir(new File("").getAbsolutePath())+"SiteSaveTest.json"));
         System.out.println("1");
         io.saver.saveAppStateToFile(new File(io.propertyGetter.getNewFilePath()).getPath());
         System.out.println("2");
@@ -172,14 +189,5 @@ public class jUnitTest extends App
         TableState=gui.modes.scheduleData.reader.getTableState();
         stage.show();
         gui.toolbar.actions.handleExit();
-    }
-    static
-    {
-        r.enableTheGoodOldAssertionKeyword();
-    }
-    @BeforeClass
-    public static void main()
-    {
-        launch();
     }
 }

@@ -1054,7 +1054,7 @@ public class SeveralTabsBase extends VBox {
         GridPane.setColumnSpan(tableView, 2);
         GridPane.setRowIndex(tableView, 1);
         tableView.setStyle("-fx-background-color: #AABBCC; -fx-background-radius: 10,10;");
-        tableView.getStylesheets().add("/_Experiments_/appstyle.css");
+        tableView.getStylesheets().add("/_Externals_/_Resources_/_Style_/app_style.css");
 
         tableColumn.setPrefWidth(75.0);
         tableColumn.setText("Use");
