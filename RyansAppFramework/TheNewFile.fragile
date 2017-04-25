@@ -1,29 +1,29 @@
 {
-    "RecitationData": "A,B,C,D,E,F;A6,B5,C4,D3,E2,F1",
+    "RecitationData": "Arya,Bethany,Cathode,Dent,Ear,Fence;Plane,Air,Assistant,Teacher,Stigma,Sterling",
     "CourseDetails": {
-        "SitePagesState": "true,A,B,AOIJ;false,C,D,AOIJS;true,E,F,aoisf;false,G,H,aiohf",
-        "Semester": "null",
-        "ExportDir": "ioiioh",
+        "SitePagesState": "true,A,B,AOIJ;true,C,D,AOIJS;false,E,F,aoisf;false,G,H,aiohf",
+        "Semester": "Spring",
+        "ExportDir": "This is the export directory",
         "BannerImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png",
-        "Title": "",
-        "Subject": "null",
-        "Stylesheet": "null",
+        "Title": "Computer Science III",
+        "Subject": "CSE",
+        "Stylesheet": "My Stylesheet",
         "TemplateDir": ".\\templates\\CSE219",
-        "InstructorHome": "",
-        "Number": "null",
-        "Year": "null",
-        "InstructorName": "",
+        "InstructorHome": "http://www3.cs.stonybrook.edu/~cse219/Section02/hw/HW5.html",
+        "Number": "123",
+        "Year": "2017",
+        "InstructorName": "McKenna",
         "LeftFooterImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png",
         "RightFooterImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png"
     },
     "ScheduleData": {
-        "EndingFriday": "null",
-        "StartingMonday": "null",
-        "TableState": "a,b,c,d,b,c,d;e,f,g,h,b,c,d;i,j,k,l,b,c,d"
+        "EndingFriday": "2017-04-14",
+        "StartingMonday": "2017-04-04",
+        "TableState": "Alpha,Beta,Charlie,Delta,Eernie,Spock,Dump;Elbow,Farlong,Garble,Hobbit,Barren,Crustation,Derby;Iodine,Juniper,Koala,Lion,Bob,Cat,Dog"
     },
-    "TAData": "true,A,B;false,C,D;true,E,F;false,G,H\nMidnight\t to\t12:30am,12:30am\t to\t1:00am,1:00am\t to\t1:30am,1:30am\t to\t2:00am,2:00am\t to\t2:30am,2:30am\t to\t3:00am,3:00am\t to\t3:30am,3:30am\t to\t4:00am,4:00am\t to\t4:30am,4:30am\t to\t5:00am,5:00am\t to\t5:30am,5:30am\t to\t6:00am,6:00am\t to\t6:30am,6:30am\t to\t7:00am,7:00am\t to\t7:30am,7:30am\t to\t8:00am,8:00am\t to\t8:30am,8:30am\t to\t9:00am,9:00am\t to\t9:30am,9:30am\t to\t10:00am,10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm,5:00pm\t to\t5:30pm,5:30pm\t to\t6:00pm,6:00pm\t to\t6:30pm,6:30pm\t to\t7:00pm,7:00pm\t to\t7:30pm,7:30pm\t to\t8:00pm,8:00pm\t to\t8:30pm,8:30pm\t to\t9:00pm,9:00pm\t to\t9:30pm,9:30pm\t to\t10:00pm,10:00pm\t to\t10:30pm,10:30pm\t to\t11:00pm,11:00pm\t to\t11:30pm,11:30pm\t to\tMidnight;Monday,Tuesday,Wednesday,Thursday,Friday;",
+    "TAData": "false,Ryan Burgert,ryanburgert@sbu.com;true,Teacher Assistant,TA@sbuTA.com\n10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm,5:00pm\t to\t5:30pm,5:30pm\t to\t6:00pm,6:00pm\t to\t6:30pm,6:30pm\t to\t7:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;11:00am\t to\t11:30am,Monday,Teacher Assistant;11:30am\t to\tNoon,Monday,Teacher Assistant;11:30am\t to\tNoon,Thursday,Teacher Assistant;Noon\t to\t12:30pm,Monday,Teacher Assistant;Noon\t to\t12:30pm,Tuesday,Ryan Burgert;Noon\t to\t12:30pm,Thursday,Teacher Assistant;12:30pm\t to\t1:00pm,Tuesday,Ryan Burgert;12:30pm\t to\t1:00pm,Thursday,Teacher Assistant;1:00pm\t to\t1:30pm,Tuesday,Ryan Burgert;1:00pm\t to\t1:30pm,Thursday,Teacher Assistant;1:30pm\t to\t2:00pm,Tuesday,Ryan Burgert;1:30pm\t to\t2:00pm,Tuesday,Teacher Assistant;1:30pm\t to\t2:00pm,Friday,Ryan Burgert;2:00pm\t to\t2:30pm,Tuesday,Ryan Burgert;2:00pm\t to\t2:30pm,Tuesday,Teacher Assistant;2:00pm\t to\t2:30pm,Thursday,Teacher Assistant;2:00pm\t to\t2:30pm,Friday,Ryan Burgert;2:30pm\t to\t3:00pm,Monday,Teacher Assistant;2:30pm\t to\t3:00pm,Tuesday,Ryan Burgert;2:30pm\t to\t3:00pm,Tuesday,Teacher Assistant;2:30pm\t to\t3:00pm,Thursday,Teacher Assistant;2:30pm\t to\t3:00pm,Friday,Ryan Burgert;3:00pm\t to\t3:30pm,Monday,Ryan Burgert;3:00pm\t to\t3:30pm,Monday,Teacher Assistant;3:00pm\t to\t3:30pm,Tuesday,Teacher Assistant;3:00pm\t to\t3:30pm,Thursday,Teacher Assistant;3:00pm\t to\t3:30pm,Friday,Ryan Burgert;3:00pm\t to\t3:30pm,Friday,Teacher Assistant;3:30pm\t to\t4:00pm,Monday,Ryan Burgert;3:30pm\t to\t4:00pm,Monday,Teacher Assistant;3:30pm\t to\t4:00pm,Wednesday,Ryan Burgert;3:30pm\t to\t4:00pm,Thursday,Teacher Assistant;3:30pm\t to\t4:00pm,Friday,Ryan Burgert;4:00pm\t to\t4:30pm,Monday,Ryan Burgert;4:00pm\t to\t4:30pm,Monday,Teacher Assistant;4:00pm\t to\t4:30pm,Wednesday,Ryan Burgert;4:30pm\t to\t5:00pm,Monday,Ryan Burgert;4:30pm\t to\t5:00pm,Monday,Teacher Assistant;4:30pm\t to\t5:00pm,Wednesday,Ryan Burgert;4:30pm\t to\t5:00pm,Friday,Teacher Assistant;5:00pm\t to\t5:30pm,Monday,Ryan Burgert;5:00pm\t to\t5:30pm,Wednesday,Ryan Burgert;5:00pm\t to\t5:30pm,Friday,Teacher Assistant;5:30pm\t to\t6:00pm,Monday,Teacher Assistant;5:30pm\t to\t6:00pm,Wednesday,Ryan Burgert;6:00pm\t to\t6:30pm,Monday,Teacher Assistant;6:30pm\t to\t7:00pm,Monday,Teacher Assistant",
     "ProjectData": {
-        "TeamsTable": "a,b,c,d;e,f,g,h;i,j,k,l",
-        "StudentsTable": "a,b,c,d;e,f,g,h;i,j,k,l"
+        "TeamsTable": "Shank,shunk,up,down;left,far,bottom,top;listen,boy,youre,done",
+        "StudentsTable": "Student,Alien,American,Pie"
     }
 }

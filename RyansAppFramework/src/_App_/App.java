@@ -2,6 +2,7 @@ package _App_;//Created by Ryan on 4/10/17.
 import _App_._GUI_.GUI;
 import _App_._IO_.IO;
 import _App_._rTPS_.rTPS;
+import _Externals_.r;
 import javafx.application.Application;
 
 import javafx.scene.Scene;
@@ -29,8 +30,8 @@ public class App extends Application//This is the head of the tree. It's special
     }
     public void start(Stage primaryStage)
     {
-        initialize();
         stage=primaryStage;
+        initialize();
         io.saver.saveAppStateToFile(new File(io.propertyGetter.getNewFilePath()).getPath());
         stage.setTitle(io.propertyGetter.getAppTitle());
         stage.getIcons().add(io.styleGetter.getAppIcon());
@@ -40,8 +41,8 @@ public class App extends Application//This is the head of the tree. It's special
         stage.setMinWidth(io.propertyGetter.getMinAppWidth());//Unlike McKenna's demo
         stage.show();
     }
-    public static void main(String...ⵁ)
-    {
-        launch();
-    }
+    // public static void main(String[]ⵁ)
+    // {
+    //     launch();
+    // }
 }

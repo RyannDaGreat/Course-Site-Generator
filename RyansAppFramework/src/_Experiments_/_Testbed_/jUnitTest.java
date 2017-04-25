@@ -9,112 +9,177 @@ import org.junit.Test;
 import java.io.File;
 public class jUnitTest extends App
 {
-    static
-    {
-        r.enableTheGoodOldAssertionKeyword();
-    }
-    public void initialize()
-    {
-        super.initialize();
-        io.loader.loadAppStateFromFile(r.openFile("SiteSaveTest.json"));//This is simply a faster way of hard-coding the controls. It's identically equivalent to spamming all the setter methods in here.
-    }
-    // String x="{\n"+
-    //          "    \"RecitationData\": \"Arya,Bethany,Cathode,Dent,Ear,Fence;Plane,Air,Assistant,Teacher,Stigma,Sterling\",\n"+
-    //          "    \"CourseDetails\": {\n"+
-    //          "        \"SitePagesState\": \"true,A,B,AOIJ;true,C,D,AOIJS;false,E,F,aoisf;false,G,H,aiohf\",\n"+
-    //          "        \"Semester\": \"Spring\",\n"+
-    //          "        \"ExportDir\": \"This is the export directory\",\n"+
-    //          "        \"BannerImage\": \"file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png\",\n"+
-    //          "        \"Title\": \"Computer Science III\",\n"+
-    //          "        \"Subject\": \"CSE\",\n"+
-    //          "        \"Stylesheet\": \"My Stylesheet\",\n"+
-    //          "        \"TemplateDir\": \".\\\\templates\\\\CSE219\",\n"+
-    //          "        \"InstructorHome\": \"http://www3.cs.stonybrook.edu/~cse219/Section02/hw/HW5.html\",\n"+
-    //          "        \"Number\": \"123\",\n"+
-    //          "        \"Year\": \"2017\",\n"+
-    //          "        \"InstructorName\": \"McKenna\",\n"+
-    //          "        \"LeftFooterImage\": \"file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png\",\n"+
-    //          "        \"RightFooterImage\": \"file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png\"\n"+
-    //          "    },\n"+
-    //          "    \"ScheduleData\": {\n"+
-    //          "        \"EndingFriday\": \"2017-04-14\",\n"+
-    //          "        \"StartingMonday\": \"2017-04-04\",\n"+
-    //          "        \"TableState\": \"Alpha,Beta,Charlie,Delta,Eernie,Spock,Dump;Elbow,Farlong,Garble,Hobbit,Barren,Crustation,Derby;Iodine,Juniper,Koala,Lion,Bob,Cat,Dog\"\n"+
-    //          "    },\n"+
-    //          "    \"TAData\": \"false,Ryan Burgert,ryanburgert@sbu.com;true,Teacher Assistant,TA@sbuTA.com\\n10:30am\\t to\\t11:00am,11:00am\\t to\\t11:30am,11:30am\\t to\\tNoon,Noon\\t to\\t12:30pm,12:30pm\\t to\\t1:00pm,1:00pm\\t to\\t1:30pm,1:30pm\\t to\\t2:00pm,2:00pm\\t to\\t2:30pm,2:30pm\\t to\\t3:00pm,3:00pm\\t to\\t3:30pm,3:30pm\\t to\\t4:00pm,4:00pm\\t to\\t4:30pm,4:30pm\\t to\\t5:00pm,5:00pm\\t to\\t5:30pm,5:30pm\\t to\\t6:00pm,6:00pm\\t to\\t6:30pm,6:30pm\\t to\\t7:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;11:00am\\t to\\t11:30am,Monday,Teacher Assistant;11:30am\\t to\\tNoon,Monday,Teacher Assistant;11:30am\\t to\\tNoon,Thursday,Teacher Assistant;Noon\\t to\\t12:30pm,Monday,Teacher Assistant;Noon\\t to\\t12:30pm,Tuesday,Ryan Burgert;Noon\\t to\\t12:30pm,Thursday,Teacher Assistant;12:30pm\\t to\\t1:00pm,Tuesday,Ryan Burgert;12:30pm\\t to\\t1:00pm,Thursday,Teacher Assistant;1:00pm\\t to\\t1:30pm,Tuesday,Ryan Burgert;1:00pm\\t to\\t1:30pm,Thursday,Teacher Assistant;1:30pm\\t to\\t2:00pm,Tuesday,Ryan Burgert;1:30pm\\t to\\t2:00pm,Tuesday,Teacher Assistant;1:30pm\\t to\\t2:00pm,Friday,Ryan Burgert;2:00pm\\t to\\t2:30pm,Tuesday,Ryan Burgert;2:00pm\\t to\\t2:30pm,Tuesday,Teacher Assistant;2:00pm\\t to\\t2:30pm,Thursday,Teacher Assistant;2:00pm\\t to\\t2:30pm,Friday,Ryan Burgert;2:30pm\\t to\\t3:00pm,Monday,Teacher Assistant;2:30pm\\t to\\t3:00pm,Tuesday,Ryan Burgert;2:30pm\\t to\\t3:00pm,Tuesday,Teacher Assistant;2:30pm\\t to\\t3:00pm,Thursday,Teacher Assistant;2:30pm\\t to\\t3:00pm,Friday,Ryan Burgert;3:00pm\\t to\\t3:30pm,Monday,Ryan Burgert;3:00pm\\t to\\t3:30pm,Monday,Teacher Assistant;3:00pm\\t to\\t3:30pm,Tuesday,Teacher Assistant;3:00pm\\t to\\t3:30pm,Thursday,Teacher Assistant;3:00pm\\t to\\t3:30pm,Friday,Ryan Burgert;3:00pm\\t to\\t3:30pm,Friday,Teacher Assistant;3:30pm\\t to\\t4:00pm,Monday,Ryan Burgert;3:30pm\\t to\\t4:00pm,Monday,Teacher Assistant;3:30pm\\t to\\t4:00pm,Wednesday,Ryan Burgert;3:30pm\\t to\\t4:00pm,Thursday,Teacher Assistant;3:30pm\\t to\\t4:00pm,Friday,Ryan Burgert;4:00pm\\t to\\t4:30pm,Monday,Ryan Burgert;4:00pm\\t to\\t4:30pm,Monday,Teacher Assistant;4:00pm\\t to\\t4:30pm,Wednesday,Ryan Burgert;4:30pm\\t to\\t5:00pm,Monday,Ryan Burgert;4:30pm\\t to\\t5:00pm,Monday,Teacher Assistant;4:30pm\\t to\\t5:00pm,Wednesday,Ryan Burgert;4:30pm\\t to\\t5:00pm,Friday,Teacher Assistant;5:00pm\\t to\\t5:30pm,Monday,Ryan Burgert;5:00pm\\t to\\t5:30pm,Wednesday,Ryan Burgert;5:00pm\\t to\\t5:30pm,Friday,Teacher Assistant;5:30pm\\t to\\t6:00pm,Monday,Teacher Assistant;5:30pm\\t to\\t6:00pm,Wednesday,Ryan Burgert;6:00pm\\t to\\t6:30pm,Monday,Teacher Assistant;6:30pm\\t to\\t7:00pm,Monday,Teacher Assistant\",\n"+
-    //          "    \"ProjectData\": {\n"+
-    //          "        \"TeamsTable\": \"Shank,shunk,up,down;left,far,bottom,top;listen,boy,youre,done\",\n"+
-    //          "        \"StudentsTable\": \"Student,Alien,American,Pie\"\n"+
-    //          "    }\n"+
-    //          "}\n";
     @Test
-    public void testLaunch()
+    public void verifySubject()
     {
-        launch();
+        assert Subject.equals("CSE");
     }
     @Test
-    public void verifyRecitationData()
+    public void verifyTitle()
     {
-        launch();
-        assert gui.modes.recitationData.reader.getState().equals("Arya,Bethany,Cathode,Dent,Ear,Fence;Plane,Air,Assistant,Teacher,Stigma,Sterling");
+        assert Title.equals("Computer Science III");
     }
     @Test
-    public void verifyCourseDetails()
+    public void verifyInstructorName()
     {
-        assert gui.modes.recitationData.reader.getState().equals("Arya,Bethany,Cathode,Dent,Ear,Fence;Plane,Air,Assistant,Teacher,Stigma,Sterling");
+        assert InstructorName.equals("McKenna");
     }
     @Test
-    public void verifyFullAppState()//This trumps all the others: they aren't very important.
+    public void verifyInstructorHome()
     {
-        System.out.println("hello");
-        // assert io.saver.getAppState().equals(TestSave.hardcodedSettings);//These are the original settigs we loaded, from a string.
+        assert InstructorHome.equals("http://www3.cs.stonybrook.edu/~cse219/Section02/hw/HW5.html");
     }
     @Test
-    public void test()
+    public void verifySemester()
     {
-        r.println(gui.modes.courseDetails.reader.getSubject());//CSE
-        r.println(gui.modes.courseDetails.reader.getTitle());//Computer Science III
-        r.println(gui.modes.courseDetails.reader.getInstructorName());//McKenna
-        r.println(gui.modes.courseDetails.reader.getInstructorHome());//http://www3.cs.stonybrook.edu/~cse219/Section02/hw/HW5.html
-        r.println(gui.modes.courseDetails.reader.getSemester());//Spring
-        r.println(gui.modes.courseDetails.reader.getNumber());//123
-        r.println(gui.modes.courseDetails.reader.getYear());//2017
-        r.println(gui.modes.courseDetails.reader.getExportDir());//This is the export directory
-        r.println(gui.modes.courseDetails.reader.getTemplateDir());//.\templates\CSE219
-        r.println(gui.modes.courseDetails.reader.getBannerImagePath());//file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png
-        r.println(gui.modes.courseDetails.reader.getLeftFooterImagePath());//file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png
-        r.println(gui.modes.courseDetails.reader.getRightFooterImagePath());//file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png
-        r.println(gui.modes.courseDetails.reader.getSitePagesState());//true,A,B,AOIJ;true,C,D,AOIJS;false,E,F,aoisf;false,G,H,aiohf
-        r.println(gui.modes.courseDetails.reader.getStylesheet());//My Stylesheet
-        r.println(gui.modes.projectData.reader.getStudentsTableState());//Student,Alien,American,Pie
-        r.println(gui.modes.projectData.reader.getTeamsTableState());//Shank,shunk,up,down;left,far,bottom,top;listen,boy,youre,done
-        r.println(gui.modes.recitationData.reader.getState());//Arya,Bethany,Cathode,Dent,Ear,Fence;Plane,Air,Assistant,Teacher,Stigma,Sterling
-        r.println(gui.modes.scheduleData.reader.getStartingMonday());//2017-04-04
-        r.println(gui.modes.scheduleData.reader.getEndingFriday());//2017-04-14
-        r.println(gui.modes.scheduleData.reader.getTableState());//Alpha,Beta,Charlie,Delta,Eernie,Spock,Dump;Elbow,Farlong,Garble,Hobbit,Barren,Crustation,Derby;Iodine,Juniper,Koala,Lion,Bob,Cat,Dog
+        assert Semester.equals("Spring");
     }
-    // region App Wrapper: Ignore this code. It's duplicated, and is only for a nichy test for my homework.
-    // @SuppressWarnings("Duplicates")
+    @Test
+    public void verifyNumber()
+    {
+        assert Number.equals("123");
+    }
+    @Test
+    public void verifyYear()
+    {
+        assert Year.equals("2017");
+    }
+    @Test
+    public void verifyExportDir()
+    {
+        assert ExportDir.equals("This is the export directory");
+    }
+    @Test
+    public void verifyTemplateDir()
+    {
+        assert TemplateDir.equals(".\\templates\\CSE219");
+    }
+    @Test
+    public void verifyBannerImagePath()
+    {
+        assert BannerImagePath.equals("file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png");
+    }
+    @Test
+    public void verifyLeftFooterImagePath()
+    {
+        assert LeftFooterImagePath.equals("file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png");
+    }
+    @Test
+    public void verifyRightFooterImagePath()
+    {
+        assert RightFooterImagePath.equals("file:/Users/Ryan/Desktop/RyanCourseSiteGenerator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png");
+    }
+    @Test
+    public void verifySitePagesState()
+    {
+        assert SitePagesState.equals("true,A,B,AOIJ;true,C,D,AOIJS;false,E,F,aoisf;false,G,H,aiohf");
+    }
+    @Test
+    public void verifyStylesheet()
+    {
+        assert Stylesheet.equals("My Stylesheet");
+    }
+    @Test
+    public void verifyStudentsTableState()
+    {
+        assert StudentsTableState.equals("Student,Alien,American,Pie");
+    }
+    @Test
+    public void verifyTeamsTableState()
+    {
+        assert TeamsTableState.equals("Shank,shunk,up,down;left,far,bottom,top;listen,boy,youre,done");
+    }
+    @Test
+    public void verifyState()
+    {
+        assert State.equals("Arya,Bethany,Cathode,Dent,Ear,Fence;Plane,Air,Assistant,Teacher,Stigma,Sterling");
+    }
+    @Test
+    public void verifyStartingMonday()
+    {
+        assert StartingMonday.equals("2017-04-04");
+    }
+    @Test
+    public void verifyEndingFriday()
+    {
+        assert EndingFriday.equals("2017-04-14");
+    }
+    @Test
+    public void verifyTableState()
+    {
+        assert TableState.equals("Alpha,Beta,Charlie,Delta,Eernie,Spock,Dump;Elbow,Farlong,Garble,Hobbit,Barren,Crustation,Derby;Iodine,Juniper,Koala,Lion,Bob,Cat,Dog");
+    }
+    public static String Subject;
+    public static String Title;
+    public static String InstructorName;
+    public static String InstructorHome;
+    public static String Semester;
+    public static String Number;
+    public static String Year;
+    public static String ExportDir;
+    public static String TemplateDir;
+    public static String BannerImagePath;
+    public static String LeftFooterImagePath;
+    public static String RightFooterImagePath;
+    public static String SitePagesState;
+    public static String Stylesheet;
+    public static String StudentsTableState;
+    public static String TeamsTableState;
+    public static String State;
+    public static String StartingMonday;
+    public static String EndingFriday;
+    public static String TableState;
     public void start(Stage primaryStage)
     {
         r.say("Hello world");
         stage=primaryStage;
-        initialize();
+        super.initialize();
+        io.loader.loadAppStateFromFile(new File("/Users/Ryan/Desktop/RyanCourseSiteGenerator/SiteSaveTest.json"));
+        System.out.println("1");
         io.saver.saveAppStateToFile(new File(io.propertyGetter.getNewFilePath()).getPath());
+        System.out.println("2");
         stage.setTitle(io.propertyGetter.getAppTitle());
+        System.out.println("3");
         stage.getIcons().add(io.styleGetter.getAppIcon());
+        System.out.println("4");
         stage.setScene(new Scene(gui.window.boilerplate));
+        System.out.println("5");
         stage.setOnCloseRequest(e->gui.toolbar.actions.handleExit());
+        System.out.println("6");
         stage.setMinHeight(io.propertyGetter.getMinAppHeight());//Unlike McKenna's demo
+        System.out.println("7");
         stage.setMinWidth(io.propertyGetter.getMinAppWidth());//Unlike McKenna's demo
-        verifyFullAppState();
+        System.out.println("9");
+        Subject=gui.modes.courseDetails.reader.getSubject();
+        Title=gui.modes.courseDetails.reader.getTitle();
+        InstructorName=gui.modes.courseDetails.reader.getInstructorName();
+        InstructorHome=gui.modes.courseDetails.reader.getInstructorHome();
+        Semester=gui.modes.courseDetails.reader.getSemester();
+        Number=gui.modes.courseDetails.reader.getNumber();
+        Year=gui.modes.courseDetails.reader.getYear();
+        ExportDir=gui.modes.courseDetails.reader.getExportDir();
+        TemplateDir=gui.modes.courseDetails.reader.getTemplateDir();
+        BannerImagePath=gui.modes.courseDetails.reader.getBannerImagePath();
+        LeftFooterImagePath=gui.modes.courseDetails.reader.getLeftFooterImagePath();
+        RightFooterImagePath=gui.modes.courseDetails.reader.getRightFooterImagePath();
+        SitePagesState=gui.modes.courseDetails.reader.getSitePagesState();
+        Stylesheet=gui.modes.courseDetails.reader.getStylesheet();
+        StudentsTableState=gui.modes.projectData.reader.getStudentsTableState();
+        TeamsTableState=gui.modes.projectData.reader.getTeamsTableState();
+        State=gui.modes.recitationData.reader.getState();
+        StartingMonday=gui.modes.scheduleData.reader.getStartingMonday();
+        EndingFriday=gui.modes.scheduleData.reader.getEndingFriday();
+        TableState=gui.modes.scheduleData.reader.getTableState();
         stage.show();
+        gui.toolbar.actions.handleExit();
+    }
+    static
+    {
+        r.enableTheGoodOldAssertionKeyword();
     }
     @BeforeClass
     public static void main()
     {
         launch();
     }
-    //endregion
-
 }

@@ -11,6 +11,18 @@ public class junittest
     public void testSomething()
     {
         assert false;
+    }    @Test
+    public void testSo5mething()
+    {
+        assert false;
+    }    @Test
+    public void testSome1thing()
+    {
+        assert false;
+    }    @Test
+    public void testSo1mething()
+    {
+        assert false;
     }
     @Test
     public void testSomething2()
