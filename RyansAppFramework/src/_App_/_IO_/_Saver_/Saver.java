@@ -22,7 +22,7 @@ public class Saver
     }
     public boolean isCurrentlyNewFile()
     {
-        return getCurrentFilePath().equals(app.io.propertyGetter.getAppTitle());//We must have not opened nor saved any files because doing so always changes the title of the app to that file's path
+        return app.stage.getTitle().equals(app.io.propertyGetter.getAppTitle());//We must have not opened nor saved any files because doing so always changes the title of the app to that file's path
     }
     public String getCurrentFilePath()
     {
