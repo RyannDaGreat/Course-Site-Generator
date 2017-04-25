@@ -175,9 +175,7 @@ public class AppGUI
                                      fileController.handleExportRequest();
                                  });
         exitButton.setOnAction(e->
-                               {
-                                   fileController.handleExitRequest();
-                               });
+                                   fileController.handleExitRequest());
     }
     // INITIALIZE THE WINDOW (i.e. STAGE) PUTTING ALL THE CONTROLS
     // THERE EXCEPT THE WORKSPACE, WHICH WILL BE ADDED THE FIRST

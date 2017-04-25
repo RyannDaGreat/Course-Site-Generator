@@ -3,6 +3,10 @@ import _App_.App;
 import _App_._GUI_._Toolbar_._Boilerplate_.Boilerplate;
 import _App_._GUI_._Toolbar_._Reader_.Reader;
 import _Externals_.r;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
 public class Actions
 {
     public App app;
@@ -85,7 +89,20 @@ public class Actions
         if(app.gui.dialogs.confirmSave())
         {
             r.say("Exiting App");
-            app.stage.close();
+            //region Fade out then close stage
+            double fadeOutDurationInSeconds=1.5;//UserInput++
+            double now=r.seconds();
+                Timeline timeline=new Timeline(new KeyFrame(Duration.millis(1000/60),x->//at 60fps
+                {
+                    double v=now-r.seconds()+fadeOutDurationInSeconds;
+                    if(v>0)
+                        app.stage.setOpacity(Math.pow(v/fadeOutDurationInSeconds,2));//Parabolic so its smooth
+                    else
+                        app.stage.close();
+                }));
+            timeline.setCycleCount(Animation.INDEFINITE);
+            timeline.play();
+            //endregion
         }
     }
     public void handleUndo()
