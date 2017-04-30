@@ -89,6 +89,10 @@ public class PropertyGetter
     {
         return Long.parseLong(getProperty("autotransaction_interval_in_millis"));
     }
+    public double getHueShiftFrequenciInHz()
+    {
+        return Double.parseDouble(getProperty("hue_shift_frequency_in_hz"));
+    }
     //endregion
     //region State Keys: Mode Title Keys
     /*@formatter:off*/

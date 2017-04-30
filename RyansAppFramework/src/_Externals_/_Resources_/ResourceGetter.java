@@ -44,5 +44,9 @@ public class ResourceGetter
     {
         return getResource("_Style_/app_global_font.css");
     }
+    public static String getColorPickerStylesheet()
+    {
+        return getResource("_Style_/app_global_font.css");
+    }
     //endregion
 }

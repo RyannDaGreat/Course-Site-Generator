@@ -2,10 +2,10 @@ package _App_._GUI_._Modes_._ProjectData_._Boilerplate_;
 import _App_.App;
 import _Externals_.PD_StudentsTableView;
 import _Externals_.PD_TeamsTableView;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 public class Boilerplate
@@ -19,6 +19,14 @@ public class Boilerplate
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         megaplate=app.gui.window.boilerplate;
+        // final ColorPicker colorPicker=new ColorPicker();
+        // colorPicker.setOnAction(t->
+        //                         {
+        //                             Color c=colorPicker.getValue();
+        //                             colorPicker.
+        //                             System.out.println("New Color's RGB = "+c.getRed()+" "+c.getGreen()+" "+c.getBlue());
+        //                         });
+        // getT_Color_circle().setOnMousePressed(ⵁ->app.gui.dialogs.showColorDialog("C",Color.BLACK));
     }
     public PD_StudentsTableView getS__tableView()
     {

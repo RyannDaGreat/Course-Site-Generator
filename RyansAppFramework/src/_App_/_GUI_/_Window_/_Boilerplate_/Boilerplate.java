@@ -2,14 +2,19 @@ package _App_._GUI_._Window_._Boilerplate_;
 import _Externals_.*;
 import _Externals_._Resources_.ResourceGetter;
 import _App_.App;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 public class Boilerplate extends VBox
 {
     public App app;
@@ -46,6 +51,37 @@ public class Boilerplate extends VBox
                                 }
                             }
                         });
+        /*app.gui.window.boilerplate.*/
+        //region Hue Shifter
+        ColorAdjust colorAdjust=new ColorAdjust();
+        setEffect(colorAdjust);
+        ColorAdjust colorAdjustInverse=new ColorAdjust();
+        cdPsBanner_imageView8.setEffect(colorAdjustInverse);
+        cdPsLeft_imageView9.setEffect(colorAdjustInverse);
+        cdPsRight_imageView10.setEffect(colorAdjustInverse);
+        pdTColor_circle.setEffect(colorAdjustInverse);
+        pdTTextColor_circle0.setEffect(colorAdjustInverse);
+        Timeline hueTimeline=new Timeline(new KeyFrame(Duration.millis(1000/30),x->
+        {
+            double X=2*r.seconds()*app.io.propertyGetter.getHueShiftFrequenciInHz();
+            X-=2*Math.round(X/2);
+            colorAdjust.setHue(-X);
+            colorAdjustInverse.setHue(X);
+
+
+        }));
+        hueTimeline.setCycleCount(Animation.INDEFINITE);
+        hueTimeline.play();
+        //endregion
+        String graphicStlye="-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );";
+        cdPsBanner_imageView8.setStyle(graphicStlye);
+        cdPsLeft_imageView9.setStyle(graphicStlye);
+        cdPsRight_imageView10.setStyle(graphicStlye);
+        pdTColor_circle.setStyle(graphicStlye);
+        pdTTextColor_circle0.setStyle(graphicStlye);
+        // sdEndingFriday_datePicker.setStyle(graphicStlye);
+        // sdStartingMonday_datePicker0.setStyle(graphicStlye);
+        // sdDate_datePicker1.setStyle(graphicStlye);
     }
     public Boilerplate(App app)
     {
@@ -58,24 +94,24 @@ public class Boilerplate extends VBox
         columnConstraints1=new ColumnConstraints();
         rowConstraints=new RowConstraints();
         toolBar=new ToolBar();
-        new_button=new Button();
+        new_button=new rButton();
         imageView=new ImageView();
-        open_button0=new Button();
+        open_button0=new rButton();
         imageView0=new ImageView();
-        save_button1=new Button();
+        save_button1=new rButton();
         imageView1=new ImageView();
-        saveas_button2=new Button();
+        saveas_button2=new rButton();
         imageView2=new ImageView();
-        export_button3=new Button();
+        export_button3=new rButton();
         imageView3=new ImageView();
-        power_button4=new Button();
+        power_button4=new rButton();
         imageView4=new ImageView();
         toolBar0=new ToolBar();
-        undo_button5=new Button();
+        undo_button5=new rButton();
         imageView5=new ImageView();
-        redo_button6=new Button();
+        redo_button6=new rButton();
         imageView6=new ImageView();
-        book_button7=new Button();
+        book_button7=new rButton();
         imageView7=new ImageView();
         tabPane=new TabPane();
         tab=new Tab();
@@ -105,7 +141,7 @@ public class Boilerplate extends VBox
         cdCiNumber_comboBox1=new ComboBox();
         cdCiYear_comboBox2=new ComboBox();
         cdCiExportDir_text9=new Text();
-        cdCiChange_button8=new Button();
+        cdCiChange_button8=new rButton();
         columnConstraints3=new ColumnConstraints();
         columnConstraints4=new ColumnConstraints();
         columnConstraints5=new ColumnConstraints();
@@ -127,7 +163,7 @@ public class Boilerplate extends VBox
         columnConstraints10=new ColumnConstraints();
         rowConstraints7=new RowConstraints();
         rowConstraints8=new RowConstraints();
-        cdStChange_button9=new Button();
+        cdStChange_button9=new rButton();
         cdStTemplateDir_text12=new Text();
         text13=new Text();
         cdStSitePages_tableView=new CD_SitePagesTableView(app.io.propertyGetter.getCdSitePagesHeaders());
@@ -141,14 +177,14 @@ public class Boilerplate extends VBox
         text15=new Text();
         gridPane3=new GridPane();
         text16=new Text();
-        cdPsChangeBanner_button10=new Button();
+        cdPsChangeBanner_button10=new rButton();
         cdPsBanner_imageView8=new ImageView();
         text17=new Text();
         text18=new Text();
         cdPsLeft_imageView9=new ImageView();
         cdPsRight_imageView10=new ImageView();
-        cdPsChangeLeft_button11=new Button();
-        cdPsChangeRight_button12=new Button();
+        cdPsChangeLeft_button11=new rButton();
+        cdPsChangeRight_button12=new rButton();
         text19=new Text();
         cdPsStylesheet_comboBox3=new ComboBox();
         columnConstraints11=new ColumnConstraints();
@@ -182,8 +218,8 @@ public class Boilerplate extends VBox
         text113=new Text();
         tdTaEmail_textField2=new TextField();
         tdTaName_textField3=new TextField();
-        tdTaAddUpdate_button13=new Button();
-        tdTaClear_button14=new Button();
+        tdTaAddUpdate_button13=new rButton();
+        tdTaClear_button14=new rButton();
         text114=new Text();
         columnConstraints15=new ColumnConstraints();
         columnConstraints16=new ColumnConstraints();
@@ -246,8 +282,8 @@ public class Boilerplate extends VBox
         rdInstructor_textField5=new TextField();
         rdDayTime_textField6=new TextField();
         rdLocation_textField7=new TextField();
-        rdAddUpdate_button15=new Button();
-        rdClear_button16=new Button();
+        rdAddUpdate_button15=new rButton();
+        rdClear_button16=new rButton();
         rdTA1_comboBox6=new ComboBox();
         rdTA2_comboBox7=new ComboBox();
         text1114=new Text();
@@ -304,8 +340,8 @@ public class Boilerplate extends VBox
         sdTopic_textField9=new TextField();
         sdTime_textField10=new TextField();
         sdTitle_textField11=new TextField();
-        sdAddUpdate_button17=new Button();
-        sdClear_button18=new Button();
+        sdAddUpdate_button17=new rButton();
+        sdClear_button18=new rButton();
         text11116=new Text();
         text11117=new Text();
         text11118=new Text();
@@ -345,8 +381,8 @@ public class Boilerplate extends VBox
         text111112=new Text();
         pdTLink_textField13=new TextField();
         pdTName_textField14=new TextField();
-        pdTAddUpdate_button19=new Button();
-        pdTClear_button110=new Button();
+        pdTAddUpdate_button19=new rButton();
+        pdTClear_button110=new rButton();
         text111113=new Text();
         text111114=new Text();
         text111115=new Text();
@@ -380,8 +416,8 @@ public class Boilerplate extends VBox
         pdSTeam_textField15=new TextField();
         pdSFirstName_textField16=new TextField();
         pdSLastName_textField17=new TextField();
-        pdSAddUpdate_button111=new Button();
-        pdSClear_button112=new Button();
+        pdSAddUpdate_button111=new rButton();
+        pdSClear_button112=new rButton();
         text1111112=new Text();
         text1111113=new Text();
         pdSRole_textField18=new TextField();
@@ -1912,15 +1948,15 @@ public class Boilerplate extends VBox
     public final ImageView imageView5;
     public final ImageView imageView6;
     //endregion
-    public final Button new_button;//
-    public final Button open_button0;//
-    public final Button save_button1;//
-    public final Button saveas_button2;//
-    public final Button export_button3;//
-    public final Button power_button4;//
-    public final Button undo_button5;//Undo
-    public final Button redo_button6;//Redo
-    public final Button book_button7;//Book
+    public final rButton new_button;//
+    public final rButton open_button0;//
+    public final rButton save_button1;//
+    public final rButton saveas_button2;//
+    public final rButton export_button3;//
+    public final rButton power_button4;//
+    public final rButton undo_button5;//Undo
+    public final rButton redo_button6;//Redo
+    public final rButton book_button7;//Book
     //region ⵁ
     public final ImageView imageView7;
     public final TabPane tabPane;
@@ -1952,7 +1988,7 @@ public class Boilerplate extends VBox
     public final ComboBox cdCiNumber_comboBox1;
     public final ComboBox cdCiYear_comboBox2;
     public final Text cdCiExportDir_text9;
-    public final Button cdCiChange_button8;
+    public final rButton cdCiChange_button8;
     //region ⵁ
     public final ColumnConstraints columnConstraints3;
     public final ColumnConstraints columnConstraints4;
@@ -1978,7 +2014,7 @@ public class Boilerplate extends VBox
     public final Text text13;
     //endregion
     public final Text cdStTemplateDir_text12;
-    public final Button cdStChange_button9;
+    public final rButton cdStChange_button9;
     public final CD_SitePagesTableView cdStSitePages_tableView;
     public final TableColumn cdStUse_tableColumn;
     public final TableColumn cdStNavbarTitle_tableColumn0;
@@ -1998,9 +2034,9 @@ public class Boilerplate extends VBox
     public final ImageView cdPsBanner_imageView8;
     public final ImageView cdPsLeft_imageView9;
     public final ImageView cdPsRight_imageView10;
-    public final Button cdPsChangeBanner_button10;
-    public final Button cdPsChangeLeft_button11;
-    public final Button cdPsChangeRight_button12;
+    public final rButton cdPsChangeBanner_button10;
+    public final rButton cdPsChangeLeft_button11;
+    public final rButton cdPsChangeRight_button12;
     public final ComboBox cdPsStylesheet_comboBox3;
     //region ⵁ
     public final ColumnConstraints columnConstraints11;
@@ -2030,8 +2066,8 @@ public class Boilerplate extends VBox
     public final TableColumn tdTaEmail_tableColumn5;
     public final TextField tdTaName_textField3;
     public final TextField tdTaEmail_textField2;
-    public final Button tdTaAddUpdate_button13;
-    public final Button tdTaClear_button14;
+    public final rButton tdTaAddUpdate_button13;
+    public final rButton tdTaClear_button14;
     //region ⵁ
     public final Text text112;
     public final GridPane gridPane5;
@@ -2090,8 +2126,8 @@ public class Boilerplate extends VBox
     public final TextField rdLocation_textField7;
     public final ComboBox rdTA1_comboBox6;
     public final ComboBox rdTA2_comboBox7;
-    public final Button rdAddUpdate_button15;
-    public final Button rdClear_button16;
+    public final rButton rdAddUpdate_button15;
+    public final rButton rdClear_button16;
     //region ⵁ
     public final AnchorPane anchorPane8;
     public final VBox vBox8;
@@ -2156,8 +2192,8 @@ public class Boilerplate extends VBox
     public final TextField sdTopic_textField9;
     public final TextField sdLink_textField12;
     public final TextField sdCriteria_textField8;
-    public final Button sdAddUpdate_button17;
-    public final Button sdClear_button18;
+    public final rButton sdAddUpdate_button17;
+    public final rButton sdClear_button18;
     //region ⵁ
     public final Text text11116;
     public final Text text11117;
@@ -2190,8 +2226,8 @@ public class Boilerplate extends VBox
     public final TableColumn pdTScript_tableColumn18;
     public final TextField pdTLink_textField13;
     public final TextField pdTName_textField14;
-    public final Button pdTAddUpdate_button19;
-    public final Button pdTClear_button110;
+    public final rButton pdTAddUpdate_button19;
+    public final rButton pdTClear_button110;
     public final Circle pdTColor_circle;
     public final Circle pdTTextColor_circle0;
     public final Text pdTColor_text111116;
@@ -2237,6 +2273,6 @@ public class Boilerplate extends VBox
     public final TextField pdSLastName_textField17;
     public final TextField pdSTeam_textField15;
     public final TextField pdSRole_textField18;
-    public final Button pdSAddUpdate_button111;
-    public final Button pdSClear_button112;
+    public final rButton pdSAddUpdate_button111;
+    public final rButton pdSClear_button112;
 }

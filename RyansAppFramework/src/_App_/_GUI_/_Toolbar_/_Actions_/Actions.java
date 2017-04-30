@@ -6,7 +6,10 @@ import _Externals_.r;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.effect.ColorAdjust;
 import javafx.util.Duration;
+
+import java.io.File;
 public class Actions
 {
     public App app;
@@ -63,8 +66,17 @@ public class Actions
     {
         if(app.gui.dialogs.confirmSave())
         {
-            app.io.loader.loadAppStateFromFile(app.gui.dialogs.openFile());
-            r.say("Successfully opened file");
+            File f=app.gui.dialogs.openFile();
+            r.say("open file");
+            //noinspection StatementWithEmptyBody
+            if(f!=null)
+            {
+                app.io.loader.loadAppStateFromFile(f);
+            }
+            else
+            {
+                //User cancelled
+            }
         }
     }
     public void handleSave()
@@ -79,7 +91,16 @@ public class Actions
     }
     public void handleSaveAs()
     {
-        app.io.saver.saveAppStateToFile(app.gui.dialogs.saveFile().getAbsolutePath());
+        File file=app.gui.dialogs.saveFile();
+        //noinspection StatementWithEmptyBody
+        if(file!=null)
+        {
+            app.io.saver.saveAppStateToFile(file.getAbsolutePath());
+        }
+        else
+        {
+            //User cancelled
+        }
     }
     public void handleExport()
     {
@@ -92,14 +113,18 @@ public class Actions
             //region Fade out then close stage
             double fadeOutDurationInSeconds=1.5;//UserInput++
             double now=r.seconds();
-                Timeline timeline=new Timeline(new KeyFrame(Duration.millis(1000/60),x->//at 60fps
+            Timeline timeline=new Timeline(new KeyFrame(Duration.millis(1000/60),x->//at 60fps
+            {
+                double v=now-r.seconds()+fadeOutDurationInSeconds;
+                if(v>0)
                 {
-                    double v=now-r.seconds()+fadeOutDurationInSeconds;
-                    if(v>0)
-                        app.stage.setOpacity(Math.pow(v/fadeOutDurationInSeconds,2));//Parabolic so its smooth
-                    else
-                        app.stage.close();
-                }));
+                    app.stage.setOpacity(Math.pow(v/fadeOutDurationInSeconds,2));//Parabolic so its smooth
+                }
+                else
+                {
+                    app.stage.close();
+                }
+            }));
             timeline.setCycleCount(Animation.INDEFINITE);
             timeline.play();
             //endregion

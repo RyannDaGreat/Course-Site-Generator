@@ -1,7 +1,17 @@
 package _App_._GUI_._Modes_._ScheduleData_._Boilerplate_;
 import _App_.App;
+import _App_._GUI_._Modes_._ScheduleData_._Reader_.Reader;
 import _Externals_.SD_ScheduleItemsTableView;
+import _Externals_.r;
 import javafx.scene.control.*;
+import javafx.util.Callback;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.MonthDay;
+import java.time.format.DateTimeFormatter;
+
+import static _Externals_.SD_ScheduleItemsTableView.*;
 public class Boilerplate
 {
     public App app;
@@ -10,9 +20,71 @@ public class Boilerplate
         this.app=app;
     }
     private _App_._GUI_._Window_._Boilerplate_.Boilerplate megaplate;
+    private Reader reader;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         megaplate=app.gui.window.boilerplate;
+        reader=app.gui.modes.scheduleData.reader;
+        //region Date-Picker Constraints
+        r.applyDateFilter(getSdStartingMonday_datePicker(),x->
+        {
+            for(Object o : getSdScheduledItems_tableView().getItems().toArray())
+            {
+                SD_ScheduleItemsTableView.Item i=(SD_ScheduleItemsTableView.Item)o;
+                try
+                {
+                    if(x.isAfter(LocalDate.parse(i.dateProperty().getValue())))//Prevent user from creating date conflicts that would need to be erased
+                    {
+                        return false;
+                    }
+                }
+                catch(Exception ignored)
+                {
+                    ignored.printStackTrace();
+                }
+            }
+            return x.getDayOfWeek().equals(DayOfWeek.MONDAY)&&x.isBefore(LocalDate.parse(reader.getEndingFriday()));
+        });//NOTE: LocalDate.parse(reader.getEndingFriday()) ≣ getSdEndingFriday_datePicker().getValue()
+        r.applyDateFilter(getSdEndingFriday_datePicker(),x->
+        {
+            for(Object o : getSdScheduledItems_tableView().getItems().toArray())
+            {
+                SD_ScheduleItemsTableView.Item i=(SD_ScheduleItemsTableView.Item)o;
+                try
+                {
+                    if(x.isBefore(LocalDate.parse(i.dateProperty().getValue())))//Make sure we haven't chosen this date before
+                    {
+                        return false;
+                    }
+                }
+                catch(Exception ignored)
+                {
+                    ignored.printStackTrace();
+                }
+            }
+            return x.getDayOfWeek().equals(DayOfWeek.FRIDAY)&&x.isAfter(LocalDate.parse(reader.getStartingMonday()));
+        });
+        r.applyDateFilter(getSdDate_datePicker(),x->
+        {
+            for(Object o : getSdScheduledItems_tableView().getItems().toArray())
+            {
+                SD_ScheduleItemsTableView.Item i=(SD_ScheduleItemsTableView.Item)o;
+                try
+                {
+                    if(x.isEqual(LocalDate.parse(i.dateProperty().getValue())))//Make sure we haven't chosen this date before
+                    {
+                        return false;
+                    }
+                }
+                catch(Exception ignored)
+                {
+                    ignored.printStackTrace();
+                }
+            }
+            return x.isAfter(LocalDate.parse(reader.getStartingMonday()))&&
+                   x.isBefore(LocalDate.parse(reader.getEndingFriday()));
+        });
+        //endregion
     }
     public DatePicker getSdStartingMonday_datePicker()
     {

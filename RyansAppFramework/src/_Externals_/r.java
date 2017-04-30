@@ -1,11 +1,13 @@
 package _Externals_;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,6 +18,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -164,6 +167,60 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    //region Datepicker filter
+    public interface dateToBoolean
+    {
+        boolean f(LocalDate x);
+    }
+    public static void applyDateFilter(DatePicker datePicker,dateToBoolean filter)//Derived from http://download.java.net/jdk8/jfxdocs/javafx/scene/control/DatePicker.html#dayCellFactoryProperty
+    {
+        final Callback<DatePicker,DateCell> dayCellFactory=new Callback<DatePicker,DateCell>()
+        {
+            public DateCell call(final DatePicker datePicker)
+            {
+                return new DateCell()
+                {
+                    @Override
+                    public void updateItem(LocalDate item,boolean empty)
+                    {
+                        super.updateItem(item,empty);
+                        // if(MonthDay.from(item).equals(MonthDay.of(9,25)))
+                        // {
+                        //     setTooltip(new Tooltip("Happy Birthday!"));
+                        //     setStyle("-fx-background-color: #ff4444;");
+                        // }
+                        // if(item.equals(LocalDate.now().plusDays(1)))
+                        // {
+                        //     // Tomorrow is too soon.
+                        //     setDisable(true);
+                        //     // setMaxHeight(0);
+                        //     // setMaxWidth(0);
+                        // }
+                        // if(!item.getDayOfWeek().equals(DayOfWeek.MONDAY))
+                        // {
+                        //     // Tomorrow is too soon.
+                        //     setDisable(true);
+                        //     // setMaxHeight(0);
+                        //     // setMaxWidth(0);
+                        // }
+                        try
+                        {
+                            if(item!=null&&!empty)
+                            {
+                                setDisable(!filter.f(item));
+                            }
+                        }
+                        catch(Exception ignored)
+                        {
+                            ignored.printStackTrace();
+                        }
+                    }
+                };
+            }
+        };
+        datePicker.setDayCellFactory(dayCellFactory);
+    }
+    //endregion
     public static void enableTheGoodOldAssertionKeyword()
     {
         ClassLoader.getSystemClassLoader().setDefaultAssertionStatus(true);//Netbeans is stupid and has assertions turned off by default. This turns them on.
@@ -214,9 +271,10 @@ public class r
             d.setValue(null);
         }
     }
-    public static String reverse(String forward) {
-        StringBuilder builder = new StringBuilder(forward);
-        String reverse = builder.reverse().toString();
+    public static String reverse(String forward)
+    {
+        StringBuilder builder=new StringBuilder(forward);
+        String reverse=builder.reverse().toString();
         return reverse;
     }
     public static JSONObject readJson(String path)
@@ -555,13 +613,14 @@ public class r
     }
     //endregion END FOLD
     //region Timing Methods: millis(), seconds(), delay(time), tic(),toc(),toc:
+    final static long initMillis=System.currentTimeMillis();
     public static long millis()
     {
-        return System.currentTimeMillis();
+        return System.currentTimeMillis()-initMillis;
     }
     public static double seconds()
     {
-        return System.currentTimeMillis()/1000d;
+        return millis()/1000d;
     }
     public static void delayInMillis(long delayDurationInMilliseconds)
     {

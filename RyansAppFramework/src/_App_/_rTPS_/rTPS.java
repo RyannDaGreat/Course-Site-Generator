@@ -5,6 +5,7 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
+
 public class rTPS extends UndoRedoCoordinator
 {
     public App app;
@@ -16,6 +17,7 @@ public class rTPS extends UndoRedoCoordinator
     {
         lastState=app.io.saver.getAppState();
         //region AUTOTRANSACTOR: Set A timer to keep running refreshlastappstate on a new thread
+
 //⁠⁠⁠⁠⁠                                    ⎧                                                                                                                ⎫
 //⁠⁠⁠⁠⁠                                    ⎪            ⎧                                                                                                  ⎫⎪
 //⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎧                                                          ⎫                       ⎪⎪

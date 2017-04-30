@@ -112,7 +112,7 @@ public class SD_ScheduleItemsTableView extends TableView
         this.setMinHeight(150);
         setOnKeyPressed(ⵁ->r.branch(this::removeSelected,ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE));//Only keeping this because I have the auto-transactor!
         //
-        addItem("a","b","c","d","b","c","d");
+        addItem("a","2017-04-10","c","d","b","c","d");
         addItem("e","f","g","h","b","c","d");
         addItem("i","j","k","l","b","c","d");
         final TableColumn<Item,String> typeCol=new TableColumn<>(typeHeader);
