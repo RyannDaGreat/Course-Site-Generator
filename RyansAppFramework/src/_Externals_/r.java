@@ -7,6 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.*;
 import javafx.util.Callback;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,6 +15,7 @@ import org.json.JSONObject;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import javafx.scene.paint.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
@@ -167,6 +169,10 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    // public static String toRGBCode(Color color)
+    // {
+    //     return String.format("#%02X%02X%02X",(int)color.getRed()*255,(int)color.getGreen()*255,(int)color.getBlue()*255);
+    // }
     //region Datepicker filter
     public interface dateToBoolean
     {
@@ -273,9 +279,7 @@ public class r
     }
     public static String reverse(String forward)
     {
-        StringBuilder builder=new StringBuilder(forward);
-        String reverse=builder.reverse().toString();
-        return reverse;
+        return (new StringBuilder(forward)).reverse().toString();
     }
     public static JSONObject readJson(String path)
     {
@@ -1528,7 +1532,7 @@ public class r
     }
     static public void ok(String title,String message)
     {
-        JOptionPane.showConfirmDialog(null,message,title,JOptionPane.OK_OPTION);
+        javax.swing.JOptionPane.showConfirmDialog(null,message,title,JOptionPane.OK_OPTION);
     }
     //endregion―――――――――――――――――――――――――――――――――――――――――
     //region File/Dir Open/Save Dialogs

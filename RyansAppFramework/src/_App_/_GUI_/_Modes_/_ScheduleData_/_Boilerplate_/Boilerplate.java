@@ -4,14 +4,9 @@ import _App_._GUI_._Modes_._ScheduleData_._Reader_.Reader;
 import _Externals_.SD_ScheduleItemsTableView;
 import _Externals_.r;
 import javafx.scene.control.*;
-import javafx.util.Callback;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.MonthDay;
-import java.time.format.DateTimeFormatter;
-
-import static _Externals_.SD_ScheduleItemsTableView.*;
 public class Boilerplate
 {
     public App app;
@@ -25,6 +20,7 @@ public class Boilerplate
     {
         megaplate=app.gui.window.boilerplate;
         reader=app.gui.modes.scheduleData.reader;
+        r.setComboboxOptions(getSdType_comboBox(),"");
         //region Date-Picker Constraints
         r.applyDateFilter(getSdStartingMonday_datePicker(),x->
         {
@@ -78,7 +74,8 @@ public class Boilerplate
                 }
                 catch(Exception ignored)
                 {
-                    ignored.printStackTrace();
+                    // ignored.printStackTrace();
+                    System.out.print("\rError Message 1235931232 (search for me)");
                 }
             }
             return x.isAfter(LocalDate.parse(reader.getStartingMonday()))&&

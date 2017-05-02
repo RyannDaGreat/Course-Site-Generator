@@ -2,6 +2,7 @@ package _App_._GUI_._Modes_._ProjectData_._Boilerplate_;
 import _App_.App;
 import _Externals_.PD_StudentsTableView;
 import _Externals_.PD_TeamsTableView;
+import _Externals_.r;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
@@ -27,6 +28,8 @@ public class Boilerplate
         //                             System.out.println("New Color's RGB = "+c.getRed()+" "+c.getGreen()+" "+c.getBlue());
         //                         });
         // getT_Color_circle().setOnMousePressed(ⵁ->app.gui.dialogs.showColorDialog("C",Color.BLACK));
+        getT_TextColor_text().setOnAction(ⵁ->getT_TextColor_circle().setFill(getT_TextColor_text().getValue()));
+        getT_Color_text().setOnAction(ⵁ->getT_Color_circle().setFill(getT_Color_text().getValue()));
     }
     public PD_StudentsTableView getS__tableView()
     {
@@ -116,11 +119,11 @@ public class Boilerplate
     {
         return megaplate.pdTTextColor_circle0;
     }
-    public Text getT_Color_text()
+    public ColorPicker getT_Color_text()
     {
         return megaplate.pdTColor_text111116;
     }
-    public Text getT_TextColor_text()
+    public ColorPicker getT_TextColor_text()
     {
         return megaplate.pdTTextColor_text111117;
     }

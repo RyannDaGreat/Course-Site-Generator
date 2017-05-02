@@ -2,6 +2,7 @@ package _App_._IO_._PropertyGetter_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _Externals_._Resources_.ResourceGetter;
 import _Externals_.r;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 @SuppressWarnings({"WeakerAccess","FieldCanBeLocal"})
 public class PropertyGetter
 {
@@ -92,6 +93,10 @@ public class PropertyGetter
     public double getHueShiftFrequenciInHz()
     {
         return Double.parseDouble(getProperty("hue_shift_frequency_in_hz"));
+    }
+    public boolean getAnimateHue()
+    {
+        return Boolean.parseBoolean(getProperty("animate_hue"));
     }
     //endregion
     //region State Keys: Mode Title Keys

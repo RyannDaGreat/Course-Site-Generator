@@ -1,10 +1,11 @@
 package _App_._GUI_._Window_._Boilerplate_;
+import _App_.App;
 import _Externals_.*;
 import _Externals_._Resources_.ResourceGetter;
-import _App_.App;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.effect.ColorAdjust;
@@ -12,7 +13,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 public class Boilerplate extends VBox
@@ -52,26 +52,31 @@ public class Boilerplate extends VBox
                             }
                         });
         /*app.gui.window.boilerplate.*/
-        //region Hue Shifter
-        ColorAdjust colorAdjust=new ColorAdjust();
-        setEffect(colorAdjust);
-        ColorAdjust colorAdjustInverse=new ColorAdjust();
-        cdPsBanner_imageView8.setEffect(colorAdjustInverse);
-        cdPsLeft_imageView9.setEffect(colorAdjustInverse);
-        cdPsRight_imageView10.setEffect(colorAdjustInverse);
-        pdTColor_circle.setEffect(colorAdjustInverse);
-        pdTTextColor_circle0.setEffect(colorAdjustInverse);
-        Timeline hueTimeline=new Timeline(new KeyFrame(Duration.millis(1000/30),x->
+        if(app.io.propertyGetter.getAnimateHue())
         {
-            double X=2*r.seconds()*app.io.propertyGetter.getHueShiftFrequenciInHz();
-            X-=2*Math.round(X/2);
-            colorAdjust.setHue(-X);
-            colorAdjustInverse.setHue(X);
-
-
-        }));
-        hueTimeline.setCycleCount(Animation.INDEFINITE);
-        hueTimeline.play();
+            //region Hue Shifter
+            //
+            Timeline hueTimeline=new Timeline(new KeyFrame(Duration.millis(1000/30),x->
+            {
+                ColorAdjust colorAdjust=new ColorAdjust();
+                setEffect(colorAdjust);
+                ColorAdjust colorAdjustInverse=new ColorAdjust();
+                cdPsBanner_imageView8.setEffect(colorAdjustInverse);
+                cdPsLeft_imageView9.setEffect(colorAdjustInverse);
+                cdPsRight_imageView10.setEffect(colorAdjustInverse);
+                pdTColor_circle.setEffect(colorAdjustInverse);
+                pdTTextColor_circle0.setEffect(colorAdjustInverse);
+                pdTTextColor_text111117.setEffect(colorAdjustInverse);
+                pdTColor_text111116.setEffect(colorAdjustInverse);
+                //
+                double X=2*r.seconds()*app.io.propertyGetter.getHueShiftFrequenciInHz();
+                X-=2*Math.round(X/2);
+                colorAdjust.setHue(-X);
+                colorAdjustInverse.setHue(X);
+            }));
+            hueTimeline.setCycleCount(Animation.INDEFINITE);
+            hueTimeline.play();
+        }
         //endregion
         String graphicStlye="-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );";
         cdPsBanner_imageView8.setStyle(graphicStlye);
@@ -388,9 +393,10 @@ public class Boilerplate extends VBox
         text111115=new Text();
         pdTColor_circle=new Circle();
         pdTTextColor_circle0=new Circle();
-        pdTColor_text111116=new Text();
-        pdTTextColor_text111117=new Text();
+        pdTColor_text111116=new ColorPicker();
+        pdTTextColor_text111117=new ColorPicker();
         columnConstraints1114=new ColumnConstraints();
+        columnConstraints1114b=new ColumnConstraints();
         columnConstraints1115=new ColumnConstraints();
         columnConstraints1116=new ColumnConstraints();
         columnConstraints1117=new ColumnConstraints();
@@ -1493,29 +1499,45 @@ public class Boilerplate extends VBox
         GridPane.setColumnIndex(pdTColor_circle,1);
         GridPane.setRowIndex(pdTColor_circle,1);
         pdTColor_circle.setFill(javafx.scene.paint.Color.valueOf(app.io.propertyGetter.getProperty("prop263"))); //$NON-NLS-1$
-        pdTColor_circle.setRadius(50.0);
+        double circleRadius=60.0;
+        pdTColor_circle.setRadius(circleRadius);
         pdTColor_circle.setStroke(javafx.scene.paint.Color.BLACK);
         pdTColor_circle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         pdTColor_circle.setStrokeWidth(0.0);
         GridPane.setColumnIndex(pdTTextColor_circle0,3);
         GridPane.setRowIndex(pdTTextColor_circle0,1);
         pdTTextColor_circle0.setFill(javafx.scene.paint.Color.WHITE);
-        pdTTextColor_circle0.setRadius(50.0);
+        pdTTextColor_circle0.setRadius(circleRadius);
         pdTTextColor_circle0.setStroke(javafx.scene.paint.Color.BLACK);
         pdTTextColor_circle0.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         pdTTextColor_circle0.setStrokeWidth(0.0);
         GridPane.setColumnIndex(pdTColor_text111116,1);
         GridPane.setRowIndex(pdTColor_text111116,1);
-        pdTColor_text111116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        pdTColor_text111116.setStrokeWidth(0.0);
-        pdTColor_text111116.setText(app.io.propertyGetter.getProperty("prop264")); //$NON-NLS-1$
+        // pdTColor_text111116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        // pdTColor_text111116.setStrokeWidth(0.0);
+        // pdTColor_text111116.setText(app.io.propertyGetter.getProperty("prop264")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdTTextColor_text111117,3);
         GridPane.setRowIndex(pdTTextColor_text111117,1);
-        pdTTextColor_text111117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        pdTTextColor_text111117.setStrokeWidth(0.0);
-        pdTTextColor_text111117.setText(app.io.propertyGetter.getProperty("prop265")); //$NON-NLS-1$
+        GridPane.setHalignment(pdTColor_text111116,HPos.CENTER);
+        GridPane.setHalignment(pdTTextColor_text111117,HPos.CENTER);
+        GridPane.setHalignment(pdTColor_circle,HPos.CENTER);
+        GridPane.setHalignment(pdTTextColor_circle0,HPos.CENTER);
+        double value=circleRadius*2-10;
+        pdTColor_text111116.setPrefWidth(value);
+        pdTTextColor_text111117.setPrefWidth(value);
+        // pdTTextColor_text111117.setBackground(Background);
+        String value1="-fx-background-color: rgba(0,0,0,0);-fx-font-style: oblique;-fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 10, .4 , 0 , 0 )";
+        pdTColor_text111116.setStyle(value1);
+        pdTTextColor_text111117.setStyle(value1);
+        // pdTTextColor_text111117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        // pdTTextColor_text111117.setStrokeWidth(0.0);
+        // pdTTextColor_text111117.setText(app.io.propertyGetter.getProperty("prop265")); //$NON-NLS-1$
+        // pdTTextColor_text111117.setText(app.io.propertyGetter.getProperty("prop265")); //$NON-NLS-1$
+        // GridPane.setHalignment(text1119,javafx.geometry.HPos.LEFT);
         columnConstraints1114.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints1115.setPrefWidth(200.0);
+        columnConstraints1114b.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+        columnConstraints1115.setHgrow(Priority.NEVER);
+        // columnConstraints1115.setPrefWidth(200.0);
         columnConstraints1116.setPrefWidth(120.0);
         columnConstraints1117.setHgrow(javafx.scene.layout.Priority.ALWAYS);
         rowConstraints11112.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
@@ -1891,6 +1913,7 @@ public class Boilerplate extends VBox
         gridPane15.getColumnConstraints().add(columnConstraints1114);
         gridPane15.getColumnConstraints().add(columnConstraints1115);
         gridPane15.getColumnConstraints().add(columnConstraints1116);
+        gridPane15.getColumnConstraints().add(columnConstraints1114b);
         gridPane15.getColumnConstraints().add(columnConstraints1117);
         gridPane15.getRowConstraints().add(rowConstraints11112);
         gridPane15.getRowConstraints().add(rowConstraints11113);
@@ -2230,8 +2253,8 @@ public class Boilerplate extends VBox
     public final rButton pdTClear_button110;
     public final Circle pdTColor_circle;
     public final Circle pdTTextColor_circle0;
-    public final Text pdTColor_text111116;
-    public final Text pdTTextColor_text111117;
+    public final ColorPicker pdTColor_text111116;
+    public final ColorPicker pdTTextColor_text111117;
     //region ⵁ
     public final GridPane gridPane15;
     public final Text text111111;
@@ -2240,6 +2263,7 @@ public class Boilerplate extends VBox
     public final Text text111114;
     public final Text text111115;
     public final ColumnConstraints columnConstraints1114;
+    public final ColumnConstraints columnConstraints1114b;
     public final ColumnConstraints columnConstraints1115;
     public final ColumnConstraints columnConstraints1116;
     public final ColumnConstraints columnConstraints1117;
