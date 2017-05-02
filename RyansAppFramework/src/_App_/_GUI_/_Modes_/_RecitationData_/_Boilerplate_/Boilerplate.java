@@ -1,6 +1,8 @@
 package _App_._GUI_._Modes_._RecitationData_._Boilerplate_;
 import _App_.App;
+import _App_._GUI_._Modes_._RecitationData_._Actions_.Actions;
 import _Externals_.RD_RecitationDataTableView;
+import _Externals_.rButton;
 import javafx.scene.control.*;
 public class Boilerplate
 {
@@ -10,9 +12,16 @@ public class Boilerplate
         this.app=app;
     }
     private _App_._GUI_._Window_._Boilerplate_.Boilerplate megaplate;
+    private Actions actions;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         megaplate=app.gui.window.boilerplate;
+        actions=app.gui.modes.recitationData.actions;
+        getTA1_comboBox().setOnMouseEntered(ⵁ->actions.updateComboboxOptions());
+        getTA2_comboBox().setOnMouseEntered(ⵁ->actions.updateComboboxOptions());
+        getAddUpdate_button().setAction(actions::handleAddⳆUpdate);
+        getClear_button().setAction(actions::handleClear);
+        getTableView().setOnItemSelected(actions::updateFieldsToSelected);
     }
     public RD_RecitationDataTableView getTableView()
     {
@@ -62,11 +71,11 @@ public class Boilerplate
     {
         return megaplate.rdTA2_comboBox7;
     }
-    public Button getAddUpdate_button()
+    public rButton getAddUpdate_button()
     {
         return megaplate.rdAddUpdate_button15;
     }
-    public Button getClear_button()
+    public rButton getClear_button()
     {
         return megaplate.rdClear_button16;
     }

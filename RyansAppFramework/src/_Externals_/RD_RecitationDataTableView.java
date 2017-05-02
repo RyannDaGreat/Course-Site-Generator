@@ -14,6 +14,10 @@ public class RD_RecitationDataTableView extends TableView
     {
         getItems().add(new Recitation(section,instructor,dayⳆtime,location,ta1,ta2));
     }
+    public void setOnItemSelected(Runnable r)
+    {
+        getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->r.run());
+    }
     public String getState()
     {
         return r.joinLines(getItems().toArray()).replaceAll("\n",";");

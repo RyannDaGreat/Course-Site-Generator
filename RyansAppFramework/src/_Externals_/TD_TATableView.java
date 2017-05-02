@@ -9,6 +9,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.util.ArrayList;
 @SuppressWarnings("unchecked")
 public class TD_TATableView extends TableView
 {
@@ -23,15 +25,24 @@ public class TD_TATableView extends TableView
     public void setState(String state)
     {
         getItems().clear();
-        for(String x:state.split(";"))
+        for(String x : state.split(";"))
         {
-            String[]y=x.split(",");
+            String[] y=x.split(",");
             getItems().add(new TA(Boolean.parseBoolean(y[0]),y[1],y[2]));
         }
     }
     public TA getSelected()
     {
         return (TA)getSelectionModel().getSelectedItem();
+    }
+    public ArrayList<String> getTANames()
+    {
+        ArrayList<String> out=new ArrayList<>();
+        for(Object o : getItems())
+        {
+            out.add(((TA)o).nameProperty().getValue());
+        }
+        return out;
     }
     public void remove(TA ta)
     {
@@ -45,30 +56,42 @@ public class TD_TATableView extends TableView
     public boolean isValidToAdd(String name,String email)
     {
         if(!mightBeValid(name,email))
+        {
             return false;
-        for(Object x:getItems())//Must not contain duplicate email or name
+        }
+        for(Object x : getItems())//Must not contain duplicate email or name
         {
             TA y=(TA)x;
             if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
+            {
                 return false;//Is not unique
+            }
         }
         return true;
     }
     public boolean isValidToUpdate(String name,String email)
     {
         if(getSelected()==null)//Can't update anybody if nobody is selected
+        {
             return false;
+        }
         if(!mightBeValid(name,email))
+        {
             return false;
+        }
         if(getSelected().nameProperty().getValue().equals(name)&&getSelected().emailProperty().getValue().equals(email))//Name nor email havent been changed
+        {
             return false;
-        for(Object x:getItems())//Must not contain duplicate email or name
+        }
+        for(Object x : getItems())//Must not contain duplicate email or name
         {
             if(x!=getSelected())
             {
                 TA y=(TA)x;
                 if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
+                {
                     return false;//Is not unique
+                }
             }
         }
         return true;
@@ -76,11 +99,17 @@ public class TD_TATableView extends TableView
     private boolean mightBeValid(String name,String email)
     {
         if(name.equals("")||email.equals(""))//Name and email cannot be empty
+        {
             return false;
+        }
         if((name+email).contains(",")||(name+email).contains(";")||(name+email).contains("\n"))//Cannot contain illegal characters used to save the grid states
+        {
             return false;
+        }
         if(!r.isValidEmail(email))//Must be valid email
+        {
             return false;
+        }
         return true;
     }
     public TD_TATableView(String undergradHeader,String nameHeader,String emailHeader)
@@ -104,7 +133,6 @@ public class TD_TATableView extends TableView
         //
         setEditable(true);
     }
-
     //region Person Class (with getters and setters)
     public class TA
     {
