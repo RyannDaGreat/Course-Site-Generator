@@ -10,8 +10,12 @@ public class rButton extends Button
                           {
                               if(originalStyle==null)
                                   originalStyle=getStyle();
-                              setStyle(originalStyle+"-fx-background-color: #090a0c,  linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),  linear-gradient(#9988FF, #8888FF),  radial-gradient(center 50% 0%, radius 100%, rgba(200,150,255,0.9), rgba(255,255,255,0));  /*  -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); */  /* -fx-text-fill: linear-gradient(white, #d0d0d0);*/  ");
+                              setStyle(originalStyle+"-fx-background-color: #090a0c,  linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),  linear-gradient(#9988FF, #8888FF),  radial-gradient(center 50% 0%, radius 100%, rgba(200,150,255,0.9), rgba(255,255,255,0));");
                           });
         setOnMouseReleased(ⵁ->setStyle(originalStyle));
+    }
+    public void setAction(Runnable action)
+    {
+        setOnAction(ⵁ->action.run());
     }
 }

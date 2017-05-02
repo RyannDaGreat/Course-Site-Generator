@@ -5,6 +5,8 @@ import _Externals_.SD_ScheduleItemsTableView;
 import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.time.LocalDate;
 public class Reader
 {
     public App app;
@@ -16,6 +18,28 @@ public class Reader
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         boilerplate=app.gui.modes.scheduleData.boilerplate;
+    }
+    public boolean isValidScheduleItemDate(LocalDate x)
+    {
+        if(x==null)
+            return false;
+        for(Object o : boilerplate.getSdScheduledItems_tableView().getItems().toArray())
+        {
+            try
+            {
+                if(x.isEqual(LocalDate.parse(((SD_ScheduleItemsTableView.Item)o).dateProperty().getValue())))//Make sure we haven't chosen this date before
+                {
+                    return getSelected()==o;
+                }
+            }
+            catch(Exception ignored)
+            {
+                // ignored.printStackTrace();
+                // System.out.print("\rError Message 1235931232 (search for me)");
+            }
+        }
+        return x.isAfter(LocalDate.parse(getStartingMonday()))&&
+               x.isBefore(LocalDate.parse(getEndingFriday()));
     }
     //region Main getters
     public SD_ScheduleItemsTableView.Item getSelected()

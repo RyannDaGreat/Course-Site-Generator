@@ -1,8 +1,10 @@
 package _App_._GUI_._Modes_._ScheduleData_._Boilerplate_;
 import _App_.App;
+import _App_._GUI_._Modes_._ScheduleData_._Actions_.Actions;
 import _App_._GUI_._Modes_._ScheduleData_._Reader_.Reader;
 import _Externals_.SD_ScheduleItemsTableView;
 import _Externals_.r;
+import _Externals_.rButton;
 import javafx.scene.control.*;
 
 import java.time.DayOfWeek;
@@ -16,11 +18,19 @@ public class Boilerplate
     }
     private _App_._GUI_._Window_._Boilerplate_.Boilerplate megaplate;
     private Reader reader;
+    private Actions actions;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         megaplate=app.gui.window.boilerplate;
         reader=app.gui.modes.scheduleData.reader;
-        r.setComboboxOptions(getSdType_comboBox(),"");
+        actions=app.gui.modes.scheduleData.actions;
+        r.setComboboxOptions(getSdType_comboBox(),"Holiday","Lecture","Recitation","Homework","Reference");
+        getSdStartingMonday_datePicker().setValue(LocalDate.now());
+        getSdEndingFriday_datePicker().setValue(LocalDate.now());
+        getSdDate_datePicker().setValue(LocalDate.now());
+        getSdScheduledItems_tableView().setOnItemSelected(actions::updateAddⳆUpdateButton);
+        getSdClear_button().setAction(actions::handleClear);
+        getSdAddUpdate_button().setAction(actions::handleAddⳆUpdate);
         //region Date-Picker Constraints
         r.applyDateFilter(getSdStartingMonday_datePicker(),x->
         {
@@ -36,11 +46,11 @@ public class Boilerplate
                 }
                 catch(Exception ignored)
                 {
-                    ignored.printStackTrace();
+                    // ignored.printStackTrace();
                 }
             }
-            return x.getDayOfWeek().equals(DayOfWeek.MONDAY)&&x.isBefore(LocalDate.parse(reader.getEndingFriday()));
-        });//NOTE: LocalDate.parse(reader.getEndingFriday()) ≣ getSdEndingFriday_datePicker().getValue()
+            return x.getDayOfWeek().equals(DayOfWeek.MONDAY)&&x.isBefore(LocalDate.parse(reader.getEndingFriday()));//NOTE: LocalDate.parse(reader.getEndingFriday()) ≣ getSdEndingFriday_datePicker().getValue()
+        });
         r.applyDateFilter(getSdEndingFriday_datePicker(),x->
         {
             for(Object o : getSdScheduledItems_tableView().getItems().toArray())
@@ -55,32 +65,12 @@ public class Boilerplate
                 }
                 catch(Exception ignored)
                 {
-                    ignored.printStackTrace();
+                    // ignored.printStackTrace();
                 }
             }
             return x.getDayOfWeek().equals(DayOfWeek.FRIDAY)&&x.isAfter(LocalDate.parse(reader.getStartingMonday()));
         });
-        r.applyDateFilter(getSdDate_datePicker(),x->
-        {
-            for(Object o : getSdScheduledItems_tableView().getItems().toArray())
-            {
-                SD_ScheduleItemsTableView.Item i=(SD_ScheduleItemsTableView.Item)o;
-                try
-                {
-                    if(x.isEqual(LocalDate.parse(i.dateProperty().getValue())))//Make sure we haven't chosen this date before
-                    {
-                        return false;
-                    }
-                }
-                catch(Exception ignored)
-                {
-                    // ignored.printStackTrace();
-                    System.out.print("\rError Message 1235931232 (search for me)");
-                }
-            }
-            return x.isAfter(LocalDate.parse(reader.getStartingMonday()))&&
-                   x.isBefore(LocalDate.parse(reader.getEndingFriday()));
-        });
+        r.applyDateFilter(getSdDate_datePicker(),reader::isValidScheduleItemDate);
         //endregion
     }
     public DatePicker getSdStartingMonday_datePicker()
@@ -139,11 +129,11 @@ public class Boilerplate
     {
         return megaplate.sdCriteria_textField8;
     }
-    public Button getSdAddUpdate_button()
+    public rButton getSdAddUpdate_button()
     {
         return megaplate.sdAddUpdate_button17;
     }
-    public Button getSdClear_button()
+    public rButton getSdClear_button()
     {
         return megaplate.sdClear_button18;
     }

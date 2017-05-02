@@ -60,49 +60,48 @@ public class SD_ScheduleItemsTableView extends TableView
         getSelected().link=link;
         getSelected().criteria=criteria;
     }
-    //region IsValid CHeckers
-    // public boolean isValidToAdd(String type,String date,String title,String topic)
+    // region IsValid CHeckers
+    // public boolean isValidToAdd(String type,String date,String title,String topic,String time,String link,String criteria)
     // {
-    // if(!mightBeValid(name,email))
-    //     return false;
-    // for(Object x:getItems())//Must not contain duplicate email or name
-    // {
-    //     Item y=(Item)x;
-    //     if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
-    //         return false;//Is not unique
+        // for(Object x : getItems())//Must not contain duplicate email or name
+        // {
+        //     if(x!=getSelected())
+        //     {
+        //         Item y=(Item)x;
+        //         if(y.typeProperty().getValue().equals(type)||
+        //            y.dateProperty().getValue().equals(date)||
+        //            y.titleProperty().getValue().equals(title)||
+        //            y.topicProperty().getValue().equals(topic)||
+        //            y.time.equals(time)||
+        //            y.link.equals(link)||
+        //            y.criteria.equals(criteria))
+        //         {
+        //             return false;//Is not unique
+        //         }
+        //     }
+        // }
+        // return true;
     // }
-    // return true;
-    // }
-    // public boolean isValidToUpdate(String type,String date,String title,String topic)
+    // public boolean isValidToUpdate(String type,String date,String title,String topic,String time,String link,String criteria)
     // {
-    // if(getSelected()==null)//Can't update anybody if nobody is selected
-    //     return false;
-    // if(!mightBeValid(name,email))
-    //     return false;
-    // if(getSelected().nameProperty().getValue().equals(name)&&getSelected().emailProperty().getValue().equals(email))//Name nor email havent been changed
-    //     return false;
-    // for(Object x:getItems())//Must not contain duplicate email or name
-    // {
-    //     if(x!=getSelected())
+    //     if(getSelected()==null)//Can't update anybody if nobody is selected
     //     {
-    //         Item y=(Item)x;
-    //         if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
-    //             return false;//Is not unique
+    //         return false;
     //     }
+    //     noinspection SimplifiableIfStatement
+        // if(getSelected().typeProperty().getValue().equals(type)&&
+        //    getSelected().dateProperty().getValue().equals(date)&&
+        //    getSelected().titleProperty().getValue().equals(title)&&
+        //    getSelected().topicProperty().getValue().equals(topic)&&
+        //    getSelected().time.equals(time)&&
+        //    getSelected().link.equals(link)&&
+        //    getSelected().criteria.equals(criteria))//No fields have been changed
+        // {
+        //     return false;
+        // }
+        // return isValidToAdd(type,date,title,topic,time,link,criteria);
     // }
-    // return true;
-    // }
-    // private boolean mightBeValid(String type,String date,String title,String topic)
-    // {
-    // if(name.equals("")||email.equals(""))//Name and email cannot be empty
-    //     return false;
-    // if((name+email).contains(",")||(name+email).contains(";")||(name+email).contains("\n"))//Cannot contain illegal characters used to save the grid states
-    //     return false;
-    // if(!r.isValidEmail(email))//Must be valid email
-    //     return false;
-    // return true;
-    // }
-    //endregion
+    // endregion
     public void setOnItemSelected(Runnable r)
     {
         getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->r.run());

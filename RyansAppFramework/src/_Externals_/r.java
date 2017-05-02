@@ -218,7 +218,7 @@ public class r
                         }
                         catch(Exception ignored)
                         {
-                            ignored.printStackTrace();
+                            // ignored.printStackTrace();
                         }
                     }
                 };

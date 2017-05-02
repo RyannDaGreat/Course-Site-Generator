@@ -2,15 +2,20 @@ package _App_._GUI_._Modes_._ScheduleData_._Actions_;
 import _App_.App;
 import _App_._GUI_._Modes_._ScheduleData_._Boilerplate_.Boilerplate;
 import _App_._GUI_._Modes_._ScheduleData_._Reader_.Reader;
+import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.SD_ScheduleItemsTableView;
 import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.time.LocalDate;
+@SuppressWarnings("AccessStaticViaInstance")
 public class Actions
 {
     public App app;
     private Boilerplate boilerplate;
     private Reader reader;
+    private PropertyGetter propertyGetter;
     public Actions(App app)
     {
         this.app=app;
@@ -19,14 +24,16 @@ public class Actions
     {
         boilerplate=app.gui.modes.scheduleData.boilerplate;
         reader=app.gui.modes.scheduleData.reader;
+        propertyGetter=app.io.propertyGetter;
         boilerplate.getSdScheduledItems_tableView().setOnItemSelected(this::updateFieldsToSelected);
     }
     public void updateFieldsToSelected()//Updates time,title,topic,link etc to the selected item
     {
-
         SD_ScheduleItemsTableView.Item item=reader.getSelected();
         if(item==null)
+        {
             return;
+        }
         setDate(item.dateProperty().getValue());
         setType(item.typeProperty().getValue());
         setTime(item.time);
@@ -35,7 +42,42 @@ public class Actions
         setLink(item.link);
         setCriteria(item.criteria);
     }
-    //Setters
+    public void updateAddⳆUpdateButton()//Update whether it says add or update, and whether its enabled or disabled
+    {
+        if(reader.getSelected()==null)
+        {
+            boilerplate.getSdAddUpdate_button().setText(propertyGetter.getAddButtonLabel());
+        }
+        else
+        {
+            boilerplate.getSdAddUpdate_button().setText(propertyGetter.getUpdateButtonLabel());
+        }
+    }
+    public void handleClear()
+    {
+        boilerplate.getSdScheduledItems_tableView().getSelectionModel().clearSelection();
+        updateAddⳆUpdateButton();
+    }
+    public void handleAddⳆUpdate()
+    {
+        if(reader.getDate().equals(""+null)||!reader.isValidScheduleItemDate(LocalDate.parse(reader.getDate())))
+        {
+            app.gui.dialogs.showInfoAlert("Error: Bad date; cannot add or update");
+            return;
+        }
+        //All checks passed: Continue the rest of it
+        if(boilerplate.getSdAddUpdate_button().getText().equals(propertyGetter.getAddButtonLabel()))//Button is add mode
+        {
+            boilerplate.getSdScheduledItems_tableView().addItem(reader.getType(),reader.getDate(),reader.getTitle(),reader.getTopic(),reader.getTime(),reader.getLink(),reader.getCriteria());
+        }
+        else//Button is update mode
+        {
+            assert boilerplate.getSdAddUpdate_button().getText().equals(propertyGetter.getUpdateButtonLabel());//This should always be true
+            boilerplate.getSdScheduledItems_tableView().updateItem(reader.getType(),reader.getDate(),reader.getTitle(),reader.getTopic(),reader.getTime(),reader.getLink(),reader.getCriteria());
+        }
+        updateAddⳆUpdateButton();
+    }
+    //region Setters
     public void setStartingMonday(String x)
     {
         r.setDatePickerValue(boilerplate.getSdStartingMonday_datePicker(),x);
@@ -75,8 +117,8 @@ public class Actions
     public void setTableState(String x)
     {
         boilerplate.getSdScheduledItems_tableView().setState(x);
+        updateAddⳆUpdateButton();
     }
-    //endregion
     public void setState(JSONObject state)
     {
         try
@@ -90,4 +132,5 @@ public class Actions
             e.printStackTrace();
         }
     }
+    //endregion
 }
