@@ -2,6 +2,7 @@ package _App_._GUI_._Modes_._ScheduleData_._Boilerplate_;
 import _App_.App;
 import _App_._GUI_._Modes_._ScheduleData_._Actions_.Actions;
 import _App_._GUI_._Modes_._ScheduleData_._Reader_.Reader;
+import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.SD_ScheduleItemsTableView;
 import _Externals_.r;
 import _Externals_.rButton;
@@ -19,12 +20,14 @@ public class Boilerplate
     private _App_._GUI_._Window_._Boilerplate_.Boilerplate megaplate;
     private Reader reader;
     private Actions actions;
+    private PropertyGetter propertyGetter;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         megaplate=app.gui.window.boilerplate;
         reader=app.gui.modes.scheduleData.reader;
         actions=app.gui.modes.scheduleData.actions;
-        r.setComboboxOptions(getSdType_comboBox(),"Holiday","Lecture","Recitation","Homework","Reference");
+        propertyGetter=app.io.propertyGetter;
+        r.setComboboxOptions(getSdType_comboBox(),propertyGetter.getScheduleItemTypes());
         getSdStartingMonday_datePicker().setValue(LocalDate.now());
         getSdEndingFriday_datePicker().setValue(LocalDate.now());
         getSdDate_datePicker().setValue(LocalDate.now());

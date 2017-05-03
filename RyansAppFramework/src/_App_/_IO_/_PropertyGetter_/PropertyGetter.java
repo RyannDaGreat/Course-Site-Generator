@@ -98,6 +98,14 @@ public class PropertyGetter
     {
         return Boolean.parseBoolean(getProperty("animate_hue"));
     }
+    public String[]getScheduleItemTypes()
+    {
+        return getProperty("schedule_item_types").split(",");//"Holiday","Lecture","Recitation","Homework","Reference"
+    }
+    public String[]getScheduleItemTypeKeys()
+    {
+        return getProperty("schedule_item_type_keys").split(",");
+    }
     //endregion
     //region State Keys: Mode Title Keys
     /*@formatter:off*/

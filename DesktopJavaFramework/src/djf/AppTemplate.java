@@ -26,7 +26,7 @@ public abstract class AppTemplate extends Application
     // HAS OBJECTS THAT CAN BE SWAPPED OUT FOR OTHER COMPONENTS
     // THIS APP HAS 4 COMPONENTS
     // THE COMPONENT FOR MANAGING CUSTOM APP DATA
-    public  AppDataComponent dataComponent;
+    public AppDataComponent dataComponent;
     // THE COMPONENT FOR MANAGING CUSTOM FILE I/O
     public AppFileComponent fileComponent;
     // THE COMPONENT FOR THE GUI WORKSPACE

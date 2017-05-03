@@ -1,23 +1,20 @@
 package djf.settings;
-
 /**
  * This enum provides properties that are to be loaded via
  * XML files to be used for setting up the application.
- * 
+ *
  * @author Richard McKenna
  * @version 1.0
  */
-public enum AppPropertyType {
+public enum AppPropertyType
+{
     // LOADED FROM app_properties.xml
-
     // INITIAL WINDOW TITLE AND LOGO
     APP_TITLE,
     APP_LOGO,
-    
     // FOR FINDING THE CSS FILE
     APP_CSS,
     APP_PATH_CSS,
-
     // FILE TOOLBAR ICONS
     NEW_ICON,
     LOAD_ICON,
@@ -25,7 +22,6 @@ public enum AppPropertyType {
     SAVE_AS_ICON,
     EXPORT_ICON,
     EXIT_ICON,
-        
     // FILE TOOLBAR TOOLTIPS FOR BUTTONS
     NEW_TOOLTIP,
     LOAD_TOOLTIP,
@@ -33,7 +29,6 @@ public enum AppPropertyType {
     SAVE_AS_TOOLTIP,
     EXPORT_TOOLTIP,
     EXIT_TOOLTIP,
-	
     // ERROR MESSAGES AND TITLES FOR DIALOG BOXES
     NEW_ERROR_MESSAGE,
     NEW_ERROR_TITLE,
@@ -43,7 +38,6 @@ public enum AppPropertyType {
     SAVE_ERROR_TITLE,
     PROPERTIES_LOAD_ERROR_MESSAGE,
     PROPERTIES_LOAD_ERROR_TITLE,
-	
     // AND VERIFICATION MESSAGES AND TITLES
     NEW_COMPLETED_MESSAGE,
     NEW_COMPLETED_TITLE,
@@ -52,13 +46,12 @@ public enum AppPropertyType {
     EXPORT_COMPLETED_TITLE,
     EXPORT_COMPLETED_MESSAGE,
     SAVE_COMPLETED_MESSAGE,
-    SAVE_COMPLETED_TITLE,	
+    SAVE_COMPLETED_TITLE,
     SAVE_UNSAVED_WORK_TITLE,
     SAVE_UNSAVED_WORK_MESSAGE,
     SAVE_WORK_TITLE,
     LOAD_WORK_TITLE,
     EXPORT_TITLE,
-
     // DATA FILE EXTENSIONS AND DESSCRIPTIONS
     WORK_FILE_EXT,
     WORK_FILE_EXT_DESC

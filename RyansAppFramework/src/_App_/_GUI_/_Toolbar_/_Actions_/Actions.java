@@ -104,6 +104,7 @@ public class Actions
     }
     public void handleExport()
     {
+        app.io.exporter.export();
     }
     public void handleExit()
     {

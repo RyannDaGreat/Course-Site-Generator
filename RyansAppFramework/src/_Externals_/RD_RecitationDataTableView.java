@@ -7,7 +7,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 @SuppressWarnings("unchecked")
@@ -24,7 +23,6 @@ public class RD_RecitationDataTableView extends TableView
     public JSONObject getExport()
     {
         final JSONObject o=new JSONObject();
-        final JSONArray a=new JSONArray();
         forAll(r->//r ≣ recitation
                {
                    try
@@ -35,21 +33,13 @@ public class RD_RecitationDataTableView extends TableView
                        temp.accumulate("location",r.location.getValue());
                        temp.accumulate("ta_1",r.ta1.getValue());
                        temp.accumulate("ta_2",r.ta2.getValue());
-                       a.put(temp);
+                       o.append("recitations",temp);
                    }
                    catch(JSONException e)
                    {
                        e.printStackTrace();
                    }
                });
-        try
-        {
-            o.accumulate("recitations",a);
-        }
-        catch(JSONException e)
-        {
-            e.printStackTrace();
-        }
         return o;
     }
     public interface F
