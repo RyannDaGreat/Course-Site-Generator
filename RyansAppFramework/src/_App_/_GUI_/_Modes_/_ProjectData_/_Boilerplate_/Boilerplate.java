@@ -32,6 +32,7 @@ public class Boilerplate
         getT_AddUpdate_button().setAction(actions::handleTeamAddⳆUpdateButton);
         getT_Clear_button().setAction(actions::handleTeamClearButton);
         getT__tableView().setOnItemSelected(actions::updateTeamFieldsToSelected);
+        getPsSTeam_comboBox().setOnMouseEntered(ⵁ->actions.updateStudentTeamComboboxOptions());
     }
     public PD_StudentsTableView getS__tableView()
     {
@@ -61,9 +62,9 @@ public class Boilerplate
     {
         return megaplate.pdSLastName_textField17;
     }
-    public TextField getPsSTeam_textField()
+    public ComboBox getPsSTeam_comboBox()
     {
-        return megaplate.pdSTeam_textField15;
+        return megaplate.pdSTeam_combobox15;
     }
     public TextField getS_Role_textField()
     {

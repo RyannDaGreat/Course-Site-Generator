@@ -137,9 +137,9 @@ public class Boilerplate extends VBox
         text6=new Text();
         text7=new Text();
         text8=new Text();
-        cdCiTitle_textField=new TextField();
-        cdCiInstructorName_textField0=new TextField();
-        cdCiInstructorHome_textField1=new TextField();
+        cdCiTitle_textField=new rTextField();
+        cdCiInstructorName_textField0=new rTextField();
+        cdCiInstructorHome_textField1=new rTextField();
         cdCiSubject_comboBox=new ComboBox();
         cdCiSemester_comboBox0=new ComboBox();
         cdCiNumber_comboBox1=new ComboBox();
@@ -220,8 +220,8 @@ public class Boilerplate extends VBox
         text112=new Text();
         gridPane5=new GridPane();
         text113=new Text();
-        tdTaEmail_textField2=new TextField();
-        tdTaName_textField3=new TextField();
+        tdTaEmail_textField2=new rTextField();
+        tdTaName_textField3=new rTextField();
         tdTaAddUpdate_button13=new rButton();
         tdTaClear_button14=new rButton();
         text114=new Text();
@@ -282,10 +282,10 @@ public class Boilerplate extends VBox
         text1111=new Text();
         text1112=new Text();
         text1113=new Text();
-        rdSection_textField4=new TextField();
-        rdInstructor_textField5=new TextField();
-        rdDayTime_textField6=new TextField();
-        rdLocation_textField7=new TextField();
+        rdSection_textField4=new rTextField();
+        rdInstructor_textField5=new rTextField();
+        rdDayTime_textField6=new rTextField();
+        rdLocation_textField7=new rTextField();
         rdAddUpdate_button15=new rButton();
         rdClear_button16=new rButton();
         rdTA1_comboBox6=new ComboBox();
@@ -340,10 +340,10 @@ public class Boilerplate extends VBox
         text11113=new Text();
         text11114=new Text();
         text11115=new Text();
-        sdCriteria_textField8=new TextField();
-        sdTopic_textField9=new TextField();
-        sdTime_textField10=new TextField();
-        sdTitle_textField11=new TextField();
+        sdCriteria_textField8=new rTextField();
+        sdTopic_textField9=new rTextField();
+        sdTime_textField10=new rTextField();
+        sdTitle_textField11=new rTextField();
         sdAddUpdate_button17=new rButton();
         sdClear_button18=new rButton();
         text11116=new Text();
@@ -351,7 +351,7 @@ public class Boilerplate extends VBox
         text11118=new Text();
         sdDate_datePicker1=new DatePicker();
         sdType_comboBox8=new ComboBox();
-        sdLink_textField12=new TextField();
+        sdLink_textField12=new rTextField();
         columnConstraints1111=new ColumnConstraints();
         columnConstraints1112=new ColumnConstraints();
         rowConstraints1113=new RowConstraints();
@@ -383,8 +383,8 @@ public class Boilerplate extends VBox
         text111111=new Text();
         gridPane15=new GridPane();
         text111112=new Text();
-        pdTLink_textField13=new TextField();
-        pdTName_textField14=new TextField();
+        pdTLink_textField13=new rTextField();
+        pdTName_textField14=new rTextField();
         pdTAddUpdate_button19=new rButton();
         pdTClear_button110=new rButton();
         text111113=new Text();
@@ -418,14 +418,15 @@ public class Boilerplate extends VBox
         gridPane16=new GridPane();
         text1111110=new Text();
         text1111111=new Text();
-        pdSTeam_textField15=new TextField();
-        pdSFirstName_textField16=new TextField();
-        pdSLastName_textField17=new TextField();
+        pdSTeam_combobox15=new ComboBox();
+        pdSTeam_combobox15.setMinWidth(150);
+        pdSFirstName_textField16=new rTextField();
+        pdSLastName_textField17=new rTextField();
         pdSAddUpdate_button111=new rButton();
         pdSClear_button112=new rButton();
         text1111112=new Text();
         text1111113=new Text();
-        pdSRole_textField18=new TextField();
+        pdSRole_textField18=new rTextField();
         columnConstraints1118=new ColumnConstraints();
         columnConstraints1119=new ColumnConstraints();
         rowConstraints11116=new RowConstraints();
@@ -1593,11 +1594,11 @@ public class Boilerplate extends VBox
         text1111111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1111111.setStrokeWidth(0.0);
         text1111111.setText(app.io.propertyGetter.getProperty("prop280")); //$NON-NLS-1$
-        GridPane.setColumnIndex(pdSTeam_textField15,1);
-        GridPane.setColumnSpan(pdSTeam_textField15,2147483647);
-        GridPane.setRowIndex(pdSTeam_textField15,2);
-        pdSTeam_textField15.setPromptText(app.io.propertyGetter.getProperty("prop281")); //$NON-NLS-1$
-        pdSTeam_textField15.setStyle(app.io.propertyGetter.getProperty("prop282")); //$NON-NLS-1$
+        GridPane.setColumnIndex(pdSTeam_combobox15,1);
+        GridPane.setColumnSpan(pdSTeam_combobox15,2147483647);
+        GridPane.setRowIndex(pdSTeam_combobox15,2);
+        pdSTeam_combobox15.setPromptText(app.io.propertyGetter.getProperty("prop281")); //$NON-NLS-1$
+        pdSTeam_combobox15.setStyle(app.io.propertyGetter.getProperty("prop282")); //$NON-NLS-1$
         GridPane.setColumnIndex(pdSFirstName_textField16,1);
         GridPane.setColumnSpan(pdSFirstName_textField16,2147483647);
         pdSFirstName_textField16.setPromptText(app.io.propertyGetter.getProperty("prop283")); //$NON-NLS-1$
@@ -1930,7 +1931,7 @@ public class Boilerplate extends VBox
         vBox15.getChildren().add(text111119);
         gridPane16.getChildren().add(text1111110);
         gridPane16.getChildren().add(text1111111);
-        gridPane16.getChildren().add(pdSTeam_textField15);
+        gridPane16.getChildren().add(pdSTeam_combobox15);
         gridPane16.getChildren().add(pdSFirstName_textField16);
         gridPane16.getChildren().add(pdSLastName_textField17);
         gridPane16.getChildren().add(pdSAddUpdate_button111);
@@ -2002,9 +2003,9 @@ public class Boilerplate extends VBox
     public final Text text7;
     public final Text text8;
     //endregion
-    public final TextField cdCiTitle_textField;
-    public final TextField cdCiInstructorName_textField0;
-    public final TextField cdCiInstructorHome_textField1;
+    public final rTextField cdCiTitle_textField;
+    public final rTextField cdCiInstructorName_textField0;
+    public final rTextField cdCiInstructorHome_textField1;
     public final ComboBox cdCiSubject_comboBox;
     public final ComboBox cdCiSemester_comboBox0;
     public final ComboBox cdCiNumber_comboBox1;
@@ -2086,8 +2087,8 @@ public class Boilerplate extends VBox
     public final TableColumn tdTaUndergrad_tableColumn3;
     public final TableColumn tdTaName_tableColumn4;
     public final TableColumn tdTaEmail_tableColumn5;
-    public final TextField tdTaName_textField3;
-    public final TextField tdTaEmail_textField2;
+    public final rTextField tdTaName_textField3;
+    public final rTextField tdTaEmail_textField2;
     public final rButton tdTaAddUpdate_button13;
     public final rButton tdTaClear_button14;
     //region ⵁ
@@ -2142,10 +2143,10 @@ public class Boilerplate extends VBox
     public final TableColumn rdRecitationData_tableColumn8;
     public final TableColumn rdTA1_tableColumn9;
     public final TableColumn rdTA2tableColumn10;
-    public final TextField rdSection_textField4;
-    public final TextField rdInstructor_textField5;
-    public final TextField rdDayTime_textField6;
-    public final TextField rdLocation_textField7;
+    public final rTextField rdSection_textField4;
+    public final rTextField rdInstructor_textField5;
+    public final rTextField rdDayTime_textField6;
+    public final rTextField rdLocation_textField7;
     public final ComboBox rdTA1_comboBox6;
     public final ComboBox rdTA2_comboBox7;
     public final rButton rdAddUpdate_button15;
@@ -2209,11 +2210,11 @@ public class Boilerplate extends VBox
     public final TableColumn sdTopic_tableColumn14;
     public final DatePicker sdDate_datePicker1;
     public final ComboBox sdType_comboBox8;
-    public final TextField sdTime_textField10;
-    public final TextField sdTitle_textField11;
-    public final TextField sdTopic_textField9;
-    public final TextField sdLink_textField12;
-    public final TextField sdCriteria_textField8;
+    public final rTextField sdTime_textField10;
+    public final rTextField sdTitle_textField11;
+    public final rTextField sdTopic_textField9;
+    public final rTextField sdLink_textField12;
+    public final rTextField sdCriteria_textField8;
     public final rButton sdAddUpdate_button17;
     public final rButton sdClear_button18;
     //region ⵁ
@@ -2246,8 +2247,8 @@ public class Boilerplate extends VBox
     public final TableColumn pdTNavbarTitle_tableColumn16;
     public final TableColumn pdTFileName_tableColumn17;
     public final TableColumn pdTScript_tableColumn18;
-    public final TextField pdTLink_textField13;
-    public final TextField pdTName_textField14;
+    public final rTextField pdTLink_textField13;
+    public final rTextField pdTName_textField14;
     public final rButton pdTAddUpdate_button19;
     public final rButton pdTClear_button110;
     public final Circle pdTColor_circle;
@@ -2292,10 +2293,10 @@ public class Boilerplate extends VBox
     public final TableColumn pdSLastName_tableColumn110;
     public final TableColumn pdSTeam_tableColumn111;
     public final TableColumn pdSRole_tableColumn112;
-    public final TextField pdSFirstName_textField16;
-    public final TextField pdSLastName_textField17;
-    public final TextField pdSTeam_textField15;
-    public final TextField pdSRole_textField18;
+    public final rTextField pdSFirstName_textField16;
+    public final rTextField pdSLastName_textField17;
+    public final ComboBox pdSTeam_combobox15;
+    public final rTextField pdSRole_textField18;
     public final rButton pdSAddUpdate_button111;
     public final rButton pdSClear_button112;
 }

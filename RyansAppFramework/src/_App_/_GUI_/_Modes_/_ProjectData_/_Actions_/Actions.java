@@ -7,6 +7,7 @@ import _Externals_.ColorNamer;
 import _Externals_.PD_StudentsTableView;
 import _Externals_.PD_TeamsTableView;
 import _Externals_.r;
+import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -133,8 +134,17 @@ public class Actions
         updateTeamAddⳆUpdateButton();
     }
     //endregion
+    //region Students
     PD_StudentsTableView.Item getSelectedStudent()
     {
         return boilerplate.getS__tableView().getSelected();
     }
+    public void updateStudentTeamComboboxOptions()
+    {
+        ComboBox c=boilerplate.getPsSTeam_comboBox();
+        String studentTeam=reader.getStudentTeam();
+        r.setComboboxOptions(c,reader.getTeamNames());
+        r.setComboboxOption(c,studentTeam);
+    }
+    //endregion
 }
