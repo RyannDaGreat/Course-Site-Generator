@@ -30,6 +30,40 @@ public class Reader
         o.accumulate("StudentsTable",getStudentsTableState());
         return o;
     }
+    public JSONObject getExport()
+    {
+        JSONObject o=new JSONObject();
+        boilerplate.getS__tableView().forAll(s->//s≣student
+                                             {
+                                                 try
+                                                 {
+                                                     JSONObject temp=new JSONObject();
+                                                     temp.accumulate("lastName",s.field1Property().getValue());
+                                                     temp.accumulate("firstName",s.field2Property().getValue());
+                                                     temp.accumulate("team",s.field3Property().getValue());
+                                                     temp.accumulate("role",s.field4Property().getValue());
+                                                     o.append("students",temp);
+                                                 }
+                                                 catch(JSONException e)
+                                                 {
+                                                     e.printStackTrace();
+                                                 }
+                                             });
+          boilerplate.getT__tableView().forAll(t->//t≣team
+                                             {
+                                                 try
+                                                 {
+                                                     JSONObject temp=new JSONObject();
+                                                     temp.accumulate("name",t.)
+                                                     o.append("students",temp);
+                                                 }
+                                                 catch(JSONException e)
+                                                 {
+                                                     e.printStackTrace();
+                                                 }
+                                             });
+        return o;
+    }
 }
 // public String getColor()
 // {

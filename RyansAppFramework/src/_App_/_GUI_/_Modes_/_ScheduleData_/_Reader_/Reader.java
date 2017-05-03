@@ -3,6 +3,7 @@ import _App_.App;
 import _App_._GUI_._Modes_._ScheduleData_._Boilerplate_.Boilerplate;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.SD_ScheduleItemsTableView;
+import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -120,22 +121,7 @@ public class Reader
                                                                    temp.accumulate("title",x.titleProperty().getValue());
                                                                    temp.accumulate("topic",x.topicProperty().getValue());
                                                                    temp.accumulate("link",x.link);
-                                                                   //
-                                                                   //region Map {Holiday,Lecture,Recitation,Homework,Reference} to {holidays,lectures,recitations,hws,references} for the JSON file keys
-                                                                   String type=x.typeProperty().getValue();
-                                                                   String typeKey=type;//If this is not changed then we have an invalid type. To avoid errors we'll just let it go ahead anyway.
-                                                                   assert propertyGetter.getScheduleItemTypeKeys().length==propertyGetter.getScheduleItemTypes().length;//If this fails we have a bad XML file
-                                                                   int i=0;
-                                                                   for(String s : propertyGetter.getScheduleItemTypes())
-                                                                   {
-                                                                       if(s.equals(type))
-                                                                       {
-                                                                           typeKey=propertyGetter.getScheduleItemTypeKeys()[i];
-                                                                       }
-                                                                       i++;
-                                                                   }
-                                                                   //endregion
-                                                                   o.append(typeKey,temp);
+                                                                   o.append(r.stringMap(x.typeProperty().getValue(),propertyGetter.getScheduleItemTypeKeys(),propertyGetter.getScheduleItemTypes()),temp);//Map {Holiday,Lecture,Recitation,Homework,Reference} to {holidays,lectures,recitations,hws,references} for the JSON file keys
                                                                }
                                                                catch(JSONException e)
                                                                {

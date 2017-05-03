@@ -22,6 +22,7 @@ public class Exporter
             r.println(r.jsonToPrettyString(app.gui.modes.recitationData.reader.getExport()));
             r.println(r.fansi("SCHEDULE DATA:------",r.fansi_colors.magenta));
             r.println(r.jsonToPrettyString(app.gui.modes.scheduleData.reader.getExport()));
+            r.println(r.fansi("PROJECT DATA:------",r.fansi_colors.magenta));
         }
         catch(JSONException e)
         {

@@ -71,3 +71,9 @@ My app is so much prettier than the original, and it scales MUCH MUCH MUCH bette
 
 PROJECT DATA PAGE: http://www3.cs.stonybrook.edu/~cse308/Section01/
 TA DATA: http://www3.cs.stonybrook.edu/~cse219/Section02/syllabus.html
+
+
+Beyond Expectations:
+Everything is undoable (everything that affects the save file, anyway)
+When selecting from tableviews, you can use arrow keys OR use the mouse. The choice is yours.
+Many things are restricted to the user input via constraint rather than error message.

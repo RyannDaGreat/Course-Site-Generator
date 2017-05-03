@@ -169,6 +169,22 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static String stringMap(String key,String[] keys,String[] values)
+    {
+        //Treats keys and values as if they were both halves of a dictionary
+        String typeKey=key;//If this is not changed then we have an invalid key. To avoid errors we'll just let it go ahead anyway.
+        assert keys.length==values.length;//If this fails we have a bad XML file
+        int i=0;
+        for(String s : values)
+        {
+            if(s.equals(key))
+            {
+                typeKey=keys[i];
+            }
+            i++;
+        }
+        return typeKey;
+    }
     // public static String toRGBCode(Color color)
     // {
     //     return String.format("#%02X%02X%02X",(int)color.getRed()*255,(int)color.getGreen()*255,(int)color.getBlue()*255);
