@@ -1,14 +1,11 @@
 package _App_._GUI_._Modes_._ProjectData_._Boilerplate_;
 import _App_.App;
+import _App_._GUI_._Modes_._ProjectData_._Actions_.Actions;
 import _Externals_.PD_StudentsTableView;
 import _Externals_.PD_TeamsTableView;
-import _Externals_.r;
-import javafx.event.Event;
-import javafx.event.EventHandler;
+import _Externals_.rButton;
 import javafx.scene.control.*;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
 public class Boilerplate
 {
     public App app;
@@ -17,9 +14,11 @@ public class Boilerplate
         this.app=app;
     }
     private _App_._GUI_._Window_._Boilerplate_.Boilerplate megaplate;
+    private Actions actions;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         megaplate=app.gui.window.boilerplate;
+        actions=app.gui.modes.projectData.actions;
         // final ColorPicker colorPicker=new ColorPicker();
         // colorPicker.setOnAction(t->
         //                         {
@@ -28,8 +27,11 @@ public class Boilerplate
         //                             System.out.println("New Color's RGB = "+c.getRed()+" "+c.getGreen()+" "+c.getBlue());
         //                         });
         // getT_Color_circle().setOnMousePressed(ⵁ->app.gui.dialogs.showColorDialog("C",Color.BLACK));
-        getT_TextColor_text().setOnAction(ⵁ->getT_TextColor_circle().setFill(getT_TextColor_text().getValue()));
-        getT_Color_text().setOnAction(ⵁ->getT_Color_circle().setFill(getT_Color_text().getValue()));
+        getT_TextColor_selector().setOnAction(ⵁ->actions.updateTeamCircleColors());
+        getT_Color_selector().setOnAction(ⵁ->actions.updateTeamCircleColors());
+        getT_AddUpdate_button().setAction(actions::handleTeamAddⳆUpdateButton);
+        getT_Clear_button().setAction(actions::handleTeamClearButton);
+        getT__tableView().setOnItemSelected(actions::updateTeamFieldsToSelected);
     }
     public PD_StudentsTableView getS__tableView()
     {
@@ -67,11 +69,11 @@ public class Boilerplate
     {
         return megaplate.pdSRole_textField18;
     }
-    public Button getS_AddUpdate_button()
+    public rButton getS_AddUpdate_button()
     {
         return megaplate.pdSAddUpdate_button111;
     }
-    public Button getS_Clear_button()
+    public rButton getS_Clear_button()
     {
         return megaplate.pdSClear_button112;
     }
@@ -103,11 +105,11 @@ public class Boilerplate
     {
         return megaplate.pdTName_textField14;
     }
-    public Button getT_AddUpdate_button()
+    public rButton getT_AddUpdate_button()
     {
         return megaplate.pdTAddUpdate_button19;
     }
-    public Button getT_Clear_button()
+    public rButton getT_Clear_button()
     {
         return megaplate.pdTClear_button110;
     }
@@ -119,11 +121,11 @@ public class Boilerplate
     {
         return megaplate.pdTTextColor_circle0;
     }
-    public ColorPicker getT_Color_text()
+    public ColorPicker getT_Color_selector()
     {
         return megaplate.pdTColor_text111116;
     }
-    public ColorPicker getT_TextColor_text()
+    public ColorPicker getT_TextColor_selector()
     {
         return megaplate.pdTTextColor_text111117;
     }

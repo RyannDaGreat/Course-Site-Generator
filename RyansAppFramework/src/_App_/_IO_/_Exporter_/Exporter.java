@@ -3,6 +3,7 @@ import _App_.App;
 import _Externals_.r;
 import org.apache.commons.io.FileUtils;
 import org.json.JSONException;
+import org.json.JSONObject;
 @SuppressWarnings("WeakerAccess")
 public class Exporter
 {
@@ -18,15 +19,18 @@ public class Exporter
     {
         try
         {
+            r.println(r.fansi("PROJECT DATA: TEAMS AND STUDENTS:------",r.fansi_colors.magenta));
+            r.println(r.jsonToPrettyString(app.gui.modes.projectData.reader.getTeamsAndStudentsExport()));
+            r.println(r.fansi("PROJECT DATA: WORK:------",r.fansi_colors.magenta));
+            r.println(r.jsonToPrettyString(app.gui.modes.projectData.reader.getWorkExport()));
             r.println(r.fansi("RECITATION DATA:------",r.fansi_colors.magenta));
             r.println(r.jsonToPrettyString(app.gui.modes.recitationData.reader.getExport()));
             r.println(r.fansi("SCHEDULE DATA:------",r.fansi_colors.magenta));
             r.println(r.jsonToPrettyString(app.gui.modes.scheduleData.reader.getExport()));
-            r.println(r.fansi("PROJECT DATA:------",r.fansi_colors.magenta));
         }
-        catch(JSONException e)
+        catch(JSONException ignored)
         {
-            e.printStackTrace();
+            ignored.printStackTrace();
         }
     }
 }

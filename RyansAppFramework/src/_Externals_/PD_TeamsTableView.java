@@ -50,7 +50,7 @@ public class PD_TeamsTableView extends TableView
     {
         remove(getSelected());
     }
-    public void upfield2Item(String field1,String field2,String field3,String field4)
+    public void updateItem(String field1,String field2,String field3,String field4)
     {
         getSelected().field1Property().setValue(field1);
         getSelected().field2Property().setValue(field2);

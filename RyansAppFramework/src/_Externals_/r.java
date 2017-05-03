@@ -169,6 +169,26 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static String printed(String p)
+    {
+        println(fansi(p,fansi_colors.cyan));
+        return p;
+    }
+    public static String colorToHexString(Color c)
+    {
+        printed(c.toString());
+        return printed("#"+(""+c.toString()).substring(2,8));
+    }
+    public static String rgbToHexString(int r,int g,int b)
+    {
+        return String.format("#%02x%02x%02x", r, g, b);//http://stackoverflow.com/questions/3607858/convert-a-rgb-color-value-to-a-hexadecimal
+    }
+    public static int[]hexToRGB(String hexWithoutHashtag)
+    {
+        return new int[]{Integer.valueOf( hexWithoutHashtag.substring( 1-1, 3-1 ), 16 ),
+                         Integer.valueOf( hexWithoutHashtag.substring( 3-1, 5-1 ), 16 ),
+                         Integer.valueOf( hexWithoutHashtag.substring( 5-1, 7-1 ), 16 )};
+    }
     public static String stringMap(String key,String[] keys,String[] values)
     {
         //Treats keys and values as if they were both halves of a dictionary

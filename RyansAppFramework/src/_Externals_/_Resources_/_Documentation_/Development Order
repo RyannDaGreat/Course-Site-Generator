@@ -77,3 +77,4 @@ Beyond Expectations:
 Everything is undoable (everything that affects the save file, anyway)
 When selecting from tableviews, you can use arrow keys OR use the mouse. The choice is yours.
 Many things are restricted to the user input via constraint rather than error message.
+My Project can automatically generate color names! I made a whole python program just for it. And what's more: All of these color names are contained in the properties file!
