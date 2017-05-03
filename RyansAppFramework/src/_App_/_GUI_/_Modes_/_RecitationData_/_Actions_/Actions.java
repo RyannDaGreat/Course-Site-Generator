@@ -108,4 +108,8 @@ public class Actions
         r.setComboboxOption(boilerplate.getTA1_comboBox(),ta1);
         r.setComboboxOption(boilerplate.getTA2_comboBox(),ta2);
     }
+    public void clearInputs()
+    {
+
+    }
 }
