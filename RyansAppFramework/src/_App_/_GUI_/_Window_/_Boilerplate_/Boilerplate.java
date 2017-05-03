@@ -52,10 +52,9 @@ public class Boilerplate extends VBox
                             }
                         });
         /*app.gui.window.boilerplate.*/
+        //region Hue Shifter
         if(app.io.propertyGetter.getAnimateHue())
         {
-            //region Hue Shifter
-            //
             Timeline hueTimeline=new Timeline(new KeyFrame(Duration.millis(1000/30),x->
             {
                 ColorAdjust colorAdjust=new ColorAdjust();
@@ -78,12 +77,12 @@ public class Boilerplate extends VBox
             hueTimeline.play();
         }
         //endregion
-        String graphicStlye="-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );";
-        cdPsBanner_imageView8.setStyle(graphicStlye);
-        cdPsLeft_imageView9.setStyle(graphicStlye);
-        cdPsRight_imageView10.setStyle(graphicStlye);
-        pdTColor_circle.setStyle(graphicStlye);
-        pdTTextColor_circle0.setStyle(graphicStlye);
+        String graphicStyle="-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );";
+        cdPsBanner_imageView8.setStyle(graphicStyle);
+        cdPsLeft_imageView9.setStyle(graphicStyle);
+        cdPsRight_imageView10.setStyle(graphicStyle);
+        pdTColor_circle.setStyle(graphicStyle);
+        pdTTextColor_circle0.setStyle(graphicStyle);
         // sdEndingFriday_datePicker.setStyle(graphicStlye);
         // sdStartingMonday_datePicker0.setStyle(graphicStlye);
         // sdDate_datePicker1.setStyle(graphicStlye);

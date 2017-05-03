@@ -7,6 +7,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 @SuppressWarnings("unchecked")
 public class RD_RecitationDataTableView extends TableView
 {
@@ -18,6 +21,48 @@ public class RD_RecitationDataTableView extends TableView
     {
         getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->r.run());
     }
+    public JSONObject getExport()
+    {
+        final JSONObject o=new JSONObject();
+        final JSONArray a=new JSONArray();
+        forAll(r->//r ≣ recitation
+               {
+                   try
+                   {
+                       JSONObject temp=new JSONObject();
+                       temp.accumulate("section","<strong>"+r.section.getValue()+"</strong> ("+r.instructor.getValue()+")");
+                       temp.accumulate("day_time",r.dayⳆtime.getValue());
+                       temp.accumulate("location",r.location.getValue());
+                       temp.accumulate("ta_1",r.ta1.getValue());
+                       temp.accumulate("ta_2",r.ta2.getValue());
+                       a.put(temp);
+                   }
+                   catch(JSONException e)
+                   {
+                       e.printStackTrace();
+                   }
+               });
+        try
+        {
+            o.accumulate("recitations",a);
+        }
+        catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+        return o;
+    }
+    public interface F
+    {
+        void f(Recitation x);
+    }
+    public void forAll(F f)
+    {
+        for(Object o : getItems())
+        {
+            f.f((Recitation)o);
+        }
+    }
     public String getState()
     {
         return r.joinLines(getItems().toArray()).replaceAll("\n",";");
@@ -25,9 +70,9 @@ public class RD_RecitationDataTableView extends TableView
     public void setState(String state)
     {
         getItems().clear();
-        for(String x:state.split(";"))
+        for(String x : state.split(";"))
         {
-            String[]y=x.split(",");
+            String[] y=x.split(",");
             getItems().add(new Recitation(y[0],y[1],y[2],y[3],y[4],y[5]));
         }
     }
@@ -63,7 +108,7 @@ public class RD_RecitationDataTableView extends TableView
         addRecitation("A6","B5","C4","D3","E2","F1");
         setOnKeyPressed(ⵁ->r.branch(this::removeSelected,ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE));//Only keeping this because I have the auto-transactor!
         //
-        final TableColumn< Recitation,String> sectionCol=new TableColumn<>(sectionHeader);
+        final TableColumn<Recitation,String> sectionCol=new TableColumn<>(sectionHeader);
         final TableColumn<Recitation,String> instructorCol=new TableColumn<>(instructorHeader);
         final TableColumn<Recitation,String> dayⳆtimeCol=new TableColumn<>(dayⳆtimeHeader);
         final TableColumn<Recitation,String> locationCol=new TableColumn<>(locationHeader);
@@ -79,7 +124,6 @@ public class RD_RecitationDataTableView extends TableView
         ta1Col.setCellValueFactory(new PropertyValueFactory<>("ta1"));
         ta2Col.setCellValueFactory(new PropertyValueFactory<>("ta2"));
     }
-
     //region Recitation Class (with getters and setters)
     public class Recitation
     {
