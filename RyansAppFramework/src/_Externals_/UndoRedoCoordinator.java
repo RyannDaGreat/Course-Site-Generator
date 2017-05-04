@@ -25,7 +25,7 @@ public class UndoRedoCoordinator
         redoHelper(Do,Undo);
         Redo();
     }
-    public void DoWithoutRedo(Runnable Do,Runnable Undo)
+    public void DoWithoutRedo(Runnable Do,Runnable Undo)//Used for auto-transactions, originally developed in my CourseSiteGenerator project.
     {
         redoHelper(Do,Undo);
         ++cursor;
@@ -68,7 +68,7 @@ public class UndoRedoCoordinator
         }
         else
         {
-            //say("redo failed");
+            say("redo failed");
             return false;
         }
     }
@@ -86,7 +86,7 @@ public class UndoRedoCoordinator
         }
         else
         {
-            //say("Undo failed");
+            say("Undo failed");
             return false;
         }
     }

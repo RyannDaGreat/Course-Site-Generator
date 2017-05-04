@@ -42,10 +42,10 @@ public class Misc
     }
     public void playLoadSound()
     {
-        playWav("EffectAOpen");
+        playWav("EffectAClose");
     }
     public void playSaveSound()
     {
-        playWav("EffectAClose");
+        playWav("EffectAOpen");
     }
 }

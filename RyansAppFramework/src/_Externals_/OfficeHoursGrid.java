@@ -1,9 +1,6 @@
 package _Externals_;//Created by Ryan on 4/12/17.
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.effect.InnerShadow;
-import javafx.scene.effect.Shadow;
-import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 public class OfficeHoursGrid extends rGridPane
@@ -167,26 +164,34 @@ public class OfficeHoursGrid extends rGridPane
                                                      onClick.f(rowTitle(x),colTitle(x));
                                                  });
                              x.setOnMouseEntered(ⵁ->forEachChild(t->
-                                                                  {
-                                                                      if(rowTitle(t).equals(rowTitle(x))&&getColumnIndex(x)>=getColumnIndex(t)||colTitle(t).equals(colTitle(x))&&getRowIndex(x)>=getRowIndex(t))
-                                                                      {
-                                                                          // InnerShadow innerShadow=new InnerShadow();
-                                                                          // // innerShadow.setOffsetX(4);
-                                                                          // // innerShadow.setOffsetY(4);
-                                                                          // innerShadow.setRadius(20);
-                                                                          // innerShadow.setColor(Color.web("0x00000077"));
-                                                                          // t.setEffect(innerShadow);
-                                                                          t.setOpacity(1);
-                                                                      }
-                                                                      else
-                                                                      {
-                                                                          t.setOpacity(.7);
-                                                                      }
-                                                                  }));
+                                                                 {
+                                                                     if(!isTitle(t)&&(rowTitle(t).equals(rowTitle(x))&&getColumnIndex(x)>=getColumnIndex(t)||colTitle(t).equals(colTitle(x))&&getRowIndex(x)>=getRowIndex(t)))
+                                                                     {
+                                                                         // InnerShadow innerShadow=new InnerShadow();
+                                                                         // // innerShadow.setOffsetX(4);
+                                                                         // // innerShadow.setOffsetY(4);
+                                                                         // innerShadow.setRadius(20);
+                                                                         // innerShadow.setColor(Color.web("0x00000077"));
+                                                                         // t.setEffect(innerShadow);
+                                                                         t.setOpacity(1);
+                                                                     }
+                                                                     else
+                                                                     {
+                                                                         t.setOpacity(.7);
+                                                                     }
+                                                                 }));
                          }
                      });
-        setOnMouseExited(ⵁ->forEachChild(t->t.setOpacity(1)));
+        r.rRunnable<TextCell> textCellrRunnable=t->t.setOpacity(1);
+        setOnMouseExited(ⵁ->forEachChild(textCellrRunnable));
         forEachChild(x->x.appendStyle("-fx-effect: dropshadow( one-pass-box  , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );"));
+        forEachChild(x->
+                     {
+                         if(isTitle(x))
+                         {
+                             x.setOnMouseEntered(ⵁ->forEachChild(textCellrRunnable));
+                         }
+                     });
         // forEachChild(x->x.appendStyle("-fx-border-color: black"));
     }
     public void removeName(String name)//Remove the name from the grid

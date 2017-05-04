@@ -467,9 +467,9 @@ public class r
             assert contains(last,list);
             return subArray(list,Math.min(indexOf(first,list),indexOf(last,list)+1),Math.max(indexOf(first,list),indexOf(last,list)+1));
         }
-        catch(Exception ignored)
+        catch(Exception ignored)//I don't know what the error is but it doesnt seem to be important for the course-site-generator project. It happens, sometimes, when changing the start/end office hours.
         {
-            r.say("Helo me im scared help m e");
+            // r.say("Helo me im scared help m e");
             return null;
         }
     }
