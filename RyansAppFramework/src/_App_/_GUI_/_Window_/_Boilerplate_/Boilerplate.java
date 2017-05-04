@@ -2,9 +2,6 @@ package _App_._GUI_._Window_._Boilerplate_;
 import _App_.App;
 import _Externals_.*;
 import _Externals_._Resources_.ResourceGetter;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
@@ -14,7 +11,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 public class Boilerplate extends VBox
 {
     public App app;
@@ -52,17 +48,10 @@ public class Boilerplate extends VBox
                             }
                         });
         /*app.gui.window.boilerplate.*/
-        //region Hue Shifter
-        if(app.io.propertyGetter.getAnimateHue())
+        if(app.io.propertyGetter.getAnimateHue())//Hue Shifter can be turned on/off in settings
         {
-            Timeline hueTimeline=new Timeline(new KeyFrame(Duration.millis(1000/30),x->
-            {
-                updateAppHue();
-            }));
-            hueTimeline.setCycleCount(Animation.INDEFINITE);
-            hueTimeline.play();
+            r.fxRunAsNewThreadRepeatedly(30,this::updateAppHue);
         }
-        //endregion
         String graphicStyle="-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );";
         cdPsBanner_imageView8.setStyle(graphicStyle);
         cdPsLeft_imageView9.setStyle(graphicStyle);

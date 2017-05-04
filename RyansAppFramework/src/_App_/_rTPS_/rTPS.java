@@ -1,11 +1,8 @@
 package _App_._rTPS_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _Externals_.UndoRedoCoordinator;
+import _Externals_.r;
 import _Externals_.rTextField;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.util.Duration;
 public class rTPS extends UndoRedoCoordinator
 {
     public App app;
@@ -16,19 +13,7 @@ public class rTPS extends UndoRedoCoordinator
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         lastState=app.io.saver.getAppState();
-        //region AUTOTRANSACTOR: Set A timer to keep running refreshlastappstate on a new thread
-//⁠⁠⁠⁠⁠                                    ⎧                                                                                                                ⎫
-//⁠⁠⁠⁠⁠                                    ⎪            ⎧                                                                                                  ⎫⎪
-//⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎧                                                          ⎫                       ⎪⎪
-//⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎪                                                        ⎧⎫⎪                     ⎧⎫⎪⎪
-        Timeline timeline=new Timeline(new KeyFrame(Duration.millis(app.io.propertyGetter.getAutotransactionIntervalInMillis()),x->tryToAutotransact()));
-//⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎪                                                        ⎩⎭⎪                     ⎩⎭⎪⎪
-//⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎩                                                          ⎭                       ⎪⎪
-//⁠⁠⁠⁠⁠                                    ⎪            ⎩                                                                                                  ⎭⎪
-//⁠⁠⁠⁠⁠                                    ⎩                                                                                                                ⎭
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-        //endregion
+        r.fxRunAsNewThreadRepeatedly(app.io.propertyGetter.getAutotransactionsPerSecond(),this::tryToAutotransact);//AUTOTRANSACTOR: Set A timer to keep running refreshlastappstate on a new thread
     }
     //region Auto-Transactor
     //Is a thread that runs on a timer and automatically saves any changes as a transaction, detected by a change in App state.

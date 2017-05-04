@@ -86,9 +86,9 @@ public class PropertyGetter
         assert x.length==4;
         return x;
     }
-    public long getAutotransactionIntervalInMillis()
+    public long getAutotransactionsPerSecond()
     {
-        return Long.parseLong(getProperty("autotransaction_interval_in_millis"));
+        return Long.parseLong(getProperty("autotransactions_per_second"));
     }
     public double getHueShiftFrequenciInHz()
     {

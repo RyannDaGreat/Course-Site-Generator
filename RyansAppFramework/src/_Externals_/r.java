@@ -1,4 +1,7 @@
 package _Externals_;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -9,6 +12,7 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.Duration;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -314,6 +318,12 @@ public class r
     public static void main(String[] a)
     {
         System.out.println(getParentDir("/Users/Ryan/Desktop"));
+    }
+    public static void fxRunAsNewThreadRepeatedly(double frequencyInHz,Runnable f)//Akin to a second-life timer, except it runs in javaFx as a new thread
+    {
+        Timeline timeline=new Timeline(new KeyFrame(Duration.seconds(1/frequencyInHz),x->f.run()));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
     // public static String toRGBCode(Color color)
     // {
