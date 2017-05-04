@@ -169,6 +169,17 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static void playSound(String FileName)
+    {
+        try
+        {
+            sun.audio.AudioPlayer.player.start(new sun.audio.AudioStream(new java.io.FileInputStream(FileName)));
+        }
+        catch(Exception ignored)
+        {
+            ignored.printStackTrace();
+        }
+    }
     public static String printed(String p)
     {
         println(fansi(p,fansi_colors.cyan));

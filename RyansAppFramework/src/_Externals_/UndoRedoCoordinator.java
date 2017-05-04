@@ -29,7 +29,7 @@ public class UndoRedoCoordinator
     {
         redoHelper(Do,Undo);
         ++cursor;
-        r.say("auto");//Used for autotransactions
+        // //r.//say("auto");//Used for autotransactions
     }
     private void redoHelper(Runnable Do,Runnable Undo)
     {
@@ -62,13 +62,13 @@ public class UndoRedoCoordinator
     {
         if(canRedo())
         {
-            say("reDo succeeded");
+            //say("reDo succeeded");
             history.get(++cursor).Do.run();
             return true;
         }
         else
         {
-            say("redo failed");
+            //say("redo failed");
             return false;
         }
     }
@@ -80,13 +80,13 @@ public class UndoRedoCoordinator
     {
         if(canUndo())
         {
-            say("Undo succeeded");
+            // //say("Undo succeeded");
             history.get(cursor--).Undo.run();
             return true;
         }
         else
         {
-            say("Undo failed");
+            //say("Undo failed");
             return false;
         }
     }

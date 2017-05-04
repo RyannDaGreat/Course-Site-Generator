@@ -1,5 +1,6 @@
 package _App_._IO_._Misc_;//Created by Ryan on 4/10/17.
 import _App_.App;
+import _Externals_._Resources_.ResourceGetter;
 
 import java.io.File;
 @SuppressWarnings("WeakerAccess")
@@ -25,5 +26,26 @@ public class Misc
     public static File stringToFile(String s)
     {
         return new File(s);
+    }
+    //region Audio
+    public static void playWav(String soundNameWithoutPathOrExtension)
+    {
+        ResourceGetter.playWav(soundNameWithoutPathOrExtension);
+    }
+    public void playUndoRedoSound()
+    {
+        playWav("QuietDoubleClick");
+    }
+    public void playDoSound()
+    {
+        playWav("SingleClick");
+    }
+    public void playLoadSound()
+    {
+        playWav("EffectAOpen");
+    }
+    public void playSaveSound()
+    {
+        playWav("EffectAClose");
     }
 }

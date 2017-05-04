@@ -1,6 +1,8 @@
 package _Externals_._Resources_;//Created by Ryan on 4/13/17.
 import _Externals_.LocatedImage;
+import _Externals_.r;
 
+import java.io.File;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 public class ResourceGetter
@@ -47,6 +49,10 @@ public class ResourceGetter
     public static String getColorPickerStylesheet()
     {
         return getResource("_Style_/app_global_font.css");
+    }
+    public static void playWav(String soundNameWithoutWavExtensionOrPath)
+    {
+        r.playSound(r.printed(getResource("_Sounds_/"+soundNameWithoutWavExtensionOrPath+".wav").substring(5)));
     }
     //endregion
 }

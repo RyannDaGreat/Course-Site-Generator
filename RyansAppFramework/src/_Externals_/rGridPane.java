@@ -98,7 +98,7 @@ public class rGridPane extends GridPane
     private void addTextCell(String text,int... rowCol)
     {
         assert rowCol.length==2;
-        // removeChildren(getChildren(id(rowCol)));//Prevent duplicates
+        removeChildren(getChildren(id(rowCol)));//Prevent duplicates
         TextCell ⵁ;
         try
         {
@@ -261,34 +261,5 @@ public class rGridPane extends GridPane
     public rGridPane()
     {
         initialize("1pm,2pm,3pm,4pm,5pm,6,7,8".split(","),"Mon,Tues,Wed,Thurs,Fri".split(","));
-        forEachChild(x->x.setPadding(new Insets(10,10,10,10)));
-        forEachChild(x->x.appendStyle("-fx-border-width: 1"));
-        forEachChild(x->//Set The Background-Color Style
-                     {
-                         if(isColTitle(x))
-                         {
-                             x.appendStyle("-fx-background-color: green");
-                         }
-                         else if(isRowTitle(x))
-                         {
-                             x.appendStyle("-fx-background-color: red");
-                         }
-                         else if(isCorner(x))
-                         {
-                             x.appendStyle("-fx-background-color: blue");
-                         }
-                         else
-                         {
-                             x.appendStyle("-fx-background-color: white");
-                         }
-                     });
-        forEachChild(x->x.appendStyle("-fx-border-color: black"));
-        forEachChild(x->x.setOnMouseClicked(e->
-                                            {
-                                                if(!isTitle(x))
-                                                {
-                                                    x.setText(r.toggleLine(x.getText(),"TANAME"));
-                                                }
-                                            }));
     }
 }

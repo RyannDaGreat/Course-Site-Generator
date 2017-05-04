@@ -57,21 +57,7 @@ public class Boilerplate extends VBox
         {
             Timeline hueTimeline=new Timeline(new KeyFrame(Duration.millis(1000/30),x->
             {
-                ColorAdjust colorAdjust=new ColorAdjust();
-                setEffect(colorAdjust);
-                ColorAdjust colorAdjustInverse=new ColorAdjust();
-                cdPsBanner_imageView8.setEffect(colorAdjustInverse);
-                cdPsLeft_imageView9.setEffect(colorAdjustInverse);
-                cdPsRight_imageView10.setEffect(colorAdjustInverse);
-                pdTColor_circle.setEffect(colorAdjustInverse);
-                pdTTextColor_circle0.setEffect(colorAdjustInverse);
-                pdTTextColor_text111117.setEffect(colorAdjustInverse);
-                pdTColor_text111116.setEffect(colorAdjustInverse);
-                //
-                double X=2*r.seconds()*app.io.propertyGetter.getHueShiftFrequenciInHz();
-                X-=2*Math.round(X/2);
-                colorAdjust.setHue(-X);
-                colorAdjustInverse.setHue(X);
+                updateAppHue();
             }));
             hueTimeline.setCycleCount(Animation.INDEFINITE);
             hueTimeline.play();
@@ -86,6 +72,24 @@ public class Boilerplate extends VBox
         // sdEndingFriday_datePicker.setStyle(graphicStlye);
         // sdStartingMonday_datePicker0.setStyle(graphicStlye);
         // sdDate_datePicker1.setStyle(graphicStlye);
+    }
+    public void updateAppHue()//Just for lolz
+    {
+        ColorAdjust colorAdjust=new ColorAdjust();
+        setEffect(colorAdjust);
+        ColorAdjust colorAdjustInverse=new ColorAdjust();
+        cdPsBanner_imageView8.setEffect(colorAdjustInverse);
+        cdPsLeft_imageView9.setEffect(colorAdjustInverse);
+        cdPsRight_imageView10.setEffect(colorAdjustInverse);
+        pdTColor_circle.setEffect(colorAdjustInverse);
+        pdTTextColor_circle0.setEffect(colorAdjustInverse);
+        pdTTextColor_text111117.setEffect(colorAdjustInverse);
+        pdTColor_text111116.setEffect(colorAdjustInverse);
+        //
+        double X=2*r.seconds()*app.io.propertyGetter.getHueShiftFrequenciInHz();
+        X-=2*Math.round(X/2);
+        colorAdjust.setHue(-X);
+        colorAdjustInverse.setHue(X);
     }
     public Boilerplate(App app)
     {

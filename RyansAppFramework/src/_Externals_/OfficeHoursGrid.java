@@ -1,6 +1,9 @@
 package _Externals_;//Created by Ryan on 4/12/17.
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.effect.InnerShadow;
+import javafx.scene.effect.Shadow;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 public class OfficeHoursGrid extends rGridPane
@@ -26,11 +29,13 @@ public class OfficeHoursGrid extends rGridPane
     {
         try
         {
-            for(Node child:getChildren(time,day))
+            for(Node child : getChildren(time,day))
             {
                 TextCell tx=(TextCell)child;
                 if(!isTitle(tx))
+                {
                     tx.modifyText(x->r.sortedLines(r.toggleLine(x,name)));
+                }
             }
             return true;
         }
@@ -54,7 +59,9 @@ public class OfficeHoursGrid extends rGridPane
     public void setGridState(String state)
     {
         if(state.equals(getGridState()))
+        {
             return;
+        }
         //state is in the following format:
         // times;days;time,day,name;time,day,name;tim....
         //The fist two separated by ; determine the labels
@@ -104,7 +111,7 @@ public class OfficeHoursGrid extends rGridPane
                      });
         return String.join(",",colTitles);
     }
-    public void setTimeslots(String[]timeslots)
+    public void setTimeslots(String[] timeslots)
     {
         setGridState(String.join(",",(CharSequence[])timeslots)+";"+getColTitles()+";"+getTimesDaysNames());
     }
@@ -124,38 +131,69 @@ public class OfficeHoursGrid extends rGridPane
     }
     public String getLastTimeSlot()
     {
-
         return getRowTitles().split(",")[getRowTitles().split(",").length-1];
     }
     public void stylize()
     {
         forEachChild(x->x.setPadding(new Insets(10,10,10,10)));
-        forEachChild(x->x.appendStyle("-fx-border-width: 1"));
+        // forEachChild(x->x.appendStyle("-fx-border-width: 1"));
         forEachChild(x->//Set The Background-Color Style
                      {
+                         x.setVisible(true);
+                         setMargin(x,new Insets(3,3,3,3));
+                         // x.setEffect(new Shadow());
                          if(isColTitle(x))
                          {
-                             x.appendStyle("-fx-background-color: green");
+                             x.appendStyle("-fx-background-color: rgb(128,255,0)");
+                             x.appendStyle("-fx-background-radius: 20 20 3 3;");
                          }
                          else if(isRowTitle(x))
                          {
-                             x.appendStyle("-fx-background-color: red");
+                             x.appendStyle("-fx-background-radius: 20 3 3 20;");
+                             x.appendStyle("-fx-background-color: rgb(255,128,0)");
                          }
                          else if(isCorner(x))
                          {
-                             x.appendStyle("-fx-background-color: blue");
+                             x.setVisible(false);
+                             // x.appendStyle("-fx-background-color: blue");
                          }
                          else
                          {
+                             x.appendStyle("-fx-background-radius: 3 3 3 3;");
                              x.appendStyle("-fx-background-color: white");
                              x.setOnMouseClicked(ⵁ->
                                                  {
                                                      assert onClick!=null;//This should have been taken care of...
                                                      onClick.f(rowTitle(x),colTitle(x));
                                                  });
+                             x.setOnMouseEntered(ⵁ->
+                                                 {
+                                                     forEachChild(t->
+                                                                  {
+                                                                      if(rowTitle(t).equals(rowTitle(x))||colTitle(t).equals(colTitle(x)))
+                                                                      {
+                                                                          // InnerShadow innerShadow=new InnerShadow();
+                                                                          // // innerShadow.setOffsetX(4);
+                                                                          // // innerShadow.setOffsetY(4);
+                                                                          // innerShadow.setRadius(20);
+                                                                          // innerShadow.setColor(Color.web("0x00000077"));
+                                                                          // t.setEffect(innerShadow);
+                                                                          t.setOpacity(1);
+                                                                      }
+                                                                      else
+                                                                      {
+                                                                          t.setOpacity(.8);
+                                                                      }
+                                                                  });
+                                                 });
                          }
                      });
-        forEachChild(x->x.appendStyle("-fx-border-color: black"));
+        setOnMouseExited(ⵁ->
+                         {
+                             forEachChild(t->t.setOpacity(1));
+                         });
+        forEachChild(x->x.appendStyle("-fx-effect: dropshadow( one-pass-box  , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );"));
+        // forEachChild(x->x.appendStyle("-fx-border-color: black"));
     }
     public void removeName(String name)//Remove the name from the grid
     {

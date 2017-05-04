@@ -59,6 +59,7 @@ public class Saver
     }
     public void saveAppStateToFile(String path)//DON'T CREATE A SECOND FILE WRITING METHOD! JUST REPLACE THIS ONE IF YOU NEED TO. JSON IS CONSIDERED AN EXPORT.
     {
+        app.io.misc.playSaveSound();
         r.WriteFileIgnoreExceptions(path,getAppState());
         app.gui.toolbar.actions.disableSaveButton();
         setCurrentFilePath(path);

@@ -56,11 +56,13 @@ public class rTPS extends UndoRedoCoordinator
     // public void dо(Runnable redo) //TODO Finish this method once IO is complete
     public void Do(Runnable Do,Runnable Undo)
     {
+        app.io.misc.playDoSound();
         super.Do(Do,Undo);
         refreshToolbarButtons();
     }
     public void DoWithoutRedo(Runnable Do,Runnable Undo)
     {
+        app.io.misc.playDoSound();
         super.DoWithoutRedo(Do,Undo);
         refreshToolbarButtons();
     }

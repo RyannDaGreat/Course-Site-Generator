@@ -56,18 +56,19 @@ public class Actions
     //region Button Handlers
     public void handleNew()
     {
+        app.io.misc.playLoadSound();
         if(app.gui.dialogs.confirmSave())
         {
             app.io.loader.handleNew();
-            r.say("Sucessfully loaded new file");
         }
     }
     public void handleOpen()
     {
+        app.io.misc.playLoadSound();
         if(app.gui.dialogs.confirmSave())
         {
             File f=app.gui.dialogs.openFile();
-            r.say("open file");
+            // r.say("open file");
             //noinspection StatementWithEmptyBody
             if(f!=null)
             {
@@ -86,11 +87,13 @@ public class Actions
             handleSaveAs();
         else
            app.io.saver.saveAppStateToFile(app.io.saver.getCurrentFilePath());
-        r.say("successfully Saved current file");
+        // r.say("successfully Saved current file");
+        app.io.misc.playSaveSound();
         /*@formatter:on*/
     }
     public void handleSaveAs()
     {
+        app.io.misc.playSaveSound();
         File file=app.gui.dialogs.saveFile();
         //noinspection StatementWithEmptyBody
         if(file!=null)
@@ -105,6 +108,7 @@ public class Actions
     public void handleExport()
     {
         app.io.exporter.export();
+        app.io.misc.playSaveSound();
     }
     public void handleExit()
     {
@@ -136,6 +140,7 @@ public class Actions
         if(reader.undoButtonIsEnabled())//This check is here because we might also call this method via keyboard shortcur
         {
             app.rtps.Undo();
+            app.io.misc.playUndoRedoSound();
         }
     }
     public void handleRedo()
@@ -143,10 +148,12 @@ public class Actions
         if(reader.redoButtonIsEnabled())//This check is here because we might also call this method via keyboard shortcur
         {
             app.rtps.Redo();
+            app.io.misc.playUndoRedoSound();
         }
     }
     public void handleInfo()
     {
+        app.gui.window.boilerplate.updateAppHue();
     }
     //endregion
 }
