@@ -1,13 +1,14 @@
 package _Externals_;
 import javafx.scene.Node;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DateCell;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.*;
+import javafx.scene.paint.Color;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -15,16 +16,11 @@ import org.json.JSONObject;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
-import javafx.scene.paint.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Pattern;
 /**
  * Created by Ryan B on 2/7/16.
@@ -215,6 +211,95 @@ public class r
             i++;
         }
         return typeKey;
+    }
+    //region Alerts:error and info
+    //Unfortunately the ones in the r class can't work on a javaFx thread. So, I'm going to implement some here:
+    //All came from http://code.makery.ch/blog/javafx-dialogs-official/
+    private static void fxShowAlert(String title,String header,String content,Alert.AlertType type)
+    {
+        Alert alert=new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+    public static void fxShowErrorAlert(String title,String header,String content)
+    {
+        fxShowAlert(title,header,content,Alert.AlertType.ERROR);
+    }
+    public static void fxShowErrorAlert(String message)
+    {
+        fxShowErrorAlert("Error",message,"");
+    }
+    public static void fxShowInfoAlert(String title,String header,String content)
+    {
+        fxShowAlert(title,header,content,Alert.AlertType.INFORMATION);
+    }
+    public static void fxShowInfoAlert(String message)
+    {
+        fxShowInfoAlert("Info",message,"");
+    }
+    //endregion
+    //region StringDialog
+    public static String fxStringDialog(String title,String header,String message)//Returns null if user cancels
+    {
+        TextInputDialog dialog=new TextInputDialog();
+        dialog.setTitle(title);
+        dialog.setHeaderText(header);
+        dialog.setContentText(message);
+        Optional<String> result=dialog.showAndWait();
+        if(result.isPresent())
+        {
+            return result.get();
+        }
+        return null;//User decided to cancel.
+    }
+    public static boolean fxYesNo(String title,String header,String message)
+    {
+        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
+        ButtonType yes=new ButtonType("Yes");
+        ButtonType no=new ButtonType("No");
+        // ButtonType buttonTypeThree = new ButtonType("Three");
+        // ButtonType buttonTypeCancel = new ButtonType("Cancel",ButtonBar.ButtonData.CANCEL_CLOSE);
+        alert.getButtonTypes().setAll(yes,no);//, buttonTypeThree, buttonTypeCancel);
+        Optional<ButtonType> result=alert.showAndWait();
+        if(!result.isPresent())
+        {
+            return fxYesNo(title,header,message);//Keep asking the user until they click yes or no. Clicking the 'x' is not an option.
+        }
+        if(result.get()==no)
+        {
+            return false;
+        }
+        assert result.get()==yes;
+        return true;
+    }
+    public static boolean fxYesNo(String message)
+    {
+        return fxYesNo("",message,"");
+    }
+    public static File fxOpenFile(Stage stage,File currentDirectory)//File getCurrentDirectory() {return new File(".");}
+    {
+        return fxGetFileChooser(currentDirectory).showOpenDialog(stage);
+    }
+    public static File fxSaveFile(Stage stage,File currentDirectory)//File getCurrentDirectory() {return new File(".");}
+    {
+        return fxGetFileChooser(currentDirectory).showSaveDialog(stage);
+    }
+    public static File fxOpenDirectory(File currentDirectory,Stage stage)//File getCurrentDirectory() {return new File(".");}
+    {
+        DirectoryChooser directoryChooser=new DirectoryChooser();
+        directoryChooser.setInitialDirectory(currentDirectory);
+        return new DirectoryChooser().showDialog(stage);
+    }
+    public static FileChooser fxGetFileChooser(File currentDirectory)//File getCurrentDirectory() {return new File(".");}
+    {
+        FileChooser fileChooser=new FileChooser();
+        fileChooser.setInitialDirectory(currentDirectory);
+        return fileChooser;
     }
     // public static String toRGBCode(Color color)
     // {
@@ -1571,9 +1656,9 @@ public class r
         return null;
         /*@formatter:on*/
     }
-    static public boolean yesNo(String title,String message)
+    static public boolean fxYesNo(String title,String message)
     {
-        //Example: r.print(new App().gui.dialogs.yesNo("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
+        //Example: r.print(new App().gui.dialogs.fxYesNo("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
         //Based on: http://www.java2s.com/Tutorial/Java/0240__Swing/Yesnocanceldialog.htm
         return JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_OPTION)==0;//0⟺YES，1⟺NO
     }

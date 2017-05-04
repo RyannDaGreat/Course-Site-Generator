@@ -62,7 +62,7 @@ public class Actions
     {
         if(reader.getDate().equals(""+null)||!reader.isValidScheduleItemDate(LocalDate.parse(reader.getDate())))
         {
-            app.gui.dialogs.showInfoAlert("Error: Bad date; cannot add or update");
+            r.fxShowInfoAlert("Error: Bad date; cannot add or update");
             return;
         }
         //All checks passed: Continue the rest of it

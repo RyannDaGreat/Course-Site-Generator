@@ -6,7 +6,6 @@ import _Externals_.r;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.scene.effect.ColorAdjust;
 import javafx.util.Duration;
 
 import java.io.File;

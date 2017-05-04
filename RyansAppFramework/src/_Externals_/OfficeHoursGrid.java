@@ -166,11 +166,9 @@ public class OfficeHoursGrid extends rGridPane
                                                      assert onClick!=null;//This should have been taken care of...
                                                      onClick.f(rowTitle(x),colTitle(x));
                                                  });
-                             x.setOnMouseEntered(ⵁ->
-                                                 {
-                                                     forEachChild(t->
+                             x.setOnMouseEntered(ⵁ->forEachChild(t->
                                                                   {
-                                                                      if(rowTitle(t).equals(rowTitle(x))||colTitle(t).equals(colTitle(x)))
+                                                                      if(rowTitle(t).equals(rowTitle(x))&&getColumnIndex(x)>=getColumnIndex(t)||colTitle(t).equals(colTitle(x))&&getRowIndex(x)>=getRowIndex(t))
                                                                       {
                                                                           // InnerShadow innerShadow=new InnerShadow();
                                                                           // // innerShadow.setOffsetX(4);
@@ -182,16 +180,12 @@ public class OfficeHoursGrid extends rGridPane
                                                                       }
                                                                       else
                                                                       {
-                                                                          t.setOpacity(.8);
+                                                                          t.setOpacity(.7);
                                                                       }
-                                                                  });
-                                                 });
+                                                                  }));
                          }
                      });
-        setOnMouseExited(ⵁ->
-                         {
-                             forEachChild(t->t.setOpacity(1));
-                         });
+        setOnMouseExited(ⵁ->forEachChild(t->t.setOpacity(1)));
         forEachChild(x->x.appendStyle("-fx-effect: dropshadow( one-pass-box  , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );"));
         // forEachChild(x->x.appendStyle("-fx-border-color: black"));
     }
