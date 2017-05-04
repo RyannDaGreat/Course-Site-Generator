@@ -1,5 +1,6 @@
 package _Externals_;
 import _Externals_.r.rRunnable;
+import com.sun.jmx.remote.internal.ArrayQueue;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -9,7 +10,9 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 import java.util.function.Function;
 
 import static _Externals_.r.id;
@@ -95,8 +98,17 @@ public class rGridPane extends GridPane
     private void addTextCell(String text,int... rowCol)
     {
         assert rowCol.length==2;
-        removeChildren(getChildren(id(rowCol)));//Prevent duplicates
-        TextCell ⵁ=new TextCell();
+        // removeChildren(getChildren(id(rowCol)));//Prevent duplicates
+        TextCell ⵁ;
+        try
+        {
+            ⵁ=dueToMemoryLeak.pop();//Attempt to recycle textCells
+            System.out.println("BEHH");
+        }
+        catch(NoSuchElementException ignored)
+        {
+            ⵁ=new TextCell();
+        }
         ⵁ.setText(text);
         GridPane.setRowIndex(ⵁ,rowCol[0]);
         GridPane.setColumnIndex(ⵁ,rowCol[1]);
@@ -142,8 +154,16 @@ public class rGridPane extends GridPane
             removeChildren(getChildren(id(row,col)));
         }
     }
+    ArrayDeque<TextCell> dueToMemoryLeak=new ArrayDeque<>();//This recycles the TextCells.
     public void clear()
     {
+        //THIS CODE IS WEIRD DUE TO A GLITCH IN JAVAFX THAT I FOUND WHERE REMOVING NODES WITH UNI-DIRECTIONAL LISTENERS ARE NOT REMOVED BY THE GARBAGE COLLECTOR.
+        //ORIGINALLY WAS getChildren().clear();//This was producing a memory leak because apparently thest TextCells were referenced
+        // somewhere else in the Java code, I have no idea where. Each time I undo/redo'd, and loaded a new state,
+        // all of these panes wouldn't be deleted for some reason that I don't understand. So as a result I'm just
+        // going to have two lists.
+        //My solution: When we 'delete' children, we call the clear method on this array but FIRST, we dump all these objects onto another arraylist.
+        forEachChild(x->dueToMemoryLeak.add(x));
         getChildren().clear();
     }
     public void initialize(int rows,int cols)

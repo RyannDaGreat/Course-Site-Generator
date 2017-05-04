@@ -59,6 +59,8 @@ public class RD_RecitationDataTableView extends TableView
     }
     public void setState(String state)
     {
+        if(state.equals(getState()))
+            return;
         getItems().clear();
         for(String x : state.split(";"))
         {

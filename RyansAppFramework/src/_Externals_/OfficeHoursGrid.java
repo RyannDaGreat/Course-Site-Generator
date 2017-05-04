@@ -53,6 +53,8 @@ public class OfficeHoursGrid extends rGridPane
     }
     public void setGridState(String state)
     {
+        if(state.equals(getGridState()))
+            return;
         //state is in the following format:
         // times;days;time,day,name;time,day,name;tim....
         //The fist two separated by ; determine the labels

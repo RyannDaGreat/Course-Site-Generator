@@ -1,11 +1,11 @@
 package _App_._rTPS_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _Externals_.UndoRedoCoordinator;
+import _Externals_.rTextField;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
-
 public class rTPS extends UndoRedoCoordinator
 {
     public App app;
@@ -17,7 +17,6 @@ public class rTPS extends UndoRedoCoordinator
     {
         lastState=app.io.saver.getAppState();
         //region AUTOTRANSACTOR: Set A timer to keep running refreshlastappstate on a new thread
-
 //⁠⁠⁠⁠⁠                                    ⎧                                                                                                                ⎫
 //⁠⁠⁠⁠⁠                                    ⎪            ⎧                                                                                                  ⎫⎪
 //⁠⁠⁠⁠⁠                                    ⎪            ⎪               ⎧                                                          ⎫                       ⎪⎪
@@ -40,6 +39,10 @@ public class rTPS extends UndoRedoCoordinator
     }
     public void tryToAutotransact()//Only does something if there are changes to App State
     {
+        if(rTextField.thereExistsATextfieldInFocusRightNow)//Don't autotransact in the middle of somebody typing a sentence. That's annoying.
+        {
+            return;
+        }
         final String New=app.io.saver.getAppState();//Just in case this takes a while I don't want the thread to cause glitchy problems
         if(lastState.equals(New))
         {
