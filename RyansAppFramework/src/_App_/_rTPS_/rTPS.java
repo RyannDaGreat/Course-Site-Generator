@@ -1,9 +1,13 @@
 package _App_._rTPS_;//Created by Ryan on 4/10/17.
 import _App_.App;
+import _App_._GUI_._Toolbar_._Actions_.Actions;
+import _App_._GUI_._Window_.Window;
 import _Externals_.UndoRedoCoordinator;
 import _Externals_.r;
 import _Externals_.rTextField;
 import javafx.scene.control.Tab;
+
+import java.util.function.Supplier;
 public class rTPS extends UndoRedoCoordinator
 {
     public App app;
@@ -26,29 +30,28 @@ public class rTPS extends UndoRedoCoordinator
     }
     public void tryToAutotransact()//Only does something if there are changes to App State
     {
+        /*@formatter:off*/
         if(rTextField.thereExistsATextfieldInFocusRightNow)//Don't autotransact in the middle of somebody typing a sentence. That's annoying.
-        {
             return;
-        }
         final String New=app.io.saver.getAppState();//Just in case this takes a while I don't want the thread to cause glitchy problems
         if(lastState.equals(New))
-        {
             return;//By definition; NOT just to avoid null errors! Being null is information here: it means we might have changed the state by redoing or undoing something.
-        }
+        /*@formatter:on*/
         final String Old=lastState+"";//Want a new ID
         DoWithoutRedo(()->app.io.loader.setAppState(New),()->app.io.loader.setAppState(Old));
         refreshLastAppState();
     }
     //endregion
-    interface F
+    private interface F
     {
         void f(Runnable x,Runnable y);
     }
-    public void DoHelper(F f,Runnable Do,Runnable Undo)
+    private void DoHelper(F f,Runnable Do,Runnable Undo)
     {
         app.io.misc.playDoSound();
-        final Tab currentTab=app.gui.window.reader.getCurrentTab();//We go back here when we undo/redo etc.
-        Runnable setTab=()->app.gui.window.actions.setCurrentTab(currentTab);
+        Window window=app.gui.window;
+        final Tab currentTab=window.reader.getCurrentTab();//We go back here when we undo/redo etc.
+        Runnable setTab=()->window.actions.setCurrentTab(currentTab);
         f.f(r.seq(Do,setTab),r.seq(Undo,setTab));
         refreshToolbarButtons();
     }
@@ -68,47 +71,38 @@ public class rTPS extends UndoRedoCoordinator
     }
     public void refreshToolbarButtons()
     {
+        Actions actions=app.gui.toolbar.actions;
+        /*@formatter:off*/
         if(canUndo())
-        {
-            app.gui.toolbar.actions.enableUndoButton();
-        }
+            actions.enableUndoButton();
         else
-        {
-            app.gui.toolbar.actions.disableUndoButton();
-        }
+            actions.disableUndoButton();
         if(canRedo())
-        {
-            app.gui.toolbar.actions.enableRedoButton();
-        }
+            actions.enableRedoButton();
         else
-        {
-            app.gui.toolbar.actions.disableRedoButton();
-        }
-        app.gui.toolbar.actions.enableSaveButton();//All changes allow this to be enabled
+            actions.disableRedoButton();
+        /*@formatter:on*/
+        actions.enableSaveButton();//All changes allow this to be enabled
     }
-    public boolean Undo()
+    private boolean UndoRedoHelper(Supplier<Boolean> r)
     {
         try
         {
-            return super.Undo();
+            return r.get();
         }
         finally
         {
             refreshToolbarButtons();
             refreshLastAppState();
         }
+    }
+    public boolean Undo()
+    {
+        return UndoRedoHelper(super::Undo);
     }
     public boolean Redo()
     {
         lastState=null;
-        try
-        {
-            return super.Redo();
-        }
-        finally
-        {
-            refreshToolbarButtons();
-            refreshLastAppState();
-        }
+        return UndoRedoHelper(super::Redo);
     }
 }

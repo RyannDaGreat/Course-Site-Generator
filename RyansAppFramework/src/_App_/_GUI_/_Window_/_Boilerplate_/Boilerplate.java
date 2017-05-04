@@ -1,5 +1,6 @@
 package _App_._GUI_._Window_._Boilerplate_;
 import _App_.App;
+import _App_._GUI_._Toolbar_._Actions_.Actions;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.*;
 import _Externals_._Resources_.ResourceGetter;
@@ -22,31 +23,19 @@ public class Boilerplate extends VBox
         getStylesheets().add(ResourceGetter.getGlobalFontStylesheet());
         setOnKeyPressed(ⵁ->
                         {
-                            if(ⵁ.isControlDown()||ⵁ.isMetaDown())
+                            if(ⵁ.isControlDown()||ⵁ.isMetaDown())//Either control key or command key works; good for macs
                             {
-                                if(ⵁ.getCode()==KeyCode.Z)
+                                Actions actions=app.gui.toolbar.actions;
+                                switch(ⵁ.getCode())
                                 {
-                                    app.gui.toolbar.actions.handleUndo();//Identical to as if button were pressed (taking into consideration whether it's disabled)
-                                }
-                                if(ⵁ.getCode()==KeyCode.Y)
-                                {
-                                    app.gui.toolbar.actions.handleRedo();//Identical to as if button were pressed (taking into consideration whether it's disabled)
-                                }
-                                if(ⵁ.getCode()==KeyCode.S)
-                                {
-                                    app.gui.toolbar.actions.handleSave();//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
-                                }
-                                if(ⵁ.getCode()==KeyCode.O)
-                                {
-                                    app.gui.toolbar.actions.handleOpen();//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
-                                }
-                                if(ⵁ.getCode()==KeyCode.N)
-                                {
-                                    app.gui.toolbar.actions.handleNew();//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
-                                }
-                                if(ⵁ.getCode()==KeyCode.Q)//Q is for 'Quit'
-                                {
-                                    app.gui.toolbar.actions.handleExit();//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
+                                    /*@formatter:off*/
+                                    case Z:actions.handleUndo();break;//Identical to as if button were pressed (taking into consideration whether it's disabled)
+                                    case Y:actions.handleRedo();break;//Identical to as if button were pressed (taking into consideration whether it's disabled)
+                                    case S:actions.handleSave();break;//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
+                                    case O:actions.handleOpen();break;//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
+                                    case N:actions.handleNew();break;//Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
+                                    case Q:actions.handleExit();break;//Q is for 'Quit'. Identical to as if button were clicked (NOT taking into consideration whether it's disabled)
+                                    /*@formatter:on*/
                                 }
                             }
                         });
