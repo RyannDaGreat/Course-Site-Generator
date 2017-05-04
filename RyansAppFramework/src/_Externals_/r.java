@@ -5,7 +5,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -16,6 +15,7 @@ import org.json.JSONObject;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import javafx.scene.paint.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
@@ -1635,7 +1635,7 @@ public class r
         }
     }
     // The following is only commented out because it makes more sense, in the CourseSiteGenerator project, to keep them in the Dialogs class. Once I'm done with this project these should be made static then uncommented.
-    //region Yes/No/Cancel Dialogs
+    //region non-javaFx okCancel/Yes/No/Cancel Dialogs
     static public enum dialogOptions//Used for checking the values of various dialog results
     {
         YES,NO,CANCEL
@@ -1656,15 +1656,15 @@ public class r
         return null;
         /*@formatter:on*/
     }
-    static public boolean fxYesNo(String title,String message)
+    static public boolean yesNo(String title,String message)
     {
-        //Example: r.print(new App().gui.dialogs.fxYesNo("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
+        //Example: r.print(new App().gui.dialogs.yesNo("title","Message")==Dialogs.dialogOptions.CANCEL);  //⟵ Returns true if user selects cancel else false
         //Based on: http://www.java2s.com/Tutorial/Java/0240__Swing/Yesnocanceldialog.htm
         return JOptionPane.showConfirmDialog(null,message,title,JOptionPane.YES_NO_OPTION)==0;//0⟺YES，1⟺NO
     }
-    static public void ok(String title,String message)
+    static public boolean okCancel(String title,String message)
     {
-        javax.swing.JOptionPane.showConfirmDialog(null,message,title,JOptionPane.OK_OPTION);
+        return javax.swing.JOptionPane.showConfirmDialog(null,message,title,JOptionPane.OK_CANCEL_OPTION)==0;
     }
     //endregion―――――――――――――――――――――――――――――――――――――――――
     //region File/Dir Open/Save Dialogs
