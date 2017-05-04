@@ -4,14 +4,10 @@ import _App_._GUI_._Window_._Boilerplate_.Boilerplate;
 import _Externals_._Resources_.ResourceGetter;
 import _Externals_.r;
 import org.jetbrains.annotations.NotNull;
-@SuppressWarnings({"WeakerAccess","FieldCanBeLocal"})
 public class PropertyGetter
 {
     public App app;
-    public PropertyGetter(App app)
-    {
-        this.app=app;
-    }
+    public PropertyGetter(App app){this.app=app;}
     public String getProperty(String key)//The reason this is private is because every key is accessed via a method.
     {
         return ResourceGetter.getProperty(key);//Actual mechanics of loading file must be outsourced to externals to preserve the logical integrity of my blackbox.
@@ -19,13 +15,17 @@ public class PropertyGetter
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
     }
+    //regionProperty Methods: Turn into one-liners via the following Regex search and replace: ([\n][ ]*[{][\n][ ]*)(.*)([\n][ ]*[}])   ⟹   {$2}
     //region Specific properties (by method)
     /*@formatter:off*/
     public String getAppTitle(){return getProperty("app_title");}
     public String getAppIconName(){return getProperty("app_icon_name");}
-    public double getMinAppHeight(){return Double.parseDouble(getProperty("app_min_height"));}
+    public double getMinAppHeight()
+    {
+        return Double.parseDouble(getProperty("app_min_height"));
+    }
     public double getMinAppWidth(){return Double.parseDouble(getProperty("app_min_width"));}
-    public String getInitialOfficeHourGridState(){return String.join(",",(CharSequence[])getOfficeHourTimeslots())+";"+String.join(",",(CharSequence[])getOfficeHourDays())+";";// return getProperty("initial_office_hour_grid_state");}
+    public String getInitialOfficeHourGridState(){return String.join(",",(CharSequence[])getOfficeHourTimeslots())+";"+String.join(",",(CharSequence[])getOfficeHourDays())+";";}// return getProperty("initial_office_hour_grid_state");}
     public String getAddButtonLabel(){return getProperty("add_button_label");}
     public String getUpdateButtonLabel(){return getProperty("update_button_label");}
     public String[] getOfficeHourDays(){return getProperty("office_hour_days").split(",");}
@@ -39,14 +39,18 @@ public class PropertyGetter
     public boolean getAnimateHue(){return Boolean.parseBoolean(getProperty("animate_hue"));}
     public String[]getScheduleItemTypes(){return getProperty("schedule_item_types").split(",");/*"Holiday","Lecture","Recitation","Homework","Reference"*/}
     public String[]getScheduleItemTypeKeys(){return getProperty("schedule_item_type_keys").split(",");}
-    public String getSave_sound(){return app.io.propertyGetter.getProperty("save_sound");}
-    public String getLoad_sound(){return app.io.propertyGetter.getProperty("load_sound");}
-    public String getDo_sound(){return app.io.propertyGetter.getProperty("do_sound");}
-    public String[] getAll_yearses(){return app.io.propertyGetter.getProperty("all_years").split(",");}
-    public String[] getAll_class_numberses(){return app.io.propertyGetter.getProperty("all_class_numbers").split(",");}
-    public String[] getAll_sbu_majorses(){return app.io.propertyGetter.getProperty("all_sbu_majors").split(",");}
-    public String[] getAll_semesterses(){return app.io.propertyGetter.getProperty("all_semesters").split(",");}
+    public String getSave_sound(){return getProperty("save_sound");}
+    public String getLoad_sound(){return getProperty("load_sound");}
+    public String getDo_sound(){return getProperty("do_sound");}
+    public String[] getAll_yearses(){return getProperty("all_years").split(",");}
+    public String[] getAll_class_numberses(){return getProperty("all_class_numbers").split(",");}
+    public String[] getAll_sbu_majorses(){return getProperty("all_sbu_majors").split(",");}
+    public String[] getAll_semesterses(){return getProperty("all_semesters").split(",");}
     public String getCircle_and_image_style(){return getProperty("circle_and_image_style");}
+    public int getHueShiftFramesPerSecond()
+    {
+        return Integer.parseInt(app.io.propertyGetter.getProperty("hueShiftFramesPerSeconds"));
+    }
     /*@formatter:on*/
     //endregion
     //region State Keys: Mode Title Keys
@@ -92,5 +96,6 @@ public class PropertyGetter
     //         e.printStackTrace();
     //     }
     // }
+    //endregion
     //endregion
 }

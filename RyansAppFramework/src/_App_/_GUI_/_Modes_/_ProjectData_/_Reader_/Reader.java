@@ -149,11 +149,3 @@ public class Reader
         return (String)boilerplate.getPsSTeam_comboBox().getValue();
     }
 }
-// public String getTeamTextColor()
-// {
-//     return boilerplate.getT_TextColor_selector().getText().trim();
-// }
-// public String getTeamTextColor()
-// {
-//     return boilerplate.getT_TextColor_selector().getText().trim();
-// }

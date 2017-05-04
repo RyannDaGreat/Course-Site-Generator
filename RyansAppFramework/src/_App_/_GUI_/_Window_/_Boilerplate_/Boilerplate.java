@@ -53,7 +53,7 @@ public class Boilerplate extends VBox
         /*app.gui.window.boilerplate.*/
         if(propertyGetter.getAnimateHue())//Hue Shifter can be turned on/off in settings
         {
-            r.fxRunAsNewThreadRepeatedly(30,this::updateAppHue);
+            r.fxRunAsNewThreadRepeatedly(propertyGetter.getHueShiftFramesPerSecond(),this::updateAppHue);
         }
         String graphicStyle=propertyGetter.getCircle_and_image_style();
         cdPsBanner_imageView8.setStyle(graphicStyle);

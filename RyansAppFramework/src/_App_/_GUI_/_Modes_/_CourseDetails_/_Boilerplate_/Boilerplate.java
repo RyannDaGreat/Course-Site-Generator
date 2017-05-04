@@ -6,6 +6,7 @@ import _Externals_.r;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+@SuppressWarnings("FieldCanBeLocal")
 public class Boilerplate
 {
     private App app;
