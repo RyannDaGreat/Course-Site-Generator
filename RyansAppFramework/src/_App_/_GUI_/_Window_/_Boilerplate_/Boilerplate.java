@@ -83,6 +83,10 @@ public class Boilerplate extends VBox
         colorAdjust.setHue(-X);
         colorAdjustInverse.setHue(X);
     }
+    public TabPane getTabPane()
+    {
+        return tabPane;
+    }
     public Boilerplate(App app)
     {
         this.app=app;

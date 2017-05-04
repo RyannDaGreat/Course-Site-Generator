@@ -1,5 +1,7 @@
 package _App_._IO_._Loader_;//Created by Ryan on 4/10/17.
 import _App_.App;
+import _App_._GUI_.GUI;
+import _App_._GUI_._Modes_.Modes;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_._Resources_.ResourceGetter;import _Externals_.r;
 import org.json.JSONException;
@@ -21,19 +23,21 @@ public class Loader
     private PropertyGetter propertyGetter;
     public void setAppState(String state)
     {
+        GUI gui=app.gui;
         try
         {
             JSONObject x=new JSONObject(state);
-            app.gui.modes.courseDetails.actions.setState(x.getJSONObject(propertyGetter.getStateKeyCourseDetails()));
-            app.gui.modes.tadata.actions.setState(x.getString(propertyGetter.getStateKeyTAData()));
-            app.gui.modes.scheduleData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyScheduleData()));
-            app.gui.modes.recitationData.actions.setState(x.getString(propertyGetter.getStateKeyRecitationData()));
-            app.gui.modes.projectData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyProjectData()));
+            Modes modes=gui.modes;
+            modes.courseDetails.actions.setState(x.getJSONObject(propertyGetter.getStateKeyCourseDetails()));
+            modes.tadata.actions.setState(x.getString(propertyGetter.getStateKeyTAData()));
+            modes.scheduleData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyScheduleData()));
+            modes.recitationData.actions.setState(x.getString(propertyGetter.getStateKeyRecitationData()));
+            modes.projectData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyProjectData()));
         }
         catch(JSONException e)
         {
             //noinspection AccessStaticViaInstance
-            app.gui.dialogs.showErrorAlert(ResourceGetter.getProperty("failed.to.load.file"));
+            gui.dialogs.showErrorAlert(ResourceGetter.getProperty("failed.to.load.file"));
             e.printStackTrace();
         }
     }

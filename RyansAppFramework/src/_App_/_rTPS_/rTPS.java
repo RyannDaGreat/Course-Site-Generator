@@ -3,6 +3,7 @@ import _App_.App;
 import _Externals_.UndoRedoCoordinator;
 import _Externals_.r;
 import _Externals_.rTextField;
+import javafx.scene.control.Tab;
 public class rTPS extends UndoRedoCoordinator
 {
     public App app;
@@ -16,6 +17,7 @@ public class rTPS extends UndoRedoCoordinator
         r.fxRunAsNewThreadRepeatedly(app.io.propertyGetter.getAutotransactionsPerSecond(),this::tryToAutotransact);//AUTOTRANSACTOR: Set A timer to keep running refreshlastappstate on a new thread
     }
     //region Auto-Transactor
+    //Note that any manual transactions can be integrated with the autotransactor at ease; it takes care of the conflicts automatically
     //Is a thread that runs on a timer and automatically saves any changes as a transaction, detected by a change in App state.
     private String lastState;
     private void refreshLastAppState()
@@ -38,18 +40,25 @@ public class rTPS extends UndoRedoCoordinator
         refreshLastAppState();
     }
     //endregion
-    // public void dо(Runnable redo) //TODO Finish this method once IO is complete
-    public void Do(Runnable Do,Runnable Undo)
+    interface F
+    {
+        void f(Runnable x,Runnable y);
+    }
+    public void DoHelper(F f,Runnable Do,Runnable Undo)
     {
         app.io.misc.playDoSound();
-        super.Do(Do,Undo);
+        final Tab currentTab=app.gui.window.reader.getCurrentTab();//We go back here when we undo/redo etc.
+        Runnable setTab=()->app.gui.window.actions.setCurrentTab(currentTab);
+        f.f(r.seq(Do,setTab),r.seq(Undo,setTab));
         refreshToolbarButtons();
+    }
+    public void Do(Runnable Do,Runnable Undo)
+    {
+        DoHelper(super::Do,Do,Undo);
     }
     public void DoWithoutRedo(Runnable Do,Runnable Undo)
     {
-        app.io.misc.playDoSound();
-        super.DoWithoutRedo(Do,Undo);
-        refreshToolbarButtons();
+        DoHelper(super::DoWithoutRedo,Do,Undo);
     }
     public void clearHistory()
     {

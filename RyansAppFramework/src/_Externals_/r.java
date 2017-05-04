@@ -19,7 +19,9 @@ import org.json.JSONObject;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+
 import javafx.scene.paint.Color;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
@@ -169,6 +171,16 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static Runnable seq(Runnable... runnables)//Concatenates the runnables
+    {
+        return ()->
+        {
+            for(Runnable r : runnables)
+            {
+                r.run();
+            }
+        };
+    }
     public static void playSound(String FileName)
     {
         try
@@ -192,13 +204,13 @@ public class r
     }
     public static String rgbToHexString(int r,int g,int b)
     {
-        return String.format("#%02x%02x%02x", r, g, b);//http://stackoverflow.com/questions/3607858/convert-a-rgb-color-value-to-a-hexadecimal
+        return String.format("#%02x%02x%02x",r,g,b);//http://stackoverflow.com/questions/3607858/convert-a-rgb-color-value-to-a-hexadecimal
     }
-    public static int[]hexToRGB(String hexWithoutHashtag)
+    public static int[] hexToRGB(String hexWithoutHashtag)
     {
-        return new int[]{Integer.valueOf( hexWithoutHashtag.substring( 1-1, 3-1 ), 16 ),
-                         Integer.valueOf( hexWithoutHashtag.substring( 3-1, 5-1 ), 16 ),
-                         Integer.valueOf( hexWithoutHashtag.substring( 5-1, 7-1 ), 16 )};
+        return new int[]{Integer.valueOf(hexWithoutHashtag.substring(1-1,3-1),16),
+                         Integer.valueOf(hexWithoutHashtag.substring(3-1,5-1),16),
+                         Integer.valueOf(hexWithoutHashtag.substring(5-1,7-1),16)};
     }
     public static String mapString(String key,String[] keys,String[] values)//rCode: mapString A [A B C] [1 2 3] ⟹ 1
     {
