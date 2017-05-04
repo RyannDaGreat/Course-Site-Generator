@@ -137,21 +137,12 @@ public class jUnitTest extends App
     public static String StartingMonday;
     public static String EndingFriday;
     public static String TableState;
-
-
-    public static String getParentDir(String dir)
-    {
-        dir=r.reverse(dir);
-        dir=dir.substring(dir.indexOf('/'));
-        dir=r.reverse(dir);
-        return dir;
-    }
     public void start(Stage primaryStage)
     {
         r.say("Hello world");
         stage=primaryStage;
         super.initialize();
-        io.loader.loadAppStateFromFile(new File(getParentDir(new File("").getAbsolutePath())+"SiteSaveTest.json"));
+        io.loader.loadAppStateFromFile(new File(r.getParentDir(new File("").getAbsolutePath())+"SiteSaveTest.json"));
         System.out.println("1");
         io.saver.saveAppStateToFile(new File(io.propertyGetter.getNewFilePath()).getPath());
         System.out.println("2");

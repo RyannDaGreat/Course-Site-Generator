@@ -52,7 +52,7 @@ public class Saver
         catch(JSONException e)
         {
             //noinspection AccessStaticViaInstance
-            r.fxShowErrorAlert("Failed to save file");
+            app.gui.dialogs.showErrorAlert("Failed to save file");
             e.printStackTrace();
         }
         return r.jsonToPrettyString(o);

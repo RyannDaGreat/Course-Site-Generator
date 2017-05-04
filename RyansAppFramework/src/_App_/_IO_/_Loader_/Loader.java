@@ -33,7 +33,7 @@ public class Loader
         catch(JSONException e)
         {
             //noinspection AccessStaticViaInstance
-            r.fxShowErrorAlert("Failed to load file");
+            app.gui.dialogs.showErrorAlert("Failed to load file");
             e.printStackTrace();
         }
     }

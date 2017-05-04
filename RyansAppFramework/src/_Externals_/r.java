@@ -176,7 +176,7 @@ public class r
             ignored.printStackTrace();
         }
     }
-    public static String printed(String p)
+    public static String printed(String p)//For debugging
     {
         println(fansi(p,fansi_colors.cyan));
         return p;
@@ -196,7 +196,7 @@ public class r
                          Integer.valueOf( hexWithoutHashtag.substring( 3-1, 5-1 ), 16 ),
                          Integer.valueOf( hexWithoutHashtag.substring( 5-1, 7-1 ), 16 )};
     }
-    public static String stringMap(String key,String[] keys,String[] values)
+    public static String mapString(String key,String[] keys,String[] values)//rCode: mapString A [A B C] [1 2 3] ⟹ 1
     {
         //Treats keys and values as if they were both halves of a dictionary
         String typeKey=key;//If this is not changed then we have an invalid key. To avoid errors we'll just let it go ahead anyway.
@@ -300,6 +300,20 @@ public class r
         FileChooser fileChooser=new FileChooser();
         fileChooser.setInitialDirectory(currentDirectory);
         return fileChooser;
+    }
+    public static String getParentDir(String dir)
+    {
+        //EXAMPLE: /Users/Ryan/Desktop/picture.png ⟹ /Users/Ryan/Desktop/
+        //EXAMPLE: /Users/Ryan/Desktop/ ⟺ /Users/Ryan/Desktop/
+        //EXAMPLE: /Users/Ryan/Desktop ⟹ /Users/Ryan/
+        dir=reversed(dir);
+        dir=dir.substring(dir.indexOf('/'));
+        dir=reversed(dir);
+        return dir;
+    }
+    public static void main(String[] a)
+    {
+        System.out.println(getParentDir("/Users/Ryan/Desktop"));
     }
     // public static String toRGBCode(Color color)
     // {
@@ -409,7 +423,7 @@ public class r
             d.setValue(null);
         }
     }
-    public static String reverse(String forward)
+    public static String reversed(String forward)
     {
         return (new StringBuilder(forward)).reverse().toString();
     }
@@ -812,9 +826,9 @@ public class r
     //region Array Math:
     public static int[] range(int Start_Inclusive,int Finish_Exclusive)
     {
-        //Works for both forward-sequences, like 12345, and reverse-sequences like 98765.
+        //Works for both forward-sequences, like 12345, and reversed-sequences like 98765.
         //Also works for negative numbers like -1,-2,-3 etc (in both directions of course)
-        reverse(new Integer[]{1,2});
+        reversed(new Integer[]{1,2});
         //Generates an integer range like in Python or Matlab
         if(Start_Inclusive<Finish_Exclusive)
         {
@@ -822,16 +836,16 @@ public class r
         }
         else if(Start_Inclusive>Finish_Exclusive)
         {
-            return toint(reverse(toInteger(range(Finish_Exclusive+1,Start_Inclusive+1))));
+            return toint(reversed(toInteger(range(Finish_Exclusive+1,Start_Inclusive+1))));
         }
         // ∴ else ⋂ Start_Inclusive == Finish_Exclusive ∴ (output is empty int[] array)
         return new int[0];
     }
     public static int[] rangeClosed(int Start_Inclusive,int Finish_Exclusive)
     {
-        //Works for both forward-sequences, like 12345, and reverse-sequences like 98765.
+        //Works for both forward-sequences, like 12345, and reversed-sequences like 98765.
         //Also works for negative numbers like -1,-2,-3 etc (in both directions of course)
-        reverse(new Integer[]{1,2});
+        reversed(new Integer[]{1,2});
         //Generates an integer range like in Python or Matlab
         if(Start_Inclusive<Finish_Exclusive)
         {
@@ -839,7 +853,7 @@ public class r
         }
         else if(Start_Inclusive>Finish_Exclusive)
         {
-            return toint(reverse(toInteger(rangeClosed(Finish_Exclusive,Start_Inclusive))));
+            return toint(reversed(toInteger(rangeClosed(Finish_Exclusive,Start_Inclusive))));
         }
         // ∴ else ⋂ Start_Inclusive == Finish_Exclusive ∴ (output is empty int[] array)
         return new int[]{Start_Inclusive};//====return new int[]{Finish_Inclusive};
@@ -866,9 +880,9 @@ public class r
         }
         return out;
     }
-    public static <T> T[] reverse(T[] array)
+    public static <T> T[] reversed(T[] array)
     {
-        //Using generics to reverse an array without the need for casting
+        //Using generics to reversed an array without the need for casting
         T[] copy=array.clone();
         Collections.reverse(Arrays.asList(copy));
         return copy;

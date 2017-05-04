@@ -19,11 +19,11 @@ public class Misc
     {
         return new File(".");
     }
-    public static String fileToString(File f)//Exists in case I want to use canonical path instead
+    public String fileToString(File f)//Exists in case I want to use canonical path instead
     {
         return f.getAbsolutePath();
     }
-    public static File stringToFile(String s)
+    public File stringToFile(String s)
     {
         return new File(s);
     }

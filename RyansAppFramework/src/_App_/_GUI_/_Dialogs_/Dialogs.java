@@ -32,15 +32,19 @@ public class Dialogs
     }
     public boolean confirmSave()//Return true if they don't want to save OR they do want to save and select a valid path to save to (without clicking 'cancel'
     {
-        if(app.gui.toolbar.reader.saveButtonIsDisabled())
+        if(app.gui.toolbar.reader.saveButtonIsDisabled()||!r.fxYesNo(app.io.propertyGetter.getConfirmSaveMessage()))
         {
-            return true;//Don't bother to confirm saving; out file has clearly been saved already.
-        }
-        if(!r.fxYesNo(app.io.propertyGetter.getConfirmSaveMessage()))//If they don't want to save
-        {
-            return true;
+            return true;//Don't bother to confirm saving; out file has clearly been saved already.  OR   If they don't want to save
         }
         app.gui.toolbar.actions.handleSave();
         return app.gui.toolbar.reader.saveButtonIsDisabled();//That means they saved the file. If its enabled it means they must have clicked cancel.
+    }
+    public void showErrorAlert(String x)
+    {
+        r.fxShowErrorAlert(x);
+    }
+    public void showInfoAlert(String x)
+    {
+        r.fxShowInfoAlert(x);
     }
 }

@@ -121,7 +121,7 @@ public class Reader
                                                                    temp.accumulate("title",x.titleProperty().getValue());
                                                                    temp.accumulate("topic",x.topicProperty().getValue());
                                                                    temp.accumulate("link",x.link);
-                                                                   o.append(r.stringMap(x.typeProperty().getValue(),propertyGetter.getScheduleItemTypeKeys(),propertyGetter.getScheduleItemTypes()),temp);//Map {Holiday,Lecture,Recitation,Homework,Reference} to {holidays,lectures,recitations,hws,references} for the JSON file keys
+                                                                   o.append(r.mapString(x.typeProperty().getValue(),propertyGetter.getScheduleItemTypeKeys(),propertyGetter.getScheduleItemTypes()),temp);//Map {Holiday,Lecture,Recitation,Homework,Reference} to {holidays,lectures,recitations,hws,references} for the JSON file keys
                                                                }
                                                                catch(JSONException e)
                                                                {
