@@ -1,5 +1,6 @@
 package _App_._GUI_._Window_._Boilerplate_;
 import _App_.App;
+import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.*;
 import _Externals_._Resources_.ResourceGetter;
 import javafx.geometry.HPos;
@@ -14,8 +15,10 @@ import javafx.scene.text.Text;
 public class Boilerplate extends VBox
 {
     public App app;
+    private PropertyGetter propertyGetter;
     public void initialize()
     {
+        propertyGetter=app.io.propertyGetter;
         getStylesheets().add(ResourceGetter.getGlobalFontStylesheet());
         setOnKeyPressed(ⵁ->
                         {
@@ -48,11 +51,11 @@ public class Boilerplate extends VBox
                             }
                         });
         /*app.gui.window.boilerplate.*/
-        if(app.io.propertyGetter.getAnimateHue())//Hue Shifter can be turned on/off in settings
+        if(propertyGetter.getAnimateHue())//Hue Shifter can be turned on/off in settings
         {
             r.fxRunAsNewThreadRepeatedly(30,this::updateAppHue);
         }
-        String graphicStyle="-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );";
+        String graphicStyle=propertyGetter.getCircle_and_image_style();
         cdPsBanner_imageView8.setStyle(graphicStyle);
         cdPsLeft_imageView9.setStyle(graphicStyle);
         cdPsRight_imageView10.setStyle(graphicStyle);

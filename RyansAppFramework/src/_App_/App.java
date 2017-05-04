@@ -46,4 +46,8 @@ public class App extends Application//This is the head of the tree. It's special
         r.enableTheGoodOldAssertionKeyword();
         launch();
     }
+    public String getUndo_redo_sound()
+    {
+        return io.propertyGetter.getProperty("undo_redo_sound");
+    }
 }

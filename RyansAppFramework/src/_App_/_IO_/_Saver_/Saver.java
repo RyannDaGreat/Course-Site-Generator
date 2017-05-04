@@ -3,6 +3,7 @@ import _App_.App;
 import _App_._GUI_._Modes_.Modes;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.r;
+import javafx.stage.Stage;
 import org.json.JSONException;
 import org.json.JSONObject;
 @SuppressWarnings("WeakerAccess")
@@ -15,28 +16,30 @@ public class Saver
     }
     private PropertyGetter propertyGetter;
     private Modes modes;
+    private Stage stage;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         propertyGetter=app.io.propertyGetter;
         modes=app.gui.modes;
+        stage=app.stage;
     }
     public boolean isCurrentlyNewFile()
     {
-        return app.stage.getTitle().equals(app.io.propertyGetter.getAppTitle());//We must have not opened nor saved any files because doing so always changes the title of the app to that file's path
+        return stage.getTitle().equals(propertyGetter.getAppTitle());//We must have not opened nor saved any files because doing so always changes the title of the app to that file's path
     }
     public String getCurrentFilePath()
     {
         if(isCurrentlyNewFile())
             return null;//Is a new file
-        return app.stage.getTitle();
+        return stage.getTitle();
     }
     public void setCurrentFilePath(String path)
     {
-        app.stage.setTitle(path);
+        stage.setTitle(path);
     }
     public void setCurrentFileToNewFile()
     {
-        setCurrentFilePath(app.io.propertyGetter.getAppTitle());//Is not an actual path
+        setCurrentFilePath(propertyGetter.getAppTitle());//Is not an actual path
     }
     public String getAppState()//In JSON format
     {
@@ -51,8 +54,7 @@ public class Saver
         }
         catch(JSONException e)
         {
-            //noinspection AccessStaticViaInstance
-            app.gui.dialogs.showErrorAlert("Failed to save file");
+            app.gui.dialogs.showErrorAlert(propertyGetter.getErrorAlertMessage());
             e.printStackTrace();
         }
         return r.jsonToPrettyString(o);

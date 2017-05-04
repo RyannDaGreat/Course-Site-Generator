@@ -1,5 +1,6 @@
 package _App_._IO_._Misc_;//Created by Ryan on 4/10/17.
 import _App_.App;
+import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_._Resources_.ResourceGetter;
 
 import java.io.File;
@@ -11,9 +12,10 @@ public class Misc
     {
         this.app=app;
     }
+    private PropertyGetter propertyGetter;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
-
+        propertyGetter=app.io.propertyGetter;
     }
     public File getCurrentDirectory()
     {
@@ -34,18 +36,18 @@ public class Misc
     }
     public void playUndoRedoSound()
     {
-        playWav("QuietDoubleClick");
+        playWav(app.getUndo_redo_sound());
     }
     public void playDoSound()
     {
-        playWav("SingleClick");
+        playWav(propertyGetter.getDo_sound());
     }
     public void playLoadSound()
     {
-        playWav("EffectAClose");
+        playWav(propertyGetter.getLoad_sound());
     }
     public void playSaveSound()
     {
-        playWav("EffectAOpen");
+        playWav(propertyGetter.getSave_sound());
     }
 }

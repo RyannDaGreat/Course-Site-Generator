@@ -1,4 +1,5 @@
 package _Externals_;//Created by Ryan on 4/12/17.
+import _Externals_._Resources_.ResourceGetter;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 
@@ -141,13 +142,11 @@ public class OfficeHoursGrid extends rGridPane
                          // x.setEffect(new Shadow());
                          if(isColTitle(x))
                          {
-                             x.appendStyle("-fx-background-color: rgb(128,255,0)");
-                             x.appendStyle("-fx-background-radius: 20 20 3 3;");
+                             x.appendStyle(ResourceGetter.getProperty("office_hour_col_title_style"));
                          }
                          else if(isRowTitle(x))
                          {
-                             x.appendStyle("-fx-background-radius: 20 3 3 20;");
-                             x.appendStyle("-fx-background-color: rgb(255,128,0)");
+                             x.appendStyle(ResourceGetter.getProperty("office_hour_row_title_style"));
                          }
                          else if(isCorner(x))
                          {
@@ -156,8 +155,7 @@ public class OfficeHoursGrid extends rGridPane
                          }
                          else
                          {
-                             x.appendStyle("-fx-background-radius: 3 3 3 3;");
-                             x.appendStyle("-fx-background-color: white");
+                             x.appendStyle(ResourceGetter.getProperty("office_hour_regular_style"));
                              x.setOnMouseClicked(ⵁ->
                                                  {
                                                      assert onClick!=null;//This should have been taken care of...
@@ -184,7 +182,7 @@ public class OfficeHoursGrid extends rGridPane
                      });
         r.rRunnable<TextCell> textCellrRunnable=t->t.setOpacity(1);
         setOnMouseExited(ⵁ->forEachChild(textCellrRunnable));
-        forEachChild(x->x.appendStyle("-fx-effect: dropshadow( one-pass-box  , rgba(0,0,0,0.6) , 5, 0.0 , 1 , 1 );"));
+        forEachChild(x->x.appendStyle(ResourceGetter.getProperty("office_hour_grid_shared_style")));
         forEachChild(x->
                      {
                          if(isTitle(x))

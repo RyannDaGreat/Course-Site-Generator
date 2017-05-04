@@ -1,7 +1,7 @@
 package _App_._IO_._Loader_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
-import _Externals_.r;
+import _Externals_._Resources_.ResourceGetter;import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +33,7 @@ public class Loader
         catch(JSONException e)
         {
             //noinspection AccessStaticViaInstance
-            app.gui.dialogs.showErrorAlert("Failed to load file");
+            app.gui.dialogs.showErrorAlert(ResourceGetter.getProperty("failed.to.load.file"));
             e.printStackTrace();
         }
     }
