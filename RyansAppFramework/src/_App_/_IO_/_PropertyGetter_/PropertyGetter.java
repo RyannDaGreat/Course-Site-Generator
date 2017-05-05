@@ -28,7 +28,7 @@ public class PropertyGetter
     public String getNewFilePath()/*//The location of the New File. Is local to CourseSiteGenerator folder*/{return getProperty("new_file_path");}
     public String getConfirmSaveMessage()/*//The location of the New File. Is local to CourseSiteGenerator folder*/{return getProperty("confirm_save_message");}
     public String[] getCdSitePagesHeaders()/*//The location of the New File. Is local to CourseSiteGenerator folder*/{String[] x=getProperty("prop_gui_cd_site_pages_headers").split(",");assert x.length==4;return x;/*//Looks like this: "Use,Navbar Title,File Name,Script"*/}
-    public long getAutotransactionsPerSecond(){return Long.parseLong(getProperty("auto_transactions_per_second"));}
+    public double getAutotransactionsPerSecond(){return Double.parseDouble(getProperty("auto_transactions_per_second"));}
     public double getHueShiftFrequenciInHz(){return Double.parseDouble(getProperty("hue_shift_frequency_in_hz"));}
     public boolean getAnimateHue(){return Boolean.parseBoolean(getProperty("animate_hue"));}
     public String[]getScheduleItemTypes(){return getProperty("schedule_item_types").split(",");/*"Holiday","Lecture","Recitation","Homework","Reference"*/}

@@ -9,13 +9,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 @SuppressWarnings("unchecked")
 public class CD_SitePagesTableView extends TableView
 {
-    private String[] useHeaderⳆnavbarTitleHeaderⳆfileNameHeaderⳆscriptHeader;
     public void addPage(boolean use,String navbarTitle,String fileName,String script)
     {
         getItems().add(new page(use,navbarTitle,fileName,script));
@@ -45,7 +42,6 @@ public class CD_SitePagesTableView extends TableView
     }
     public CD_SitePagesTableView(String... useHeaderⳆnavbarTitleHeaderⳆfileNameHeaderⳆscriptHeader)
     {
-        this.useHeaderⳆnavbarTitleHeaderⳆfileNameHeaderⳆscriptHeader=useHeaderⳆnavbarTitleHeaderⳆfileNameHeaderⳆscriptHeader;
         @SuppressWarnings("UnnecessaryLocalVariable") String[] x;
         x=useHeaderⳆnavbarTitleHeaderⳆfileNameHeaderⳆscriptHeader;
         addPage(true,"A","B","AOIJ");

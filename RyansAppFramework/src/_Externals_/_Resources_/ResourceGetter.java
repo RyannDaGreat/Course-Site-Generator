@@ -1,6 +1,7 @@
 package _Externals_._Resources_;//Created by Ryan on 4/13/17.
 import _Externals_.LocatedImage;
 import _Externals_.r;
+import javafx.scene.media.Media;
 
 import java.io.File;
 import java.util.MissingResourceException;
@@ -46,6 +47,7 @@ public class ResourceGetter
     {
         return getResource("_Style_/app_global_font.css");
     }
+
     public static String getColorPickerStylesheet()
     {
         return getResource("_Style_/app_global_font.css");
@@ -53,6 +55,10 @@ public class ResourceGetter
     public static void playWav(String soundNameWithoutWavExtensionOrPath)
     {
         r.playSound(r.printed(getResource("_Sounds_/"+soundNameWithoutWavExtensionOrPath+".wav").substring(5)));
+    }
+    public static Media getVideo(String URL)
+    {
+        return new Media(getResource("_Videos_/"+URL));//"http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv"
     }
     //endregion
 }

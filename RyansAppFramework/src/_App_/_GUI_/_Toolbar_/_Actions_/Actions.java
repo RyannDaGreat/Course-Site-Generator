@@ -146,7 +146,7 @@ public class Actions
     }
     public void handleInfo()
     {
-        app.gui.window.boilerplate.updateAppHue();
+        app.gui.window.boilerplate.actions.updateAppHue();
     }
     //endregion
 }
