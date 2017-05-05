@@ -1,5 +1,6 @@
 package _App_._IO_._Saver_;//Created by Ryan on 4/10/17.
 import _App_.App;
+import _App_._GUI_._Dialogs_.Dialogs;
 import _App_._GUI_._Modes_.Modes;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.r;
@@ -17,11 +18,13 @@ public class Saver
     private PropertyGetter propertyGetter;
     private Modes modes;
     private Stage stage;
+    private Dialogs dialogs;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         propertyGetter=app.io.propertyGetter;
         modes=app.gui.modes;
         stage=app.stage;
+        dialogs=app.gui.dialogs;
     }
     public boolean isCurrentlyNewFile()
     {
@@ -54,7 +57,7 @@ public class Saver
         }
         catch(JSONException e)
         {
-            app.gui.dialogs.showErrorAlert(propertyGetter.getErrorAlertMessage());
+            dialogs.showSaveErrorDialog();
             e.printStackTrace();
         }
         return r.jsonToPrettyString(o);

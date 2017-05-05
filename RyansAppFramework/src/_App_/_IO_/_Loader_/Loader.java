@@ -1,9 +1,10 @@
 package _App_._IO_._Loader_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _App_._GUI_.GUI;
+import _App_._GUI_._Dialogs_.Dialogs;
 import _App_._GUI_._Modes_.Modes;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
-import _Externals_._Resources_.ResourceGetter;import _Externals_.r;
+import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,15 +20,16 @@ public class Loader
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         propertyGetter=app.io.propertyGetter;
+        dialogs=app.gui.dialogs;
     }
+    private Dialogs dialogs;
     private PropertyGetter propertyGetter;
     public void setAppState(String state)
     {
-        GUI gui=app.gui;
         try
         {
             JSONObject x=new JSONObject(state);
-            Modes modes=gui.modes;
+            Modes modes=app.gui.modes;
             modes.courseDetails.actions.setState(x.getJSONObject(propertyGetter.getStateKeyCourseDetails()));
             modes.tadata.actions.setState(x.getString(propertyGetter.getStateKeyTAData()));
             modes.scheduleData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyScheduleData()));
@@ -36,8 +38,7 @@ public class Loader
         }
         catch(JSONException e)
         {
-            //noinspection AccessStaticViaInstance
-            gui.dialogs.showErrorAlert(ResourceGetter.getProperty("failed.to.load.file"));
+            dialogs.showFailedToLoadFileErrorDialog();
             e.printStackTrace();
         }
     }

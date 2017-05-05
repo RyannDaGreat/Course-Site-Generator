@@ -31,7 +31,7 @@ public abstract class AppStyleComponent
      */
     public static final String CLASS_FILE_BUTTON="file_button";
     /**
-     * This function sets up the stylesheet to be used for specifying all
+     * This function sets up the state_key_cd_stylesheet to be used for specifying all
      * style for this application. Note that it does not attach CSS style
      * classes to controls, that must be done separately.
      */

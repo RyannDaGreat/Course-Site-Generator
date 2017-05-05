@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -336,6 +337,15 @@ public class r
         Timeline timeline=new Timeline(new KeyFrame(Duration.seconds(1/frequencyInHz),x->f.run()));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+    }
+    //region Setters
+    /*@formatter:off*/
+    public static void setImageViewLocatedImage(String pathOrUrl,ImageView imageView)//A helper method
+    {
+        if(!((LocatedImage)imageView.getImage()).getURL().equals(pathOrUrl))
+        {
+            imageView.setImage(LocatedImage.fromPathOrUrl(pathOrUrl));
+        }
     }
     // public static String toRGBCode(Color color)
     // {

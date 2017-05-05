@@ -39,48 +39,19 @@ public class Boilerplate
         r.setComboboxOptions(getOhEndTime_comboBox(),propertyGetter.getOfficeHourTimeslots());
         r.setComboboxOptions(getOhStartTime_comboBox(),propertyGetter.getOfficeHourTimeslots());
     }
-    public OfficeHoursGrid getOh_gridPane()
-    {
-        return megaplate.taOh_gridPane7;
-    }
-    public ComboBox getOhStartTime_comboBox()
-    {
-        return megaplate.tdOhStartTime_comboBox4;
-    }
-    public ComboBox getOhEndTime_comboBox()
-    {
-        return megaplate.tdOhEndTime_comboBox5;
-    }
-    public TD_TATableView getTa_tableView()
-    {
-        return megaplate.tdTa_tableView0;
-    }
-    public TableColumn getTaUndergrad_tableColumn()
-    {
-        return megaplate.tdTaUndergrad_tableColumn3;
-    }
-    public TableColumn getTaName_tableColumn()
-    {
-        return megaplate.tdTaName_tableColumn4;
-    }
-    public TableColumn getTaEmail_tableColumn()
-    {
-        return megaplate.tdTaEmail_tableColumn5;
-    }
-    public TextField getTaName_textField()
-    {
-        return megaplate.tdTaName_textField3;
-    }
-    public TextField getTaEmail_textField()
-    {
-        return megaplate.tdTaEmail_textField2;
-    }
-    public Button getTaAddUpdate_button()
-    {
-        return megaplate.tdTaAddUpdate_button13;
-    }
-    public Button getTaClear_button()
-    {
-        return megaplate.tdTaClear_button14;
-    }
+    //region Getters   ([\n][ ]*[{][\n][ ]*)(.*)([\n][ ]*[}])   ⟹  {$2}
+    /*@formatter:off*/
+    public OfficeHoursGrid getOh_gridPane(){return megaplate.taOh_gridPane7;}
+    public ComboBox getOhStartTime_comboBox(){return megaplate.tdOhStartTime_comboBox4;}
+    public ComboBox getOhEndTime_comboBox(){return megaplate.tdOhEndTime_comboBox5;}
+    public TD_TATableView getTa_tableView(){return megaplate.tdTa_tableView0;}
+    public TableColumn getTaUndergrad_tableColumn(){return megaplate.tdTaUndergrad_tableColumn3;}
+    public TableColumn getTaName_tableColumn(){return megaplate.tdTaName_tableColumn4;}
+    public TableColumn getTaEmail_tableColumn(){return megaplate.tdTaEmail_tableColumn5;}
+    public TextField getTaName_textField(){return megaplate.tdTaName_textField3;}
+    public TextField getTaEmail_textField(){return megaplate.tdTaEmail_textField2;}
+    public Button getTaAddUpdate_button(){return megaplate.tdTaAddUpdate_button13;}
+    public Button getTaClear_button(){return megaplate.tdTaClear_button14;}
+    /*@formatter:on*/
+    //endregion
 }

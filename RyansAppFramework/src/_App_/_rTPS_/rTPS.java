@@ -17,25 +17,23 @@ public class rTPS extends UndoRedoCoordinator
     }
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
-        lastState=app.io.saver.getAppState();
+        refreshLastAppState();
         r.fxRunAsNewThreadRepeatedly(app.io.propertyGetter.getAutotransactionsPerSecond(),this::tryToAutotransact);//AUTOTRANSACTOR: Set A timer to keep running refreshlastappstate on a new thread
+    }
+    private void refreshLastAppState()
+    {
+        lastState=app.io.saver.getAppState();
     }
     //region Auto-Transactor
     //Note that any manual transactions can be integrated with the autotransactor at ease; it takes care of the conflicts automatically
     //Is a thread that runs on a timer and automatically saves any changes as a transaction, detected by a change in App state.
     private String lastState;
-    private void refreshLastAppState()
-    {
-        lastState=app.io.saver.getAppState();
-    }
     public void tryToAutotransact()//Only does something if there are changes to App State
     {
         /*@formatter:off*/
-        if(rTextField.thereExistsATextfieldInFocusRightNow)//Don't autotransact in the middle of somebody typing a sentence. That's annoying.
-            return;
+        if(rTextField.thereExistsATextfieldInFocusRightNow)return;//Don't autotransact in the middle of somebody typing a sentence. That's annoying.
         final String New=app.io.saver.getAppState();//Just in case this takes a while I don't want the thread to cause glitchy problems
-        if(lastState.equals(New))
-            return;//By definition; NOT just to avoid null errors! Being null is information here: it means we might have changed the state by redoing or undoing something.
+        if(lastState.equals(New))return;//By definition; NOT just to avoid null errors! Being null is information here: it means we might have changed the state by redoing or undoing something.
         /*@formatter:on*/
         final String Old=lastState+"";//Want a new ID
         DoWithoutRedo(()->app.io.loader.setAppState(New),()->app.io.loader.setAppState(Old));
@@ -66,6 +64,10 @@ public class rTPS extends UndoRedoCoordinator
     public void clearHistory()
     {
         super.clearHistory();
+        refresh();
+    }
+    private void refresh()
+    {
         refreshToolbarButtons();
         refreshLastAppState();
     }
@@ -73,14 +75,10 @@ public class rTPS extends UndoRedoCoordinator
     {
         Actions actions=app.gui.toolbar.actions;
         /*@formatter:off*/
-        if(canUndo())
-            actions.enableUndoButton();
-        else
-            actions.disableUndoButton();
-        if(canRedo())
-            actions.enableRedoButton();
-        else
-            actions.disableRedoButton();
+        if(canUndo())actions.enableUndoButton();
+        else actions.disableUndoButton();
+        if(canRedo())actions.enableRedoButton();
+        else actions.disableRedoButton();
         /*@formatter:on*/
         actions.enableSaveButton();//All changes allow this to be enabled
     }
@@ -92,8 +90,7 @@ public class rTPS extends UndoRedoCoordinator
         }
         finally
         {
-            refreshToolbarButtons();
-            refreshLastAppState();
+            refresh();
         }
     }
     public boolean Undo()

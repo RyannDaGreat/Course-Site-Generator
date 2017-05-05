@@ -2,12 +2,13 @@ package _App_._GUI_._Modes_._CourseDetails_._Actions_;
 import _App_.App;
 import _App_._GUI_._Modes_._CourseDetails_._Boilerplate_.Boilerplate;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
-import _Externals_.LocatedImage;
 import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 public class Actions
 {
     public App app;
@@ -22,14 +23,50 @@ public class Actions
         propertyGetter=app.io.propertyGetter;
         boilerplate=app.gui.modes.courseDetails.boilerplate;
     }
+    private void handleChange(Consumer<String> c,Supplier<File> s,Runnable errorDialog)
+    {
+        try
+        {
+            app.io.misc.playLoadSound();
+            File f=s.get();
+            if(f!=null)//User didn't select cancel
+            {
+                c.accept(app.io.misc.fileToString(f));
+            }
+        }
+        catch(Exception ignored)
+        {
+            ignored.printStackTrace();
+            errorDialog.run();
+        }
+    }
+    private void handleChangeDir(Consumer<String> c)
+    {
+        handleChange(c,app.gui.dialogs::openDirectory,app.gui.dialogs::showDirLoadErrorDialog);
+    }
     public void handleChangeExportDir()
     {
-        File f=app.gui.dialogs.openDirectory();
-        if(f!=null)//User didn't select cancel
-        {
-            //noinspection AccessStaticViaInstance
-            setExportDir(app.io.misc.fileToString(f));
-        }
+        handleChangeDir(this::setExportDir);
+    }
+    public void handleChangeTemplateDir()
+    {
+        handleChangeDir(this::setTemplateDir);
+    }
+    private void handleChangeImage(Consumer<String> c)
+    {
+        handleChange(c,app.gui.dialogs::openFile,app.gui.dialogs::showImageLoadErrorDialog);
+    }
+    public void handleChangeBannerImage()
+    {
+        handleChangeImage(this::setBannerImagePath);
+    }
+    public void handleChangeLeftFooterImage()
+    {
+        handleChangeImage(this::setLeftFooterImagePath);
+    }
+    public void handleChangeRightFooterImage()
+    {
+        handleChangeImage(this::setRightFooterImagePath);
     }
     //region Setters
     /*@formatter:off*/
@@ -42,9 +79,9 @@ public class Actions
     public void setYear(String x){r.setComboboxOption(boilerplate.getCiYear_comboBox(),x);}
     public void setExportDir(String x){boilerplate.getCiExportDir_text().setText(x);}
     public void setTemplateDir(String x){boilerplate.getStTemplateDir_text().setText(x);}
-    public void setBannerImagePath(String x){boilerplate.getPsBanner_imageView().setImage(new LocatedImage(x));}
-    public void setLeftFooterImagePath(String x){boilerplate.getPsLeft_imageView().setImage(new LocatedImage(x));}
-    public void setRightFooterImagePath(String x){boilerplate.getPsRight_imageView().setImage(new LocatedImage(x));}
+    public void setRightFooterImagePath(String pathOrUrl){r.setImageViewLocatedImage(pathOrUrl,boilerplate.getPsRight_imageView());}
+    public void setLeftFooterImagePath(String pathOrUrl){r.setImageViewLocatedImage(pathOrUrl,boilerplate.getPsLeft_imageView());}
+    public void setBannerImagePath(String pathOrUrl){r.setImageViewLocatedImage(pathOrUrl,boilerplate.getPsBanner_imageView());}
     public void setSitePagesState(String x){boilerplate.getStSitePages_tableView().setState(x);}
     public void setStylesheet(String x){r.setComboboxOption(boilerplate.getPsStylesheet_comboBox(),x);}
     /*@formatter:on*/
@@ -64,6 +101,6 @@ public class Actions
         setLeftFooterImagePath(state.getString(propertyGetter.getStateKeyCdLeftFooterImage()));
         setRightFooterImagePath(state.getString(propertyGetter.getStateKeyCdRightFooterImage()));
         setSitePagesState(state.getString(propertyGetter.getStateKeyCdSitePagesState()));
-        setStylesheet(state.getString("Stylesheet"));
+        setStylesheet(state.getString(propertyGetter.getStateKeyCdStylesheet()));
     }
 }

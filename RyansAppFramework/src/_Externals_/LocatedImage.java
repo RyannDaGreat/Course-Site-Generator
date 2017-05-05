@@ -6,11 +6,22 @@ public class LocatedImage extends Image
     private final String url;
     public LocatedImage(String url)
     {
-        super(url);
+        super(r.printed(url));
         this.url=url;
     }
     public String getURL()
     {
         return url;
+    }
+    public static LocatedImage fromPathOrUrl(String pathOrUrl)
+    {
+        try
+        {
+            return new LocatedImage(pathOrUrl);
+        }
+        catch(Exception ignored)
+        {
+            return new LocatedImage("file:"+pathOrUrl);
+        }
     }
 }

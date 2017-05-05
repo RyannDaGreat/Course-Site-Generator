@@ -3,7 +3,6 @@ import _App_.App;
 import _App_._GUI_._Modes_._CourseDetails_._Boilerplate_.Boilerplate;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.LocatedImage;
-import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;
 public class Reader
@@ -92,7 +91,7 @@ public class Reader
         o.accumulate(propertyGetter.getStateKeyCdLeftFooterImage(),getLeftFooterImagePath());
         o.accumulate(propertyGetter.getStateKeyCdRightFooterImage(),getRightFooterImagePath());
         o.accumulate(propertyGetter.getStateKeyCdSitePagesState(),getSitePagesState());
-        o.accumulate("Stylesheet",getStylesheet());
+        o.accumulate(propertyGetter.getStateKeyCdStylesheet(),getStylesheet());
         return o;
     }
 }

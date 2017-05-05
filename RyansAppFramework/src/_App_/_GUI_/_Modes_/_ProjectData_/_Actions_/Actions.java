@@ -20,7 +20,7 @@ public class Actions
     {
         this.app=app;
     }
-    private Boilerplate boilerplate;
+    public Boilerplate boilerplate;
     private PropertyGetter propertyGetter;
     private Reader reader;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
@@ -65,8 +65,8 @@ public class Actions
     }
     public void updateTeamCircleColors()
     {
-        boilerplate.getT_TextColor_circle().setFill(boilerplate.getT_TextColor_selector().getValue());
-        boilerplate.getT_Color_circle().setFill(boilerplate.getT_Color_selector().getValue());
+        boilerplate.getT_TextColor_circle().setFill(reader.getTextColor());
+        boilerplate.getT_Color_circle().setFill(reader.getColor());
     }
     public void updateTeamFieldsToSelected()
     {

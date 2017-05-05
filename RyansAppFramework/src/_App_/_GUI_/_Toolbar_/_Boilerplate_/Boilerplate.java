@@ -26,42 +26,17 @@ public class Boilerplate extends javafx.scene.control.ToolBar
         getRedoButton().setOnAction(ⵁ->actions.handleRedo());
         getInfoButton().setOnAction(ⵁ->actions.handleInfo());
     }
-    public Button getNewButton()
-    {
-        return megaplate.new_button;
-    }
-    public Button getOpenButton()
-    {
-        return megaplate.open_button0;
-    }
-    public Button getSaveButton()
-    {
-        return megaplate.save_button1;
-    }
-    public Button getSaveAsButton()
-    {
-        return megaplate.saveas_button2;
-    }
-    public Button getExportButton()
-    {
-        return megaplate.export_button3;
-    }
-    public Button getExitButton()
-    {
-        return megaplate.power_button4;
-    }
-    public Button getUndoButton()
-    {
-        return megaplate.undo_button5;
-    }
-    public Button getRedoButton()
-    {
-        return megaplate.redo_button6;
-    }
-    public Button getInfoButton()
-    {
-        return megaplate.book_button7;
-    }
+    //region Getters   ([\n][ ]*[{][\n][ ]*)(.*)([\n][ ]*[}])   ⟹  {$2}
+    /*@formatter:off*/
+    public Button getNewButton(){return megaplate.new_button;}
+    public Button getOpenButton(){return megaplate.open_button0;}
+    public Button getSaveButton(){return megaplate.save_button1;}
+    public Button getSaveAsButton(){return megaplate.saveas_button2;}
+    public Button getExportButton(){return megaplate.export_button3;}
+    public Button getExitButton(){return megaplate.power_button4;}
+    public Button getUndoButton(){return megaplate.undo_button5;}
+    public Button getRedoButton(){return megaplate.redo_button6;}
+    public Button getInfoButton(){return megaplate.book_button7;}
+    /*@formatter:on*/
+    //endregion
 }
-
-

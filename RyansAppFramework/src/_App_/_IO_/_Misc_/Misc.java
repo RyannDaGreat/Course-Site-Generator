@@ -50,5 +50,9 @@ public class Misc
     {
         playWav(propertyGetter.getSave_sound());
     }
+    public void playErrorSound()
+    {
+        playWav(propertyGetter.getError_sound());
+    }
     //endregion
 }

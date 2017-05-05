@@ -1,8 +1,10 @@
 package _App_._GUI_._Modes_._ProjectData_._Reader_;
 import _App_.App;
+import _App_._GUI_._Modes_._ProjectData_._Actions_.Actions;
 import _App_._GUI_._Modes_._ProjectData_._Boilerplate_.Boilerplate;
 import _Externals_.PD_TeamsTableView;
 import _Externals_.r;
+import javafx.scene.paint.Color;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -122,11 +124,11 @@ public class Reader
     }
     public String getTeamColor()//As hex string with # in front, Example #FF00FF
     {
-        return r.colorToHexString(boilerplate.getT_Color_selector().getValue());
+        return r.colorToHexString(getColor());
     }
     public String getTeamTextColor()//As hex string with # in front, Example #FF00FF
     {
-        return r.colorToHexString(boilerplate.getT_TextColor_selector().getValue());
+        return r.colorToHexString(getTextColor());
     }
     public String getTeamName()
     {
@@ -147,5 +149,13 @@ public class Reader
     public String getStudentTeam()
     {
         return (String)boilerplate.getPsSTeam_comboBox().getValue();
+    }
+    public Color getTextColor()
+    {
+        return boilerplate.getT_TextColor_selector().getValue();
+    }
+    public Color getColor()
+    {
+        return boilerplate.getT_Color_selector().getValue();
     }
 }
