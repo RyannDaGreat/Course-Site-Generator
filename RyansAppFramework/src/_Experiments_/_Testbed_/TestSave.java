@@ -38,7 +38,7 @@ public class TestSave extends App
     public void initialize()
     {
         super.initialize();
-        io.loader.setAppState(hardcodedSettings);//This is simply a faster way of hard-coding the controls. It's identically equivalent to spamming all the setter methods in here.
+        io.loader.setAppState(hardcodedSettings,true);//This is simply a faster way of hard-coding the controls. It's identically equivalent to spamming all the setter methods in here.
         io.saver.saveAppStateToFile("SiteSaveTest.json");
     }
     @SuppressWarnings("Duplicates")

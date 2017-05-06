@@ -24,12 +24,21 @@ public class CD_SitePagesTableView extends TableView
     public void setState(String state)
     {
         if(state.equals(getState()))
+        {
             return;
+        }
         getItems().clear();
         for(String x : state.split(";"))
         {
             String[] y=x.split(",");
-            getItems().add(new page(Boolean.parseBoolean(y[0]),y[1],y[2],y[3]));
+            try
+            {
+                getItems().add(new page(Boolean.parseBoolean(y[0]),y[1],y[2],y[3]));
+            }
+            catch(Exception ignored)
+            {
+                ignored.printStackTrace();
+            }
         }
     }
     public page getSelected()

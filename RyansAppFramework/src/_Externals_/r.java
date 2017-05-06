@@ -172,6 +172,47 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    //region Squelchers
+    public interface RunnableThatThrowsException
+    {
+        void run() throws Exception;
+    }
+    public static Exception tryCatchToException(RunnableThatThrowsException f)//Returns null if there is no exception
+    {
+        try
+        {
+            f.run();
+            return null;
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+            return e;
+        }
+    }
+    public static boolean tryCatchToBoolean(RunnableThatThrowsException f)//True if succeeds false if fails
+    {
+        return tryCatchToBoolean(f,true);
+    }
+    public static boolean tryCatchToBoolean(RunnableThatThrowsException f,boolean printStackTrace)//True if succeeds false if fails
+    {
+        @SuppressWarnings("ThrowableResultOfMethodCallIgnored") Exception exception=tryCatchToException(f);
+        if(exception==null)
+        {
+            return true;
+        }
+        exception.printStackTrace();
+        return false;
+    }
+    public static void squelch(RunnableThatThrowsException f)
+    {
+        tryCatchToBoolean(f);
+    }
+    public static Runnable squelched(RunnableThatThrowsException f)
+    {
+        return ()->squelch(f);
+    }
+    //endregion
     public static Runnable seq(Runnable... runnables)//Concatenates the runnables
     {
         return ()->

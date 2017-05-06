@@ -33,10 +33,10 @@ public class rTPS extends UndoRedoCoordinator
         /*@formatter:off*/
         if(rTextField.thereExistsATextfieldInFocusRightNow)return;//Don't autotransact in the middle of somebody typing a sentence. That's annoying.
         final String New=app.io.saver.getAppState();//Just in case this takes a while I don't want the thread to cause glitchy problems
-        if(lastState.equals(New))return;//By definition; NOT just to avoid null errors! Being null is information here: it means we might have changed the state by redoing or undoing something.
+        if(New.equals(lastState))return;//By definition; NOT just to avoid null errors! Being null is information here: it means we might have changed the state by redoing or undoing something.
         /*@formatter:on*/
         final String Old=lastState+"";//Want a new ID
-        DoWithoutRedo(()->app.io.loader.setAppState(New),()->app.io.loader.setAppState(Old));
+        DoWithoutRedo(()->app.io.loader.setAppState(New,false),()->app.io.loader.setAppState(Old,false));
         refreshLastAppState();
     }
     //endregion

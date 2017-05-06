@@ -24,7 +24,7 @@ public class Loader
     }
     private Dialogs dialogs;
     private PropertyGetter propertyGetter;
-    public void setAppState(String state)
+    public boolean setAppState(String state,boolean showDialog)
     {
         try
         {
@@ -35,19 +35,34 @@ public class Loader
             modes.scheduleData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyScheduleData()));
             modes.recitationData.actions.setState(x.getString(propertyGetter.getStateKeyRecitationData()));
             modes.projectData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyProjectData()));
+            return true;
         }
-        catch(JSONException e)
+        catch(Exception e)
         {
-            dialogs.showFailedToLoadFileErrorDialog();
+            if(showDialog)
+            {
+                dialogs.showFailedToLoadFileErrorDialog();
+            }
             e.printStackTrace();
+            return false;
         }
     }
-    public void loadAppStateFromFile(File f)
+    public boolean loadAppStateFromFile(File f)
     {
-        setAppState(r.ReadFile(f));
-        app.rtps.clearHistory();//ORDER MATTERS HERE! MUST COME AFTER READ-FILE BECAUSE OF AUTO-TPS
-        app.gui.toolbar.actions.disableSaveButton();
-        setCurrentFilePath(f.getPath());
+        return loadAppStateFromFile(f,true);
+    }
+    public boolean loadAppStateFromFile(File f,boolean showDialog)
+    {
+        try
+        {
+            return setAppState(r.ReadFile(f),showDialog);
+        }
+        finally
+        {
+            app.rtps.clearHistory();//ORDER MATTERS HERE! MUST COME AFTER READ-FILE BECAUSE OF AUTO-TPS
+            app.gui.toolbar.actions.disableSaveButton();
+            setCurrentFilePath(f.getPath());
+        }
     }
     public void handleNew()
     {

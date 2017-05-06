@@ -13,11 +13,10 @@ public class Exporter
         this.app=app;
     }
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
-    {
+    { r
     }
     public void export()//This is incomplete and MUST be replaced later!
     {
-        app.io.misc.playSaveSound();
         try
         {
             r.println(r.fansi("PROJECT DATA: TEAMS AND STUDENTS:------",r.fansi_colors.magenta));

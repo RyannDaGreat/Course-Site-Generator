@@ -60,12 +60,21 @@ public class RD_RecitationDataTableView extends TableView
     public void setState(String state)
     {
         if(state.equals(getState()))
+        {
             return;
+        }
         getItems().clear();
         for(String x : state.split(";"))
         {
             String[] y=x.split(",");
-            getItems().add(new Recitation(y[0],y[1],y[2],y[3],y[4],y[5]));
+            try
+            {
+                getItems().add(new Recitation(y[0],y[1],y[2],y[3],y[4],y[5]));
+            }
+            catch(Exception ignored)
+            {
+                ignored.printStackTrace();
+            }
         }
     }
     public Recitation getSelected()

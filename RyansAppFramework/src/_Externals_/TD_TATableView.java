@@ -28,7 +28,13 @@ public class TD_TATableView extends TableView
         for(String x : state.split(";"))
         {
             String[] y=x.split(",");
-            getItems().add(new TA(Boolean.parseBoolean(y[0]),y[1],y[2]));
+            try
+            {
+                getItems().add(new TA(Boolean.parseBoolean(y[0]),y[1],y[2]));
+            }
+            catch(Exception ignored)
+            {
+            }
         }
     }
     public TA getSelected()

@@ -4,7 +4,6 @@ import _App_._IO_.IO;
 import _App_._rTPS_.rTPS;
 import _Externals_.r;
 import javafx.application.Application;
-
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -32,7 +31,10 @@ public class App extends Application//This is the head of the tree. It's special
     {
         stage=primaryStage;
         initialize();
-        io.saver.saveAppStateToFile(new File(io.propertyGetter.getNewFilePath()).getPath());
+        if(!io.loader.loadAppStateFromFile(new File(io.propertyGetter.getNewFilePath())))
+        {
+            io.saver.saveAppStateToFile(new File(io.propertyGetter.getNewFilePath()).getPath());
+        }
         stage.setTitle(io.propertyGetter.getAppTitle());
         stage.getIcons().add(io.styleGetter.getAppIcon());
         stage.setScene(new Scene(gui.window.boilerplate));
@@ -41,7 +43,7 @@ public class App extends Application//This is the head of the tree. It's special
         stage.setMinWidth(io.propertyGetter.getMinAppWidth());//Unlike McKenna's demo
         stage.show();
     }
-    public static void main(String[]ⵁ)
+    public static void main(String[] ⵁ)
     {
         r.enableTheGoodOldAssertionKeyword();
         launch();

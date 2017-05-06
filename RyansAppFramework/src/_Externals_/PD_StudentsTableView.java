@@ -18,15 +18,25 @@ public class PD_StudentsTableView extends TableView
     {
         return r.joinLines(getItems().toArray()).replaceAll("\n",";");
     }
+    @SuppressWarnings("Duplicates")
     public void setState(String state)
     {
         if(state.equals(getState()))
+        {
             return;
+        }
         getItems().clear();
         for(String x : state.split(";"))
         {
             String[] y=x.split(",");
-            getItems().add(new Item(y[0],y[1],y[2],y[3]));
+            try
+            {
+                getItems().add(new Item(y[0],y[1],y[2],y[3]));
+            }
+            catch(Exception ignored)
+            {
+                ignored.printStackTrace();
+            }
         }
     }
     public Item getSelected()

@@ -163,15 +163,16 @@ public class OfficeHoursGrid extends rGridPane
                                                  });
                              x.setOnMouseEntered(ⵁ->forEachChild(t->
                                                                  {
-                                                                     if(!isTitle(t)&&(rowTitle(t).equals(rowTitle(x))&&getColumnIndex(x)>=getColumnIndex(t)||colTitle(t).equals(colTitle(x))&&getRowIndex(x)>=getRowIndex(t)))
+                                                                     if(rowTitle(t).equals(rowTitle(x))&&getColumnIndex(x)>=getColumnIndex(t)||colTitle(t).equals(colTitle(x))&&getRowIndex(x)>=getRowIndex(t))
                                                                      {
-                                                                         // InnerShadow innerShadow=new InnerShadow();
-                                                                         // // innerShadow.setOffsetX(4);
-                                                                         // // innerShadow.setOffsetY(4);
-                                                                         // innerShadow.setRadius(20);
-                                                                         // innerShadow.setColor(Color.web("0x00000077"));
-                                                                         // t.setEffect(innerShadow);
-                                                                         t.setOpacity(1);
+                                                                         if(isTitle(t)||rowTitle(t).equals(rowTitle(x))&&colTitle(t).equals(colTitle(x)))
+                                                                         {
+                                                                             t.setOpacity(1);
+                                                                         }
+                                                                         else
+                                                                         {
+                                                                             t.setOpacity(.9);
+                                                                         }
                                                                      }
                                                                      else
                                                                      {
@@ -180,7 +181,7 @@ public class OfficeHoursGrid extends rGridPane
                                                                  }));
                          }
                      });
-        r.rRunnable<TextCell> textCellrRunnable=t->t.setOpacity(1);
+        r.rRunnable<TextCell> textCellrRunnable=t->t.setOpacity(.9);
         setOnMouseExited(ⵁ->forEachChild(textCellrRunnable));
         forEachChild(x->x.appendStyle(ResourceGetter.getProperty("office_hour_grid_shared_style")));
         forEachChild(x->

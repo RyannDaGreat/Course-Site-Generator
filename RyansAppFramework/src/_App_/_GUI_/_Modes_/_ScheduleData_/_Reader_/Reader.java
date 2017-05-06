@@ -32,10 +32,7 @@ public class Reader
         {
             try
             {
-                if(x.isEqual(LocalDate.parse(((SD_ScheduleItemsTableView.Item)o).dateProperty().getValue())))//Make sure we haven't chosen this date before
-                {
-                    return getSelected()==o;
-                }
+                if(x.isEqual(LocalDate.parse(((SD_ScheduleItemsTableView.Item)o).dateProperty().getValue())))//Make sure we haven't chosen this date before{return getSelected()==o;}
             }
             catch(Exception ignored)
             {
@@ -46,52 +43,20 @@ public class Reader
         return x.isAfter(LocalDate.parse(getStartingMonday()))&&
                x.isBefore(LocalDate.parse(getEndingFriday()));
     }
-    //region Main getters
-    public SD_ScheduleItemsTableView.Item getSelected()
-    {
-        return boilerplate.getSdScheduledItems_tableView().getSelected();
-    }
-    public String getTableState()
-    {
-        return boilerplate.getSdScheduledItems_tableView().getState();
-    }
-    //
-    public String getStartingMonday()
-    {
-        return ""+boilerplate.getSdStartingMonday_datePicker().getValue();
-    }
-    public String getEndingFriday()
-    {
-        return ""+boilerplate.getSdEndingFriday_datePicker().getValue();
-    }
-    public String getDate()
-    {
-        return ""+boilerplate.getSdDate_datePicker().getValue();
-    }
-    public String getType()
-    {
-        return ""+boilerplate.getSdType_comboBox().getValue();
-    }
-    public String getTime()
-    {
-        return boilerplate.getSdTime_textField().getText();
-    }
-    public String getTitle()
-    {
-        return boilerplate.getSdTitle_textField().getText();
-    }
-    public String getTopic()
-    {
-        return boilerplate.getSdTopic_textField().getText();
-    }
-    public String getLink()
-    {
-        return boilerplate.getSdLink_textField().getText();
-    }
-    public String getCriteria()
-    {
-        return boilerplate.getSdCriteria_textField().getText();
-    }
+    //region Main Getters   ([\n][ ]*[{][\n][ ]*)(.*)([\n][ ]*[}])   ⟹  {$2}
+    /*@formatter:off*/
+    public SD_ScheduleItemsTableView.Item getSelected(){return boilerplate.getSdScheduledItems_tableView().getSelected();}
+    public String getTableState(){return boilerplate.getSdScheduledItems_tableView().getState();}
+    public String getStartingMonday(){return ""+boilerplate.getSdStartingMonday_datePicker().getValue();}
+    public String getEndingFriday(){return ""+boilerplate.getSdEndingFriday_datePicker().getValue();}
+    public String getDate(){return ""+boilerplate.getSdDate_datePicker().getValue();}
+    public String getType(){return ""+boilerplate.getSdType_comboBox().getValue();}
+    public String getTime(){return boilerplate.getSdTime_textField().getText();}
+    public String getTitle(){return boilerplate.getSdTitle_textField().getText();}
+    public String getTopic(){return boilerplate.getSdTopic_textField().getText();}
+    public String getLink(){return boilerplate.getSdLink_textField().getText();}
+    public String getCriteria(){return boilerplate.getSdCriteria_textField().getText();}
+    /*@formatter:on*/
     //endregion
     public JSONObject getState() throws JSONException
     {

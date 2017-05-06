@@ -24,7 +24,14 @@ public class SD_ScheduleItemsTableView extends TableView
         for(String x : state.split(";"))
         {
             String[] y=x.split(",");
-            getItems().add(new Item(y[0],y[1],y[2],y[3],y[4],y[5],y[6]));
+            try
+            {
+                getItems().add(new Item(y[0],y[1],y[2],y[3],y[4],y[5],y[6]));
+            }
+            catch(Exception ignored)
+            {
+                ignored.printStackTrace();
+            }
         }
     }
     public Item getSelected()
@@ -63,24 +70,24 @@ public class SD_ScheduleItemsTableView extends TableView
     // region IsValid CHeckers
     // public boolean isValidToAdd(String type,String date,String title,String topic,String time,String link,String criteria)
     // {
-        // for(Object x : getItems())//Must not contain duplicate email or name
-        // {
-        //     if(x!=getSelected())
-        //     {
-        //         Item y=(Item)x;
-        //         if(y.typeProperty().getValue().equals(type)||
-        //            y.dateProperty().getValue().equals(date)||
-        //            y.titleProperty().getValue().equals(title)||
-        //            y.topicProperty().getValue().equals(topic)||
-        //            y.time.equals(time)||
-        //            y.link.equals(link)||
-        //            y.criteria.equals(criteria))
-        //         {
-        //             return false;//Is not unique
-        //         }
-        //     }
-        // }
-        // return true;
+    // for(Object x : getItems())//Must not contain duplicate email or name
+    // {
+    //     if(x!=getSelected())
+    //     {
+    //         Item y=(Item)x;
+    //         if(y.typeProperty().getValue().equals(type)||
+    //            y.dateProperty().getValue().equals(date)||
+    //            y.titleProperty().getValue().equals(title)||
+    //            y.topicProperty().getValue().equals(topic)||
+    //            y.time.equals(time)||
+    //            y.link.equals(link)||
+    //            y.criteria.equals(criteria))
+    //         {
+    //             return false;//Is not unique
+    //         }
+    //     }
+    // }
+    // return true;
     // }
     // public boolean isValidToUpdate(String type,String date,String title,String topic,String time,String link,String criteria)
     // {
@@ -89,17 +96,17 @@ public class SD_ScheduleItemsTableView extends TableView
     //         return false;
     //     }
     //     noinspection SimplifiableIfStatement
-        // if(getSelected().typeProperty().getValue().equals(type)&&
-        //    getSelected().dateProperty().getValue().equals(date)&&
-        //    getSelected().titleProperty().getValue().equals(title)&&
-        //    getSelected().topicProperty().getValue().equals(topic)&&
-        //    getSelected().time.equals(time)&&
-        //    getSelected().link.equals(link)&&
-        //    getSelected().criteria.equals(criteria))//No fields have been changed
-        // {
-        //     return false;
-        // }
-        // return isValidToAdd(type,date,title,topic,time,link,criteria);
+    // if(getSelected().typeProperty().getValue().equals(type)&&
+    //    getSelected().dateProperty().getValue().equals(date)&&
+    //    getSelected().titleProperty().getValue().equals(title)&&
+    //    getSelected().topicProperty().getValue().equals(topic)&&
+    //    getSelected().time.equals(time)&&
+    //    getSelected().link.equals(link)&&
+    //    getSelected().criteria.equals(criteria))//No fields have been changed
+    // {
+    //     return false;
+    // }
+    // return isValidToAdd(type,date,title,topic,time,link,criteria);
     // }
     // endregion
     public void setOnItemSelected(Runnable r)

@@ -62,24 +62,32 @@ public class Actions
     {
         try
         {
-            if(boilerplate.getAddUpdate_button().getText().equals(propertyGetter.getAddButtonLabel()))//Button is add mode
+            if(reader.isAddMode())//Button is add mode
             {
-                boilerplate.getTableView().addRecitation(boilerplate.getSection_textField().getText(),boilerplate.getInstructor_textField().getText(),boilerplate.getDayTime_textField().getText(),boilerplate.getLocation_textField().getText(),(String)boilerplate.getTA1_comboBox().getValue(),(String)boilerplate.getTA2_comboBox().getValue());
+                handleAddRecitation();
             }
             else//Button is update mode
             {
-                assert boilerplate.getAddUpdate_button().getText().equals(propertyGetter.getUpdateButtonLabel());//This should always be true
-                boilerplate.getTableView().updateRecitation(boilerplate.getSection_textField().getText(),boilerplate.getInstructor_textField().getText(),boilerplate.getDayTime_textField().getText(),boilerplate.getLocation_textField().getText(),(String)boilerplate.getTA1_comboBox().getValue(),(String)boilerplate.getTA2_comboBox().getValue());
+                assert reader.isUpdateMode();//This should always be true
+                handleUpdateRecitation();
             }
         }
         catch(Exception ignored){}
         updateAddⳆUpdateButton();
     }
+    public void handleUpdateRecitation()
+    {
+        boilerplate.getTableView().updateRecitation(reader.getSection(),reader.getInstructor(),reader.getDayTime(),reader.getLocation(),reader.getTA1(),reader.getTA2());
+    }
+    public void handleAddRecitation()
+    {
+        boilerplate.getTableView().addRecitation(reader.getSection(),reader.getInstructor(),reader.getDayTime(),reader.getLocation(),reader.getTA1(),reader.getTA2());
+    }
     public void updateComboboxOptions()
     {
         ArrayList<String> tas=app.gui.modes.tadata.boilerplate.getTa_tableView().getTANames();
-        String ta1=(String)boilerplate.getTA1_comboBox().getValue();//Im getting sloppy. This should be a method in reader. But I know what I'm doing and im too lazy to bother with it.
-        String ta2=(String)boilerplate.getTA2_comboBox().getValue();
+        String ta1=reader.getTA1();//Im getting sloppy. This should be a method in reader. But I know what I'm doing and im too lazy to bother with it.
+        String ta2=reader.getTA2();
         ArrayList<String> ta1Options=new ArrayList<>();
         ArrayList<String> ta2Options=new ArrayList<>();
         for(String ta : tas)
