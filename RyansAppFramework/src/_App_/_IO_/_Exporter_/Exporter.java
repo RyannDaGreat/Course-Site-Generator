@@ -53,6 +53,11 @@ public class Exporter
             File[] exportedHTMLFiles=exportDir.listFiles();
             CD_SitePagesTableView t=app.gui.modes.courseDetails.boilerplate.getStSitePages_tableView();
             //endregion
+            //region Copy/Paste the banner/footers into the image directory
+            String imageDirPath=exportDirPath+"/images";
+            File image=new File(imageDirPath);
+
+            //endregion
             //region Handle the HTML Files
             //region Delete Unused HTML Files
             ArrayList<CD_SitePagesTableView.page> usedPages=t.getUsedPages();
@@ -135,6 +140,7 @@ public class Exporter
             r.WriteFileIgnoreExceptions(jsDirPath+"/"+"ScheduleData.json",scheduleData);
             r.WriteFileIgnoreExceptions(jsDirPath+"/"+"TeamsAndStudents.json",teamsAndStudents);
             //endregion
+
         }
         catch(JSONException ignored)
         {

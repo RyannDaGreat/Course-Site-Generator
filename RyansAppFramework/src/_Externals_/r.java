@@ -212,6 +212,19 @@ public class r
             return null;
         }
     }
+    public static File copyPasteFile(File source,File dest)
+    {
+        try
+        {
+            FileUtils.copyFile(source,dest);
+            return dest;
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public static String[] listAllPathsInDirectory(String directoryPath)
     {
         File[] files=listAllFilesInDirectory(directoryPath);
