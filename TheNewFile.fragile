@@ -1,14 +1,14 @@
 {
-    "RecitationData": "A,B,C,D,E,F;A6,B5,C4,D3,E2,F1",
+    "RecitationData": "",
     "CourseDetails": {
-        "SitePagesState": "true,A,B,AOIJ;false,C,D,AOIJS;true,E,F,aoisf;false,G,H,aiohf",
+        "SitePagesState": "true,HWs,hws.html,HWsBuilder.js;true,Home,index.html,TeamsBuilder.js;true,Projects,projects.html,ProjectsBuilder.js;true,Schedule,schedule.html,ScheduleBuilder.js;true,Syllabus,syllabus.html,OfficeHoursGridBuilder.js",
         "Semester": "North Korea",
-        "ExportDir": "ioiioh",
+        "ExportDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/work/ExportTests",
         "BannerImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png",
         "Title": "How To Kill A Mockingbird",
         "!state_key_cd_stylesheet!": "null",
         "Subject": "WAE",
-        "TemplateDir": ".\\templates\\CSE219",
+        "TemplateDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/RyansAppFramework/src/_Externals_/_Resources_/_Templates_/CSE308_Template",
         "InstructorHome": "A dog house in southern nebraska cause why not",
         "Number": "998",
         "Year": "2099",
@@ -19,11 +19,11 @@
     "ScheduleData": {
         "EndingFriday": "2017-05-07",
         "StartingMonday": "2017-05-07",
-        "TableState": "a,2017-04-10,c,d,b,c,d;e,f,g,h,b,c,d;i,j,k,l,b,c,d"
+        "TableState": ""
     },
-    "TAData": "true,A,B;false,C,D;true,E,F;false,G,H\nMidnight\t to\t12:30am,12:30am\t to\t1:00am,1:00am\t to\t1:30am,1:30am\t to\t2:00am,2:00am\t to\t2:30am,2:30am\t to\t3:00am,3:00am\t to\t3:30am,3:30am\t to\t4:00am,4:00am\t to\t4:30am,4:30am\t to\t5:00am,5:00am\t to\t5:30am,5:30am\t to\t6:00am,6:00am\t to\t6:30am,6:30am\t to\t7:00am,7:00am\t to\t7:30am,7:30am\t to\t8:00am,8:00am\t to\t8:30am,8:30am\t to\t9:00am,9:00am\t to\t9:30am,9:30am\t to\t10:00am,10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm,5:00pm\t to\t5:30pm,5:30pm\t to\t6:00pm,6:00pm\t to\t6:30pm,6:30pm\t to\t7:00pm,7:00pm\t to\t7:30pm,7:30pm\t to\t8:00pm,8:00pm\t to\t8:30pm,8:30pm\t to\t9:00pm,9:00pm\t to\t9:30pm,9:30pm\t to\t10:00pm,10:00pm\t to\t10:30pm,10:30pm\t to\t11:00pm,11:00pm\t to\t11:30pm,11:30pm\t to\tMidnight;Monday,Tuesday,Wednesday,Thursday,Friday;",
+    "TAData": "false,G,H@agoi.cao\n8:30am\t to\t9:00am,9:00am\t to\t9:30am,9:30am\t to\t10:00am,10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm,5:00pm\t to\t5:30pm,5:30pm\t to\t6:00pm,6:00pm\t to\t6:30pm,6:30pm\t to\t7:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;",
     "ProjectData": {
-        "TeamsTable": "a,b,c,d;e,f,g,h;i,j,k,l",
-        "StudentsTable": "a,b,c,d;e,f,g,h;i,j,k,l"
+        "TeamsTable": "",
+        "StudentsTable": ""
     }
 }

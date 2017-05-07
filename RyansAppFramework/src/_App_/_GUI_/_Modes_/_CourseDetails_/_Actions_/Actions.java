@@ -72,8 +72,25 @@ public class Actions
     //region Setters
     public void setTemplateDir(String x)
     {
-        System.out.println("setTemplateDir: X="+x);
-        System.out.println(Arrays.toString(r.listAllPathsInDirectory(x)));
+        try
+        {
+            System.out.println("setTemplateDir: X="+x);
+            System.out.println(Arrays.toString(r.listAllPathsInDirectory(x)));
+            boilerplate.getStSitePages_tableView().clear();
+            for(File f : r.listAllFilesInDirectory(x))
+            {
+                String name=f.getName();
+                if(name.toLowerCase().endsWith(".html"))
+                {
+                    boilerplate.getStSitePages_tableView().add(f);
+                }
+            }
+        }
+        catch(Exception ignored)
+        {
+            r.say("Failed to load template directory, should be reset in interface.");
+            ignored.printStackTrace();
+        }
         boilerplate.getStTemplateDir_text().setText(x);
     }
     /*@formatter:off*/

@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import org.apache.commons.io.FileUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,6 +27,7 @@ import javafx.scene.paint.Color;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
@@ -173,6 +175,19 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static File copyPasteDirectory(File source,File dest)
+    {
+        try
+        {
+            FileUtils.copyDirectory(source,dest);
+            return dest;
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public static String[] listAllPathsInDirectory(String directoryPath)
     {
         File[] files=listAllFilesInDirectory(directoryPath);
@@ -588,7 +603,7 @@ public class r
     }
     public static boolean contains(String element,String[] list)
     {
-        return indexOf(element,list)!=-1;
+        return r.tryCatchToBoolean(()->indexOf(element,list));
     }
     //-------------------------------------------------------------------
     public static boolean contains(int i,int[] a)//Returns true if a contains i
@@ -1569,7 +1584,12 @@ public class r
     //region Read/Write from/to Text Files:
     public static String ReadFile(String FilePathName) throws java.io.FileNotFoundException
     {
-        java.util.Scanner Input=new java.util.Scanner(new java.io.File(FilePathName));
+        File source=new File(FilePathName);
+        return readFile(source);
+    }
+    public static String readFile(File source) throws FileNotFoundException
+    {
+        Scanner Input=new Scanner(source);
         if(!Input.hasNextLine())
         {
             return "";

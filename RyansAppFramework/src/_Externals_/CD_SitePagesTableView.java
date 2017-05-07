@@ -10,6 +10,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.json.JSONException;
+
+import java.io.File;
+import java.util.ArrayList;
 @SuppressWarnings("unchecked")
 public class CD_SitePagesTableView extends TableView
 {
@@ -41,6 +44,39 @@ public class CD_SitePagesTableView extends TableView
             }
         }
     }
+    public boolean isPageUsed(File htmlFile)
+    {
+        String htmlFileName=htmlFile.getName();
+        boolean[] out=new boolean[]{true};
+        forAll(x->
+               {
+                   System.out.println("SET "+x.fileName.getValue()+" TO "+x.use.getValue());
+                   if(x.fileName.getValue().equals(htmlFileName))
+                   {
+                       out[0]=x.use.getValue();
+                   }
+               });
+        return out[0];
+    }
+    public void add(File f)
+    {
+        try
+        {
+            String htmlFileContents=r.readFile(f);
+            String name=f.getName();
+            getItems().add(new page(true,
+                                    app_specific_tools.getNavbarTitle(name,htmlFileContents),
+                                    name,
+                                    app_specific_tools.scriptFromHtml(htmlFileContents)));
+        }
+        catch(Exception ignored)
+        {
+        }
+    }
+    public void clear()
+    {
+        getItems().clear();
+    }
     public page getSelected()
     {
         return (page)getSelectionModel().getSelectedItem();
@@ -48,6 +84,23 @@ public class CD_SitePagesTableView extends TableView
     public void remove(page x)
     {
         getItems().remove(x);
+    }
+    public ArrayList<page> getUsedPages()
+    {
+        ArrayList<page> l=new ArrayList<>();
+        forAll(x->
+               {
+                   if(x.use.getValue())
+                   {
+                       l.add(x);
+                   }
+               });
+        // page[] out=new page[l.size()];
+        // for(int i=0;i<l.size();i++)
+        // {
+        //     out[i]=l.get(i);
+        // }
+        return l;
     }
     public CD_SitePagesTableView(String... useHeaderⳆnavbarTitleHeaderⳆfileNameHeaderⳆscriptHeader)
     {
@@ -66,8 +119,8 @@ public class CD_SitePagesTableView extends TableView
         getColumns().addAll(useCol,navbarTitleCol,fileNameCol,scriptCol);
         //
         useCol.setCellValueFactory(new PropertyValueFactory<>("use"));
-        navbarTitleCol.setCellValueFactory(new PropertyValueFactory<>("fileName"));
-        fileNameCol.setCellValueFactory(new PropertyValueFactory<>("navbarTitle"));
+        navbarTitleCol.setCellValueFactory(new PropertyValueFactory<>("navbarTitle"));
+        fileNameCol.setCellValueFactory(new PropertyValueFactory<>("fileName"));
         scriptCol.setCellValueFactory(new PropertyValueFactory<>("script"));
         //
         useCol.setCellFactory(CheckBoxTableCell.forTableColumn(useCol));
