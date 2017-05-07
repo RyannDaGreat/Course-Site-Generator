@@ -114,7 +114,7 @@ public class Actions
 //⁠⁠⁠⁠⁠                                                   ⎧                                                                                                                                                         ⎫
 //⁠⁠⁠⁠⁠                                                   ⎪                                                   ⎧                     ⎫                               ⎧                         ⎫                     ⎪
 //⁠⁠⁠⁠⁠                                         ⎧⎫        ⎪                  ⎧⎫                               ⎪                   ⎧⎫⎪                               ⎪                       ⎧⎫⎪                   ⎧⎫⎪
-                boilerplate.getT__tableView().addItem(reader.getTeamName(),ColorNamer.getColorNameFromHex(reader.getTeamColor()),ColorNamer.getColorNameFromHex(reader.getTeamTextColor()),reader.getTeamLink());
+                boilerplate.getT__tableView().addItem(r.printed(reader.getTeamName()),ColorNamer.getColorNameFromHex(reader.getTeamColor()),ColorNamer.getColorNameFromHex(reader.getTeamTextColor()),reader.getTeamLink());
 //⁠⁠⁠⁠⁠                                         ⎩⎭        ⎪                  ⎩⎭                               ⎪                   ⎩⎭⎪                               ⎪                       ⎩⎭⎪                   ⎩⎭⎪
 //⁠⁠⁠⁠⁠                                                   ⎪                                                   ⎩                     ⎭                               ⎩                         ⎭                     ⎪
 //⁠⁠⁠⁠⁠                                                   ⎩                                                                                                                                                         ⎭
