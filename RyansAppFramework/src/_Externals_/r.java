@@ -212,12 +212,21 @@ public class r
             return null;
         }
     }
-    public static File copyPasteFile(File source,File dest)
+    public static File stringToFile(String x)
+    {
+        if(x.startsWith("file:"))
+            x=x.substring("file:".length());
+        return new File(x);
+    }
+    public static File copyPasteFile(File sourceFile,File destDirectory)
     {
         try
         {
-            FileUtils.copyFile(source,dest);
-            return dest;
+            System.out.println("COPYPASTA");
+            System.out.println(sourceFile);
+            System.out.println(destDirectory);
+            FileUtils.copyFileToDirectory(sourceFile,destDirectory);
+            return destDirectory;
         }
         catch(IOException e)
         {
@@ -250,6 +259,7 @@ public class r
     }
     public static void main(String[] asdasd)
     {
+        r.copyPasteFile(new File("/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/RyansAppFramework/work/ExportTests/schedule.html"),new File("/Users/Ryan/Desktop"));
         System.out.println(Arrays.toString(listAllPathsInDirectory("file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/RyansAppFramework/src/_Externals_/_Resources_/_Documentation_")));
     }
     //region Squelchers

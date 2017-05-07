@@ -4,7 +4,7 @@
         "SitePagesState": "true,HWs,hws.html,HWsBuilder.js;true,Home,index.html,TeamsBuilder.js;true,Projects,projects.html,ProjectsBuilder.js;true,Schedule,schedule.html,ScheduleBuilder.js;true,Syllabus,syllabus.html,OfficeHoursGridBuilder.js",
         "Semester": "North Korea",
         "ExportDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/RyansAppFramework/work/ExportTests",
-        "BannerImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png",
+        "BannerImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.50 PM.png",
         "Title": "How To Kill A Mockingbird",
         "!state_key_cd_stylesheet!": "sea_wolf.css",
         "Subject": "WAE",
@@ -13,8 +13,8 @@
         "Number": "998",
         "Year": "2099",
         "InstructorName": "Dr. Doggy Von Woomphkins",
-        "LeftFooterImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png",
-        "RightFooterImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png"
+        "LeftFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.46 PM.png",
+        "RightFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.48 PM.png"
     },
     "ScheduleData": {
         "EndingFriday": "2017-06-09",

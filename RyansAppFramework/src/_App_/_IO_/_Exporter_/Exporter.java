@@ -55,8 +55,16 @@ public class Exporter
             //endregion
             //region Copy/Paste the banner/footers into the image directory
             String imageDirPath=exportDirPath+"/images";
-            File image=new File(imageDirPath);
-
+            File imageDir=new File(imageDirPath);
+            File leftFooterImage=r.stringToFile(app.gui.modes.courseDetails.reader.getLeftFooterImagePath());
+            File rightFooterImage=r.stringToFile(app.gui.modes.courseDetails.reader.getRightFooterImagePath());
+            File bannerImage=r.stringToFile(app.gui.modes.courseDetails.reader.getBannerImagePath());
+            r.copyPasteFile(leftFooterImage,imageDir);
+            r.copyPasteFile(rightFooterImage,imageDir);
+            r.copyPasteFile(bannerImage,imageDir);
+            String leftFooterImageName=leftFooterImage.getName();
+            String rightFooterImageName=rightFooterImage.getName();
+            String bannerImageName=bannerImage.getName();
             //endregion
             //region Handle the HTML Files
             //region Delete Unused HTML Files
@@ -81,14 +89,16 @@ public class Exporter
             exportedHTMLFiles=exportDir.listFiles();//Refresh the list now
             for(File f : exportedHTMLFiles)
             {
-                r.modifyFileText(f,x->
+                if(f.getName().toLowerCase().endsWith(".html"))
                 {
-                    //region Update the navbar titles to reflect the selected webpages.
-                    String index=Pattern.quote("<a class=\"nav\" href=\"index.html\" id=\"home_link\">Home</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
-                    String syllabus=Pattern.quote("<a class=\"nav\" href=\"syllabus.html\" id=\"syllabus_link\">Syllabus</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
-                    String schedule=Pattern.quote("<a class=\"nav\" href=\"schedule.html\" id=\"schedule_link\">Schedule</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
-                    String hws=Pattern.quote("<a class=\"nav\" href=\"hws.html\" id=\"hws_link\">HWs</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
-                    String projects=Pattern.quote("<a class=\"nav\" href=\"projects.html\" id=\"projects_link\">Projects</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
+                    r.modifyFileText(f,x->
+                    {
+                        //region Update the navbar titles to reflect the selected webpages.
+                        String index=Pattern.quote("<a class=\"nav\" href=\"index.html\" id=\"home_link\">Home</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
+                        String syllabus=Pattern.quote("<a class=\"nav\" href=\"syllabus.html\" id=\"syllabus_link\">Syllabus</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
+                        String schedule=Pattern.quote("<a class=\"nav\" href=\"schedule.html\" id=\"schedule_link\">Schedule</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
+                        String hws=Pattern.quote("<a class=\"nav\" href=\"hws.html\" id=\"hws_link\">HWs</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
+                        String projects=Pattern.quote("<a class=\"nav\" href=\"projects.html\" id=\"projects_link\">Projects</a>");//NOTE THAT THESE MUST BE IDENTICAL IN THE HTML FILE OR SHIT WONT WORK!! I KNOW ITS FINICKY BUT I CANT SPEND MORE TIME ON THIS
                     /*@formatter:off*/
                     if(!r.contains("index.html",usedHtmlFileNames))
                         x=x.replaceAll(index,"");
@@ -101,34 +111,40 @@ public class Exporter
                     if(!r.contains("projects.html",usedHtmlFileNames))
                         x=x.replaceAll(projects,"");
                     /*@formatter:on*/
-                    //endregion
-                    //region Set the class acronym, year, number and semester
-                    Reader reader=app.gui.modes.courseDetails.reader;
-                    x=r.replaceAll(x,"CSE",reader.getSubject());
-                    //
-                    x=r.replaceAll(x,"219",reader.getNumber());
-                    x=r.replaceAll(x,"308",reader.getNumber());
-                    //
-                    x=r.replaceAll(x,"2016",reader.getYear());
-                    x=r.replaceAll(x,"2017",reader.getYear());
-                    //
-                    x=r.replaceAll(x,"Fall",reader.getSemester());
-                    x=r.replaceAll(x,"Spring",reader.getSemester());
-                    //
-                    x=r.replaceAll(x,"Software Engineering",reader.getTitle());
-                    x=r.replaceAll(x,"SOMETHING FOR TITLE!",reader.getTitle());
-                    //
-                    x=r.replaceAll(x,"TESTAAAA",reader.getInstructorName());
-                    x=r.replaceAll(x,"Richard McKenna",reader.getInstructorName());
-                    //
-                    x=r.replaceAll(x,"http://www.cs.stonybrook.edu/~richard",reader.getInstructorHome());
-                    x=r.replaceAll(x,"SOME VALUE",reader.getInstructorHome());
-                    //
-                    x=r.replaceAll(x,"sea_wolf.css",reader.getStylesheet());
-                    //
-                    //
-                    return x;
-                });
+                        //endregion
+                        //region Set the class acronym, year, number and semester
+                        Reader reader=app.gui.modes.courseDetails.reader;
+                        x=r.replaceAll(x,"CSE",reader.getSubject());
+                        //
+                        x=r.replaceAll(x,"219",reader.getNumber());
+                        x=r.replaceAll(x,"308",reader.getNumber());
+                        //
+                        x=r.replaceAll(x,"2016",reader.getYear());
+                        x=r.replaceAll(x,"2017",reader.getYear());
+                        //
+                        x=r.replaceAll(x,"Fall",reader.getSemester());
+                        x=r.replaceAll(x,"Spring",reader.getSemester());
+                        //
+                        x=r.replaceAll(x,"Software Engineering",reader.getTitle());
+                        x=r.replaceAll(x,"SOMETHING FOR TITLE!",reader.getTitle());
+                        //
+                        x=r.replaceAll(x,"TESTAAAA",reader.getInstructorName());
+                        x=r.replaceAll(x,"Richard McKenna",reader.getInstructorName());
+                        //
+                        x=r.replaceAll(x,"http://www.cs.stonybrook.edu/~richard",reader.getInstructorHome());
+                        x=r.replaceAll(x,"SOME VALUE",reader.getInstructorHome());
+                        //
+                        x=r.replaceAll(x,"sea_wolf.css",reader.getStylesheet());
+                        //
+                        x=r.replaceAll(x,"CSLogo.png",rightFooterImageName);
+                        //
+                        x=r.replaceAll(x,"SBUWhiteShieldLogo.jpg",leftFooterImageName);
+                        //
+                        x=r.replaceAll(x,"SBUDarkRedShieldLogo.png",bannerImageName);
+                        //
+                        return x;
+                    });
+                }
             }
             //endregion
             //region Write the JSON data into the /js directory
@@ -140,7 +156,6 @@ public class Exporter
             r.WriteFileIgnoreExceptions(jsDirPath+"/"+"ScheduleData.json",scheduleData);
             r.WriteFileIgnoreExceptions(jsDirPath+"/"+"TeamsAndStudents.json",teamsAndStudents);
             //endregion
-
         }
         catch(JSONException ignored)
         {

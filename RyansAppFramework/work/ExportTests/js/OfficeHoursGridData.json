@@ -1,5 +1,5 @@
 {
-    "endHour": 10,
+    "endHour": 19,
     "startHour": 8,
     "officeHours": [
         {
@@ -11,6 +11,41 @@
             "name": "G",
             "time": "9_30am",
             "day": "FRIDAY"
+        },
+        {
+            "name": "G",
+            "time": "10_00am",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "G",
+            "time": "10_30am",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "G",
+            "time": "1_00pm",
+            "day": "MONDAY"
+        },
+        {
+            "name": "G",
+            "time": "1_00pm",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "G",
+            "time": "1_00pm",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "G",
+            "time": "1_30pm",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "G",
+            "time": "2_00pm",
+            "day": "WEDNESDAY"
         }
     ],
     "undergrad_tas": [{
