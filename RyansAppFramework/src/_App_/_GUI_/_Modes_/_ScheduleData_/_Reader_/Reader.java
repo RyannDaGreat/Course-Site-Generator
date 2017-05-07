@@ -57,7 +57,7 @@ public class Reader
     }
     public JSONObject getExport() throws JSONException
     {
-        JSONObject o=new JSONObject();
+        JSONObject o=new JSONObject("{\"holidays\":[],\"references\": [],\"hws\": [],\"recitations\": [],\"lectures\": []}");
         LocalDate startingMonday=LocalDate.parse(getStartingMonday());
         o.accumulate("startingMondayMonth",""+startingMonday.getMonthValue());
         o.accumulate("startingMondayDay",""+startingMonday.getDayOfMonth());
@@ -70,12 +70,16 @@ public class Reader
                                                                {
                                                                    JSONObject temp=new JSONObject();
                                                                    LocalDate date=LocalDate.parse(x.dateProperty().getValue());
-                                                                   temp.accumulate("month",""+date.getMonthValue());
-                                                                   temp.accumulate("day",""+date.getDayOfMonth());
-                                                                   temp.accumulate("title",x.titleProperty().getValue());
-                                                                   temp.accumulate("topic",x.topicProperty().getValue());
-                                                                   temp.accumulate("link",x.link);
-                                                                   o.append(r.mapString(x.typeProperty().getValue(),propertyGetter.getScheduleItemTypeKeys(),propertyGetter.getScheduleItemTypes()),temp);//Map {Holiday,Lecture,Recitation,Homework,Reference} to {holidays,lectures,recitations,hws,references} for the JSON file keys
+                                                                   accumulateIfNotSpace(temp,"month",""+date.getMonthValue());
+                                                                   accumulateIfNotSpace(temp,"day",""+date.getDayOfMonth());
+                                                                   accumulateIfNotSpace(temp,"title",x.titleProperty().getValue());
+                                                                   accumulateIfNotSpace(temp,"time",x .time);
+                                                                   String topic=x.topicProperty().getValue();
+                                                                   // if(temp.has("time"))topic="due @ "+x.time+"<br />"+topic;
+                                                                   accumulateIfNotSpace(temp,"topic",topic);
+                                                                   accumulateIfNotSpace(temp,"link",x.link);
+                                                                   accumulateIfNotSpace(temp,"criteria",x.criteria);
+                                                                   o.accumulate(r.mapString(x.typeProperty().getValue(),propertyGetter.getScheduleItemTypeKeys(),propertyGetter.getScheduleItemTypes()),temp);//Map {Holiday,Lecture,Recitation,Homework,Reference} to {holidays,lectures,recitations,hws,references} for the JSON file keys
                                                                }
                                                                catch(JSONException e)
                                                                {
@@ -83,5 +87,12 @@ public class Reader
                                                                }
                                                            });
         return o;
+    }
+    public void accumulateIfNotSpace(JSONObject temp,String key,String value) throws JSONException
+    {
+        if(!value.equals(" "))
+        {
+            temp.accumulate(key,value);
+        }
     }
 }

@@ -34,6 +34,15 @@ public class Misc
     {
         return new File(s);
     }
+    public static String[]getAvailableStylesheets()
+    {
+        File[] files = (new File(pwd()+"work/css")).listFiles();
+        String[]sheets=new String[files.length];
+        int i=0;
+        for (File file : files)
+            sheets[i++]=file.getName();
+        return sheets;
+    }
     //region Audio
     public static void playWav(String soundNameWithoutPathOrExtension)
     {

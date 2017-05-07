@@ -3,18 +3,14 @@ import _App_.App;
 import _Externals_.r;
 
 import java.io.File;
+import java.util.Arrays;
 
-import static _App_._IO_._Misc_.Misc.pwd;
+import static _App_._IO_._Misc_.Misc.getAvailableStylesheets;
 public class gdc//getdircontents
 {
     public static void main(String[] args)
     {
         // App app=new App();
-        System.out.println(pwd()+"work");
-        File[] files = (new File(pwd()+"work/css")).listFiles();
-        for (File file : files)
-        {
-            System.out.println(file.getName());
-        }
+        System.out.println(Arrays.toString(getAvailableStylesheets()));
     }
 }

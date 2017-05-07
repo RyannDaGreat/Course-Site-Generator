@@ -3,10 +3,10 @@
     "CourseDetails": {
         "SitePagesState": "true,G,H,aiohf;true,E,F,aoisf;true,C,D,AOIJS;true,A,B,AOIJ",
         "Semester": "Spring",
-        "ExportDir": "/Users/Ryan/Desktop",
+        "ExportDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/work/ExportTests",
         "BannerImage": "file:/Users/Ryan/Pictures/Desktop Backgrounds/328338.jpg",
         "Title": "Computer Science III",
-        "!state_key_cd_stylesheet!": "null",
+        "!state_key_cd_stylesheet!": "sea_wolf.css",
         "Subject": "CSE",
         "TemplateDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery",
         "InstructorHome": "http://www3.cs.stonybrook.edu/~cse219/Section02/index.html",
@@ -17,13 +17,13 @@
         "RightFooterImage": "file:/Users/Ryan/Pictures/Desktop Backgrounds/8637-8.jpg"
     },
     "ScheduleData": {
-        "EndingFriday": "2018-03-09",
-        "StartingMonday": "2017-02-27",
+        "EndingFriday": "2017-09-08",
+        "StartingMonday": "2017-05-01",
         "TableState": "Lecture,2017-05-08,This Is A Title,This Is A Topic,This Is A Time,This Is A Link,This Is A Criteria"
     },
     "TAData": "false,Hooligan,Harvey@Hampton.com;false,Harry Pan,peter@potter.net;false,Donald Trump,please@impeach.me\n10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;",
     "ProjectData": {
-        "TeamsTable": "Hello,Fast Royal Blue: #334DB3,White: #FFFFFF,World;Goodbye,Rhetorical Khaki: #CCCC66,Materialistic Grey: #003333,googdye.coie",
-        "StudentsTable": "asdf,asdf,Hello,asdf;asdf,asdfasdf,Goodbye,asdf;asdq,asd,Hello,asd"
+        "TeamsTable": "The Manhattan Project,Bitter Sienna: #E6804D,Sable Light Goldenrod: #FFFF66,atomic.bomb;Charlie And The Chocolate Project,Narrow Chocolate: #754D11,White: #FFFFFF,candy.bar",
+        "StudentsTable": "Alpha,Betty,The Manhattan Project,Lead Designer;Bethany,Smith,Charlie And The Chocolate Project,Lead Designer;Beryy,Gumpyer,Charlie And The Chocolate Project,Project Manager;Smily,Miller,The Manhattan Project,Project Manager;Smelty,Pothead,The Manhattan Project,Lead Programmer;Smokey,Weedface,Charlie And The Chocolate Project,Lead Programmer;Snarly,Wompette,Charlie And The Chocolate Project,Data Designer;Scotty,Oharley,The Manhattan Project,Data Designer"
     }
 }

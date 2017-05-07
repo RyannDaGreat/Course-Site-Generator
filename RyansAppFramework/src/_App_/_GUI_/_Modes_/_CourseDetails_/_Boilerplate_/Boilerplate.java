@@ -26,6 +26,8 @@ public class Boilerplate
         r.setComboboxOptions(getCiYear_comboBox(),propertyGetter.getAll_yearses());
         r.setComboboxOptions(getCiSubject_comboBox(),propertyGetter.getAll_sbu_majorses());
         r.setComboboxOptions(getCiSemester_comboBox(),propertyGetter.getAll_semesterses());
+        //noinspection AccessStaticViaInstance
+        r.setComboboxOptions(getPsStylesheet_comboBox(),app.io.misc.getAvailableStylesheets());
         getCiChange_button().setAction(actions::handleChangeExportDir);
         getStChange_button().setAction(actions::handleChangeTemplateDir);;
         getPsChangeBanner_button().setAction(actions::handleChangeBannerImage);

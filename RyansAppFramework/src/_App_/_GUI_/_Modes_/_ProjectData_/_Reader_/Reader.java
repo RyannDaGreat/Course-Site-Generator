@@ -67,9 +67,9 @@ public class Reader
                                                  try
                                                  {
                                                      JSONObject temp=new JSONObject();
-                                                     temp.accumulate("lastName",s.field1Property().getValue());
-                                                     temp.accumulate("firstName",s.field2Property().getValue());
-                                                     temp.accumulate("team",s.field3Property().getValue());
+                                                     temp.accumulate("firstName",s.field1Property().getValue());
+                                                     temp.accumulate("lastName",s.field2Property().getValue());
+                                                     temp.accumulate("team",projectNameToColorName(s.field3Property().getValue()));
                                                      temp.accumulate("role",s.field4Property().getValue());
                                                      o.append("students",temp);
                                                  }
@@ -167,7 +167,7 @@ public class Reader
         boolean[] temp=new boolean[]{true};
         boilerplate.getT__tableView().forAll(x->
                                              {
-                                                 System.out.println(getTeamName()+"+++++"+x.field1Property().getValue());
+                                                 // System.out.println(getTeamName()+"+++++"+x.field1Property().getValue());
                                                  if(x.field1Property().getValue().equals(getTeamName()))
                                                  {
                                                      System.out.println("Crampus");
@@ -237,4 +237,17 @@ public class Reader
                                              });
         return temp[0];
     }
+    public String projectNameToColorName(String projectName)
+    {
+        System.out.println(projectName);
+        String[]x=new String[]{projectName};
+        boilerplate.getT__tableView().forAll(t->
+                                             {
+                                                 if(t.field1Property().getValue().equals(projectName))
+                                                     x[0]=t.field2Property().getValue();
+                                             });
+        System.out.println(x[0]);
+        return x[0];
+    }
+
 }

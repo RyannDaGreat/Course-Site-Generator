@@ -148,6 +148,7 @@ public class Actions
         boilerplate.getLocation_textField().clear();
         r.setComboboxOption(boilerplate.getTA1_comboBox(),"");
         r.setComboboxOption(boilerplate.getTA2_comboBox(),"");
+        boilerplate.getTableView().getSelectionModel().clearSelection();
     }
 
 }
