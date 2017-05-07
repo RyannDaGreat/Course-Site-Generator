@@ -30,6 +30,7 @@ public class Boilerplate
         getT_Clear_button().setAction(actions::handleTeamClearButton);
         getS_Clear_button().setAction(actions::handleStudentClearButton);
         getT__tableView().setOnItemSelected(actions::updateTeamFieldsToSelected);
+        getS__tableView().setOnItemSelected(actions::updateStudentFieldsToSelected);
         getSTeam_comboBox().setOnMouseEntered(ⵁ->actions.updateStudentTeamComboboxOptions());
         r.fxRunAsNewThreadTimer(5,()->
         {

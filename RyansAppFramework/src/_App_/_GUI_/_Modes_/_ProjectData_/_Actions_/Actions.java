@@ -87,6 +87,19 @@ public class Actions
         setTeamLink(selectedTeam.field4Property().getValue());
         updateTeamAddⳆUpdateButton();
     }
+    public void updateStudentFieldsToSelected()
+    {
+        PD_StudentsTableView.Item selectedStudent=getSelectedStudent();
+        if(selectedStudent==null)
+        {
+            return;
+        }
+        boilerplate.getS_FirstName_textField().setText(selectedStudent.field1Property().getValue());
+        boilerplate.getS_LastName_textField().setText(selectedStudent.field2Property().getValue());
+        r.setComboboxOption(boilerplate.getSTeam_comboBox(),selectedStudent.field3Property().getValue());
+        boilerplate.getS_Role_textField().setText(selectedStudent.field4Property().getValue());
+        updateStudentsAddⳆUpdateButton();
+    }
     PD_TeamsTableView.Item getSelectedTeam()
     {
         return boilerplate.getT__tableView().getSelected();
