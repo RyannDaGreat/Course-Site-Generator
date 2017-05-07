@@ -1,5 +1,6 @@
 package _App_._IO_._PropertyGetter_;//Created by Ryan on 4/10/17.
 import _App_.App;
+import _App_._GUI_._Modes_._ProjectData_._Actions_.Actions;
 import _Externals_._Resources_.ResourceGetter;
 public class PropertyGetter
 {
@@ -88,6 +89,14 @@ public class PropertyGetter
     public String getDecisionSound()
     {
         return app.io.propertyGetter.getProperty("decision_sound");
+    }
+    public String getActionWillDeleteStudentsMessage()
+    {
+        return getProperty("this.action.will.delete.some.students.is.this.ok");
+    }
+    public String getStudentsWillBeDeleted()
+    {
+        return app.io.propertyGetter.getProperty("deleting.this.team.will.also.delete.some.students.is.this.ok");
     }
     /*@formatter:on*/
     //endregion

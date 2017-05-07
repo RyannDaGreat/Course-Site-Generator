@@ -77,4 +77,8 @@ public class Dialogs
         app.io.misc.playErrorSound();
         showInfoAlert(propertyGetter.getCannot_delete_ta());
     }
+    public boolean confirmDeleteStudents()
+    {
+        return app.gui.dialogs.yesNo(propertyGetter.getStudentsWillBeDeleted());
+    }
 }

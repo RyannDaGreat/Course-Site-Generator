@@ -242,8 +242,7 @@ public class r
     }
     public static String colorToHexString(Color c)
     {
-        printed(c.toString());
-        return printed("#"+(""+c.toString()).substring(2,8));
+        return "#"+(""+c.toString()).substring(2,8);
     }
     public static String rgbToHexString(int r,int g,int b)
     {

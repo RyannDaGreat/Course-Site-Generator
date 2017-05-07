@@ -23,10 +23,18 @@ public class Boilerplate
         getT_TextColor_selector().setOnAction(ⵁ->actions.updateTeamCircleColors());
         getT_Color_selector().setOnAction(ⵁ->actions.updateTeamCircleColors());
         getT_AddUpdate_button().setAction(actions::handleTeamAddⳆUpdateButton);
+        getS_AddUpdate_button().setAction(actions::handleStudentAddⳆUpdateButton);
         getT_Clear_button().setAction(actions::handleTeamClearButton);
+        getS_Clear_button().setAction(actions::handleStudentClearButton);
         getT__tableView().setOnItemSelected(actions::updateTeamFieldsToSelected);
-        getPsSTeam_comboBox().setOnMouseEntered(ⵁ->actions.updateStudentTeamComboboxOptions());
-        r.fxRunAsNewThreadTimer(5,actions::updateTeamAddⳆUpdateButton);
+        getSTeam_comboBox().setOnMouseEntered(ⵁ->actions.updateStudentTeamComboboxOptions());
+        r.fxRunAsNewThreadTimer(5,()->
+        {
+            actions.updateTeamAddⳆUpdateButton();
+            actions.updateStudentsAddⳆUpdateButton();
+            actions.updateStudentTeamComboboxOptions();
+        });
+        getT__tableView().setOnRemoveSelected(actions::deleteAllStudentsWithInvalidTeams);
     }
     //region Getters   ([\n][ ]*[{][\n][ ]*)(.*)([\n][ ]*[}])   ⟹  {$2}
     /*@formatter:off*/
@@ -37,7 +45,7 @@ public class Boilerplate
     public TableColumn getS_Role_tableColumn(){return megaplate.pdSRole_tableColumn112;}
     public TextField getS_FirstName_textField(){return megaplate.pdSFirstName_textField16;}
     public TextField getS_LastName_textField(){return megaplate.pdSLastName_textField17;}
-    public ComboBox getPsSTeam_comboBox(){return megaplate.pdSTeam_combobox15;}
+    public ComboBox getSTeam_comboBox(){return megaplate.pdSTeam_combobox15;}
     public TextField getS_Role_textField(){return megaplate.pdSRole_textField18;}
     public rButton getS_AddUpdate_button(){return megaplate.pdSAddUpdate_button111;}
     public rButton getS_Clear_button(){return megaplate.pdSClear_button112;}

@@ -1,6 +1,7 @@
 package _App_._GUI_._Modes_._ProjectData_._Reader_;
 import _App_.App;
 import _App_._GUI_._Modes_._ProjectData_._Boilerplate_.Boilerplate;
+import _Externals_.ColorNamer;
 import _Externals_.PD_TeamsTableView;
 import _Externals_.r;
 import javafx.scene.paint.Color;
@@ -43,8 +44,8 @@ public class Reader
                                                  try
                                                  {
                                                      JSONObject temp=new JSONObject();
-                                                     temp.accumulate("name",t.field2PropertyTeamColor().getValue());
-                                                     int[] rgb=r.hexToRGB(hexWithOrWithoutHashtagFromColorName(t.field2PropertyTeamColor().getValue()));
+                                                     temp.accumulate("name",t.field2Property().getValue());
+                                                     int[] rgb=r.hexToRGB(hexWithOrWithoutHashtagFromColorName(t.field2Property().getValue()));
                                                      temp.accumulate("red",rgb[0]);
                                                      temp.accumulate("green",rgb[1]);
                                                      temp.accumulate("blue",rgb[2]);
@@ -83,9 +84,9 @@ public class Reader
                                                  try
                                                  {
                                                      JSONObject temp=new JSONObject();
-                                                     temp.accumulate("name",t.field1PropertyTeamName().getValue());
+                                                     temp.accumulate("name",t.field1Property().getValue());
                                                      temp.accumulate("link",t.field4Property().getValue());
-                                                     String teamName=t.field1PropertyTeamName().getValue();
+                                                     String teamName=t.field1Property().getValue();
                                                      boilerplate.getS__tableView().forAll(s->//s≣student
                                                                                           {
                                                                                               String studentTeamName=s.field3Property().getValue();
@@ -137,17 +138,17 @@ public class Reader
     {
         return boilerplate.getT_Link_textField().getText();
     }
-    public String[]getTeamNames()
+    public String[] getTeamNames()
     {
         PD_TeamsTableView t=boilerplate.getT__tableView();
-        String[]x=new String[t.getItems().size()];
-        int[]i=new int[]{0};
-        t.forAll(team->x[i[0]++]=team.field1PropertyTeamName().getValue());
+        String[] x=new String[t.getItems().size()];
+        int[] i=new int[]{0};
+        t.forAll(team->x[i[0]++]=team.field1Property().getValue());
         return x;
     }
     public String getStudentTeam()
     {
-        return (String)boilerplate.getPsSTeam_comboBox().getValue();
+        return (String)boilerplate.getSTeam_comboBox().getValue();
     }
     public Color getTextColor()
     {
@@ -161,24 +162,75 @@ public class Reader
     {
         boolean[] temp=new boolean[]{true};
         boilerplate.getT__tableView().forAll(x->
-                                          {
-                                              if(x.field1PropertyTeamName().getValue().equals(getTeamName()))
-                                              {
-                                                  temp[0]=false;
-                                              }
-                                          });
+                                             {
+                                                 System.out.println(getTeamName()+"+++++"+x.field1Property().getValue());
+                                                 if(x.field1Property().getValue().equals(getTeamName()))
+                                                 {
+                                                     System.out.println("Crampus");
+                                                     temp[0]=false;
+                                                 }
+                                             });
         return temp[0];
     }
     public boolean uniqueTeamColor()//If text field team name is unique
     {
         boolean[] temp=new boolean[]{true};
         boilerplate.getT__tableView().forAll(x->
-                                          {
-                                              if(x.field2PropertyTeamColor().getValue().equals(getTeamColor()))
-                                              {
-                                                  temp[0]=false;
-                                              }
-                                          });
+                                             {
+                                                 if(x.field2Property().getValue().equals(getTeamColorName()))
+                                                 {
+                                                     temp[0]=false;
+                                                 }
+                                             });
+        return temp[0];
+    }
+    public boolean uniqueStudentName()//If text field team name is unique
+    {
+        boolean[] temp=new boolean[]{true};
+        boilerplate.getS__tableView().forAll(x->
+                                             {
+                                                 if(x.field1Property().getValue().equals(getStudentFirstName())&&
+                                                    x.field2Property().getValue().equals(getStudentLastName()))
+                                                 {
+                                                     temp[0]=false;
+                                                 }
+                                             });
+        return temp[0];
+    }
+    public String getTeamColorName()
+    {
+        return ColorNamer.getColorNameFromHex(getTeamColor());
+    }
+    public String getTeamTextColorName()
+    {
+        return ColorNamer.getColorNameFromHex(getTeamTextColor());
+    }
+    public String getStudentFirstName()
+    {
+        return boilerplate.getS_FirstName_textField().getText();
+    }
+    public String getStudentLastName()
+    {
+        return boilerplate.getS_LastName_textField().getText();
+    }
+    public String getSStudentTeam()
+    {
+        String value=(String)boilerplate.getSTeam_comboBox().getValue();
+        if(value==null)return "";
+        return value;
+    }
+    public String getStudentRole()
+    {
+        return boilerplate.getS_Role_textField().getText();
+    }
+    public boolean hasTeam(String teamName)
+    {
+        boolean[] temp=new boolean[]{false};
+        boilerplate.getT__tableView().forAll(x->
+                                             {
+                                                 if(x.field1Property().getValue().equals(teamName))
+                                                     temp[0]=true;
+                                             });
         return temp[0];
     }
 }

@@ -27,7 +27,7 @@ public class Transactions
         final String beforeState=reader.getState();
         r.run();
         final String afterState=reader.getState();
-        rtps.Do(()->actions.setState(afterState),()->actions.setState(beforeState));
+        rtps.DoWithoutRedo(()->actions.setState(afterState),()->actions.setState(beforeState));
     }
     public void deleteSelectedTa()
     {

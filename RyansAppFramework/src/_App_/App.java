@@ -2,6 +2,7 @@ package _App_;//Created by Ryan on 4/10/17.
 import _App_._GUI_.GUI;
 import _App_._IO_.IO;
 import _App_._rTPS_.rTPS;
+import _Externals_._Resources_.ResourceGetter;
 import _Externals_.r;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -50,6 +51,6 @@ public class App extends Application//This is the head of the tree. It's special
     }
     public String getUndo_redo_sound()
     {
-        return io.propertyGetter.getProperty("undo_redo_sound");
+        return ResourceGetter.getProperty("undo_redo_sound");//Actual mechanics of loading file must be outsourced to externals to preserve the logical integrity of my blackbox.
     }
 }

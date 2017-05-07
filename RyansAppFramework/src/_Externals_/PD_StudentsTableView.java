@@ -18,6 +18,13 @@ public class PD_StudentsTableView extends TableView
     {
         return r.joinLines(getItems().toArray()).replaceAll("\n",";");
     }
+    public void updateItem(String field1,String field2,String field3,String field4)
+    {
+        getSelected().field1Property().setValue(field1);
+        getSelected().field2Property().setValue(field2);
+        getSelected().field3Property().setValue(field3);
+        getSelected().field4Property().setValue(field4);
+    }
     @SuppressWarnings("Duplicates")
     public void setState(String state)
     {
@@ -39,9 +46,21 @@ public class PD_StudentsTableView extends TableView
             }
         }
     }
+    public void deselect()
+    {
+        getSelectionModel().clearSelection();
+    }
     public Item getSelected()
     {
         return (Item)getSelectionModel().getSelectedItem();
+    }
+    public Runnable getOnRemoveSelected()
+    {
+        return onRemoveSelected;
+    }
+    public void setOnRemoveSelected(Runnable onRemoveSelected)
+    {
+        this.onRemoveSelected=onRemoveSelected;
     }
     public interface F
     {
@@ -58,8 +77,13 @@ public class PD_StudentsTableView extends TableView
     {
         getItems().remove(x);
     }
+    private Runnable onRemoveSelected=null;
     public void removeSelected()//Syntactic sugar
     {
+        if(getOnRemoveSelected()!=null)
+        {
+            getOnRemoveSelected().run();
+        }
         remove(getSelected());
     }
     public void upfield2Item(String field1,String field2,String field3,String field4)

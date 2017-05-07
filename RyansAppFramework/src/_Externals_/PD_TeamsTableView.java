@@ -1,5 +1,4 @@
 package _Externals_;
-//TODO Finish this class
 //http://stackoverflow.com/questions/20879242/get-checkbox-value-in-a-table-in-javafx
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -18,6 +17,7 @@ public class PD_TeamsTableView extends TableView
     {
         return r.joinLines(getItems().toArray()).replaceAll("\n",";");
     }
+    @SuppressWarnings("Duplicates")
     public void setState(String state)
     {
         if(state.equals(getState()))
@@ -42,6 +42,14 @@ public class PD_TeamsTableView extends TableView
     {
         return (Item)getSelectionModel().getSelectedItem();
     }
+    public Runnable getOnRemoveSelected()
+    {
+        return onRemoveSelected;
+    }
+    public void setOnRemoveSelected(Runnable onRemoveSelected)
+    {
+        this.onRemoveSelected=onRemoveSelected;
+    }
     public interface F
     {
         void f(Item x);
@@ -57,60 +65,23 @@ public class PD_TeamsTableView extends TableView
     {
         getItems().remove(x);
     }
+    private Runnable onRemoveSelected=null;
     public void removeSelected()//Syntactic sugar
     {
+        if(getOnRemoveSelected()!=null)
+        {
+            getOnRemoveSelected().run();
+        }
         remove(getSelected());
     }
+
     public void updateItem(String field1,String field2,String field3,String field4)
     {
-        getSelected().field1PropertyTeamName().setValue(field1);
-        getSelected().field2PropertyTeamColor().setValue(field2);
+        getSelected().field1Property().setValue(field1);
+        getSelected().field2Property().setValue(field2);
         getSelected().field3Property().setValue(field3);
         getSelected().field4Property().setValue(field4);
     }
-    //region IsValid CHeckers
-    // public boolean isValidToAdd(String field1,String field2,String field3,String field4)
-    // {
-    // if(!mightBeValid(name,email))
-    //     return false;
-    // for(Object x:getItems())//Must not contain duplicate email or name
-    // {
-    //     Item y=(Item)x;
-    //     if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
-    //         return false;//Is not unique
-    // }
-    // return true;
-    // }
-    // public boolean isValidToUpfield2(String field1,String field2,String field3,String field4)
-    // {
-    // if(getSelected()==null)//Can't upfield2 anybody if nobody is selected
-    //     return false;
-    // if(!mightBeValid(name,email))
-    //     return false;
-    // if(getSelected().nameProperty().getValue().equals(name)&&getSelected().emailProperty().getValue().equals(email))//Name nor email havent been changed
-    //     return false;
-    // for(Object x:getItems())//Must not contain duplicate email or name
-    // {
-    //     if(x!=getSelected())
-    //     {
-    //         Item y=(Item)x;
-    //         if(y.nameProperty().getValue().equals(name)||y.emailProperty().getValue().equals(name))
-    //             return false;//Is not unique
-    //     }
-    // }
-    // return true;
-    // }
-    // private boolean mightBeValid(String field1,String field2,String field3,String field4)
-    // {
-    // if(name.equals("")||email.equals(""))//Name and email cannot be empty
-    //     return false;
-    // if((name+email).contains(",")||(name+email).contains(";")||(name+email).contains("\n"))//Cannot contain illegal characters used to save the grid states
-    //     return false;
-    // if(!r.isValidEmail(email))//Must be valid email
-    //     return false;
-    // return true;
-    // }
-    //endregion
     public void setOnItemSelected(Runnable r)
     {
         getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->r.run());
@@ -149,11 +120,11 @@ public class PD_TeamsTableView extends TableView
             this.field3=new SimpleStringProperty(field3);
             this.field4=new SimpleStringProperty(field4);
         }
-        public StringProperty field1PropertyTeamName()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
+        public StringProperty field1Property()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
         {
             return field1;
         }
-        public StringProperty field2PropertyTeamColor()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
+        public StringProperty field2Property()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
         {
             return field2;
         }
