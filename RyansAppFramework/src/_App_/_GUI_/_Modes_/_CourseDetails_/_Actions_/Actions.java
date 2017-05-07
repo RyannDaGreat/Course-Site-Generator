@@ -70,11 +70,11 @@ public class Actions
         handleChangeImage(this::setRightFooterImagePath);
     }
     //region Setters
-    public void setExportDir(String x)
+    public void setTemplateDir(String x)
     {
-        for(File x:app.io.misc.getAvailableHtmlFilesInTemplate())
-        boilerplate.getStSitePages_tableView().setState()
-        boilerplate.getCiExportDir_text().setText(x);
+        System.out.println("setTemplateDir: X="+x);
+        System.out.println(Arrays.toString(r.listAllPathsInDirectory(x)));
+        boilerplate.getStTemplateDir_text().setText(x);
     }
     /*@formatter:off*/
     public void setSubject(String x){r.setComboboxOption(boilerplate.getCiSubject_comboBox(),x);}
@@ -84,7 +84,7 @@ public class Actions
     public void setSemester(String x){r.setComboboxOption(boilerplate.getCiSemester_comboBox(),x);}
     public void setNumber(String x){r.setComboboxOption(boilerplate.getCiNumber_comboBox(),x);}
     public void setYear(String x){r.setComboboxOption(boilerplate.getCiYear_comboBox(),x);}
-    public void setTemplateDir(String x){boilerplate.getStTemplateDir_text().setText(x);}
+    public void setExportDir(String x){boilerplate.getCiExportDir_text().setText(x);}
     public void setRightFooterImagePath(String pathOrUrl){r.setImageViewLocatedImage(pathOrUrl,boilerplate.getPsRight_imageView());}
     public void setLeftFooterImagePath(String pathOrUrl){r.setImageViewLocatedImage(pathOrUrl,boilerplate.getPsLeft_imageView());}
     public void setBannerImagePath(String pathOrUrl){r.setImageViewLocatedImage(pathOrUrl,boilerplate.getPsBanner_imageView());}

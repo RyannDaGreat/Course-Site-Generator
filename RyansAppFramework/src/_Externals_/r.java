@@ -173,22 +173,32 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
-    public static String[]listAllPathsInDirectory(String directoryPath)
+    public static String[] listAllPathsInDirectory(String directoryPath)
     {
-        File[] files = listAllFilesInDirectory(directoryPath);
-        String[]sheets=new String[0];
-        if(files != null)
+        File[] files=listAllFilesInDirectory(directoryPath);
+        String[] sheets=new String[0];
+        if(files!=null)
         {
             sheets=new String[files.length];
+            int i=0;
+            for(File file : files)
+            {
+                sheets[i++]=file.getName();
+            }
         }
-        int i=0;
-        for (File file : files)
-            sheets[i++]=file.getName();
         return sheets;
     }
-    public static File[]listAllFilesInDirectory(String directoryPath)
+    public static File[] listAllFilesInDirectory(String directoryPath)
     {
+        if(directoryPath.startsWith("file:"))
+        {
+            directoryPath=directoryPath.substring("file:".length());
+        }
         return new File(directoryPath).listFiles();
+    }
+    public static void main(String[] asdasd)
+    {
+        System.out.println(Arrays.toString(listAllPathsInDirectory("file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/RyansAppFramework/src/_Externals_/_Resources_/_Documentation_")));
     }
     //region Squelchers
     public interface RunnableThatThrowsException
@@ -281,7 +291,7 @@ public class r
         {
             if(s.equals(key))
             {
-               return values[i];
+                return values[i];
             }
             i++;
         }
@@ -385,10 +395,6 @@ public class r
         dir=dir.substring(dir.indexOf('/'));
         dir=reversed(dir);
         return dir;
-    }
-    public static void main(String[] a)
-    {
-        System.out.println(getParentDir("/Users/Ryan/Desktop"));
     }
     public static void fxRunAsNewThreadTimer(double frequencyInHz,Runnable f)//Akin to a second-life timer, except it runs in javaFx as a new thread
     {

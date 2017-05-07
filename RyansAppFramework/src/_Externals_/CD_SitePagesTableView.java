@@ -101,7 +101,7 @@ public class CD_SitePagesTableView extends TableView
         {
             return fileName;
         }
-        public StringProperty scriptTitleProperty()
+        public StringProperty scriptProperty()
         {
             return script;
         }

@@ -6,3 +6,16 @@ def getNavbarTitle(nameOfHtmlFile,htmlFileContents):
   ans[1]
   ans.split("<")
   ans[0]
+  ArrayList<String>stateBuilder=new ArrayList<>();//FORMAT: Use,Navbar Title,HTML File Name,Script Name
+  for(File x:app.io.misc.getAvailableHtmlFilesInTemplate())//FORMAT
+  {
+      String todo1="TODO1";
+      String todo2="TODO2";
+      String name=x.getName();
+      stateBuilder.add("true,"+todo1+","+name+","+todo2);
+  }
+  String x=r.joinLines(stateBuilder.toArray()).replaceAll("\n",";");
+  System.out.println("KIMBO BOM");
+  System.out.println(x);
+  System.out.println("KIMBO BOMBO");
+  setSitePagesState(x);
