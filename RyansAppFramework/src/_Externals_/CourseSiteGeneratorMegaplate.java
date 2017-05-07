@@ -1449,8 +1449,17 @@ public class CourseSiteGeneratorMegaplate extends VBox
         pdTTextColor_text111117.setPrefWidth(value);
         // pdTTextColor_text111117.setBackground(Background);
         String value1="-fx-background-color: rgba(0,0,0,0);-fx-font-style: oblique;-fx-effect: dropshadow( gaussian , rgba(255,255,255,1) , 10, .4 , 0 , 0 )";
-        pdTColor_text111116.setStyle(value1);
-        pdTTextColor_text111117.setStyle(value1);
+        if(!app.io.propertyGetter.getAnimateHue())
+        {
+            pdTColor_text111116.setStyle(value1);
+            pdTTextColor_text111117.setStyle(value1);
+        }
+        else
+        {
+            pdTColor_text111116.setStyle("-fx-background-color: rgba(0,0,0,0);-fx-font-style: oblique;");
+            pdTTextColor_text111117.setStyle("-fx-background-color: rgba(0,0,0,0);-fx-font-style: oblique;");
+
+        }
         // pdTTextColor_text111117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         // pdTTextColor_text111117.setStrokeWidth(0.0);
         // pdTTextColor_text111117.setText(ResourceGetter.getProperty("prop265")); //$NON-NLS-1$

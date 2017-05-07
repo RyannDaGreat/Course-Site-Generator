@@ -43,12 +43,15 @@ public class Boilerplate extends CourseSiteGeneratorMegaplate//This class is a m
         {
             r.fxRunAsNewThreadTimer(propertyGetter.getHueShiftFramesPerSecond(),actions::updateAppHue);
         }
-        String graphicStyle=propertyGetter.getCircle_and_image_style();
-        cdPsBanner_imageView8.setStyle(graphicStyle);
-        cdPsLeft_imageView9.setStyle(graphicStyle);
-        cdPsRight_imageView10.setStyle(graphicStyle);
-        pdTColor_circle.setStyle(graphicStyle);
-        pdTTextColor_circle0.setStyle(graphicStyle);
+        else
+        {
+            String graphicStyle=propertyGetter.getCircle_and_image_style();
+            cdPsBanner_imageView8.setStyle(graphicStyle);
+            cdPsLeft_imageView9.setStyle(graphicStyle);
+            cdPsRight_imageView10.setStyle(graphicStyle);
+            pdTColor_circle.setStyle(graphicStyle);
+            pdTTextColor_circle0.setStyle(graphicStyle);
+        }
         // sdEndingFriday_datePicker.setStyle(graphicStlye);
         // sdStartingMonday_datePicker0.setStyle(graphicStlye);
         // sdDate_datePicker1.setStyle(graphicStlye);
