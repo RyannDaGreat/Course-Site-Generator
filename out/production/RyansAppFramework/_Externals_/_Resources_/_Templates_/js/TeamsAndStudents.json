@@ -1,11 +1,10 @@
-
 {
   "teams": [
     {
       "red": 230,
       "green": 128,
       "blue": 77,
-      "name": "Charlie And The Chocolate Project",
+      "name": "Bitter Sienna: #E6804D",
       "link": "atomic.bomb",
       "text_color": "#FFFF66"
     },
@@ -13,7 +12,7 @@
       "red": 117,
       "green": 77,
       "blue": 17,
-      "name": "The Manhattan Project",
+      "name": "Narrow Chocolate: #754D11",
       "link": "candy.bar",
       "text_color": "#FFFFFF"
     }
@@ -23,49 +22,49 @@
       "lastName": "Alpha",
       "firstName": "Betty",
       "role": "Lead Designer",
-      "team": "The Manhattan Project"
+      "team": "Bitter Sienna: #E6804D"
     },
     {
       "lastName": "Bethany",
       "firstName": "Smith",
       "role": "Lead Designer",
-      "team": "Charlie And The Chocolate Project"
+      "team": "Narrow Chocolate: #754D11"
     },
     {
       "lastName": "Beryy",
       "firstName": "Gumpyer",
       "role": "Project Manager",
-      "team": "Charlie And The Chocolate Project"
+      "team": "Narrow Chocolate: #754D11"
     },
     {
       "lastName": "Smily",
       "firstName": "Miller",
       "role": "Project Manager",
-      "team": "The Manhattan Project"
+      "team": "Bitter Sienna: #E6804D"
     },
     {
       "lastName": "Smelty",
       "firstName": "Pothead",
       "role": "Lead Programmer",
-      "team": "The Manhattan Project"
+      "team": "Bitter Sienna: #E6804D"
     },
     {
       "lastName": "Smokey",
       "firstName": "Weedface",
       "role": "Lead Programmer",
-      "team": "Charlie And The Chocolate Project"
+      "team": "Narrow Chocolate: #754D11"
     },
     {
       "lastName": "Snarly",
       "firstName": "Wompette",
       "role": "Data Designer",
-      "team": "Charlie And The Chocolate Project"
+      "team": "Narrow Chocolate: #754D11"
     },
     {
       "lastName": "Scotty",
       "firstName": "Oharley",
       "role": "Data Designer",
-      "team": "The Manhattan Project"
+      "team": "Bitter Sienna: #E6804D"
     }
   ]
 }
