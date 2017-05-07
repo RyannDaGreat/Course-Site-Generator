@@ -260,15 +260,15 @@ public class r
         String typeKey=key;//If this is not changed then we have an invalid key. To avoid errors we'll just let it go ahead anyway.
         assert keys.length==values.length;//If this fails we have a bad XML file
         int i=0;
-        for(String s : values)
+        for(String s : keys)
         {
             if(s.equals(key))
             {
-                typeKey=keys[i];
+               return values[i];
             }
             i++;
         }
-        return typeKey;
+        return typeKey+"_invalidKey";
     }
     //region Alerts:error and info
     //Unfortunately the ones in the r class can't work on a javaFx thread. So, I'm going to implement some here:

@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ryan-burgert-course-site-generator" default="all">
+  
+  
+  <property file="ryan-burgert-course-site-generator.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+    <include name="*.apk"/>
+    <include name="*.swc"/>
+    <include name="*.war"/>
+    <include name="*.ane"/>
+    <include name="*.zip"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="lib/ant-javafx.jar"/>
+      <include name="lib/dt.jar"/>
+      <include name="lib/javafx-mx.jar"/>
+      <include name="lib/jconsole.jar"/>
+      <include name="lib/packager.jar"/>
+      <include name="lib/sa-jdi.jar"/>
+      <include name="lib/tools.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.commons-io-2.5.classpath">
+    <pathelement location="${basedir}/commons-io-2.5-bin/commons-io-2.5/commons-io-2.5-javadoc.jar"/>
+    <pathelement location="${basedir}/commons-io-2.5-bin/commons-io-2.5/commons-io-2.5.jar"/>
+  </path>
+  
+  <path id="library.desktopjavaframework.classpath">
+    <pathelement location="${basedir}/DesktopJavaFramework/dist/DesktopJavaFramework.jar"/>
+  </path>
+  
+  <path id="library.kotlinjavaruntime.classpath">
+    <pathelement location="${basedir}/lib/kotlin-reflect.jar"/>
+    <pathelement location="${basedir}/lib/kotlin-runtime.jar"/>
+  </path>
+  
+  <path id="library.lib.classpath">
+    <pathelement location="${basedir}/TAManager_Solution/dist/lib/DesktopJavaFramework.jar"/>
+    <pathelement location="${basedir}/TAManager_Solution/dist/lib/PropertiesManager.jar"/>
+    <pathelement location="${basedir}/TAManager_Solution/dist/lib/javax.json-1.0.4.jar"/>
+  </path>
+  
+  <path id="library.org.json:json:20070829.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/json/json/20070829/json-20070829.jar"/>
+  </path>
+  
+  <path id="library.propertiesmanager.classpath">
+    <pathelement location="${basedir}/DesktopJavaFramework/dist/lib/PropertiesManager.jar"/>
+  </path>
+  
+  <path id="library.propertiesmanager1.classpath">
+    <pathelement location="${basedir}/PropertiesManager/dist/PropertiesManager.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module jTPS -->
+  
+  <dirname property="module.jtps.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.jtps" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.jtps" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.jtps" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.jtps" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="jtps.output.dir" value="${module.jtps.basedir}/out/production/jTPS"/>
+  <property name="jtps.testoutput.dir" value="${module.jtps.basedir}/out/test/jTPS"/>
+  
+  <path id="jtps.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="jtps.module.production.classpath">
+    <path refid="${module.jdk.classpath.jtps}"/>
+  </path>
+  
+  <path id="jtps.runtime.production.module.classpath">
+    <pathelement location="${jtps.output.dir}"/>
+  </path>
+  
+  <path id="jtps.module.classpath">
+    <path refid="${module.jdk.classpath.jtps}"/>
+    <pathelement location="${jtps.output.dir}"/>
+  </path>
+  
+  <path id="jtps.runtime.module.classpath">
+    <pathelement location="${jtps.testoutput.dir}"/>
+    <pathelement location="${jtps.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.jtps">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.jtps">
+    <patternset refid="excluded.from.module.jtps"/>
+  </patternset>
+  
+  <path id="jtps.module.sourcepath">
+    <dirset dir="${module.jtps.basedir}/jTPS">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.jtps" depends="compile.module.jtps.production,compile.module.jtps.tests" description="Compile module jTPS"/>
+  
+  <target name="compile.module.jtps.production" depends="register.custom.compilers" description="Compile module jTPS; production classes">
+    <mkdir dir="${jtps.output.dir}"/>
+    <javac2 destdir="${jtps.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.jtps}/javac">
+      <compilerarg line="${compiler.args.jtps}"/>
+      <bootclasspath refid="jtps.module.bootclasspath"/>
+      <classpath refid="jtps.module.production.classpath"/>
+      <src refid="jtps.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.jtps"/>
+    </javac2>
+    
+    <copy todir="${jtps.output.dir}">
+      <fileset dir="${module.jtps.basedir}/jTPS/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.jtps.tests" depends="register.custom.compilers,compile.module.jtps.production" description="compile module jTPS; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.jtps" description="cleanup module">
+    <delete dir="${jtps.output.dir}"/>
+    <delete dir="${jtps.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module PropertiesManager -->
+  
+  <dirname property="module.propertiesmanager.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.propertiesmanager" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.propertiesmanager" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.propertiesmanager" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.propertiesmanager" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="propertiesmanager.output.dir" value="${module.propertiesmanager.basedir}/out/production/PropertiesManager"/>
+  <property name="propertiesmanager.testoutput.dir" value="${module.propertiesmanager.basedir}/out/test/PropertiesManager"/>
+  
+  <path id="propertiesmanager.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="propertiesmanager.module.production.classpath">
+    <path refid="${module.jdk.classpath.propertiesmanager}"/>
+  </path>
+  
+  <path id="propertiesmanager.runtime.production.module.classpath">
+    <pathelement location="${propertiesmanager.output.dir}"/>
+  </path>
+  
+  <path id="propertiesmanager.module.classpath">
+    <path refid="${module.jdk.classpath.propertiesmanager}"/>
+    <pathelement location="${propertiesmanager.output.dir}"/>
+  </path>
+  
+  <path id="propertiesmanager.runtime.module.classpath">
+    <pathelement location="${propertiesmanager.testoutput.dir}"/>
+    <pathelement location="${propertiesmanager.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.propertiesmanager">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.propertiesmanager">
+    <patternset refid="excluded.from.module.propertiesmanager"/>
+  </patternset>
+  
+  <path id="propertiesmanager.module.sourcepath">
+    <dirset dir="${module.propertiesmanager.basedir}/PropertiesManager">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.propertiesmanager" depends="compile.module.propertiesmanager.production,compile.module.propertiesmanager.tests" description="Compile module PropertiesManager"/>
+  
+  <target name="compile.module.propertiesmanager.production" depends="register.custom.compilers" description="Compile module PropertiesManager; production classes">
+    <mkdir dir="${propertiesmanager.output.dir}"/>
+    <javac2 destdir="${propertiesmanager.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.propertiesmanager}/javac">
+      <compilerarg line="${compiler.args.propertiesmanager}"/>
+      <bootclasspath refid="propertiesmanager.module.bootclasspath"/>
+      <classpath refid="propertiesmanager.module.production.classpath"/>
+      <src refid="propertiesmanager.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.propertiesmanager"/>
+    </javac2>
+    
+    <copy todir="${propertiesmanager.output.dir}">
+      <fileset dir="${module.propertiesmanager.basedir}/PropertiesManager/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.propertiesmanager.tests" depends="register.custom.compilers,compile.module.propertiesmanager.production" description="compile module PropertiesManager; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.propertiesmanager" description="cleanup module">
+    <delete dir="${propertiesmanager.output.dir}"/>
+    <delete dir="${propertiesmanager.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module DesktopJavaFramework -->
+  
+  <dirname property="module.desktopjavaframework.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.desktopjavaframework" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.desktopjavaframework" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.desktopjavaframework" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.desktopjavaframework" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="desktopjavaframework.output.dir" value="${module.desktopjavaframework.basedir}/out/production/DesktopJavaFramework"/>
+  <property name="desktopjavaframework.testoutput.dir" value="${module.desktopjavaframework.basedir}/out/test/DesktopJavaFramework"/>
+  
+  <path id="desktopjavaframework.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="desktopjavaframework.module.production.classpath">
+    <path refid="${module.jdk.classpath.desktopjavaframework}"/>
+    <path refid="library.propertiesmanager1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.commons-io-2.5.classpath"/>
+    <path refid="library.propertiesmanager.classpath"/>
+    <pathelement location="${propertiesmanager.output.dir}"/>
+  </path>
+  
+  <path id="desktopjavaframework.runtime.production.module.classpath">
+    <pathelement location="${desktopjavaframework.output.dir}"/>
+    <path refid="library.propertiesmanager1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.commons-io-2.5.classpath"/>
+    <path refid="library.propertiesmanager.classpath"/>
+    <path refid="propertiesmanager.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="desktopjavaframework.module.classpath">
+    <path refid="${module.jdk.classpath.desktopjavaframework}"/>
+    <pathelement location="${desktopjavaframework.output.dir}"/>
+    <path refid="library.propertiesmanager1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.commons-io-2.5.classpath"/>
+    <path refid="library.propertiesmanager.classpath"/>
+    <pathelement location="${propertiesmanager.testoutput.dir}"/>
+    <pathelement location="${propertiesmanager.output.dir}"/>
+  </path>
+  
+  <path id="desktopjavaframework.runtime.module.classpath">
+    <pathelement location="${desktopjavaframework.testoutput.dir}"/>
+    <pathelement location="${desktopjavaframework.output.dir}"/>
+    <path refid="library.propertiesmanager1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.commons-io-2.5.classpath"/>
+    <path refid="library.propertiesmanager.classpath"/>
+    <path refid="propertiesmanager.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.desktopjavaframework">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.desktopjavaframework">
+    <patternset refid="excluded.from.module.desktopjavaframework"/>
+  </patternset>
+  
+  <path id="desktopjavaframework.module.sourcepath">
+    <dirset dir="${module.desktopjavaframework.basedir}/DesktopJavaFramework">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.desktopjavaframework" depends="compile.module.desktopjavaframework.production,compile.module.desktopjavaframework.tests" description="Compile module DesktopJavaFramework"/>
+  
+  <target name="compile.module.desktopjavaframework.production" depends="register.custom.compilers,compile.module.propertiesmanager" description="Compile module DesktopJavaFramework; production classes">
+    <mkdir dir="${desktopjavaframework.output.dir}"/>
+    <javac2 destdir="${desktopjavaframework.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.desktopjavaframework}/javac">
+      <compilerarg line="${compiler.args.desktopjavaframework}"/>
+      <bootclasspath refid="desktopjavaframework.module.bootclasspath"/>
+      <classpath refid="desktopjavaframework.module.production.classpath"/>
+      <src refid="desktopjavaframework.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.desktopjavaframework"/>
+    </javac2>
+    
+    <copy todir="${desktopjavaframework.output.dir}">
+      <fileset dir="${module.desktopjavaframework.basedir}/DesktopJavaFramework/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.desktopjavaframework.tests" depends="register.custom.compilers,compile.module.desktopjavaframework.production" description="compile module DesktopJavaFramework; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.desktopjavaframework" description="cleanup module">
+    <delete dir="${desktopjavaframework.output.dir}"/>
+    <delete dir="${desktopjavaframework.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module TAManager_Solution -->
+  
+  <dirname property="module.tamanager_solution.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.tamanager_solution" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.tamanager_solution" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.tamanager_solution" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.tamanager_solution" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="tamanager_solution.output.dir" value="${module.tamanager_solution.basedir}/out/production/TAManager_Solution"/>
+  <property name="tamanager_solution.testoutput.dir" value="${module.tamanager_solution.basedir}/out/test/TAManager_Solution"/>
+  
+  <path id="tamanager_solution.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="tamanager_solution.module.production.classpath">
+    <path refid="${module.jdk.classpath.tamanager_solution}"/>
+    <path refid="library.propertiesmanager1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.desktopjavaframework.classpath"/>
+    <path refid="library.propertiesmanager.classpath"/>
+    <pathelement location="${desktopjavaframework.output.dir}"/>
+    <pathelement location="${jtps.output.dir}"/>
+    <pathelement location="${propertiesmanager.output.dir}"/>
+  </path>
+  
+  <path id="tamanager_solution.runtime.production.module.classpath">
+    <pathelement location="${tamanager_solution.output.dir}"/>
+    <path refid="library.propertiesmanager1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.desktopjavaframework.classpath"/>
+    <path refid="library.propertiesmanager.classpath"/>
+    <path refid="desktopjavaframework.runtime.production.module.classpath"/>
+    <path refid="jtps.runtime.production.module.classpath"/>
+    <path refid="propertiesmanager.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="tamanager_solution.module.classpath">
+    <path refid="${module.jdk.classpath.tamanager_solution}"/>
+    <pathelement location="${tamanager_solution.output.dir}"/>
+    <path refid="library.propertiesmanager1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.desktopjavaframework.classpath"/>
+    <path refid="library.propertiesmanager.classpath"/>
+    <pathelement location="${desktopjavaframework.testoutput.dir}"/>
+    <pathelement location="${desktopjavaframework.output.dir}"/>
+    <pathelement location="${jtps.testoutput.dir}"/>
+    <pathelement location="${jtps.output.dir}"/>
+    <pathelement location="${propertiesmanager.testoutput.dir}"/>
+    <pathelement location="${propertiesmanager.output.dir}"/>
+  </path>
+  
+  <path id="tamanager_solution.runtime.module.classpath">
+    <pathelement location="${tamanager_solution.testoutput.dir}"/>
+    <pathelement location="${tamanager_solution.output.dir}"/>
+    <path refid="library.propertiesmanager1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.desktopjavaframework.classpath"/>
+    <path refid="library.propertiesmanager.classpath"/>
+    <path refid="desktopjavaframework.runtime.module.classpath"/>
+    <path refid="jtps.runtime.module.classpath"/>
+    <path refid="propertiesmanager.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.tamanager_solution">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.tamanager_solution">
+    <patternset refid="excluded.from.module.tamanager_solution"/>
+  </patternset>
+  
+  <path id="tamanager_solution.module.sourcepath">
+    <dirset dir="${module.tamanager_solution.basedir}/TAManager_Solution">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.tamanager_solution" depends="compile.module.tamanager_solution.production,compile.module.tamanager_solution.tests" description="Compile module TAManager_Solution"/>
+  
+  <target name="compile.module.tamanager_solution.production" depends="register.custom.compilers,compile.module.desktopjavaframework,compile.module.jtps,compile.module.propertiesmanager" description="Compile module TAManager_Solution; production classes">
+    <mkdir dir="${tamanager_solution.output.dir}"/>
+    <javac2 destdir="${tamanager_solution.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.tamanager_solution}/javac">
+      <compilerarg line="${compiler.args.tamanager_solution}"/>
+      <bootclasspath refid="tamanager_solution.module.bootclasspath"/>
+      <classpath refid="tamanager_solution.module.production.classpath"/>
+      <src refid="tamanager_solution.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.tamanager_solution"/>
+    </javac2>
+    
+    <copy todir="${tamanager_solution.output.dir}">
+      <fileset dir="${module.tamanager_solution.basedir}/TAManager_Solution/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.tamanager_solution.tests" depends="register.custom.compilers,compile.module.tamanager_solution.production" description="compile module TAManager_Solution; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.tamanager_solution" description="cleanup module">
+    <delete dir="${tamanager_solution.output.dir}"/>
+    <delete dir="${tamanager_solution.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module RyansAppFramework -->
+  
+  <dirname property="module.ryansappframework.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ryansappframework" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.ryansappframework" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.ryansappframework" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ryansappframework" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="ryansappframework.output.dir" value="${module.ryansappframework.basedir}/out/production/RyansAppFramework"/>
+  <property name="ryansappframework.testoutput.dir" value="${module.ryansappframework.basedir}/out/test/RyansAppFramework"/>
+  
+  <path id="ryansappframework.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ryansappframework.module.production.classpath">
+    <path refid="${module.jdk.classpath.ryansappframework}"/>
+    <pathelement location="${propertiesmanager.output.dir}"/>
+    <pathelement location="${desktopjavaframework.output.dir}"/>
+    <pathelement location="${tamanager_solution.output.dir}"/>
+    <path refid="library.org.json:json:20070829.classpath"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+    <pathelement location="${basedir}/RyansAppFramework/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/lib/junit-4.12.jar"/>
+    <path refid="library.commons-io-2.5.classpath"/>
+    <pathelement location="${basedir}/joda-time-1.6.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.6.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.6_2.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/appengine-tools-sdk-1.2.1.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.5.jar"/>
+  </path>
+  
+  <path id="ryansappframework.runtime.production.module.classpath">
+    <pathelement location="${ryansappframework.output.dir}"/>
+    <path refid="propertiesmanager.runtime.production.module.classpath"/>
+    <path refid="desktopjavaframework.runtime.production.module.classpath"/>
+    <path refid="tamanager_solution.runtime.production.module.classpath"/>
+    <path refid="library.org.json:json:20070829.classpath"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+    <pathelement location="${basedir}/RyansAppFramework/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/lib/junit-4.12.jar"/>
+    <path refid="library.commons-io-2.5.classpath"/>
+    <pathelement location="${basedir}/joda-time-1.6.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.6.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.6_2.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/appengine-tools-sdk-1.2.1.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.5.jar"/>
+  </path>
+  
+  <path id="ryansappframework.module.classpath">
+    <path refid="${module.jdk.classpath.ryansappframework}"/>
+    <pathelement location="${ryansappframework.output.dir}"/>
+    <pathelement location="${propertiesmanager.testoutput.dir}"/>
+    <pathelement location="${propertiesmanager.output.dir}"/>
+    <pathelement location="${desktopjavaframework.testoutput.dir}"/>
+    <pathelement location="${desktopjavaframework.output.dir}"/>
+    <pathelement location="${tamanager_solution.testoutput.dir}"/>
+    <pathelement location="${tamanager_solution.output.dir}"/>
+    <path refid="library.org.json:json:20070829.classpath"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+    <pathelement location="${basedir}/RyansAppFramework/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/lib/junit-4.12.jar"/>
+    <path refid="library.commons-io-2.5.classpath"/>
+    <pathelement location="${basedir}/joda-time-1.6.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.6.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.6_2.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/appengine-tools-sdk-1.2.1.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.5.jar"/>
+  </path>
+  
+  <path id="ryansappframework.runtime.module.classpath">
+    <pathelement location="${ryansappframework.testoutput.dir}"/>
+    <pathelement location="${ryansappframework.output.dir}"/>
+    <path refid="propertiesmanager.runtime.module.classpath"/>
+    <path refid="desktopjavaframework.runtime.module.classpath"/>
+    <path refid="tamanager_solution.runtime.module.classpath"/>
+    <path refid="library.org.json:json:20070829.classpath"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+    <pathelement location="${basedir}/RyansAppFramework/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/lib/junit-4.12.jar"/>
+    <path refid="library.commons-io-2.5.classpath"/>
+    <pathelement location="${basedir}/joda-time-1.6.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.6.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.6_2.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/appengine-tools-sdk-1.2.1.jar"/>
+    <pathelement location="${basedir}/RyansAppFramework/joda-time-1.5.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ryansappframework">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.ryansappframework">
+    <patternset refid="excluded.from.module.ryansappframework"/>
+  </patternset>
+  
+  <path id="ryansappframework.module.sourcepath">
+    <dirset dir="${module.ryansappframework.basedir}/RyansAppFramework">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ryansappframework" depends="compile.module.ryansappframework.production,compile.module.ryansappframework.tests" description="Compile module RyansAppFramework"/>
+  
+  <target name="compile.module.ryansappframework.production" depends="register.custom.compilers,compile.module.propertiesmanager,compile.module.desktopjavaframework,compile.module.tamanager_solution" description="Compile module RyansAppFramework; production classes">
+    <mkdir dir="${ryansappframework.output.dir}"/>
+    <javac2 destdir="${ryansappframework.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.ryansappframework}/javac">
+      <compilerarg line="${compiler.args.ryansappframework}"/>
+      <bootclasspath refid="ryansappframework.module.bootclasspath"/>
+      <classpath refid="ryansappframework.module.production.classpath"/>
+      <src refid="ryansappframework.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ryansappframework"/>
+    </javac2>
+    
+    <copy todir="${ryansappframework.output.dir}">
+      <fileset dir="${module.ryansappframework.basedir}/RyansAppFramework/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ryansappframework.tests" depends="register.custom.compilers,compile.module.ryansappframework.production" description="compile module RyansAppFramework; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ryansappframework" description="cleanup module">
+    <delete dir="${ryansappframework.output.dir}"/>
+    <delete dir="${ryansappframework.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.jtps, clean.module.propertiesmanager, clean.module.desktopjavaframework, clean.module.tamanager_solution, clean.module.ryansappframework" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.jtps, compile.module.propertiesmanager, compile.module.desktopjavaframework, compile.module.tamanager_solution, compile.module.ryansappframework" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.ryan-burgert-course-site-generator:jar" value="${basedir}/out/artifacts/ryan_burgert_course_site_generator_jar"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.ryan-burgert-course-site-generator.jar" value="${artifacts.temp.dir}/ryan-burgert-course-site-generator.jar"/>
+  </target>
+  
+  <target name="artifact.ryan-burgert-course-site-generator:jar" depends="init.artifacts, compile.module.desktopjavaframework, compile.module.propertiesmanager, compile.module.ryansappframework, compile.module.tamanager_solution, compile.module.jtps" description="Build &#39;ryan-burgert-course-site-generator:jar&#39; artifact">
+    <property name="artifact.temp.output.ryan-burgert-course-site-generator:jar" value="${artifacts.temp.dir}/ryan_burgert_course_site_generator_jar"/>
+    <mkdir dir="${artifact.temp.output.ryan-burgert-course-site-generator:jar}"/>
+    <jar destfile="${temp.jar.path.ryan-burgert-course-site-generator.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${desktopjavaframework.output.dir}"/>
+      <zipfileset dir="${propertiesmanager.output.dir}"/>
+      <zipfileset dir="${ryansappframework.output.dir}"/>
+      <zipfileset dir="${tamanager_solution.output.dir}"/>
+      <zipfileset dir="${jtps.output.dir}"/>
+      <zipfileset src="${basedir}/RyansAppFramework/lib/junit-4.12.jar"/>
+      <zipfileset src="${basedir}/RyansAppFramework/lib/hamcrest-core-1.3.jar"/>
+      <zipfileset src="${basedir}/TAManager_Solution/dist/lib/javax.json-1.0.4.jar"/>
+      <zipfileset src="${basedir}/TAManager_Solution/dist/lib/PropertiesManager.jar"/>
+      <zipfileset src="${basedir}/TAManager_Solution/dist/lib/DesktopJavaFramework.jar"/>
+      <zipfileset src="${basedir}/RyansAppFramework/joda-time-1.5.jar"/>
+      <zipfileset src="${basedir}/DesktopJavaFramework/dist/DesktopJavaFramework.jar"/>
+      <zipfileset src="${basedir}/commons-io-2.5-bin/commons-io-2.5/commons-io-2.5-javadoc.jar"/>
+      <zipfileset src="${basedir}/commons-io-2.5-bin/commons-io-2.5/commons-io-2.5.jar"/>
+      <zipfileset src="${basedir}/DesktopJavaFramework/dist/lib/PropertiesManager.jar"/>
+      <zipfileset src="${basedir}/PropertiesManager/dist/PropertiesManager.jar"/>
+      <zipfileset src="${basedir}/RyansAppFramework/appengine-tools-sdk-1.2.1.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/json/json/20070829/json-20070829.jar"/>
+    </jar>
+    <copy file="${temp.jar.path.ryan-burgert-course-site-generator.jar}" tofile="${artifact.temp.output.ryan-burgert-course-site-generator:jar}/ryan-burgert-course-site-generator.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.ryan-burgert-course-site-generator:jar" description="Build all artifacts">
+    <mkdir dir="${artifact.output.ryan-burgert-course-site-generator:jar}"/>
+    <copy todir="${artifact.output.ryan-burgert-course-site-generator:jar}">
+      <fileset dir="${artifact.temp.output.ryan-burgert-course-site-generator:jar}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

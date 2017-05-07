@@ -79,7 +79,7 @@ public class Reader
                                                                    accumulateIfNotSpace(temp,"topic",topic);
                                                                    accumulateIfNotSpace(temp,"link",x.link);
                                                                    accumulateIfNotSpace(temp,"criteria",x.criteria);
-                                                                   o.accumulate(r.mapString(x.typeProperty().getValue(),propertyGetter.getScheduleItemTypeKeys(),propertyGetter.getScheduleItemTypes()),temp);//Map {Holiday,Lecture,Recitation,Homework,Reference} to {holidays,lectures,recitations,hws,references} for the JSON file keys
+                                                                   o.accumulate(r.mapString(x.typeProperty().getValue(),propertyGetter.getScheduleItemTypes(),propertyGetter.getScheduleItemTypeKeys()),temp);//Map {Holiday,Lecture,Recitation,Homework,Reference} to {holidays,lectures,recitations,hws,references} for the JSON file keys
                                                                }
                                                                catch(JSONException e)
                                                                {

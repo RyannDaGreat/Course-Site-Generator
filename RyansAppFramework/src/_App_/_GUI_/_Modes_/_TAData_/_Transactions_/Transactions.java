@@ -22,12 +22,10 @@ public class Transactions
     //Toggle, Delete, Update, Add, ChangeTimes
     public void handleTADataChange(Runnable r)//Saves full state TAData change to create transaction
     {
-        // System.out.println(reader.getState());
-        // System.out.println();
-        final String beforeState=reader.getState();
-        r.run();
-        final String afterState=reader.getState();
-        rtps.DoWithoutRedo(()->actions.setState(afterState),()->actions.setState(beforeState));
+        // final String beforeState=reader.getState();
+        r.run();//Let the autotransactor take care of it
+        // final String afterState=reader.getState();
+        // rtps.DoWithoutRedo(()->actions.setState(afterState),()->actions.setState(beforeState));
     }
     public void deleteSelectedTa()
     {

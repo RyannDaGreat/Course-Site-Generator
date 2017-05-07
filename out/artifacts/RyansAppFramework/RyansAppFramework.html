@@ -1,0 +1,43 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'RyansAppFramework.jnlp'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedRyansAppFramework_id() {
+        dtjava.embed(
+            {
+                id : 'RyansAppFramework_id',
+                url : 'RyansAppFramework.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '600',
+                height : '400'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedRyansAppFramework_id);
+</script>
+
+</head><body>
+<h2>Test page for <b>RyansAppFramework</b></h2>
+  <b>Webstart:</b> <a href='RyansAppFramework.jnlp' onclick="return launchApplication('RyansAppFramework.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>

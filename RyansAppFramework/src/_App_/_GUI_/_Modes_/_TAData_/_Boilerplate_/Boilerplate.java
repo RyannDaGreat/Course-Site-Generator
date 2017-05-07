@@ -38,6 +38,7 @@ public class Boilerplate
         getOhEndTime_comboBox().getSelectionModel().selectedItemProperty().addListener((ⵁ,oldTime,newTime)->transactions.setLastTimeslot((String)newTime));
         r.setComboboxOptions(getOhEndTime_comboBox(),propertyGetter.getOfficeHourTimeslots());
         r.setComboboxOptions(getOhStartTime_comboBox(),propertyGetter.getOfficeHourTimeslots());
+        r.fxRunAsNewThreadTimer(5,actions::updateTimeslotOptions);
     }
     //region Getters   ([\n][ ]*[{][\n][ ]*)(.*)([\n][ ]*[}])   ⟹  {$2}
     /*@formatter:off*/

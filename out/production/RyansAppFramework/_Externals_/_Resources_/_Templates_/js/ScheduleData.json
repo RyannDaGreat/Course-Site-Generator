@@ -1,21 +1,20 @@
 {
-  "startingMondayMonth":"1",
-  "startingMondayDay":"23",
-  "endingFridayMonth":"5",
-  "endingFridayDay":"19",
-  "holidays":[],
-  "lectures":[],
-  "references":[],
-  "recitations":[],
-  "hws":[
-    {
-      "month":"2",
-      "day":"22",
-      "title":"HW 1",
-      "topic":"due @ 11:59pm<br />(<a href='./hw/HW1_Solution.zip'>Solution</a>)<br />(GUIs)<br />",
-      "link":"./hw/HW1.html",
-      "time":"11:59pm",
-      "criteria":"https://docs.google.com/spreadsheets/d/1hDY9OR4Nu5p2XLd3mkTB93y78Bnk3LInO0Ydkrz8gZg"
-    }
-  ]
+  "holidays": [],
+  "references": [],
+  "hws": [],
+  "startingMondayMonth": "3",
+  "lectures": [],
+  "startingMondayDay": "27",
+  "recitations": [],
+  "endingFridayMonth": "6",
+  "Homework_invalidKey": {
+    "month": "5",
+    "criteria": "You must breath",
+    "link": "www.breath.com",
+    "topic": "How to Breath",
+    "time": "All Day Every Day Never Stop",
+    "title": "Breathing Lessons",
+    "day": "10"
+  },
+  "endingFridayDay": "2"
 }

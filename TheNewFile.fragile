@@ -1,5 +1,5 @@
 {
-    "RecitationData": "A,B,C,D,E,F;A6,B5,C4,D3,E2,F1",
+    "RecitationData": "",
     "CourseDetails": {
         "SitePagesState": "true,A,B,AOIJ;false,C,D,AOIJS;true,E,F,aoisf;false,G,H,aiohf",
         "Semester": "null",
@@ -17,13 +17,13 @@
         "RightFooterImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png"
     },
     "ScheduleData": {
-        "EndingFriday": "2017-05-07",
-        "StartingMonday": "2017-05-07",
-        "TableState": "a,2017-04-10,c,d,b,c,d;e,f,g,h,b,c,d;i,j,k,l,b,c,d"
+        "EndingFriday": "2017-06-02",
+        "StartingMonday": "2017-03-27",
+        "TableState": "Homework,2017-05-10,Breathing Lessons,How to Breath,All Day Every Day Never Stop,www.breath.com,You must breath"
     },
-    "TAData": "true,A,B;false,C,D;true,E,F;false,G,H\n10:00am\t to\t11:00am,11:00am\t to\tNoon,Noon\t to\t1:00pm,1:00pm\t to\t2:00pm,2:00pm\t to\t3:00pm,3:00pm\t to\t4:00pm,4:00pm\t to\t5:00pm,5:00pm\t to\t6:00pm,6:00pm\t to\t7:00pm,7:00pm\t to\t8:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;",
+    "TAData": "true,A,B;false,C,D;true,E,F;false,G,H\n3:00am\t to\t3:30am,3:30am\t to\t4:00am,4:00am\t to\t4:30am,4:30am\t to\t5:00am;Monday,Tuesday,Wednesday,Thursday,Friday;3:00am\t to\t3:30am,Friday,C;3:30am\t to\t4:00am,Monday,C;3:30am\t to\t4:00am,Wednesday,C;4:30am\t to\t5:00am,Tuesday,C;4:30am\t to\t5:00am,Thursday,C",
     "ProjectData": {
-        "TeamsTable": "a,b,c,d;e,f,g,h;i,j,k,l",
-        "StudentsTable": "a,b,c,d;e,f,g,h;i,j,k,l"
+        "TeamsTable": "",
+        "StudentsTable": ""
     }
 }
