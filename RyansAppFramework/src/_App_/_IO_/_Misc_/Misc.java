@@ -2,6 +2,7 @@ package _App_._IO_._Misc_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_._Resources_.ResourceGetter;
+import _Externals_.r;
 
 import java.io.File;
 @SuppressWarnings("WeakerAccess")
@@ -17,9 +18,13 @@ public class Misc
     {
         propertyGetter=app.io.propertyGetter;
     }
-    public File getCurrentDirectory()
+    public static File getCurrentDirectory()
     {
         return new File(".");
+    }
+    public static String pwd()
+    {
+        return r.getParentDir(getCurrentDirectory().getAbsoluteFile().toString());///Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/
     }
     public String fileToString(File f)//Exists in case I want to use canonical path instead
     {
