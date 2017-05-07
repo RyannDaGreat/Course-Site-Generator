@@ -1,13 +1,7 @@
 {
   "holidays": [],
   "references": [],
-  "hws": [],
-  "startingMondayMonth": "3",
-  "lectures": [],
-  "startingMondayDay": "27",
-  "recitations": [],
-  "endingFridayMonth": "6",
-  "Homework_invalidKey": {
+  "hws": [{
     "month": "5",
     "criteria": "You must breath",
     "link": "www.breath.com",
@@ -15,6 +9,11 @@
     "time": "All Day Every Day Never Stop",
     "title": "Breathing Lessons",
     "day": "10"
-  },
+  }],
+  "startingMondayMonth": "3",
+  "lectures": [],
+  "startingMondayDay": "27",
+  "recitations": [],
+  "endingFridayMonth": "6",
   "endingFridayDay": "2"
 }

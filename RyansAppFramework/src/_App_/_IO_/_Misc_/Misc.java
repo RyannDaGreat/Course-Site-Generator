@@ -36,12 +36,11 @@ public class Misc
     }
     public static String[]getAvailableStylesheets()
     {
-        File[] files = (new File(pwd()+"work/css")).listFiles();
-        String[]sheets=new String[files.length];
-        int i=0;
-        for (File file : files)
-            sheets[i++]=file.getName();
-        return sheets;
+        return r.listAllPathsInDirectory(pwd()+"work/css");
+    }
+    public File[]getAvailableHtmlFilesInTemplate()
+    {
+        return r.listAllFilesInDirectory(app.gui.modes.courseDetails.reader.getTemplateDir());
     }
     //region Audio
     public static void playWav(String soundNameWithoutPathOrExtension)

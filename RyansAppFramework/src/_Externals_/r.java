@@ -173,6 +173,23 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public static String[]listAllPathsInDirectory(String directoryPath)
+    {
+        File[] files = listAllFilesInDirectory(directoryPath);
+        String[]sheets=new String[0];
+        if(files != null)
+        {
+            sheets=new String[files.length];
+        }
+        int i=0;
+        for (File file : files)
+            sheets[i++]=file.getName();
+        return sheets;
+    }
+    public static File[]listAllFilesInDirectory(String directoryPath)
+    {
+        return new File(directoryPath).listFiles();
+    }
     //region Squelchers
     public interface RunnableThatThrowsException
     {

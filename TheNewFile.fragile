@@ -2,19 +2,19 @@
     "RecitationData": "",
     "CourseDetails": {
         "SitePagesState": "true,A,B,AOIJ;false,C,D,AOIJS;true,E,F,aoisf;false,G,H,aiohf",
-        "Semester": "null",
+        "Semester": "North Korea",
         "ExportDir": "ioiioh",
-        "BannerImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png",
-        "Title": "",
-        "!state_key_cd_stylesheet!": "null",
-        "Subject": "null",
+        "BannerImage": "file:/Users/Ryan/Pictures/Desktop Backgrounds/8608-9.jpg",
+        "Title": "How To Kill A Mockingbird",
+        "!state_key_cd_stylesheet!": "sea_wolf.css",
+        "Subject": "WAE",
         "TemplateDir": ".\\templates\\CSE219",
-        "InstructorHome": "",
-        "Number": "null",
-        "Year": "null",
-        "InstructorName": "",
-        "LeftFooterImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png",
-        "RightFooterImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png"
+        "InstructorHome": "A dog house in southern nebraska cause why not",
+        "Number": "998",
+        "Year": "2099",
+        "InstructorName": "Dr. Doggy Von Woomphkins",
+        "LeftFooterImage": "file:/Users/Ryan/Pictures/Desktop Backgrounds/14561.jpg",
+        "RightFooterImage": "file:/Users/Ryan/Pictures/Desktop Backgrounds/14561.jpg"
     },
     "ScheduleData": {
         "EndingFriday": "2017-06-02",
@@ -23,7 +23,7 @@
     },
     "TAData": "true,A,B;false,C,D;true,E,F;false,G,H\n3:00am\t to\t3:30am,3:30am\t to\t4:00am,4:00am\t to\t4:30am,4:30am\t to\t5:00am;Monday,Tuesday,Wednesday,Thursday,Friday;3:00am\t to\t3:30am,Friday,C;3:30am\t to\t4:00am,Monday,C;3:30am\t to\t4:00am,Wednesday,C;4:30am\t to\t5:00am,Tuesday,C;4:30am\t to\t5:00am,Thursday,C",
     "ProjectData": {
-        "TeamsTable": "",
+        "TeamsTable": "Charlie And The Chocolate Project,Sincere Tan: #E6994D,Cultured Pale Violet Red: #994D66,www.google.com",
         "StudentsTable": ""
     }
 }

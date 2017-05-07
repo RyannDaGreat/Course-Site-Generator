@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 public class Actions
@@ -69,6 +70,12 @@ public class Actions
         handleChangeImage(this::setRightFooterImagePath);
     }
     //region Setters
+    public void setExportDir(String x)
+    {
+        for(File x:app.io.misc.getAvailableHtmlFilesInTemplate())
+        boilerplate.getStSitePages_tableView().setState()
+        boilerplate.getCiExportDir_text().setText(x);
+    }
     /*@formatter:off*/
     public void setSubject(String x){r.setComboboxOption(boilerplate.getCiSubject_comboBox(),x);}
     public void setTitle(String x){boilerplate.getCiTitle_textField().setText(x);}
@@ -77,7 +84,6 @@ public class Actions
     public void setSemester(String x){r.setComboboxOption(boilerplate.getCiSemester_comboBox(),x);}
     public void setNumber(String x){r.setComboboxOption(boilerplate.getCiNumber_comboBox(),x);}
     public void setYear(String x){r.setComboboxOption(boilerplate.getCiYear_comboBox(),x);}
-    public void setExportDir(String x){boilerplate.getCiExportDir_text().setText(x);}
     public void setTemplateDir(String x){boilerplate.getStTemplateDir_text().setText(x);}
     public void setRightFooterImagePath(String pathOrUrl){r.setImageViewLocatedImage(pathOrUrl,boilerplate.getPsRight_imageView());}
     public void setLeftFooterImagePath(String pathOrUrl){r.setImageViewLocatedImage(pathOrUrl,boilerplate.getPsLeft_imageView());}

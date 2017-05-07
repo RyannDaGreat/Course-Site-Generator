@@ -1,0 +1,10 @@
+{
+    "recitations": [
+        {   "section": "<strong>R01</strong> (McKenna)",    "day_time": "Mondays, 3:30pm-4:23pm",       "location": "Old Computer Science 2114", "ta_1": "Wonyong Jeong", "ta_2": "Chaeyoung Lee" },
+        {   "section": "<strong>R02</strong> (McKenna)",    "day_time": "Wednesdays, 3:30pm-4:23pm",    "location": "Old Computer Science 2114", "ta_1": "Yu Zhao", "ta_2": "Jerrel Sogoni" },
+        {   "section": "<strong>R03</strong> (McKenna)",    "day_time": "Mondays, 5:30pm-6:23pm",       "location": "Old Computer Science 2114", "ta_1": "Jacob Evans", "ta_2": "James Hoffman" },
+        {   "section": "<strong>R05</strong> (Banerjee)",   "day_time": "Tuesdays, 5:30pm-6:23pm",      "location": "Old Computer Science 2114", "ta_1": "Robert Trujillo", "ta_2": "Milto Ndrenika" },
+        {   "section": "<strong>R06</strong> (Banerjee)",   "day_time": "Thursdays, 5:30pm-6:23pm",     "location": "New Computer Science 2114", "ta_1": "Wonje Kang", "ta_2": "Michael Mathew" },
+        {   "section": "<strong>R07</strong> (Banerjee)",   "day_time": "Tuesdays, 4:00pm-4:53pm",      "location": "New Computer Science 2114", "ta_1": "Muhammad R Islam", "ta_2": "Ali Afzal" }
+    ]
+}
