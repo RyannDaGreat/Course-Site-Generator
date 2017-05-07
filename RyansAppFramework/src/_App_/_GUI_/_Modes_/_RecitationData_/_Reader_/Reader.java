@@ -17,6 +17,18 @@ public class Reader
         boilerplate=app.gui.modes.recitationData.boilerplate;
         propertyGetter=app.io.propertyGetter;
     }
+    public boolean containsTAName(String name)
+    {
+        boolean[] temp=new boolean[]{false};
+        boilerplate.getTableView().forAll(x->
+                                          {
+                                              if(x.ta2Property().getValue().equals(name)||x.ta1Property().getValue().equals(name))
+                                              {
+                                                  temp[0]=true;
+                                              }
+                                          });
+        return temp[0];
+    }
     public String getState()
     {
         return boilerplate.getTableView().getState();
