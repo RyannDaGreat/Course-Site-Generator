@@ -4,7 +4,10 @@ import _App_._GUI_._Dialogs_.Dialogs;
 import _App_._GUI_._Modes_._ProjectData_._Boilerplate_.Boilerplate;
 import _App_._GUI_._Modes_._ProjectData_._Reader_.Reader;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
-import _Externals_.*;
+import _Externals_.PD_StudentsTableView;
+import _Externals_.PD_TeamsTableView;
+import _Externals_.r;
+import _Externals_.rButton;
 import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
 import org.json.JSONException;
@@ -99,6 +102,7 @@ public class Actions
         else//Update mode
         {
             b.setText(propertyGetter.getUpdateButtonLabel());
+            b.setDisable(false);
         }
         if(reader.getTeamName().equals("")||reader.getTeamLink().equals(""))
         {
@@ -121,6 +125,15 @@ public class Actions
             else//Button is update mode
             {
                 assert boilerplate.getT_AddUpdate_button().getText().equals(propertyGetter.getUpdateButtonLabel());//This should always be true
+                String selectedTeamName=getSelectedTeam().field1Property().getValue();
+                String newTeamName=reader.getTeamName();
+                boilerplate.getS__tableView().forAll(x->//Update Team names on students
+                                                     {
+                                                         if(x.field3Property().getValue().equals(selectedTeamName))
+                                                         {
+                                                             x.field3Property().setValue(newTeamName);
+                                                         }
+                                                     });
                 boilerplate.getT__tableView().updateItem(reader.getTeamName(),reader.getTeamColorName(),reader.getTeamTextColorName(),reader.getTeamLink());
             }
         }

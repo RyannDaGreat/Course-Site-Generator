@@ -1,5 +1,6 @@
 package _App_._GUI_._Modes_._ScheduleData_._Actions_;
 import _App_.App;
+import _App_._GUI_._Dialogs_.Dialogs;
 import _App_._GUI_._Modes_._ScheduleData_._Boilerplate_.Boilerplate;
 import _App_._GUI_._Modes_._ScheduleData_._Reader_.Reader;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
@@ -20,11 +21,13 @@ public class Actions
     {
         this.app=app;
     }
+    private Dialogs dialogs;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         boilerplate=app.gui.modes.scheduleData.boilerplate;
         reader=app.gui.modes.scheduleData.reader;
         propertyGetter=app.io.propertyGetter;
+        dialogs=app.gui.dialogs;
         boilerplate.getSdScheduledItems_tableView().setOnItemSelected(this::updateFieldsToSelected);
     }
     public void updateFieldsToSelected()//Updates time,title,topic,link etc to the selected item
@@ -70,7 +73,8 @@ public class Actions
     {
         if(reader.getDate().equals(""+null)||!reader.isValidScheduleItemDate(LocalDate.parse(reader.getDate())))
         {
-            app.gui.dialogs.showInfoAlert("Error: Bad date; cannot add or update");
+            app.io.misc.playErrorSound();
+            dialogs.showInfoAlert(app.io.propertyGetter.getProperty("error.bad.date.cannot.add.or.update"));
             return;
         }
         //All checks passed: Continue the rest of it
