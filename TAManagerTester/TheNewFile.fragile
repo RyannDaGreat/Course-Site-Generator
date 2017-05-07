@@ -24,6 +24,6 @@
     "TAData": "false,Hooligan,Harvey@Hampton.com;false,Harry Pan,peter@potter.net;false,Donald Trump,please@impeach.me\n10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;",
     "ProjectData": {
         "TeamsTable": "Hello,Fast Royal Blue: #334DB3,White: #FFFFFF,World;Goodbye,Rhetorical Khaki: #CCCC66,Materialistic Grey: #003333,googdye.coie",
-        "StudentsTable": "asdf,asdf,Hello,asdf;asdf,asdfasdf,Goodbye,asdf;asdq,asd,Hello,asd"
+        "StudentsTable": "asdf,asdf,Hello,asdf;asdf,asdfasdf,Goodbye,asdf;asd,asd,Hello,asd"
     }
 }

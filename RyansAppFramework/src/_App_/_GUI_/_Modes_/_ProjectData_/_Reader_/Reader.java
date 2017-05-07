@@ -36,6 +36,10 @@ public class Reader
         o.accumulate("StudentsTable",getStudentsTableState());
         return o;
     }
+    public String getSelectedTeamName()
+    {
+        return boilerplate.getT__tableView().getSelected().field1Property().getValue();
+    }
     public JSONObject getTeamsAndStudentsExport()
     {
         JSONObject o=new JSONObject();

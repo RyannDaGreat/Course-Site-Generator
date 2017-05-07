@@ -211,26 +211,18 @@ public class Actions
         boilerplate.getS__tableView().deselect();
     }
     //endregion
-    public void deleteAllStudentsWithInvalidTeams()//This method is full of recursive mystery code :D  Have fun deciphering it!
+    public void deleteAllStudentsWithInvalidTeams(String teamName)//This method is full of recursive mystery code :D  Have fun deciphering it!
     {
+        PD_StudentsTableView t=boilerplate.getS__tableView();
         try
         {
-            PD_StudentsTableView t=boilerplate.getS__tableView();
-            boolean[] temp=new boolean[]{false};
-            t.forAll(x->
-                     {
-                         if(reader.hasTeam(x.field3Property().getValue()))
-                         {
-                             temp[0]=true;
-                         }
-                     });
-            if(temp[0])
+            if(willdelete(teamName,t)[0])
             {
                 if(dialogs.confirmDeleteStudents())
                 {
                     t.forAll(x->
                              {
-                                 if(reader.hasTeam(x.field3Property().getValue()))
+                                 if(teamName.equals(x.field3Property().getValue()))
                                  {
                                      t.remove(x);
                                  }
@@ -240,12 +232,27 @@ public class Actions
                 {
                     @SuppressWarnings("NumericOverflow") int i=1/0;//Prevent student from being deleted by throwing error. sloppy code that does the trick when budgeting my tme
                 }
-                deleteAllStudentsWithInvalidTeams();
+                deleteAllStudentsWithInvalidTeams(teamName);
             }
         }
         catch(ConcurrentModificationException ignored)
         {
-            deleteAllStudentsWithInvalidTeams();
+            if(willdelete(teamName,t)[0])
+            {
+                deleteAllStudentsWithInvalidTeams(teamName);
+            }
         }
+    }
+    private boolean[] willdelete(String teamName,PD_StudentsTableView t)
+    {
+        boolean[] temp=new boolean[]{false};
+        t.forAll(x->
+                 {
+                     if(teamName.equals(x.field3Property().getValue()))
+                     {
+                         temp[0]=true;
+                     }
+                 });
+        return temp;
     }
 }

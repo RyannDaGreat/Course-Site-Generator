@@ -1,6 +1,7 @@
 package _App_._GUI_._Modes_._ProjectData_._Boilerplate_;
 import _App_.App;
 import _App_._GUI_._Modes_._ProjectData_._Actions_.Actions;
+import _App_._GUI_._Modes_._ProjectData_._Reader_.Reader;
 import _Externals_.PD_StudentsTableView;
 import _Externals_.PD_TeamsTableView;
 import _Externals_.r;
@@ -16,10 +17,12 @@ public class Boilerplate
     }
     private _App_._GUI_._Window_._Boilerplate_.Boilerplate megaplate;
     private Actions actions;
+    private Reader reader;
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         megaplate=app.gui.window.boilerplate;
         actions=app.gui.modes.projectData.actions;
+        reader=app.gui.modes.projectData.reader;
         getT_TextColor_selector().setOnAction(ⵁ->actions.updateTeamCircleColors());
         getT_Color_selector().setOnAction(ⵁ->actions.updateTeamCircleColors());
         getT_AddUpdate_button().setAction(actions::handleTeamAddⳆUpdateButton);
@@ -34,7 +37,7 @@ public class Boilerplate
             actions.updateStudentsAddⳆUpdateButton();
             actions.updateStudentTeamComboboxOptions();
         });
-        getT__tableView().setOnRemoveSelected(actions::deleteAllStudentsWithInvalidTeams);
+        getT__tableView().setOnRemoveSelected(()->actions.deleteAllStudentsWithInvalidTeams(reader.getSelectedTeamName()));
     }
     //region Getters   ([\n][ ]*[{][\n][ ]*)(.*)([\n][ ]*[}])   ⟹  {$2}
     /*@formatter:off*/
