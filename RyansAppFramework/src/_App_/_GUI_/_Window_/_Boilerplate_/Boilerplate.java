@@ -12,7 +12,7 @@ public class Boilerplate extends CourseSiteGeneratorMegaplate//This class is a m
     private PropertyGetter propertyGetter;
     public Boilerplate(App app)
     {
-        super();
+        super(app);//This is horrible and disgusting but god damn it :(
         this.app=app;
     }
     public Actions actions;

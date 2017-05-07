@@ -1,6 +1,7 @@
 package _Externals_;
 //TODO Finish this class
 //http://stackoverflow.com/questions/20879242/get-checkbox-value-in-a-table-in-javafx
+import _App_.App;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 @SuppressWarnings("unchecked")
 public class TD_TATableView extends TableView
 {
+    private App app;
     public void addPerson(boolean undergrad,String name,String email)
     {
         getItems().add(new TA(undergrad,name,email));
@@ -52,7 +54,14 @@ public class TD_TATableView extends TableView
     }
     public void remove(TA ta)
     {
-        getItems().remove(ta);
+        if(app.gui.modes.recitationData.reader.containsTAName(ta.name.getValue()))
+        {
+            app.gui.dialogs.showCannotDeleteTaAlert();
+        }
+        else
+        {
+            getItems().remove(ta);
+        }
     }
     public void updateSelectedTANameEmail(String name,String email)
     {
@@ -118,8 +127,10 @@ public class TD_TATableView extends TableView
         }
         return true;
     }
-    public TD_TATableView(String undergradHeader,String nameHeader,String emailHeader)
+    public TD_TATableView(String undergradHeader,String nameHeader,String emailHeader,App app)//THis is an external and should NOT have access to the app but im pissed off because i got 24 hrs less than I thought I would, cutting my time to work on this in half.
     {
+        setMinHeight(50);
+        this.app=app;
         addPerson(true,"A","B");
         addPerson(false,"C","D");
         addPerson(true,"E","F");

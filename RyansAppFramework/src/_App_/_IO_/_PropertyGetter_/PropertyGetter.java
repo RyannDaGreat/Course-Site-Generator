@@ -77,6 +77,11 @@ public class PropertyGetter
     {
         return app.io.propertyGetter.getProperty("failed.to.load.file");
     }
+    public String getCannot_delete_ta()
+    {
+
+        return app.io.propertyGetter.getProperty("cannot_delete_ta");
+    }
     /*@formatter:on*/
     //endregion
     //region If I ever want to use XML for some reason

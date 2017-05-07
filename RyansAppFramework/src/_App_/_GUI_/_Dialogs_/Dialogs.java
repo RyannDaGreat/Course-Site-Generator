@@ -67,4 +67,8 @@ public class Dialogs
     {
         showErrorAlert(propertyGetter.getDirLoadErrorMessage());
     }
+    public void showCannotDeleteTaAlert()
+    {
+        showInfoAlert(propertyGetter.getCannot_delete_ta());
+    }
 }

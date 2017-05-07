@@ -1,4 +1,5 @@
 package _Externals_;//Created by Ryan on 5/4/17.
+import _App_.App;
 import _Externals_._Resources_.ResourceGetter;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -10,7 +11,7 @@ import javafx.scene.text.Text;
 public class CourseSiteGeneratorMegaplate extends VBox
 {
     //This class contains the whole GUI for the Course Site generator. This class does the grunt-work of actually creating the GUI and putting the components in the right places.
-    public CourseSiteGeneratorMegaplate()
+    public CourseSiteGeneratorMegaplate(App app)
     {
         anchorPane=new AnchorPane();
         gridPane=new GridPane();
@@ -134,7 +135,7 @@ public class CourseSiteGeneratorMegaplate extends VBox
         vBox4=new VBox();
         tdTa_tableView0=new TD_TATableView(ResourceGetter.getProperty("prop106"),
                                            ResourceGetter.getProperty("prop107"),
-                                           ResourceGetter.getProperty("prop108"));
+                                           ResourceGetter.getProperty("prop108"),app);
         tdTaUndergrad_tableColumn3=new TableColumn();
         tdTaName_tableColumn4=new TableColumn();
         tdTaEmail_tableColumn5=new TableColumn();
