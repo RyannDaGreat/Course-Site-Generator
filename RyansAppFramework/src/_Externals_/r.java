@@ -175,6 +175,30 @@ import java.util.regex.Pattern;
 @SuppressWarnings({"WeakerAccess","unused","Duplicates","SuspiciousNameCombination"})
 public class r
 {
+    public interface stringToString
+    {
+        String f(String x);
+    }
+    public static void modifyFileText(File file,stringToString mod)
+    {
+        try
+        {
+            String text=readFile(file);
+            text=mod.f(text);
+            try
+            {
+                WriteFile(file.getAbsolutePath(),text);
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        catch(FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
     public static File copyPasteDirectory(File source,File dest)
     {
         try

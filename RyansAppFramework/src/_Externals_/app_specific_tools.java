@@ -33,6 +33,17 @@ public class app_specific_tools
         //endregion
         return htmlFileContents.split(nameOfHtmlile)[1].split(">")[1].split("<")[0];
     }
+    public static String extractNavbarTitleHtml(String htmlCOntent)
+    {
+        //region Python
+        //s='<div id="navbar">'
+        //ans.split(s)
+        //ans[1]
+        //ans.split("</div>")
+        //ans[0]
+        //endregion
+        return htmlCOntent.split("<div id=\"navbar\">")[1].split("\"</div>\"")[0];
+    }
     public static void main(String[] a)
     {
         // System.out.println(scriptFromHtml());

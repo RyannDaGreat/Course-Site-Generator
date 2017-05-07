@@ -1,0 +1,20 @@
+{
+    "endHour": 10,
+    "startHour": 8,
+    "officeHours": [
+        {
+            "name": "G",
+            "time": "8_30am",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "G",
+            "time": "9_30am",
+            "day": "FRIDAY"
+        }
+    ],
+    "undergrad_tas": [{
+        "name": "G",
+        "email": "H@agoi.cao"
+    }]
+}
