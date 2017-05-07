@@ -54,5 +54,14 @@ public class Misc
     {
         playWav(propertyGetter.getError_sound());
     }
+    public void playAlertSound()
+    {
+        playWav(propertyGetter.getAlert_sound());
+    }
+    public void playDecisionSound()
+    {
+        //playWav(propertyGetter.getDecisionSound());
+        ResourceGetter.playWav("YesNo");
+    }
     //endregion
 }

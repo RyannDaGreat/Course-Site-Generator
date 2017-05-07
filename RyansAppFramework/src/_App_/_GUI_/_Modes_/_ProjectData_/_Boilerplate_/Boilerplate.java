@@ -3,6 +3,7 @@ import _App_.App;
 import _App_._GUI_._Modes_._ProjectData_._Actions_.Actions;
 import _Externals_.PD_StudentsTableView;
 import _Externals_.PD_TeamsTableView;
+import _Externals_.r;
 import _Externals_.rButton;
 import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
@@ -25,6 +26,7 @@ public class Boilerplate
         getT_Clear_button().setAction(actions::handleTeamClearButton);
         getT__tableView().setOnItemSelected(actions::updateTeamFieldsToSelected);
         getPsSTeam_comboBox().setOnMouseEntered(ⵁ->actions.updateStudentTeamComboboxOptions());
+        r.fxRunAsNewThreadTimer(5,actions::updateTeamAddⳆUpdateButton);
     }
     //region Getters   ([\n][ ]*[{][\n][ ]*)(.*)([\n][ ]*[}])   ⟹  {$2}
     /*@formatter:off*/

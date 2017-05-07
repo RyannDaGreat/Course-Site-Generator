@@ -113,7 +113,7 @@ public class Actions
             //region Fade out then close stage
             double fadeOutDurationInSeconds=1.5;//UserInput++
             double now=r.seconds();
-            r.fxRunAsNewThreadRepeatedly(60,()->//at 60fps
+            r.fxRunAsNewThreadTimer(60,()->//at 60fps
             {
                 double v=now-r.seconds()+fadeOutDurationInSeconds;
                 if(v>0)

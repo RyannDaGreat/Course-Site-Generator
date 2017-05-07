@@ -31,11 +31,16 @@ public class Dialogs
     }
     public boolean confirmChangeTATimesDeleteOfficehours()
     {
-        return r.fxYesNo(app.io.propertyGetter.getConfirmChangeTATimesDeleteOfficehoursMessage());
+        return yesNo(app.io.propertyGetter.getConfirmChangeTATimesDeleteOfficehoursMessage());
+    }
+    public boolean yesNo(String message)
+    {
+        app.io.misc.playDecisionSound();
+        return r.fxYesNo(message);
     }
     public boolean confirmSave()//Return true if they don't want to save OR they do want to save and select a valid path to save to (without clicking 'cancel'
     {
-        if(app.gui.toolbar.reader.saveButtonIsDisabled()||!r.fxYesNo(app.io.propertyGetter.getConfirmSaveMessage()))
+        if(app.gui.toolbar.reader.saveButtonIsDisabled()||!yesNo(app.io.propertyGetter.getConfirmSaveMessage()))
         {
             return true;//Don't bother to confirm saving; out file has clearly been saved already.  OR   If they don't want to save
         }
@@ -69,6 +74,7 @@ public class Dialogs
     }
     public void showCannotDeleteTaAlert()
     {
+        app.io.misc.playErrorSound();
         showInfoAlert(propertyGetter.getCannot_delete_ta());
     }
 }

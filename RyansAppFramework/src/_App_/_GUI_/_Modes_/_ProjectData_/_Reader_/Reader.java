@@ -1,6 +1,5 @@
 package _App_._GUI_._Modes_._ProjectData_._Reader_;
 import _App_.App;
-import _App_._GUI_._Modes_._ProjectData_._Actions_.Actions;
 import _App_._GUI_._Modes_._ProjectData_._Boilerplate_.Boilerplate;
 import _Externals_.PD_TeamsTableView;
 import _Externals_.r;
@@ -44,8 +43,8 @@ public class Reader
                                                  try
                                                  {
                                                      JSONObject temp=new JSONObject();
-                                                     temp.accumulate("name",t.field2Property().getValue());
-                                                     int[] rgb=r.hexToRGB(hexWithOrWithoutHashtagFromColorName(t.field2Property().getValue()));
+                                                     temp.accumulate("name",t.field2PropertyTeamColor().getValue());
+                                                     int[] rgb=r.hexToRGB(hexWithOrWithoutHashtagFromColorName(t.field2PropertyTeamColor().getValue()));
                                                      temp.accumulate("red",rgb[0]);
                                                      temp.accumulate("green",rgb[1]);
                                                      temp.accumulate("blue",rgb[2]);
@@ -84,9 +83,9 @@ public class Reader
                                                  try
                                                  {
                                                      JSONObject temp=new JSONObject();
-                                                     temp.accumulate("name",t.field1Property().getValue());
+                                                     temp.accumulate("name",t.field1PropertyTeamName().getValue());
                                                      temp.accumulate("link",t.field4Property().getValue());
-                                                     String teamName=t.field1Property().getValue();
+                                                     String teamName=t.field1PropertyTeamName().getValue();
                                                      boilerplate.getS__tableView().forAll(s->//s≣student
                                                                                           {
                                                                                               String studentTeamName=s.field3Property().getValue();
@@ -143,7 +142,7 @@ public class Reader
         PD_TeamsTableView t=boilerplate.getT__tableView();
         String[]x=new String[t.getItems().size()];
         int[]i=new int[]{0};
-        t.forAll(team->x[i[0]++]=team.field1Property().getValue());
+        t.forAll(team->x[i[0]++]=team.field1PropertyTeamName().getValue());
         return x;
     }
     public String getStudentTeam()
@@ -157,5 +156,29 @@ public class Reader
     public Color getColor()
     {
         return boilerplate.getT_Color_selector().getValue();
+    }
+    public boolean uniqueTeamName()//If text field team name is unique
+    {
+        boolean[] temp=new boolean[]{true};
+        boilerplate.getT__tableView().forAll(x->
+                                          {
+                                              if(x.field1PropertyTeamName().getValue().equals(getTeamName()))
+                                              {
+                                                  temp[0]=false;
+                                              }
+                                          });
+        return temp[0];
+    }
+    public boolean uniqueTeamColor()//If text field team name is unique
+    {
+        boolean[] temp=new boolean[]{true};
+        boilerplate.getT__tableView().forAll(x->
+                                          {
+                                              if(x.field2PropertyTeamColor().getValue().equals(getTeamColor()))
+                                              {
+                                                  temp[0]=false;
+                                              }
+                                          });
+        return temp[0];
     }
 }

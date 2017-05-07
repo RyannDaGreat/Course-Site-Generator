@@ -24,6 +24,17 @@ public class TD_TATableView extends TableView
     {
         return r.joinLines(getItems().toArray()).replaceAll("\n",";");
     }
+    public interface F
+    {
+        void f(TA x);
+    }
+    public void forAll(F f)
+    {
+        for(Object o : getItems())
+        {
+            f.f((TA)o);
+        }
+    }
     public void setState(String state)
     {
         getItems().clear();

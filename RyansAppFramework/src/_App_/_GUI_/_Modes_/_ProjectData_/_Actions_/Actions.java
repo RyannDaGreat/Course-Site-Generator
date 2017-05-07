@@ -3,16 +3,14 @@ import _App_.App;
 import _App_._GUI_._Modes_._ProjectData_._Boilerplate_.Boilerplate;
 import _App_._GUI_._Modes_._ProjectData_._Reader_.Reader;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
-import _Externals_.ColorNamer;
-import _Externals_.PD_StudentsTableView;
-import _Externals_.PD_TeamsTableView;
-import _Externals_.r;
+import _Externals_.*;
 import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import static _Externals_.ColorNamer.hexWithOrWithoutHashtagFromColorName;
+@SuppressWarnings("WeakerAccess")
 public class Actions
 {
     public App app;
@@ -75,8 +73,8 @@ public class Actions
         {
             return;
         }
-        setTeamName(selectedTeam.field1Property().getValue());
-        setTeamColor(hexWithOrWithoutHashtagFromColorName(selectedTeam.field2Property().getValue()));
+        setTeamName(selectedTeam.field1PropertyTeamName().getValue());
+        setTeamColor(hexWithOrWithoutHashtagFromColorName(selectedTeam.field2PropertyTeamColor().getValue()));
         setTeamTextColor(hexWithOrWithoutHashtagFromColorName(selectedTeam.field3Property().getValue()));
         setTeamLink(selectedTeam.field4Property().getValue());
         updateTeamAddⳆUpdateButton();
@@ -87,13 +85,19 @@ public class Actions
     }
     public void updateTeamAddⳆUpdateButton()//Update whether it says add or update, and whether its enabled or disabled
     {
-        if(getSelectedTeam()==null)
+        rButton b=boilerplate.getT_AddUpdate_button();
+        if(getSelectedTeam()==null)//Add mode
         {
-            boilerplate.getT_AddUpdate_button().setText(propertyGetter.getAddButtonLabel());
+            b.setDisable(!reader.uniqueTeamColor()&&!reader.uniqueTeamName());
+            b.setText(propertyGetter.getAddButtonLabel());
         }
-        else
+        else//Update mode
         {
-            boilerplate.getT_AddUpdate_button().setText(propertyGetter.getUpdateButtonLabel());
+            b.setText(propertyGetter.getUpdateButtonLabel());
+        }
+        if(reader.getTeamName().equals("")||reader.getTeamLink().equals(""))
+        {
+            b.setDisable(true);
         }
     }
     public void handleTeamClearButton()

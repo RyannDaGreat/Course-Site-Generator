@@ -18,6 +18,19 @@ public class Reader//It is not a coincidence that none of these methods have voi
         boilerplate=app.gui.modes.tadata.boilerplate;
         propertyGetter=app.io.propertyGetter;
     }
+    public boolean thereExistsTA(String name)
+    {
+        boolean[] temp=new boolean[]{false};
+        boilerplate.getTa_tableView().forAll(x->
+                                          {
+                                              if(x.nameProperty().getValue().equals(name))
+                                              {
+                                                  temp[0]=true;
+                                              }
+                                          });
+        return temp[0];
+    }
+
     public TD_TATableView.TA getSelectedTa()
     {
         return boilerplate.getTa_tableView().getSelected();

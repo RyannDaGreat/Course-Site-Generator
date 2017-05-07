@@ -63,8 +63,8 @@ public class PD_TeamsTableView extends TableView
     }
     public void updateItem(String field1,String field2,String field3,String field4)
     {
-        getSelected().field1Property().setValue(field1);
-        getSelected().field2Property().setValue(field2);
+        getSelected().field1PropertyTeamName().setValue(field1);
+        getSelected().field2PropertyTeamColor().setValue(field2);
         getSelected().field3Property().setValue(field3);
         getSelected().field4Property().setValue(field4);
     }
@@ -149,11 +149,11 @@ public class PD_TeamsTableView extends TableView
             this.field3=new SimpleStringProperty(field3);
             this.field4=new SimpleStringProperty(field4);
         }
-        public StringProperty field1Property()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
+        public StringProperty field1PropertyTeamName()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
         {
             return field1;
         }
-        public StringProperty field2Property()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
+        public StringProperty field2PropertyTeamColor()//MUST KEEP THIS METHOD OR CHIT WILL BREAK CAUSE JAVA REFLECTION BS
         {
             return field2;
         }

@@ -18,7 +18,7 @@ public class rTPS extends UndoRedoCoordinator
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
         refreshLastAppState();
-        r.fxRunAsNewThreadRepeatedly(app.io.propertyGetter.getAutotransactionsPerSecond(),this::tryToAutotransact);//AUTOTRANSACTOR: Set A timer to keep running refreshlastappstate on a new thread
+        r.fxRunAsNewThreadTimer(app.io.propertyGetter.getAutotransactionsPerSecond(),this::tryToAutotransact);//AUTOTRANSACTOR: Set A timer to keep running refreshlastappstate on a new thread
     }
     private void refreshLastAppState()
     {

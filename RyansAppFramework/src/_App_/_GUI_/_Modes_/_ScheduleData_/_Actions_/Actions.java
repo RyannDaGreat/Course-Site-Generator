@@ -44,17 +44,25 @@ public class Actions
     }
     public void updateAddⳆUpdateButton()//Update whether it says add or update, and whether its enabled or disabled
     {
-        if(reader.getSelected()==null)
+        boilerplate.getSdAddUpdate_button().setDisable(reader.getType().equals(""));
+        if(reader.getSelected()==null)//Add mode
         {
             boilerplate.getSdAddUpdate_button().setText(propertyGetter.getAddButtonLabel());
         }
-        else
+        else//Update mode
         {
             boilerplate.getSdAddUpdate_button().setText(propertyGetter.getUpdateButtonLabel());
+
         }
     }
     public void handleClear()
     {
+        setType("");
+        setTime("");
+        setTitle("");
+        setLink("");
+        setTopic("");
+        setCriteria("");
         boilerplate.getSdScheduledItems_tableView().getSelectionModel().clearSelection();
         updateAddⳆUpdateButton();
     }

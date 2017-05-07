@@ -79,8 +79,15 @@ public class PropertyGetter
     }
     public String getCannot_delete_ta()
     {
-
         return app.io.propertyGetter.getProperty("cannot_delete_ta");
+    }
+    public String getAlert_sound()
+    {
+        return app.io.propertyGetter.getProperty("alert_sound");
+    }
+    public String getDecisionSound()
+    {
+        return app.io.propertyGetter.getProperty("decision_sound");
     }
     /*@formatter:on*/
     //endregion

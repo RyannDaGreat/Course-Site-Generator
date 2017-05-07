@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import javafx.util.Duration;
 import org.json.JSONException;
@@ -373,7 +374,7 @@ public class r
     {
         System.out.println(getParentDir("/Users/Ryan/Desktop"));
     }
-    public static void fxRunAsNewThreadRepeatedly(double frequencyInHz,Runnable f)//Akin to a second-life timer, except it runs in javaFx as a new thread
+    public static void fxRunAsNewThreadTimer(double frequencyInHz,Runnable f)//Akin to a second-life timer, except it runs in javaFx as a new thread
     {
         Timeline timeline=new Timeline(new KeyFrame(Duration.seconds(1/frequencyInHz),x->f.run()));
         timeline.setCycleCount(Animation.INDEFINITE);

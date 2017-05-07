@@ -41,7 +41,7 @@ public class Boilerplate extends CourseSiteGeneratorMegaplate//This class is a m
         /*app.gui.window.boilerplate.*/
         if(propertyGetter.getAnimateHue())//Hue Shifter can be turned on/off in settings
         {
-            r.fxRunAsNewThreadRepeatedly(propertyGetter.getHueShiftFramesPerSecond(),actions::updateAppHue);
+            r.fxRunAsNewThreadTimer(propertyGetter.getHueShiftFramesPerSecond(),actions::updateAppHue);
         }
         String graphicStyle=propertyGetter.getCircle_and_image_style();
         cdPsBanner_imageView8.setStyle(graphicStyle);

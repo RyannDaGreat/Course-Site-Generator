@@ -53,7 +53,7 @@ public class Reader
     {
         return boilerplate.getLocation_textField().getText();
     }
-    public String getTA1()
+    public String getTA1Name()
     {
         return (String)boilerplate.getTA1_comboBox().getValue();
     }
@@ -65,7 +65,7 @@ public class Reader
     {
         return boilerplate.getAddUpdate_button().getText().equals(propertyGetter.getAddButtonLabel());
     }
-    public String getTA2()
+    public String getTA2Name()
     {
         return (String)boilerplate.getTA2_comboBox().getValue();
     }

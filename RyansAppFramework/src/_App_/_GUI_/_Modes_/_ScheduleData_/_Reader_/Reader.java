@@ -32,13 +32,19 @@ public class Reader
     public String getTableState(){return boilerplate.getSdScheduledItems_tableView().getState();}
     public String getStartingMonday(){return ""+boilerplate.getSdStartingMonday_datePicker().getValue();}
     public String getEndingFriday(){return ""+boilerplate.getSdEndingFriday_datePicker().getValue();}
-    public String getDate(){return ""+boilerplate.getSdDate_datePicker().getValue();}
-    public String getType(){return ""+boilerplate.getSdType_comboBox().getValue();}
-    public String getTime(){return boilerplate.getSdTime_textField().getText();}
-    public String getTitle(){return boilerplate.getSdTitle_textField().getText();}
-    public String getTopic(){return boilerplate.getSdTopic_textField().getText();}
-    public String getLink(){return boilerplate.getSdLink_textField().getText();}
-    public String getCriteria(){return boilerplate.getSdCriteria_textField().getText();}
+    public String getDate(){return emptyToSpace(""+boilerplate.getSdDate_datePicker().getValue());}
+    public String getType(){return emptyToSpace(""+boilerplate.getSdType_comboBox().getValue());}
+    public String getTime(){return emptyToSpace(boilerplate.getSdTime_textField().getText());}
+    public String getTitle(){return emptyToSpace(boilerplate.getSdTitle_textField().getText());}
+    public String getTopic(){return emptyToSpace(boilerplate.getSdTopic_textField().getText());}
+    public String getLink(){return emptyToSpace(boilerplate.getSdLink_textField().getText());}
+    public String getCriteria(){return emptyToSpace(boilerplate.getSdCriteria_textField().getText());}
+    public static String emptyToSpace(String x)
+    {
+        if(x.equals(""))
+            return " ";
+        return x;
+    }
     /*@formatter:on*/
     //endregion
     public JSONObject getState() throws JSONException

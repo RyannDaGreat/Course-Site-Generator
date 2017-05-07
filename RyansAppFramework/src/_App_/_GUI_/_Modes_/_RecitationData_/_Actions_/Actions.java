@@ -22,6 +22,7 @@ public class Actions
         boilerplate=app.gui.modes.recitationData.boilerplate;
         reader=app.gui.modes.recitationData.reader;
         propertyGetter=app.io.propertyGetter;
+        clearInputs();
     }
     public void setState(String state)
     {
@@ -40,10 +41,23 @@ public class Actions
         boilerplate.getInstructor_textField().setText(item.instructorProperty().getValue());
         boilerplate.getLocation_textField().setText(item.locationProperty().getValue());
         boilerplate.getSection_textField().setText(item.sectionProperty().getValue());
-        updateAddⳆUpdateButton();
+        refreshAddⳆUpdateButton();
     }
-    public void updateAddⳆUpdateButton()//Update whether it says add or update, and whether its enabled or disabled
+    public void refreshAddⳆUpdateButton()//Update whether it says add or update, and whether its enabled or disabled
     {
+        if(app.gui.modes.tadata.reader.thereExistsTA(reader.getTA1Name())&&
+           app.gui.modes.tadata.reader.thereExistsTA(reader.getTA2Name())&&
+           reader.getSection().length()>0&&
+           reader.getInstructor().length()>0&&
+           reader.getDayTime().length()>0&&
+           reader.getLocation().length()>0)
+        {
+            enableAddUpdateButton();
+        }
+        else
+        {
+            disableAddUpdateButton();
+        }
         if(boilerplate.getTableView().getSelected()==null)
         {
             boilerplate.getAddUpdate_button().setText(propertyGetter.getAddButtonLabel());
@@ -53,10 +67,18 @@ public class Actions
             boilerplate.getAddUpdate_button().setText(propertyGetter.getUpdateButtonLabel());
         }
     }
+    public void enableAddUpdateButton()
+    {
+        boilerplate.getAddUpdate_button().setDisable(false);
+    }
+    public void disableAddUpdateButton()
+    {
+        boilerplate.getAddUpdate_button().setDisable(true);
+    }
     public void handleClear()
     {
         boilerplate.getTableView().getSelectionModel().clearSelection();
-        updateAddⳆUpdateButton();
+        refreshAddⳆUpdateButton();
     }
     public void handleAddⳆUpdate()
     {
@@ -72,22 +94,24 @@ public class Actions
                 handleUpdateRecitation();
             }
         }
-        catch(Exception ignored){}
-        updateAddⳆUpdateButton();
+        catch(Exception ignored)
+        {
+        }
+        refreshAddⳆUpdateButton();
     }
     public void handleUpdateRecitation()
     {
-        boilerplate.getTableView().updateRecitation(reader.getSection(),reader.getInstructor(),reader.getDayTime(),reader.getLocation(),reader.getTA1(),reader.getTA2());
+        boilerplate.getTableView().updateRecitation(reader.getSection(),reader.getInstructor(),reader.getDayTime(),reader.getLocation(),reader.getTA1Name(),reader.getTA2Name());
     }
     public void handleAddRecitation()
     {
-        boilerplate.getTableView().addRecitation(reader.getSection(),reader.getInstructor(),reader.getDayTime(),reader.getLocation(),reader.getTA1(),reader.getTA2());
+        boilerplate.getTableView().addRecitation(reader.getSection(),reader.getInstructor(),reader.getDayTime(),reader.getLocation(),reader.getTA1Name(),reader.getTA2Name());
     }
     public void updateComboboxOptions()
     {
         ArrayList<String> tas=app.gui.modes.tadata.boilerplate.getTa_tableView().getTANames();
-        String ta1=reader.getTA1();//Im getting sloppy. This should be a method in reader. But I know what I'm doing and im too lazy to bother with it.
-        String ta2=reader.getTA2();
+        String ta1=reader.getTA1Name();//Im getting sloppy. This should be a method in reader. But I know what I'm doing and im too lazy to bother with it.
+        String ta2=reader.getTA2Name();
         ArrayList<String> ta1Options=new ArrayList<>();
         ArrayList<String> ta2Options=new ArrayList<>();
         for(String ta : tas)
@@ -118,6 +142,12 @@ public class Actions
     }
     public void clearInputs()
     {
-
+        boilerplate.getSection_textField().clear();
+        boilerplate.getInstructor_textField().clear();
+        boilerplate.getDayTime_textField().clear();
+        boilerplate.getLocation_textField().clear();
+        r.setComboboxOption(boilerplate.getTA1_comboBox(),"");
+        r.setComboboxOption(boilerplate.getTA2_comboBox(),"");
     }
+
 }

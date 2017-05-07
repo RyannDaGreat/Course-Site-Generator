@@ -34,6 +34,7 @@ public class Boilerplate
         getSdScheduledItems_tableView().setOnItemSelected(actions::updateAddⳆUpdateButton);
         getSdClear_button().setAction(actions::handleClear);
         getSdAddUpdate_button().setAction(actions::handleAddⳆUpdate);
+        r.fxRunAsNewThreadTimer(5,actions::updateAddⳆUpdateButton);
         //region Date-Picker Constraints
         r.applyDateFilter(getSdStartingMonday_datePicker(),x->
         {
