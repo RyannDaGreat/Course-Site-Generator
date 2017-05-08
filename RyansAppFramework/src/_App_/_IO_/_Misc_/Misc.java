@@ -3,7 +3,6 @@ import _App_.App;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_._Resources_.ResourceGetter;
 import _Externals_.r;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 @SuppressWarnings("WeakerAccess")
@@ -75,6 +74,10 @@ public class Misc
     public void playAlertSound()
     {
         playWav(propertyGetter.getAlert_sound());
+    }
+    public void playAutosaveSound()
+    {
+        playWav(app.io.propertyGetter.getProperty("autosave_sound"));
     }
     public void playDecisionSound()
     {

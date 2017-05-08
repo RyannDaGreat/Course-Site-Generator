@@ -1,14 +1,14 @@
 {
-    "holidays": [],
-    "references": [{
+    "holidays": [{
         "month": "5",
         "criteria": " asdf",
         "link": " asdf",
         "topic": " sadf",
         "time": "Time",
         "title": "Plate",
-        "day": "7"
+        "day": "10"
     }],
+    "references": [],
     "hws": [],
     "startingMondayMonth": "3",
     "lectures": [],

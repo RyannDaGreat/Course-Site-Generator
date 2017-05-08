@@ -4,6 +4,7 @@ import _App_._GUI_._Dialogs_.Dialogs;
 import _App_._GUI_._Modes_.Modes;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.r;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.stage.Stage;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,10 +26,20 @@ public class Saver
         modes=app.gui.modes;
         stage=app.stage;
         dialogs=app.gui.dialogs;
-
+        if(Boolean.parseBoolean(app.io.propertyGetter.getProperty("whether_to_use_autosave")))
+        {
+            r.fxRunAsNewThreadTimer(Double.parseDouble(app.io.propertyGetter.getProperty("AutoSaveFrequencyInHz")),this::autosave);
+        }
     }
+    boolean autosaveflag=false;
     public void autosave()//TODO Implement me...maybe...but right now I think ill have to ditch this idea for the sake of time.
     {
+        if(autosaveflag)
+        {
+            r.WriteFileIgnoreExceptions(app.io.misc.pwd()+"RyansAppFramework/work/Autosaves/"+"Autosave_"+System.currentTimeMillis()+".json",getAppState());
+            app.io.misc.playAutosaveSound();
+        }
+        autosaveflag=true;
     }
     public boolean isCurrentlyNewFile()
     {
@@ -37,7 +48,9 @@ public class Saver
     public String getCurrentFilePath()
     {
         if(isCurrentlyNewFile())
+        {
             return null;//Is a new file
+        }
         return stage.getTitle();
     }
     public void setCurrentFilePath(String path)
@@ -50,7 +63,7 @@ public class Saver
     }
     public String getAppState()//In JSON format
     {
-        JSONObject o = new JSONObject();
+        JSONObject o=new JSONObject();
         try
         {
             o.accumulate(propertyGetter.getStateKeyCourseDetails(),modes.courseDetails.reader.getState());
