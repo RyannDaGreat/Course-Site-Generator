@@ -1,27 +1,19 @@
 {
     "holidays": [],
-    "references": [],
-    "hws": [{
+    "references": [{
         "month": "5",
-        "criteria": "Who",
-        "link": "How",
-        "topic": "Why",
-        "time": "All Day",
-        "title": "Every Day",
-        "day": "12"
+        "criteria": " asdf",
+        "link": " asdf",
+        "topic": " sadf",
+        "time": "Time",
+        "title": "Plate",
+        "day": "7"
     }],
+    "hws": [],
     "startingMondayMonth": "3",
     "lectures": [],
     "startingMondayDay": "27",
-    "recitations": [{
-        "month": "5",
-        "criteria": "asdfasdfasdf",
-        "link": "fasdf",
-        "topic": "asdfas",
-        "time": "ASdaskod",
-        "title": "oidsjfoi",
-        "day": "7"
-    }],
+    "recitations": [],
     "endingFridayMonth": "6",
     "endingFridayDay": "9"
 }

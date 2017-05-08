@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="CSE 308 - Software Engineering - Spring 2017 Projects Page" />
+  <title>CSE 308 Projects</title> 
+  <link rel="stylesheet" type="text/css" href="./css/course_homepage_layout.css" />
+  <link rel="stylesheet" type="text/css" href="./css/sea_wolf.css" />
+  <style>
+   #projects_table
+   {
+    margin-left:auto; 
+    margin-right:auto;
+    width:800px;
+   }
+  </style>
+        <!-- LINK TO OUR JavaScript FILE AND JQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="./js/ProjectsBuilder.js"></script>
+
+	<!-- ONCE THE PAGE FULLY LOADS INITIALIZE THE SLIDESHOW -->
+        <script>
+	    $(document).ready()
+	    {
+		initProjects();
+	    }
+        </script>  
+ </head>
+
+
+ <body>
+
+  <div id="content">
+
+   <div id="navbar">
+    <a href="http://www.stonybrook.edu"><img class="sbu_navbar" alt="Stony Brook University" src="./images/SBUDarkRedShieldLogo.png" /></a>
+    <a id="home_link" class="nav" href="index.html">Home</a>
+    <a id="syllabus_link" class="nav" href="syllabus.html">Syllabus</a>
+    <a id="schedule_link" class="nav" href="schedule.html">Schedule</a>
+    <a id="hws_link" class="nav" href="hws.html">HWs</a>
+    <a id="projects_link" class="open_nav" href="projects.html">Projects</a>
+   </div>
+
+   <div id="banner">
+    CSE 308 - Spring 2017<br />
+    Software Engineering
+   </div>
+
+   <div id="desc">
+
+  <h3>STUDENT TEAM PROJECTS</h3>
+
+  <p>As student teams complete their projects, all work will be made public here. Below are some student apps developed in the past, which was a very different project, but does give you an indication of what finished Web apps might look like. Note the sites were all developed using <a href="https://developers.google.com/appengine">Google Technologies</a>. Note that the links provided for each project will take you to the functioning (mostly) Web app. Keep in mind this semester that the work you do will be made public for the world to see and enjoy for many years, so <strong><em>MAKE SOMETHING GREAT</em></strong>!<br /></p>
+
+  <div id="project_tables">
+      <!-- TO BE FILLED IN BY JAVASCRIPT -->
+  </div>
+<hr />
+
+
+     <a href="http://www.stonybrook.edu"><img class="sunysb" style="float:left" src="./images/SBUWhiteShieldLogo.jpg" alt="SBU" /></a>
+     <a href="http://www.cs.stonybrook.edu"><img style="float:right" src="./images/CSLogo.png" alt="CS" /></a>
+
+     <p style="font-size:9pt; text-align:center;">Web page created and maintained<br />
+     by <a href="http://www.cs.stonybrook.edu/~richard">Richard McKenna</a><br /><br /><br /><br /></p>
+   </div>
+  </div>
+
+ </body>
+</html>

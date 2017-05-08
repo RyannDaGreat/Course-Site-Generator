@@ -1,0 +1,29 @@
+{
+    "RecitationData": "",
+    "CourseDetails": {
+        "SitePagesState": "true,HWs,hws.html,HWsBuilder.js;true,Home,index.html,TeamsBuilder.js;true,Projects,projects.html,ProjectsBuilder.js;true,Schedule,schedule.html,ScheduleBuilder.js;true,Syllabus,syllabus.html,OfficeHoursGridBuilder.js",
+        "Semester": "North Korea",
+        "ExportDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/RyansAppFramework/work/ExportTests",
+        "BannerImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.50 PM.png",
+        "Title": "How To Kill A Mockingbird",
+        "!state_key_cd_stylesheet!": "sea_wolf.css",
+        "Subject": "WAE",
+        "TemplateDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/RyansAppFramework/src/_Externals_/_Resources_/_Templates_/CSE308_Template",
+        "InstructorHome": "http://www.omfgdogs.com/",
+        "Number": "998",
+        "Year": "2099",
+        "InstructorName": "Dr. Doggy Von Woomphkins",
+        "LeftFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.46 PM.png",
+        "RightFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.48 PM.png"
+    },
+    "ScheduleData": {
+        "EndingFriday": "2017-06-09",
+        "StartingMonday": "2017-03-27",
+        "TableState": "Recitation,2017-05-07,oidsjfoi,asdfas,ASdaskod,fasdf,asdfasdfasdf;Homework,2017-05-12,Every Day,Why,All Day,How,Who"
+    },
+    "TAData": "true,Ryan Burgert,ryan.burgert@gmail.com;false,Donald Trump,please@impeach.him;false,Creed Bratton,www.creedthoughts.gov@www.creedthoughts\n9:00am\t to\t9:30am,9:30am\t to\t10:00am,10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm,5:00pm\t to\t5:30pm,5:30pm\t to\t6:00pm,6:00pm\t to\t6:30pm,6:30pm\t to\t7:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;9:00am\t to\t9:30am,Monday,Creed Bratton;9:00am\t to\t9:30am,Wednesday,Donald Trump;9:00am\t to\t9:30am,Thursday,Ryan Burgert;9:00am\t to\t9:30am,Friday,Ryan Burgert;9:30am\t to\t10:00am,Monday,Creed Bratton;9:30am\t to\t10:00am,Tuesday,Ryan Burgert;9:30am\t to\t10:00am,Wednesday,Donald Trump;10:00am\t to\t10:30am,Monday,Creed Bratton;10:00am\t to\t10:30am,Tuesday,Ryan Burgert;10:00am\t to\t10:30am,Wednesday,Donald Trump;10:30am\t to\t11:00am,Monday,Creed Bratton;10:30am\t to\t11:00am,Tuesday,Ryan Burgert;10:30am\t to\t11:00am,Wednesday,Donald Trump;11:00am\t to\t11:30am,Tuesday,Ryan Burgert;11:00am\t to\t11:30am,Wednesday,Donald Trump;11:30am\t to\tNoon,Tuesday,Ryan Burgert;11:30am\t to\tNoon,Wednesday,Donald Trump;Noon\t to\t12:30pm,Wednesday,Donald Trump;12:30pm\t to\t1:00pm,Wednesday,Donald Trump;1:00pm\t to\t1:30pm,Wednesday,Donald Trump;1:30pm\t to\t2:00pm,Tuesday,Donald Trump;1:30pm\t to\t2:00pm,Wednesday,Donald Trump;1:30pm\t to\t2:00pm,Thursday,Donald Trump;2:00pm\t to\t2:30pm,Monday,Donald Trump;2:00pm\t to\t2:30pm,Tuesday,Donald Trump;2:00pm\t to\t2:30pm,Wednesday,Donald Trump;2:00pm\t to\t2:30pm,Thursday,Donald Trump;2:00pm\t to\t2:30pm,Friday,Donald Trump;2:30pm\t to\t3:00pm,Tuesday,Donald Trump;2:30pm\t to\t3:00pm,Wednesday,Donald Trump;2:30pm\t to\t3:00pm,Thursday,Donald Trump;3:00pm\t to\t3:30pm,Wednesday,Creed Bratton;3:00pm\t to\t3:30pm,Wednesday,Donald Trump;3:30pm\t to\t4:00pm,Tuesday,Creed Bratton;3:30pm\t to\t4:00pm,Wednesday,Creed Bratton;3:30pm\t to\t4:00pm,Wednesday,Donald Trump;3:30pm\t to\t4:00pm,Thursday,Creed Bratton;4:00pm\t to\t4:30pm,Monday,Creed Bratton;4:00pm\t to\t4:30pm,Tuesday,Creed Bratton;4:00pm\t to\t4:30pm,Wednesday,Creed Bratton;4:00pm\t to\t4:30pm,Wednesday,Donald Trump;4:00pm\t to\t4:30pm,Thursday,Creed Bratton;4:00pm\t to\t4:30pm,Friday,Creed Bratton;4:30pm\t to\t5:00pm,Tuesday,Creed Bratton;4:30pm\t to\t5:00pm,Wednesday,Creed Bratton;4:30pm\t to\t5:00pm,Thursday,Creed Bratton;5:00pm\t to\t5:30pm,Wednesday,Creed Bratton;5:30pm\t to\t6:00pm,Wednesday,Ryan Burgert;6:00pm\t to\t6:30pm,Tuesday,Ryan Burgert;6:00pm\t to\t6:30pm,Wednesday,Ryan Burgert;6:00pm\t to\t6:30pm,Thursday,Ryan Burgert;6:30pm\t to\t7:00pm,Monday,Ryan Burgert;6:30pm\t to\t7:00pm,Tuesday,Ryan Burgert;6:30pm\t to\t7:00pm,Wednesday,Ryan Burgert;6:30pm\t to\t7:00pm,Thursday,Ryan Burgert;6:30pm\t to\t7:00pm,Friday,Ryan Burgert",
+    "ProjectData": {
+        "TeamsTable": "The Manhattan Project,Periodic Deep Sky Blue: #00B3FF,Unwritten Hot Pink: #663366,https://en.wikipedia.org/wiki/Manhattan_ProjectBIWlp7sHL4O-x56DPCCwBPIw&sig2=_06-qro9MvYPxjfObZhxUg",
+        "StudentsTable": "James,DeCarlo,The Manhattan Project,Lead Programmer;Zach,Lerman,The Manhattan Project,Project Manager;Jose,Rodriguez,The Manhattan Project,Lead Designer;Rahul,Verma,The Manhattan Project,Data Designer"
+    }
+}

@@ -1,0 +1,83 @@
+1. Make IO work. Must be able to load XML properties.
+2. GUI Buttons/Tab Switching Etc
+3. Loading/Saving Files
+
+
+
+1. CHECKPOINT: Got Yes/No/Cancel and File IO dialogs working
+Everything is either public or private. No package-private or protected Bullcrud.
+You should only edit files in the _App_ package if that java file is the only file in its package
+
+TODO: Enable the custom CSS font once java is done etc
+
+ADVANTAGES OF MY WAY:
+My columns for the TA's cant be dragged off screen like McKenna's could.
+You can do the entire thing in Intellij without switching to netbeans just to run the code; and thus you can use the killall java command more liberally.
+Also learning tons about JavaFX, for example the uses of extending VBox etc
+I can use a graphic GUI designer and compile it to java code
+Discovering a lot of McKenna's rasons by seeing what doesn't work such as not using titled panes and instead just using anchor panes
+Just decided I'm going to try and minimize the amount of different types of JavaFX components that I'm using
+
+
+Arbitrary elements: Combobox/Button widths
+Padding sizes
+
+Rightnow one of my biggest priorities is making sure the window 'scales' properly; in other words not having buttons intersect each other or go off the screen etc. I decided to make it as parametric as possible; almost always using 'USE_COMOUTED_WIDTH' if I can, and adding a scroll bar in case it can't handle it (computes width makes it as small as possible, which is good)
+No longer using toolbar ecause anchors are easier to use
+
+
+
+AGENDA:
+
+Implement Checkboxes and stuff
+Make physical GUI
+Make XML Loader and language choice
+Wrap it all up (last hour)
+
+*My app has better icons. Took high resolution snapshots of the glyphicons, put them in photoshop, and made them have transparency for easier styling.
+Mine has tons of scroll panes and a split pane for TA data, which I think makes it a much much better GUI especially because it scales properly
+You can't drag my TAData tablview splitters off screen, like you can with McKennas
+By using the netbeans plugin I was able to explore more possibilities for the GUI, though it did distract me a lot...it looks wonderful though
+
+
+EXTRACTION:
+
+Using eclipse to 'Externalize Strings' of output of netbeans compiler of javafx code to java .properties file
+Discovered that java properties files are just like xml files except like 123 times simpler. (123 is a VERY simple number :P)
+I made my own code to translate the entire properties file to italian: courseSiteGeneratorTranslationTerminalLog (in the python standards folder; it's a copypasta of what was in the terminal when I did this (yes, I did it in the terminal using rpy))
+
+
+
+TODO:
+Ryan External Classes for GUI:
+Main GUI = vbox
+ModeSelector =TabPane (with style of course) (needn't nessecarily exist)
+Tab: Contains a vBox,
+
+DEFINTION OF _Externals_: Things that don't need an App reference to function properly.
+
+My app has a minimum height, unlike McKenna's app.
+
+My app has its own icon on the top.
+My app has more keyboard shortcuts.
+My app has a guarenteed-to-work without glitches TPS that has been optimized using the profiler so it never lags ( and fixed javafx memory leak).
+My app needs only ONE column for the TA times, instead of TWO. This is much more intuitive.
+My app responds to both the backspace AND delete buttons for deleting TA's, making it better for macs.
+My app doesn't need to spit error dialogs at the user as often as the original: changing office hour range and adding/updating TA is easy because it relies on the buttons being disabled/enabled.
+My app is so much prettier than the original, and it scales MUCH MUCH MUCH better too.
+My app keeps TAs in TA Grid in a consistent, alphabetical order
+My app makes sounds
+My app has ALL sbu majors
+My app lists north korea as an option :D
+My app has rainbow powers! Click the book.
+My app has smaller save files, using MATLAB matrix notation!
+
+PROJECT DATA PAGE: http://www3.cs.stonybrook.edu/~cse308/Section01/
+TA DATA: http://www3.cs.stonybrook.edu/~cse219/Section02/syllabus.html
+
+
+Beyond Expectations:
+Everything is undoable (everything that affects the save file, anyway)
+When selecting from tableviews, you can use arrow keys OR use the mouse. The choice is yours.
+Many things are restricted to the user input via constraint rather than error message.
+My Project can automatically generate color names! I made a whole python program just for it. And what's more: All of these color names are contained in the properties file!
