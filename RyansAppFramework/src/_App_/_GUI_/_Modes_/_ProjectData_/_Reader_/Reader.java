@@ -2,7 +2,7 @@ package _App_._GUI_._Modes_._ProjectData_._Reader_;
 import _App_.App;
 import _App_._GUI_._Modes_._ProjectData_._Boilerplate_.Boilerplate;
 import _Externals_.ColorNamer;
-import _Externals_.PD_TeamsTableView;
+import _Externals_._Components_.PD_TeamsTableView;
 import _Externals_.r;
 import javafx.scene.paint.Color;
 import org.json.JSONException;

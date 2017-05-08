@@ -1,5 +1,7 @@
-package _Externals_;
+package _Externals_._Components_;
+//TODO Finish this class
 //http://stackoverflow.com/questions/20879242/get-checkbox-value-in-a-table-in-javafx
+import _Externals_.r;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.TableColumn;
@@ -7,7 +9,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 @SuppressWarnings("unchecked")
-public class PD_TeamsTableView extends TableView
+public class PD_StudentsTableView extends TableView
 {
     public void addItem(String field1,String field2,String field3,String field4)
     {
@@ -16,6 +18,13 @@ public class PD_TeamsTableView extends TableView
     public String getState()
     {
         return r.joinLines(getItems().toArray()).replaceAll("\n",";");
+    }
+    public void updateItem(String field1,String field2,String field3,String field4)
+    {
+        getSelected().field1Property().setValue(field1);
+        getSelected().field2Property().setValue(field2);
+        getSelected().field3Property().setValue(field3);
+        getSelected().field4Property().setValue(field4);
     }
     @SuppressWarnings("Duplicates")
     public void setState(String state)
@@ -37,6 +46,10 @@ public class PD_TeamsTableView extends TableView
                 ignored.printStackTrace();
             }
         }
+    }
+    public void deselect()
+    {
+        getSelectionModel().clearSelection();
     }
     public Item getSelected()
     {
@@ -74,8 +87,7 @@ public class PD_TeamsTableView extends TableView
         }
         remove(getSelected());
     }
-
-    public void updateItem(String field1,String field2,String field3,String field4)
+    public void upfield2Item(String field1,String field2,String field3,String field4)
     {
         getSelected().field1Property().setValue(field1);
         getSelected().field2Property().setValue(field2);
@@ -86,7 +98,7 @@ public class PD_TeamsTableView extends TableView
     {
         getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->r.run());
     }
-    public PD_TeamsTableView(String field1Header,String field2Header,String field3Header,String field4Header)
+    public PD_StudentsTableView(String field1Header,String field2Header,String field3Header,String field4Header)
     {
         this.setMinHeight(150);
         setOnKeyPressed(ⵁ->r.branch(this::removeSelected,ⵁ.getCode()==KeyCode.DELETE||ⵁ.getCode()==KeyCode.BACK_SPACE));//Only keeping this because I have the auto-transactor!

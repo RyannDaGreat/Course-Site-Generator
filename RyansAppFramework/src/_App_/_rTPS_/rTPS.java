@@ -4,7 +4,7 @@ import _App_._GUI_._Toolbar_._Actions_.Actions;
 import _App_._GUI_._Window_.Window;
 import _Externals_.UndoRedoCoordinator;
 import _Externals_.r;
-import _Externals_.rTextField;
+import _Externals_._Components_.rTextField;
 import javafx.scene.control.Tab;
 
 import java.util.function.Supplier;

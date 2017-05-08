@@ -1,8 +1,7 @@
 package _App_._IO_._Exporter_;//Created by Ryan on 4/10/17.
 import _App_.App;
 import _App_._GUI_._Modes_._CourseDetails_._Reader_.Reader;
-import _Externals_.CD_SitePagesTableView;
-import _Externals_.app_specific_tools;
+import _Externals_._Components_.CD_SitePagesTableView;
 import _Externals_.r;
 import org.json.JSONException;
 

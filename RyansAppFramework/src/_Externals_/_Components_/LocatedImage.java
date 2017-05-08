@@ -1,4 +1,5 @@
-package _Externals_;
+package _Externals_._Components_;
+import _Externals_.r;
 import javafx.scene.image.Image;
 public class LocatedImage extends Image
 {

@@ -1,4 +1,4 @@
-package _Externals_;//Created by Ryan on 5/4/17.
+package _Externals_._Components_;//Created by Ryan on 5/4/17.
 import _App_.App;
 import _Externals_._Resources_.ResourceGetter;
 import javafx.geometry.HPos;

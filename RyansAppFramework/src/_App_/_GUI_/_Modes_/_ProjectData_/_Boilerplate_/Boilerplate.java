@@ -2,10 +2,10 @@ package _App_._GUI_._Modes_._ProjectData_._Boilerplate_;
 import _App_.App;
 import _App_._GUI_._Modes_._ProjectData_._Actions_.Actions;
 import _App_._GUI_._Modes_._ProjectData_._Reader_.Reader;
-import _Externals_.PD_StudentsTableView;
-import _Externals_.PD_TeamsTableView;
+import _Externals_._Components_.PD_StudentsTableView;
+import _Externals_._Components_.PD_TeamsTableView;
 import _Externals_.r;
-import _Externals_.rButton;
+import _Externals_._Components_.rButton;
 import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 public class Boilerplate

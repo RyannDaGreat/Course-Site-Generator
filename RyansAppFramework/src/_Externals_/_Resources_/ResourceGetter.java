@@ -1,9 +1,8 @@
 package _Externals_._Resources_;//Created by Ryan on 4/13/17.
-import _Externals_.LocatedImage;
+import _Externals_._Components_.LocatedImage;
 import _Externals_.r;
 import javafx.scene.media.Media;
 
-import java.io.File;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 public class ResourceGetter

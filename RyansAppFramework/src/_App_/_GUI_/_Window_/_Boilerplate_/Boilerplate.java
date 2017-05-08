@@ -2,7 +2,7 @@ package _App_._GUI_._Window_._Boilerplate_;
 import _App_.App;
 import _App_._GUI_._Window_._Actions_.Actions;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
-import _Externals_.CourseSiteGeneratorMegaplate;
+import _Externals_._Components_.CourseSiteGeneratorMegaplate;
 import _Externals_._Resources_.ResourceGetter;
 import _Externals_.r;
 import javafx.scene.control.TabPane;

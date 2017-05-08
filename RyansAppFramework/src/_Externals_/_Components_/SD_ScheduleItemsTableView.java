@@ -1,6 +1,7 @@
-package _Externals_;
+package _Externals_._Components_;
 //TODO Finish this class
 //http://stackoverflow.com/questions/20879242/get-checkbox-value-in-a-table-in-javafx
+import _Externals_.r;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.TableColumn;

@@ -1,9 +1,9 @@
 package _App_._GUI_._Modes_._RecitationData_._Boilerplate_;
 import _App_.App;
 import _App_._GUI_._Modes_._RecitationData_._Actions_.Actions;
-import _Externals_.RD_RecitationDataTableView;
+import _Externals_._Components_.RD_RecitationDataTableView;
 import _Externals_.r;
-import _Externals_.rButton;
+import _Externals_._Components_.rButton;
 import javafx.scene.control.*;
 public class Boilerplate
 {

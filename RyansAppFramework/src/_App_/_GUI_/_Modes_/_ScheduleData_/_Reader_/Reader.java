@@ -2,7 +2,7 @@ package _App_._GUI_._Modes_._ScheduleData_._Reader_;
 import _App_.App;
 import _App_._GUI_._Modes_._ScheduleData_._Boilerplate_.Boilerplate;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
-import _Externals_.SD_ScheduleItemsTableView;
+import _Externals_._Components_.SD_ScheduleItemsTableView;
 import _Externals_.r;
 import org.json.JSONException;
 import org.json.JSONObject;

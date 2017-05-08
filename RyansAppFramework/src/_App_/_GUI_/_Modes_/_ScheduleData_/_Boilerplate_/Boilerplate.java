@@ -3,9 +3,9 @@ import _App_.App;
 import _App_._GUI_._Modes_._ScheduleData_._Actions_.Actions;
 import _App_._GUI_._Modes_._ScheduleData_._Reader_.Reader;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
-import _Externals_.SD_ScheduleItemsTableView;
+import _Externals_._Components_.SD_ScheduleItemsTableView;
 import _Externals_.r;
-import _Externals_.rButton;
+import _Externals_._Components_.rButton;
 import javafx.scene.control.*;
 
 import java.time.DayOfWeek;

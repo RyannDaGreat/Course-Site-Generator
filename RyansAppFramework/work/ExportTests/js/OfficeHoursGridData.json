@@ -1,6 +1,16 @@
 {
     "endHour": 19,
     "startHour": 9,
+    "grad_tas": [
+        {
+            "name": "Donald Trump",
+            "email": "please@impeach.him"
+        },
+        {
+            "name": "Creed Bratton",
+            "email": "www.creedthoughts.gov@www.creedthoughts"
+        }
+    ],
     "officeHours": [
         {
             "name": "Creed Bratton",
@@ -283,18 +293,8 @@
             "day": "FRIDAY"
         }
     ],
-    "undergrad_tas": [
-        {
-            "name": "Ryan Burgert",
-            "email": "ryan.burgert@gmail.com"
-        },
-        {
-            "name": "Donald Trump",
-            "email": "please@impeach.him"
-        },
-        {
-            "name": "Creed Bratton",
-            "email": "www.creedthoughts.gov@www.creedthoughts"
-        }
-    ]
+    "undergrad_tas": [{
+        "name": "Ryan Burgert",
+        "email": "ryan.burgert@gmail.com"
+    }]
 }

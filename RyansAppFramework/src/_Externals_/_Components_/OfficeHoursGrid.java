@@ -1,5 +1,6 @@
-package _Externals_;//Created by Ryan on 4/12/17.
+package _Externals_._Components_;//Created by Ryan on 4/12/17.
 import _Externals_._Resources_.ResourceGetter;
+import _Externals_.r;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 
