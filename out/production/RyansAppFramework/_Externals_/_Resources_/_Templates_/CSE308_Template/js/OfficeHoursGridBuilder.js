@@ -63,6 +63,28 @@ function addUndergradTAs(data)
         tas.append(text);
     }
 }
+function addGradTAs(data)
+{
+    var tas = $("#grad_tas");
+    var tasPerRow = 4;
+    var numTAs = data.grad_tas.length;
+    for (var i = 0; i < data.grad_tas.length;)
+    {
+        var text = "";
+        text = "<tr>";
+        for (var j = 0; j < tasPerRow; j++)
+        {
+            var undergradTa = data.grad_tas[i];
+            if (true)
+            {
+                text += buildTACell(i, numTAs, undergradTa);
+            }
+            i++;
+        }
+        text += "</tr>";
+        tas.append(text);
+    }
+}
 function buildTACell(counter, numTAs, ta)
 {
     if (counter >= numTAs)

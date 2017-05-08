@@ -20,6 +20,11 @@
         {
             "name": "Donald Trump",
             "time": "9_00am",
+            "day": "MONDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "9_00am",
             "day": "WEDNESDAY"
         },
         {
@@ -38,6 +43,11 @@
             "day": "MONDAY"
         },
         {
+            "name": "Donald Trump",
+            "time": "9_30am",
+            "day": "MONDAY"
+        },
+        {
             "name": "Ryan Burgert",
             "time": "9_30am",
             "day": "TUESDAY"
@@ -49,6 +59,11 @@
         },
         {
             "name": "Creed Bratton",
+            "time": "10_00am",
+            "day": "MONDAY"
+        },
+        {
+            "name": "Donald Trump",
             "time": "10_00am",
             "day": "MONDAY"
         },

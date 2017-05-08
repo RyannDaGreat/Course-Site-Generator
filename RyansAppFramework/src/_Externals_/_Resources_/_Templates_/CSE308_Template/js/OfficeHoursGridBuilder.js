@@ -43,16 +43,47 @@ function initDays(data)
 
 function addUndergradTAs(data)
 {
-    var tas = $("#undergrad_tas");
+    try
+    {
+        var tas = $("#undergrad_tas");
+        var tasPerRow = 4;
+        var numTAs = data.undergrad_tas.length;
+        for (var i = 0; i < data.undergrad_tas.length;)
+        {
+            var text = "";
+            text = "<tr>";
+            for (var j = 0; j < tasPerRow; j++)
+            {
+                var undergradTa = data.undergrad_tas[i];
+                if (true)
+                {
+                    text += buildTACell(i, numTAs, undergradTa);
+                }
+                i++;
+            }
+            text += "</tr>";
+            tas.append(text);
+        }
+    }
+    catch(whocares)
+    {
+
+    }
+    finally
+    {addGradTAs(data);}
+}
+function addGradTAs(data)
+{
+    var tas = $("#grad_tas");
     var tasPerRow = 4;
-    var numTAs = data.undergrad_tas.length;
-    for (var i = 0; i < data.undergrad_tas.length;)
+    var numTAs = data.grad_tas.length;
+    for (var i = 0; i < data.grad_tas.length;)
     {
         var text = "";
         text = "<tr>";
         for (var j = 0; j < tasPerRow; j++)
         {
-            var undergradTa = data.undergrad_tas[i];
+            var undergradTa = data.grad_tas[i];
             if (true)
             {
                 text += buildTACell(i, numTAs, undergradTa);
