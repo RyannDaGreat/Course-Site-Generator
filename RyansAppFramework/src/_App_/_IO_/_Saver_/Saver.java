@@ -25,6 +25,10 @@ public class Saver
         modes=app.gui.modes;
         stage=app.stage;
         dialogs=app.gui.dialogs;
+
+    }
+    public void autosave()//TODO Implement me...maybe...but right now I think ill have to ditch this idea for the sake of time.
+    {
     }
     public boolean isCurrentlyNewFile()
     {

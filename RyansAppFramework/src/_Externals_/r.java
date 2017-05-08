@@ -199,6 +199,12 @@ public class r
             e.printStackTrace();
         }
     }
+    public static File stringToFile(String x)
+    {
+        if(x.startsWith("file:"))
+            x=x.substring("file:".length());
+        return new File(x);
+    }
     public static File copyPasteDirectory(File source,File dest)
     {
         try
@@ -211,12 +217,6 @@ public class r
             e.printStackTrace();
             return null;
         }
-    }
-    public static File stringToFile(String x)
-    {
-        if(x.startsWith("file:"))
-            x=x.substring("file:".length());
-        return new File(x);
     }
     public static File copyPasteFile(File sourceFile,File destDirectory)
     {

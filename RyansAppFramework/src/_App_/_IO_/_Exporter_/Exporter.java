@@ -65,6 +65,11 @@ public class Exporter
             String rightFooterImageName=rightFooterImage.getName();
             String bannerImageName=bannerImage.getName();
             //endregion
+            //Load CSS file into export
+            File globalCssDir=new File(exportDirPath+"/css");
+            File cssFile=r.stringToFile(app.io.misc.cssDirectoryPath()+"/"+app.gui.modes.courseDetails.reader.getStylesheet());
+            r.copyPasteFile(cssFile,globalCssDir);
+            //endregion
             //region Handle the HTML Files
             //region Delete Unused HTML Files
             ArrayList<CD_SitePagesTableView.page> usedPages=t.getUsedPages();

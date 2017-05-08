@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body
+{
+    background-color: rgb(118, 143, 165);
+    font-family: 'Quicksand', sans-serif;
+}
+
+td.course_num
+{
+    font-family: monospace;
+}
+
+p, li, td, th
+{
+    font-size: 13pt;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    color: #330099
+}
+
+#vbnaar
+{
+    background-color: #006600;
+    margin-top: 5px;
+}
+
+#nnbaer
+{
+    font-size: 24pt;
+    color: #ffffff;
+    background-color: #009900;
+}
+
+#desc
+{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+a.nav
+{
+    color: #ffffff;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+a.open_nav
+{
+    color: #ffffff;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+hr
+{
+    color: #111155;
+}
+
+a.open_nav:hover
+{
+
+}
+
+a.nav:hover
+{
+    color: #8f76a5;
+}
+
+a:hover
+{
+    color: #8f76a5;
+}
+
+a
+{
+    text-decoration: none;
+    color: #660033;
+    font-weight: bold;
+}
+
+span
+{
+    color: #8888ff;
+    font-weight: bold;
+}
+
+span.reading
+{
+    color: #009999;
+    font-weight: normal;
+}
+
+span.tutorial
+{
+    color: #009999;
+    font-weight: normal;
+}
+
+span.hw
+{
+    color: #009900;
+    font-weight: normal;
+}
+
+span.grading
+{
+    color: #117777;
+    font-weight: bold;
+}
+
+td.highlight
+{
+    background-color: #ff00ff;
+}
+
+table.hws
+{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th.hws
+{
+    padding-right: 80px;
+}
+
+td.hws
+{
+    padding-right: 80px;
+}
+
+.office_hours_schedule td
+{
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #e6e3eb;
+}
+
+td.time
+{
+    background-color: #bdae63;
+    color: black;
+}
+
+td.open
+{
+    background-color: #64dc64;
+}
+
+td.lecture
+{
+    background-color: #7c6797;
+}
+
+td.tas
+{
+    width: 260px;
+}
+
+.office_hours_schedule th
+{
+    background-color: #78b4b4;
+}
+
+.email
+{
+    font-size: 11pt;
+    color: black;
+    font-weight: normal;
+}

@@ -3,6 +3,7 @@ import _App_.App;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_._Resources_.ResourceGetter;
 import _Externals_.r;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 @SuppressWarnings("WeakerAccess")
@@ -36,7 +37,11 @@ public class Misc
     }
     public static String[]getAvailableStylesheets()
     {
-        return r.listAllPathsInDirectory(pwd()+"work/css");
+        return r.listAllPathsInDirectory(cssDirectoryPath());
+    }
+    public static String cssDirectoryPath()
+    {
+        return pwd()+"RyansAppFramework/work/css";
     }
     public File[]getAvailableHtmlFilesInTemplate()
     {

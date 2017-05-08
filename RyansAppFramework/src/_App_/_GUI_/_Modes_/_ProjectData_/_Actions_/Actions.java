@@ -125,6 +125,8 @@ public class Actions
     public void handleTeamClearButton()
     {
         boilerplate.getT__tableView().getSelectionModel().clearSelection();
+        setTeamLink("");
+        setTeamName("");
         updateTeamAddⳆUpdateButton();
     }
     public void handleTeamAddⳆUpdateButton()
@@ -236,8 +238,7 @@ public class Actions
         boilerplate.getS_Role_textField().setText("");
         boilerplate.getS__tableView().deselect();
     }
-    //endregion
-    public void deleteAllStudentsWithInvalidTeams(String teamName)//This method is full of recursive mystery code :D  Have fun deciphering it!
+    public void deleteAllStudentsWithInvalidTeams(String teamName)//This method is full of recursive mystery code :D  Have fun deciphering it! This is what happens when you press a programmer for time i guess...
     {
         PD_StudentsTableView t=boilerplate.getS__tableView();
         try
@@ -281,4 +282,5 @@ public class Actions
                  });
         return temp;
     }
+    //endregion
 }
