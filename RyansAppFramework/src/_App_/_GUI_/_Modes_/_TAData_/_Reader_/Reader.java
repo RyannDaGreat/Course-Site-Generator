@@ -106,6 +106,7 @@ public class Reader//It is not a coincidence that none of these methods have voi
                                                      {
                                                          temp.accumulate("name",x.nameProperty().getValue());
                                                          temp.accumulate("email",x.emailProperty().getValue());
+                                                         temp.accumulate("undergrad",x.undergradProperty().getValue());
                                                          o.append("undergrad_tas",temp);
                                                      }
                                                      catch(JSONException e)

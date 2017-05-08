@@ -74,7 +74,7 @@ public class Boilerplate
             }
             return x.getDayOfWeek().equals(DayOfWeek.FRIDAY)&&x.isAfter(LocalDate.parse(reader.getStartingMonday()));
         });
-        r.applyDateFilter(getSdDate_datePicker(),reader::isValidScheduleItemDate);
+        r.applyDateFilter(getSdDate_datePicker(),(x)->reader.isValidScheduleItemDate(x)&&x.getDayOfWeek()!=DayOfWeek.SATURDAY&&x.getDayOfWeek()!=DayOfWeek.SUNDAY);
         //endregion
     }
     //region Getters   ([\n][ ]*[{][\n][ ]*)(.*)([\n][ ]*[}])   ⟹  {$2}

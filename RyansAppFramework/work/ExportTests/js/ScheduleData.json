@@ -1,7 +1,15 @@
 {
     "holidays": [],
     "references": [],
-    "hws": [],
+    "hws": [{
+        "month": "5",
+        "criteria": "Who",
+        "link": "How",
+        "topic": "Why",
+        "time": "All Day",
+        "title": "Every Day",
+        "day": "12"
+    }],
     "startingMondayMonth": "3",
     "lectures": [],
     "startingMondayDay": "27",

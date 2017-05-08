@@ -19,11 +19,11 @@
     "ScheduleData": {
         "EndingFriday": "2017-06-09",
         "StartingMonday": "2017-03-27",
-        "TableState": "Recitation,2017-05-07,oidsjfoi,asdfas,ASdaskod,fasdf,asdfasdfasdf"
+        "TableState": "Recitation,2017-05-07,oidsjfoi,asdfas,ASdaskod,fasdf,asdfasdfasdf;Homework,2017-05-09,Every Day,Why,All Day,How,Who"
     },
-    "TAData": "false,G,H@agoi.cao\n8:30am\t to\t9:00am,9:00am\t to\t9:30am,9:30am\t to\t10:00am,10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm,5:00pm\t to\t5:30pm,5:30pm\t to\t6:00pm,6:00pm\t to\t6:30pm,6:30pm\t to\t7:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;8:30am\t to\t9:00am,Thursday,G;9:30am\t to\t10:00am,Friday,G;10:00am\t to\t10:30am,Wednesday,G;10:30am\t to\t11:00am,Thursday,G;1:00pm\t to\t1:30pm,Monday,G;1:00pm\t to\t1:30pm,Tuesday,G;1:00pm\t to\t1:30pm,Thursday,G;1:30pm\t to\t2:00pm,Tuesday,G;2:00pm\t to\t2:30pm,Wednesday,G",
+    "TAData": "false,G,H@agoi.cao\n8:30am\t to\t9:00am,9:00am\t to\t9:30am,9:30am\t to\t10:00am,10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm,5:00pm\t to\t5:30pm,5:30pm\t to\t6:00pm,6:00pm\t to\t6:30pm,6:30pm\t to\t7:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;8:30am\t to\t9:00am,Monday,G;8:30am\t to\t9:00am,Tuesday,G;8:30am\t to\t9:00am,Wednesday,G;8:30am\t to\t9:00am,Thursday,G;9:00am\t to\t9:30am,Monday,G;9:00am\t to\t9:30am,Tuesday,G;9:00am\t to\t9:30am,Wednesday,G;9:00am\t to\t9:30am,Thursday,G;9:30am\t to\t10:00am,Monday,G;9:30am\t to\t10:00am,Tuesday,G;9:30am\t to\t10:00am,Wednesday,G;9:30am\t to\t10:00am,Thursday,G;9:30am\t to\t10:00am,Friday,G;10:00am\t to\t10:30am,Monday,G;10:00am\t to\t10:30am,Tuesday,G;10:00am\t to\t10:30am,Wednesday,G;10:00am\t to\t10:30am,Thursday,G;10:30am\t to\t11:00am,Monday,G;10:30am\t to\t11:00am,Tuesday,G;10:30am\t to\t11:00am,Wednesday,G;10:30am\t to\t11:00am,Thursday,G;11:00am\t to\t11:30am,Wednesday,G;11:30am\t to\tNoon,Tuesday,G;1:00pm\t to\t1:30pm,Monday,G;1:00pm\t to\t1:30pm,Tuesday,G;1:00pm\t to\t1:30pm,Thursday,G;1:30pm\t to\t2:00pm,Tuesday,G;2:00pm\t to\t2:30pm,Wednesday,G",
     "ProjectData": {
-        "TeamsTable": "",
-        "StudentsTable": ""
+        "TeamsTable": "The Manhattan Project,Periodic Deep Sky Blue: #00B3FF,Unwritten Hot Pink: #663366,https://en.wikipedia.org/wiki/Manhattan_ProjectBIWlp7sHL4O-x56DPCCwBPIw&sig2=_06-qro9MvYPxjfObZhxUg",
+        "StudentsTable": "James,DeCarlo,The Manhattan Project,Lead Programmer;Zach,Lerman,The Manhattan Project,Project Manager;Jose,Rodriguez,The Manhattan Project,Lead Designer;Rahul,Verma,The Manhattan Project,Data Designer"
     }
 }

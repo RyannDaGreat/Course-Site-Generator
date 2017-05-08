@@ -1,1 +1,36 @@
-{}
+{
+    "teams": [{
+        "red": 0,
+        "green": 179,
+        "blue": 255,
+        "name": "Periodic Deep Sky Blue: #00B3FF",
+        "link": "https://en.wikipedia.org/wiki/Manhattan_ProjectBIWlp7sHL4O-x56DPCCwBPIw&sig2=_06-qro9MvYPxjfObZhxUg",
+        "text_color": "#663366"
+    }],
+    "students": [
+        {
+            "firstName": "James",
+            "lastName": "DeCarlo",
+            "role": "Lead Programmer",
+            "team": "Periodic Deep Sky Blue: #00B3FF"
+        },
+        {
+            "firstName": "Zach",
+            "lastName": "Lerman",
+            "role": "Project Manager",
+            "team": "Periodic Deep Sky Blue: #00B3FF"
+        },
+        {
+            "firstName": "Jose",
+            "lastName": "Rodriguez",
+            "role": "Lead Designer",
+            "team": "Periodic Deep Sky Blue: #00B3FF"
+        },
+        {
+            "firstName": "Rahul",
+            "lastName": "Verma",
+            "role": "Data Designer",
+            "team": "Periodic Deep Sky Blue: #00B3FF"
+        }
+    ]
+}

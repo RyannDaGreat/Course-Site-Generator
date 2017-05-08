@@ -1,55 +1,300 @@
 {
     "endHour": 19,
-    "startHour": 8,
+    "startHour": 9,
     "officeHours": [
         {
-            "name": "G",
-            "time": "8_30am",
+            "name": "Creed Bratton",
+            "time": "9_00am",
+            "day": "MONDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "9_00am",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "9_00am",
             "day": "THURSDAY"
         },
         {
-            "name": "G",
-            "time": "9_30am",
+            "name": "Ryan Burgert",
+            "time": "9_00am",
             "day": "FRIDAY"
         },
         {
-            "name": "G",
+            "name": "Creed Bratton",
+            "time": "9_30am",
+            "day": "MONDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "9_30am",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "9_30am",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "10_00am",
+            "day": "MONDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "10_00am",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Donald Trump",
             "time": "10_00am",
             "day": "WEDNESDAY"
         },
         {
-            "name": "G",
+            "name": "Creed Bratton",
             "time": "10_30am",
-            "day": "THURSDAY"
-        },
-        {
-            "name": "G",
-            "time": "1_00pm",
             "day": "MONDAY"
         },
         {
-            "name": "G",
-            "time": "1_00pm",
+            "name": "Ryan Burgert",
+            "time": "10_30am",
             "day": "TUESDAY"
         },
         {
-            "name": "G",
-            "time": "1_00pm",
-            "day": "THURSDAY"
+            "name": "Donald Trump",
+            "time": "10_30am",
+            "day": "WEDNESDAY"
         },
         {
-            "name": "G",
+            "name": "Ryan Burgert",
+            "time": "11_00am",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "11_00am",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "11_30am",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "11_30am",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "12_00pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "12_30pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "1_00pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
             "time": "1_30pm",
             "day": "TUESDAY"
         },
         {
-            "name": "G",
+            "name": "Donald Trump",
+            "time": "1_30pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "1_30pm",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "2_00pm",
+            "day": "MONDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "2_00pm",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Donald Trump",
             "time": "2_00pm",
             "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "2_00pm",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "2_00pm",
+            "day": "FRIDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "2_30pm",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "2_30pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "2_30pm",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "3_00pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "3_00pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "3_30pm",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "3_30pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "3_30pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "3_30pm",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "4_00pm",
+            "day": "MONDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "4_00pm",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "4_00pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Donald Trump",
+            "time": "4_00pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "4_00pm",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "4_00pm",
+            "day": "FRIDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "4_30pm",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "4_30pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "4_30pm",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "Creed Bratton",
+            "time": "5_00pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "5_30pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "6_00pm",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "6_00pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "6_00pm",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "6_30pm",
+            "day": "MONDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "6_30pm",
+            "day": "TUESDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "6_30pm",
+            "day": "WEDNESDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "6_30pm",
+            "day": "THURSDAY"
+        },
+        {
+            "name": "Ryan Burgert",
+            "time": "6_30pm",
+            "day": "FRIDAY"
         }
     ],
-    "undergrad_tas": [{
-        "name": "G",
-        "email": "H@agoi.cao"
-    }]
+    "undergrad_tas": [
+        {
+            "name": "Ryan Burgert",
+            "email": "ryan.burgert@gmail.com"
+        },
+        {
+            "name": "Donald Trump",
+            "email": "please@impeach.him"
+        },
+        {
+            "name": "Creed Bratton",
+            "email": "www.creedthoughts.gov@www.creedthoughts"
+        }
+    ]
 }
