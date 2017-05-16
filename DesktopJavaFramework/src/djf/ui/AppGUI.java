@@ -1,4 +1,6 @@
 package djf.ui;
+import djf.AppTemplate;
+import djf.controller.AppFileController;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,17 +13,12 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import properties_manager.PropertiesManager;
-import djf.controller.AppFileController;
-import djf.AppTemplate;
-
-import static djf.settings.AppPropertyType.*;
-import static djf.settings.AppStartupConstants.FILE_PROTOCOL;
-import static djf.settings.AppStartupConstants.PATH_IMAGES;
-
-import djf.components.AppStyleComponent;
 
 import static djf.components.AppStyleComponent.CLASS_BORDERED_PANE;
 import static djf.components.AppStyleComponent.CLASS_FILE_BUTTON;
+import static djf.settings.AppPropertyType.*;
+import static djf.settings.AppStartupConstants.FILE_PROTOCOL;
+import static djf.settings.AppStartupConstants.PATH_IMAGES;
 /**
  * This class provides the basic user interface for this application,
  * including all the file controls, but not including the workspace,
@@ -32,6 +29,9 @@ import static djf.components.AppStyleComponent.CLASS_FILE_BUTTON;
  */
 public class AppGUI
 {
+
+
+
     // THIS HANDLES INTERACTIONS WITH FILE-RELATED CONTROLS
     protected AppFileController fileController;
     // THIS IS THE APPLICATION WINDOW

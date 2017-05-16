@@ -322,7 +322,6 @@ public class AppFileController
         if(selection.equals(AppYesNoCancelDialogSingleton.YES))
         {
             // SAVE THE DATA FILE
-            AppDataComponent dataManager=app.getDataComponent();
             if(currentWorkFile==null)
             {
                 // PROMPT THE USER FOR A FILE NAME

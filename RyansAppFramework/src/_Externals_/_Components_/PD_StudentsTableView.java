@@ -87,13 +87,6 @@ public class PD_StudentsTableView extends TableView
         }
         remove(getSelected());
     }
-    public void upfield2Item(String field1,String field2,String field3,String field4)
-    {
-        getSelected().field1Property().setValue(field1);
-        getSelected().field2Property().setValue(field2);
-        getSelected().field3Property().setValue(field3);
-        getSelected().field4Property().setValue(field4);
-    }
     public void setOnItemSelected(Runnable r)
     {
         getSelectionModel().selectedItemProperty().addListener((ⵁ,oldSelected,newSelected)->r.run());

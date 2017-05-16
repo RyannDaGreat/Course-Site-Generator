@@ -4,11 +4,10 @@ import _App_._GUI_._Dialogs_.Dialogs;
 import _App_._GUI_._Modes_.Modes;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.r;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.stage.Stage;
 import org.json.JSONException;
 import org.json.JSONObject;
-@SuppressWarnings("WeakerAccess")
+@SuppressWarnings({"WeakerAccess","AccessStaticViaInstance"})
 public class Saver
 {
     public App app;

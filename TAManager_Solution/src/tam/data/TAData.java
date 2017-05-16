@@ -62,12 +62,12 @@ public class TAData implements AppDataComponent
         startHour=MIN_START_HOUR;
         endHour=MAX_END_HOUR;
         //THIS WILL STORE OUR OFFICE HOURS
-        officeHours=new HashMap();
+        officeHours=new HashMap<>();
         // THESE ARE THE LANGUAGE-DEPENDENT OFFICE HOURS GRID HEADERS
         PropertiesManager props=PropertiesManager.getPropertiesManager();
         ArrayList<String> timeHeaders=props.getPropertyOptionsList(TAManagerProp.OFFICE_HOURS_TABLE_HEADERS);
         ArrayList<String> dowHeaders=props.getPropertyOptionsList(TAManagerProp.DAYS_OF_WEEK);
-        gridHeaders=new ArrayList();
+        gridHeaders=new ArrayList<>();
         gridHeaders.addAll(timeHeaders);
         gridHeaders.addAll(dowHeaders);
     }
@@ -104,7 +104,7 @@ public class TAData implements AppDataComponent
     {
         return gridHeaders;
     }
-    public ObservableList getTeachingAssistants()
+    public ObservableList<TeachingAssistant> getTeachingAssistants()
     {
         return teachingAssistants;
     }
@@ -200,7 +200,7 @@ public class TAData implements AppDataComponent
     public void updateTime(int newStartHour,int newEndHour)
     {
         HashMap<String,StringProperty> newOfficeHours;
-        newOfficeHours=new HashMap();
+        newOfficeHours=new HashMap<>();
         TAWorkspace workspaceComponent=(TAWorkspace)app.getWorkspaceComponent();
         int shiftIndex=(newEndHour-newStartHour)*2+1;
         int oldStartRow=(newStartHour-startHour)*2+1;

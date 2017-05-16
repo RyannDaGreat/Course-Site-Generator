@@ -163,7 +163,8 @@ public class OfficeHoursGrid extends rGridPane
                                                  });
                              x.setOnMouseEntered(ⵁ->forEachChild(t->
                                                                  {
-                                                                     if(rowTitle(t).equals(rowTitle(x))&&getColumnIndex(x)>=getColumnIndex(t)||colTitle(t).equals(colTitle(x))&&getRowIndex(x)>=getRowIndex(t))
+                                                                     if(rowTitle(t).equals(rowTitle(x))&&getColumnIndex(x)>=getColumnIndex(t)||
+                                                                        colTitle(t).equals(colTitle(x))&&   getRowIndex(x)>=getRowIndex(t))
                                                                      {
                                                                          if(isTitle(t)||rowTitle(t).equals(rowTitle(x))&&colTitle(t).equals(colTitle(x)))
                                                                          {

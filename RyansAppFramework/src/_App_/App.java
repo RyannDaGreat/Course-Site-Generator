@@ -6,7 +6,6 @@ import _Externals_._Resources_.ResourceGetter;
 import _Externals_.r;
 import javafx.application.Application;
 import javafx.scene.Scene;
-
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -16,8 +15,6 @@ public class App extends Application//This is the head of the tree. It's special
     public IO io;
     public GUI gui;
     public rTPS rtps;
-
-
     public Stage stage;
     public App()
     {

@@ -1,0 +1,29 @@
+{
+    "RecitationData": "A,B,C,D,E,F;A6,B5,C4,D3,E2,F1",
+    "CourseDetails": {
+        "SitePagesState": "true,G,H,aiohf;true,E,F,aoisf;true,C,D,AOIJS;true,A,B,AOIJ",
+        "Semester": "Spring",
+        "ExportDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/work/ExportTests",
+        "BannerImage": "file:/Users/Ryan/Pictures/Desktop Backgrounds/328338.jpg",
+        "Title": "Computer Science III",
+        "!state_key_cd_stylesheet!": "sea_wolf.css",
+        "Subject": "CSE",
+        "TemplateDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery",
+        "InstructorHome": "http://www3.cs.stonybrook.edu/~cse219/Section02/index.html",
+        "Number": "219",
+        "Year": "2017",
+        "InstructorName": "Richard McKenna",
+        "LeftFooterImage": "file:/Users/Ryan/Pictures/Desktop Backgrounds/night_owl_hd_desktop_background_u377x.jpg",
+        "RightFooterImage": "file:/Users/Ryan/Pictures/Desktop Backgrounds/8637-8.jpg"
+    },
+    "ScheduleData": {
+        "EndingFriday": "2017-05-07",
+        "StartingMonday": "2017-05-07",
+        "TableState": "a,2017-04-10,c,d,b,c,d;e,f,g,h,b,c,d;i,j,k,l,b,c,d"
+    },
+    "TAData": "false,Hooligan,Harvey@Hampton.com;false,Harry Pan,peter@potter.net;false,Donald Trump,please@impeach.me\n10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;10:00am\t to\t10:30am,Monday,Harry Pan;10:00am\t to\t10:30am,Tuesday,Harry Pan;10:00am\t to\t10:30am,Wednesday,Harry Pan;10:00am\t to\t10:30am,Thursday,Harry Pan;10:00am\t to\t10:30am,Friday,Harry Pan;10:30am\t to\t11:00am,Monday,Harry Pan;10:30am\t to\t11:00am,Tuesday,Harry Pan;10:30am\t to\t11:00am,Wednesday,Harry Pan;10:30am\t to\t11:00am,Thursday,Harry Pan;10:30am\t to\t11:00am,Friday,Harry Pan;11:00am\t to\t11:30am,Monday,Harry Pan;11:00am\t to\t11:30am,Tuesday,Harry Pan;11:00am\t to\t11:30am,Wednesday,Harry Pan;11:00am\t to\t11:30am,Thursday,Harry Pan;11:00am\t to\t11:30am,Friday,Harry Pan;11:30am\t to\tNoon,Monday,Harry Pan;11:30am\t to\tNoon,Tuesday,Harry Pan;11:30am\t to\tNoon,Wednesday,Harry Pan;11:30am\t to\tNoon,Thursday,Harry Pan;11:30am\t to\tNoon,Friday,Harry Pan;Noon\t to\t12:30pm,Monday,Harry Pan;Noon\t to\t12:30pm,Tuesday,Harry Pan;Noon\t to\t12:30pm,Wednesday,Harry Pan;Noon\t to\t12:30pm,Thursday,Harry Pan;Noon\t to\t12:30pm,Friday,Harry Pan;12:30pm\t to\t1:00pm,Monday,Harry Pan;12:30pm\t to\t1:00pm,Tuesday,Harry Pan;12:30pm\t to\t1:00pm,Wednesday,Harry Pan;12:30pm\t to\t1:00pm,Thursday,Harry Pan;12:30pm\t to\t1:00pm,Friday,Harry Pan;1:00pm\t to\t1:30pm,Monday,Harry Pan;1:00pm\t to\t1:30pm,Tuesday,Harry Pan;1:00pm\t to\t1:30pm,Wednesday,Harry Pan;1:00pm\t to\t1:30pm,Thursday,Harry Pan;1:00pm\t to\t1:30pm,Friday,Harry Pan;1:30pm\t to\t2:00pm,Monday,Harry Pan;1:30pm\t to\t2:00pm,Tuesday,Harry Pan;1:30pm\t to\t2:00pm,Wednesday,Harry Pan;1:30pm\t to\t2:00pm,Thursday,Harry Pan;1:30pm\t to\t2:00pm,Friday,Harry Pan;2:00pm\t to\t2:30pm,Monday,Harry Pan;2:00pm\t to\t2:30pm,Tuesday,Harry Pan;2:00pm\t to\t2:30pm,Wednesday,Harry Pan;2:00pm\t to\t2:30pm,Thursday,Harry Pan;2:30pm\t to\t3:00pm,Monday,Harry Pan;2:30pm\t to\t3:00pm,Tuesday,Harry Pan;2:30pm\t to\t3:00pm,Wednesday,Harry Pan;2:30pm\t to\t3:00pm,Thursday,Harry Pan;2:30pm\t to\t3:00pm,Friday,Harry Pan;3:00pm\t to\t3:30pm,Monday,Harry Pan;3:00pm\t to\t3:30pm,Tuesday,Harry Pan;3:00pm\t to\t3:30pm,Wednesday,Harry Pan;3:00pm\t to\t3:30pm,Thursday,Harry Pan;3:30pm\t to\t4:00pm,Monday,Harry Pan;3:30pm\t to\t4:00pm,Tuesday,Harry Pan;3:30pm\t to\t4:00pm,Wednesday,Harry Pan;3:30pm\t to\t4:00pm,Friday,Harry Pan;4:00pm\t to\t4:30pm,Friday,Harry Pan;4:30pm\t to\t5:00pm,Friday,Harry Pan",
+    "ProjectData": {
+        "TeamsTable": "a,b,c,d;e,f,g,h;i,j,k,l",
+        "StudentsTable": "a,b,c,d;e,f,g,h;i,j,k,l"
+    }
+}

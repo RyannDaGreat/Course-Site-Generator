@@ -77,7 +77,7 @@ public class Misc
     }
     public void playAutosaveSound()
     {
-        playWav(app.io.propertyGetter.getProperty("autosave_sound"));
+        playWav(propertyGetter.getAutosave_sound());
     }
     public void playDecisionSound()
     {

@@ -1,11 +1,13 @@
 package _App_._IO_._PropertyGetter_;//Created by Ryan on 4/10/17.
 import _App_.App;
-import _App_._GUI_._Modes_._ProjectData_._Actions_.Actions;
 import _Externals_._Resources_.ResourceGetter;
 public class PropertyGetter
 {
     public App app;
-    public PropertyGetter(App app){this.app=app;}
+    public PropertyGetter(App app)
+    {
+        this.app=app;
+    }
     public String getProperty(String key)//The reason this is private is because every key is accessed via a method.
     {
         return ResourceGetter.getProperty(key);//Actual mechanics of loading file must be outsourced to externals to preserve the logical integrity of my blackbox.
@@ -28,7 +30,6 @@ public class PropertyGetter
     public String getConfirmChangeTATimesDeleteOfficehoursMessage(){return getProperty("changing_times_confirmation");}
     public String getNewFilePath()/*//The location of the New File. Is local to CourseSiteGenerator folder*/{return getProperty("new_file_path");}
     public String getConfirmSaveMessage()/*//The location of the New File. Is local to CourseSiteGenerator folder*/{return getProperty("confirm_save_message");}
-    public String[] getCdSitePagesHeaders()/*//The location of the New File. Is local to CourseSiteGenerator folder*/{String[] x=getProperty("prop_gui_cd_site_pages_headers").split(",");assert x.length==4;return x;/*//Looks like this: "Use,Navbar Title,File Name,Script"*/}
     public double getAutotransactionsPerSecond(){return Double.parseDouble(getProperty("auto_transactions_per_second"));}
     public double getHueShiftFrequenciInHz(){return Double.parseDouble(getProperty("hue_shift_frequency_in_hz"));}
     public boolean getAnimateHue(){return Boolean.parseBoolean(getProperty("animate_hue"));}
@@ -74,30 +75,11 @@ public class PropertyGetter
     public String getStateKeyCdRightFooterImage(){return getProperty("state_key_cd_RightFooterImage");}
     public String getStateKeyCdSitePagesState(){return getProperty("state_key_cd_SitePagesState");}
     public String getStateKeyCdStylesheet(){return getProperty("state_key_cd_stylesheet");}
-    public String getFailedToLoadFileMessage()
-    {
-        return app.io.propertyGetter.getProperty("failed.to.load.file");
-    }
-    public String getCannot_delete_ta()
-    {
-        return app.io.propertyGetter.getProperty("cannot_delete_ta");
-    }
-    public String getAlert_sound()
-    {
-        return app.io.propertyGetter.getProperty("alert_sound");
-    }
-    public String getDecisionSound()
-    {
-        return app.io.propertyGetter.getProperty("decision_sound");
-    }
-    public String getActionWillDeleteStudentsMessage()
-    {
-        return getProperty("this.action.will.delete.some.students.is.this.ok");
-    }
-    public String getStudentsWillBeDeleted()
-    {
-        return app.io.propertyGetter.getProperty("deleting.this.team.will.also.delete.some.students.is.this.ok");
-    }
+    public String getFailedToLoadFileMessage(){return app.io.propertyGetter.getProperty("failed.to.load.file");}
+    public String getCannot_delete_ta(){return app.io.propertyGetter.getProperty("cannot_delete_ta");}
+    public String getAlert_sound(){return app.io.propertyGetter.getProperty("alert_sound");}
+    public String getStudentsWillBeDeleted(){return app.io.propertyGetter.getProperty("deleting.this.team.will.also.delete.some.students.is.this.ok");}
+    public String getAutosave_sound(){return getProperty("autosave_sound");}
     /*@formatter:on*/
     //endregion
     //region If I ever want to use XML for some reason

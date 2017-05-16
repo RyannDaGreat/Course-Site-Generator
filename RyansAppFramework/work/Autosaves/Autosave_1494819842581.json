@@ -1,0 +1,29 @@
+{
+    "RecitationData": "",
+    "CourseDetails": {
+        "SitePagesState": "true,Schedule,schedule.html,ScheduleBuilder.js",
+        "Semester": "Spring",
+        "ExportDir": "/Users/Ryan/Desktop",
+        "BannerImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.50 PM.png",
+        "Title": "",
+        "!state_key_cd_stylesheet!": "sea_wolf.css",
+        "Subject": "CSE",
+        "TemplateDir": "/Users/Ryan/Desktop",
+        "InstructorHome": "",
+        "Number": "219",
+        "Year": "2017",
+        "InstructorName": "",
+        "LeftFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.46 PM.png",
+        "RightFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.48 PM.png"
+    },
+    "ScheduleData": {
+        "EndingFriday": "2017-06-09",
+        "StartingMonday": "2017-03-27",
+        "TableState": ""
+    },
+    "TAData": "false,llkklmmklml,nkknjnjk@oijjoi.oni\n10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm;Monday,Tuesday,Wednesday,Thursday,Friday;10:00am\t to\t10:30am,Monday,llkklmmklml;10:00am\t to\t10:30am,Tuesday,llkklmmklml;10:00am\t to\t10:30am,Wednesday,llkklmmklml;10:00am\t to\t10:30am,Thursday,llkklmmklml;10:00am\t to\t10:30am,Friday,llkklmmklml;10:30am\t to\t11:00am,Monday,llkklmmklml;10:30am\t to\t11:00am,Tuesday,llkklmmklml;10:30am\t to\t11:00am,Wednesday,llkklmmklml;10:30am\t to\t11:00am,Thursday,llkklmmklml;11:00am\t to\t11:30am,Monday,llkklmmklml;11:00am\t to\t11:30am,Tuesday,llkklmmklml;11:00am\t to\t11:30am,Wednesday,llkklmmklml;11:00am\t to\t11:30am,Thursday,llkklmmklml;11:00am\t to\t11:30am,Friday,llkklmmklml;11:30am\t to\tNoon,Monday,llkklmmklml;11:30am\t to\tNoon,Tuesday,llkklmmklml;11:30am\t to\tNoon,Wednesday,llkklmmklml;11:30am\t to\tNoon,Thursday,llkklmmklml;Noon\t to\t12:30pm,Monday,llkklmmklml;Noon\t to\t12:30pm,Tuesday,llkklmmklml;Noon\t to\t12:30pm,Wednesday,llkklmmklml;Noon\t to\t12:30pm,Thursday,llkklmmklml;Noon\t to\t12:30pm,Friday,llkklmmklml;12:30pm\t to\t1:00pm,Monday,llkklmmklml;12:30pm\t to\t1:00pm,Tuesday,llkklmmklml;12:30pm\t to\t1:00pm,Wednesday,llkklmmklml;12:30pm\t to\t1:00pm,Thursday,llkklmmklml;12:30pm\t to\t1:00pm,Friday,llkklmmklml;1:00pm\t to\t1:30pm,Monday,llkklmmklml;1:00pm\t to\t1:30pm,Tuesday,llkklmmklml;1:00pm\t to\t1:30pm,Wednesday,llkklmmklml;1:00pm\t to\t1:30pm,Thursday,llkklmmklml;1:00pm\t to\t1:30pm,Friday,llkklmmklml;1:30pm\t to\t2:00pm,Monday,llkklmmklml;1:30pm\t to\t2:00pm,Tuesday,llkklmmklml;1:30pm\t to\t2:00pm,Wednesday,llkklmmklml;1:30pm\t to\t2:00pm,Thursday,llkklmmklml;2:00pm\t to\t2:30pm,Monday,llkklmmklml;2:00pm\t to\t2:30pm,Tuesday,llkklmmklml;2:00pm\t to\t2:30pm,Wednesday,llkklmmklml;2:00pm\t to\t2:30pm,Thursday,llkklmmklml;2:00pm\t to\t2:30pm,Friday,llkklmmklml;2:30pm\t to\t3:00pm,Monday,llkklmmklml;2:30pm\t to\t3:00pm,Tuesday,llkklmmklml;2:30pm\t to\t3:00pm,Wednesday,llkklmmklml;2:30pm\t to\t3:00pm,Thursday,llkklmmklml;3:30pm\t to\t4:00pm,Monday,llkklmmklml;3:30pm\t to\t4:00pm,Tuesday,llkklmmklml;3:30pm\t to\t4:00pm,Wednesday,llkklmmklml;3:30pm\t to\t4:00pm,Thursday,llkklmmklml;3:30pm\t to\t4:00pm,Friday,llkklmmklml;4:00pm\t to\t4:30pm,Monday,llkklmmklml;4:00pm\t to\t4:30pm,Tuesday,llkklmmklml;4:00pm\t to\t4:30pm,Wednesday,llkklmmklml;4:00pm\t to\t4:30pm,Thursday,llkklmmklml;4:00pm\t to\t4:30pm,Friday,llkklmmklml",
+    "ProjectData": {
+        "TeamsTable": "kmmkmk,Joyous Medium Purple: #9980E6,Cultured Pale Violet Red: #994D66,....",
+        "StudentsTable": ""
+    }
+}
