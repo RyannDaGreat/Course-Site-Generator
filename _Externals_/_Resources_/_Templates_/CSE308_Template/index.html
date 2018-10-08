@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="description" content="CSE 308 - Software Engineering - Spring 2017 Home Page" />
+    <title>CSE 308 Home</title>
+    <link rel="stylesheet" type="text/css" href="./css/course_homepage_layout.css" />
+    <link rel="stylesheet" type="text/css" href="./css/sea_wolf.css" />
+    <style>
+        span.student_info
+        {
+            color:black;
+            font-size:11pt;
+            font-weight:bold;
+        }
+        span.course_list
+        {
+            color:black;
+            font-size:10pt;
+            font-weight:bold,italic;
+        }
+    </style>
+
+    <!-- LINK TO OUR JavaScript FILE AND JQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./js/TeamsBuilder.js"></script>
+
+    <!-- ONCE THE PAGE FULLY LOADS INITIALIZE THE SLIDESHOW -->
+    <script>
+        $(document).ready()
+        {
+            initTeamsAndStudents();
+        }
+        window.on
+    </script>
+</head>
+
+<body>
+
+<div id="content">
+
+    <div id="navbar">
+        <a href="http://www.stonybrook.edu"><img alt="Stony Brook University" class="sbu_navbar" src="./images/SBUDarkRedShieldLogo.png"></a>
+        <!-- NAVIGATION LINKS GO HERE -->
+        <a class="open_nav" href="index.html" id="home_link">Home</a>
+        <a class="nav" href="syllabus.html" id="syllabus_link">Syllabus</a>
+        <a class="nav" href="schedule.html" id="schedule_link">Schedule</a>
+        <a class="nav" href="hws.html" id="hws_link">HWs</a>
+        <a class="nav" href="projects.html" id="projects_link">Projects</a>
+    </div>
+
+    <div id="banner">
+        CSE 308 - Spring 2017<br />
+        Software Engineering
+    </div>
+
+    <div id="desc">
+
+        <h3>Welcome!</h3>
+
+        <p>Welcome to CSE 308! If you are enrolled in the course, be sure to periodically check the course <a href="./schedule.html">schedule</a> for all materials and changes as the semester moves along. Note that all grades will be posted to <a href="http://blackboard.stonybrook.edu">Blackboard</a>. Also note that <strong><em>all</em></strong> students enrolled in this course should have <strong>U4</strong> standing, and thus have experience in 300-level classwork, and so must be on track to graduate in either May, 2017 or December, 2017.<br /><br /></p>
+
+        <h3>The Project</h3>
+
+        <p>This semester, <strong><em>all</em></strong> teams will be developing a Web App with a fully integrated back end that will be deployed for real at the end of the semester. The technology choices for teams this semester will be limited in comparison to semesters past. The hope is that it prevents teams from spinning their wheels while deciding which APIs to go with. Note that you will get to make some tech decisions (especially for front-end template APIs), but not regarding the basic platform, and so there may be things you won't like about the tech choices made, but you'll just have to work around those issues.<br /><br /></p>
+
+        <h3>Roles</h3>
+        <p>For the group project, students will be divided into <strong><em>teams of four</em></strong>. Project responsibilities will be carefully divided such that all students are making contributions and the project benefits as a whole. Each team will have four members that fit into one of the roles listed below. This is not to say that students in these roles are <strong><em>solely</em></strong> responsible for these domains, all team members should make contributions as needed to progress the project across all domains. But, the person in each role will be the primary decision maker for that doamin. Note that all students are considered <strong>Software Engineers</strong>, but additionally, students will be assigned the following roles:</p>
+
+        <ul>
+            <li><strong>Lead Programmer</strong> - This student will have their hands full because in addition to their own coding responsibilities, they will need to have a general understanding of all the technologies being used and all the implementation work being done at any time. Note that it is not assumed that lead programmers come into the semester being fully schooled in Google Dev technologies, but it is assumed that they can quickly pickup an understanding of how these components will work and fit together. Note that the lead programmer will be responsible for directing group decision making regarding any technical aspects of the project, including design, implementation, and test decisions. While not required, it would be helpful if this person has taken the <a href="http://www.cs.stonybrook.edu/~cse336/">Internet Commerce Programming</a> and/or <a href="http://www.cs.stonybrook.edu/~cse305">Principles of Database Systems</a> courses.<br /><br /></li>
+            <li><strong>Project Manager</strong> - A project manager drives the project, which means working with the lead programmer to direct the meetings (i.e. make the meeting agenda, assign action items, follow up on action items, take meeting minutes), develop the Project Specifications, help divide project responsibilities, develop Gantt and Pert Charts for managing work measurement, forecasting, task breakdown, task assignment, and task dependencies. Think of the project manager as someone who makes sure the project is progressing at the proper rate while using available resources (i.e. team members) efficiently. It is important that the Project Manager work closely with the Lead Programmer to ensure that no team members are stuck on technological dead ends. We want all team members to be productive throughout. This person will use project management software to organize the project. Note that teams may decide to make this a floating position, rotating responsibility from one member to another. At the end of the semester, full project management documentation must be provided specifying the full arc of the project.<br /><br /></li>
+            <li><strong>Lead Designer</strong> - This student is responsible for the look and feel, including interactivity, of the Web app. This person should have <a href="http://www.cs.stonybrook.edu/~richard/">good taste</a>, not <a href="http://www2.warnerbros.com/spacejam/movie/jam.htm">bad taste</a>. Hopefully this person has some training in <a href="http://webstyleguide.com/wsg3/index.html">Web design</a> or some knowledge of <a href="http://en.wikibooks.org/wiki/GUI_Design_Principles">GUI Design Principles</a>. While not required, it would be helpful if this person has taken the <a href="http://www.cs.stonybrook.edu/~cse102/">Introduction to Web Design &amp; Programming</a> and/or <a href="http://www.cs.stonybrook.edu/~cse333">User Interface Development</a> courses.<br /><br /></li>
+            <li><strong>Data Designer</strong> - This student is responsible for the data persisted to your site's <a href="https://developers.google.com/appengine/docs/java/datastore/">Datastore</a>. This means deciding what needs to be stored there and in what format to put it, and then working to populate the datastore with whatever sample data is needed to get the site up and running. While not required, it would be helpful if this person has taken the <a href="http://www.cs.stonybrook.edu/~cse305">Principles of Database Systems</a> course.<br /><br /></li>
+        </ul>
+
+        <h3>Rules</h3>
+
+        <p>Before starting the semester, there are a few rules of note that everyone must understand.</p>
+
+        <ul>
+            <li><strong>Self-Learning is Key</strong>: This is not a Web technologies course, yet the projects use Web technologies. So, while we'll touch upon some of the topics needed for building Web apps, much will be left for team members to discover on their own. Note that all teams are required to use the prescribed Google technologies. Early in the semester there will be individual programming assignments that will introduce students to these technologies. But, teams will be charged with the responsibility of learning some new technologies on their own, which of course is common in the real world. Becoming skilled at self-learning is not easy, but is one of the best way to avoid career obsolescence.<br /><br /></li>
+            <li><strong>Mutiny Clause</strong>: Teams are not dictatorships, think of Lead Programmers as Prime Ministers. Prime Ministers represent an elected body and can be replaced through a <a href="http://en.wikipedia.org/wiki/Motion_of_no_confidence">No Confidence Vote</a>. Prime Ministers, however, can drive the agenda, and while maintaining the support of Parliament, can wield significant power via decision making. The idea for our project is that our lead programmers don't lord over the other teammates, but rather, ensure the team makes informed decisions and help teammates in their development (i.e. don't let them get stuck on technological dead ends). Should a lead programmer be unable to perform in their assigned role, the team may make a change via a majority vote. Note that any team member may bring this decision to a vote during a team meeting. Reasons for making a change must be professional and legitimate and not personal in nature. Note that should a lead programmer be changed, that person may then take another role on the team. Of course these rules apply for the other roles as well and the instructor must be informed of any such role changes.<br /><br /></li>
+            <li><strong>The Apprentice Clause</strong>: Should a team member consistently fail to make required contributions to the project, the team may decide to take a vote and then collectively say <strong><em>You're Fired!</em></strong>. Note that this is not something to be taken lightly. Teams must present a case to the instructor as to why a student is failing the team, and so deserves to be cut. Students who are cut from a team should drop the course, but if that is not an option, would be required to complete the assignment on their own, which is not a position any student should like to find themselves in. The primary reason for this is that the team will be held to account for the performance of all members, and team members should not be taking on multiple roles to cover for individual deficiencies. Lack of participation is key here. If a student is not attending lecture or project meetings, is not completing work, and is not answering emails, the whole team's grade may suffer, so team leaders must try to keep all members on track.<br /><br /></li>
+            <li id="trade_clause"><strong>Software Engineer to be named later Clause</strong>: Should personal differences arise on a team and create problems for the project, teams may consult with other teams to try and work out a student-for-student trade. Note that only one-for-one trades will be allowed, and that in order for trades to go through, all parties must agree. This means a unanimous vote on both teams (including the students being traded). Note again, only single-student for single-student trades are allowed, so there will be no 2-for-1 deals or students being traded for cash or code or <a href="http://wiki.answers.com/Q/Who_was_the_first_baseball_player_to_be_traded_for_himself">themselves</a>. We don't want any <a href="http://www.historicbaseball.com/players/c/chiti_harry.html">Harry Chiti</a>s. Note that trades may only be made within the first three weeks of the semester. This means Friday, 9/16, is our official Trade Deadline.<br /><br /></li>
+            <li><strong>Well Defined Contributions</strong>: We wil be using project management software this semester for managing all aspects of the development process, and part of this will involve carefully defining each student's responsibilities and contributions. <strong><em>All</em></strong> students are expected to make significant contributions to the team and these contributions should be clearly defined and documented for review by the instructor. Students who fail to make expected contributions may receive a project grade lower than their teammates.<br /><br /></li>
+        </ul>
+
+        <h3>Team Programming</h3>
+
+        <p>One of the principles that will be emphasized this semester is <strong><em>team programming</em></strong>, which involves multiple programmers working collaboratively on the same task. This is an efffective technique for preventing stalls in the development process. While working on the <strong><em>team project</em></strong>, students will be encouraged to do all programming using this technique and in addition, for all project responsibilities, teams will designate <strong><em>backup</em></strong> developers who will aid in the completion of a task when needed and will take over a task when a developer is overloaded. Note that students are to work independently on the individual programming assignments as the start of the semester and that this requirement will be strictly enforced.<br /><br /></p>
+
+        <h3 id="teams">Teams</h3>
+        <p>Development teams, with roles, will be listed below as they are determined. Students may form their own teams if they wish. To do so, first choose an aptly named <a href="https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F">color</a> that suits your team. Choose one that is not copyrighted (not owned by crayon or paint companies, for example). Once your color (and thus team name) is selected, specify your team name and members, with roles, in the shared <a href="https://docs.google.com/spreadsheets/d/1Cf8cRfNoRjl7FLzo_Z9F8Wu2jJQdsQjwVF6Fcev2vec">CSE 308 Team</a> Google Sheet. Note that you should set the fill color for your cells to your team color, and make sure the text color is a color with enough contrast such that it is neat and legible. Should your team be missing a member or two, just place a '<strong>?</strong>' in the cell representing the position you're looking to fill.</p>
+        <p>Students not assigned to a team by the second lecture will be placed by the instructor. If you are to form your own team, I strongly advise forming teams around similar schedules. For example, past experience has shown that commuting students work well together because they may choose to meet and work off-campus rather than on. Note that should any changes to a team occur, the instructor must immediately be informed, as this is the only official teams list. As teams are formed they will be listed below, which also contains the current pool of students without a team.</p>
+
+        <div id="teams_tables">
+            <!-- JavaScript WILL FILL THIS IN WITH DATA
+            PULLED FROM A JSon FILE -->
+        </div>
+        <br /><br />
+
+        <br clear="all" />
+
+        <hr />
+
+        <a href="http://www.stonybrook.edu"><img class="sunysb" style="float:left" src="./images/SBUWhiteShieldLogo.jpg" alt="SBU" /></a>
+        <a href="http://www.cs.stonybrook.edu"><img style="float:right" src="./images/CSLogo.png" alt="CS" /></a>
+
+        <p style="font-size:9pt; text-align:center;">Web page created and maintained<br />
+            by <a href="http://www.cs.stonybrook.edu/~richard">Richard McKenna</a><br /><br /><br /><br /></p>
+    </div>
+</div>
+</body>
+</html>

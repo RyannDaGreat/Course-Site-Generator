@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1000.0" style="-fx-background-color: #555555;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5577BB;">
+        <items>
+          <Button mnemonicParsing="false" text="New" />
+            <Button mnemonicParsing="false" text="Load" />
+            <Button mnemonicParsing="false" text="Save" />
+            <Button mnemonicParsing="false" text="Save As" />
+            <Button mnemonicParsing="false" text="Export" />
+            <Pane prefWidth="50.0" />
+            <Button mnemonicParsing="false" text="Undo" />
+            <Button mnemonicParsing="false" text="Redo" />
+            <Button mnemonicParsing="false" text="About" />
+        </items>
+      </ToolBar>
+      <TabPane nodeOrientation="LEFT_TO_RIGHT" opacity="0.93" prefHeight="200.0" prefWidth="200.0" style="-fx-tab-min-height: 99; -fx-background-insets: 0, 0 0 1 0; -fx-background-color: #553377; -fx-text-fill: #96b946;" styleClass="*.tab-header-background" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Course Details">
+               <content>
+                  <VBox spacing="5.0" style="-fx-background-color: #336688; -fx-background-radius: 0;">
+                     <children>
+                        <TitledPane animated="false" blendMode="LIGHTEN" collapsible="false" text="Course Info">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #8888FF;">
+                                 <children>
+                                    <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="20.0" prefHeight="416.0" prefWidth="1000.0" scaleShape="false" vgap="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="938.9019165039062" prefWidth="411.0934753417969" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1777.0434799194336" minWidth="150.0" prefWidth="537.8076171875" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1777.0434799194336" minWidth="60.0" prefWidth="493.7978515625" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1777.0434799194336" minWidth="150.0" prefWidth="457.2021484375" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Subject:" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Semester:" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" GridPane.rowIndex="2" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Instructor Name:" GridPane.rowIndex="3" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Instructor Home:" GridPane.rowIndex="4" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Export Dir:" GridPane.rowIndex="5" />
+                                          <TextField promptText="Computer Science III" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                                          <TextField promptText="Richard McKenna" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                                          <TextField promptText="http://www3.cs.stonybrook.edu/~cse219/Section02/index.html" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                                          <ComboBox prefWidth="150.0" promptText="CSE" GridPane.columnIndex="1" />
+                                          <ComboBox prefWidth="150.0" promptText="Fall" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox prefWidth="150.0" promptText="219" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
+                                          <ComboBox prefWidth="150.0" promptText="2017" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="aodsjaosidjaoisjdoaisdjoiasjdoiasjdoaijsdoiasjdoiasjdoasjdoasidjaoijdoiajd" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                                          <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" style="-fx-background-color: #556688;" text="Site Template" VBox.vgrow="ALWAYS">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="180.0" prefWidth="1918.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The selected directory should contain the full site template, including the HTML files " />
+                                          <GridPane>
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints />
+                                            </rowConstraints>
+                                             <children>
+                                                <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=".\templates\CSE219" GridPane.columnIndex="1" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Template Dir:" />
+                                             </children>
+                                          </GridPane>
+                                          <TableView>
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="C1" />
+                                              <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" text="Page Style">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="180.0" prefWidth="998.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="20.0" prefWidth="998.0" scaleShape="false" vgap="20.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Banner School Image:" />
+                                                <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                                   <image>
+                                                      <Image url="@../_Externals_/_Resources_/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" prefWidth="200.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1777.0434799194336" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" prefWidth="200.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="20.0" prefWidth="998.0" scaleShape="false" vgap="20.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Left Footer Image:" />
+                                                <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                                   <image>
+                                                      <Image url="@../_Externals_/_Resources_/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" prefWidth="200.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1777.0434799194336" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" prefWidth="200.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <GridPane cacheShape="false" centerShape="false" focusTraversable="true" hgap="20.0" prefWidth="998.0" scaleShape="false" vgap="20.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Right Footer Image:" />
+                                                <Button mnemonicParsing="false" text="Change" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                                   <image>
+                                                      <Image url="@../_Externals_/_Resources_/Screen%20Shot%202017-04-12%20at%209.21.51%20PM.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" prefWidth="200.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1777.0434799194336" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" prefWidth="200.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+          </Tab>
+          <Tab text="TA Data">
+            <content>
+                  <ScrollPane hbarPolicy="ALWAYS" prefViewportHeight="327.0" prefViewportWidth="600.0" vbarPolicy="ALWAYS" />
+            </content>
+          </Tab>
+            <Tab text="Recitaiton Data">
+               <content>
+                  <ScrollPane hbarPolicy="ALWAYS" prefViewportHeight="327.0" prefViewportWidth="600.0" vbarPolicy="ALWAYS" />
+               </content>
+            </Tab>
+            <Tab text="Schedule Data">
+               <content>
+                  <ScrollPane hbarPolicy="ALWAYS" prefViewportHeight="327.0" prefViewportWidth="600.0" vbarPolicy="ALWAYS" />
+               </content>
+            </Tab>
+            <Tab text="Project Data">
+               <content>
+                  <ScrollPane hbarPolicy="ALWAYS" prefViewportHeight="327.0" prefViewportWidth="600.0" vbarPolicy="ALWAYS" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
