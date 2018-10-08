@@ -1,11 +1,9 @@
 package _App_._IO_._Loader_;//Created by Ryan on 4/10/17.
 import _App_.App;
-import _App_._GUI_.GUI;
 import _App_._GUI_._Dialogs_.Dialogs;
 import _App_._GUI_._Modes_.Modes;
 import _App_._IO_._PropertyGetter_.PropertyGetter;
 import _Externals_.r;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -30,11 +28,11 @@ public class Loader
         {
             JSONObject x=new JSONObject(state);
             Modes modes=app.gui.modes;
-            modes.courseDetails.actions.setState(x.getJSONObject(propertyGetter.getStateKeyCourseDetails()));
-            modes.tadata.actions.setState(x.getString(propertyGetter.getStateKeyTAData()));
-            modes.scheduleData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyScheduleData()));
-            modes.recitationData.actions.setState(x.getString(propertyGetter.getStateKeyRecitationData()));
-            modes.projectData.actions.setState(x.getJSONObject(propertyGetter.getStateKeyProjectData()));
+            modes.recitationData.actions.setState(x.getString    (propertyGetter.getStateKeyRecitationData()));
+            modes.tadata        .actions.setState(x.getString    (propertyGetter.getStateKeyTAData        ()));
+            modes.courseDetails .actions.setState(x.getJSONObject(propertyGetter.getStateKeyCourseDetails ()));
+            modes.scheduleData  .actions.setState(x.getJSONObject(propertyGetter.getStateKeyScheduleData  ()));
+            modes.projectData   .actions.setState(x.getJSONObject(propertyGetter.getStateKeyProjectData   ()));
             return true;
         }
         catch(Exception e)

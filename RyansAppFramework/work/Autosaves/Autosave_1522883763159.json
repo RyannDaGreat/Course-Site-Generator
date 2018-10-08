@@ -1,0 +1,29 @@
+{
+    "RecitationData": "",
+    "CourseDetails": {
+        "SitePagesState": "true,Schedule,schedule.html,ScheduleBuilder.js",
+        "Semester": "Spring",
+        "ExportDir": "/Users/Ryan/Desktop",
+        "BannerImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.50 PM.png",
+        "Title": "",
+        "!state_key_cd_stylesheet!": "sea_wolf.css",
+        "Subject": "CSE",
+        "TemplateDir": "/Users/Ryan/Desktop",
+        "InstructorHome": "",
+        "Number": "219",
+        "Year": "2017",
+        "InstructorName": "",
+        "LeftFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.46 PM.png",
+        "RightFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.48 PM.png"
+    },
+    "ScheduleData": {
+        "EndingFriday": "2017-06-09",
+        "StartingMonday": "2017-03-27",
+        "TableState": ""
+    },
+    "TAData": "false,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu,isudgiushfg@seijo.owieh\n10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm;Monday,Tuesday,Wednesday,Thursday,Friday;11:00am\t to\t11:30am,Monday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;11:00am\t to\t11:30am,Wednesday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;11:30am\t to\tNoon,Tuesday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;11:30am\t to\tNoon,Wednesday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;Noon\t to\t12:30pm,Thursday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;12:30pm\t to\t1:00pm,Tuesday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;12:30pm\t to\t1:00pm,Friday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;1:30pm\t to\t2:00pm,Monday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu",
+    "ProjectData": {
+        "TeamsTable": "",
+        "StudentsTable": ""
+    }
+}

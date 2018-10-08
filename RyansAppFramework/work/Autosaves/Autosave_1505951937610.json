@@ -1,0 +1,29 @@
+{
+    "RecitationData": "",
+    "CourseDetails": {
+        "SitePagesState": "true,Schedule,schedule.html,ScheduleBuilder.js",
+        "Semester": "Spring",
+        "ExportDir": "/Users/Ryan/Desktop",
+        "BannerImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.50 PM.png",
+        "Title": "",
+        "!state_key_cd_stylesheet!": "sea_wolf.css",
+        "Subject": "CSE",
+        "TemplateDir": "/Users/Ryan/Desktop",
+        "InstructorHome": "",
+        "Number": "219",
+        "Year": "2017",
+        "InstructorName": "",
+        "LeftFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.46 PM.png",
+        "RightFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.48 PM.png"
+    },
+    "ScheduleData": {
+        "EndingFriday": "2017-06-09",
+        "StartingMonday": "2017-03-27",
+        "TableState": ""
+    },
+    "TAData": "false,ewoiweoir,ewrqiwejreiwjr@IOAFOIJA.SOGIOIJ\nMidnight\t to\t12:30am,12:30am\t to\t1:00am,1:00am\t to\t1:30am;Monday,Tuesday,Wednesday,Thursday,Friday;",
+    "ProjectData": {
+        "TeamsTable": "",
+        "StudentsTable": ""
+    }
+}

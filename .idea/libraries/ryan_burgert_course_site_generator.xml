@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ryan-burgert-course-site-generator">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RyansAppFramework.zip!/" />
+      <root url="jar://$PROJECT_DIR$/javax.json-1.0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

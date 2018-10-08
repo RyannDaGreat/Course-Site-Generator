@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TAManager_Solution">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TAManager_Solution/dist/TAManager_Solution.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

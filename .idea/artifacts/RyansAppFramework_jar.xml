@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RyansAppFramework:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RyansAppFramework_jar</output-path>
+    <root id="archive" name="RyansAppFramework.jar">
+      <element id="module-output" name="RyansAppFramework" />
+      <element id="module-output" name="PropertiesManager" />
+      <element id="module-output" name="DesktopJavaFramework" />
+      <element id="module-output" name="TAManager_Solution" />
+      <element id="module-output" name="jTPS" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/RyansAppFramework/joda-time-1.6_2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/joda-time-1.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/RyansAppFramework/lib/junit-4.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/RyansAppFramework/lib/hamcrest-core-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/TAManager_Solution/dist/lib/javax.json-1.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/TAManager_Solution/dist/lib/PropertiesManager.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/TAManager_Solution/dist/lib/DesktopJavaFramework.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/RyansAppFramework/joda-time-1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-runtime.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-reflect.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/DesktopJavaFramework/dist/DesktopJavaFramework.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/commons-io-2.5-bin/commons-io-2.5/commons-io-2.5-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/commons-io-2.5-bin/commons-io-2.5/commons-io-2.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/DesktopJavaFramework/dist/lib/PropertiesManager.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/PropertiesManager/dist/PropertiesManager.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/RyansAppFramework/joda-time-1.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/RyansAppFramework/appengine-tools-sdk-1.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20070829/json-20070829.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,29 @@
+{
+    "RecitationData": "",
+    "CourseDetails": {
+        "SitePagesState": "true,HWs,hws.html,HWsBuilder.js;true,Home,index.html,TeamsBuilder.js;true,Projects,projects.html,ProjectsBuilder.js;true,Schedule,schedule.html,ScheduleBuilder.js;true,Syllabus,syllabus.html,OfficeHoursGridBuilder.js",
+        "Semester": "North Korea",
+        "ExportDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/work/ExportTests",
+        "BannerImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png",
+        "Title": "How To Kill A Mockingbird",
+        "!state_key_cd_stylesheet!": "null",
+        "Subject": "WAE",
+        "TemplateDir": "/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/RyansAppFramework/src/_Externals_/_Resources_/_Templates_/CSE308_Template",
+        "InstructorHome": "A dog house in southern nebraska cause why not",
+        "Number": "998",
+        "Year": "2099",
+        "InstructorName": "Dr. Doggy Von Woomphkins",
+        "LeftFooterImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png",
+        "RightFooterImage": "file:/Users/Ryan/Desktop/RyanCourseSiteGeneratorThirdRecovery/ryan-burgert-course-site-generator/out/production/RyansAppFramework/_Externals_/_Resources_/_Images_/bannerimmage.png"
+    },
+    "ScheduleData": {
+        "EndingFriday": "2017-05-07",
+        "StartingMonday": "2017-05-07",
+        "TableState": ""
+    },
+    "TAData": "false,G,H@agoi.cao\n8:30am\t to\t9:00am,9:00am\t to\t9:30am,9:30am\t to\t10:00am,10:00am\t to\t10:30am,10:30am\t to\t11:00am,11:00am\t to\t11:30am,11:30am\t to\tNoon,Noon\t to\t12:30pm,12:30pm\t to\t1:00pm,1:00pm\t to\t1:30pm,1:30pm\t to\t2:00pm,2:00pm\t to\t2:30pm,2:30pm\t to\t3:00pm,3:00pm\t to\t3:30pm,3:30pm\t to\t4:00pm,4:00pm\t to\t4:30pm,4:30pm\t to\t5:00pm,5:00pm\t to\t5:30pm,5:30pm\t to\t6:00pm,6:00pm\t to\t6:30pm,6:30pm\t to\t7:00pm;Monday,Tuesday,Wednesday,Thursday,Friday;",
+    "ProjectData": {
+        "TeamsTable": "",
+        "StudentsTable": ""
+    }
+}

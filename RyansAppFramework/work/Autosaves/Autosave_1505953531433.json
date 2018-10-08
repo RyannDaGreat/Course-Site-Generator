@@ -1,0 +1,29 @@
+{
+    "RecitationData": "",
+    "CourseDetails": {
+        "SitePagesState": "true,Schedule,schedule.html,ScheduleBuilder.js",
+        "Semester": "Spring",
+        "ExportDir": "/Users/Ryan/Desktop",
+        "BannerImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.50 PM.png",
+        "Title": "",
+        "!state_key_cd_stylesheet!": "sea_wolf.css",
+        "Subject": "CSE",
+        "TemplateDir": "/Users/Ryan/Desktop",
+        "InstructorHome": "",
+        "Number": "219",
+        "Year": "2017",
+        "InstructorName": "",
+        "LeftFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.46 PM.png",
+        "RightFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.48 PM.png"
+    },
+    "ScheduleData": {
+        "EndingFriday": "2017-06-09",
+        "StartingMonday": "2017-03-27",
+        "TableState": ""
+    },
+    "TAData": "false,ewoiweoir,ewrqiwejreiwjr@IOAFOIJA.SOGIOIJ\nMidnight\t to\t12:30am,12:30am\t to\t1:00am,1:00am\t to\t1:30am,1:30am\t to\t2:00am,2:00am\t to\t2:30am,2:30am\t to\t3:00am,3:00am\t to\t3:30am;Monday,Tuesday,Wednesday,Thursday,Friday;Midnight\t to\t12:30am,Friday,ewoiweoir;12:30am\t to\t1:00am,Monday,ewoiweoir;12:30am\t to\t1:00am,Wednesday,ewoiweoir;1:00am\t to\t1:30am,Tuesday,ewoiweoir;1:30am\t to\t2:00am,Tuesday,ewoiweoir;1:30am\t to\t2:00am,Wednesday,ewoiweoir;2:00am\t to\t2:30am,Monday,ewoiweoir;2:00am\t to\t2:30am,Tuesday,ewoiweoir;2:30am\t to\t3:00am,Wednesday,ewoiweoir",
+    "ProjectData": {
+        "TeamsTable": "",
+        "StudentsTable": ""
+    }
+}

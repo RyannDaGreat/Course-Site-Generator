@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PropertiesManager1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PropertiesManager/dist/PropertiesManager.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

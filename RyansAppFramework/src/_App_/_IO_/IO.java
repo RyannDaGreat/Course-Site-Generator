@@ -18,20 +18,20 @@ public class IO//Doesn't actually do anything. Should not contain any methods or
     public PropertyGetter propertyGetter;
     public IO(App app)
     {
-        exporter=new Exporter(app);
-        loader=new Loader(app);
-        saver=new Saver(app);
-        misc=new Misc(app);
-        styleGetter=new StyleGetter(app);
+        exporter      =new Exporter      (app);
+        loader        =new Loader        (app);
+        saver         =new Saver         (app);
+        misc          =new Misc          (app);
+        styleGetter   =new StyleGetter   (app);
         propertyGetter=new PropertyGetter(app);
     }
     public void initialize()//Required by Ryan's Framework. This is called AFTER everything in the tree has been constructed.
     {
-        exporter.initialize();
-        loader.initialize();
-        saver.initialize();
-        misc.initialize();
-        styleGetter.initialize();
+        exporter      .initialize();
+        loader        .initialize();
+        saver         .initialize();
+        misc          .initialize();
+        styleGetter   .initialize();
         propertyGetter.initialize();
     }
 }

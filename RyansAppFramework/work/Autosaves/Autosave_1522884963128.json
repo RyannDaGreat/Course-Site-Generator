@@ -1,0 +1,29 @@
+{
+    "RecitationData": "",
+    "CourseDetails": {
+        "SitePagesState": "true,Schedule,schedule.html,ScheduleBuilder.js",
+        "Semester": "Spring",
+        "ExportDir": "/Users/Ryan/Desktop",
+        "BannerImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.50 PM.png",
+        "Title": "",
+        "!state_key_cd_stylesheet!": "sea_wolf.css",
+        "Subject": "CSE",
+        "TemplateDir": "/Users/Ryan/Desktop",
+        "InstructorHome": "",
+        "Number": "219",
+        "Year": "2017",
+        "InstructorName": "",
+        "LeftFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.46 PM.png",
+        "RightFooterImage": "file:/Users/Ryan/Desktop/Screen Shot 2017-05-07 at 7.24.48 PM.png"
+    },
+    "ScheduleData": {
+        "EndingFriday": "2017-06-09",
+        "StartingMonday": "2017-03-27",
+        "TableState": ""
+    },
+    "TAData": "false,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu,isudgiushfg@seijo.owieh\n3:30am\t to\t4:00am,4:00am\t to\t4:30am,4:30am\t to\t5:00am,5:00am\t to\t5:30am,5:30am\t to\t6:00am,6:00am\t to\t6:30am,6:30am\t to\t7:00am,7:00am\t to\t7:30am,7:30am\t to\t8:00am,8:00am\t to\t8:30am;Monday,Tuesday,Wednesday,Thursday,Friday;3:30am\t to\t4:00am,Thursday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;3:30am\t to\t4:00am,Friday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;4:30am\t to\t5:00am,Monday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;4:30am\t to\t5:00am,Tuesday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu;5:00am\t to\t5:30am,Wednesday,sdlkfna:ksdnf'asd:fibuasd'ifuba:ibdsuf:asbdfiu",
+    "ProjectData": {
+        "TeamsTable": "",
+        "StudentsTable": ""
+    }
+}

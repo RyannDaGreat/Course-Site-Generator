@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TAManager_Solution/dist/lib/javax.json-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TAManager_Solution/dist/lib/PropertiesManager.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TAManager_Solution/dist/lib/DesktopJavaFramework.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
